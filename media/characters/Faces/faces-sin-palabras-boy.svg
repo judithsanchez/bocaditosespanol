@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.64 180.74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #818285;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+      }
+
+      .cls-4 {
+        fill: #595a5c;
+      }
+
+      .cls-5 {
+        fill: none;
+        stroke: #818285;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="faces-sin-palabras">
+    <g>
+      <g>
+        <circle class="cls-4" cx="89.82" cy="89.82" r="89.82"/>
+        <path class="cls-2" d="M60.52,174.75s29.3,13.47,58.6,0c0,0-29.3,10.93-58.6,0Z"/>
+      </g>
+      <g>
+        <ellipse class="cls-1" cx="59.62" cy="94.44" rx="12.27" ry="19.19"/>
+        <ellipse class="cls-3" cx="59.62" cy="94.44" rx="7.62" ry="11.92"/>
+        <ellipse class="cls-1" cx="54.43" cy="86.32" rx="2.44" ry="3.81"/>
+      </g>
+      <g>
+        <ellipse class="cls-1" cx="119.49" cy="94.44" rx="12.27" ry="19.19"/>
+        <ellipse class="cls-3" cx="119.83" cy="94.44" rx="7.62" ry="11.92"/>
+        <ellipse class="cls-1" cx="114.65" cy="86.32" rx="2.44" ry="3.81"/>
+      </g>
+      <line class="cls-5" x1="65.98" y1="146.89" x2="114.94" y2="146.89"/>
+    </g>
+  </g>
+</svg>

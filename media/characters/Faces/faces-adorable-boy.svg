@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.82 180.92">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #818285;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+      }
+
+      .cls-4 {
+        fill: #595a5c;
+      }
+
+      .cls-5 {
+        fill: none;
+        stroke: #818285;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="faces-adorable">
+    <g>
+      <g>
+        <circle class="cls-4" cx="89.91" cy="89.91" r="89.91"/>
+        <path class="cls-2" d="M60.58,174.93s29.33,13.48,58.66,0c0,0-29.33,10.94-58.66,0Z"/>
+      </g>
+      <g>
+        <ellipse class="cls-1" cx="60.26" cy="97.52" rx="12.15" ry="19.01"/>
+        <ellipse class="cls-3" cx="60.26" cy="93.64" rx="7.55" ry="11.81"/>
+        <ellipse class="cls-1" cx="55.12" cy="85.61" rx="2.41" ry="3.78"/>
+        <ellipse class="cls-1" cx="119.57" cy="97.52" rx="12.15" ry="19.01"/>
+        <ellipse class="cls-3" cx="119.9" cy="93.64" rx="7.55" ry="11.81"/>
+        <ellipse class="cls-1" cx="114.77" cy="85.61" rx="2.41" ry="3.78"/>
+        <path class="cls-5" d="M77.59,138.44c-.07,12.3,7.12,20.41,12.13,20.25,5-.16,11.64-8.65,10.87-20.85"/>
+      </g>
+    </g>
+  </g>
+</svg>

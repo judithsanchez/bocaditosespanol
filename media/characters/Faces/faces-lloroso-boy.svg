@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.27 181.37">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #818285;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+      }
+
+      .cls-4 {
+        fill: #595a5c;
+      }
+
+      .cls-5 {
+        fill: #4dc6de;
+      }
+
+      .cls-6 {
+        fill: none;
+        stroke: #818285;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="faces-lloroso">
+    <g>
+      <g>
+        <circle class="cls-4" cx="90.13" cy="90.13" r="90.13"/>
+        <path class="cls-2" d="M60.73,175.36s29.4,13.52,58.81,0c0,0-29.4,10.97-58.81,0Z"/>
+      </g>
+      <g>
+        <ellipse class="cls-1" cx="59.82" cy="97.26" rx="12.31" ry="19.26"/>
+        <ellipse class="cls-3" cx="59.82" cy="97.26" rx="7.65" ry="11.97"/>
+        <ellipse class="cls-1" cx="54.62" cy="89.12" rx="2.45" ry="3.83"/>
+      </g>
+      <g>
+        <ellipse class="cls-1" cx="119.51" cy="97.23" rx="12.31" ry="19.26"/>
+        <ellipse class="cls-3" cx="119.85" cy="97.23" rx="7.65" ry="11.97"/>
+        <ellipse class="cls-1" cx="114.65" cy="89.08" rx="2.45" ry="3.83"/>
+      </g>
+      <path class="cls-6" d="M67.47,152.52c4.26-8.52,11.89-16.83,19.42-16.84,11.21-.02,25.62,5.24,23.59,24.5"/>
+      <path class="cls-5" d="M125.96,119.99l-3.24,10.89c-.28,2.63,1.67,4.73,3.63,4.8,2.07,.07,4.25-2.14,3.89-4.93-1.43-3.59-2.85-7.17-4.28-10.76Z"/>
+    </g>
+  </g>
+</svg>

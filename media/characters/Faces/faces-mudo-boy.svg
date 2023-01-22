@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.21 181.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #818285;
+      }
+
+      .cls-4 {
+        fill: #231f20;
+      }
+
+      .cls-5 {
+        fill: #595a5c;
+      }
+
+      .cls-3, .cls-6 {
+        stroke: #818285;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-6 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="faces-mudo">
+    <g>
+      <g>
+        <circle class="cls-5" cx="90.11" cy="90.11" r="90.11"/>
+        <path class="cls-2" d="M60.71,175.31s29.39,13.51,58.79,0c0,0-29.39,10.96-58.79,0Z"/>
+      </g>
+      <ellipse class="cls-1" cx="59.81" cy="97.69" rx="12.31" ry="19.25"/>
+      <ellipse class="cls-4" cx="59.81" cy="97.69" rx="7.65" ry="11.96"/>
+      <ellipse class="cls-1" cx="54.6" cy="89.55" rx="2.44" ry="3.82"/>
+      <ellipse class="cls-1" cx="119.87" cy="97.74" rx="12.31" ry="19.25"/>
+      <ellipse class="cls-4" cx="120.22" cy="97.74" rx="7.65" ry="11.96"/>
+      <ellipse class="cls-1" cx="115.01" cy="89.6" rx="2.44" ry="3.82"/>
+      <line class="cls-6" x1="51.52" y1="143.6" x2="122.54" y2="143.6"/>
+      <rect class="cls-3" x="57.32" y="144.4" width="7.73" height="5.72"/>
+      <rect class="cls-3" x="66" y="137.84" width="7.73" height="5.01"/>
+      <rect class="cls-3" x="74.31" y="144.43" width="7.73" height="5.72"/>
+      <rect class="cls-3" x="82.9" y="137.94" width="7.73" height="5.01"/>
+      <rect class="cls-3" x="90.99" y="144.35" width="7.73" height="5.72"/>
+      <rect class="cls-3" x="99.68" y="137.8" width="7.73" height="5.01"/>
+      <rect class="cls-3" x="107.99" y="144.38" width="7.73" height="5.72"/>
+      <path class="cls-3" d="M124.54,141.41c-2.14-.66-4.36,0-5.5,1.57-1.06,1.46-.8,3.16-.73,3.54,.77,2.08,1.82,4.47,3.26,7.02,1.44,2.54,2.94,4.67,4.32,6.4,3.21,1.36,6.91,.61,9.21-1.85,2.04-2.18,2.68-5.37,1.68-8.26-1.69-1.58-3.78-3.31-6.29-5-2.11-1.42-4.13-2.54-5.95-3.43Z"/>
+      <ellipse class="cls-5" cx="123.49" cy="146.18" rx="3.86" ry="3.77" transform="translate(-67.19 130.14) rotate(-45)"/>
+      <ellipse class="cls-5" cx="130.22" cy="153.18" rx="5.5" ry="4.86" transform="translate(-70.17 136.95) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

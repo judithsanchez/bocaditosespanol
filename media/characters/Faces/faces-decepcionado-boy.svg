@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.86 181.97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #818285;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+      }
+
+      .cls-4 {
+        fill: #595a5c;
+      }
+
+      .cls-5 {
+        fill: none;
+        stroke: #818285;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="faces-decepcionado">
+    <g>
+      <g>
+        <circle class="cls-4" cx="90.43" cy="90.43" r="90.43"/>
+        <path class="cls-2" d="M60.93,175.94s29.5,13.56,59,0c0,0-29.5,11-59,0Z"/>
+      </g>
+      <g>
+        <ellipse class="cls-1" cx="60.02" cy="97.83" rx="12.35" ry="19.32"/>
+        <ellipse class="cls-3" cx="60.02" cy="97.83" rx="7.68" ry="12.01"/>
+        <ellipse class="cls-1" cx="54.8" cy="89.67" rx="2.45" ry="3.84"/>
+      </g>
+      <g>
+        <ellipse class="cls-1" cx="120.3" cy="97.83" rx="12.35" ry="19.32"/>
+        <ellipse class="cls-3" cx="120.65" cy="97.83" rx="7.68" ry="12.01"/>
+        <ellipse class="cls-1" cx="115.43" cy="89.67" rx="2.45" ry="3.84"/>
+      </g>
+      <path class="cls-5" d="M67.7,153.42c4.27-8.55,11.93-16.89,19.48-16.9,11.24-.02,25.71,5.26,23.67,24.58"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.84 181.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #818285;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+      }
+
+      .cls-4 {
+        fill: #595a5c;
+      }
+
+      .cls-5 {
+        fill: none;
+        stroke: #818285;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="faces-picaro">
+    <g>
+      <circle class="cls-4" cx="90.42" cy="90.42" r="90.42"/>
+      <path class="cls-2" d="M60.92,175.92s29.5,13.56,58.99,0c0,0-29.5,11-58.99,0Z"/>
+      <g>
+        <ellipse class="cls-1" cx="60.01" cy="96.67" rx="12.35" ry="19.32"/>
+        <ellipse class="cls-3" cx="60.01" cy="96.67" rx="7.67" ry="12"/>
+        <ellipse class="cls-1" cx="54.79" cy="88.5" rx="2.45" ry="3.84"/>
+      </g>
+      <path class="cls-1" d="M60.01,136.45s23.7,8.03,60.28,0c0,0-13.92,21.84-30.14,21.45,0,0-17.79,.49-30.14-21.45Z"/>
+      <path class="cls-5" d="M131.17,84.81c-3.54,.26-8.87,1.07-14.8,3.67-5.54,2.43-9.54,5.52-12.09,7.82,4.25-.96,9.98-1.78,16.71-1.42,4.53,.24,8.49,.96,11.73,1.78"/>
+    </g>
+  </g>
+</svg>

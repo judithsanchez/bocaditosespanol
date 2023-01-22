@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.64 180.74">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #818285;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #818285;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: #231f20;
+      }
+
+      .cls-5 {
+        fill: #595a5c;
+      }
+    </style>
+  </defs>
+  <g id="faces-sorprendido">
+    <g>
+      <g>
+        <circle class="cls-5" cx="89.82" cy="89.82" r="89.82"/>
+        <path class="cls-2" d="M60.52,174.76s29.3,13.47,58.6,0c0,0-29.3,10.93-58.6,0Z"/>
+      </g>
+      <g>
+        <ellipse class="cls-3" cx="59.62" cy="94.44" rx="12.27" ry="19.19"/>
+        <ellipse class="cls-4" cx="59.62" cy="94.44" rx="7.62" ry="11.92"/>
+        <ellipse class="cls-3" cx="54.43" cy="86.33" rx="2.44" ry="3.81"/>
+      </g>
+      <g>
+        <ellipse class="cls-3" cx="119.49" cy="94.44" rx="12.27" ry="19.19"/>
+        <ellipse class="cls-4" cx="119.83" cy="94.44" rx="7.62" ry="11.92"/>
+        <ellipse class="cls-3" cx="114.65" cy="86.33" rx="2.44" ry="3.81"/>
+      </g>
+      <ellipse class="cls-1" cx="91.9" cy="144.74" rx="9.54" ry="14.94"/>
+    </g>
+  </g>
+</svg>
