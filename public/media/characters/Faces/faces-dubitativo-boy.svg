@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.61 180.71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #818285;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+      }
+
+      .cls-4 {
+        fill: #595a5c;
+      }
+    </style>
+  </defs>
+  <g id="faces-dubitativo">
+    <g>
+      <g>
+        <circle class="cls-4" cx="89.8" cy="89.8" r="89.8"/>
+        <path class="cls-2" d="M60.51,174.72s29.3,13.47,58.59,0c0,0-29.29,10.93-58.59,0Z"/>
+      </g>
+      <ellipse class="cls-1" cx="60.36" cy="97.27" rx="12.27" ry="19.19"/>
+      <ellipse class="cls-3" cx="63.29" cy="92.45" rx="7.62" ry="11.92"/>
+      <ellipse class="cls-1" cx="58.11" cy="84.34" rx="2.44" ry="3.81"/>
+      <ellipse class="cls-1" cx="119.99" cy="97.27" rx="12.27" ry="19.19"/>
+      <ellipse class="cls-3" cx="123.27" cy="92.45" rx="7.62" ry="11.92"/>
+      <ellipse class="cls-1" cx="118.08" cy="84.34" rx="2.44" ry="3.81"/>
+      <ellipse class="cls-2" cx="95.14" cy="144.96" rx="4.69" ry="6.76"/>
+    </g>
+  </g>
+</svg>

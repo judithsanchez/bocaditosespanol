@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.83 180.93">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #818285;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+      }
+
+      .cls-4 {
+        fill: #595a5c;
+      }
+    </style>
+  </defs>
+  <g id="faces-feliz">
+    <g>
+      <g>
+        <circle class="cls-4" cx="89.91" cy="89.91" r="89.91"/>
+        <path class="cls-2" d="M60.72,174.93s29.33,13.48,58.66,0c0,0-29.33,10.94-58.66,0Z"/>
+      </g>
+      <ellipse class="cls-1" cx="59.99" cy="96.54" rx="12.19" ry="19.06"/>
+      <ellipse class="cls-3" cx="59.99" cy="96.54" rx="7.57" ry="11.84"/>
+      <ellipse class="cls-1" cx="54.83" cy="88.48" rx="2.42" ry="3.79"/>
+      <ellipse class="cls-1" cx="119.45" cy="96.54" rx="12.19" ry="19.06"/>
+      <ellipse class="cls-3" cx="119.79" cy="96.54" rx="7.57" ry="11.84"/>
+      <ellipse class="cls-1" cx="114.64" cy="88.48" rx="2.42" ry="3.79"/>
+      <path class="cls-1" d="M59.99,134.94s23.38,7.92,59.46,0c0,0-13.74,21.54-29.73,21.16,0,0-17.55,.49-29.73-21.16Z"/>
+    </g>
+  </g>
+</svg>
