@@ -1,39 +1,4 @@
-* {
-  box-sizing: border-box;
-  font-size: 62.5%;
-  margin: 0;
-  padding: 0;
-
-  /* Modes */
-  --light-mode: white;
-  --dark-mode: #444444;
-
-  /* Text */
-  --light-mode-text: black;
-
-  --bocaditos-grey: #464646;
-  --bocaditos-dark-yellow: #ffd600;
-  --main-color: #47d8e0;
-  --mint-accent: #6deebb;
-  --purple-accent: #7f7dcf;
-  --bocaditos-black: #000000;
-  --bocaditos-white: #ffffff;
-  --pink-accent: #db4d89;
-  --wine-accent: #a82f62;
-  --celeste-accent: #50abaf;
-  --dark-purple-accent: #686896;
-  --dark-mint-accent: #5dcb9a;
-  --light-grey-accent: #c6c2c2;
-
-  /* Characters */
-  --characters-light-grey: #818285;
-  --characters-white: #ffffff;
-  --characters-black: #231f20;
-  --characters-blue-features: #60c8d4;
-  --characters-humans: #595a5c;
-}
-
 .App {
-  background-color: var(--light-mode);
+  background-color: var(--current-mode);
   width: 100vw;
 }
