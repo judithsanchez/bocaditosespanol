@@ -1,37 +1,32 @@
 .Homepage {
   align-items: center;
+  color: var(--current-mode-text);
   display: flex;
   flex-flow: column nowrap;
   margin: 0 auto;
   text-align: center;
 }
 
-.first-vp {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  color: var(--current-mode-text);
+.Homepage p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 2.5rem;
+  text-align: center;
+  width: 95%;
 }
 
-.first-vp h1 {
-  font-size: 2rem;
+.Homepage h1 {
+  font-size: 2.4rem;
   font-weight: 600;
   margin: 3.5rem 0;
 }
 
-.first-vp img {
+.Homepage img {
   margin-bottom: 2.5rem;
 }
 
-.first-vp p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-top: 2.5rem;
-  width: 90%;
-}
-
-.first-vp h2 {
-  font-size: 1.6rem;
+.Homepage h2 {
+  font-size: 2rem;
   font-weight: 500;
 }
 
@@ -67,4 +62,87 @@
 
 #music-card {
   background-image: url(/src/components/Homepage/assets/icon-musical-note.svg);
+}
+
+.Homepage h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  width: 95%;
+}
+
+.homepage-separator {
+  background-color: var(--bocaditos-dark-yellow);
+  border-radius: 0.3rem;
+  height: 0.3rem;
+  margin: 2.5rem 0;
+  width: 40%;
+}
+
+.separator-left {
+  align-self: flex-start;
+  margin-left: 2.5rem;
+}
+
+.separator-right {
+  align-self: flex-end;
+  margin-right: 2.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .Homepage h1 {
+    font-size: 2.4rem;
+  }
+
+  .Homepage img {
+    margin-bottom: 2.5rem;
+    width: 40%;
+  }
+
+  .Homepage p {
+    font-size: 1.6rem;
+  }
+
+  .homepage-card {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  .homepage-cards {
+    height: 20rem;
+  }
+
+  .Homepage h2 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .Homepage h1 {
+    font-size: 3.2rem;
+  }
+
+  .Homepage img {
+    width: 30%;
+  }
+
+  .Homepage p {
+    font-size: 2rem;
+    width: 80%;
+  }
+
+  .homepage-card {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .homepage-cards {
+    height: 25em;
+    justify-content: space-evenly;
+    margin: 2.5rem 0;
+    width: 100%;
+  }
+
+  .Homepage h2 {
+    font-size: 3rem;
+  }
 }

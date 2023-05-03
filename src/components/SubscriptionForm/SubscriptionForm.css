@@ -30,3 +30,24 @@
   padding-top: 0.5rem;
   width: 1.5rem;
 }
+
+@media only screen and (min-width: 768px) {
+  .SubscriptionForm input {
+    height: 3rem;
+    width: 30rem;
+  }
+
+  .SubscriptionForm button {
+    height: 3.2rem;
+    width: 7rem;
+  }
+
+  .SubscriptionForm button img {
+    height: 1.5rem;
+    padding-top: 0.7rem;
+    width: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+}

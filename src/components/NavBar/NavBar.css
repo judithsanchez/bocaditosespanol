@@ -7,6 +7,9 @@
   height: 4rem;
   justify-content: space-between;
   padding: 0 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .NavBar ul {
