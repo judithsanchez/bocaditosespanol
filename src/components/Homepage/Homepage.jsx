@@ -18,7 +18,7 @@ function Homepage() {
           on our latest updates, subscribe now!
         </p>
 
-        <div>
+        <div className="homepage-cards">
           <div className="homepage-card" id="lessons-card"></div>
           <div className="homepage-card" id="youtube-card"></div>
           <div className="homepage-card" id="music-card"></div>

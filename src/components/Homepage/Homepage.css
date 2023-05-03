@@ -4,7 +4,6 @@
   flex-flow: column nowrap;
   margin: 0 auto;
   text-align: center;
-  width: 90%;
 }
 
 .first-vp {
@@ -27,9 +26,45 @@
 .first-vp p {
   font-size: 1.2rem;
   font-weight: 400;
+  margin-top: 2.5rem;
+  width: 90%;
 }
 
 .first-vp h2 {
   font-size: 1.6rem;
   font-weight: 500;
+}
+
+.homepage-cards {
+  background: linear-gradient(to top, var(--main-color) 55%, transparent 45%);
+  display: flex;
+  flex-flow: row nowrap;
+  height: 12.5rem;
+  justify-content: space-around;
+  margin: 2.5rem 0;
+  width: 100%;
+}
+
+.homepage-card {
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 55%;
+  border-radius: 1rem;
+  cursor: pointer;
+  filter: drop-shadow(2px 1px 6px rgba(0, 0, 0, 0.25));
+  height: 10rem;
+  width: 10rem;
+}
+
+#lessons-card {
+  background-image: url(/src/components/Homepage/assets/icon-books-stack.svg);
+}
+
+#youtube-card {
+  background-image: url(/src/components/Homepage/assets/icon-youtube.svg);
+}
+
+#music-card {
+  background-image: url(/src/components/Homepage/assets/icon-musical-note.svg);
 }

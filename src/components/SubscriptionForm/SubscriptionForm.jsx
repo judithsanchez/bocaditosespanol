@@ -4,7 +4,7 @@ import '/src/components/SubscriptionForm/SubscriptionForm.css';
 function SubscriptionForm() {
   return (
     <form className="SubscriptionForm">
-      <input type="text" />
+      <input placeholder="youremail@domain.com" type="text" />
       <button>
         <img
           src="/src/components/SubscriptionForm/assets/icon-envelope.svg"

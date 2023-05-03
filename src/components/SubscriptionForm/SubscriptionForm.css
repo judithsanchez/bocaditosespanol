@@ -6,7 +6,11 @@
 .SubscriptionForm input {
   border: none;
   box-shadow: var(--current-mode-box-shadow);
+  font-size: 1.2rem;
+  font-weight: 100;
   height: 2.5rem;
+  outline: none;
+  text-align: center;
   width: 20rem;
 }
 
