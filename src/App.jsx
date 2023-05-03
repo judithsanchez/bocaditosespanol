@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import '/src/App.css';
 import NavBar from './components/NavBar/NavBar';
+import Homepage from './components/Homepage/Homepage';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -38,6 +39,7 @@ function App() {
   return (
     <div className="App">
       <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
+      <Homepage></Homepage>
     </div>
   );
 }

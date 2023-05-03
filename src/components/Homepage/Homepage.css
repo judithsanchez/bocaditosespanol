@@ -1,0 +1,35 @@
+.Homepage {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+}
+
+.first-vp {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  color: var(--current-mode-text);
+}
+
+.first-vp h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 3.5rem 0;
+}
+
+.first-vp img {
+  margin-bottom: 2.5rem;
+}
+
+.first-vp p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.first-vp h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}

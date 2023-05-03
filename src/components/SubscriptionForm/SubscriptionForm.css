@@ -1,0 +1,28 @@
+.SubscriptionForm {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.SubscriptionForm input {
+  border: none;
+  box-shadow: var(--current-mode-box-shadow);
+  height: 2.5rem;
+  width: 20rem;
+}
+
+.SubscriptionForm button {
+  background-color: var(--purple-accent);
+  border: none;
+  box-shadow: var(--current-mode-box-shadow);
+  display: flex;
+  cursor: pointer;
+  height: 2.7rem;
+  justify-content: center;
+  width: 5rem;
+}
+
+.SubscriptionForm button img {
+  height: 1.2rem;
+  padding-top: 0.5rem;
+  width: 1.5rem;
+}
