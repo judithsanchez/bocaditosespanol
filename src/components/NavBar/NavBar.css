@@ -33,7 +33,7 @@
 
 @media only screen and (min-width: 768px) {
   .NavBar {
-    height: 6rem;
+    height: 5rem;
     padding: 0 4.5rem;
   }
 
@@ -43,20 +43,5 @@
 
   .NavBar img {
     width: 3.5rem;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .NavBar {
-    height: 8rem;
-    padding: 0 5rem;
-  }
-
-  .NavBar li {
-    font-size: 2rem;
-  }
-
-  .NavBar img {
-    width: 5rem;
   }
 }

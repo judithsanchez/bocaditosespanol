@@ -6,7 +6,11 @@ function Homepage() {
   return (
     <div className="Homepage">
       <h1>Learn Spanish in Small Bites!</h1>
-      <img src="/src/components/Homepage/assets/icon-teaching.svg" alt="" />
+      <img
+        className="main-icon"
+        src="/src/components/Homepage/assets/icon-teaching.svg"
+        alt=""
+      />
 
       <SubscriptionForm></SubscriptionForm>
 
@@ -91,8 +95,6 @@ function Homepage() {
         success. Learning Spanish will not only open professional doors but also
         a whole new world of different cultures to explore.
       </p>
-
-      {/* sasdsa */}
 
       <div className="homepage-separator separator-left"></div>
       <img

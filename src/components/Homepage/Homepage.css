@@ -44,7 +44,7 @@
   background-color: white;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 55%;
+  background-size: 40%;
   border-radius: 1rem;
   cursor: pointer;
   filter: drop-shadow(2px 1px 6px rgba(0, 0, 0, 0.25));
@@ -80,26 +80,29 @@
 
 .separator-left {
   align-self: flex-start;
-  margin-left: 2.5rem;
+  margin-left: 2rem;
 }
 
 .separator-right {
   align-self: flex-end;
-  margin-right: 2.5rem;
+  margin-right: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .Homepage h1 {
-    font-size: 2.4rem;
+  .Homepage {
+    width: 80%;
   }
 
-  .Homepage img {
-    margin-bottom: 2.5rem;
-    width: 40%;
+  .main-icon {
+    width: 70%;
   }
 
   .Homepage p {
     font-size: 1.6rem;
+  }
+
+  .homepage-cards {
+    height: 20rem;
   }
 
   .homepage-card {
@@ -107,42 +110,19 @@
     width: 15rem;
   }
 
-  .homepage-cards {
-    height: 20rem;
+  .homepage-separator {
+    border-radius: 0.5rem;
+    height: 0.5rem;
+    margin: 5rem 0;
   }
 
-  .Homepage h2 {
-    font-size: 2rem;
+  .Homepage img {
+    width: 40%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .Homepage h1 {
-    font-size: 3.2rem;
-  }
-
-  .Homepage img {
-    width: 30%;
-  }
-
-  .Homepage p {
-    font-size: 2rem;
-    width: 80%;
-  }
-
-  .homepage-card {
-    height: 20rem;
-    width: 20rem;
-  }
-
-  .homepage-cards {
-    height: 25em;
-    justify-content: space-evenly;
-    margin: 2.5rem 0;
-    width: 100%;
-  }
-
-  .Homepage h2 {
-    font-size: 3rem;
+  .Homepage {
+    width: 60%;
   }
 }
