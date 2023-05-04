@@ -1,0 +1,14 @@
+.Footer {
+  align-items: center;
+  background-color: var(--main-color);
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  height: 20rem;
+  margin-top: 2.5rem;
+}
+
+.Footer p {
+  font-size: 1.6rem;
+}

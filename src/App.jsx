@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import '/src/App.css';
 import NavBar from './components/NavBar/NavBar';
 import Homepage from './components/Homepage/Homepage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -40,6 +41,7 @@ function App() {
     <div className="App">
       <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
       <Homepage></Homepage>
+      <Footer></Footer>
     </div>
   );
 }
