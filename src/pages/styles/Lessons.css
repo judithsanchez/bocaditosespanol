@@ -8,4 +8,39 @@
 
 .LessonsPage h1 {
   color: var(--current-mode-text);
+  font-weight: 300;
+}
+
+.lessons-container {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.lesson-thumbnail {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  height: 35.5rem;
+  margin: 2.5rem 5rem;
+  padding: 0;
+  width: 23.5rem;
+}
+
+.lesson-banner {
+  align-items: center;
+  display: flex;
+  height: 8.5rem;
+  justify-content: center;
+  margin: 0;
+  width: 23.1;
+}
+
+.lesson-banner h3 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
 }
