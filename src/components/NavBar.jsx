@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '/src/components/styles/NavBar.css';
+import { Link } from 'react-router-dom';
 
 function NavBar({ toggleMode, isDarkMode }) {
   const [modeButtonImg, setModeButtonImg] = useState(
@@ -27,9 +28,13 @@ function NavBar({ toggleMode, isDarkMode }) {
 
   return (
     <nav className="NavBar">
-      <img src={mainLogoImg} alt="Main Bocaditos Logo" />
+      <Link to="/">
+        <img src={mainLogoImg} alt="Main Bocaditos Logo" />
+      </Link>
       <ul>
-        <li>Lessons</li>
+        <li>
+          <Link to="/lessons">Lessons</Link>
+        </li>
         <li>Games</li>
         <li>Practice</li>
       </ul>

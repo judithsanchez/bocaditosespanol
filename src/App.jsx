@@ -1,9 +1,16 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-import '/src/App.css';
-import NavBar from './components/NavBar';
+import { Switch as RouterSwitch, Route, BrowserRouter } from 'react-router-dom';
+
+// Pages
 import Homepage from './pages/Homepage';
+import Lessons from './pages/Lessons';
+
+// Styles
+import '/src/App.css';
+
+// Components
+import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
 function App() {
@@ -38,11 +45,16 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
-      <Homepage></Homepage>
-      <Footer></Footer>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
+        <RouterSwitch>
+          <Route path="/" exact component={Homepage} />
+          <Route path="/lessons" component={Lessons} />
+        </RouterSwitch>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
