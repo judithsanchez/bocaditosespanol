@@ -35,8 +35,12 @@ function NavBar({ toggleMode, isDarkMode }) {
         <li>
           <Link to="/lessons">Lessons</Link>
         </li>
-        <li>Games</li>
-        <li>Practice</li>
+        <li>
+          <Link to="/games">Games</Link>
+        </li>
+        <li>
+          <Link to="/practice">Practice</Link>
+        </li>
       </ul>
       <img
         src={modeButtonImg}

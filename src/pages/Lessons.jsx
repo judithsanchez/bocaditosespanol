@@ -1,19 +1,18 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-
-// Pages
+import { useState, useEffect } from 'react';
 
 // Styles
-import '/src/App.css';
+import '/src/pages/styles/Lessons.css';
 
 // Components
+import LessonsSearch from '/src/components/LessonsSearch.jsx';
 
-function App() {
+function Lessons() {
   return (
     <div className="LessonsPage">
-      <p>This is the lesson page</p>
+      <h1>Learn Spanish One Bite at a Time</h1>
+      <LessonsSearch></LessonsSearch>
     </div>
   );
 }
 
-export default App;
+export default Lessons;

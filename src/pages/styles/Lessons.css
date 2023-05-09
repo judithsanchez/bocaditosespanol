@@ -1,0 +1,11 @@
+.LessonsPage {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.LessonsPage h1 {
+  color: var(--current-mode-text);
+}

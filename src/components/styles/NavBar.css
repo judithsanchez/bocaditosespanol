@@ -14,7 +14,6 @@
 
 .NavBar ul {
   display: flex;
-  color: var(--current-mode-text);
   flex-flow: row nowrap;
   justify-content: space-evenly;
   list-style: none;
@@ -25,6 +24,11 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: 300;
+}
+
+.NavBar a {
+  color: var(--current-mode-text);
+  text-decoration: none;
 }
 
 .NavBar img {

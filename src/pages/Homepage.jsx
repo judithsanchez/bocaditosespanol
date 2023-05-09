@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '/src/pages/styles/Homepage.css';
 import SubscriptionForm from '/src/components/SubscriptionForm.jsx';
 

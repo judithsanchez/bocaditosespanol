@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-
 import { Switch as RouterSwitch, Route, BrowserRouter } from 'react-router-dom';
 
 // Pages
 import Homepage from './pages/Homepage';
 import Lessons from './pages/Lessons';
+import Practice from './pages/Practice';
+import Games from './pages/Games';
 
 // Styles
 import '/src/App.css';
@@ -51,6 +52,8 @@ function App() {
         <RouterSwitch>
           <Route exact path="/" render={() => <Homepage />} />
           <Route exact path="/lessons" render={() => <Lessons />} />
+          <Route exact path="/practice" render={() => <Practice />} />
+          <Route exact path="/games" render={() => <Games />} />
         </RouterSwitch>
         <Footer />
       </div>

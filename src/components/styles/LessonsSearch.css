@@ -1,0 +1,29 @@
+.LessonsSearch {
+  background: #ffffff;
+  box-shadow: 2px 3px 3px -2px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 3rem;
+  margin: 2.5rem 0;
+  width: 25rem;
+}
+
+.LessonsSearch input {
+  background-color: white;
+  border: none;
+  border-radius: 15px 0 0 15px;
+  margin: 0;
+  outline: none;
+  text-align: center;
+  width: 20rem;
+}
+
+.LessonsSearch button {
+  background-color: white;
+  border: none;
+  border-radius: 0px 15px 15px 0px;
+  cursor: pointer;
+  margin: 0;
+  width: 5rem;
+}
