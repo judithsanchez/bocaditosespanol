@@ -49,8 +49,8 @@ function App() {
       <div className="App">
         <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
         <RouterSwitch>
-          <Route path="/" exact component={Homepage} />
-          <Route path="/lessons" component={Lessons} />
+          <Route exact path="/" render={() => <Homepage />} />
+          <Route exact path="/lessons" render={() => <Lessons />} />
         </RouterSwitch>
         <Footer />
       </div>
