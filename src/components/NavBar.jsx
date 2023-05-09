@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
-import '/src/components/NavBar/NavBar.css';
+import '/src/components/styles/NavBar.css';
 
 function NavBar({ toggleMode, isDarkMode }) {
   const [modeButtonImg, setModeButtonImg] = useState(
-    '/src/components/NavBar/assets/button-to-dark-mode.svg'
+    '/src/components/assets/nav-bar/button-to-dark-mode.svg'
   );
 
   const [mainLogoImg, setmainLogoImg] = useState(
-    '/src/components/NavBar/assets/logo-main-grey.svg'
+    '/src/components/assets/nav-bar/logo-main-grey.svg'
   );
 
   const handleModeChange = () => {
     toggleMode();
     if (!isDarkMode) {
       setModeButtonImg(
-        '/src/components/NavBar/assets/button-to-light-mode.svg'
+        '/src/components/assets/nav-bar/button-to-light-mode.svg'
       );
-      setmainLogoImg('/src/components/NavBar/assets/logo-main-white.svg');
+      setmainLogoImg('/src/components/assets/nav-bar/logo-main-white.svg');
     } else {
-      setModeButtonImg('/src/components/NavBar/assets/button-to-dark-mode.svg');
-      setmainLogoImg('/src/components/NavBar/assets/logo-main-grey.svg');
+      setModeButtonImg(
+        '/src/components/assets/nav-bar/button-to-dark-mode.svg'
+      );
+      setmainLogoImg('/src/components/assets/nav-bar/logo-main-grey.svg');
     }
   };
 

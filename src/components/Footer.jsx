@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import '/src/components/Footer/Footer.css';
-import SubscriptionForm from '/src/components/SubscriptionForm/SubscriptionForm';
+import '/src/components/styles/Footer.css';
+import SubscriptionForm from '/src/components/SubscriptionForm.jsx';
 
 function Footer() {
   return (

@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 import '/src/App.css';
-import NavBar from './components/NavBar/NavBar';
-import Homepage from './components/Homepage/Homepage';
-import Footer from './components/Footer/Footer';
+import NavBar from './components/NavBar';
+import Homepage from './pages/Homepage';
+import Footer from './components/Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);

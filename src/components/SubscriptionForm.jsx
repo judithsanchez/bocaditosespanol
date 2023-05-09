@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '/src/components/SubscriptionForm/SubscriptionForm.css';
+import '/src/components/styles/SubscriptionForm.css';
 
 function SubscriptionForm() {
   return (
@@ -7,7 +7,7 @@ function SubscriptionForm() {
       <input placeholder="youremail@domain.com" type="text" />
       <button>
         <img
-          src="/src/components/SubscriptionForm/assets/icon-envelope.svg"
+          src="/src/components/assets/subscription-form/icon-envelope.svg"
           alt=""
         />
       </button>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '/src/components/Homepage/Homepage.css';
-import SubscriptionForm from '/src/components/SubscriptionForm/SubscriptionForm';
+import '/src/pages/styles/Homepage.css';
+import SubscriptionForm from '/src/components/SubscriptionForm.jsx';
 
 function Homepage() {
   return (
@@ -8,8 +8,8 @@ function Homepage() {
       <h1>Learn Spanish in Small Bites!</h1>
       <img
         className="main-icon"
-        src="/src/components/Homepage/assets/icon-teaching.svg"
-        alt=""
+        src="/src/pages/assets/homepage/icon-teaching.svg"
+        alt="Bocadito Teaching"
       />
 
       <SubscriptionForm></SubscriptionForm>
@@ -39,7 +39,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-left"></div>
       <img
-        src="/src/components/Homepage/assets/icon-globe-books-tablet-with-background.svg"
+        src="/src/pages/assets/homepage/icon-globe-books-tablet-with-background.svg"
         alt="Globe,books and tablet"
       />
       <h3>Are You Just Starting to Learn Spanish?</h3>
@@ -53,7 +53,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-right"></div>
       <img
-        src="/src/components/Homepage/assets/icon-tablet-branches-with-background.svg"
+        src="/src/pages/assets/homepage/icon-tablet-branches-with-background.svg"
         alt="Tablet and branche"
       />
       <h3>What If You Have Already Been Learning Spanish for Some Time?</h3>
@@ -67,7 +67,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-left"></div>
       <img
-        src="/src/components/Homepage/assets/icon-global-tablet-with-background.svg"
+        src="/src/pages/assets/homepage/icon-global-tablet-with-background.svg"
         alt="Globe and tablet"
       />
       <h3>Learning Spanish Without Borders</h3>
@@ -84,7 +84,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-right"></div>
       <img
-        src="/src/components/Homepage/assets/icon-suitcase-heart-briefcase-with-background.svg"
+        src="/src/pages/assets/homepage/icon-suitcase-heart-briefcase-with-background.svg"
         alt="Suitcase and briefcase"
       />
       <h3>Any Reasons is Perfect to Learn a New Language</h3>
@@ -98,7 +98,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-left"></div>
       <img
-        src="/src/components/Homepage/assets/icon-kids-studying-with-background.svg"
+        src="/src/pages/assets/homepage/icon-kids-studying-with-background.svg"
         alt="Kid with tablet"
       />
       <h3>
@@ -114,7 +114,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-right"></div>
       <img
-        src="/src/components/Homepage/assets/icon-heart-medical-kit-with-background.svg"
+        src="/src/pages/assets/homepage/icon-heart-medical-kit-with-background.svg"
         alt="Medical Spanish"
       />
       <h3>Expanding your Knowledge While Learning Spanish!</h3>

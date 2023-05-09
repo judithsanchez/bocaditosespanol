@@ -53,15 +53,15 @@
 }
 
 #lessons-card {
-  background-image: url(/src/components/Homepage/assets/icon-books-stack.svg);
+  background-image: url(/src/pages/assets/homepage/icon-books-stack.svg);
 }
 
 #youtube-card {
-  background-image: url(/src/components/Homepage/assets/icon-youtube.svg);
+  background-image: url(/src/pages/assets/homepage/icon-youtube.svg);
 }
 
 #music-card {
-  background-image: url(/src/components/Homepage/assets/icon-musical-note.svg);
+  background-image: url(/src/pages/assets/homepage/icon-musical-note.svg);
 }
 
 .Homepage h3 {
