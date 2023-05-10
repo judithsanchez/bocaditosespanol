@@ -23,25 +23,13 @@ function Lesson({ selectedLesson }) {
     if (currentStep === lesson?.steps.length - 1) {
       return;
     }
-
-    const currentStepObject = lesson?.steps[currentStep];
-
-    if (currentStepObject.keys) {
-      keyPoints.push(...currentStepObject.keys);
-    }
-
-    if (currentStepObject.examples) {
-      examples.push(...currentStepObject.examples);
-    } else {
-      examples.push([]);
-    }
-
     setCurrentStep(currentStep + 1);
   };
 
   useEffect(() => {
-    setKeyPoints(lesson?.steps[currentStep].keys || []);
-    setExamples(lesson?.steps[currentStep].examples || []);
+    const currentStepObject = lesson?.steps[currentStep];
+    setKeyPoints(currentStepObject?.keys || []);
+    setExamples(currentStepObject?.examples || []);
   }, [currentStep, lesson]);
 
   return (
@@ -73,23 +61,33 @@ function Lesson({ selectedLesson }) {
       </div>
 
       <div className="teacher-container">
-        <img
-          className="navigation-arrow"
-          src="/src/pages/assets/lessons/icon-previous-arrow.svg"
-          alt="Icon previous arrow"
-          onClick={() => previousStep()}
-        />
+        <div className="arrow-container">
+          {currentStep > 0 && (
+            <img
+              className="navigation-arrow"
+              src="/src/pages/assets/lessons/icon-previous-arrow.svg"
+              alt="Icon previous arrow"
+              onClick={() => previousStep()}
+            />
+          )}
+        </div>
+
         <img
           className="teacher-image"
           src="/src/pages/assets/lessons/teacher-intro.svg"
           alt="Teacher explaining"
         />
-        <img
-          className="navigation-arrow"
-          src="/src/pages/assets/lessons/icon-next-arrow.svg"
-          alt="Icon next arrow"
-          onClick={() => nextStep()}
-        />
+
+        <div className="arrow-container">
+          {currentStep !== lesson?.steps.length - 1 && (
+            <img
+              className="navigation-arrow"
+              src="/src/pages/assets/lessons/icon-next-arrow.svg"
+              alt="Icon next arrow"
+              onClick={() => nextStep()}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
