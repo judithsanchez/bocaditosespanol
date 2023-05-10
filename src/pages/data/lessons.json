@@ -1,9 +1,80 @@
 [
   {
+    "subject": "Verb SER",
+    "difficulty": 3,
+    "activity": "/practice/when/use/ser",
+    "intro": "The big problem that students have with the verb TO BE is that in Spanish it can be translated in several different ways. Today you will learn one, the verb SER.",
+    "final": "Well done! Now, it’s time to practice!",
     "title": "When to use SER?",
     "thumbnail": "/src/pages/assets/lessons/lesson-topic-banner.svg",
-    "url": "when-use-ser"
+    "url": "when-use-ser",
+    "steps": [
+      {
+        "explanation": "In the same way that you cannot say in English 'I drink a sandwich', in Spanish you must also use the correct verb for what you want to say. So you ALWAYS have to use the verb SER to express the following ideas:",
+        "examples": [],
+        "keys": [],
+        "image": "/src/pages/assets/lessons/teacher-intro.svg"
+      },
+      {
+        "explanation": "To talk about the nationality/origin of something/someone.",
+        "examples": [
+          "Yo soy de Venezuela",
+          "Mi familia de España",
+          "Los músicos son brasileros"
+        ],
+        "keys": ["Nationality and origin"]
+      },
+      {
+        "explanation": "To talk about job, occupation and avocation.",
+        "examples": [
+          "Soy profesora de español",
+          "Nosotros somos voluntarios en una fundación",
+          "Usted es policía"
+        ],
+        "keys": [
+          "Job, occupation and avocation",
+          "We don't use un/una before the adjective"
+        ]
+      },
+      {
+        "explanation": "To talk about relationships, whether you think are permanent or not.",
+        "examples": [
+          "Ellos son amigos",
+          "Somos pareja",
+          "La empresa es socia de otra compañía"
+        ],
+        "keys": ["Relationships"]
+      },
+      {
+        "explanation": "To talk about who owns what.",
+        "examples": [
+          "El coche es de mi hermano",
+          "La casa es mía",
+          "La tienda es de ellos"
+        ],
+        "keys": ["Possession"]
+      },
+      {
+        "explanation": "To talk about date and time.",
+        "examples": [
+          "Hoy es lunes",
+          "Son las seis de la tarde",
+          "El cumpleaños es el 5 de mayo"
+        ],
+        "keys": ["Date and time"]
+      },
+      {
+        "explanation": "To talk about location of events.",
+        "examples": [
+          "La fiesta es en mi casa",
+          "La reunión es en el restaurante",
+          "El concierto es en el parque"
+        ],
+        "keys": ["Location of events"]
+      }
+    ]
   },
+
   {
     "title": "When to use ESTAR?",
     "thumbnail": "/src/pages/assets/lessons/lesson-topic-banner.svg",

@@ -1,0 +1,45 @@
+.LessonPage {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.explanation {
+  background-color: var(--mint-accent);
+  height: 10rem;
+  width: 36.4rem;
+}
+
+.content {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 41.3rem;
+  width: 36.4rem;
+}
+
+.keys {
+  background-color: var(--pink-accent);
+  height: 41.3rem;
+  width: 18.2rem;
+}
+
+.examples {
+  background-color: var(--purple-accent);
+  height: 41.3rem;
+  width: 18.2rem;
+}
+
+.teacher-container {
+  background-image: url(/src/pages/assets/lessons/lesson-floor.svg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -17rem;
+  width: 100%;
+}
+
+.teacher-image {
+  margin-bottom: 1rem;
+}

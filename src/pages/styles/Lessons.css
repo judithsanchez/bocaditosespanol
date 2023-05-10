@@ -8,7 +8,7 @@
 
 .LessonsPage h1 {
   color: var(--current-mode-text);
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .lessons-container {

@@ -5,6 +5,7 @@ import '/src/pages/styles/Lessons.css';
 
 // Components
 import LessonsSearch from '/src/components/LessonsSearch.jsx';
+import Lesson from '/src/pages/Lesson.jsx';
 
 function Lessons() {
   const [lessons, setLessons] = useState([]);
@@ -27,6 +28,7 @@ function Lessons() {
 
   return (
     <div className="LessonsPage">
+      <Lesson></Lesson>
       <h1>Learn Spanish One Bite at a Time</h1>
       <LessonsSearch />
       <div className="lessons-container">
