@@ -7,18 +7,42 @@ import '/src/pages/styles/Lesson.css';
 
 function Lesson({ selectedLesson }) {
   const lesson = selectedLesson;
-  // const steps = lesson?.steps;
-  // const numberOfSteps = lesson?.steps.length;
 
   const [currentStep, setCurrentStep] = useState(0);
+  const [keyPoints, setKeyPoints] = useState([]);
+  const [examples, setExamples] = useState([]);
 
   const previousStep = () => {
+    if (currentStep === 0) {
+      return;
+    }
     setCurrentStep(currentStep - 1);
   };
 
   const nextStep = () => {
+    if (currentStep === lesson?.steps.length - 1) {
+      return;
+    }
+
+    const currentStepObject = lesson?.steps[currentStep];
+
+    if (currentStepObject.keys) {
+      keyPoints.push(...currentStepObject.keys);
+    }
+
+    if (currentStepObject.examples) {
+      examples.push(...currentStepObject.examples);
+    } else {
+      examples.push([]);
+    }
+
     setCurrentStep(currentStep + 1);
   };
+
+  useEffect(() => {
+    setKeyPoints(lesson?.steps[currentStep].keys || []);
+    setExamples(lesson?.steps[currentStep].examples || []);
+  }, [currentStep, lesson]);
 
   return (
     <div className="LessonPage">
@@ -31,9 +55,19 @@ function Lesson({ selectedLesson }) {
         <div className="content">
           <div className="keys">
             <h3>Key Points</h3>
+            {keyPoints.map((point, index) => (
+              <p className="point" key={index}>
+                {point}
+              </p>
+            ))}
           </div>
           <div className="examples">
             <h3>Examples</h3>
+            {examples.map((example, index) => (
+              <p className="example" key={index}>
+                {example}
+              </p>
+            ))}
           </div>
         </div>
       </div>
@@ -48,7 +82,7 @@ function Lesson({ selectedLesson }) {
         <img
           className="teacher-image"
           src="/src/pages/assets/lessons/teacher-intro.svg"
-          alt="Teacer explainig"
+          alt="Teacher explaining"
         />
         <img
           className="navigation-arrow"
