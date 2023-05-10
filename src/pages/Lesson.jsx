@@ -7,10 +7,12 @@ import '/src/pages/styles/Lesson.css';
 
 // Components
 
-function Lesson() {
+function Lesson({ selectedLesson }) {
+  console.log(selectedLesson);
+  console.log(typeof selectedLesson);
   return (
     <div className="LessonPage">
-      <h1>Verb SER</h1>
+      {/* <h1>{selectedLesson.subject}</h1> */}
       <div className="body">
         <div className="explanation"></div>
 

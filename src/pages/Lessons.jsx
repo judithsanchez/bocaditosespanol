@@ -9,6 +9,7 @@ import Lesson from '/src/pages/Lesson.jsx';
 
 function Lessons() {
   const [lessons, setLessons] = useState([]);
+  const [selectedLesson, setSelectedLesson] = useState();
 
   useEffect(() => {
     const fetchLessons = async () => {
@@ -26,9 +27,13 @@ function Lessons() {
     fetchLessons();
   }, []);
 
+  const handleLessonClick = (lesson) => {
+    setSelectedLesson(lesson);
+  };
+
   return (
     <div className="LessonsPage">
-      <Lesson></Lesson>
+      <Lesson selectedLesson={selectedLesson} />
       <h1>Learn Spanish One Bite at a Time</h1>
       <LessonsSearch />
       <div className="lessons-container">
@@ -37,6 +42,7 @@ function Lessons() {
             className="lesson-thumbnail"
             key={lesson.title}
             style={{ backgroundImage: `url(${lesson.thumbnail})` }}
+            onClick={() => handleLessonClick(lesson)}
           >
             <div className="lesson-banner">
               <h3>{lesson.title}</h3>
