@@ -43,3 +43,7 @@
 .teacher-image {
   margin-bottom: 1rem;
 }
+
+.navigation-arrow {
+  cursor: pointer;
+}

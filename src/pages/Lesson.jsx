@@ -22,6 +22,7 @@ function Lesson() {
 
       <div className="teacher-container">
         <img
+          className="navigation-arrow"
           src="/src/pages/assets/lessons/icon-previous-arrow.svg"
           alt="Icon previous arrow"
         />
@@ -31,6 +32,7 @@ function Lesson() {
           alt="Teacer explainig"
         />
         <img
+          className="navigation-arrow"
           src="/src/pages/assets/lessons/icon-next-arrow.svg"
           alt="Icon next arrow"
         />
