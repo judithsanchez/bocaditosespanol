@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "subject": "Verb SER",
     "difficulty": 3,
     "activity": "/practice/when/use/ser",
@@ -24,7 +25,7 @@
         "explanation": "To talk about the nationality/origin of something/someone.",
         "examples": [
           "Yo soy de Venezuela",
-          "Mi familia de España",
+          "Mi familia es de España",
           "Los músicos son brasileros"
         ],
         "keys": ["Nationality and origin"],
@@ -93,6 +94,7 @@
   },
 
   {
+    "id": 2,
     "subject": "Verb ESTAR",
     "difficulty": 3,
     "activity": "/practice/when/use/estar",
@@ -156,6 +158,7 @@
   },
 
   {
+    "id": 3,
     "subject": "Verb HAY",
     "difficulty": 2,
     "activity": "/practice/when/use/hay",
