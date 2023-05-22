@@ -9,7 +9,7 @@ function LessonsSearch() {
       <input type="text" />
       <button>
         <img
-          src="/src/components/assets/lessons-search/icon-search.svg"
+          src="https://cdn.bfldr.com/Z0BJ31FP/at/f53qtr9wb6rt8kqg3g28bjsr/icon-search.svg"
           alt="Search Icon"
         />
       </button>

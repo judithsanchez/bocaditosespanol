@@ -4,25 +4,29 @@ import { Link } from 'react-router-dom';
 
 function NavBar({ toggleMode, isDarkMode }) {
   const [modeButtonImg, setModeButtonImg] = useState(
-    'https://cdn.bfldr.com/Z0BJ31FP/at/r9vn7sx7x3mg5tww6gshsvt/button-to-dark-mode.svg?auto=webp&format=svg'
+    'https://cdn.bfldr.com/Z0BJ31FP/at/r9vn7sx7x3mg5tww6gshsvt/button-to-dark-mode.svg'
   );
 
   const [mainLogoImg, setmainLogoImg] = useState(
-    '/src/components/assets/nav-bar/logo-main-grey.svg'
+    'https://cdn.bfldr.com/Z0BJ31FP/at/ggx73vmcsmrspvt9fb8wg5kc/logo-main-grey.svg'
   );
 
   const handleModeChange = () => {
     toggleMode();
     if (!isDarkMode) {
       setModeButtonImg(
-        '/src/components/assets/nav-bar/button-to-light-mode.svg'
+        'https://cdn.bfldr.com/Z0BJ31FP/at/k87sm4jtprcnv89f7fq4nqv/button-to-light-mode.svg'
       );
-      setmainLogoImg('/src/components/assets/nav-bar/logo-main-white.svg');
+      setmainLogoImg(
+        'https://cdn.bfldr.com/Z0BJ31FP/at/7bq35cg9mzk7bngwjnt645w/logo-main-white.svg'
+      );
     } else {
       setModeButtonImg(
-        'https://cdn.bfldr.com/Z0BJ31FP/at/r9vn7sx7x3mg5tww6gshsvt/button-to-dark-mode.svg?auto=webp&format=svg'
+        'https://cdn.bfldr.com/Z0BJ31FP/at/r9vn7sx7x3mg5tww6gshsvt/button-to-dark-mode.svg'
       );
-      setmainLogoImg('/src/components/assets/nav-bar/logo-main-grey.svg');
+      setmainLogoImg(
+        'https://cdn.bfldr.com/Z0BJ31FP/at/ggx73vmcsmrspvt9fb8wg5kc/logo-main-grey.svg'
+      );
     }
   };
 

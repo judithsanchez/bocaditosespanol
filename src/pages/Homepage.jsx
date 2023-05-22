@@ -8,7 +8,7 @@ function Homepage() {
       <h1>Learn Spanish in Small Bites!</h1>
       <img
         className="main-icon"
-        src="/src/pages/assets/homepage/icon-teaching.svg"
+        src="https://cdn.bfldr.com/Z0BJ31FP/at/8sn8fhm3vrh3727bf5mb8tj/icon-teaching.svg"
         alt="Bocadito Teaching"
       />
 
@@ -39,7 +39,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-left"></div>
       <img
-        src="/src/pages/assets/homepage/icon-globe-books-tablet-with-background.svg"
+        src="https://cdn.bfldr.com/Z0BJ31FP/at/mpp3q7bbvfws97k78ftsb3wz/icon-globe-books-tablet-with-background.svg"
         alt="Globe,books and tablet"
       />
       <h3>Are You Just Starting to Learn Spanish?</h3>
@@ -53,7 +53,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-right"></div>
       <img
-        src="/src/pages/assets/homepage/icon-tablet-branches-with-background.svg"
+        src="https://cdn.bfldr.com/Z0BJ31FP/at/h96xx59pxzmzmw64cz4m797f/icon-tablet-branches-with-background.svg"
         alt="Tablet and branche"
       />
       <h3>What If You Have Already Been Learning Spanish for Some Time?</h3>
@@ -67,7 +67,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-left"></div>
       <img
-        src="/src/pages/assets/homepage/icon-global-tablet-with-background.svg"
+        src="https://cdn.bfldr.com/Z0BJ31FP/at/j465hpvqcpv95x47fgr9kjwn/icon-global-tablet-with-background.svg"
         alt="Globe and tablet"
       />
       <h3>Learning Spanish Without Borders</h3>
@@ -84,7 +84,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-right"></div>
       <img
-        src="/src/pages/assets/homepage/icon-suitcase-heart-briefcase-with-background.svg"
+        src="https://cdn.bfldr.com/Z0BJ31FP/at/v3b23gtbm8v4p28tpxzphvf/icon-suitcase-heart-briefcase-with-background.svg"
         alt="Suitcase and briefcase"
       />
       <h3>Any Reasons is Perfect to Learn a New Language</h3>
@@ -98,7 +98,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-left"></div>
       <img
-        src="/src/pages/assets/homepage/icon-kids-studying-with-background.svg"
+        src="https://cdn.bfldr.com/Z0BJ31FP/at/kgpwf6xrbkp9qjk294vtzgk/icon-kids-studying-with-background.svg"
         alt="Kid with tablet"
       />
       <h3>
@@ -114,7 +114,7 @@ function Homepage() {
 
       <div className="homepage-separator separator-right"></div>
       <img
-        src="/src/pages/assets/homepage/icon-heart-medical-kit-with-background.svg"
+        src="https://cdn.bfldr.com/Z0BJ31FP/at/ct8n7r6vj892r5jrrw35w6/icon-heart-medical-kit-with-background.svg"
         alt="Medical Spanish"
       />
       <h3>Expanding your Knowledge While Learning Spanish!</h3>

@@ -65,7 +65,7 @@ function Lesson({ selectedLesson }) {
           {currentStep > 0 && (
             <img
               className="navigation-arrow"
-              src="/src/pages/assets/lessons/icon-previous-arrow.svg"
+              src="https://cdn.bfldr.com/Z0BJ31FP/at/498n249kr6fqfbrtcgws77m6/icon-previous-arrow.svg"
               alt="Icon previous arrow"
               onClick={() => previousStep()}
             />
@@ -74,7 +74,7 @@ function Lesson({ selectedLesson }) {
 
         <img
           className="teacher-image"
-          src="/src/pages/assets/lessons/teacher-intro.svg"
+          src="https://cdn.bfldr.com/Z0BJ31FP/at/r8vb8ts4p9vvfk6q4v7qn8sg/teacher-intro.svg"
           alt="Teacher explaining"
         />
 
@@ -82,7 +82,7 @@ function Lesson({ selectedLesson }) {
           {currentStep !== lesson?.steps.length - 1 && (
             <img
               className="navigation-arrow"
-              src="/src/pages/assets/lessons/icon-next-arrow.svg"
+              src="https://cdn.bfldr.com/Z0BJ31FP/as/2s36qjvpjsggrbgp9m3vt/icon-next-arrow?auto=webp&format=png"
               alt="Icon next arrow"
               onClick={() => nextStep()}
             />

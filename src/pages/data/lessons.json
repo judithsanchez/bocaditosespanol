@@ -5,21 +5,21 @@
     "difficulty": 3,
     "activity": "/practice/when/use/ser",
     "title": "When to use SER?",
-    "thumbnail": "/src/pages/assets/lessons/lesson-topic-thumbnail-1.svg",
+    "thumbnail": "https://cdn.bfldr.com/Z0BJ31FP/at/pjrq6xwwpn89r5t495rtmnhc/lesson-topic-thumbnail-1.svg",
     "url": "when-use-ser",
     "steps": [
       {
         "explanation": "The big problem that students have with the verb TO BE is that in Spanish it can be translated in several different ways. Today you will learn one, the verb SER.",
         "examples": [],
         "keys": [],
-        "image": "/src/pages/assets/lessons/teacher-intro.svg"
+        "image": "https://cdn.bfldr.com/Z0BJ31FP/at/r8vb8ts4p9vvfk6q4v7qn8sg/teacher-intro.svg"
       },
 
       {
         "explanation": "In the same way that you cannot say in English 'I drink a sandwich', in Spanish you must also use the correct verb for what you want to say. So you ALWAYS have to use the verb SER to express the following ideas:",
         "examples": [],
         "keys": [],
-        "image": "/src/pages/assets/lessons/teacher-intro.svg"
+        "image": "https://cdn.bfldr.com/Z0BJ31FP/at/r8vb8ts4p9vvfk6q4v7qn8sg/teacher-intro.svg"
       },
       {
         "explanation": "To talk about the nationality/origin of something/someone.",
@@ -99,7 +99,7 @@
     "difficulty": 3,
     "activity": "/practice/when/use/estar",
     "title": "When to use ESTAR?",
-    "thumbnail": "/src/pages/assets/lessons/lesson-topic-thumbnail-2.svg",
+    "thumbnail": "https://cdn.bfldr.com/Z0BJ31FP/at/pwbkj3wvp5j486b6ws385xxp/lesson-topic-thumbnail-2.svg",
     "url": "when-use-estar",
     "steps": [
       {
@@ -163,7 +163,7 @@
     "difficulty": 2,
     "activity": "/practice/when/use/hay",
     "title": "What is HAY and How to Use It?",
-    "thumbnail": "/src/pages/assets/lessons/lesson-topic-thumbnail-3.svg",
+    "thumbnail": "https://cdn.bfldr.com/Z0BJ31FP/at/58nfprkcwr5ss3gq9srrg77/lesson-topic-thumbnail-3.svg",
     "url": "what-is-hay-and-how-to-use-it",
     "steps": [
       {

@@ -53,15 +53,15 @@
 }
 
 #lessons-card {
-  background-image: url(/src/pages/assets/homepage/icon-books-stack.svg);
+  background-image: url(https://cdn.bfldr.com/Z0BJ31FP/at/4t7qm94ccf574sc3nfcqv3k/icon-books-stack.svg);
 }
 
 #youtube-card {
-  background-image: url(/src/pages/assets/homepage/icon-youtube.svg);
+  background-image: url(https://cdn.bfldr.com/Z0BJ31FP/at/698nrm47q8kpw4x6b4r4h5w/icon-youtube.svg);
 }
 
 #music-card {
-  background-image: url(/src/pages/assets/homepage/icon-musical-note.svg);
+  background-image: url(https://cdn.bfldr.com/Z0BJ31FP/at/3xk4v8txfqtzv7wc6r4bmt2c/icon-musical-note.svg);
 }
 
 .Homepage h3 {
