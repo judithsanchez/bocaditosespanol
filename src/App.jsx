@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
 
 // Pages
 import Homepage from './pages/Homepage';
