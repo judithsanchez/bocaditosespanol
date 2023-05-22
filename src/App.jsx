@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // Pages
 import Homepage from './pages/Homepage';
 import Lessons from './pages/Lessons';
+import Lesson from './pages/Lesson';
 import Practice from './pages/Practice';
 import Games from './pages/Games';
 
@@ -52,6 +53,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/lessons" element={<Lessons />} />
+          <Route path="/lessons/:lessonUrl" element={<Lesson />} />
+
           <Route path="/practice" element={<Practice />} />
           <Route path="/games" element={<Games />} />
         </Routes>

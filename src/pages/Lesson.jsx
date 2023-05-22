@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Styles
 import '/src/pages/styles/Lesson.css';
 
-// Components
-
 function Lesson({ selectedLesson }) {
-  const lesson = selectedLesson;
-
   const [currentStep, setCurrentStep] = useState(0);
   const [keyPoints, setKeyPoints] = useState([]);
   const [examples, setExamples] = useState([]);
@@ -20,24 +16,28 @@ function Lesson({ selectedLesson }) {
   };
 
   const nextStep = () => {
-    if (currentStep === lesson?.steps.length - 1) {
+    if (currentStep === selectedLesson?.steps.length - 1) {
       return;
     }
     setCurrentStep(currentStep + 1);
   };
 
   useEffect(() => {
-    const currentStepObject = lesson?.steps[currentStep];
+    const currentStepObject = selectedLesson?.steps[currentStep];
     setKeyPoints(currentStepObject?.keys || []);
     setExamples(currentStepObject?.examples || []);
-  }, [currentStep, lesson]);
+  }, [currentStep, selectedLesson]);
+
+  if (!selectedLesson) {
+    return null; // Return null or some placeholder if lesson is not available
+  }
 
   return (
     <div className="LessonPage">
-      <h1>{lesson?.subject}</h1>
+      <h1>{selectedLesson.subject}</h1>
       <div className="body">
         <div className="explanation">
-          <p>{lesson?.steps[currentStep].explanation}</p>
+          <p>{selectedLesson.steps[currentStep].explanation}</p>
         </div>
 
         <div className="content">
@@ -79,7 +79,7 @@ function Lesson({ selectedLesson }) {
         />
 
         <div className="arrow-container">
-          {currentStep !== lesson?.steps.length - 1 && (
+          {currentStep !== selectedLesson.steps.length - 1 && (
             <img
               className="navigation-arrow"
               src="https://cdn.bfldr.com/Z0BJ31FP/as/2s36qjvpjsggrbgp9m3vt/icon-next-arrow?auto=webp&format=png"

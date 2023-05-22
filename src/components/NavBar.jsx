@@ -37,17 +37,17 @@ function NavBar({ toggleMode, isDarkMode }) {
       </Link>
       <ul>
         <li>
-          <NavLink to="/lessons" activeClassName="active-link">
+          <NavLink to="/lessons" activeclassname="active-link">
             Lessons
           </NavLink>
         </li>
         <li>
-          <NavLink to="/games" activeClassName="active-link">
+          <NavLink to="/games" activeclassname="active-link">
             Games
           </NavLink>
         </li>
         <li>
-          <NavLink to="/practice" activeClassName="active-link">
+          <NavLink to="/practice" activeclassname="active-link">
             Practice
           </NavLink>
         </li>
