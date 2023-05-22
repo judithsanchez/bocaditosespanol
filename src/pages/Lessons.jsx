@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Styles
 import '/src/pages/styles/Lessons.css';
 
 // Components
 import LessonsSearch from '/src/components/LessonsSearch.jsx';
-import Lesson from '/src/pages/Lesson.jsx';
 
 function Lessons() {
   const [lessons, setLessons] = useState([]);
   const [selectedLesson, setSelectedLesson] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLessons = async () => {
@@ -29,18 +30,18 @@ function Lessons() {
 
   const handleLessonClick = (lesson) => {
     setSelectedLesson(lesson);
+    navigate(`/lessons/${lesson.id}`);
   };
 
   return (
     <div className="LessonsPage">
-      <Lesson selectedLesson={selectedLesson} />
       <h1>Learn Spanish One Bite at a Time</h1>
       <LessonsSearch />
       <div className="lessons-container">
         {lessons.map((lesson) => (
           <div
             className="lesson-thumbnail"
-            key={lesson.title}
+            key={lesson.id}
             style={{ backgroundImage: `url(${lesson.thumbnail})` }}
             onClick={() => handleLessonClick(lesson)}
           >

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '/src/components/styles/NavBar.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function NavBar({ toggleMode, isDarkMode }) {
   const [modeButtonImg, setModeButtonImg] = useState(
@@ -37,13 +37,19 @@ function NavBar({ toggleMode, isDarkMode }) {
       </Link>
       <ul>
         <li>
-          <Link to="/lessons">Lessons</Link>
+          <NavLink to="/lessons" activeClassName="active-link">
+            Lessons
+          </NavLink>
         </li>
         <li>
-          <Link to="/games">Games</Link>
+          <NavLink to="/games" activeClassName="active-link">
+            Games
+          </NavLink>
         </li>
         <li>
-          <Link to="/practice">Practice</Link>
+          <NavLink to="/practice" activeClassName="active-link">
+            Practice
+          </NavLink>
         </li>
       </ul>
       <img

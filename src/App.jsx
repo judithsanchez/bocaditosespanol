@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Switch as RouterSwitch, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
 
 // Pages
 import Homepage from './pages/Homepage';
@@ -49,12 +50,12 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
-        <RouterSwitch>
-          <Route exact path="/" render={() => <Homepage />} />
-          <Route exact path="/lessons" render={() => <Lessons />} />
-          <Route exact path="/practice" render={() => <Practice />} />
-          <Route exact path="/games" render={() => <Games />} />
-        </RouterSwitch>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/lessons" element={<Lessons />} />
+          <Route path="/practice" element={<Practice />} />
+          <Route path="/games" element={<Games />} />
+        </Routes>
         <Footer />
       </div>
     </BrowserRouter>
