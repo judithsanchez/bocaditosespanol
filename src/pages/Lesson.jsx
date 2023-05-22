@@ -29,12 +29,12 @@ function Lesson({ selectedLesson }) {
   }, [currentStep, selectedLesson]);
 
   if (!selectedLesson) {
-    return null; // Return null or some placeholder if lesson is not available
+    return null;
   }
 
   return (
     <div className="LessonPage">
-      <h1>{selectedLesson.subject}</h1>
+      {console.log('I am rendering')};<h1>{selectedLesson.subject}</h1>
       <div className="body">
         <div className="explanation">
           <p>{selectedLesson.steps[currentStep].explanation}</p>
@@ -59,7 +59,6 @@ function Lesson({ selectedLesson }) {
           </div>
         </div>
       </div>
-
       <div className="teacher-container">
         <div className="arrow-container">
           {currentStep > 0 && (

@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [selectedLesson, setSelectedLesson] = useState(null);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -53,8 +54,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/lessons" element={<Lessons />} />
-          <Route path="/lessons/:lessonUrl" element={<Lesson />} />
-
           <Route path="/practice" element={<Practice />} />
           <Route path="/games" element={<Games />} />
         </Routes>
