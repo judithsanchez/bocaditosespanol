@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function NavBar({ toggleMode, isDarkMode }) {
   const [modeButtonImg, setModeButtonImg] = useState(
-    '/src/components/assets/nav-bar/button-to-dark-mode.svg'
+    'https://cdn.bfldr.com/Z0BJ31FP/at/r9vn7sx7x3mg5tww6gshsvt/button-to-dark-mode.svg?auto=webp&format=svg'
   );
 
   const [mainLogoImg, setmainLogoImg] = useState(
@@ -20,7 +20,7 @@ function NavBar({ toggleMode, isDarkMode }) {
       setmainLogoImg('/src/components/assets/nav-bar/logo-main-white.svg');
     } else {
       setModeButtonImg(
-        '/src/components/assets/nav-bar/button-to-dark-mode.svg'
+        'https://cdn.bfldr.com/Z0BJ31FP/at/r9vn7sx7x3mg5tww6gshsvt/button-to-dark-mode.svg?auto=webp&format=svg'
       );
       setmainLogoImg('/src/components/assets/nav-bar/logo-main-grey.svg');
     }
