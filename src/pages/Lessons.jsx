@@ -1,15 +1,14 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Styles
 import '/src/pages/styles/Lessons.css';
 
 // Components
 import LessonsSearch from '/src/components/LessonsSearch.jsx';
-import Lesson from '/src/pages/Lesson.jsx';
 
-function Lessons() {
+function Lessons({ onLessonSlugChange }) {
   const [lessons, setLessons] = useState([]);
-  const [selectedLesson, setSelectedLesson] = useState();
+  const [lessonSlug, setLessonSlug] = useState(null);
 
   useEffect(() => {
     const fetchLessons = async () => {
@@ -28,7 +27,8 @@ function Lessons() {
   }, []);
 
   const handleLessonClick = (lesson) => {
-    setSelectedLesson(lesson);
+    setLessonSlug(lesson.slug);
+    onLessonSlugChange(lesson.slug);
   };
 
   return (

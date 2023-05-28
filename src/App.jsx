@@ -17,7 +17,11 @@ import Footer from './components/Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [selectedLesson, setSelectedLesson] = useState(null);
+  const [lessonSlug, setLessonSlug] = useState(null);
+
+  const getLessonSlug = (slug) => {
+    setLessonSlug(slug);
+  };
 
   useEffect(() => {
     if (isDarkMode) {
@@ -53,7 +57,14 @@ function App() {
         <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/lessons" element={<Lessons />} />
+          <Route
+            path="/lessons"
+            element={<Lessons onLessonSlugChange={getLessonSlug} />}
+          />
+          <Route
+            path={`/lessons/${lessonSlug}`}
+            element={lessonSlug ? <Lesson slug={lessonSlug} /> : null}
+          />
           <Route path="/practice" element={<Practice />} />
           <Route path="/games" element={<Games />} />
         </Routes>

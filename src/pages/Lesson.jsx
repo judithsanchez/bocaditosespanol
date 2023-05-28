@@ -3,10 +3,31 @@ import React, { useState, useEffect } from 'react';
 // Styles
 import '/src/pages/styles/Lesson.css';
 
-function Lesson({ selectedLesson }) {
+function Lesson({ slug }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [keyPoints, setKeyPoints] = useState([]);
   const [examples, setExamples] = useState([]);
+  const [selectedLesson, setSelectedLesson] = useState();
+
+  const [lessons, setLessons] = useState([]);
+
+  useEffect(() => {
+    const fetchLessons = async () => {
+      try {
+        const response = await fetch('/src/pages/data/lessons.json');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setLessons(data);
+      } catch (error) {
+        console.error('Error fetching lessons:', error);
+      }
+    };
+    fetchLessons();
+  }, []);
+
+  setSelectedLesson(lessons.find((lesson) => lesson.slug === slug));
 
   const previousStep = () => {
     if (currentStep === 0) {
@@ -28,13 +49,9 @@ function Lesson({ selectedLesson }) {
     setExamples(currentStepObject?.examples || []);
   }, [currentStep, selectedLesson]);
 
-  if (!selectedLesson) {
-    return null;
-  }
-
   return (
     <div className="LessonPage">
-      {console.log('I am rendering')};<h1>{selectedLesson.subject}</h1>
+      <h1>{selectedLesson?.subject}</h1>
       <div className="body">
         <div className="explanation">
           <p>{selectedLesson.steps[currentStep].explanation}</p>
