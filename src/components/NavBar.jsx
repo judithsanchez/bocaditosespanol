@@ -36,21 +36,13 @@ function NavBar({ toggleMode, isDarkMode }) {
         <img src={mainLogoImg} alt="Main Bocaditos Logo" />
       </Link>
       <ul>
-        <li>
-          <NavLink to="/lessons" activeclassname="active-link">
-            Lessons
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/games" activeclassname="active-link">
-            Games
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/practice" activeclassname="active-link">
-            Practice
-          </NavLink>
-        </li>
+        {routes.map((route, index) => (
+          <li key={index}>
+            <NavLink to={route.to} activeClassName="active-link">
+              {route.text}
+            </NavLink>
+          </li>
+        ))}
       </ul>
       <img
         src={modeButtonImg}
@@ -60,5 +52,22 @@ function NavBar({ toggleMode, isDarkMode }) {
     </nav>
   );
 }
+
+const routes = [];
+
+routes.push(
+  {
+    to: '/lessons',
+    text: 'Lessons',
+  },
+  {
+    to: '/games',
+    text: 'Games',
+  },
+  {
+    to: '/practice',
+    text: 'Practice',
+  }
+);
 
 export default NavBar;
