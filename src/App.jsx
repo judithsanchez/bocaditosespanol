@@ -58,7 +58,10 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/lessons" element={<Lessons />} />
+          <Route
+            path="/lessons"
+            element={<Lessons onLessonSlugChange={getLessonSlug} />}
+          />
           <Route path="/lesson" element={<Lesson />} />
           <Route path="/practice" element={<Practice />} />
           <Route path="/games" element={<Games />} />
@@ -69,24 +72,6 @@ function App() {
       </HashRouter>
     </>
   );
-
-  // return (
-  //   <BrowserRouter>
-  //     <div className="App">
-  //       <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
-  //       <Routes>
-  //         <Route path="/" element={<Homepage />} />
-  //         <Route
-  //           path="/lessons"
-  //           element={<Lessons onLessonSlugChange={getLessonSlug} />}
-  //         />
-  //         <Route path="/practice" element={<Practice />} />
-  //         <Route path="/games" element={<Games />} />
-  //       </Routes>
-  //       <Footer />
-  //     </div>
-  //   </BrowserRouter>
-  // );
 }
 
 export default App;

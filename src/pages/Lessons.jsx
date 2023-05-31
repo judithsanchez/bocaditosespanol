@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // Styles
 import '/src/pages/styles/Lessons.css';
@@ -35,18 +36,21 @@ function Lessons({ onLessonSlugChange }) {
     <div className="LessonsPage">
       <h1>Learn Spanish One Bite at a Time</h1>
       <LessonsSearch />
+
       <div className="lessons-container">
-        {lessons.map((lesson) => (
-          <div
-            className="lesson-thumbnail"
-            key={lesson.id}
-            style={{ backgroundImage: `url(${lesson.thumbnail})` }}
-            onClick={() => handleLessonClick(lesson)}
-          >
-            <div className="lesson-banner">
-              <h3>{lesson.title}</h3>
+        {lessons.map((lesson, index) => (
+          <Link key={index} to={`/lessons/${lesson.slug}`}>
+            <div
+              className="lesson-thumbnail"
+              key={lesson.id}
+              style={{ backgroundImage: `url(${lesson.thumbnail})` }}
+              onClick={() => handleLessonClick(lesson)}
+            >
+              <div className="lesson-banner">
+                <h3>{lesson.title}</h3>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

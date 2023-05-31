@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 // Styles
 import '/src/pages/styles/Lesson.css';
 
-function Lesson({ slug }) {
+function Lesson() {
+  const { slug } = useParams();
+
   const [currentStep, setCurrentStep] = useState(0);
   const [keyPoints, setKeyPoints] = useState([]);
   const [examples, setExamples] = useState([]);
