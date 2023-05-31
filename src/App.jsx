@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 // Pages
 import Homepage from './pages/Homepage';
@@ -52,22 +52,41 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <div className="App">
+    <>
+      <HashRouter>
         <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
+
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route
-            path="/lessons"
-            element={<Lessons onLessonSlugChange={getLessonSlug} />}
-          />
+          <Route path="/lessons" element={<Lessons />} />
+          <Route path="/lesson" element={<Lesson />} />
           <Route path="/practice" element={<Practice />} />
           <Route path="/games" element={<Games />} />
+          <Route path="*" element={<p>Not Found</p>} />
         </Routes>
+
         <Footer />
-      </div>
-    </BrowserRouter>
+      </HashRouter>
+    </>
   );
+
+  // return (
+  //   <BrowserRouter>
+  //     <div className="App">
+  //       <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
+  //       <Routes>
+  //         <Route path="/" element={<Homepage />} />
+  //         <Route
+  //           path="/lessons"
+  //           element={<Lessons onLessonSlugChange={getLessonSlug} />}
+  //         />
+  //         <Route path="/practice" element={<Practice />} />
+  //         <Route path="/games" element={<Games />} />
+  //       </Routes>
+  //       <Footer />
+  //     </div>
+  //   </BrowserRouter>
+  // );
 }
 
 export default App;
