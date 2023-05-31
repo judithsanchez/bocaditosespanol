@@ -38,9 +38,7 @@ function NavBar({ toggleMode, isDarkMode }) {
       <ul>
         {routes.map((route, index) => (
           <li key={index}>
-            <NavLink to={route.to} activeClassName="active-link">
-              {route.text}
-            </NavLink>
+            <NavLink to={route.to}>{route.text}</NavLink>
           </li>
         ))}
       </ul>

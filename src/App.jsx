@@ -62,7 +62,7 @@ function App() {
             path="/lessons"
             element={<Lessons onLessonSlugChange={getLessonSlug} />}
           />
-          <Route path="/lesson" element={<Lesson />} />
+          <Route path="/lessons/:slug" element={<Lesson />} />
           <Route path="/practice" element={<Practice />} />
           <Route path="/games" element={<Games />} />
           <Route path="*" element={<p>Not Found</p>} />

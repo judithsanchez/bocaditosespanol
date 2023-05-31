@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import lessons from './data/lessons.json';
 
 // Styles
 import '/src/pages/styles/Lesson.css';
@@ -7,54 +8,57 @@ import '/src/pages/styles/Lesson.css';
 function Lesson() {
   const { slug } = useParams();
 
-  const [currentStep, setCurrentStep] = useState(0);
-  const [keyPoints, setKeyPoints] = useState([]);
-  const [examples, setExamples] = useState([]);
-  const [selectedLesson, setSelectedLesson] = useState();
+  const lesson = lessons.find((lesson) => lesson.slug === slug);
 
-  const [lessons, setLessons] = useState([]);
+  // const [currentStep, setCurrentStep] = useState(0);
+  // const [keyPoints, setKeyPoints] = useState([]);
+  // const [examples, setExamples] = useState([]);
+  // const [selectedLesson, setSelectedLesson] = useState();
 
-  useEffect(() => {
-    const fetchLessons = async () => {
-      try {
-        const response = await fetch('/src/pages/data/lessons.json');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setLessons(data);
-      } catch (error) {
-        console.error('Error fetching lessons:', error);
-      }
-    };
-    fetchLessons();
-  }, []);
+  // const [lessons, setLessons] = useState([]);
 
-  setSelectedLesson(lessons.find((lesson) => lesson.slug === slug));
+  // useEffect(() => {
+  //   const fetchLessons = async () => {
+  //     try {
+  //       const response = await fetch('/src/pages/data/lessons.json');
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       const data = await response.json();
+  //       setLessons(data);
+  //     } catch (error) {
+  //       console.error('Error fetching lessons:', error);
+  //     }
+  //   };
+  //   fetchLessons();
+  // }, []);
 
-  const previousStep = () => {
-    if (currentStep === 0) {
-      return;
-    }
-    setCurrentStep(currentStep - 1);
-  };
+  // setSelectedLesson(lessons.find((lesson) => lesson.slug === slug));
 
-  const nextStep = () => {
-    if (currentStep === selectedLesson?.steps.length - 1) {
-      return;
-    }
-    setCurrentStep(currentStep + 1);
-  };
+  // const previousStep = () => {
+  //   if (currentStep === 0) {
+  //     return;
+  //   }
+  //   setCurrentStep(currentStep - 1);
+  // };
 
-  useEffect(() => {
-    const currentStepObject = selectedLesson?.steps[currentStep];
-    setKeyPoints(currentStepObject?.keys || []);
-    setExamples(currentStepObject?.examples || []);
-  }, [currentStep, selectedLesson]);
+  // const nextStep = () => {
+  //   if (currentStep === selectedLesson?.steps.length - 1) {
+  //     return;
+  //   }
+  //   setCurrentStep(currentStep + 1);
+  // };
+
+  // useEffect(() => {
+  //   const currentStepObject = selectedLesson?.steps[currentStep];
+  //   setKeyPoints(currentStepObject?.keys || []);
+  //   setExamples(currentStepObject?.examples || []);
+  // }, [currentStep, selectedLesson]);
 
   return (
     <div className="LessonPage">
-      <h1>{selectedLesson?.subject}</h1>
+      <h1>{lesson.subject}</h1>
+      {/* <h1>{selectedLesson?.subject}</h1>
       <div className="body">
         <div className="explanation">
           <p>{selectedLesson.steps[currentStep].explanation}</p>
@@ -107,7 +111,7 @@ function Lesson() {
             />
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
