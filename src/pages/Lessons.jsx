@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// Data
+import lessons from './data/lessons.json'; // Test
+
 // Styles
 import '/src/pages/styles/Lessons.css';
 
@@ -8,24 +11,6 @@ import '/src/pages/styles/Lessons.css';
 import LessonsSearch from '/src/components/LessonsSearch.jsx';
 
 function Lessons() {
-  const [lessons, setLessons] = useState([]);
-
-  useEffect(() => {
-    const fetchLessons = async () => {
-      try {
-        const response = await fetch('/src/pages/data/lessons.json');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setLessons(data);
-      } catch (error) {
-        console.error('Error fetching lessons:', error);
-      }
-    };
-    fetchLessons();
-  }, []);
-
   return (
     <div className="LessonsPage">
       <h1>Learn Spanish One Bite at a Time</h1>

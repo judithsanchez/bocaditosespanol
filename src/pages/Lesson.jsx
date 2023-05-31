@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
+// Data
 import lessons from './data/lessons.json';
 
 // Styles
