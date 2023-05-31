@@ -7,9 +7,8 @@ import '/src/pages/styles/Lessons.css';
 // Components
 import LessonsSearch from '/src/components/LessonsSearch.jsx';
 
-function Lessons({ onLessonSlugChange }) {
+function Lessons() {
   const [lessons, setLessons] = useState([]);
-  const [lessonSlug, setLessonSlug] = useState(null);
 
   useEffect(() => {
     const fetchLessons = async () => {
@@ -27,11 +26,6 @@ function Lessons({ onLessonSlugChange }) {
     fetchLessons();
   }, []);
 
-  const handleLessonClick = (lesson) => {
-    setLessonSlug(lesson.slug);
-    onLessonSlugChange(lesson.slug);
-  };
-
   return (
     <div className="LessonsPage">
       <h1>Learn Spanish One Bite at a Time</h1>
@@ -44,7 +38,6 @@ function Lessons({ onLessonSlugChange }) {
               className="lesson-thumbnail"
               key={lesson.id}
               style={{ backgroundImage: `url(${lesson.thumbnail})` }}
-              onClick={() => handleLessonClick(lesson)}
             >
               <div className="lesson-banner">
                 <h3>{lesson.title}</h3>

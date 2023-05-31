@@ -10,58 +10,36 @@ function Lesson() {
 
   const lesson = lessons.find((lesson) => lesson.slug === slug);
 
-  // const [currentStep, setCurrentStep] = useState(0);
-  // const [keyPoints, setKeyPoints] = useState([]);
-  // const [examples, setExamples] = useState([]);
-  // const [selectedLesson, setSelectedLesson] = useState();
+  const [currentStep, setCurrentStep] = useState(0);
+  const [keyPoints, setKeyPoints] = useState([]);
+  const [examples, setExamples] = useState([]);
 
-  // const [lessons, setLessons] = useState([]);
+  const previousStep = () => {
+    if (currentStep === 0) {
+      return;
+    }
+    setCurrentStep(currentStep - 1);
+  };
 
-  // useEffect(() => {
-  //   const fetchLessons = async () => {
-  //     try {
-  //       const response = await fetch('/src/pages/data/lessons.json');
-  //       if (!response.ok) {
-  //         throw new Error('Network response was not ok');
-  //       }
-  //       const data = await response.json();
-  //       setLessons(data);
-  //     } catch (error) {
-  //       console.error('Error fetching lessons:', error);
-  //     }
-  //   };
-  //   fetchLessons();
-  // }, []);
+  const nextStep = () => {
+    if (currentStep === lesson?.steps.length - 1) {
+      return;
+    }
+    setCurrentStep(currentStep + 1);
+  };
 
-  // setSelectedLesson(lessons.find((lesson) => lesson.slug === slug));
-
-  // const previousStep = () => {
-  //   if (currentStep === 0) {
-  //     return;
-  //   }
-  //   setCurrentStep(currentStep - 1);
-  // };
-
-  // const nextStep = () => {
-  //   if (currentStep === selectedLesson?.steps.length - 1) {
-  //     return;
-  //   }
-  //   setCurrentStep(currentStep + 1);
-  // };
-
-  // useEffect(() => {
-  //   const currentStepObject = selectedLesson?.steps[currentStep];
-  //   setKeyPoints(currentStepObject?.keys || []);
-  //   setExamples(currentStepObject?.examples || []);
-  // }, [currentStep, selectedLesson]);
+  useEffect(() => {
+    const currentStepObject = lesson?.steps[currentStep];
+    setKeyPoints(currentStepObject?.keys || []);
+    setExamples(currentStepObject?.examples || []);
+  }, [currentStep, lesson]);
 
   return (
     <div className="LessonPage">
-      <h1>{lesson.subject}</h1>
-      {/* <h1>{selectedLesson?.subject}</h1>
+      <h1>{lesson?.subject}</h1>
       <div className="body">
         <div className="explanation">
-          <p>{selectedLesson.steps[currentStep].explanation}</p>
+          <p>{lesson.steps[currentStep].explanation}</p>
         </div>
 
         <div className="content">
@@ -102,7 +80,7 @@ function Lesson() {
         />
 
         <div className="arrow-container">
-          {currentStep !== selectedLesson.steps.length - 1 && (
+          {currentStep !== lesson.steps.length - 1 && (
             <img
               className="navigation-arrow"
               src="https://cdn.bfldr.com/Z0BJ31FP/as/2s36qjvpjsggrbgp9m3vt/icon-next-arrow?auto=webp&format=png"
@@ -111,7 +89,7 @@ function Lesson() {
             />
           )}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

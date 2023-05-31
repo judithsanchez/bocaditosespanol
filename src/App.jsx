@@ -17,11 +17,6 @@ import Footer from './components/Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [lessonSlug, setLessonSlug] = useState(null);
-
-  const getLessonSlug = (slug) => {
-    setLessonSlug(slug);
-  };
 
   useEffect(() => {
     if (isDarkMode) {
@@ -58,10 +53,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route
-            path="/lessons"
-            element={<Lessons onLessonSlugChange={getLessonSlug} />}
-          />
+          <Route path="/lessons" element={<Lessons />} />
           <Route path="/lessons/:slug" element={<Lesson />} />
           <Route path="/practice" element={<Practice />} />
           <Route path="/games" element={<Games />} />
