@@ -61,10 +61,6 @@ function App() {
             path="/lessons"
             element={<Lessons onLessonSlugChange={getLessonSlug} />}
           />
-          <Route
-            path={`/lessons/${lessonSlug}`}
-            element={lessonSlug ? <Lesson slug={lessonSlug} /> : null}
-          />
           <Route path="/practice" element={<Practice />} />
           <Route path="/games" element={<Games />} />
         </Routes>
