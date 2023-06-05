@@ -1,60 +1,22 @@
 .SubscriptionForm {
   align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-}
-
-.SubscriptionForm .addEmail {
+  background-color: var(--purple-accent);
+  cursor: pointer;
   display: flex;
   flex-flow: row nowrap;
-}
-
-.SubscriptionForm input {
-  border: none;
-  box-shadow: var(--current-mode-box-shadow);
-  font-size: 1.2rem;
-  font-weight: 100;
-  height: 2.5rem;
-  outline: none;
-  text-align: center;
-  width: 20rem;
-}
-
-.SubscriptionForm button {
-  background-color: var(--purple-accent);
-  border: none;
-  box-shadow: var(--current-mode-box-shadow);
-  display: flex;
-  cursor: pointer;
-  height: 2.7rem;
+  height: 4rem;
   justify-content: center;
-  width: 5rem;
+  width: 12.5rem;
 }
 
-.SubscriptionForm button img {
-  height: 1.2rem;
-  padding-top: 0.5rem;
-  width: 1.5rem;
+.SubscriptionForm a {
+  color: white;
+  font-size: 1.6rem;
+  text-decoration: none;
 }
 
-@media only screen and (min-width: 768px) {
-  .SubscriptionForm input {
-    height: 3rem;
-    width: 30rem;
-  }
-
-  .SubscriptionForm button {
-    height: 3.2rem;
-    width: 7rem;
-  }
-
-  .SubscriptionForm button img {
-    height: 1.5rem;
-    padding-top: 0.7rem;
-    width: 2rem;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
+.SubscriptionForm img {
+  margin: 0 0 0 0.75rem;
+  padding: 0;
+  width: 2rem;
 }
