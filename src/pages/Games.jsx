@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 
-// Pages
-
 // Styles
 // import '/src/pages/styles/Games.css';
 
 // Components
+import WorkInProgress from '../components/WorkInProgress';
 
 function Games() {
   return (
     <div className="GamesPage">
-      <p>This is the games page</p>
+      <WorkInProgress />
     </div>
   );
 }

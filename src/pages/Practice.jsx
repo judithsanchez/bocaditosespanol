@@ -6,11 +6,12 @@ import { useState, useEffect } from 'react';
 // import '/src/pages/styles/Practice.css';
 
 // Components
+import WorkInProgress from '../components/WorkInProgress';
 
 function Practice() {
   return (
     <div className="PracticePage">
-      <p>This is the practice page</p>
+      <WorkInProgress />
     </div>
   );
 }
