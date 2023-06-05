@@ -1,4 +1,11 @@
 .SubscriptionForm {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+.SubscriptionForm .addEmail {
   display: flex;
   flex-flow: row nowrap;
 }
