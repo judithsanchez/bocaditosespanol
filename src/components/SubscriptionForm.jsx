@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import config from './config';
 
 import '/src/components/styles/SubscriptionForm.css';
 
 function SubscriptionForm() {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const apiKey = config.apiKey;
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -17,8 +21,7 @@ function SubscriptionForm() {
     axios
       .post('https://api.brevo.com/v3/contacts', contact, {
         headers: {
-          'api-key':
-            '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',
+          'api-key': apiKey,
         },
       })
       .then((response) => {
