@@ -63,7 +63,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="app-container">
       <HashRouter>
         <NavBar toggleMode={toggleMode} isDarkMode={isDarkMode} />
 
@@ -73,12 +73,19 @@ function App() {
           <Route path="/lessons/:slug" element={<Lesson />} />
           <Route path="/practice" element={<Practice />} />
           <Route path="/games" element={<Games />} />
-          <Route path="*" element={<p>Not Found</p>} />
+          <Route
+            path="*"
+            element={
+              <p role="alert" aria-live="assertive">
+                Not Found
+              </p>
+            }
+          />
         </Routes>
 
         <Footer />
       </HashRouter>
-    </>
+    </div>
   );
 }
 

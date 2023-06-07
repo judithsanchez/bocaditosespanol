@@ -1,4 +1,4 @@
-.Homepage {
+.homepage {
   align-items: center;
   color: var(--current-mode-text);
   display: flex;
@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.Homepage p {
+.homepage__paragraph {
   font-size: 1.4rem;
   font-weight: 400;
   margin-top: 2.5rem;
@@ -15,17 +15,21 @@
   width: 95%;
 }
 
-.Homepage h1 {
+.homepage__title {
   font-size: 2.4rem;
   font-weight: 600;
   margin: 3.5rem 0;
 }
 
-.Homepage img {
+.homepage__main-icon {
+  margin-bottom: 2rem;
+}
+
+.homepage__image {
   margin-bottom: 2.5rem;
 }
 
-.Homepage h2 {
+.homepage__subtitle {
   font-size: 2rem;
   font-weight: 500;
 }
@@ -52,44 +56,45 @@
   width: 10rem;
 }
 
-#lessons-card {
+.homepage-card--lessons {
   background-image: url(https://cdn.bfldr.com/Z0BJ31FP/at/4t7qm94ccf574sc3nfcqv3k/icon-books-stack.svg);
 }
 
-#youtube-card {
+.homepage-card--youtube {
   background-image: url(https://cdn.bfldr.com/Z0BJ31FP/at/698nrm47q8kpw4x6b4r4h5w/icon-youtube.svg);
 }
 
-#music-card {
+.homepage-card--music {
   background-image: url(https://cdn.bfldr.com/Z0BJ31FP/at/3xk4v8txfqtzv7wc6r4bmt2c/icon-musical-note.svg);
 }
 
-.Homepage h3 {
+.homepage__section-title {
   font-size: 2rem;
   font-weight: 500;
   width: 95%;
 }
 
-.homepage-separator {
+.homepage__separator {
   background-color: var(--bocaditos-dark-yellow);
+  border: none;
   border-radius: 0.3rem;
   height: 0.3rem;
   margin: 2.5rem 0;
   width: 40%;
 }
 
-.separator-left {
+.homepage__separator--left {
   align-self: flex-start;
   margin-left: 2rem;
 }
 
-.separator-right {
+.homepage__separator--right {
   align-self: flex-end;
   margin-right: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .Homepage {
+  .homepage {
     width: 80%;
   }
 
@@ -97,7 +102,7 @@
     width: 70%;
   }
 
-  .Homepage p {
+  .homepage__paragraph {
     font-size: 1.6rem;
   }
 
@@ -110,19 +115,19 @@
     width: 15rem;
   }
 
-  .homepage-separator {
+  .homepage__separator {
     border-radius: 0.5rem;
     height: 0.5rem;
     margin: 5rem 0;
   }
 
-  .Homepage img {
+  .homepage__image {
     width: 40%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .Homepage {
+  .homepage {
     width: 60%;
   }
 }
