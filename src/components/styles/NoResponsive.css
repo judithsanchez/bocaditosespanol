@@ -35,8 +35,7 @@
   width: 33%;
 }
 
-@media only screen and (orientation: landscape) and (min-width: 320px) and (max-width: 850px),
-  (orientation: landscape) and (max-device-width: 850px) {
+@media only screen and (orientation: landscape) and (min-width: 320px) and (max-width: 850px) {
   .NoResponsive {
     display: flex;
   }
