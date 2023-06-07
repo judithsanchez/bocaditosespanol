@@ -29,6 +29,14 @@ function App() {
         '--current-mode-text',
         'white'
       );
+      document.documentElement.style.setProperty(
+        '--current-mode-lesson-thumbnail-highlight',
+        '#db4d89'
+      );
+      document.documentElement.style.setProperty(
+        '--current-mode-lesson-thumbnail-card',
+        '#474747'
+      );
     } else {
       document.documentElement.style.setProperty(
         '--current-mode-box-shadow',
@@ -38,6 +46,14 @@ function App() {
       document.documentElement.style.setProperty(
         '--current-mode-text',
         'black'
+      );
+      document.documentElement.style.setProperty(
+        '--current-mode-lesson-thumbnail-highlight',
+        '#47d8e0'
+      );
+      document.documentElement.style.setProperty(
+        '--current-mode-lesson-thumbnail-card',
+        'white'
       );
     }
   }, [isDarkMode]);

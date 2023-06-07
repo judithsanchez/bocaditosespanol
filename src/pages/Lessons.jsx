@@ -39,7 +39,7 @@ function LessonThumbnail({ lesson }) {
           </span>
         ))}
       </div>
-      <h3>{lesson.subject}</h3>
+      <h3 className="lesson-thumbnail-highlight">{lesson.title}</h3>
       <div className="importance">{lesson.importance}</div>
     </div>
   );
