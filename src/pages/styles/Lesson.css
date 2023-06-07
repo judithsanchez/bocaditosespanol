@@ -14,6 +14,7 @@
   flex-flow: column nowrap;
   height: 14.5rem;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .keyPoints-container {
@@ -107,4 +108,13 @@
 .arrow-right {
   align-self: center;
   cursor: pointer;
+}
+
+@media only screen and (orientation: landscape) and (max-device-width: 850px) {
+  .NoResponsive {
+    display: flex;
+  }
+  .LessonPage {
+    display: none;
+  }
 }

@@ -1,0 +1,36 @@
+.NoResponsive {
+  position: relative;
+  align-items: center;
+  display: none;
+  flex-flow: column nowrap;
+  height: 80vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.broken-glass-image {
+  object-fit: cover;
+  transform: rotate(90deg);
+  z-index: 2;
+}
+
+.evil-bruja-image {
+  height: 20rem;
+  z-index: 1;
+}
+
+.NoResponsive p {
+  text-align: center;
+  width: 33%;
+}
