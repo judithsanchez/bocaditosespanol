@@ -1,6 +1,17 @@
+import React, { useEffect } from 'react';
+
 import '/src/pages/styles/Homepage.css';
 import SubscriptionForm from '/src/components/SubscriptionForm.jsx';
 function Homepage() {
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href =
+      'https://cdn.bfldr.com/Z0BJ31FP/at/8sn8fhm3vrh3727bf5mb8tj/icon-teaching.svg';
+    document.head.appendChild(link);
+  }, []);
+
   return (
     <div className="homepage">
       <h1 className="homepage__title">Learn Spanish in Small Bites!</h1>
