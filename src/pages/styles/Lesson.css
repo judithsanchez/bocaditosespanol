@@ -20,6 +20,7 @@
   display: flex;
   flex-flow: column nowrap;
   height: 20rem;
+
   padding: 0 2.5rem;
 }
 
@@ -27,9 +28,19 @@
   font-size: 1.6rem;
 }
 
+.keys {
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 15rem;
+  text-align: center;
+}
+
 .point {
   font-size: 1.4rem;
   font-weight: 100;
+  margin: 1rem 0;
+  padding: 0;
+  width: 50%;
 }
 
 .examples-teacher-container {
@@ -54,7 +65,7 @@
 }
 
 .teacher-container img {
-  margin-bottom: -4.5rem;
+  margin-bottom: -4rem;
 }
 
 .examples {
@@ -77,7 +88,8 @@
   background-color: var(--mint-accent);
   color: black;
   display: flex;
-  font-size: 1.6rem;
+  flex-flow: row wrap;
+  font-size: 1.4rem;
   font-weight: 300;
   grid-area: explanation;
   justify-content: center;
@@ -96,103 +108,3 @@
   align-self: center;
   cursor: pointer;
 }
-
-/* .LessonPage {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  margin: auto;
-  max-width: 45rem;
-} */
-
-/* h1 {
-  color: var(--current-mode-text);
-} */
-
-/* .explanation {
-  background-color: var(--mint-accent);
-  height: 10rem;
-  width: 36.4rem;
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  font-size: 1.2rem;
-  font-weight: 300;
-  justify-content: center;
-  text-align: center;
-} */
-
-/* .explanation p {
-  width: 90%;
-} */
-
-/* .content {
-  display: flex;
-  flex-flow: row nowrap;
-  height: 41.3rem;
-  width: 36.4rem;
-} */
-
-/* .point,
-.example {
-  margin: 0;
-  padding: 0.5rem 2rem;
-} */
-
-/* .point {
-  text-decoration: dotted;
-} */
-
-/* .keys {
-  background-color: var(--pink-accent);
-  height: 41.3rem;
-  text-align: justify;
-  width: 18.2rem;
-  color: white;
-  font-size: 1.2rem;
-} */
-
-/* .keys h3,
-.examples h3 {
-  color: white;
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-align: center;
-} */
-
-/* .examples {
-  background-color: var(--purple-accent);
-  height: 41.3rem;
-  text-align: center;
-  width: 18.2rem;
-  color: white;
-  font-size: 1.2rem;
-} */
-
-/* .teacher-container {
-  background-image: url(https://cdn.bfldr.com/Z0BJ31FP/at/4h967fkrx88xxc23h82pqk/lesson-floor.svg);
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  display: flex;
-  justify-content: space-around;
-  margin-top: -17rem;
-  width: 100%;
-} */
-
-/* .teacher-image {
-  margin-bottom: 1rem;
-} */
-
-/* .navigation-arrow {
-  cursor: pointer;
-  height: 3.2rem;
-  width: 1.9rem;
-} */
-
-/* .arrow-container {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 10rem;
-} */
