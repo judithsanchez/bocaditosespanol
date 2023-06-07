@@ -51,7 +51,7 @@
     '. teacher examples .'
     'arrowLeft  explanation explanation arrowRight';
   grid-template-columns: 2.5rem auto auto 2.5rem;
-  height: 32rem;
+  height: 35rem;
 }
 
 .exampleTitle {
