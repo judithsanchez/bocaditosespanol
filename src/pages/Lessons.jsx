@@ -31,8 +31,8 @@ function LessonsPage() {
 
 function LessonThumbnail({ lesson }) {
   return (
-    <div className="lesson-thumbnail" key={lesson.id}>
-      <div className="lesson-difficulty">
+    <div className="LessonThumbnail" key={lesson.id}>
+      <div className="difficulty">
         {Array.from({ length: lesson.difficulty }, (_, i) => (
           <span key={i} role="img" aria-label="fire emoji">
             🔥
@@ -40,7 +40,7 @@ function LessonThumbnail({ lesson }) {
         ))}
       </div>
       <h3>{lesson.subject}</h3>
-      <div className="lesson-importance">{lesson.importance}</div>
+      <div className="importance">{lesson.importance}</div>
     </div>
   );
 }

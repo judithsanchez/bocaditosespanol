@@ -2,23 +2,28 @@
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-evenly;
-  min-height: 80vh;
+  min-height: 90vh;
 }
 
 .LessonsPage h1 {
   color: var(--current-mode-text);
   font-weight: 500;
+  margin-top: 5rem;
 }
 
 .lessons-container {
-  align-items: center;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  min-height: 80vh;
 }
 
-.lesson-thumbnail {
+.lesson-link {
+  color: var(--current-mode-text);
+  text-decoration: none;
+}
+
+.LessonThumbnail {
   align-items: center;
   background-color: white;
   box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
@@ -26,19 +31,25 @@
   color: black;
   cursor: pointer;
   display: flex;
+  flex-flow: column nowrap;
+  font-size: 2rem;
+  font-weight: 100;
   height: 25.5rem;
-  justify-content: center;
+  justify-content: space-around;
   margin: 2.5rem;
   width: 25.5rem;
 }
 
-.lesson-link {
-  text-decoration: none;
+.LessonThumbnail .difficulty {
+  align-self: flex-end;
+  margin-right: 2.5rem;
 }
 
-.lesson-thumbnail h3 {
-  font-size: 2rem;
+.LessonThumbnail h3 {
   font-weight: 100;
-  margin: 0 2rem;
   text-align: center;
+}
+
+.LessonThumbnail .importance {
+  font-size: 1.2rem;
 }
