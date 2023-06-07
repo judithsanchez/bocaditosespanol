@@ -7,6 +7,10 @@ import lessons from './data/lessons.json';
 // Styles
 import '/src/pages/styles/Lesson.css';
 
+// Components
+
+import ProgressBar from '../components/ProgressBar';
+
 function Lesson() {
   const { slug } = useParams();
 
@@ -52,7 +56,10 @@ function Lesson() {
     <div className="LessonPage">
       <div className="title-progressBar-container">
         <h1>{lesson?.subject}</h1>
-        {/* <ProgressBar></ProgressBar> */}
+        <ProgressBar
+          currentStep={currentStep}
+          totalSteps={lesson?.steps.length - 1}
+        />
       </div>
 
       <div className="keyPoints-container">
