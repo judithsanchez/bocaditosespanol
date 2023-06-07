@@ -1,17 +1,116 @@
 .LessonPage {
+  justify-content: space-between;
+  color: var(--current-mode-text);
+  display: flex;
+  flex-flow: column nowrap;
+  margin: auto;
+  max-width: 45rem;
+  padding: 0 2.5rem;
+}
+
+.title-progressBar-container {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 14.5rem;
+  justify-content: center;
+}
+
+.keyPoints-container {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 20rem;
+  padding: 0 2.5rem;
+}
+
+.keyPointsTitle {
+  font-size: 1.6rem;
+}
+
+.point {
+  font-size: 1.4rem;
+  font-weight: 100;
+}
+
+.examples-teacher-container {
+  display: grid;
+  grid-template-areas:
+    '. exampleTitle exampleTitle .'
+    '. teacher examples .'
+    'arrowLeft  explanation explanation arrowRight';
+  grid-template-columns: 2.5rem auto auto 2.5rem;
+  height: 32rem;
+}
+
+.exampleTitle {
+  font-size: 1.6rem;
+  grid-area: exampleTitle;
+  text-align: center;
+}
+
+.teacher-container {
+  grid-area: teacher;
+  z-index: 1;
+}
+
+.teacher-container img {
+  margin-bottom: -4.5rem;
+}
+
+.examples {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 1.4rem;
+  font-weight: 100;
+  grid-area: examples;
+  justify-content: center;
+  text-align: center;
+}
+
+.arrow-left {
+  grid-area: arrowLeft;
+}
+
+.explanation {
+  align-items: center;
+  background-color: var(--mint-accent);
+  color: black;
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 300;
+  grid-area: explanation;
+  justify-content: center;
+  height: 10.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.arrow-right {
+  grid-area: arrowRight;
+  justify-self: end;
+}
+
+.arrow-left,
+.arrow-right {
+  align-self: center;
+  cursor: pointer;
+}
+
+/* .LessonPage {
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   margin: auto;
   max-width: 45rem;
-}
+} */
 
-h1 {
+/* h1 {
   color: var(--current-mode-text);
-}
+} */
 
-.explanation {
+/* .explanation {
   background-color: var(--mint-accent);
   height: 10rem;
   width: 36.4rem;
@@ -22,56 +121,56 @@ h1 {
   font-weight: 300;
   justify-content: center;
   text-align: center;
-}
+} */
 
-.explanation p {
+/* .explanation p {
   width: 90%;
-}
+} */
 
-.content {
+/* .content {
   display: flex;
   flex-flow: row nowrap;
   height: 41.3rem;
   width: 36.4rem;
-}
+} */
 
-.point,
+/* .point,
 .example {
   margin: 0;
   padding: 0.5rem 2rem;
-}
+} */
 
-.point {
+/* .point {
   text-decoration: dotted;
-}
+} */
 
-.keys {
+/* .keys {
   background-color: var(--pink-accent);
   height: 41.3rem;
   text-align: justify;
   width: 18.2rem;
   color: white;
   font-size: 1.2rem;
-}
+} */
 
-.keys h3,
+/* .keys h3,
 .examples h3 {
   color: white;
   font-size: 1.6rem;
   font-weight: 600;
   text-align: center;
-}
+} */
 
-.examples {
+/* .examples {
   background-color: var(--purple-accent);
   height: 41.3rem;
   text-align: center;
   width: 18.2rem;
   color: white;
   font-size: 1.2rem;
-}
+} */
 
-.teacher-container {
+/* .teacher-container {
   background-image: url(https://cdn.bfldr.com/Z0BJ31FP/at/4h967fkrx88xxc23h82pqk/lesson-floor.svg);
   background-repeat: no-repeat;
   background-position: bottom center;
@@ -79,21 +178,21 @@ h1 {
   justify-content: space-around;
   margin-top: -17rem;
   width: 100%;
-}
+} */
 
-.teacher-image {
+/* .teacher-image {
   margin-bottom: 1rem;
-}
+} */
 
-.navigation-arrow {
+/* .navigation-arrow {
   cursor: pointer;
   height: 3.2rem;
   width: 1.9rem;
-}
+} */
 
-.arrow-container {
+/* .arrow-container {
   align-items: center;
   display: flex;
   justify-content: center;
   width: 10rem;
-}
+} */
