@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-// Styles
-// import '/src/pages/styles/Games.css';
+// Styles;
+import '/src/pages/styles/Games.css';
 
 // Components
 import WorkInProgress from '../components/WorkInProgress';

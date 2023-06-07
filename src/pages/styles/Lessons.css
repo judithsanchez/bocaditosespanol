@@ -2,8 +2,8 @@
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  margin-top: 5rem;
+  justify-content: space-evenly;
+  min-height: 80vh;
 }
 
 .LessonsPage h1 {
@@ -19,74 +19,26 @@
 }
 
 .lesson-thumbnail {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 2rem;
+  color: black;
   cursor: pointer;
-  height: 35.5rem;
-  margin: 2.5rem 5rem;
-  padding: 0;
-  width: 23.5rem;
-}
-
-.lesson-banner {
-  align-items: center;
   display: flex;
-  height: 8.5rem;
+  height: 25.5rem;
   justify-content: center;
-  margin: 0;
-  width: 23.1;
+  margin: 2.5rem;
+  width: 25.5rem;
 }
 
-.lesson-banner h3 {
-  font-size: 1.6rem;
-  font-weight: 300;
-  margin: 0;
-  padding: 0;
+.lesson-link {
+  text-decoration: none;
 }
 
-.keys h3,
-.examples h3 {
-  color: white;
-  font-size: 1.6rem;
-  font-weight: 600;
+.lesson-thumbnail h3 {
+  font-size: 2rem;
+  font-weight: 100;
+  margin: 0 2rem;
   text-align: center;
-}
-
-.explanation {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  font-size: 1.2rem;
-  font-weight: 300;
-  justify-content: center;
-  text-align: center;
-}
-
-.keys {
-  text-align: justify;
-}
-
-.examples {
-  text-align: center;
-}
-
-.keys,
-.examples {
-  color: white;
-  font-size: 1.2rem;
-}
-
-/* .point {
-  text-decoration: dotted;
-} */
-
-/* .example {
-  color: blue;
-} */
-
-.point,
-.example {
-  margin: 0;
-  padding: 0.5rem 2rem;
 }

@@ -3,12 +3,25 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  margin: auto;
+  max-width: 45rem;
+}
+
+h1 {
+  color: var(--current-mode-text);
 }
 
 .explanation {
   background-color: var(--mint-accent);
   height: 10rem;
   width: 36.4rem;
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 1.2rem;
+  font-weight: 300;
+  justify-content: center;
+  text-align: center;
 }
 
 .explanation p {
@@ -22,16 +35,40 @@
   width: 36.4rem;
 }
 
+.point,
+.example {
+  margin: 0;
+  padding: 0.5rem 2rem;
+}
+
+.point {
+  text-decoration: dotted;
+}
+
 .keys {
   background-color: var(--pink-accent);
   height: 41.3rem;
+  text-align: justify;
   width: 18.2rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.keys h3,
+.examples h3 {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .examples {
   background-color: var(--purple-accent);
   height: 41.3rem;
+  text-align: center;
   width: 18.2rem;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .teacher-container {

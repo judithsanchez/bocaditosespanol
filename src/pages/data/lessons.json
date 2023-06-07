@@ -1,25 +1,24 @@
 [
   {
-    "id": 1,
+    "id": "ser-1",
     "subject": "Verb SER",
     "difficulty": 3,
+    "importance": "🔑 Essential Knowledge",
     "activity": "/practice/when/use/ser",
     "title": "When to use SER?",
-    "thumbnail": "https://cdn.bfldr.com/Z0BJ31FP/at/pjrq6xwwpn89r5t495rtmnhc/lesson-topic-thumbnail-1.svg",
+    "teacherImage": "https://cdn.bfldr.com/Z0BJ31FP/at/r8vb8ts4p9vvfk6q4v7qn8sg/teacher-intro.svg",
     "slug": "when-use-ser",
     "steps": [
       {
         "explanation": "The big problem that students have with the verb TO BE is that in Spanish it can be translated in several different ways. Today you will learn one, the verb SER.",
         "examples": [],
-        "keys": [],
-        "image": "https://cdn.bfldr.com/Z0BJ31FP/at/r8vb8ts4p9vvfk6q4v7qn8sg/teacher-intro.svg"
+        "keys": []
       },
 
       {
         "explanation": "In the same way that you cannot say in English 'I drink a sandwich', in Spanish you must also use the correct verb for what you want to say. So you ALWAYS have to use the verb SER to express the following ideas:",
         "examples": [],
-        "keys": [],
-        "image": "https://cdn.bfldr.com/Z0BJ31FP/at/r8vb8ts4p9vvfk6q4v7qn8sg/teacher-intro.svg"
+        "keys": []
       },
       {
         "explanation": "To talk about the nationality/origin of something/someone.",
@@ -28,8 +27,7 @@
           "Mi familia es de España",
           "Los músicos son brasileros"
         ],
-        "keys": ["Nationality and origin"],
-        "image": ""
+        "keys": ["Nationality and origin"]
       },
       {
         "explanation": "To talk about job, occupation and avocation.",
@@ -41,8 +39,7 @@
         "keys": [
           "Job, occupation and avocation",
           "We don't use un/una before the adjective"
-        ],
-        "image": ""
+        ]
       },
       {
         "explanation": "To talk about relationships, whether you think are permanent or not.",
@@ -51,8 +48,7 @@
           "Somos pareja",
           "La empresa es socia de otra compañía"
         ],
-        "keys": ["Relationships"],
-        "image": ""
+        "keys": ["Relationships"]
       },
       {
         "explanation": "To talk about who owns what.",
@@ -61,8 +57,7 @@
           "La casa es mía",
           "La tienda es de ellos"
         ],
-        "keys": ["Possession"],
-        "image": ""
+        "keys": ["Possession"]
       },
       {
         "explanation": "To talk about date and time.",
@@ -71,8 +66,7 @@
           "Son las seis de la tarde",
           "El cumpleaños es el 5 de mayo"
         ],
-        "keys": ["Date and time"],
-        "image": ""
+        "keys": ["Date and time"]
       },
       {
         "explanation": "To talk about location of events.",
@@ -81,32 +75,30 @@
           "La reunión es en el restaurante",
           "El concierto es en el parque"
         ],
-        "keys": ["Location of events"],
-        "image": ""
+        "keys": ["Location of events"]
       },
       {
         "explanation": "Well done! Now, it’s time to practice!",
         "examples": [],
-        "keys": [],
-        "image": ""
+        "keys": []
       }
     ]
   },
 
   {
-    "id": 2,
+    "id": "estar-1",
     "subject": "Verb ESTAR",
     "difficulty": 3,
+    "importance": "🔑 Essential Knowledge",
     "activity": "/practice/when/use/estar",
     "title": "When to use ESTAR?",
-    "thumbnail": "https://cdn.bfldr.com/Z0BJ31FP/at/pwbkj3wvp5j486b6ws385xxp/lesson-topic-thumbnail-2.svg",
+    "teacherImage": "https://cdn.bfldr.com/Z0BJ31FP/at/r8vb8ts4p9vvfk6q4v7qn8sg/teacher-intro.svg",
     "slug": "when-use-estar",
     "steps": [
       {
         "explanation": "Welcome to today's lesson about the verb ESTAR in Spanish. One of the challenges that students often encounter is knowing when to use SER versus ESTAR. While SER is used to describe more permanent states, ESTAR is used to describe more temporary states or conditions. Let's dive into the different situations where ESTAR should be used.",
         "examples": [],
-        "keys": [],
-        "image": ""
+        "keys": []
       },
       {
         "explanation": "ESTAR is used to talk about a person's location or the location of an object. Never about the location of an event.",
@@ -115,8 +107,7 @@
           "Yo estoy en el parque.",
           "El lápiz está en la mochila."
         ],
-        "keys": ["Location"],
-        "image": ""
+        "keys": ["Location"]
       },
       {
         "explanation": "ESTAR is used to talk about a person's mood or feelings.",
@@ -125,8 +116,7 @@
           "Él está enojado por la situación.",
           "Ella está cansada después de trabajar todo el día."
         ],
-        "keys": ["Mood and Feelings"],
-        "image": ""
+        "keys": ["Mood and Feelings"]
       },
       {
         "explanation": "ESTAR is used to talk about a person's marital status.",
@@ -135,8 +125,7 @@
           "Mi hermano está casado.",
           "Ella está comprometida con su pareja."
         ],
-        "keys": ["Marital Status"],
-        "image": ""
+        "keys": ["Marital Status"]
       },
       {
         "explanation": "ESTAR is used to talk about the progress of an action.",
@@ -145,32 +134,30 @@
           "Ellos están caminando en el parque.",
           "Ella está cocinando la cena."
         ],
-        "keys": ["Progressive tenses"],
-        "image": ""
+        "keys": ["Progressive tenses"]
       },
       {
         "explanation": "Well done! Now it's time to practice using ESTAR in context.",
         "examples": [],
-        "keys": [],
-        "image": ""
+        "keys": []
       }
     ]
   },
 
   {
-    "id": 3,
+    "id": "hay-1",
     "subject": "Verb HAY",
     "difficulty": 2,
+    "importance": "🔑 Essential Knowledge",
     "activity": "/practice/when/use/hay",
     "title": "What is HAY and How to Use It?",
-    "thumbnail": "https://cdn.bfldr.com/Z0BJ31FP/at/58nfprkcwr5ss3gq9srrg77/lesson-topic-thumbnail-3.svg",
+    "teacherImage": "https://cdn.bfldr.com/Z0BJ31FP/at/r8vb8ts4p9vvfk6q4v7qn8sg/teacher-intro.svg",
     "slug": "what-is-hay-and-how-to-use-it",
     "steps": [
       {
         "explanation": "Today you will learn about a very special verb in Spanish: HAY. It comes from the verb HABER, but we don't conjugate it like other verbs. It's often confused with ESTAR, but it has a different function. HAY is used to talk about the existence of something, whether it's singular or plural.",
         "examples": [],
-        "keys": [],
-        "image": ""
+        "keys": []
       },
       {
         "explanation": "The verb HAY is a special verb that we use to indicate that something exists or is present. We don't need to conjugate it according to the subject, and it always stays the same.",
@@ -179,8 +166,7 @@
           "Hay dos perros en el parque.",
           "Hay muchas opciones para elegir."
         ],
-        "keys": ["Existence", "No conjugation needed", "Singular and plural"],
-        "image": ""
+        "keys": ["Existence", "No conjugation needed", "Singular and plural"]
       },
       {
         "explanation": "HAY is often confused with ESTAR, which is used to talk about the location of people and things. However, HAY is used to talk about the existence of something, regardless of its location.",
@@ -189,14 +175,12 @@
           "Hay una fiesta en la casa de María.",
           "Hay una gran cantidad de gente en la plaza."
         ],
-        "keys": ["Confusion with ESTAR", "Existence vs Location"],
-        "image": ""
+        "keys": ["Confusion with ESTAR", "Existence vs Location"]
       },
       {
         "explanation": "There you go, that's all you need to know about HAY.",
         "examples": [],
-        "keys": [],
-        "image": ""
+        "keys": []
       }
     ]
   }

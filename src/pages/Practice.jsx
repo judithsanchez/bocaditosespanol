@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 // Pages
 
 // Styles
-// import '/src/pages/styles/Practice.css';
+import '/src/pages/styles/Practice.css';
 
 // Components
 import WorkInProgress from '../components/WorkInProgress';
