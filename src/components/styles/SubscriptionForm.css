@@ -1,4 +1,4 @@
-.SubscriptionForm {
+.subscription-form {
   align-items: center;
   background-color: var(--purple-accent);
   cursor: pointer;
@@ -9,14 +9,15 @@
   width: 12.5rem;
 }
 
-.SubscriptionForm a {
+.subscription-form__link {
   color: white;
   font-size: 1.6rem;
   text-decoration: none;
 }
 
-.SubscriptionForm img {
+.subscription-form__icon {
   margin: 0 0 0 0.75rem;
+  height: auto;
   padding: 0;
   width: 2rem;
 }

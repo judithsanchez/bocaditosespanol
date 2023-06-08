@@ -33,14 +33,17 @@ function Homepage() {
       <div className="homepage__cards">
         <div
           className="homepage__card homepage__card--lessons"
+          role="button"
           aria-label="Spanish Lessons"
         ></div>
         <div
           className="homepage__card homepage__card--youtube"
+          role="button"
           aria-label="YouTube"
         ></div>
         <div
           className="homepage__card homepage__card--music"
+          role="button"
           aria-label="Music"
         ></div>
       </div>
