@@ -60,6 +60,7 @@ function Homepage() {
       <hr className="homepage__separator homepage__separator--left" />
 
       <img
+        className="homepage__image"
         src="https://cdn.bfldr.com/Z0BJ31FP/at/mpp3q7bbvfws97k78ftsb3wz/icon-globe-books-tablet-with-background.svg"
         alt="Globe, books, and tablet"
       />
@@ -79,6 +80,7 @@ function Homepage() {
       <hr className="homepage__separator homepage__separator--right" />
 
       <img
+        className="homepage__image"
         src="https://cdn.bfldr.com/Z0BJ31FP/at/h96xx59pxzmzmw64cz4m797f/icon-tablet-branches-with-background.svg"
         alt="Tablet and branches"
       />
@@ -98,6 +100,7 @@ function Homepage() {
       <hr className="homepage__separator homepage__separator--left" />
 
       <img
+        className="homepage__image"
         src="https://cdn.bfldr.com/Z0BJ31FP/at/j465hpvqcpv95x47fgr9kjwn/icon-global-tablet-with-background.svg"
         alt="Globe and tablet"
       />
@@ -118,6 +121,7 @@ function Homepage() {
       <hr className="homepage__separator homepage__separator--right" />
 
       <img
+        className="homepage__image"
         src="https://cdn.bfldr.com/Z0BJ31FP/at/v3b23gtbm8v4p28tpxzphvf/icon-suitcase-heart-briefcase-with-background.svg"
         alt="Suitcase and briefcase"
       />
@@ -137,6 +141,7 @@ function Homepage() {
       <hr className="homepage__separator homepage__separator--left" />
 
       <img
+        className="homepage__image"
         src="https://cdn.bfldr.com/Z0BJ31FP/at/kgpwf6xrbkp9qjk294vtzgk/icon-kids-studying-with-background.svg"
         alt="Kid with tablet"
       />
@@ -156,6 +161,7 @@ function Homepage() {
       <hr className="homepage__separator homepage__separator--right" />
 
       <img
+        className="homepage__image"
         src="https://cdn.bfldr.com/Z0BJ31FP/at/ct8n7r6vj892r5jrrw35w6/icon-heart-medical-kit-with-background.svg"
         alt="Medical Spanish"
       />

@@ -1,4 +1,4 @@
-.NavBar {
+.nav-bar {
   align-items: center;
   background-color: var(--current-mode);
   box-shadow: var(--current-mode-box-shadow);
@@ -12,40 +12,76 @@
   z-index: 1;
 }
 
-.NavBar ul {
+.nav-bar--container {
+  width: 50%;
+}
+
+.nav-bar__menu {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
   list-style: none;
-  width: 80%;
+  padding: 0;
+  margin: 0;
 }
 
-.NavBar li {
+.nav-bar__menu-item {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 300;
 }
 
-.NavBar a {
+.nav-bar__menu-link {
   color: var(--current-mode-text);
   text-decoration: none;
 }
 
-.NavBar img {
+.nav-bar__mode-toggle-button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.toggle-button--icon {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-bar__logo,
+.nav-bar__mode-toggle-icon {
   cursor: pointer;
 }
 
+.nav-bar__logo {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
 @media only screen and (min-width: 768px) {
-  .NavBar {
+  .nav-bar {
     height: 5rem;
     padding: 0 4.5rem;
   }
 
-  .NavBar li {
+  .nav-bar__menu-item {
     font-size: 1.6rem;
   }
 
-  .NavBar img {
+  .nav-bar__mode-toggle-button {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .nav-bar__logo {
+    height: 3.5rem;
     width: 3.5rem;
   }
 }

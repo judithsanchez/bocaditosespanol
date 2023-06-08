@@ -31,29 +31,43 @@ function NavBar({ toggleMode, isDarkMode }) {
   };
 
   return (
-    <nav className="NavBar">
+    <header className="nav-bar">
       <Link to="/">
-        <img src={mainLogoImg} alt="Main Bocaditos Logo" />
+        <img
+          src={mainLogoImg}
+          alt="Bocaditos - Learn Spanish Logo"
+          className="nav-bar__logo"
+        />
       </Link>
-      <ul>
-        {routes.map((route, index) => (
-          <li key={index}>
-            <NavLink to={route.to}>{route.text}</NavLink>
-          </li>
-        ))}
-      </ul>
-      <img
-        src={modeButtonImg}
-        alt="Mode Toggle Button"
+      <nav className="nav-bar--container">
+        <ul className="nav-bar__menu">
+          {routes.map((route, index) => (
+            <li key={index} className="nav-bar__menu-item">
+              <NavLink to={route.to} className="nav-bar__menu-link">
+                {route.text}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <button
+        type="button"
+        className="nav-bar__mode-toggle-button"
+        aria-label="Toggle Dark Mode"
         onClick={handleModeChange}
-      />
-    </nav>
+      >
+        <img
+          className="toggle-button--icon"
+          src={modeButtonImg}
+          alt="Dark Mode Toggle Button"
+        />
+      </button>
+    </header>
   );
 }
 
-const routes = [];
-
-routes.push(
+const routes = [
   {
     to: '/lessons',
     text: 'Lessons',
@@ -65,7 +79,7 @@ routes.push(
   {
     to: '/practice',
     text: 'Practice',
-  }
-);
+  },
+];
 
 export default NavBar;

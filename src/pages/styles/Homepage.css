@@ -22,11 +22,9 @@
 }
 
 .homepage__main-icon {
-  margin-bottom: 2rem;
-}
-
-.homepage__image {
   margin-bottom: 2.5rem;
+  height: 16.9rem;
+  width: 22.4rem;
 }
 
 .homepage__subtitle {
@@ -91,6 +89,11 @@
 .homepage__separator--right {
   align-self: flex-end;
   margin-right: 2rem;
+}
+
+.homepage__image {
+  height: 17.5rem;
+  width: 30rem;
 }
 
 @media only screen and (min-width: 768px) {
