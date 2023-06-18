@@ -6,6 +6,7 @@
   height: 80vh;
   justify-content: center;
   width: 100%;
+  background-color: aqua;
 }
 
 .overlay {
@@ -26,8 +27,7 @@
 }
 
 .evil-bruja-image {
-  height: 20rem;
-  z-index: 1;
+  width: 25%;
 }
 
 .NoResponsive p {

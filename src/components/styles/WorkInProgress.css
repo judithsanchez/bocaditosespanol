@@ -11,12 +11,15 @@
 }
 
 .WorkInProgress img {
-  width: 33%;
+  width: 15rem;
 }
 
 @media screen and (orientation: landscape) {
   .WorkInProgress {
     flex-flow: row nowrap;
-    width: 50%;
+    width: 75%;
+  }
+  .WorkInProgress img {
+    width: 7.5rem;
   }
 }
