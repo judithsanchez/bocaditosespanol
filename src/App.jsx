@@ -37,6 +37,11 @@ function App() {
         '--current-mode-lesson-thumbnail-card',
         '#474747'
       );
+
+      document.documentElement.style.setProperty(
+        '--broken-glass-horizontal',
+        'https://cdn.bfldr.com/Z0BJ31FP/at/bt578wgmvpf4qvkjbg7hkh/no-responsive-dark-mode-horizontal.svg'
+      );
     } else {
       document.documentElement.style.setProperty(
         '--current-mode-box-shadow',
@@ -54,6 +59,11 @@ function App() {
       document.documentElement.style.setProperty(
         '--current-mode-lesson-thumbnail-card',
         'white'
+      );
+
+      document.documentElement.style.setProperty(
+        '--broken-glass-horizontal',
+        'https://cdn.bfldr.com/Z0BJ31FP/at/kk6qj8f9twb8fgqfw7hqmtjg/no-responsive-light-mode-horizontal.svg'
       );
     }
   }, [isDarkMode]);

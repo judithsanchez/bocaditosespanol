@@ -32,6 +32,10 @@
   --characters-black: #231f20;
   --characters-blue-features: #60c8d4;
   --characters-humans: #595a5c;
+
+  /* No responsive */
+
+  --broken-glass-horizontal: url('https://cdn.bfldr.com/Z0BJ31FP/at/kk6qj8f9twb8fgqfw7hqmtjg/no-responsive-light-mode-horizontal.svg');
 }
 
 body {

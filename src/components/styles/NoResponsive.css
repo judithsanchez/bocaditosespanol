@@ -1,38 +1,35 @@
 .NoResponsive {
-  position: relative;
-  align-items: center;
+  align-items: flex-end;
   display: none;
   flex-flow: column nowrap;
   height: 80vh;
   justify-content: center;
   width: 100%;
-  background-color: aqua;
+  overflow-y: auto;
 }
 
 .overlay {
-  position: absolute;
+  background-image: var(--broken-glass-horizontal);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.broken-glass-image {
-  object-fit: cover;
-  transform: rotate(90deg);
+  right: 0;
+  bottom: 0;
   z-index: 2;
 }
 
 .evil-bruja-image {
+  margin-left: 20rem;
   width: 25%;
 }
 
 .NoResponsive p {
+  margin: auto;
+  color: var(--current-mode-text);
   text-align: center;
-  width: 33%;
+  width: 75%;
 }
 
 @media only screen and (orientation: landscape) and (min-width: 320px) and (max-width: 900px) {

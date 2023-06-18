@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
 import '/src/components/styles/NoResponsive.css';
 
 function NoResponsive() {
   return (
     <div className="NoResponsive">
-      <div className="overlay">
-        <img
-          className="broken-glass-image"
-          src="https://cdn.bfldr.com/Z0BJ31FP/at/8tsp46fjmrsmc5r78s3kc/broken-glass-light-mode.svg"
-          alt="Broken screen"
-        />
-      </div>
+      <div className="overlay"></div>
 
       <img
         className="evil-bruja-image"
@@ -26,5 +19,3 @@ function NoResponsive() {
     </div>
   );
 }
-
-export default NoResponsive;
