@@ -19,3 +19,5 @@ function NoResponsive() {
     </div>
   );
 }
+
+export default NoResponsive;
