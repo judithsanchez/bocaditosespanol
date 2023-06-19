@@ -1,5 +1,5 @@
 .NoResponsive {
-  align-items: flex-end;
+  align-items: center;
   display: none;
   flex-flow: column nowrap;
   height: 80vh;
@@ -9,7 +9,8 @@
 }
 
 .overlay {
-  background-image: var(--broken-glass-horizontal);
+  /* background-image: var(--broken-glass-horizontal); */
+  background-image: url('https://cdn.bfldr.com/Z0BJ31FP/at/kk6qj8f9twb8fgqfw7hqmtjg/no-responsive-light-mode-horizontal.svg');
   background-size: cover;
   background-repeat: no-repeat;
   position: fixed;
@@ -21,7 +22,8 @@
 }
 
 .evil-bruja-image {
-  margin-left: 20rem;
+  margin-top: 2.5rem;
+  margin-right: 20rem;
   width: 25%;
 }
 
