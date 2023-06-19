@@ -13,7 +13,6 @@
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
-
   height: 9rem;
   justify-content: center;
 }
@@ -26,8 +25,8 @@
 .keyPoints-container {
   display: flex;
   flex-flow: column nowrap;
-  height: 18rem;
-  min-height: 18rem;
+  height: 16rem;
+  min-height: 16rem;
   padding: 0 1rem;
 }
 
@@ -92,7 +91,7 @@
   font-weight: 300;
   grid-area: examples;
   justify-content: center;
-  height: 20rem;
+  height: 10rem;
   text-align: center;
 }
 
