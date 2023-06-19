@@ -105,13 +105,18 @@
   color: black;
   display: flex;
   flex-flow: row wrap;
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   font-weight: 300;
   grid-area: explanation;
   justify-content: center;
   height: 10.5rem;
   text-align: center;
   width: 100%;
+}
+
+.explanation p {
+    padding: 0 1rem;
+
 }
 
 .arrow-right {
