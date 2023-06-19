@@ -7,7 +7,7 @@
   max-height: 80vh;
   max-width: 45rem;
   padding: 0 1rem;
-/}
+}
 
 .title-progressBar-container {
   align-items: center;
@@ -18,8 +18,7 @@
 }
 
 .title-progressBar-container h1 {
-    font-size: 1.6rem;
-
+  font-size: 1.6rem;
 }
 
 .keyPoints-container {
@@ -32,7 +31,6 @@
 
 .keyPointsTitle {
   font-size: 1.4rem;
-  
 }
 
 .keys {
@@ -51,7 +49,6 @@
 }
 
 .examples-teacher-container {
-
   display: grid;
   grid-template-areas:
     '. exampleTitle exampleTitle .'
@@ -60,7 +57,6 @@
   grid-template-columns: 2.5rem 1fr 3fr 2.5rem;
   height: 35rem;
 }
-
 
 .exampleTitle {
   font-size: 1.4rem;
@@ -115,8 +111,7 @@
 }
 
 .explanation p {
-    padding: 0 1rem;
-
+  padding: 0 1rem;
 }
 
 .arrow-right {
@@ -133,5 +128,87 @@
 @media only screen and (orientation: landscape) and (min-width: 320px) and (max-width: 850px) {
   .LessonPage {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 360px) and (orientation: portrait) {
+  .LessonPage {
+    max-height: 90vh;
+    max-width: 45rem;
+    padding: 0 1rem;
+  }
+
+  .title-progressBar-container {
+    height: 9rem;
+  }
+
+  .title-progressBar-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .keyPoints-container {
+    height: 14rem;
+    min-height: 14rem;
+    padding: 0 1rem;
+  }
+
+  .keyPointsTitle {
+    font-size: 1.2rem;
+  }
+
+  .keys {
+    max-height: 12rem;
+  }
+
+  .point {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0.5rem 0;
+    padding: 0;
+    width: 50%;
+  }
+
+  .examples-teacher-container {
+    display: grid;
+    grid-template-areas:
+      '. exampleTitle exampleTitle .'
+      '. teacher examples .'
+      'arrowLeft  explanation explanation arrowRight';
+    grid-template-columns: 2.5rem 1fr 3fr 2.5rem;
+    height: 35rem;
+  }
+
+  .exampleTitle {
+    font-size: 1.2rem;
+  }
+
+  .teacher-container {
+    justify-content: end;
+    width: 7.5rem;
+    z-index: 1;
+  }
+
+  .teacher-container img {
+    margin-bottom: -2rem;
+    width: 100%;
+  }
+
+  .examples {
+    font-size: 1rem;
+    height: 10rem;
+  }
+
+  .explanation {
+    align-items: center;
+    background-color: var(--mint-accent);
+    font-size: 1.2rem;
+    font-weight: 300;
+    justify-content: center;
+    height: 10.5rem;
+    width: 100%;
+  }
+
+  .explanation p {
+    padding: 0 1rem;
   }
 }
