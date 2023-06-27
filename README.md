@@ -1,6 +1,8 @@
 # Bocaditos de Español
 
-[🔗 Live preview](https://www.bocaditosespanol.com/)
+[🎥 Preview](https://www.loom.com/share/4bec32fd2b7f4d59a1d5dd370d7a480f?sid=9db58f7f-63ce-40fa-837c-393b9edf639e)
+
+[🚀 Live](https://www.bocaditosespanol.com/)
 
 Bocaditos de Español offers a delightful and immersive language learning experience that brings the vibrancy of the Spanish-speaking world right to your fingertips. Our aim is to make Spanish learning authentic, accessible, and enjoyable for students worldwide.
 
