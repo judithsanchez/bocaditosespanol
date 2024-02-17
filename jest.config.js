@@ -1,0 +1,31 @@
+module.exports = {
+	preset: 'ts-jest',
+	testEnvironment: 'node',
+	transform: {},
+	transformIgnorePatterns: ['/node_modules/', '\\.pnp\\.[^\\/]+$'],
+	resolver: undefined,
+	moduleNameMapper: {
+		'^react-native$': 'react-native-web',
+	},
+	moduleFileExtensions: [
+		'web.js',
+		'js',
+		'web.ts',
+		'ts',
+		'web.tsx',
+		'tsx',
+		'json',
+		'web.jsx',
+		'jsx',
+		'node',
+	],
+	transform: {
+		'^.+\\.tsx?$': 'ts-jest',
+		'^.+\\.jsx?$': 'esbuild-jest',
+	},
+	moduleDirectories: ['node_modules', 'src'],
+	testRegex: ['(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$'],
+	testPathIgnorePatterns: ['/node_modules/', '/public/'],
+	bail: 0,
+	verbose: false,
+};

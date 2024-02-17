@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"outDir": "./dist",
+		"strict": true,
+		"lib": ["es2018", "dom"],
+		"baseUrl": ".",
+		"paths": {
+			"@app/*": ["src/*"],
+			"@songs/*": ["src/activities/songs/*"]
+		},
+		"typeRoots": ["node_modules/@types", "types"],
+		"types": ["jest"],
+		"allowImportingTsExtensions": true,
+		"esModuleInterop": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules"]
+}
