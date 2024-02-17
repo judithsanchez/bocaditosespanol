@@ -12,8 +12,8 @@
 		},
 		"typeRoots": ["node_modules/@types", "types"],
 		"types": ["jest"],
-		"allowImportingTsExtensions": true,
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"sourceMap": true
 	},
 	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules"]

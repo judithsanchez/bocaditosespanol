@@ -1,11 +1,11 @@
-import {TextProcessor, Sentence} from '../sentenceSplitter';
+import {TextProcessor, ISentence} from '../sentenceSplitter';
 
 describe('TextProcessor', () => {
 	test('processes text correctly with example Spanish sentences', () => {
 		// const spanishText = '¡Hola! ¿Cómo estás? Estoy bien, gracias.';
 		const spanishText = '¡Hola!';
 
-		const expectedProcessedText: Sentence[] = [
+		const expectedProcessedText: ISentence[] = [
 			{
 				tokens: [
 					{token: '¡', isPunctuationSign: true},
