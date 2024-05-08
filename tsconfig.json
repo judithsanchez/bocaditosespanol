@@ -8,13 +8,14 @@
 		"baseUrl": ".",
 		"paths": {
 			"@app/*": ["src/*"],
-			"@songs/*": ["src/activities/songs/*"]
+			"@songs/*": ["src/activities/songs/*"],
+			"@utils/*": ["src/utils/*"]
 		},
 		"typeRoots": ["node_modules/@types", "types"],
 		"types": ["jest"],
 		"esModuleInterop": true,
 		"sourceMap": true
 	},
-	"include": ["src/**/*.ts"],
+	"include": ["src/**/*.ts", "tests/**/*.ts"],
 	"exclude": ["node_modules"]
 }
