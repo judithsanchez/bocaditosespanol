@@ -1,6 +1,8 @@
 /**
  * Tokenizes a sentence into an array of strings.
  *
+ * A token is a meaningful unit of text, typically a word, an emoji or a punctuation mark,
+ * that is obtained by splitting a sentence into smaller pieces.
  * @param sentence - The sentence to be tokenized.
  * @returns An object containing the original sentence and an array of tokens, or `null` if the sentence is empty.
  */
