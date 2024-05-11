@@ -1,4 +1,4 @@
-export const replaceSpecialCharacters = (string: string): string => {
+export const normalizeString = (string: string): string => {
 	return string
 		.trim()
 		.toLowerCase()
