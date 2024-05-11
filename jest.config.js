@@ -6,6 +6,7 @@ module.exports = {
 	resolver: undefined,
 	moduleNameMapper: {
 		'^react-native$': 'react-native-web',
+		'^@utils/(.*)$': '<rootDir>/src/utils/$1',
 	},
 	moduleFileExtensions: [
 		'web.js',
