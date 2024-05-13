@@ -74,4 +74,23 @@ describe('tokenizeSentences', () => {
 	// test('handles emojis with and without modifiers', () => {
 	// 	expect(tokenizeSentences('👋🏻 👋 👩🏽‍💻 👨‍🍳')).toBe('👋👋👩‍💻👨‍🍳');
 	// });
+	test('handles emojis with multiple modifiers', () => {
+		const sentence = '👩🏽‍💻 👨🏼‍🍳';
+		const expected = {
+			originalSentence: sentence,
+			tokens: ['👩🏽‍💻', '👨🏼‍🍳'],
+		};
+		const result = tokenizeSentences(sentence);
+		expect(result).toEqual(expected);
+	});
+
+	test('handles emojis with and without modifiers', () => {
+		const sentence = '👋🏻 👋 👩🏽‍💻 👨‍🍳';
+		const expected = {
+			originalSentence: sentence,
+			tokens: ['👋🏻', '👋', '👩🏽‍💻', '👨‍🍳'],
+		};
+		const result = tokenizeSentences(sentence);
+		expect(result).toEqual(expected);
+	});
 });
