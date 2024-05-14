@@ -1,10 +1,17 @@
+import {errors} from './lib/constans';
+
 /**
  * Splits a string into an array of sentences.
  * @param string - The string to be split into sentences.
+ * @throws {TypeError} If the input is not a string.
  * @returns An array of sentences.
  */
 const paragraphSplitter = (string: string): string[] => {
-	const sentenceEndRegex = /(\s*\.{3}|\s*[.?!,:;\-])/;
+	if (typeof string !== 'string') {
+		throw new TypeError(errors.mustBeString);
+	}
+
+	const sentenceEndRegex: RegExp = /(\s*\.{3}|\s*[.?!:;\-])/;
 	const sentences: string[] = string.split(sentenceEndRegex);
 	const filteredSentences: string[] = [];
 	for (let i: number = 0; i < sentences.length; i += 2) {

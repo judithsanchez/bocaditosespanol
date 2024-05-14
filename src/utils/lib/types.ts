@@ -1,0 +1,21 @@
+export interface ISentence {
+	sentence: string;
+	tokens: string[];
+}
+
+export interface ITextProcessor {
+	processedText: ISentence[];
+	textData: string;
+	processTextData(lyrics: string): ISentence[];
+}
+
+// export interface ISongData {
+// 	title: string;
+// 	artist: string;
+// 	album?: string;
+// 	youtubeVideo?: string;
+// 	spotify?: string;
+// 	genre: string[];
+// 	released: string;
+// 	lyrics: string;
+// }

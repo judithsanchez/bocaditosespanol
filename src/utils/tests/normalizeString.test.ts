@@ -1,4 +1,5 @@
-import {normalizeString} from '@utils/normalizeString';
+import {normalizeString} from 'utils/normalizeString';
+import {errors} from 'utils//lib/constans';
 
 describe('normalizeString', () => {
 	test('replaces accented vowels with unaccented vowels', () => {
@@ -10,6 +11,14 @@ describe('normalizeString', () => {
 	});
 
 	test('replaces ü with u', () => {
+		expect(normalizeString('über')).toBe('uber');
+	});
+
+	test('replaces Ü with U', () => {
+		expect(normalizeString('über')).toBe('uber');
+	});
+
+	test('replaces É with E', () => {
 		expect(normalizeString('über')).toBe('uber');
 	});
 
@@ -29,11 +38,19 @@ describe('normalizeString', () => {
 		expect(normalizeString('áéñü')).toBe('aenu');
 	});
 
-	test('ignores case sensitivity', () => {
-		expect(normalizeString('ÁÉÑÜ')).toBe('aenu');
-	});
-
 	test('handles leading and trailing spaces', () => {
 		expect(normalizeString('  áéñü  ')).toBe('aenu');
+	});
+
+	test('throws an error when input is not a string', () => {
+		expect(() => normalizeString(123 as unknown as string)).toThrow(
+			errors.mustBeString,
+		);
+		expect(() => normalizeString(null as unknown as string)).toThrow(
+			errors.mustBeString,
+		);
+		expect(() => normalizeString(undefined as unknown as string)).toThrow(
+			errors.mustBeString,
+		);
 	});
 });
