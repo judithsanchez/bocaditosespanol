@@ -1,4 +1,4 @@
-import {errors} from 'utils/lib/constans';
+import {errors} from 'lib/constants';
 import {tokenizeSentences} from '../tokenizeSentences';
 
 describe('tokenizeSentences', () => {

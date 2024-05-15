@@ -12,11 +12,12 @@
 		"moduleResolution": "Node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": true,
 		"baseUrl": "src",
+		"outDir": "dist",
 		"paths": {
 			"@utils/*": ["src/utils/*"],
-			"@data/*": ["src/data/*"]
+			"@data/*": ["src/data/*"],
+			"@lib/*": ["src/lib/*"]
 		}
 	},
 	"include": ["src", "types"],

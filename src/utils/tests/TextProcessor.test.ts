@@ -1,5 +1,5 @@
 import {TextProcessor} from '../TextProcessor';
-import {errors} from '../lib/constans';
+import {errors} from '../../lib/constants';
 
 describe('TextProcessor', () => {
 	// describe('constructor', () => {

@@ -1,4 +1,4 @@
-import {errors} from './lib/constans';
+import {errors} from '../lib/constants';
 
 /**
  * Splits a string into an array of sentences.

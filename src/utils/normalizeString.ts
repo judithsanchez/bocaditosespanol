@@ -7,7 +7,7 @@
  * @returns The normalized string.
  */
 
-import {errors} from './lib/constans';
+import {errors} from '../lib/constants';
 
 export const normalizeString = (string: string): string => {
 	if (typeof string !== 'string') {

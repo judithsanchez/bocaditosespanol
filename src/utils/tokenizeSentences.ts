@@ -9,8 +9,8 @@
  * @returns An object containing the original sentence and an array of tokens.
  */
 import emojiRegex from 'emoji-regex';
-import {ISentence} from './lib/types';
-import {errors} from './lib/constans';
+import {ISentence} from '../lib/types';
+import {errors} from '../lib/constants';
 
 const tokenizeSentences = (sentence: string): ISentence => {
 	if (typeof sentence !== 'string') {

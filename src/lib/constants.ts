@@ -5,3 +5,8 @@ export const errors = {
 	processingError: 'Error processing text data',
 	invalidText: 'Invalid text provided',
 };
+
+export const urls = {
+	local: 'http://localhost:3000/',
+	songs: 'http://localhost:3000/songs',
+};

@@ -1,4 +1,4 @@
-import {errors} from 'utils/lib/constans';
+import {errors} from 'lib/constants';
 import {paragraphSplitter} from 'utils/paragraphSplitter';
 
 describe('paragraphSplitter', () => {

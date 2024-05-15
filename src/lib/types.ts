@@ -9,6 +9,14 @@ export interface ITextProcessor {
 	processTextData(lyrics: string): ISentence[];
 }
 
+// enum MediaType {
+// 	song = 'song',
+// 	youtubeTranscript = 'youtubeTranscript',
+// 	bookExcerpt = 'bookExcerpt',
+// }
+
+export interface IText {}
+
 // export interface ISongData {
 // 	title: string;
 // 	artist: string;

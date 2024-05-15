@@ -1,5 +1,5 @@
 import {normalizeString} from 'utils/normalizeString';
-import {errors} from 'utils//lib/constans';
+import {errors} from 'lib/constants';
 
 describe('normalizeString', () => {
 	test('replaces accented vowels with unaccented vowels', () => {
