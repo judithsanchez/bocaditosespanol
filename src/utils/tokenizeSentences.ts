@@ -48,7 +48,7 @@ const tokenizeSentences = (sentence: string): ISentence => {
 			} else {
 				const spanish = token;
 				const normalizedToken = normalizeString(spanish);
-				const hasSpecialChar = spanish !== normalizedToken;
+				const hasSpecialChar = spanish.toLowerCase() !== normalizedToken;
 				return {
 					token: {spanish, normalizedToken, hasSpecialChar},
 					type: TokenType.Word,
