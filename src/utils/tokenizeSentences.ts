@@ -37,11 +37,12 @@ const tokenizeSentences = (sentence: string): ISentence => {
 	const emojiPattern = emojiRegex();
 	const pattern = `(${emojiPattern.source}|\\.{3}|[.?!¡¿,:;'"\\s-])`;
 	const regex = new RegExp(pattern, 'gu');
+
 	const tokens: IToken[] = trimmedSentence
 		.split(regex)
 		.filter(token => token.trim() !== '')
 		.map(token => {
-			if (emojiPattern.test(token)) {
+			if (emojiRegex().test(token)) {
 				return {token, type: TokenType.Emoji};
 			} else if (/^[.?!¡¿,:;'"\\s-]+$/.test(token)) {
 				return {token, type: TokenType.PunctuationSign};
