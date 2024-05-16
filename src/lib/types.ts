@@ -1,6 +1,32 @@
 export interface ISentence {
 	sentence: string;
-	tokens: string[];
+	tokens: IToken[];
+}
+export enum TokenType {
+	Word = 'word',
+	Emoji = 'emoji',
+	PunctuationSign = 'punctuationSign',
+}
+
+export interface IToken {
+	token: string | IWord;
+	type: TokenType;
+}
+
+export interface IWord {
+	spanish: string;
+	normalizedToken: string;
+	english?: string;
+	hasSpecialChar: boolean;
+	type?: WordType;
+}
+
+export enum WordType {
+	Noun = 'noun',
+	Verb = 'verb',
+	Conjunction = 'conjunction',
+	Prepostion = 'preposition',
+	Article = 'article',
 }
 
 export interface ITextProcessor {
@@ -8,12 +34,6 @@ export interface ITextProcessor {
 	textData: string;
 	processTextData(lyrics: string): ISentence[];
 }
-
-// enum MediaType {
-// 	song = 'song',
-// 	youtubeTranscript = 'youtubeTranscript',
-// 	bookExcerpt = 'bookExcerpt',
-// }
 
 export interface IText {}
 
