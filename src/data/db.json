@@ -1,3 +1,504 @@
 {
-	"songs": []
+  "songs": [
+    {
+      "id": "d4e6",
+      "title": "test",
+      "artist": "test",
+      "album": "test",
+      "youtubeVideo": "test",
+      "spotify": "test",
+      "genre": [],
+      "released": "3456",
+      "lyrics": "Tengo la camisa negra. Hoy mi amor está de luto. Hoy tengo en el alma una pena y es por culpa de tu embrujo. Hoy sé que tú ya no me quieres y eso es lo que más me hiere. Que tengo la camisa negra y una pena que me duele. Mal parece que solo me quedé y fue pura todita tu mentira. Qué maldita mala suerte la mía que aquel día te encontré. Por beber del veneno malevo de tu amor. Yo quedé moribundo y lleno de dolor. Respiré de ese humo amargo de tu adiós. Y desde que tú te fuiste, yo solo tengo. Tengo la camisa negra. Porque negra tengo el alma. Yo por ti perdí la calma. Y casi pierdo hasta mi cama. Come on, come on, come on, baby, te digo con disimulo. Que tengo la camisa negra y debajo tengo el difunto. Tengo la camisa negra, ya tu amor no me interesa. Lo que ayer me supo a gloria hoy me sabe a pura... Miércoles por la tarde y tú que no llegas, ni siquiera muestras señas. Y yo con la camisa negra y tus maletas en la puerta. Mal parece que solo me quedé y fue pura todita tu mentira. Qué maldita mala suerte la mía que aquel día te encontré. Por beber del veneno malevo de tu amor, yo quedé moribundo y lleno de dolor. Respiré de ese humo amargo de tu adiós y desde que tú te fuiste, yo solo tengo. Tengo la camisa negra porque negra tengo el alma. Yo por ti perdí la calma y casi pierdo hasta mi cama. Come on, come on, come on, baby te digo con disimulo. Que tengo la camisa negra y debajo tengo el difunto. Tengo la camisa negra",
+      "processedLyrics": [
+        {
+          "sentence": "tengo la camisa negra.",
+          "tokens": [
+            "tengo",
+            "la",
+            "camisa",
+            "negra",
+            "."
+          ]
+        },
+        {
+          "sentence": "hoy mi amor esta de luto.",
+          "tokens": [
+            "hoy",
+            "mi",
+            "amor",
+            "esta",
+            "de",
+            "luto",
+            "."
+          ]
+        },
+        {
+          "sentence": "hoy tengo en el alma una pena y es por culpa de tu embrujo.",
+          "tokens": [
+            "hoy",
+            "tengo",
+            "en",
+            "el",
+            "alma",
+            "una",
+            "pena",
+            "y",
+            "es",
+            "por",
+            "culpa",
+            "de",
+            "tu",
+            "embrujo",
+            "."
+          ]
+        },
+        {
+          "sentence": "hoy se que tu ya no me quieres y eso es lo que mas me hiere.",
+          "tokens": [
+            "hoy",
+            "se",
+            "que",
+            "tu",
+            "ya",
+            "no",
+            "me",
+            "quieres",
+            "y",
+            "eso",
+            "es",
+            "lo",
+            "que",
+            "mas",
+            "me",
+            "hiere",
+            "."
+          ]
+        },
+        {
+          "sentence": "que tengo la camisa negra y una pena que me duele.",
+          "tokens": [
+            "que",
+            "tengo",
+            "la",
+            "camisa",
+            "negra",
+            "y",
+            "una",
+            "pena",
+            "que",
+            "me",
+            "duele",
+            "."
+          ]
+        },
+        {
+          "sentence": "mal parece que solo me quede y fue pura todita tu mentira.",
+          "tokens": [
+            "mal",
+            "parece",
+            "que",
+            "solo",
+            "me",
+            "quede",
+            "y",
+            "fue",
+            "pura",
+            "todita",
+            "tu",
+            "mentira",
+            "."
+          ]
+        },
+        {
+          "sentence": "que maldita mala suerte la mia que aquel dia te encontre.",
+          "tokens": [
+            "que",
+            "maldita",
+            "mala",
+            "suerte",
+            "la",
+            "mia",
+            "que",
+            "aquel",
+            "dia",
+            "te",
+            "encontre",
+            "."
+          ]
+        },
+        {
+          "sentence": "por beber del veneno malevo de tu amor.",
+          "tokens": [
+            "por",
+            "beber",
+            "del",
+            "veneno",
+            "malevo",
+            "de",
+            "tu",
+            "amor",
+            "."
+          ]
+        },
+        {
+          "sentence": "yo quede moribundo y lleno de dolor.",
+          "tokens": [
+            "yo",
+            "quede",
+            "moribundo",
+            "y",
+            "lleno",
+            "de",
+            "dolor",
+            "."
+          ]
+        },
+        {
+          "sentence": "respire de ese humo amargo de tu adios.",
+          "tokens": [
+            "respire",
+            "de",
+            "ese",
+            "humo",
+            "amargo",
+            "de",
+            "tu",
+            "adios",
+            "."
+          ]
+        },
+        {
+          "sentence": "y desde que tu te fuiste, yo solo tengo.",
+          "tokens": [
+            "y",
+            "desde",
+            "que",
+            "tu",
+            "te",
+            "fuiste",
+            ",",
+            "yo",
+            "solo",
+            "tengo",
+            "."
+          ]
+        },
+        {
+          "sentence": "tengo la camisa negra.",
+          "tokens": [
+            "tengo",
+            "la",
+            "camisa",
+            "negra",
+            "."
+          ]
+        },
+        {
+          "sentence": "porque negra tengo el alma.",
+          "tokens": [
+            "porque",
+            "negra",
+            "tengo",
+            "el",
+            "alma",
+            "."
+          ]
+        },
+        {
+          "sentence": "yo por ti perdi la calma.",
+          "tokens": [
+            "yo",
+            "por",
+            "ti",
+            "perdi",
+            "la",
+            "calma",
+            "."
+          ]
+        },
+        {
+          "sentence": "y casi pierdo hasta mi cama.",
+          "tokens": [
+            "y",
+            "casi",
+            "pierdo",
+            "hasta",
+            "mi",
+            "cama",
+            "."
+          ]
+        },
+        {
+          "sentence": "come on, come on, come on, baby, te digo con disimulo.",
+          "tokens": [
+            "come",
+            "on",
+            ",",
+            "come",
+            "on",
+            ",",
+            "come",
+            "on",
+            ",",
+            "baby",
+            ",",
+            "te",
+            "digo",
+            "con",
+            "disimulo",
+            "."
+          ]
+        },
+        {
+          "sentence": "que tengo la camisa negra y debajo tengo el difunto.",
+          "tokens": [
+            "que",
+            "tengo",
+            "la",
+            "camisa",
+            "negra",
+            "y",
+            "debajo",
+            "tengo",
+            "el",
+            "difunto",
+            "."
+          ]
+        },
+        {
+          "sentence": "tengo la camisa negra, ya tu amor no me interesa.",
+          "tokens": [
+            "tengo",
+            "la",
+            "camisa",
+            "negra",
+            ",",
+            "ya",
+            "tu",
+            "amor",
+            "no",
+            "me",
+            "interesa",
+            "."
+          ]
+        },
+        {
+          "sentence": "lo que ayer me supo a gloria hoy me sabe a pura...",
+          "tokens": [
+            "lo",
+            "que",
+            "ayer",
+            "me",
+            "supo",
+            "a",
+            "gloria",
+            "hoy",
+            "me",
+            "sabe",
+            "a",
+            "pura",
+            "..."
+          ]
+        },
+        {
+          "sentence": "miercoles por la tarde y tu que no llegas, ni siquiera muestras senas.",
+          "tokens": [
+            "miercoles",
+            "por",
+            "la",
+            "tarde",
+            "y",
+            "tu",
+            "que",
+            "no",
+            "llegas",
+            ",",
+            "ni",
+            "siquiera",
+            "muestras",
+            "senas",
+            "."
+          ]
+        },
+        {
+          "sentence": "y yo con la camisa negra y tus maletas en la puerta.",
+          "tokens": [
+            "y",
+            "yo",
+            "con",
+            "la",
+            "camisa",
+            "negra",
+            "y",
+            "tus",
+            "maletas",
+            "en",
+            "la",
+            "puerta",
+            "."
+          ]
+        },
+        {
+          "sentence": "mal parece que solo me quede y fue pura todita tu mentira.",
+          "tokens": [
+            "mal",
+            "parece",
+            "que",
+            "solo",
+            "me",
+            "quede",
+            "y",
+            "fue",
+            "pura",
+            "todita",
+            "tu",
+            "mentira",
+            "."
+          ]
+        },
+        {
+          "sentence": "que maldita mala suerte la mia que aquel dia te encontre.",
+          "tokens": [
+            "que",
+            "maldita",
+            "mala",
+            "suerte",
+            "la",
+            "mia",
+            "que",
+            "aquel",
+            "dia",
+            "te",
+            "encontre",
+            "."
+          ]
+        },
+        {
+          "sentence": "por beber del veneno malevo de tu amor, yo quede moribundo y lleno de dolor.",
+          "tokens": [
+            "por",
+            "beber",
+            "del",
+            "veneno",
+            "malevo",
+            "de",
+            "tu",
+            "amor",
+            ",",
+            "yo",
+            "quede",
+            "moribundo",
+            "y",
+            "lleno",
+            "de",
+            "dolor",
+            "."
+          ]
+        },
+        {
+          "sentence": "respire de ese humo amargo de tu adios y desde que tu te fuiste, yo solo tengo.",
+          "tokens": [
+            "respire",
+            "de",
+            "ese",
+            "humo",
+            "amargo",
+            "de",
+            "tu",
+            "adios",
+            "y",
+            "desde",
+            "que",
+            "tu",
+            "te",
+            "fuiste",
+            ",",
+            "yo",
+            "solo",
+            "tengo",
+            "."
+          ]
+        },
+        {
+          "sentence": "tengo la camisa negra porque negra tengo el alma.",
+          "tokens": [
+            "tengo",
+            "la",
+            "camisa",
+            "negra",
+            "porque",
+            "negra",
+            "tengo",
+            "el",
+            "alma",
+            "."
+          ]
+        },
+        {
+          "sentence": "yo por ti perdi la calma y casi pierdo hasta mi cama.",
+          "tokens": [
+            "yo",
+            "por",
+            "ti",
+            "perdi",
+            "la",
+            "calma",
+            "y",
+            "casi",
+            "pierdo",
+            "hasta",
+            "mi",
+            "cama",
+            "."
+          ]
+        },
+        {
+          "sentence": "come on, come on, come on, baby te digo con disimulo.",
+          "tokens": [
+            "come",
+            "on",
+            ",",
+            "come",
+            "on",
+            ",",
+            "come",
+            "on",
+            ",",
+            "baby",
+            "te",
+            "digo",
+            "con",
+            "disimulo",
+            "."
+          ]
+        },
+        {
+          "sentence": "que tengo la camisa negra y debajo tengo el difunto.",
+          "tokens": [
+            "que",
+            "tengo",
+            "la",
+            "camisa",
+            "negra",
+            "y",
+            "debajo",
+            "tengo",
+            "el",
+            "difunto",
+            "."
+          ]
+        },
+        {
+          "sentence": "tengo la camisa negra",
+          "tokens": [
+            "tengo",
+            "la",
+            "camisa",
+            "negra"
+          ]
+        }
+      ]
+    }
+  ]
 }
