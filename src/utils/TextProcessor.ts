@@ -26,10 +26,7 @@ export class TextProcessor implements ITextProcessor {
 
 		try {
 			const splittedParagraph = paragraphSplitter(text);
-			const normalizedText = splittedParagraph.map(sentence =>
-				normalizeString(sentence),
-			);
-			const tokenizedText: ISentence[] = normalizedText.map(sentence =>
+			const tokenizedText: ISentence[] = splittedParagraph.map(sentence =>
 				tokenizeSentences(sentence),
 			);
 			return tokenizedText;
