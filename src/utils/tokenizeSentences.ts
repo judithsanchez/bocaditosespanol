@@ -20,9 +20,10 @@
  */
 
 import emojiRegex from 'emoji-regex';
-import {ISentence, IToken, TokenType} from '../lib/types';
+import {ISentence, IToken, TokenType, WordType} from '../lib/types';
 import {errors} from '../lib/constants';
 import {normalizeString} from './normalizeString';
+// import {getEnglishTranslation, getWordType} from './aiLyricsProcessor';
 
 const tokenizeSentences = (sentence: string): ISentence => {
 	if (typeof sentence !== 'string') {
@@ -50,8 +51,13 @@ const tokenizeSentences = (sentence: string): ISentence => {
 				const spanish = token;
 				const normalizedToken = normalizeString(spanish);
 				const hasSpecialChar = spanish.toLowerCase() !== normalizedToken;
+				// const english = getEnglishTranslation(sentence, spanish);
+				// const type = getWordType(sentence, spanish);
+				const english = 'testEnglishWord';
+				const type = WordType['Noun'] || null; // TODO: update tests
+
 				return {
-					token: {spanish, normalizedToken, hasSpecialChar},
+					token: {spanish, normalizedToken, hasSpecialChar, english, type},
 					type: TokenType.Word,
 				};
 			}

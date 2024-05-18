@@ -1,7 +1,6 @@
 import {paragraphSplitter} from './paragraphSplitter';
-import {normalizeString} from './normalizeString';
 import {tokenizeSentences} from './tokenizeSentences';
-import {ISentence, ITextProcessor} from '../lib/types';
+import {ISentence, ITextProcessor, TokenType} from '../lib/types';
 import {errors} from '../lib/constants';
 
 export class TextProcessor implements ITextProcessor {

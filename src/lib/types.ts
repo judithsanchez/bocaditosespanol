@@ -16,9 +16,9 @@ export interface IToken {
 export interface IWord {
 	spanish: string;
 	normalizedToken: string;
-	english?: string;
+	english: Promise<string> | string;
 	hasSpecialChar: boolean;
-	type?: WordType;
+	type: Promise<string> | string; // TODO: figure out how to use WordType here
 }
 
 export enum WordType {
