@@ -1,4 +1,7 @@
 import {useState, useEffect} from 'react';
+import TextAndTranslation from '../components/TextAndTranslation';
+
+// TODO: extract hardcoded strings and api routes
 
 const SongPage = ({id}: {id: string}) => {
 	const [songData, setSongData] = useState(null);
@@ -21,9 +24,10 @@ const SongPage = ({id}: {id: string}) => {
 	}, [id]);
 
 	return (
-		<div>
+		<>
 			<h1>One song</h1>
-		</div>
+			<TextAndTranslation songData={songData} />
+		</>
 	);
 };
 

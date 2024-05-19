@@ -1,11 +1,11 @@
-import Dashboard from './pages/Dashboard';
+// import Dashboard from './pages/Dashboard';
 import SongsPage from './pages/Songs';
 
 function App() {
 	return (
 		<>
 			<SongsPage />
-			<Dashboard />
+			{/* <Dashboard /> */}
 		</>
 	);
 }
