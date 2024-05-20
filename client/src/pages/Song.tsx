@@ -7,11 +7,14 @@
  */
 import {useState, useEffect} from 'react';
 import TextAndTranslation from '../components/TextAndTranslation';
+import {ISentence} from '../../../src/lib/types';
 
 // TODO: extract hardcoded strings and api routes
 
 const SongPage = ({id}: {id: string}) => {
-	const [songData, setSongData] = useState(null);
+	const [songData, setSongData] = useState<{
+		processedLyrics: ISentence[];
+	} | null>(null);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -32,7 +35,13 @@ const SongPage = ({id}: {id: string}) => {
 
 	return (
 		<>
-			<TextAndTranslation songData={songData} />
+			{songData && songData.processedLyrics ? (
+				songData.processedLyrics.map((sentence, index) => (
+					<TextAndTranslation key={index} sentence={sentence} />
+				))
+			) : (
+				<div>Loading...</div>
+			)}
 		</>
 	);
 };

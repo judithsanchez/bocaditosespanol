@@ -36,3 +36,13 @@ export const menuItems = [
 	{label: 'Songs', path: '/songs'},
 	{label: 'Activity', path: '/activity'},
 ];
+
+export const textAndTranslation = {
+	css: {
+		container: 'textAndTranslation',
+		tokens: 'tokens',
+		token: 'token',
+		englishToken: 'englishToken',
+		spanishToken: 'spanishToken',
+	},
+};
