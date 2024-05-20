@@ -14,23 +14,6 @@ export const assets = {
 	logoAlt: 'Logo',
 };
 
-export const navBar = {
-	cssClasses: {
-		navbarClass: 'navbar',
-		navbarLogoClass: 'navbar__logo',
-		navbarRightClass: 'navbar__right',
-		navbarCenterClass: 'navbar-center',
-		navbarMenuItemClass: 'navbar-menu-item',
-	},
-};
-
-export const themeToggle = {
-	cssClasses: {
-		navbarThemeToggleIcon: 'navbar__theme-toggle-icon',
-		noBackgroundNoBorder: 'no-background-no-border',
-	},
-};
-
 export const menuItems = [
 	{label: 'Lessons', path: '/lessons'},
 	{label: 'Songs', path: '/songs'},

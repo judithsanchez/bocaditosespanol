@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import {ISentence, TokenType} from '../../../src/lib/types'; // TODO: fix the import
-import {themes} from '../context/lib/constants';
+
+import styles from './TextAndTranslation.module.css';
 import {useTheme} from '../context/ThemeContext';
-import {themesCSS} from '../pages/lib/constants';
-import {textAndTranslation} from './lib/constants';
+import {themes} from '../context/lib/constants';
 
 const TextAndTranslation: React.FC<{sentence: ISentence}> = ({sentence}) => {
+	const {theme} = useTheme();
+
 	if (!sentence) {
 		return <div>Loading...</div>;
 	}
@@ -13,53 +15,24 @@ const TextAndTranslation: React.FC<{sentence: ISentence}> = ({sentence}) => {
 		null,
 	);
 
-	const {theme} = useTheme();
-
 	return (
 		<div
-			className={`${textAndTranslation.css.container} ${
-				theme === themes.light
-					? themesCSS.lightModeClass
-					: themesCSS.darkModeClass
+			className={`${styles.textAndTranslation} ${
+				theme === themes.light ? styles.lightMode : styles.darkMode
 			}`}
 		>
-			{/* <p>{sentence.sentence}</p> */}
-			{/* <div className={textAndTranslation.css.tokens}>
-				{sentence.tokens
-					.filter(token => token.type === TokenType.Word)
-					.map((token, tokenIndex) => (
-						// TODO: fix type issue
-						<span
-							className={`${textAndTranslation.css.spanishToken} ${textAndTranslation.css.token}`}
-							key={tokenIndex}
-						>
-							{token.token.spanish}
-						</span>
-					))}
-			</div>
-			<div className={textAndTranslation.css.tokens}>
-				{sentence.tokens
-					.filter(token => token.type === TokenType.Word)
-					.map((token, tokenIndex) => (
-						// TODO: fix type issue
-						<span
-							className={`${textAndTranslation.css.englishToken} ${textAndTranslation.css.token}`}
-							key={tokenIndex}
-						>
-							{token.token.english}
-						</span>
-					))}
-			</div> */}
-			<div className={textAndTranslation.css.tokens}>
+			<div className={styles.tokens}>
 				{sentence.tokens
 					.filter(token => token.type === TokenType.Word)
 					.map((token, tokenIndex) => (
 						<span
-							className={`${textAndTranslation.css.spanishToken} ${
-								textAndTranslation.css.token
-							} ${
+							className={`${styles.spanishToken} ${styles.token} ${
 								hoveredTokenIndex === tokenIndex
-									? textAndTranslation.css.hoveredSpanishToken
+									? `${styles.hoveredSpanishToken} ${
+											theme === themes.light
+												? styles.lightMode
+												: styles.darkMode
+									  }`
 									: ''
 							}`}
 							key={tokenIndex}
@@ -70,16 +43,14 @@ const TextAndTranslation: React.FC<{sentence: ISentence}> = ({sentence}) => {
 						</span>
 					))}
 			</div>
-			<div className={textAndTranslation.css.tokens}>
+			<div className={styles.tokens}>
 				{sentence.tokens
 					.filter(token => token.type === TokenType.Word)
 					.map((token, tokenIndex) => (
 						<span
-							className={`${textAndTranslation.css.englishToken} ${
-								textAndTranslation.css.token
-							} ${
+							className={`${styles.englishToken} ${styles.token} ${
 								hoveredTokenIndex === tokenIndex
-									? textAndTranslation.css.hoveredEnglishToken
+									? styles.hoveredEnglishToken
 									: ''
 							}`}
 							key={tokenIndex}

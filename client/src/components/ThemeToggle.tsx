@@ -10,25 +10,23 @@
 import React from 'react';
 import {useTheme} from '../context/ThemeContext';
 import {themes} from '../context/lib/constants';
-import {assets, themeToggle} from './lib/constants';
+import {assets} from './lib/constants';
+import styles from './styles/ThemeToggle.module.css';
 
 const ThemeToggle: React.FC = () => {
 	const {theme, toggleTheme} = useTheme();
 
 	return (
-		<button
-			className={themeToggle.cssClasses.noBackgroundNoBorder}
-			onClick={toggleTheme}
-		>
+		<button className={styles.noBackgroundNoBorder} onClick={toggleTheme}>
 			{theme === themes.light ? (
 				<img
-					className={themeToggle.cssClasses.navbarThemeToggleIcon}
+					className={styles.navbarThemeToggleIcon}
 					src={assets.light.darkThemeButton}
 					alt={assets.light.darkThemeButtonAlt}
 				/>
 			) : (
 				<img
-					className={themeToggle.cssClasses.navbarThemeToggleIcon}
+					className={styles.navbarThemeToggleIcon}
 					src={assets.dark.lightthemeButton}
 					alt={assets.dark.lightThemeButtonAlt}
 				/>

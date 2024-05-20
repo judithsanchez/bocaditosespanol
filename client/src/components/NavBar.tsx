@@ -9,7 +9,8 @@
 import {useTheme} from '../context/ThemeContext';
 import {themes} from '../context/lib/constants';
 import ThemeToggle from './ThemeToggle';
-import {assets, menuItems, navBar} from './lib/constants';
+import {assets, menuItems} from './lib/constants';
+import styles from './styles/NavBar.module.css';
 
 const Navbar = () => {
 	const {theme} = useTheme();
@@ -17,24 +18,24 @@ const Navbar = () => {
 	const logoSrc = theme === themes.light ? assets.light.logo : assets.dark.logo;
 
 	return (
-		<nav className={`${navBar.cssClasses.navbarClass} ${theme}`}>
-			<img
-				className={navBar.cssClasses.navbarLogoClass}
-				src={logoSrc}
-				alt={assets.logoAlt}
-			/>
-			<div className={navBar.cssClasses.navbarCenterClass}>
+		<nav
+			className={`${styles.navBar} ${
+				theme === themes.light ? styles.lightMode : styles.darkMode
+			}`}
+		>
+			<img className={styles.navBarLogo} src={logoSrc} alt={assets.logoAlt} />
+			<div className={styles.navBarCenter}>
 				{/* {menuItems.map((item, index) => (
-					<Link
-						key={index}
-						to={item.path}
-						className={navBar.cssClasses.navbarMenuItemClass}
-					>
-						{item.label}
-					</Link>
-				))} */}
+                    <Link
+                        key={index}
+                        to={item.path}
+                        className={styles.navBarMenuItem}
+                    >
+                        {item.label}
+                    </Link>
+                ))} */}
 			</div>
-			<div className={navBar.cssClasses.navbarRightClass}>
+			<div className={styles.noBackgroundNoBorder}>
 				<ThemeToggle />
 			</div>
 		</nav>

@@ -1,0 +1,93 @@
+.textAndTranslation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 1rem;
+	height: 15rem;
+	width: 30rem;
+	margin: 2rem auto;
+}
+
+.textAndTranslation.lightMode {
+	background-color: var(--background-card-light);
+	box-shadow: var(--box-shadow-light);
+}
+
+.textAndTranslation.darkMode {
+	background-color: var(--background-card-dark);
+	box-shadow: var(--box-shadow-dark);
+}
+
+.tokens {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem 2.5rem;
+}
+
+.token {
+	align-items: center;
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	transform: scale(1);
+}
+
+.englishToken {
+	background-color: var(--main-color);
+	color: white;
+	margin: 0.25rem;
+	padding: 0.25rem 0.5rem;
+}
+
+.spanishToken {
+	margin: 0 0.25rem;
+	cursor: pointer;
+}
+
+.hoveredSpanishToken {
+	color: var(--mint-accent);
+	transform: scale(1.05);
+}
+
+.hoveredEnglishToken {
+	background-color: var(--dark-purple-accent);
+}
+
+.hoveredSpanishToken.lightMode {
+	color: var(--wine-accent); /* replace with the color you want in light mode */
+	transform: scale(1.05);
+}
+
+.hoveredSpanishToken.darkMode {
+	color: var(--mint-accent);
+	transform: scale(1.05);
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+	/* 768px - 1023px */
+	.textAndTranslation {
+		height: 22.5rem;
+		width: 45rem;
+	}
+
+	.token {
+		font-size: 1.5rem; /* Tablet font size */
+	}
+}
+
+/* Desktop */
+@media (min-width: 64rem) {
+	/* 1024px and above */
+	.textAndTranslation {
+		height: 30rem;
+		width: 60rem;
+	}
+
+	.token {
+		font-size: 2rem; /* Desktop font size */
+	}
+}
