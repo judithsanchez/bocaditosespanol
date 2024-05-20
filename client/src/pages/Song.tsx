@@ -12,6 +12,7 @@ import YoutubePlayer from '../components/YoutubePlayer';
 import styles from './styles/Song.module.css';
 // TODO: extract hardcoded strings and api routes
 
+// TODO: move to types file
 export interface ISongData {
 	title: string;
 	artist: string;
@@ -46,16 +47,20 @@ const SongPage = ({id}: {id: string}) => {
 
 	return (
 		<div className={styles.container}>
-			{songData && songData.youtubeVideoId && (
-				<YoutubePlayer videoId={songData.youtubeVideoId} />
-			)}
-			{songData && songData.processedLyrics ? (
-				songData.processedLyrics.map((sentence, index) => (
-					<TextAndTranslation key={index} sentence={sentence} />
-				))
-			) : (
-				<div>Loading...</div>
-			)}
+			<div className={styles.video}>
+				{songData && songData.youtubeVideoId && (
+					<YoutubePlayer videoId={songData.youtubeVideoId} />
+				)}
+			</div>
+			<div className={styles.lyrics}>
+				{songData && songData.processedLyrics ? (
+					songData.processedLyrics.map((sentence, index) => (
+						<TextAndTranslation key={index} sentence={sentence} />
+					))
+				) : (
+					<div>Loading...</div>
+				)}
+			</div>
 		</div>
 	);
 };

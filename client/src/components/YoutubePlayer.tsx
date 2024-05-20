@@ -26,9 +26,11 @@ const YoutubePlayer = ({videoId}) => {
 	}, [videoId]);
 
 	return (
-		<div className={styles.container}>
-			<div ref={playerRef} />
-		</div>
+		<>
+			<div className={styles.container}>
+				<div ref={playerRef} />
+			</div>
+		</>
 	);
 };
 

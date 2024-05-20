@@ -1,7 +1,22 @@
 .container {
-	background-color: papayawhip;
 	display: flex;
 	flex-flow: column nowrap;
+	justify-content: center;
+}
+
+.video {
+	top: 0;
+	position: sticky;
+	z-index: 1;
+}
+
+.lyrics {
+}
+
+@media screen and (orientation: landscape) {
+	.container {
+		flex-flow: row nowrap;
+	}
 }
 
 @media (min-width: 48rem) and (max-width: 63.9375rem) {

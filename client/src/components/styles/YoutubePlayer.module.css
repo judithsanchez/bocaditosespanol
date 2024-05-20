@@ -8,9 +8,6 @@
 	width: 30rem;
 	margin: 2rem auto;
 	overflow: hidden;
-	position: sticky;
-	top: 0;
-	z-index: 1;
 }
 
 @media (min-width: 48rem) and (max-width: 63.9375rem) {
@@ -27,5 +24,9 @@
 	.container {
 		height: 35rem;
 		width: 60rem;
+		margin: 0 5rem;
+		top: 50%;
+		position: sticky;
+		transform: translateY(-50%);
 	}
 }

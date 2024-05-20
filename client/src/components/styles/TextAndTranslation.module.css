@@ -34,6 +34,7 @@
 	justify-content: center;
 	text-align: center;
 	transform: scale(1);
+	cursor: pointer;
 }
 
 .englishToken {
@@ -45,7 +46,6 @@
 
 .spanishToken {
 	margin: 0 0.25rem;
-	cursor: pointer;
 }
 
 .hoveredSpanishToken {
@@ -58,13 +58,20 @@
 }
 
 .hoveredSpanishToken.lightMode {
-	color: var(--wine-accent); /* replace with the color you want in light mode */
+	color: var(--main-color); /* replace with the color you want in light mode */
 	transform: scale(1.05);
 }
 
 .hoveredSpanishToken.darkMode {
 	color: var(--mint-accent);
 	transform: scale(1.05);
+}
+
+@media screen and (orientation: landscape) {
+	.textAndTranslation {
+		height: 10rem;
+		width: 25rem;
+	}
 }
 
 @media (min-width: 48rem) and (max-width: 63.9375rem) {

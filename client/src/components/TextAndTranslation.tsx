@@ -54,6 +54,8 @@ const TextAndTranslation: React.FC<{sentence: ISentence}> = ({sentence}) => {
 									: ''
 							}`}
 							key={tokenIndex}
+							onMouseEnter={() => setHoveredTokenIndex(tokenIndex)}
+							onMouseLeave={() => setHoveredTokenIndex(null)}
 						>
 							{token.token.english}
 						</span>
