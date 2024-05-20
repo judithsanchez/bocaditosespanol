@@ -7,7 +7,7 @@ const SongForm = () => {
 		title: '',
 		artist: '',
 		album: '',
-		youtubeVideo: '',
+		youtubeVideoId: '',
 		spotify: '',
 		genre: [],
 		released: '',
@@ -84,12 +84,12 @@ const SongForm = () => {
 				/>
 			</div>
 			<div>
-				<label htmlFor="youtubeVideo">YouTube Video:</label>
+				<label htmlFor="youtubeVideoId">YouTube Video:</label>
 				<input
 					type="text"
-					id="youtubeVideo"
-					name="youtubeVideo"
-					value={formData.youtubeVideo}
+					id="youtubeVideoId"
+					name="youtubeVideoId"
+					value={formData.youtubeVideoId}
 					onChange={handleChange}
 				/>
 			</div>

@@ -8,19 +8,30 @@
 import {useState, useEffect} from 'react';
 import TextAndTranslation from '../components/TextAndTranslation';
 import {ISentence} from '../../../src/lib/types';
+import YoutubePlayer from '../components/YoutubePlayer';
 
 // TODO: extract hardcoded strings and api routes
 
+export interface ISongData {
+	title: string;
+	artist: string;
+	album: string;
+	youtubeVideoId: string;
+	spotify: string;
+	genre: string[];
+	released: string;
+	processedLyrics: ISentence[];
+}
+
 const SongPage = ({id}: {id: string}) => {
-	const [songData, setSongData] = useState<{
-		processedLyrics: ISentence[];
-	} | null>(null);
+	const [songData, setSongData] = useState<ISongData | null>(null);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch(`http://localhost:3000/songs/${id}`);
 				if (!response.ok) {
+					// TODO: extract hardcoded message
 					throw new Error('Failed to fetch data');
 				}
 				const jsonData = await response.json();
@@ -35,6 +46,9 @@ const SongPage = ({id}: {id: string}) => {
 
 	return (
 		<>
+			{songData && songData.youtubeVideoId && (
+				<YoutubePlayer videoId={songData.youtubeVideoId} />
+			)}
 			{songData && songData.processedLyrics ? (
 				songData.processedLyrics.map((sentence, index) => (
 					<TextAndTranslation key={index} sentence={sentence} />
