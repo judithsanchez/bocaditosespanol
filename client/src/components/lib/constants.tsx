@@ -43,6 +43,8 @@ export const textAndTranslation = {
 		tokens: 'tokens',
 		token: 'token',
 		englishToken: 'englishToken',
+		hoveredEnglishToken: 'hoveredEnglishToken',
 		spanishToken: 'spanishToken',
+		hoveredSpanishToken: 'hoveredSpanishToken',
 	},
 };

@@ -193,6 +193,7 @@ body.dark-mode {
 	display: flex;
 	justify-content: center;
 	text-align: center;
+	transform: scale(1);
 }
 
 .englishToken {
@@ -204,6 +205,7 @@ body.dark-mode {
 
 .spanishToken {
 	margin: 0 0.25rem;
+	cursor: pointer;
 }
 
 .roboto-thin {
@@ -276,4 +278,38 @@ body.dark-mode {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 900;
 	font-style: italic;
+}
+
+.hoveredSpanishToken {
+	color: var(--mint-accent);
+	transform: scale(1.05);
+}
+
+.hoveredEnglishToken {
+	background-color: var(--dark-purple-accent);
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+	/* 768px - 1023px */
+	.textAndTranslation {
+		height: 22.5rem;
+		width: 45rem;
+	}
+
+	.token {
+		font-size: 1.5rem; /* Tablet font size */
+	}
+}
+
+/* Desktop */
+@media (min-width: 64rem) {
+	/* 1024px and above */
+	.textAndTranslation {
+		height: 30rem;
+		width: 60rem;
+	}
+
+	.token {
+		font-size: 2rem; /* Desktop font size */
+	}
 }
