@@ -1,3 +1,10 @@
+/**
+ * Renders a page that displays the details of a song.
+ *
+ * @param {object} props - The component props.
+ * @param {string} props.id - The ID of the song to display.
+ * @returns {JSX.Element} - The rendered SongPage component.
+ */
 import {useState, useEffect} from 'react';
 import TextAndTranslation from '../components/TextAndTranslation';
 
@@ -25,7 +32,6 @@ const SongPage = ({id}: {id: string}) => {
 
 	return (
 		<>
-			<h1>One song</h1>
 			<TextAndTranslation songData={songData} />
 		</>
 	);
