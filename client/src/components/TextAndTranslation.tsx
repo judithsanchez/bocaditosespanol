@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ISentence, TokenType} from '../../../src/lib/types'; // TODO: fix the import
 
-import styles from './TextAndTranslation.module.css';
+import styles from './styles/TextAndTranslation.module.css';
 import {useTheme} from '../context/ThemeContext';
 import {themes} from '../context/lib/constants';
 

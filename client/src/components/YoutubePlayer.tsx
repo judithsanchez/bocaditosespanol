@@ -1,14 +1,13 @@
 import React, {useEffect, useRef} from 'react';
-import styles from './styles/YoutubePlayer.module.css'; // Import CSS module
+import styles from './styles/YoutubePlayer.module.css';
 
 const YoutubePlayer = ({videoId}) => {
 	const playerRef = useRef(null);
 
 	useEffect(() => {
-		// Create a new YouTube player instance
 		const player = new window.YT.Player(playerRef.current, {
-			height: '360',
-			width: '640',
+			height: '100%',
+			width: '100%',
 			videoId: videoId,
 			events: {
 				onReady: onPlayerReady,
@@ -18,7 +17,7 @@ const YoutubePlayer = ({videoId}) => {
 
 		// Event handlers for the YouTube player
 		function onPlayerReady(event) {
-			event.target.playVideo();
+			// Removed the line that plays the video
 		}
 
 		function onPlayerStateChange(event) {

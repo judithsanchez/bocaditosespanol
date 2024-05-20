@@ -9,7 +9,7 @@ import {useState, useEffect} from 'react';
 import TextAndTranslation from '../components/TextAndTranslation';
 import {ISentence} from '../../../src/lib/types';
 import YoutubePlayer from '../components/YoutubePlayer';
-
+import styles from './styles/Song.module.css';
 // TODO: extract hardcoded strings and api routes
 
 export interface ISongData {
@@ -45,7 +45,7 @@ const SongPage = ({id}: {id: string}) => {
 	}, [id]);
 
 	return (
-		<>
+		<div className={styles.container}>
 			{songData && songData.youtubeVideoId && (
 				<YoutubePlayer videoId={songData.youtubeVideoId} />
 			)}
@@ -56,7 +56,7 @@ const SongPage = ({id}: {id: string}) => {
 			) : (
 				<div>Loading...</div>
 			)}
-		</>
+		</div>
 	);
 };
 

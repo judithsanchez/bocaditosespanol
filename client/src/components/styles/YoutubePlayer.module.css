@@ -2,4 +2,30 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	border-radius: 1rem;
+	height: 20rem;
+	width: 30rem;
+	margin: 2rem auto;
+	overflow: hidden;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+	/* 768px - 1023px */
+	.container {
+		height: 27.5rem;
+		width: 45rem;
+	}
+}
+
+/* Desktop */
+@media (min-width: 64rem) {
+	/* 1024px and above */
+	.container {
+		height: 35rem;
+		width: 60rem;
+	}
 }
