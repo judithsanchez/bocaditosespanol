@@ -5,27 +5,19 @@
  * @param {string} props.id - The ID of the song to display.
  * @returns {JSX.Element} - The rendered SongPage component.
  */
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import TextAndTranslation from '../components/TextAndTranslation';
-import {ISentence} from '../../../src/lib/types';
 import YoutubePlayer from '../components/YoutubePlayer';
 import styles from './styles/Song.module.css';
-// TODO: extract hardcoded strings and api routes
+import {ISongData} from './lib/types';
+import SongActivitySelector from '../components/SongActivitySelector';
+import {SongContext} from '../context/SongContext';
 
-// TODO: move to types file
-export interface ISongData {
-	title: string;
-	artist: string;
-	album: string;
-	youtubeVideoId: string;
-	spotify: string;
-	genre: string[];
-	released: string;
-	processedLyrics: ISentence[];
-}
+// TODO: extract hardcoded strings and api routes
 
 const SongPage = ({id}: {id: string}) => {
 	const [songData, setSongData] = useState<ISongData | null>(null);
+	const {activity, setActivity} = useContext(SongContext);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -52,6 +44,7 @@ const SongPage = ({id}: {id: string}) => {
 					<YoutubePlayer videoId={songData.youtubeVideoId} />
 				)}
 			</div>
+			<SongActivitySelector />
 			<div className={styles.lyrics}>
 				{songData && songData.processedLyrics ? (
 					songData.processedLyrics.map((sentence, index) => (

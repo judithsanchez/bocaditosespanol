@@ -6,11 +6,16 @@
 import {useState} from 'react';
 
 import Song from './Song';
+import {SongProvider} from '../context/SongContext';
 
 const SongsPage = () => {
 	// TODO: change hardcoded songId
 	const [selectedSong, setSelectedSong] = useState('a47c');
-	return <Song id={selectedSong} />;
+	return (
+		<SongProvider>
+			<Song id={selectedSong} />
+		</SongProvider>
+	);
 };
 
 export default SongsPage;
