@@ -5,11 +5,11 @@
  *
  * @returns {JSX.Element} The rendered navigation bar component.
  */
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {useTheme} from '../context/ThemeContext';
 import {themes} from '../context/lib/constants';
 import ThemeToggle from './ThemeToggle';
-import {assets, menuItems} from './lib/constants';
+import {assets, pagePageSections} from './lib/constants';
 import styles from './styles/NavBar.module.css';
 
 const Navbar = () => {
@@ -23,17 +23,24 @@ const Navbar = () => {
 				theme === themes.light ? styles.lightMode : styles.darkMode
 			}`}
 		>
-			<img className={styles.navBarLogo} src={logoSrc} alt={assets.logoAlt} />
+			<Link to="/">
+				<img className={styles.navBarLogo} src={logoSrc} alt={assets.logoAlt} />
+			</Link>
 			<div className={styles.navBarCenter}>
-				{/* {menuItems.map((item, index) => (
-                    <Link
-                        key={index}
-                        to={item.path}
-                        className={styles.navBarMenuItem}
-                    >
-                        {item.label}
-                    </Link>
-                ))} */}
+				{pagePageSections
+					.filter(section => section.isPublic)
+					.map(
+						(section, index) =>
+							section.label !== 'Home' && (
+								<Link
+									key={index}
+									to={section.path}
+									className={styles.navBarMenuItem}
+								>
+									{section.label}
+								</Link>
+							),
+					)}
 			</div>
 			<div className={styles.noBackgroundNoBorder}>
 				<ThemeToggle />

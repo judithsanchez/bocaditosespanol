@@ -11,3 +11,10 @@ export interface SongData {
 	lyrics: string;
 	processedLyrics: ISentence[];
 }
+
+export interface PageSection {
+	label: string;
+	path: string;
+	component: React.FC;
+	isPublic?: boolean;
+}

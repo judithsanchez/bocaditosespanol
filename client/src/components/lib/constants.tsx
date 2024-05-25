@@ -1,3 +1,36 @@
+import Admin from '../../pages/Admin';
+import HomePage from '../../pages/Home';
+import SongsPage from '../../pages/Songs';
+import VideosPage from '../../pages/Videos';
+import {PageSection} from './types';
+
+export const pagePageSections: PageSection[] = [
+	{
+		label: 'Home',
+		path: '/',
+		component: HomePage,
+		isPublic: true,
+	},
+	{
+		label: 'Songs',
+		path: '/songs',
+		component: SongsPage,
+		isPublic: true,
+	},
+	{
+		label: 'Videos',
+		path: '/videos',
+		component: VideosPage,
+		isPublic: true,
+	},
+	{
+		label: 'Admin',
+		path: '/admin',
+		component: Admin,
+		isPublic: false,
+	},
+];
+
 export const assets = {
 	light: {
 		darkThemeButton:
@@ -13,12 +46,6 @@ export const assets = {
 	},
 	logoAlt: 'Logo',
 };
-
-export const menuItems = [
-	{label: 'Lessons', path: '/lessons'},
-	{label: 'Songs', path: '/songs'},
-	{label: 'Activity', path: '/activity'},
-];
 
 export const textAndTranslation = {
 	css: {
