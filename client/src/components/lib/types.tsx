@@ -18,3 +18,8 @@ export interface PageSection {
 	component: React.FC;
 	isPublic?: boolean;
 }
+
+export interface SongActivity {
+	label: string;
+	description: string;
+}

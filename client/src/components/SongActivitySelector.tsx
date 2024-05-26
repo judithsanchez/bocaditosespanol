@@ -1,25 +1,8 @@
 import {useContext} from 'react';
 import {SongContext} from '../context/SongContext';
+import {songsActivities} from './lib/constants';
+import {SongActivity} from './lib/types';
 
-export interface SongActivity {
-	label: string;
-	description: string;
-}
-
-export const songsActivities: Record<string, SongActivity> = {
-	lyrics: {
-		label: 'Lyrics',
-		description: 'Translate the lyrics to another language',
-	},
-	complete: {
-		label: 'Complete',
-		description: '',
-	},
-	translate: {
-		label: 'Translate',
-		description: '',
-	},
-};
 const SongActivitySelector: React.FC = () => {
 	const {setActivityType} = useContext(SongContext);
 

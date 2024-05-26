@@ -5,30 +5,29 @@
  * @param {string} props.id - The ID of the song to display.
  * @returns {JSX.Element} - The rendered SongPage component.
  */
-import {useState, useEffect, useContext} from 'react';
+import {useState, useEffect} from 'react';
 import TextAndTranslation from '../components/TextAndTranslation';
 import YoutubePlayer from '../components/YoutubePlayer';
 import styles from './styles/Song.module.css';
 import {ISongData} from './lib/types';
-import SongActivitySelector from '../components/SongActivitySelector';
-import {SongContext} from '../context/SongContext';
+import dbData from '../../../src/data/db.json';
 
 // TODO: extract hardcoded strings and api routes
 
-const SongPage = ({id}: {id: string}) => {
+const SongPage = (
+	{id}: {id: string},
+	{activityType}: {activityType: string},
+) => {
 	const [songData, setSongData] = useState<ISongData | null>(null);
-	const {activity, setActivity} = useContext(SongContext);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await fetch(`http://localhost:3000/songs/${id}`);
-				if (!response.ok) {
-					// TODO: extract hardcoded message
-					throw new Error('Failed to fetch data');
+				const songData = dbData.songs.find(song => song.id === id);
+				if (!songData) {
+					throw new Error('Song not found'); // TODO: extract hardcoded strings
 				}
-				const jsonData = await response.json();
-				setSongData(jsonData);
+				setSongData(songData); // TODO: fix type issue
 			} catch (error) {
 				console.error('Error fetching data:', error);
 			}
@@ -44,7 +43,7 @@ const SongPage = ({id}: {id: string}) => {
 					<YoutubePlayer videoId={songData.youtubeVideoId} />
 				)}
 			</div>
-			<SongActivitySelector />
+
 			<div className={styles.lyrics}>
 				{songData && songData.processedLyrics ? (
 					songData.processedLyrics.map((sentence, index) => (

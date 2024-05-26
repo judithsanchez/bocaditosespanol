@@ -1,6 +1,6 @@
 import React, {createContext, useState} from 'react';
-import {SongActivity} from '../components/SongActivitySelector';
 import {SongContextValue} from './lib/types';
+import {SongActivity} from '../components/lib/types';
 
 export const SongContext = createContext<SongContextValue>({
 	activityType: null,

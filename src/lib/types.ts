@@ -25,8 +25,12 @@ export enum WordType {
 	Noun = 'noun',
 	Verb = 'verb',
 	Conjunction = 'conjunction',
-	Prepostion = 'preposition',
+	Preposition = 'preposition',
 	Article = 'article',
+	Adjective = 'adjective',
+	Adverb = 'adverb',
+	Pronoun = 'pronoun',
+	Interjection = 'interjection',
 }
 
 export interface ITextProcessor {
