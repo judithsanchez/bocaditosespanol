@@ -19,7 +19,6 @@ export interface PageSection {
 	isPublic?: boolean;
 }
 
-export interface SongActivity {
-	label: string;
-	description: string;
+export interface TextAndTranslationProps {
+	sentence: ISentence;
 }

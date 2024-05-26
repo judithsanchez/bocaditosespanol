@@ -2,7 +2,7 @@ import Admin from '../../pages/Admin';
 import HomePage from '../../pages/Home';
 import SongsPage from '../../pages/Songs';
 import VideosPage from '../../pages/Videos';
-import {PageSection, SongActivity} from './types';
+import {PageSection} from './types';
 
 export const pagePageSections: PageSection[] = [
 	{
@@ -56,20 +56,5 @@ export const textAndTranslation = {
 		hoveredEnglishToken: 'hoveredEnglishToken',
 		spanishToken: 'spanishToken',
 		hoveredSpanishToken: 'hoveredSpanishToken',
-	},
-};
-
-export const songsActivities: Record<string, SongActivity> = {
-	lyrics: {
-		label: 'Lyrics',
-		description: 'Translate the lyrics to another language',
-	},
-	complete: {
-		label: 'Complete',
-		description: '',
-	},
-	translate: {
-		label: 'Translate',
-		description: '',
 	},
 };

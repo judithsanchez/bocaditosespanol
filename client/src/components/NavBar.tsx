@@ -1,20 +1,12 @@
-/**
- * Renders the navigation bar component for the application.
- *
- * The `Navbar` component is responsible for rendering the application's navigation bar, which includes the logo and a theme toggle button. The logo image displayed is determined by the current theme (light or dark).
- *
- * @returns {JSX.Element} The rendered navigation bar component.
- */
 import {Link} from 'react-router-dom';
-import {useTheme} from '../context/ThemeContext';
 import {themes} from '../context/lib/constants';
 import ThemeToggle from './ThemeToggle';
 import {assets, pagePageSections} from './lib/constants';
 import styles from './styles/NavBar.module.css';
+import {useAppContext} from '../context/AppContext';
 
-const Navbar = () => {
-	const {theme} = useTheme();
-
+const Navbar: React.FC = () => {
+	const {theme} = useAppContext();
 	const logoSrc = theme === themes.light ? assets.light.logo : assets.dark.logo;
 
 	return (

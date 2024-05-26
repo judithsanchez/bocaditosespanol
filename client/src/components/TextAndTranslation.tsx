@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
-import {ISentence, TokenType} from '../../../src/lib/types'; // TODO: fix the import
-
-import styles from './styles/TextAndTranslation.module.css';
-import {useTheme} from '../context/ThemeContext';
+import {TokenType} from '../../../src/lib/types'; // TODO: fix the import
 import {themes} from '../context/lib/constants';
+import styles from './styles/TextAndTranslation.module.css';
+import {TextAndTranslationProps} from './lib/types';
+import {useAppContext} from '../context/AppContext';
 
-const TextAndTranslation: React.FC<{sentence: ISentence}> = ({sentence}) => {
-	const {theme} = useTheme();
-
+const TextAndTranslation: React.FC<TextAndTranslationProps> = ({sentence}) => {
+	const {theme} = useAppContext();
 	if (!sentence) {
 		return <div>Loading...</div>;
 	}
+
 	const [hoveredTokenIndex, setHoveredTokenIndex] = useState<number | null>(
 		null,
 	);

@@ -1,17 +1,13 @@
-import SongsPage from './pages/Songs';
-import Admin from './pages/Admin';
-import {ThemeProvider, useTheme} from './context/ThemeContext';
 import styles from '../styles/global.module.css';
 import Navbar from './components/NavBar';
 import {themes} from './context/lib/constants';
 import {useEffect} from 'react';
 import {Route, Routes} from 'react-router-dom';
-import VideosPage from './pages/Videos';
 import {pagePageSections} from './components/lib/constants';
-import {SongProvider} from './context/SongContext';
+import {AppContextProvider, useAppContext} from './context/AppContext';
 
 const ThemedApp: React.FC<{children: React.ReactNode}> = ({children}) => {
-	const {theme} = useTheme();
+	const {theme} = useAppContext();
 
 	useEffect(() => {
 		document.body.className =
@@ -22,22 +18,20 @@ const ThemedApp: React.FC<{children: React.ReactNode}> = ({children}) => {
 };
 
 const App: React.FC = () => (
-	<ThemeProvider>
+	<AppContextProvider>
 		<ThemedApp>
-			<SongProvider>
-				<Navbar />
-				<Routes>
-					{pagePageSections.map((section, index) => (
-						<Route
-							key={index}
-							path={section.path}
-							element={<section.component />}
-						/>
-					))}
-				</Routes>
-			</SongProvider>
+			<Navbar />
+			<Routes>
+				{pagePageSections.map((section, index) => (
+					<Route
+						key={index}
+						path={section.path}
+						element={<section.component />}
+					/>
+				))}
+			</Routes>
 		</ThemedApp>
-	</ThemeProvider>
+	</AppContextProvider>
 );
 
 export default App;

@@ -8,13 +8,13 @@
  * When the button is clicked, the `toggleTheme` function is called, which updates the theme in the `ThemeContext` and triggers a re-render of the application with the new theme.
  */
 import React from 'react';
-import {useTheme} from '../context/ThemeContext';
 import {themes} from '../context/lib/constants';
 import {assets} from './lib/constants';
 import styles from './styles/ThemeToggle.module.css';
+import {useAppContext} from '../context/AppContext';
 
 const ThemeToggle: React.FC = () => {
-	const {theme, toggleTheme} = useTheme();
+	const {theme, toggleTheme} = useAppContext();
 
 	return (
 		<button className={styles.noBackgroundNoBorder} onClick={toggleTheme}>

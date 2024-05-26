@@ -14,10 +14,7 @@ import dbData from '../../../src/data/db.json';
 
 // TODO: extract hardcoded strings and api routes
 
-const SongPage = (
-	{id}: {id: string},
-	{activityType}: {activityType: string},
-) => {
+const SongPage = ({id}: {id: string}) => {
 	const [songData, setSongData] = useState<ISongData | null>(null);
 
 	useEffect(() => {

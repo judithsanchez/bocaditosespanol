@@ -4,5 +4,5 @@ export const themes = {
 };
 
 export const errors = {
-	useTheme: 'useTheme must be used within a ThemeProvider',
+	useAppContext: 'useAppContext must be used within a AppContextProvider',
 };

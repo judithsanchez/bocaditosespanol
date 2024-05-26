@@ -3,17 +3,14 @@
  * It manages the state of the currently selected song and renders the `Song` component
  * with the selected song's ID.
  */
-import {useState, useEffect, useContext} from 'react';
+import {useState, useEffect} from 'react';
 import Song from './Song';
-import {SongContext, SongProvider} from '../context/SongContext';
 import songsData from '../../../src/data/db.json';
-import SongActivitySelector from '../components/SongActivitySelector';
-import {songsActivities} from '../components/lib/constants';
+// import SongActivitySelector from '../components/SongActivitySelector';
 
 const SongsPage = () => {
 	const [songs, setSongs] = useState([]);
 	const [selectedSong, setSelectedSong] = useState('');
-	const {activityType} = useContext(SongContext); // Destructure activityType from SongContext
 
 	useEffect(() => {
 		setSongs(songsData.songs); // TODO: fix types
@@ -25,8 +22,7 @@ const SongsPage = () => {
 
 	return (
 		<>
-			<SongActivitySelector />
-			{console.log(activityType?.label)}
+			{/* <SongActivitySelector /> */}
 
 			<div>
 				{songs.map(song => (
@@ -36,10 +32,7 @@ const SongsPage = () => {
 				))}
 			</div>
 
-			{activityType &&
-				activityType?.label.toLowerCase() ===
-					songsActivities.lyrics.label.toLowerCase() &&
-				selectedSong && <Song id={selectedSong} activityType={activityType} />}
+			{selectedSong && <Song id={selectedSong} />}
 		</>
 	);
 };
