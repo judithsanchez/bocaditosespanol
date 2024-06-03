@@ -25,7 +25,7 @@ import {errors} from '../lib/constants';
 import {normalizeString} from './normalizeString';
 import {getEnglishTranslation, getWordType} from './aiLyricsProcessor';
 
-const tokenizeSentences = (sentence: string): ISentence => {
+const tokenizeSentences = async (sentence: string): Promise<ISentence> => {
 	if (typeof sentence !== 'string') {
 		throw new TypeError(errors.mustBeString);
 	}
@@ -39,29 +39,30 @@ const tokenizeSentences = (sentence: string): ISentence => {
 	const pattern = `(${emojiPattern.source}|\\.{3}|[.?!¡¿,:;'"\\s-])`;
 	const regex = new RegExp(pattern, 'gu');
 
-	const tokens: IToken[] = trimmedSentence
-		.split(regex)
-		.filter(token => token.trim() !== '')
-		.map(token => {
-			if (emojiRegex().test(token)) {
-				return {token, type: TokenType.Emoji};
-			} else if (/^[.?!¡¿,:;'"\\s-]+$/.test(token)) {
-				return {token, type: TokenType.PunctuationSign};
-			} else {
-				const spanish = token;
-				const normalizedToken = normalizeString(spanish);
-				const hasSpecialChar = spanish.toLowerCase() !== normalizedToken;
-				const english = getEnglishTranslation(sentence, spanish); // TODO: make this lowercase
-				const type = getWordType(sentence, spanish);
-				// const english = 'testEnglishWord';
-				// const type = WordType['Noun'] || null; // TODO: update tests
+	const tokens: IToken[] = await Promise.all(
+		trimmedSentence
+			.split(regex)
+			.filter(token => token.trim() !== '')
+			.map(async token => {
+				if (emojiRegex().test(token)) {
+					return {token, type: TokenType.Emoji};
+				} else if (/^[.?!¡¿,:;'"\\s-]+$/.test(token)) {
+					return {token, type: TokenType.PunctuationSign};
+				} else {
+					const spanish = token;
+					const normalizedToken = normalizeString(spanish);
+					const hasSpecialChar = spanish.toLowerCase() !== normalizedToken;
+					const english = await getEnglishTranslation(sentence, spanish);
+					const type = await getWordType(sentence, spanish);
 
-				return {
-					token: {spanish, normalizedToken, hasSpecialChar, english, type},
-					type: TokenType.Word,
-				};
-			}
-		});
+					const obj = {
+						token: {spanish, normalizedToken, hasSpecialChar, english, type},
+						type: TokenType.Word,
+					};
+					return obj;
+				}
+			}),
+	);
 
 	return {
 		sentence: trimmedSentence,

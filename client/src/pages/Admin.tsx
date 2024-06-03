@@ -36,8 +36,9 @@ const Admin = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
-			const textProcessor = new TextProcessor(formData.lyrics);
-			const processedLyrics = textProcessor.processedText;
+			const processedLyrics = await new TextProcessor().ProcessTextData(
+				formData.lyrics,
+			);
 			const songData = {...formData, processedLyrics};
 
 			const response = await axios.post(
