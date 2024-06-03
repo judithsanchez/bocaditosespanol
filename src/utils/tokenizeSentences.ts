@@ -20,7 +20,7 @@
  */
 
 import emojiRegex from 'emoji-regex';
-import {ISentence, IToken, TokenType, WordType} from '../lib/types';
+import {ISentence, IToken, TokenType} from '../lib/types';
 import {errors} from '../lib/constants';
 import {normalizeString} from './normalizeString';
 import {getEnglishTranslation, getWordType} from './aiLyricsProcessor';

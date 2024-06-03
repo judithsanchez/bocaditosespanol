@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import axios from 'axios';
-import {TextProcessor} from '../../../src/utils/TextProcessor'; // TODO: find out how to use @ while being able to test and use the debugger
+import {processTextData} from '../../../src/utils/processTextData'; // TODO: find out how to use @ while being able to test and use the debugger
 
 const Admin = () => {
 	const [formData, setFormData] = useState({
@@ -36,9 +36,7 @@ const Admin = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
-			const processedLyrics = await new TextProcessor().ProcessTextData(
-				formData.lyrics,
-			);
+			const processedLyrics = processTextData(formData.lyrics);
 			const songData = {...formData, processedLyrics};
 
 			const response = await axios.post(
