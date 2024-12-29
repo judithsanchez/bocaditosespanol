@@ -1,29 +1,7 @@
-/**
- * Tokenizes a sentence into an array of tokens.
- *
- * A token can be a word, an emoji, or a punctuation sign. Each token is represented
- * as an object with properties `token` and `type`.
- *
- * For words, the `token` property is an object with the following properties:
- * - `spanish`: The original word in Spanish.
- * - `normalizedToken`: The word in its normalized form (lowercase, without accents).
- * - `hasSpecialChar`: A boolean indicating whether the original word contained special characters.
- *
- * For emojis and punctuation signs, the `token` property is a string representing the emoji or punctuation sign.
- *
- * The `type` property indicates the type of the token (word, emoji, or punctuation sign).
- *
- * @param sentence - The sentence to be tokenized.
- * @throws {TypeError} If the input is not a string.
- * @throws {Error} If the sentence is empty after trimming.
- * @returns An object containing the original sentence and an array of tokens.
- */
-
 import emojiRegex from 'emoji-regex';
-import {ISentence, IToken, TokenType, WordType} from '../lib/types';
+import {ISentence, IToken, TokenType} from '../lib/types';
 import {errors} from '../lib/constants';
 import {normalizeString} from './normalizeString';
-import {getEnglishTranslation, getWordType} from './aiLyricsProcessor';
 
 const tokenizeSentences = (sentence: string): ISentence => {
 	if (typeof sentence !== 'string') {
@@ -44,27 +22,26 @@ const tokenizeSentences = (sentence: string): ISentence => {
 		.filter(token => token.trim() !== '')
 		.map(token => {
 			if (emojiRegex().test(token)) {
-				return {token, type: TokenType.Emoji};
+				return {token, type: 'emoji' as TokenType};
 			} else if (/^[.?!¡¿,:;'"\\s-]+$/.test(token)) {
-				return {token, type: TokenType.PunctuationSign};
+				return {token, type: 'punctuationSign' as TokenType};
 			} else {
 				const spanish = token;
 				const normalizedToken = normalizeString(spanish);
 				const hasSpecialChar = spanish.toLowerCase() !== normalizedToken;
-				const english = getEnglishTranslation(sentence, spanish); // TODO: make this lowercase
-				const type = getWordType(sentence, spanish);
-				// const english = 'testEnglishWord';
-				// const type = WordType['Noun'] || null; // TODO: update tests
+				const english = '';
+				const wordType = '';
 
 				return {
-					token: {spanish, normalizedToken, hasSpecialChar, english, type},
-					type: TokenType.Word,
+					token: {spanish, normalizedToken, hasSpecialChar, english, wordType},
+					type: 'word' as TokenType,
 				};
 			}
 		});
 
 	return {
 		sentence: trimmedSentence,
+		translation: '',
 		tokens: tokens,
 	};
 };

@@ -1,12 +1,15 @@
 export interface ISentence {
 	sentence: string;
+	translation: string;
 	tokens: IToken[];
 }
-export enum TokenType {
-	Word = 'word',
-	Emoji = 'emoji',
-	PunctuationSign = 'punctuationSign',
-}
+// export enum TokenType {
+// 	Word = 'word',
+// 	Emoji = 'emoji',
+// 	PunctuationSign = 'punctuationSign',
+// }
+
+export type TokenType = 'word' | 'emoji' | 'punctuationSign';
 
 export interface IToken {
 	token: string | IWord;
@@ -18,7 +21,7 @@ export interface IWord {
 	normalizedToken: string;
 	english?: Promise<string> | string;
 	hasSpecialChar: boolean;
-	type?: Promise<string> | string; // TODO: figure out how to use WordType here
+	wordtType?: Promise<string> | string;
 }
 
 export enum WordType {
