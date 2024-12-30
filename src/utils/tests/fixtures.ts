@@ -1,3 +1,5 @@
+import {TokenType} from 'lib/types';
+
 export const paragraphSplitterFixtures = {
 	basicSentences: {
 		input: 'This is a sentence. And this is another one.',
@@ -113,5 +115,132 @@ export const normalizeStringFixtures = {
 	tabsAndNewlines: {
 		input: 'hóla\t\tmúndo\n\rañó',
 		expected: 'hola mundo ano',
+	},
+};
+
+export const tokenizeSentencesFixtures = {
+	simpleSentence: {
+		input: 'Hello, world!',
+		expected: [
+			{
+				token: {
+					spanish: 'Hello',
+					normalizedToken: 'hello',
+					hasSpecialChar: false,
+					english: '',
+					wordType: '',
+				},
+				type: 'word' as TokenType,
+			},
+			{token: ',', type: 'punctuationSign' as TokenType},
+			{
+				token: {
+					spanish: 'world',
+					normalizedToken: 'world',
+					hasSpecialChar: false,
+					english: '',
+					wordType: '',
+				},
+				type: 'word' as TokenType,
+			},
+			{token: '!', type: 'punctuationSign' as TokenType},
+		],
+	},
+	multiplePunctuation: {
+		input: 'Hello, world! How are you?',
+		expected: [
+			{
+				token: {
+					spanish: 'Hello',
+					normalizedToken: 'hello',
+					hasSpecialChar: false,
+					english: '',
+					wordType: '',
+				},
+				type: 'word' as TokenType,
+			},
+			{token: ',', type: 'punctuationSign' as TokenType},
+			{
+				token: {
+					spanish: 'world',
+					normalizedToken: 'world',
+					hasSpecialChar: false,
+					english: '',
+					wordType: '',
+				},
+				type: 'word' as TokenType,
+			},
+			{token: '!', type: 'punctuationSign' as TokenType},
+			{
+				token: {
+					spanish: 'How',
+					normalizedToken: 'how',
+					hasSpecialChar: false,
+					english: '',
+					wordType: '',
+				},
+				type: 'word' as TokenType,
+			},
+			{
+				token: {
+					spanish: 'are',
+					normalizedToken: 'are',
+					hasSpecialChar: false,
+					english: '',
+					wordType: '',
+				},
+				type: 'word' as TokenType,
+			},
+			{
+				token: {
+					spanish: 'you',
+					normalizedToken: 'you',
+					hasSpecialChar: false,
+					english: '',
+					wordType: '',
+				},
+				type: 'word' as TokenType,
+			},
+			{token: '?', type: 'punctuationSign' as TokenType},
+		],
+	},
+	withEmojis: {
+		input: 'Hello 👋🏻, world! 😀',
+		expected: [
+			{
+				token: {
+					spanish: 'Hello',
+					normalizedToken: 'hello',
+					hasSpecialChar: false,
+					english: '',
+					wordType: '',
+				},
+				type: 'word' as TokenType,
+			},
+			{token: '👋🏻', type: 'emoji' as TokenType},
+			{token: ',', type: 'punctuationSign' as TokenType},
+			{
+				token: {
+					spanish: 'world',
+					normalizedToken: 'world',
+					hasSpecialChar: false,
+					english: '',
+					wordType: '',
+				},
+				type: 'word' as TokenType,
+			},
+			{token: '!', type: 'punctuationSign' as TokenType},
+			{token: '😀', type: 'emoji' as TokenType},
+		],
+	},
+	emojiSkinTones: {
+		input: '👋🏻 👋🏼 👋🏽 👋🏾 👋🏿',
+		expected: [
+			{token: '👋🏻', type: 'emoji' as TokenType},
+			{token: '👋🏼', type: 'emoji' as TokenType},
+			{token: '👋🏽', type: 'emoji' as TokenType},
+			{token: '👋🏾', type: 'emoji' as TokenType},
+			{token: '👋🏿', type: 'emoji' as TokenType},
+		],
 	},
 };
