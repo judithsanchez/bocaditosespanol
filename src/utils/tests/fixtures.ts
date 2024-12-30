@@ -60,3 +60,58 @@ export const paragraphSplitterFixtures = {
 		expected: ['Una frase.', 'Otra frase.', 'Última.'],
 	},
 };
+
+export const normalizeStringFixtures = {
+	accentedVowels: {
+		input: 'áéíóú',
+		expected: 'aeiou',
+	},
+	spanishN: {
+		input: 'mañana',
+		expected: 'manana',
+	},
+	lowerUmlaut: {
+		input: 'über',
+		expected: 'uber',
+	},
+	upperUmlaut: {
+		input: 'Über',
+		expected: 'uber',
+	},
+	upperAccent: {
+		input: 'ÉSTA',
+		expected: 'esta',
+	},
+	noSpecialChars: {
+		input: 'hello',
+		expected: 'hello',
+	},
+	empty: {
+		input: '',
+		expected: '',
+	},
+	multipleSpecialChars: {
+		input: 'áñü',
+		expected: 'anu',
+	},
+	mixedChars: {
+		input: 'áéñü',
+		expected: 'aenu',
+	},
+	withSpaces: {
+		input: '  áéñü  ',
+		expected: 'aenu',
+	},
+	irregularWhitespace: {
+		input: '  aéd   sdñá  ',
+		expected: 'aed sdna',
+	},
+	multipleSpaces: {
+		input: 'hóla    múndo',
+		expected: 'hola mundo',
+	},
+	tabsAndNewlines: {
+		input: 'hóla\t\tmúndo\n\rañó',
+		expected: 'hola mundo ano',
+	},
+};
