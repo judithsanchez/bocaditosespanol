@@ -244,3 +244,28 @@ export const tokenizeSentencesFixtures = {
 		],
 	},
 };
+
+export const batchProcessorFixtures = {
+	simpleItems: {
+		input: ['item1', 'item2', 'item3', 'item4', 'item5'],
+		expected: [
+			'processed1',
+			'processed2',
+			'processed3',
+			'processed4',
+			'processed5',
+		],
+	},
+	emptyItems: {
+		input: [],
+		expected: [],
+	},
+	defaultConfig: {
+		batchSize: 2,
+		options: {
+			retryAttempts: 3,
+			delayBetweenBatches: 100,
+			maxRequestsPerMinute: 30,
+		},
+	},
+};

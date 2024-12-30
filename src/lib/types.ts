@@ -3,11 +3,6 @@ export interface ISentence {
 	translation: string;
 	tokens: IToken[];
 }
-// export enum TokenType {
-// 	Word = 'word',
-// 	Emoji = 'emoji',
-// 	PunctuationSign = 'punctuationSign',
-// }
 
 export type TokenType = 'word' | 'emoji' | 'punctuationSign';
 
@@ -43,6 +38,17 @@ export interface ITextProcessor {
 }
 
 export interface IText {}
+
+export interface BatchProcessorConfig<T> {
+	items: T[];
+	processingFn: (items: T[]) => Promise<T[]>;
+	batchSize: number;
+	options: {
+		retryAttempts: number;
+		delayBetweenBatches: number;
+		maxRequestsPerMinute: number;
+	};
+}
 
 // export interface ISongData {
 // 	title: string;

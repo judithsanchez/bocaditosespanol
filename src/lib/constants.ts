@@ -5,13 +5,27 @@ export const errors = {
 	processingError: 'Error processing text data',
 	invalidText: 'Invalid text provided',
 	failedToSaveData: 'Failed to save data:',
+	batchProcessingFailed: 'Batch processing failed:',
 };
 
 export const logs = {
 	dataSaved: '✅ Data saved with ID:',
 	errorSavingData: '❌ Error saving data:',
+	batchProcessing: {
+		starting: '🎯 Starting batch processing:',
+		totalBatches: 'total batches',
+		processingBatch: '📦 Processing batch',
+		batchSize: '📊 Batch size:',
+		items: 'items',
+		batchCompleted: '✅ Batch',
+		completedSuccessfully: 'completed successfully',
+		batchFailed: '❌ Batch',
+		failed: 'failed. Attempt',
+		of: '/',
+		waitingNextBatch: '⏳ Waiting',
+		msBeforeNextBatch: 'ms before next batch...',
+	},
 };
-
 export const testMessages = {
 	directoryCreationFailed: 'Directory creation failed',
 	writeOperationFailed: 'Write operation failed',

@@ -1,13 +1,5 @@
-interface BatchProcessorConfig<T> {
-	items: T[];
-	processingFn: (items: T[]) => Promise<T[]>;
-	batchSize: number;
-	options: {
-		retryAttempts: number;
-		delayBetweenBatches: number;
-		maxRequestsPerMinute: number;
-	};
-}
+import {BatchProcessorConfig} from 'lib/types';
+import {logs, errors} from '../lib/constants';
 
 export async function batchProcessor<T>({
 	items,
@@ -18,30 +10,38 @@ export async function batchProcessor<T>({
 	const results: T[] = [];
 	const totalBatches = Math.ceil(items.length / batchSize);
 
-	console.log(`🎯 Starting batch processing: ${totalBatches} total batches`);
+	console.log(
+		`${logs.batchProcessing.starting} ${totalBatches} ${logs.batchProcessing.totalBatches}`,
+	);
 
 	for (let i = 0; i < items.length; i += batchSize) {
 		const currentBatch = Math.floor(i / batchSize) + 1;
 		const batch = items.slice(i, i + batchSize);
 
-		console.log(`\n📦 Processing batch ${currentBatch}/${totalBatches}`);
-		console.log(`📊 Batch size: ${batch.length} items`);
+		console.log(
+			`\n${logs.batchProcessing.processingBatch} ${currentBatch}${logs.batchProcessing.of}${totalBatches}`,
+		);
+		console.log(
+			`${logs.batchProcessing.batchSize} ${batch.length} ${logs.batchProcessing.items}`,
+		);
 
 		let attempts = 0;
 		while (attempts < options.retryAttempts) {
 			try {
 				const batchResults = await processingFn(batch);
 				results.push(...batchResults);
-				console.log(`✅ Batch ${currentBatch} completed successfully`);
+				console.log(
+					`${logs.batchProcessing.batchCompleted} ${currentBatch} ${logs.batchProcessing.completedSuccessfully}`,
+				);
 				break;
 			} catch (error) {
 				attempts++;
 				console.error(
-					`❌ Batch ${currentBatch} failed. Attempt ${attempts}/${options.retryAttempts}`,
+					`${logs.batchProcessing.batchFailed} ${currentBatch} ${logs.batchProcessing.failed} ${attempts}${logs.batchProcessing.of}${options.retryAttempts}`,
 					error,
 				);
 				if (attempts === options.retryAttempts) {
-					throw new Error(`Batch processing failed: ${error}`);
+					throw new Error(`${errors.batchProcessingFailed} ${error}`);
 				}
 				await new Promise(resolve =>
 					setTimeout(resolve, options.delayBetweenBatches),
@@ -51,7 +51,7 @@ export async function batchProcessor<T>({
 
 		if (i + batchSize < items.length) {
 			console.log(
-				`⏳ Waiting ${options.delayBetweenBatches}ms before next batch...`,
+				`${logs.batchProcessing.waitingNextBatch} ${options.delayBetweenBatches}${logs.batchProcessing.msBeforeNextBatch}`,
 			);
 			await new Promise(resolve =>
 				setTimeout(resolve, options.delayBetweenBatches),
