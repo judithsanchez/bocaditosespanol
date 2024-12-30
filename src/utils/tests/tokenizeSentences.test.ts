@@ -1,7 +1,7 @@
 import {errors} from 'lib/constants';
 import {tokenizeSentences} from '../tokenizeSentences';
 import {TokenType} from 'lib/types';
-import {tokenizeSentencesFixtures} from './fixtures';
+import {tokenizeSentencesFixtures} from './lib/fixtures';
 
 describe('tokenizeSentences', () => {
 	test('tokenizes a simple sentence correctly', () => {

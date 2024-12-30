@@ -1,5 +1,5 @@
 import {paragraphSplitter} from 'utils/paragraphSplitter';
-import {paragraphSplitterFixtures} from './fixtures';
+import {paragraphSplitterFixtures} from './lib/fixtures';
 import {errors} from 'lib/constants';
 
 describe('paragraphSplitter', () => {

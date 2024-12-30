@@ -1,5 +1,5 @@
 import {normalizeString} from 'utils/normalizeString';
-import {normalizeStringFixtures} from './fixtures';
+import {normalizeStringFixtures} from './lib/fixtures';
 import {errors} from 'lib/constants';
 
 describe('normalizeString', () => {
