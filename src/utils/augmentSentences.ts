@@ -4,13 +4,20 @@ import {
 	HarmCategory,
 	SchemaType,
 } from '@google/generative-ai';
-import {ISentence, IToken, TokenType, WordType} from '../lib/types';
+import {ISentence, WordType} from '../lib/types';
+import {config} from 'dotenv';
+config();
 
-console.log('🚀 Initializing AI Lyrics Processor');
+// TODO: cover with unit test
 
-const genAI = new GoogleGenerativeAI('AIzaSyBmXIsCMkUh3-K_u1rCM5skL0-mIW6yhZY');
+console.log('🚀 Initializing AI Text Processor');
+
+const genAI = new GoogleGenerativeAI(
+	process.env.GOOGLE_GENERATIVE_AI_KEY ?? '',
+);
 
 console.log('📋 Setting up sentence schema');
+
 const sentenceSchema = {
 	type: SchemaType.ARRAY,
 	items: {
@@ -123,12 +130,11 @@ Generate response as an array of fully processed sentences.`,
 			typeof enrichedBatch,
 			Array.isArray(enrichedBatch),
 		);
-		// Preserve punctuation tokens for each sentence
+
 		const processedSentences = enrichedBatch.map(
 			(enrichedSentence: ISentence, index: number) => {
 				const originalSentence = sentences[index];
 
-				// Create map of enriched word tokens
 				const enrichedTokensMap = new Map(
 					enrichedSentence.tokens.map((token: any) => [
 						token.token.spanish,
@@ -136,7 +142,6 @@ Generate response as an array of fully processed sentences.`,
 					]),
 				);
 
-				// Merge enriched tokens while preserving punctuation
 				const mergedTokens = originalSentence.tokens.map(originalToken => {
 					if (originalToken.type !== 'word') {
 						return originalToken;

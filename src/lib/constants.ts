@@ -6,6 +6,8 @@ export const errors = {
 	invalidText: 'Invalid text provided',
 	failedToSaveData: 'Failed to save data:',
 	batchProcessingFailed: 'Batch processing failed:',
+	invalidTextData: 'Invalid text data provided',
+	baseNameWithExtension: 'Please provide base name without extension',
 };
 
 export const logs = {

@@ -5,6 +5,7 @@ import {saveProcessedText} from './saveProcessedText';
 import {ISentence, ITextProcessor} from '../lib/types';
 import {join} from 'path';
 import {augmentSentences} from './augmentSentences';
+import {errors} from '../lib/constants';
 
 export class TextProcessor implements ITextProcessor {
 	private static readonly RATE_LIMITS = {
@@ -18,7 +19,7 @@ export class TextProcessor implements ITextProcessor {
 
 	constructor(public textData: string) {
 		if (!textData) {
-			throw new Error('Invalid text data provided');
+			throw new Error(errors.invalidTextData);
 		}
 		this.processedText = [];
 	}
@@ -45,7 +46,7 @@ export class TextProcessor implements ITextProcessor {
 
 	async saveToJson(baseName: string): Promise<string> {
 		if (baseName.includes('.')) {
-			throw new Error('Please provide base name without extension');
+			throw new Error(errors.baseNameWithExtension);
 		}
 
 		const fileName = `${baseName}.json`;
