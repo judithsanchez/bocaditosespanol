@@ -1,0 +1,55 @@
+{
+  "id": "03d71abd-866d-4ab9-a051-b762b43174ae",
+  "data": [
+    {
+      "sentence": "Tengo la camisa negra.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tengo",
+            "spanish": "Tengo",
+            "english": "I have",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "la",
+            "spanish": "la",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "camisa",
+            "spanish": "camisa",
+            "english": "shirt",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "negra",
+            "spanish": "negra",
+            "english": "black",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I have the black shirt."
+    }
+  ]
+}

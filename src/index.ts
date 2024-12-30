@@ -1,6 +1,8 @@
 import {ISentence} from './lib/types';
 import {augmentSentence} from './utils/augmentSentence';
 import {batchProcessor} from './utils/batchProcessor';
+import {saveProcessedText} from './utils/saveProcessedText';
+import {join} from 'path';
 
 const testSentence = [
 	{
@@ -289,6 +291,14 @@ async function testAugmentation() {
 	});
 
 	console.log(`\n🎉 All sentences processed successfully!`);
-	console.log('Final Results:', JSON.stringify(augmentedSentences, null, 2));
+
+	const savedId = await saveProcessedText(
+		augmentedSentences,
+		'src/data',
+		'laCamisaNegra.json',
+	);
+
+	console.log(`💾 Saved processed text with ID: ${savedId}`);
 }
+
 testAugmentation();

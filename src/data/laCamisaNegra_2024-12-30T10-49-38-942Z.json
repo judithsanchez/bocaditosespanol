@@ -1,0 +1,275 @@
+{
+	"id": "b7f74955-1302-4b03-ab8b-95364094b1aa",
+	"data": [
+		{
+			"sentence": "Tengo la camisa negra.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "Tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "camisa",
+						"spanish": "camisa",
+						"english": "shirt",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "negra",
+						"spanish": "negra",
+						"english": "black",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I have the black shirt."
+		},
+		{
+			"sentence": "Hoy mi amor está de luto.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hoy",
+						"spanish": "Hoy",
+						"english": "Today",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "possessive"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "esta",
+						"spanish": "está",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "luto",
+						"spanish": "luto",
+						"english": "mourning",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Today my love is in mourning."
+		},
+		{
+			"sentence": "Hoy tengo en el alma una pena y es por culpa de tu embrujo.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hoy",
+						"spanish": "Hoy",
+						"english": "Today",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "alma",
+						"spanish": "alma",
+						"english": "soul",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pena",
+						"spanish": "pena",
+						"english": "sorrow",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "it is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "because of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "culpa",
+						"spanish": "culpa",
+						"english": "fault",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "possessive"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "embrujo",
+						"spanish": "embrujo",
+						"english": "spell",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Today I have a sorrow in my soul, and it is because of your spell."
+		}
+	]
+}
