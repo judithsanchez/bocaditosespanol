@@ -1,5 +1,6 @@
 import {ISentence} from './lib/types';
-import {augmentSentence} from './utils/aiLyricsProcessor';
+import {augmentSentence} from './utils/augmentSentence';
+import {batchProcessor} from './utils/batchProcessor';
 
 const testSentence = [
 	{
@@ -273,24 +274,21 @@ const testSentence = [
 		],
 	},
 ];
+
 async function testAugmentation() {
-	const augmentedSentences = [];
-	const totalSentences = testSentence.length;
+	console.log(`🚀 Starting processing of sentences`);
 
-	console.log(`🚀 Starting processing of ${totalSentences} sentences`);
+	const augmentedSentences = await batchProcessor<ISentence>({
+		items: testSentence as ISentence[],
+		processingFn: augmentSentence,
+		batchSize: 2,
+		options: {
+			retryAttempts: 3,
+			delayBetweenBatches: 2000,
+		},
+	});
 
-	for (let i = 0; i < totalSentences; i++) {
-		console.log(`\n📝 Processing sentence ${i + 1}/${totalSentences}`);
-		console.log(`Input: "${testSentence[i].sentence}"`);
-
-		const result = await augmentSentence(testSentence[i] as ISentence);
-		augmentedSentences.push(result);
-
-		console.log(`✅ Successfully processed sentence ${i + 1}`);
-	}
-
-	console.log(`\n🎉 All ${totalSentences} sentences processed successfully!`);
+	console.log(`\n🎉 All sentences processed successfully!`);
 	console.log('Final Results:', JSON.stringify(augmentedSentences, null, 2));
 }
-
 testAugmentation();

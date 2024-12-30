@@ -39,7 +39,7 @@ export enum WordType {
 export interface ITextProcessor {
 	processedText: ISentence[];
 	textData: string;
-	processTextData(lyrics: string): ISentence[];
+	processTextData(text: string): void;
 }
 
 export interface IText {}
