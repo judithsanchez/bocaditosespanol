@@ -5,18 +5,30 @@ const paragraphSplitter = (string: string): string[] => {
 		throw new TypeError(errors.mustBeString);
 	}
 
-	const sentenceEndRegex: RegExp = /(\s*\.{3}|\s*[.?!:;\-]|\n+)/;
-	const sentences: string[] = string.split(sentenceEndRegex);
-	const filteredSentences: string[] = [];
-	for (let i: number = 0; i < sentences.length; i += 2) {
-		const sentence: string = sentences[i].trim();
-		const punctuation: string = sentences[i + 1] ? sentences[i + 1].trim() : '';
-		const completeSentence: string = sentence + punctuation;
-		if (completeSentence) {
-			filteredSentences.push(completeSentence);
+	const normalizedString = string.replace(/\s+/g, ' ').replace(/[\n\r]+/g, ' ');
+
+	const sentenceEndRegex: RegExp = /(?:[.!?]|\.{3})(?:\s+|$)/g;
+	const sentences: string[] = [];
+	let lastIndex = 0;
+
+	for (let match of normalizedString.matchAll(sentenceEndRegex)) {
+		if (match.index !== undefined) {
+			const sentence = normalizedString
+				.slice(lastIndex, match.index + match[0].length)
+				.trim();
+			if (sentence) {
+				sentences.push(sentence);
+			}
+			lastIndex = match.index + match[0].length;
 		}
 	}
-	return filteredSentences;
+
+	const remainingText = normalizedString.slice(lastIndex).trim();
+	if (remainingText) {
+		sentences.push(remainingText);
+	}
+
+	return sentences;
 };
 
 export {paragraphSplitter};
