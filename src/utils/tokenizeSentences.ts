@@ -8,7 +8,7 @@ const tokenizeSentences = (sentence: string): ISentence => {
 		throw new TypeError(errors.mustBeString);
 	}
 
-	const trimmedSentence = sentence.trim();
+	const trimmedSentence = sentence.trim().replace(/\s+/g, ' ');
 	if (trimmedSentence === '') {
 		throw new Error(errors.cantTokenize);
 	}
