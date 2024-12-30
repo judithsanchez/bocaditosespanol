@@ -1,0 +1,26 @@
+[
+	{
+		"interpreter": "Anakena",
+		"feat": "Noreh",
+		"songName": "Buenos Aires",
+		"youtube": "https://www.youtube.com/watch?v=n1bZq1EqEkA&pp=ygUUYnVlbm9zIGFpcmVzIGFuYWtlbmE%3D",
+		"unprocessedLyrics": "src/data/lyrics/unprocessed/buenos-aires.json",
+		"processedLyrics": "src/data/lyrics/processed/buenos-aires_2024-12-30T20-23-21-674Z.json"
+	},
+	{
+		"interpreter": "Luis Fonsi",
+		"feat": "Daddy Yankee",
+		"songName": "Despacito",
+		"youtube": "https://www.youtube.com/watch?v=kJQP7kiw5Fk&pp=ygUJZGVzcGFjaXRv",
+		"unprocessedLyrics": "src/data/lyrics/unprocessed/despacito.json",
+		"processedLyrics": "src/data/lyrics/processed/despacito_2024-12-30T20-08-13-521Z.json"
+	},
+	{
+		"interpreter": "Bad Bunny",
+		"feat": "Arkangel",
+		"songName": "La Jumpa",
+		"youtube": "https://www.youtube.com/watch?v=ubbE6gyBf8k&pp=ygUIbGEganVtcGE%3D",
+		"unprocessedLyrics": "src/data/lyrics/unprocessed/la-jumpa.json",
+		"processedLyrics": "src/data/lyrics/processed/la-jumpa_2024-12-30T16-01-38-159Z.json"
+	}
+]

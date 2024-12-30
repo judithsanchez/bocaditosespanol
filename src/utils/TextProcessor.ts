@@ -50,8 +50,7 @@ export class TextProcessor implements ITextProcessor {
 		}
 
 		const fileName = `${baseName}.json`;
-		const dataFolderPath = join(__dirname, '../data');
-
+		const dataFolderPath = join(__dirname, '../../data/lyrics/processed');
 		return saveProcessedText(this.processedText, dataFolderPath, fileName);
 	}
 }
