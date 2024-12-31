@@ -1,0 +1,3682 @@
+{
+  "songId": "te-aviso-te-anuncio-shakira",
+  "processedLyricsId": "processed-te-aviso-te-anuncio-shakira",
+  "data": [
+    {
+      "sentence": "Nunca pensé que doliera el amor así.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "nunca",
+            "spanish": "Nunca",
+            "english": "Never",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "pense",
+            "spanish": "pensé",
+            "english": "thought",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "doliera",
+            "spanish": "doliera",
+            "english": "hurt",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "el",
+            "spanish": "el",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "amor",
+            "spanish": "amor",
+            "english": "love",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "asi",
+            "spanish": "así",
+            "english": "like that",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I never thought love would hurt like this."
+    },
+    {
+      "sentence": "Cuando se entierra en el medio de un no y un sí.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cuando",
+            "spanish": "Cuando",
+            "english": "When",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "se",
+            "spanish": "se",
+            "english": "itself",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "entierra",
+            "spanish": "entierra",
+            "english": "buries",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "en",
+            "spanish": "en",
+            "english": "in",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "el",
+            "spanish": "el",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "medio",
+            "spanish": "medio",
+            "english": "middle",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "un",
+            "spanish": "un",
+            "english": "a",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "no",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "un",
+            "spanish": "un",
+            "english": "a",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "si",
+            "spanish": "sí",
+            "english": "yes",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "When it buries itself in the middle of a no and a yes."
+    },
+    {
+      "sentence": "Es un día ella y otro día yo.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "es",
+            "spanish": "Es",
+            "english": "It is",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "un",
+            "spanish": "un",
+            "english": "a",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "dia",
+            "spanish": "día",
+            "english": "day",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ella",
+            "spanish": "ella",
+            "english": "she",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "otro",
+            "spanish": "otro",
+            "english": "another",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "dia",
+            "spanish": "día",
+            "english": "day",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "yo",
+            "spanish": "yo",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "It's one day her and another day me."
+    },
+    {
+      "sentence": "Me estás dejando sin corazón y cero de razón.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "Me",
+            "english": "me",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "estas",
+            "spanish": "estás",
+            "english": "are",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "dejando",
+            "spanish": "dejando",
+            "english": "leaving",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sin",
+            "spanish": "sin",
+            "english": "without",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "corazon",
+            "spanish": "corazón",
+            "english": "heart",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cero",
+            "spanish": "cero",
+            "english": "zero",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "razon",
+            "spanish": "razón",
+            "english": "reason",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "You are leaving me without a heart and zero reason."
+    },
+    {
+      "sentence": "Ay, te aviso y te anuncio que hoy renuncio.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ay",
+            "spanish": "Ay",
+            "english": "Oh",
+            "wordType": "interjection"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "te",
+            "spanish": "te",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "aviso",
+            "spanish": "aviso",
+            "english": "I warn",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "te",
+            "spanish": "te",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "anuncio",
+            "spanish": "anuncio",
+            "english": "I announce",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "hoy",
+            "spanish": "hoy",
+            "english": "today",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "renuncio",
+            "spanish": "renuncio",
+            "english": "I resign",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Oh, I warn you and I announce that today I resign."
+    },
+    {
+      "sentence": "A tus negocios sucios.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "a",
+            "spanish": "A",
+            "english": "To",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tus",
+            "spanish": "tus",
+            "english": "your",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "negocios",
+            "spanish": "negocios",
+            "english": "business",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sucios",
+            "spanish": "sucios",
+            "english": "dirty",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "To your dirty business."
+    },
+    {
+      "sentence": "Ya sabes que estoy de ti vacunada.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ya",
+            "spanish": "Ya",
+            "english": "Already",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sabes",
+            "spanish": "sabes",
+            "english": "you know",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "estoy",
+            "spanish": "estoy",
+            "english": "I am",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "vacunada",
+            "spanish": "vacunada",
+            "english": "vaccinated",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "You already know that I'm vaccinated against you."
+    },
+    {
+      "sentence": "A prueba de patadas.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "a",
+            "spanish": "A",
+            "english": "To",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "prueba",
+            "spanish": "prueba",
+            "english": "test",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "patadas",
+            "spanish": "patadas",
+            "english": "kicks",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Kick-proof."
+    },
+    {
+      "sentence": "Por ti me quedé como Mona Lisa.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "por",
+            "spanish": "Por",
+            "english": "Because of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "me",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "quede",
+            "spanish": "quedé",
+            "english": "stayed",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "como",
+            "spanish": "como",
+            "english": "like",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "mona",
+            "spanish": "Mona",
+            "english": "Mona",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "lisa",
+            "spanish": "Lisa",
+            "english": "Lisa",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Because of you I stayed like Mona Lisa."
+    },
+    {
+      "sentence": "Sin llanto y sin sonrisa.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sin",
+            "spanish": "Sin",
+            "english": "Without",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "llanto",
+            "spanish": "llanto",
+            "english": "crying",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sin",
+            "spanish": "sin",
+            "english": "without",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sonrisa",
+            "spanish": "sonrisa",
+            "english": "smile",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Without crying and without a smile."
+    },
+    {
+      "sentence": "Que el cielo y tu madre cuiden de ti.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "Que",
+            "english": "May",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "el",
+            "spanish": "el",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cielo",
+            "spanish": "cielo",
+            "english": "sky",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tu",
+            "spanish": "tu",
+            "english": "your",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "madre",
+            "spanish": "madre",
+            "english": "mother",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cuiden",
+            "spanish": "cuiden",
+            "english": "take care",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "May the sky and your mother take care of you."
+    },
+    {
+      "sentence": "Me voy, será mejor así.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "Me",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "voy",
+            "spanish": "voy",
+            "english": "go",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "sera",
+            "spanish": "será",
+            "english": "will be",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "mejor",
+            "spanish": "mejor",
+            "english": "better",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "asi",
+            "spanish": "así",
+            "english": "like this",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I'm leaving; it will be better this way."
+    },
+    {
+      "sentence": "Sé que olvidarte no es asunto sencillo.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "se",
+            "spanish": "Sé",
+            "english": "I know",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "olvidarte",
+            "spanish": "olvidarte",
+            "english": "forgetting you",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "not",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "es",
+            "spanish": "es",
+            "english": "is",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "asunto",
+            "spanish": "asunto",
+            "english": "matter",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sencillo",
+            "spanish": "sencillo",
+            "english": "simple",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I know that forgetting you is not a simple matter."
+    },
+    {
+      "sentence": "Te me clavaste en el cuerpo como un cuchillo.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "te",
+            "spanish": "Te",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "me",
+            "english": "me",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "clavaste",
+            "spanish": "clavaste",
+            "english": "stabbed",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "en",
+            "spanish": "en",
+            "english": "in",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "el",
+            "spanish": "el",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cuerpo",
+            "spanish": "cuerpo",
+            "english": "body",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "como",
+            "spanish": "como",
+            "english": "like",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "un",
+            "spanish": "un",
+            "english": "a",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cuchillo",
+            "spanish": "cuchillo",
+            "english": "knife",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "You stabbed me in the body like a knife."
+    },
+    {
+      "sentence": "Pero todo lo que entra ha de salir.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "pero",
+            "spanish": "Pero",
+            "english": "But",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "todo",
+            "spanish": "todo",
+            "english": "everything",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "lo",
+            "spanish": "lo",
+            "english": "it",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "entra",
+            "spanish": "entra",
+            "english": "enters",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ha",
+            "spanish": "ha",
+            "english": "has",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "to",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "salir",
+            "spanish": "salir",
+            "english": "leave",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "But everything that enters must leave."
+    },
+    {
+      "sentence": "Y los que están tendrán que partir, empezando por mí.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "Y",
+            "english": "And",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "los",
+            "spanish": "los",
+            "english": "those",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "to",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "estan",
+            "spanish": "están",
+            "english": "are",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "tendran",
+            "spanish": "tendrán",
+            "english": "will have",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "to",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "partir",
+            "spanish": "partir",
+            "english": "leave",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "empezando",
+            "spanish": "empezando",
+            "english": "starting",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "por",
+            "spanish": "por",
+            "english": "by",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "mi",
+            "spanish": "mí",
+            "english": "me",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "And those that are will have to leave, starting with me."
+    },
+    {
+      "sentence": "Ay, te aviso y te anuncio que hoy renuncio.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ay",
+            "spanish": "Ay",
+            "english": "Oh",
+            "wordType": "interjection"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "te",
+            "spanish": "te",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "aviso",
+            "spanish": "aviso",
+            "english": "I warn",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "te",
+            "spanish": "te",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "anuncio",
+            "spanish": "anuncio",
+            "english": "I announce",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "hoy",
+            "spanish": "hoy",
+            "english": "today",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "renuncio",
+            "spanish": "renuncio",
+            "english": "I resign",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Oh, I warn you and I announce that today I resign."
+    },
+    {
+      "sentence": "A tus negocios sucios.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "a",
+            "spanish": "A",
+            "english": "To",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tus",
+            "spanish": "tus",
+            "english": "your",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "negocios",
+            "spanish": "negocios",
+            "english": "business",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sucios",
+            "spanish": "sucios",
+            "english": "dirty",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "To your dirty business."
+    },
+    {
+      "sentence": "Ya sabes que estoy de ti vacunada.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ya",
+            "spanish": "Ya",
+            "english": "Already",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sabes",
+            "spanish": "sabes",
+            "english": "you know",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "estoy",
+            "spanish": "estoy",
+            "english": "I am",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "from",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "vacunada",
+            "spanish": "vacunada",
+            "english": "vaccinated",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "You already know that I am vaccinated from you."
+    },
+    {
+      "sentence": "A prueba de patadas.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "a",
+            "spanish": "A",
+            "english": "to",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "prueba",
+            "spanish": "prueba",
+            "english": "proof",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "patadas",
+            "spanish": "patadas",
+            "english": "kicks",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Kick-proof."
+    },
+    {
+      "sentence": "Por ti me quedé como Mona Lisa.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "por",
+            "spanish": "Por",
+            "english": "for",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "me",
+            "english": "me",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "quede",
+            "spanish": "quedé",
+            "english": "stayed",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "como",
+            "spanish": "como",
+            "english": "as",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "mona",
+            "spanish": "Mona",
+            "english": "Mona",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "lisa",
+            "spanish": "Lisa",
+            "english": "Lisa",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "For you I stayed as Mona Lisa."
+    },
+    {
+      "sentence": "Sin llanto y sin sonrisa.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sin",
+            "spanish": "Sin",
+            "english": "without",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "llanto",
+            "spanish": "llanto",
+            "english": "crying",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sin",
+            "spanish": "sin",
+            "english": "without",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sonrisa",
+            "spanish": "sonrisa",
+            "english": "smile",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Without crying and without a smile."
+    },
+    {
+      "sentence": "Que el cielo y tu madre cuiden de ti.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "Que",
+            "english": "May",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "el",
+            "spanish": "el",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cielo",
+            "spanish": "cielo",
+            "english": "sky",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tu",
+            "spanish": "tu",
+            "english": "your",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "madre",
+            "spanish": "madre",
+            "english": "mother",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cuiden",
+            "spanish": "cuiden",
+            "english": "take care",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "May the sky and your mother take care of you."
+    },
+    {
+      "sentence": "Me voy, no, no, no, no-oh.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "Me",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "voy",
+            "spanish": "voy",
+            "english": "go",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "no",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "no",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "no",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "no",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": "-",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "spanish": "oh",
+            "normalizedToken": "oh",
+            "hasSpecialChar": false,
+            "english": "",
+            "wordType": ""
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I'm leaving, no, no, no, no-oh."
+    },
+    {
+      "sentence": "Tal vez, tú no eras ese para mí.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tal",
+            "spanish": "Tal",
+            "english": "maybe",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "vez",
+            "spanish": "vez",
+            "english": "time",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "tu",
+            "spanish": "tú",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "not",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "eras",
+            "spanish": "eras",
+            "english": "were",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ese",
+            "spanish": "ese",
+            "english": "that",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "para",
+            "spanish": "para",
+            "english": "for",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "mi",
+            "spanish": "mí",
+            "english": "me",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Maybe, you were not that one for me."
+    },
+    {
+      "sentence": "No sé cómo se puede ya vivir.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "No",
+            "english": "I don't",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "se",
+            "spanish": "sé",
+            "english": "know",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "como",
+            "spanish": "cómo",
+            "english": "how",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "se",
+            "spanish": "se",
+            "english": "one",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "puede",
+            "spanish": "puede",
+            "english": "can",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ya",
+            "spanish": "ya",
+            "english": "already",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "vivir",
+            "spanish": "vivir",
+            "english": "live",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I don't know how one can already live."
+    },
+    {
+      "sentence": "Queriendo así.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "queriendo",
+            "spanish": "Queriendo",
+            "english": "wanting",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "asi",
+            "spanish": "así",
+            "english": "like that",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Wanting like that."
+    },
+    {
+      "sentence": "Es tan patético, neurótico, satírico, psicótico.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "es",
+            "spanish": "Es",
+            "english": "It is",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tan",
+            "spanish": "tan",
+            "english": "so",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "patetico",
+            "spanish": "patético",
+            "english": "pathetic",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "neurotico",
+            "spanish": "neurótico",
+            "english": "neurotic",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "satirico",
+            "spanish": "satírico",
+            "english": "satirical",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "psicotico",
+            "spanish": "psicótico",
+            "english": "psychotic",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "It is so pathetic, neurotic, satirical, psychotic."
+    },
+    {
+      "sentence": "Tú no lo ves, el tango no es de a tres.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "tu",
+            "spanish": "Tú",
+            "english": "You",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "is not",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "lo",
+            "spanish": "lo",
+            "english": "it",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ves",
+            "spanish": "ves",
+            "english": "see",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "el",
+            "spanish": "el",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tango",
+            "spanish": "tango",
+            "english": "tango",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "is not",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "es",
+            "spanish": "es",
+            "english": "is",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "a",
+            "spanish": "a",
+            "english": "to",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tres",
+            "spanish": "tres",
+            "english": "three",
+            "wordType": "number"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "You don't see it, the tango is not for three."
+    },
+    {
+      "sentence": "Sigo planeando escapar y me sale al revés.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sigo",
+            "spanish": "Sigo",
+            "english": "I continue",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "planeando",
+            "spanish": "planeando",
+            "english": "planning",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "escapar",
+            "spanish": "escapar",
+            "english": "to escape",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "me",
+            "english": "me",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sale",
+            "spanish": "sale",
+            "english": "it turns out",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "al",
+            "spanish": "al",
+            "english": "to the",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "reves",
+            "spanish": "revés",
+            "english": "reverse",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I continue planning to escape and it turns out the opposite."
+    },
+    {
+      "sentence": "Pero voy a intentarlo una y otra vez, voy.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "pero",
+            "spanish": "Pero",
+            "english": "But",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "voy",
+            "spanish": "voy",
+            "english": "I go",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "a",
+            "spanish": "a",
+            "english": "to",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "intentarlo",
+            "spanish": "intentarlo",
+            "english": "try it",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "una",
+            "spanish": "una",
+            "english": "one",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "otra",
+            "spanish": "otra",
+            "english": "another",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "vez",
+            "spanish": "vez",
+            "english": "time",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "voy",
+            "spanish": "voy",
+            "english": "I go",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "But I'm going to try it again and again, I go."
+    },
+    {
+      "sentence": "Ay, te aviso y te anuncio que hoy renuncio.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ay",
+            "spanish": "Ay",
+            "english": "Oh",
+            "wordType": "interjection"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "te",
+            "spanish": "te",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "aviso",
+            "spanish": "aviso",
+            "english": "I warn",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "te",
+            "spanish": "te",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "anuncio",
+            "spanish": "anuncio",
+            "english": "I announce",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "hoy",
+            "spanish": "hoy",
+            "english": "today",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "renuncio",
+            "spanish": "renuncio",
+            "english": "I resign",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Oh, I warn you and I announce that today I resign."
+    },
+    {
+      "sentence": "A tus negocios sucios.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "a",
+            "spanish": "A",
+            "english": "To",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tus",
+            "spanish": "tus",
+            "english": "your",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "negocios",
+            "spanish": "negocios",
+            "english": "businesses",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sucios",
+            "spanish": "sucios",
+            "english": "dirty",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "To your dirty businesses."
+    },
+    {
+      "sentence": "Por ti me quedé como Mona Lisa.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "por",
+            "spanish": "Por",
+            "english": "For",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "me",
+            "english": "me",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "quede",
+            "spanish": "quedé",
+            "english": "I stayed",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "como",
+            "spanish": "como",
+            "english": "like",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "mona",
+            "spanish": "Mona",
+            "english": "Mona",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "lisa",
+            "spanish": "Lisa",
+            "english": "Lisa",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "For you I stayed like Mona Lisa."
+    },
+    {
+      "sentence": "Sin llanto y sin sonrisa.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sin",
+            "spanish": "Sin",
+            "english": "Without",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "llanto",
+            "spanish": "llanto",
+            "english": "crying",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sin",
+            "spanish": "sin",
+            "english": "without",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "sonrisa",
+            "spanish": "sonrisa",
+            "english": "smile",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Without crying and without a smile."
+    },
+    {
+      "sentence": "Te aviso que estoy de ti vacunada.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "te",
+            "spanish": "Te",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "aviso",
+            "spanish": "aviso",
+            "english": "warn",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "estoy",
+            "spanish": "estoy",
+            "english": "am",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "vacunada",
+            "spanish": "vacunada",
+            "english": "vaccinated",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I warn you that I am vaccinated against you."
+    },
+    {
+      "sentence": "Y no me importa nada.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "Y",
+            "english": "And",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "no",
+            "spanish": "no",
+            "english": "not",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "me",
+            "english": "me",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "importa",
+            "spanish": "importa",
+            "english": "matters",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "nada",
+            "spanish": "nada",
+            "english": "nothing",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "And nothing matters to me."
+    },
+    {
+      "sentence": "Que el cielo y tu madre cuiden de ti.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "Que",
+            "english": "May",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "el",
+            "spanish": "el",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cielo",
+            "spanish": "cielo",
+            "english": "sky",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tu",
+            "spanish": "tu",
+            "english": "your",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "madre",
+            "spanish": "madre",
+            "english": "mother",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cuiden",
+            "spanish": "cuiden",
+            "english": "take care",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "May the sky and your mother take care of you."
+    },
+    {
+      "sentence": "Me voy, será mejor así.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "Me",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "voy",
+            "spanish": "voy",
+            "english": "go",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "sera",
+            "spanish": "será",
+            "english": "will be",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "mejor",
+            "spanish": "mejor",
+            "english": "better",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "asi",
+            "spanish": "así",
+            "english": "like this",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I'm leaving, it will be better this way."
+    },
+    {
+      "sentence": "Ya me voy, ya me fui.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ya",
+            "spanish": "Ya",
+            "english": "Already",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "me",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "voy",
+            "spanish": "voy",
+            "english": "go",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ya",
+            "spanish": "ya",
+            "english": "already",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "me",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "fui",
+            "spanish": "fui",
+            "english": "went",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I'm leaving already, I already left."
+    },
+    {
+      "sentence": "Es mejor así.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "es",
+            "spanish": "Es",
+            "english": "It",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "mejor",
+            "spanish": "mejor",
+            "english": "better",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "asi",
+            "spanish": "así",
+            "english": "that",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "It is better that way."
+    },
+    {
+      "sentence": "Ay, que el cielo y tu madre cuiden de ti.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ay",
+            "spanish": "Ay",
+            "english": "Oh",
+            "wordType": "interjection"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "el",
+            "spanish": "el",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cielo",
+            "spanish": "cielo",
+            "english": "sky",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tu",
+            "spanish": "tu",
+            "english": "your",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "madre",
+            "spanish": "madre",
+            "english": "mother",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cuiden",
+            "spanish": "cuiden",
+            "english": "take care",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Oh, may the sky and your mother take care of you."
+    },
+    {
+      "sentence": "Me voy, ah, ah, ah.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "Me",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "voy",
+            "spanish": "voy",
+            "english": "go",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ah",
+            "spanish": "ah",
+            "english": "ah",
+            "wordType": "interjection"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ah",
+            "spanish": "ah",
+            "english": "ah",
+            "wordType": "interjection"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ah",
+            "spanish": "ah",
+            "english": "ah",
+            "wordType": "interjection"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I'm going, ah, ah, ah."
+    },
+    {
+      "sentence": "Ay, que el cielo y tu madre cuiden de ti.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ay",
+            "spanish": "Ay",
+            "english": "Oh",
+            "wordType": "interjection"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "que",
+            "spanish": "que",
+            "english": "that",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "el",
+            "spanish": "el",
+            "english": "the",
+            "wordType": "article"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cielo",
+            "spanish": "cielo",
+            "english": "sky",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "y",
+            "spanish": "y",
+            "english": "and",
+            "wordType": "conjunction"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "tu",
+            "spanish": "tu",
+            "english": "your",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "madre",
+            "spanish": "madre",
+            "english": "mother",
+            "wordType": "noun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "cuiden",
+            "spanish": "cuiden",
+            "english": "take care",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "de",
+            "spanish": "de",
+            "english": "of",
+            "wordType": "preposition"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "ti",
+            "spanish": "ti",
+            "english": "you",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "Oh, may the sky and your mother take care of you."
+    },
+    {
+      "sentence": "Me voy, será mejor así.",
+      "tokens": [
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "me",
+            "spanish": "Me",
+            "english": "I",
+            "wordType": "pronoun"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "voy",
+            "spanish": "voy",
+            "english": "go",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "sera",
+            "spanish": "será",
+            "english": "will be",
+            "wordType": "verb"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": false,
+            "normalizedToken": "mejor",
+            "spanish": "mejor",
+            "english": "better",
+            "wordType": "adjective"
+          },
+          "type": "word"
+        },
+        {
+          "token": {
+            "hasSpecialChar": true,
+            "normalizedToken": "asi",
+            "spanish": "así",
+            "english": "like this",
+            "wordType": "adverb"
+          },
+          "type": "word"
+        },
+        {
+          "token": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I'm leaving, it will be better this way."
+    }
+  ]
+}

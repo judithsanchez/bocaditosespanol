@@ -1,90 +1,107 @@
 [
-	{
-		"songId": "buenos-aires-anakena",
-		"metadata": {
-			"interpreter": "Anakena",
-			"feat": "Noreh",
-			"songName": "Buenos Aires",
-			"youtube": "https://www.youtube.com/watch?v=n1bZq1EqEkA",
-			"genre": "Pop",
-			"language": "Spanish",
-			"releaseDate": "2023"
-		},
-		"jsonFiles": {
-			"raw": "src/data/lyrics/unprocessed/buenos-aires-anakena.json",
-			"processed": "src/data/lyrics/processed/buenos-aires-anakena_2024-12-30T20-23-21-674Z.json"
-		},
-		"createdAt": "2024-12-30T20:23:21-674Z",
-		"updatedAt": "2024-12-30T20:23:21-674Z"
-	},
-	{
-		"songId": "despacito-luis-fonsi",
-		"metadata": {
-			"interpreter": "Luis Fonsi",
-			"feat": "Daddy Yankee",
-			"songName": "Despacito",
-			"youtube": "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
-			"genre": "Reggaeton",
-			"language": "Spanish",
-			"releaseDate": "2017"
-		},
-		"jsonFiles": {
-			"raw": "src/data/lyrics/unprocessed/despacito-luis-fonsi.json",
-			"processed": "src/data/lyrics/processed/despacito-luis-fonsi_2024-12-30T20-08-13-521Z.json"
-		},
-		"createdAt": "2024-12-30T20:08:13-521Z",
-		"updatedAt": "2024-12-30T20:08:13-521Z"
-	},
-	{
-		"songId": "la-jumpa-bad-bunny",
-		"metadata": {
-			"interpreter": "Bad Bunny",
-			"feat": "Arkangel",
-			"songName": "La Jumpa",
-			"youtube": "https://www.youtube.com/watch?v=ubbE6gyBf8k",
-			"genre": "Reggaeton",
-			"language": "Spanish",
-			"releaseDate": "2022"
-		},
-		"jsonFiles": {
-			"raw": "src/data/lyrics/unprocessed/la-jumpa-bad-bunny.json",
-			"processed": "src/data/lyrics/processed/la-jumpa-bad-bunny_2024-12-30T16-01-38-159Z.json"
-		},
-		"createdAt": "2024-12-30T16:01:38-159Z",
-		"updatedAt": "2024-12-30T16:01:38-159Z"
-	},
-	{
-		"songId": "la-camisa-negra-juanes",
-		"metadata": {
-			"interpreter": "Juanes",
-			"songName": "La Camisa Negra",
-			"youtube": "https://www.youtube.com/watch?v=kRt2sRyup6A&ab_channel=JuanesVEVO",
-			"genre": "Latin Pop",
-			"language": "Spanish",
-			"releaseDate": "2003"
-		},
-		"jsonFiles": {
-			"raw": "src/data/lyrics/unprocessed/la-camisa-negra-juanes.json",
-			"processed": "src/data/lyrics/processed/la-camisa-negra-juanes_2024-12-31T11-09-13-175Z.json"
-		},
-		"createdAt": "2024-12-30T16:01:38-159Z",
-		"updatedAt": "2024-12-30T16:01:38-159Z"
-	},
-	{
-		"songId": "para-tu-amor-juanes",
-		"metadata": {
-			"interpreter": "juanes",
-			"songName": "Para Tu Amor",
-			"youtube": "https://www.youtube.com/watch?v=yWkQbrfSvfs&ab_channel=JuanesVEVO",
-			"genre": "Latin Pop",
-			"language": "Spanish",
-			"releaseDate": "2005"
-		},
-		"jsonFiles": {
-			"raw": "src/data/lyrics/raw/para-tu-amor-juanes.json",
-			"processed": "src/data/lyrics/processed/para-tu-amor-juanes.json"
-		},
-		"createdAt": "2024-12-31T12:23:35.208Z",
-		"updatedAt": "2024-12-31T12:23:35.211Z"
-	}
+  {
+    "songId": "buenos-aires-anakena",
+    "metadata": {
+      "interpreter": "Anakena",
+      "feat": "Noreh",
+      "songName": "Buenos Aires",
+      "youtube": "https://www.youtube.com/watch?v=n1bZq1EqEkA",
+      "genre": "Pop",
+      "language": "Spanish",
+      "releaseDate": "2023"
+    },
+    "jsonFiles": {
+      "raw": "src/data/lyrics/unprocessed/buenos-aires-anakena.json",
+      "processed": "src/data/lyrics/processed/buenos-aires-anakena.json"
+    },
+    "createdAt": "2024-12-30T20:23:21-674Z",
+    "updatedAt": "2024-12-30T20:23:21-674Z"
+  },
+  {
+    "songId": "despacito-luis-fonsi",
+    "metadata": {
+      "interpreter": "Luis Fonsi",
+      "feat": "Daddy Yankee",
+      "songName": "Despacito",
+      "youtube": "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+      "genre": "Reggaeton",
+      "language": "Spanish",
+      "releaseDate": "2017"
+    },
+    "jsonFiles": {
+      "raw": "src/data/lyrics/unprocessed/despacito-luis-fonsi.json",
+      "processed": "src/data/lyrics/processed/despacito-luis-fonsi.json"
+    },
+    "createdAt": "2024-12-30T20:08:13-521Z",
+    "updatedAt": "2024-12-30T20:08:13-521Z"
+  },
+  {
+    "songId": "la-jumpa-bad-bunny",
+    "metadata": {
+      "interpreter": "Bad Bunny",
+      "feat": "Arkangel",
+      "songName": "La Jumpa",
+      "youtube": "https://www.youtube.com/watch?v=ubbE6gyBf8k",
+      "genre": "Reggaeton",
+      "language": "Spanish",
+      "releaseDate": "2022"
+    },
+    "jsonFiles": {
+      "raw": "src/data/lyrics/unprocessed/la-jumpa-bad-bunny.json",
+      "processed": "src/data/lyrics/processed/la-jumpa-bad-bunny.json"
+    },
+    "createdAt": "2024-12-30T16:01:38-159Z",
+    "updatedAt": "2024-12-30T16:01:38-159Z"
+  },
+  {
+    "songId": "la-camisa-negra-juanes",
+    "metadata": {
+      "interpreter": "Juanes",
+      "songName": "La Camisa Negra",
+      "youtube": "https://www.youtube.com/watch?v=kRt2sRyup6A&ab_channel=JuanesVEVO",
+      "genre": "Latin Pop",
+      "language": "Spanish",
+      "releaseDate": "2003"
+    },
+    "jsonFiles": {
+      "raw": "src/data/lyrics/unprocessed/la-camisa-negra-juanes.json",
+      "processed": "src/data/lyrics/processed/la-camisa-negra-juanes.json"
+    },
+    "createdAt": "2024-12-30T16:01:38-159Z",
+    "updatedAt": "2024-12-30T16:01:38-159Z"
+  },
+  {
+    "songId": "para-tu-amor-juanes",
+    "metadata": {
+      "interpreter": "juanes",
+      "songName": "Para Tu Amor",
+      "youtube": "https://www.youtube.com/watch?v=yWkQbrfSvfs&ab_channel=JuanesVEVO",
+      "genre": "Latin Pop",
+      "language": "Spanish",
+      "releaseDate": "2005"
+    },
+    "jsonFiles": {
+      "raw": "src/data/lyrics/raw/para-tu-amor-juanes.json",
+      "processed": "src/data/lyrics/processed/para-tu-amor-juanes.json"
+    },
+    "createdAt": "2024-12-31T12:23:35.208Z",
+    "updatedAt": "2024-12-31T12:23:35.211Z"
+  },
+  {
+    "songId": "te-aviso-te-anuncio-shakira",
+    "metadata": {
+      "interpreter": "Shakira",
+      "songName": "Te Aviso, Te Anuncio",
+      "youtube": "https://www.youtube.com/watch?v=8C6xDjQ66wM&ab_channel=shakiraVEVO",
+      "genre": "Latin Pop",
+      "language": "Spanish",
+      "releaseDate": "2001"
+    },
+    "jsonFiles": {
+      "raw": "src/data/lyrics/raw/te-aviso-te-anuncio-shakira.json",
+      "processed": "src/data/lyrics/processed/te-aviso-te-anuncio-shakira.json"
+    },
+    "createdAt": "2024-12-31T14:44:31.949Z",
+    "updatedAt": "2024-12-31T14:44:31.949Z"
+  }
 ]

@@ -1,10 +1,10 @@
-import {TextProcessor} from './utils/TextProcessor';
-import {errors} from './lib/constants';
+import {TextProcessor} from './TextProcessor';
+import {errors} from '../lib/constants';
 import {readFile} from 'fs/promises';
 import {join} from 'path';
-import {createAndSaveTextFile} from './utils/createAndSaveTextFile';
+import {createAndSaveTextFile} from './createAndSaveTextFile';
 
-async function addNewSong({
+export async function addNewSong({
 	songId,
 	interpreter,
 	feat,
@@ -63,7 +63,6 @@ async function addNewSong({
 			songId,
 			processedLyricsId: `processed-${songId}`,
 			data: processedLyrics,
-			// data: [rawLyrics]
 		};
 
 		await createAndSaveTextFile({
@@ -114,15 +113,3 @@ async function addNewSong({
 		throw new Error(`${errors.processingError}: ${error}`);
 	}
 }
-
-addNewSong({
-	songId: 'para-tu-amor-juanes',
-	interpreter: 'juanes',
-	songName: 'Para Tu Amor',
-	youtube: 'https://www.youtube.com/watch?v=yWkQbrfSvfs&ab_channel=JuanesVEVO',
-	genre: 'Latin Pop',
-	language: 'Spanish',
-	releaseDate: '2005',
-	rawLyrics:
-		'Para tu amor lo tengo todo. Desde mi sangre hasta la esencia de mi ser. Y para tu amor, que es mi tesoro. Tengo mi vida toda entera a tus pies. Y tengo también. Un corazón que se muere por dar amor. Y que no conoce el fin. Un corazón que late por vos. Para tu amor no hay despedidas. Para tu amor yo solo tengo eternidad. Y para tu amor que me ilumina. Tengo una luna, un arcoíris y un clavel. Y tengo también. Un corazón que se muere por dar amor. Y que no conoce el fin. Un corazón que late por vos. Por eso yo te quiero. Tanto que no sé. Como explicar. Lo que siento. Yo te quiero. Porque tu dolor. Es mi dolor. Y no hay dudas. Yo te quiero. Con el alma y con. El corazón. Te venero. Hoy y siempre. Gracias yo te doy. A ti, mi amor. Por existir. Para tu amor lo tengo todo. Lo tengo todo y lo que no tengo también. Lo conseguiré. Para tu amor, que es mi tesoro. Tengo mi vida toda entera a tus pies. Y tengo también. Un corazón que se muere por dar amor. Y que no conoce el fin. Un corazón que late por vos. Por eso yo te quiero. Tanto que no sé. Como explicar. Lo que siento. Yo te quiero. Porque tu dolor. Es mi dolor. Y no hay dudas. Yo te quiero. Con el alma y con. El corazón. Te venero. Hoy y siempre. Gracias yo te doy. A ti, mi amor.',
-});
