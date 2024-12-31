@@ -103,5 +103,22 @@
     },
     "createdAt": "2024-12-31T14:44:31.949Z",
     "updatedAt": "2024-12-31T14:44:31.949Z"
+  },
+  {
+    "songId": "cuando-me-siento-bien-efecto-pasillo",
+    "metadata": {
+      "interpreter": "Efecto Pasillo",
+      "songName": "Cuando Me Siento Bien",
+      "youtube": "https://www.youtube.com/watch?v=hvaqFn5dvhU&ab_channel=EfectoPasillo",
+      "genre": "Pop Rock",
+      "language": "Spanish",
+      "releaseDate": "2013"
+    },
+    "jsonFiles": {
+      "raw": "src/data/lyrics/raw/cuando-me-siento-bien-efecto-pasillo.json",
+      "processed": "src/data/lyrics/processed/cuando-me-siento-bien-efecto-pasillo.json"
+    },
+    "createdAt": "2024-12-31T15:31:05.426Z",
+    "updatedAt": "2024-12-31T15:31:05.427Z"
   }
 ]
