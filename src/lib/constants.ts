@@ -8,6 +8,8 @@ export const errors = {
 	batchProcessingFailed: 'Batch processing failed:',
 	invalidTextData: 'Invalid text data provided',
 	baseNameWithExtension: 'Please provide base name without extension',
+	songIdMismatch: (expected: string, found: string) =>
+		`Song ID mismatch in file. Expected: ${expected}, Found: ${found}`,
 };
 
 export const logs = {

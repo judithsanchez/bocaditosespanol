@@ -1,9 +1,7 @@
 import {paragraphSplitter} from './paragraphSplitter';
 import {tokenizeSentences} from './tokenizeSentences';
 import {batchProcessor} from './batchProcessor';
-import {saveProcessedText} from './saveProcessedText';
 import {ISentence, ITextProcessor} from '../lib/types';
-import {join} from 'path';
 import {augmentSentences} from './augmentSentences';
 import {errors} from '../lib/constants';
 
@@ -42,15 +40,5 @@ export class TextProcessor implements ITextProcessor {
 		});
 
 		return this.processedText;
-	}
-
-	async saveToJson(baseName: string): Promise<string> {
-		if (baseName.includes('.')) {
-			throw new Error(errors.baseNameWithExtension);
-		}
-
-		const fileName = `${baseName}.json`;
-		const dataFolderPath = join(__dirname, '../../data/lyrics/processed');
-		return saveProcessedText(this.processedText, dataFolderPath, fileName);
 	}
 }

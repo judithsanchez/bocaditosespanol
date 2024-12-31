@@ -1,0 +1,3206 @@
+{
+	"songId": "para-tu-amor-juanes",
+	"processedLyricsId": "processed-para-tu-amor-juanes",
+	"data": [
+		{
+			"sentence": "Para tu amor lo tengo todo.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "para",
+						"spanish": "Para",
+						"english": "For",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "todo",
+						"spanish": "todo",
+						"english": "everything",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "For your love I have everything."
+		},
+		{
+			"sentence": "Desde mi sangre hasta la esencia de mi ser.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "desde",
+						"spanish": "Desde",
+						"english": "From",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sangre",
+						"spanish": "sangre",
+						"english": "blood",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hasta",
+						"spanish": "hasta",
+						"english": "until",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esencia",
+						"spanish": "esencia",
+						"english": "essence",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ser",
+						"spanish": "ser",
+						"english": "being",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "From my blood to the essence of my being."
+		},
+		{
+			"sentence": "Y para tu amor, que es mi tesoro.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "para",
+						"spanish": "para",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tesoro",
+						"spanish": "tesoro",
+						"english": "treasure",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And for your love, that is my treasure."
+		},
+		{
+			"sentence": "Tengo mi vida toda entera a tus pies.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "Tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vida",
+						"spanish": "vida",
+						"english": "life",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "toda",
+						"spanish": "toda",
+						"english": "whole",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "entera",
+						"spanish": "entera",
+						"english": "entire",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "at",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tus",
+						"spanish": "tus",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pies",
+						"spanish": "pies",
+						"english": "feet",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I have my whole life at your feet."
+		},
+		{
+			"sentence": "Y tengo también.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "tambien",
+						"spanish": "también",
+						"english": "also",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And I also have."
+		},
+		{
+			"sentence": "Un corazón que se muere por dar amor.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "Un",
+						"english": "A",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "corazon",
+						"spanish": "corazón",
+						"english": "heart",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "itself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "muere",
+						"spanish": "muere",
+						"english": "dies",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "to",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dar",
+						"spanish": "dar",
+						"english": "give",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "A heart that dies to give love."
+		},
+		{
+			"sentence": "Y que no conoce el fin.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "conoce",
+						"spanish": "conoce",
+						"english": "knows",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "fin",
+						"spanish": "fin",
+						"english": "end",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And that does not know the end."
+		},
+		{
+			"sentence": "Un corazón que late por vos.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "Un",
+						"english": "A",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "corazon",
+						"spanish": "corazón",
+						"english": "heart",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "late",
+						"spanish": "late",
+						"english": "beats",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vos",
+						"spanish": "vos",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "A heart that beats for you."
+		},
+		{
+			"sentence": "Para tu amor no hay despedidas.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "para",
+						"spanish": "Para",
+						"english": "For",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "there",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hay",
+						"spanish": "hay",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "despedidas",
+						"spanish": "despedidas",
+						"english": "farewells",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "For your love there are no farewells."
+		},
+		{
+			"sentence": "Para tu amor yo solo tengo eternidad.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "para",
+						"spanish": "Para",
+						"english": "For",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "solo",
+						"spanish": "solo",
+						"english": "only",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "tengo",
+						"english": "have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "eternidad",
+						"spanish": "eternidad",
+						"english": "eternity",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "For your love I only have eternity."
+		},
+		{
+			"sentence": "Y para tu amor que me ilumina.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "para",
+						"spanish": "para",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ilumina",
+						"spanish": "ilumina",
+						"english": "illuminates",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And for your love that illuminates me."
+		},
+		{
+			"sentence": "Tengo una luna, un arcoíris y un clavel.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "Tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "luna",
+						"spanish": "luna",
+						"english": "moon",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "arcoiris",
+						"spanish": "arcoíris",
+						"english": "rainbow",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "clavel",
+						"spanish": "clavel",
+						"english": "carnation",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I have a moon, a rainbow, and a carnation."
+		},
+		{
+			"sentence": "Y tengo también.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "tambien",
+						"spanish": "también",
+						"english": "also",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And I also have."
+		},
+		{
+			"sentence": "Un corazón que se muere por dar amor.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "Un",
+						"english": "A",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "corazon",
+						"spanish": "corazón",
+						"english": "heart",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "itself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "muere",
+						"spanish": "muere",
+						"english": "dies",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dar",
+						"spanish": "dar",
+						"english": "to give",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "A heart that dies for giving love."
+		},
+		{
+			"sentence": "Y que no conoce el fin.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "conoce",
+						"spanish": "conoce",
+						"english": "knows",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "fin",
+						"spanish": "fin",
+						"english": "end",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And that does not know the end."
+		},
+		{
+			"sentence": "Un corazón que late por vos.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "Un",
+						"english": "A",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "corazon",
+						"spanish": "corazón",
+						"english": "heart",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "late",
+						"spanish": "late",
+						"english": "beats",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vos",
+						"spanish": "vos",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "A heart that beats for you."
+		},
+		{
+			"sentence": "Por eso yo te quiero.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "Por",
+						"english": "Because of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "eso",
+						"spanish": "eso",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "quiero",
+						"spanish": "quiero",
+						"english": "love",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Because of that I love you."
+		},
+		{
+			"sentence": "Tanto que no sé.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tanto",
+						"spanish": "Tanto",
+						"english": "So much",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "I know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "So much that I don't know."
+		},
+		{
+			"sentence": "Como explicar.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "como",
+						"spanish": "Como",
+						"english": "How",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "explicar",
+						"spanish": "explicar",
+						"english": "to explain",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "How to explain."
+		},
+		{
+			"sentence": "Lo que siento.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "Lo",
+						"english": "What",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siento",
+						"spanish": "siento",
+						"english": "I feel",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "What I feel."
+		},
+		{
+			"sentence": "Yo te quiero.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "Yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "quiero",
+						"spanish": "quiero",
+						"english": "love",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I love you."
+		},
+		{
+			"sentence": "Porque tu dolor.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "porque",
+						"spanish": "Porque",
+						"english": "Because",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dolor",
+						"spanish": "dolor",
+						"english": "pain",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Because your pain."
+		},
+		{
+			"sentence": "Es mi dolor.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "Es",
+						"english": "It is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dolor",
+						"spanish": "dolor",
+						"english": "pain",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "It is my pain."
+		},
+		{
+			"sentence": "Y no hay dudas.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hay",
+						"spanish": "hay",
+						"english": "there are",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dudas",
+						"spanish": "dudas",
+						"english": "doubts",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And there are no doubts."
+		},
+		{
+			"sentence": "Yo te quiero.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "Yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "quiero",
+						"spanish": "quiero",
+						"english": "love",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I love you."
+		},
+		{
+			"sentence": "Con el alma y con.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "con",
+						"spanish": "Con",
+						"english": "With",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "alma",
+						"spanish": "alma",
+						"english": "soul",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "con",
+						"spanish": "con",
+						"english": "with",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "With the soul and with."
+		},
+		{
+			"sentence": "El corazón.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "El",
+						"english": "The",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "corazon",
+						"spanish": "corazón",
+						"english": "heart",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "The heart."
+		},
+		{
+			"sentence": "Te venero.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "Te",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "venero",
+						"spanish": "venero",
+						"english": "venerate",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I venerate you."
+		},
+		{
+			"sentence": "Hoy y siempre.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hoy",
+						"spanish": "Hoy",
+						"english": "Today",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siempre",
+						"spanish": "siempre",
+						"english": "always",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Today and always."
+		},
+		{
+			"sentence": "Gracias yo te doy.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "gracias",
+						"spanish": "Gracias",
+						"english": "Thank you",
+						"wordType": "interjection"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "doy",
+						"spanish": "doy",
+						"english": "give",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Thank you, I give you."
+		},
+		{
+			"sentence": "A ti, mi amor.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "A",
+						"english": "to",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "To you, my love."
+		},
+		{
+			"sentence": "Por existir.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "Por",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "existir",
+						"spanish": "existir",
+						"english": "to exist",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "For existing."
+		},
+		{
+			"sentence": "Para tu amor lo tengo todo.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "para",
+						"spanish": "Para",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "todo",
+						"spanish": "todo",
+						"english": "everything",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "For your love I have everything."
+		},
+		{
+			"sentence": "Lo tengo todo y lo que no tengo también.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "Lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "todo",
+						"spanish": "todo",
+						"english": "everything",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "what",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "tambien",
+						"spanish": "también",
+						"english": "also",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I have everything and what I don't have also."
+		},
+		{
+			"sentence": "Lo conseguiré.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "Lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "conseguire",
+						"spanish": "conseguiré",
+						"english": "I will get",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I will get it."
+		},
+		{
+			"sentence": "Para tu amor, que es mi tesoro.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "para",
+						"spanish": "Para",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "which",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tesoro",
+						"spanish": "tesoro",
+						"english": "treasure",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "For your love, which is my treasure."
+		},
+		{
+			"sentence": "Tengo mi vida toda entera a tus pies.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "Tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vida",
+						"spanish": "vida",
+						"english": "life",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "toda",
+						"spanish": "toda",
+						"english": "whole",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "entera",
+						"spanish": "entera",
+						"english": "entire",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "at",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tus",
+						"spanish": "tus",
+						"english": "your",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pies",
+						"spanish": "pies",
+						"english": "feet",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I have my whole life at your feet."
+		},
+		{
+			"sentence": "Y tengo también.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tengo",
+						"spanish": "tengo",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "tambien",
+						"spanish": "también",
+						"english": "also",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And I also have."
+		},
+		{
+			"sentence": "Un corazón que se muere por dar amor.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "Un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "corazon",
+						"spanish": "corazón",
+						"english": "heart",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "itself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "muere",
+						"spanish": "muere",
+						"english": "dies",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dar",
+						"spanish": "dar",
+						"english": "to give",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "A heart that dies to give love."
+		},
+		{
+			"sentence": "Y que no conoce el fin.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "conoce",
+						"spanish": "conoce",
+						"english": "knows",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "fin",
+						"spanish": "fin",
+						"english": "end",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And that does not know the end."
+		},
+		{
+			"sentence": "Un corazón que late por vos.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "Un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "corazon",
+						"spanish": "corazón",
+						"english": "heart",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "late",
+						"spanish": "late",
+						"english": "beats",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vos",
+						"spanish": "vos",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "A heart that beats for you."
+		},
+		{
+			"sentence": "Por eso yo te quiero.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "Por",
+						"english": "because",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "eso",
+						"spanish": "eso",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "quiero",
+						"spanish": "quiero",
+						"english": "love",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Because of that I love you."
+		},
+		{
+			"sentence": "Tanto que no sé.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tanto",
+						"spanish": "Tanto",
+						"english": "so much",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "I know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "So much that I don't know."
+		},
+		{
+			"sentence": "Como explicar.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "como",
+						"spanish": "Como",
+						"english": "how",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "explicar",
+						"spanish": "explicar",
+						"english": "to explain",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "How to explain."
+		},
+		{
+			"sentence": "Lo que siento.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "Lo",
+						"english": "what",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siento",
+						"spanish": "siento",
+						"english": "I feel",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "What I feel."
+		},
+		{
+			"sentence": "Yo te quiero.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "Yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "quiero",
+						"spanish": "quiero",
+						"english": "love",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I love you."
+		},
+		{
+			"sentence": "Porque tu dolor.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "porque",
+						"spanish": "Porque",
+						"english": "because",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dolor",
+						"spanish": "dolor",
+						"english": "pain",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Because your pain."
+		},
+		{
+			"sentence": "Es mi dolor.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "Es",
+						"english": "it is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dolor",
+						"spanish": "dolor",
+						"english": "pain",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "It is my pain."
+		},
+		{
+			"sentence": "Y no hay dudas.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "no",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hay",
+						"spanish": "hay",
+						"english": "there are",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dudas",
+						"spanish": "dudas",
+						"english": "doubts",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And there are no doubts."
+		},
+		{
+			"sentence": "Yo te quiero.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "Yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "quiero",
+						"spanish": "quiero",
+						"english": "love",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I love you."
+		},
+		{
+			"sentence": "Con el alma y con.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "con",
+						"spanish": "Con",
+						"english": "With",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "alma",
+						"spanish": "alma",
+						"english": "soul",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "con",
+						"spanish": "con",
+						"english": "with",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "With the soul and with."
+		},
+		{
+			"sentence": "El corazón.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "El",
+						"english": "The",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "corazon",
+						"spanish": "corazón",
+						"english": "heart",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "The heart."
+		},
+		{
+			"sentence": "Te venero.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "Te",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "venero",
+						"spanish": "venero",
+						"english": "venerate",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I venerate you."
+		},
+		{
+			"sentence": "Hoy y siempre.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hoy",
+						"spanish": "Hoy",
+						"english": "Today",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siempre",
+						"spanish": "siempre",
+						"english": "always",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Today and always."
+		},
+		{
+			"sentence": "Gracias yo te doy.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "gracias",
+						"spanish": "Gracias",
+						"english": "Thank you",
+						"wordType": "interjection"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "doy",
+						"spanish": "doy",
+						"english": "give",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Thank you, I give you."
+		},
+		{
+			"sentence": "A ti, mi amor.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "A",
+						"english": "To",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amor",
+						"spanish": "amor",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "To you, my love."
+		}
+	]
+}

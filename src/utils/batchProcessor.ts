@@ -10,29 +10,16 @@ export async function batchProcessor<T>({
 	const results: T[] = [];
 	const totalBatches = Math.ceil(items.length / batchSize);
 
-	console.log(
-		`${logs.batchProcessing.starting} ${totalBatches} ${logs.batchProcessing.totalBatches}`,
-	);
-
 	for (let i = 0; i < items.length; i += batchSize) {
 		const currentBatch = Math.floor(i / batchSize) + 1;
 		const batch = items.slice(i, i + batchSize);
-
-		console.log(
-			`\n${logs.batchProcessing.processingBatch} ${currentBatch}${logs.batchProcessing.of}${totalBatches}`,
-		);
-		console.log(
-			`${logs.batchProcessing.batchSize} ${batch.length} ${logs.batchProcessing.items}`,
-		);
 
 		let attempts = 0;
 		while (attempts < options.retryAttempts) {
 			try {
 				const batchResults = await processingFn(batch);
 				results.push(...batchResults);
-				console.log(
-					`${logs.batchProcessing.batchCompleted} ${currentBatch} ${logs.batchProcessing.completedSuccessfully}`,
-				);
+
 				break;
 			} catch (error) {
 				attempts++;
@@ -50,9 +37,6 @@ export async function batchProcessor<T>({
 		}
 
 		if (i + batchSize < items.length) {
-			console.log(
-				`${logs.batchProcessing.waitingNextBatch} ${options.delayBetweenBatches}${logs.batchProcessing.msBeforeNextBatch}`,
-			);
 			await new Promise(resolve =>
 				setTimeout(resolve, options.delayBetweenBatches),
 			);

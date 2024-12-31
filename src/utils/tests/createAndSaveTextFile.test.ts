@@ -1,5 +1,5 @@
 import {errors, testMessages} from 'lib/constants';
-import {saveProcessedText} from '../saveProcessedText';
+import {createAndSaveTextFile} from '../createAndSaveTextFile';
 import {mkdir, writeFile} from 'fs/promises';
 
 jest.mock('fs/promises');
@@ -7,7 +7,7 @@ jest.mock('uuid', () => ({
 	v4: () => 'mock-uuid-1234',
 }));
 
-describe('saveProcessedText', () => {
+describe('createAndSaveTextFile', () => {
 	const mockData = [
 		{sentence: 'Hola mundo', translation: 'Hello world'},
 		{sentence: '¿Cómo estás?', translation: 'How are you?'},
@@ -22,7 +22,11 @@ describe('saveProcessedText', () => {
 	});
 
 	test('creates directory and saves file with correct format', async () => {
-		const id = await saveProcessedText(mockData, mockFolderPath, mockFileName);
+		const id = await createAndSaveTextFile(
+			mockData,
+			mockFolderPath,
+			mockFileName,
+		);
 
 		expect(mkdir).toHaveBeenCalledWith(mockFolderPath, {recursive: true});
 
@@ -43,7 +47,7 @@ describe('saveProcessedText', () => {
 		(mkdir as jest.Mock).mockRejectedValue(dirError);
 
 		await expect(
-			saveProcessedText(mockData, mockFolderPath, mockFileName),
+			createAndSaveTextFile(mockData, mockFolderPath, mockFileName),
 		).rejects.toThrowError(`${errors.failedToSaveData} ${dirError}`);
 	});
 
@@ -52,12 +56,12 @@ describe('saveProcessedText', () => {
 		(writeFile as jest.Mock).mockRejectedValue(writeError);
 
 		await expect(
-			saveProcessedText(mockData, mockFolderPath, mockFileName),
+			createAndSaveTextFile(mockData, mockFolderPath, mockFileName),
 		).rejects.toThrowError(`${errors.failedToSaveData} ${writeError}`);
 	});
 
 	test('handles empty data array', async () => {
-		const id = await saveProcessedText([], mockFolderPath, mockFileName);
+		const id = await createAndSaveTextFile([], mockFolderPath, mockFileName);
 
 		const writeFileCalls = (writeFile as jest.Mock).mock.calls[0];
 		const content = JSON.parse(writeFileCalls[1]);

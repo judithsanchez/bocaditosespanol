@@ -1,55 +1,128 @@
-import {paragraphSplitter} from './utils/paragraphSplitter';
 import {TextProcessor} from './utils/TextProcessor';
-import {ISentence} from './lib/types';
-import {tokenizeSentences} from './utils/tokenizeSentences';
-import {saveProcessedText} from './utils/saveProcessedText';
+import {errors} from './lib/constants';
+import {readFile} from 'fs/promises';
+import {join} from 'path';
+import {createAndSaveTextFile} from './utils/createAndSaveTextFile';
 
-const buenosAires =
-	"¿Quién te crees tú? Para controlarme todo el dia. Solo te di las llaves de mi casa, no las de mi vida. Por qué crees tú que si te vas yo me quedo sin nada. Baja de esa nube que yo estaba bien antes que tú llegaras. Te vendiste bien para que yo te bancara. No la falló mi tía cuando me decía que esto no duraba. Aunque te quiero, me hiciste daño. Dormimos juntos pero somos dos extraños. Tú me querías ¿Qué te ha pasado? Si así es tu amor mejor voy viendo para otro lado. Y aunque te quiero, me hiciste daño. Dormimos juntos pero somos dos extraño. Tú me querías. ¿Qué te ha pasado? No seré tu animalito domesticado. Si así es tu amor, mejor me voy, me voy para el carajo. Te quise, te quiero. Me quedó el amor en cero. Que en verdad tu me importabas pero me puse primero. Y yo no soy así como me vestí. ¿Para qué impresionarte fallándome a mi? Para lo nuestro ya es muy tarde. Necesito nuevos aires. No, no soy así y aunque te perdí. Volví a ser más yo desde que me fui. Te vendiste bien pa' que yo te bancara. No la falló mi tía cuando me decía que esto no duraba. Aunque te quiero, me hiciste daño. Dormimos juntos pero somos dos extraños. Tú me querías. ¿Qué te ha pasado? Si así es tu amor mejor voy viendo para otro lado. Y Aunque te quiero, me hiciste daño. Dormimos juntos pero somos dos extraños. Tú me querías. ¿Qué te ha pasado? No seré tu animalito domesticado. Si así es tu amor, mejor me voy, me voy para el carajo.";
+async function addNewSong({
+	songId,
+	interpreter,
+	feat,
+	songName,
+	youtube,
+	genre,
+	language,
+	releaseDate,
+	rawLyrics,
+}: {
+	songId: string;
+	interpreter: string;
+	feat?: string;
+	songName: string;
+	youtube: string;
+	genre: string;
+	language: string;
+	releaseDate: string;
+	rawLyrics: string;
+}) {
+	if (
+		!songId ||
+		!interpreter ||
+		!songName ||
+		!youtube ||
+		!genre ||
+		!language ||
+		!releaseDate ||
+		!rawLyrics
+	) {
+		throw new Error(errors.invalidData);
+	}
 
-async function testTextProcessor() {
-	console.log('🚀 Starting TextProcessor test');
+	const folderPaths = {
+		proceseed: 'src/data/lyrics/processed',
+		raw: 'src/data/lyrics/raw',
+	};
 
-	const processor = new TextProcessor(buenosAires);
+	try {
+		const rawLyricsContent = {
+			songId,
+			rawLyricsId: `raw-${songId}`,
+			lyrics: rawLyrics,
+		};
 
-	console.log('📝 Processing text data...');
-	await processor.processTextData();
+		await createAndSaveTextFile({
+			content: rawLyricsContent,
+			folderPath: folderPaths.raw,
+			fileName: `${songId}.json`,
+		});
 
-	console.log('💾 Saving to JSON...');
-	const savedId = await processor.saveToJson('buenos-aires');
+		const processor = new TextProcessor(rawLyrics);
+		const processedLyrics = await processor.processTextData();
 
-	console.log('✅ Test completed!');
-	console.log('📁 Saved with ID:', savedId);
+		const processedLyricsContent = {
+			songId,
+			processedLyricsId: `processed-${songId}`,
+			data: processedLyrics,
+			// data: [rawLyrics]
+		};
+
+		await createAndSaveTextFile({
+			content: processedLyricsContent,
+			folderPath: folderPaths.proceseed,
+			fileName: `${songId}.json`,
+		});
+
+		const newSongEntry = {
+			songId,
+			metadata: {
+				interpreter,
+				...(feat && {feat}),
+				songName,
+				youtube,
+				genre,
+				language,
+				releaseDate,
+			},
+			jsonFiles: {
+				raw: `${folderPaths.raw}/${songId}.json`,
+				processed: `${folderPaths.proceseed}/${songId}.json`,
+			},
+			createdAt: new Date().toISOString(),
+			updatedAt: new Date().toISOString(),
+		};
+
+		const songsFilePath = join('src', 'data', 'lyrics', 'songs.json');
+		const existingSongs = JSON.parse(await readFile(songsFilePath, 'utf-8'));
+
+		if (
+			existingSongs.some((song: {songId: string}) => song.songId === songId)
+		) {
+			throw new Error(errors.songIdMismatch(songId, 'existing song'));
+		}
+
+		existingSongs.push(newSongEntry);
+
+		await createAndSaveTextFile({
+			content: existingSongs,
+			folderPath: 'src/data/lyrics',
+			fileName: 'songs.json',
+		});
+
+		return newSongEntry;
+	} catch (error) {
+		console.error(`${errors.processingError}: ${error}`);
+		throw new Error(`${errors.processingError}: ${error}`);
+	}
 }
 
-testTextProcessor();
-
-// async function testTextProcessorWithoutAPI() {
-// 	console.log('🚀 Starting TextProcessor test (preprocessing only)');
-
-// 	const processor = new TextProcessor(laJumpa2);
-
-// 	// Get preprocessed sentences
-// 	const splittedParagraph = paragraphSplitter(processor.textData);
-// 	const tokenizedText: ISentence[] = splittedParagraph.map(sentence =>
-// 		tokenizeSentences(sentence),
-// 	);
-
-// 	// Save directly to JSON
-// 	const savedId = await saveProcessedText(
-// 		tokenizedText,
-// 		'src/data',
-// 		'preprocessed-la-jumpa.json',
-// 	);
-
-// 	console.log('✅ Test completed!');
-// 	console.log('📁 Saved preprocessed text with ID:', savedId);
-
-// 	// Optional: log the structure
-// 	console.log(
-// 		'📝 Generated structure:',
-// 		JSON.stringify(tokenizedText, null, 2),
-// 	);
-// }
-
-// testTextProcessorWithoutAPI();
+addNewSong({
+	songId: 'para-tu-amor-juanes',
+	interpreter: 'juanes',
+	songName: 'Para Tu Amor',
+	youtube: 'https://www.youtube.com/watch?v=yWkQbrfSvfs&ab_channel=JuanesVEVO',
+	genre: 'Latin Pop',
+	language: 'Spanish',
+	releaseDate: '2005',
+	rawLyrics:
+		'Para tu amor lo tengo todo. Desde mi sangre hasta la esencia de mi ser. Y para tu amor, que es mi tesoro. Tengo mi vida toda entera a tus pies. Y tengo también. Un corazón que se muere por dar amor. Y que no conoce el fin. Un corazón que late por vos. Para tu amor no hay despedidas. Para tu amor yo solo tengo eternidad. Y para tu amor que me ilumina. Tengo una luna, un arcoíris y un clavel. Y tengo también. Un corazón que se muere por dar amor. Y que no conoce el fin. Un corazón que late por vos. Por eso yo te quiero. Tanto que no sé. Como explicar. Lo que siento. Yo te quiero. Porque tu dolor. Es mi dolor. Y no hay dudas. Yo te quiero. Con el alma y con. El corazón. Te venero. Hoy y siempre. Gracias yo te doy. A ti, mi amor. Por existir. Para tu amor lo tengo todo. Lo tengo todo y lo que no tengo también. Lo conseguiré. Para tu amor, que es mi tesoro. Tengo mi vida toda entera a tus pies. Y tengo también. Un corazón que se muere por dar amor. Y que no conoce el fin. Un corazón que late por vos. Por eso yo te quiero. Tanto que no sé. Como explicar. Lo que siento. Yo te quiero. Porque tu dolor. Es mi dolor. Y no hay dudas. Yo te quiero. Con el alma y con. El corazón. Te venero. Hoy y siempre. Gracias yo te doy. A ti, mi amor.',
+});
