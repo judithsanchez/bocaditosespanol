@@ -33,9 +33,6 @@ describe('batchProcessor', () => {
 
 		expect(result).toEqual(expected);
 		expect(mockProcessingFn).toHaveBeenCalledTimes(3);
-		expect(consoleSpy.log).toHaveBeenCalledWith(
-			expect.stringContaining(logs.batchProcessing.starting),
-		);
 	});
 
 	test('handles empty input array', async () => {

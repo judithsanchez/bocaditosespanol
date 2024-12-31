@@ -1,7 +1,7 @@
 import {errors, logs} from '../lib/constants';
 import {writeFile, mkdir} from 'fs/promises';
 import {join} from 'path';
-// TODO: update unit tests
+
 export async function createAndSaveTextFile({
 	content,
 	folderPath,
