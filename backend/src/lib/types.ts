@@ -49,14 +49,3 @@ export interface BatchProcessorConfig<T> {
 		maxRequestsPerMinute: number;
 	};
 }
-
-// export interface ISongData {
-// 	title: string;
-// 	artist: string;
-// 	album?: string;
-// 	youtubeVideo?: string;
-// 	spotify?: string;
-// 	genre: string[];
-// 	released: string;
-// 	lyrics: string;
-// }
