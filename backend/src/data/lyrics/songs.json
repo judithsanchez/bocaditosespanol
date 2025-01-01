@@ -120,5 +120,22 @@
     },
     "createdAt": "2024-12-31T15:31:05.426Z",
     "updatedAt": "2024-12-31T15:31:05.427Z"
+  },
+  {
+    "songId": "limon-y-sal-julieta-venegas",
+    "metadata": {
+      "interpreter": "Julieta Venegas",
+      "songName": "Limón Y Sal",
+      "youtube": "https://www.youtube.com/watch?v=tIpzfs5tBJU&ab_channel=julietavenegasVEVO",
+      "genre": "Latin Pop",
+      "language": "Spanish",
+      "releaseDate": "2006"
+    },
+    "jsonFiles": {
+      "raw": "src/data/lyrics/raw/limon-y-sal-julieta-venegas.json",
+      "processed": "src/data/lyrics/processed/limon-y-sal-julieta-venegas.json"
+    },
+    "createdAt": "2025-01-01T10:09:45.773Z",
+    "updatedAt": "2025-01-01T10:09:45.773Z"
   }
 ]
