@@ -1,9 +1,9 @@
-import {TextProcessor} from './TextProcessor';
-import {errors} from '../lib/constants';
 import {readFile} from 'fs/promises';
+import {errors} from '../../lib/constants';
 import {join} from 'path';
-import {createAndSaveTextFile} from './createAndSaveTextFile';
-
+import {createAndSaveTextFile} from '../../utils/createAndSaveTextFile';
+import {TextProcessor} from '../../utils/TextProcessor';
+// TODO: install nodemon
 export async function addNewSong({
 	songId,
 	interpreter,

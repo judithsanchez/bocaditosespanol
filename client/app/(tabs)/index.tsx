@@ -1,11 +1,33 @@
-import {Image, StyleSheet, Platform} from 'react-native';
-
+import {Image, StyleSheet, Platform, View} from 'react-native';
+import {useSongs} from '@/hooks/useSongs';
 import {HelloWave} from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import {ThemedText} from '@/components/ThemedText';
 import {ThemedView} from '@/components/ThemedView';
 
+const SongCard = ({
+	song,
+}: {
+	song: {
+		metadata: {
+			songName: string;
+			interpreter: string;
+			feat?: string;
+			genre: string;
+		};
+	};
+}) => (
+	<ThemedView style={styles.songCard}>
+		<ThemedText type="subtitle">{song.metadata.songName}</ThemedText>
+		<ThemedText>{song.metadata.interpreter}</ThemedText>
+		{song.metadata.feat && <ThemedText>feat. {song.metadata.feat}</ThemedText>}
+		<ThemedText>{song.metadata.genre}</ThemedText>
+	</ThemedView>
+);
+
 export default function HomeScreen() {
+	const {songs, loading, error} = useSongs();
+
 	return (
 		<ParallaxScrollView
 			headerBackgroundColor={{light: '#A1CEDC', dark: '#1D3D47'}}
@@ -54,6 +76,15 @@ export default function HomeScreen() {
 					<ThemedText type="defaultSemiBold">app-example</ThemedText>.
 				</ThemedText>
 			</ThemedView>
+
+			<ThemedView style={styles.songsContainer}>
+				<ThemedText type="subtitle">Available Songs</ThemedText>
+				{loading && <ThemedText>Loading songs...</ThemedText>}
+				{error && <ThemedText>Error: {error}</ThemedText>}
+				{songs.map(song => (
+					<SongCard key={song.songId} song={song} />
+				))}
+			</ThemedView>
 		</ParallaxScrollView>
 	);
 }
@@ -74,5 +105,15 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		left: 0,
 		position: 'absolute',
+	},
+	songsContainer: {
+		gap: 16,
+		marginTop: 20,
+	},
+	songCard: {
+		padding: 16,
+		borderRadius: 8,
+		backgroundColor: 'rgba(161, 206, 220, 0.1)',
+		gap: 4,
 	},
 });

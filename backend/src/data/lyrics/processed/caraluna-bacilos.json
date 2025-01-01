@@ -1,0 +1,4106 @@
+{
+	"songId": "caraluna-bacilos",
+	"processedLyricsId": "processed-caraluna-bacilos",
+	"data": [
+		{
+			"sentence": "¿Quién dice que no duelen las huellas en la arena?",
+			"tokens": [
+				{
+					"token": "¿",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "quien",
+						"spanish": "Quién",
+						"english": "Who",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dice",
+						"spanish": "dice",
+						"english": "says",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "duelen",
+						"spanish": "duelen",
+						"english": "hurt",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "las",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "huellas",
+						"spanish": "huellas",
+						"english": "footsteps",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "arena",
+						"spanish": "arena",
+						"english": "sand",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": "?",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Who says that the footprints in the sand don't hurt?"
+		},
+		{
+			"sentence": "Tu huella el mar se la llevó.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "Tu",
+						"english": "Your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "huella",
+						"spanish": "huella",
+						"english": "footstep",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mar",
+						"spanish": "mar",
+						"english": "sea",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "llevo",
+						"spanish": "llevó",
+						"english": "took",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "The sea took your footprint."
+		},
+		{
+			"sentence": "Pero la luna sigue ahí.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pero",
+						"spanish": "Pero",
+						"english": "But",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "luna",
+						"spanish": "luna",
+						"english": "moon",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sigue",
+						"spanish": "sigue",
+						"english": "remains",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "ahi",
+						"spanish": "ahí",
+						"english": "there",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "But the moon remains there."
+		},
+		{
+			"sentence": "Pero esa luna es mi condena.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pero",
+						"spanish": "Pero",
+						"english": "But",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esa",
+						"spanish": "esa",
+						"english": "that",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "luna",
+						"spanish": "luna",
+						"english": "moon",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "condena",
+						"spanish": "condena",
+						"english": "condemnation",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "But that moon is my condemnation."
+		},
+		{
+			"sentence": "Despacio en la mañana a gritos por la noche.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "despacio",
+						"spanish": "Despacio",
+						"english": "Softly",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "manana",
+						"spanish": "mañana",
+						"english": "morning",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "with",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "gritos",
+						"spanish": "gritos",
+						"english": "shouts",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "by",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "noche",
+						"spanish": "noche",
+						"english": "night",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Softly in the morning, with shouts by night."
+		},
+		{
+			"sentence": "Las voces vivas del recuerdo se disfrazan de intuición.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "Las",
+						"english": "The",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "voces",
+						"spanish": "voces",
+						"english": "voices",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vivas",
+						"spanish": "vivas",
+						"english": "living",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "del",
+						"spanish": "del",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "recuerdo",
+						"spanish": "recuerdo",
+						"english": "memory",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "themselves",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "disfrazan",
+						"spanish": "disfrazan",
+						"english": "disguise",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "as",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "intuicion",
+						"spanish": "intuición",
+						"english": "intuition",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "The living voices of memory disguise themselves as intuition."
+		},
+		{
+			"sentence": "Y en una voz tu voz se esconde.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "voz",
+						"spanish": "voz",
+						"english": "voice",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "voz",
+						"spanish": "voz",
+						"english": "voice",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "itself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esconde",
+						"spanish": "esconde",
+						"english": "hides",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And in one voice, your voice hides itself."
+		},
+		{
+			"sentence": "Y en una voz tu voz se esconde.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "voz",
+						"spanish": "voz",
+						"english": "voice",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "voz",
+						"spanish": "voz",
+						"english": "voice",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "itself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esconde",
+						"spanish": "esconde",
+						"english": "hides",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And in one voice, your voice hides itself."
+		},
+		{
+			"sentence": "Y yo sé que tal vez tú nunca escuches mi canción, yo sé.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tal",
+						"spanish": "tal",
+						"english": "such",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vez",
+						"spanish": "vez",
+						"english": "time",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "tu",
+						"spanish": "tú",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "nunca",
+						"spanish": "nunca",
+						"english": "never",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "escuches",
+						"spanish": "escuches",
+						"english": "listen",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "cancion",
+						"spanish": "canción",
+						"english": "song",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And I know that maybe you will never listen to my song, I know."
+		},
+		{
+			"sentence": "Y yo sé que tal vez te siga usando así, robándote mi inspiración.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tal",
+						"spanish": "tal",
+						"english": "such",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vez",
+						"spanish": "vez",
+						"english": "time",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siga",
+						"spanish": "siga",
+						"english": "keep",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "usando",
+						"spanish": "usando",
+						"english": "using",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "asi",
+						"spanish": "así",
+						"english": "like",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "robandote",
+						"spanish": "robándote",
+						"english": "stealing",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "inspiracion",
+						"spanish": "inspiración",
+						"english": "inspiration",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And I know that maybe I will keep using you like this, stealing my inspiration."
+		},
+		{
+			"sentence": "Mientras siga viendo tu cara en la cara de la luna.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siga",
+						"spanish": "siga",
+						"english": "I keep",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "viendo",
+						"spanish": "viendo",
+						"english": "seeing",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cara",
+						"spanish": "cara",
+						"english": "face",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cara",
+						"spanish": "cara",
+						"english": "face",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "luna",
+						"spanish": "luna",
+						"english": "moon",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I keep seeing your face in the face of the moon."
+		},
+		{
+			"sentence": "Mientras siga escuchando tu voz entre las olas, entre la espuma.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siga",
+						"spanish": "siga",
+						"english": "I keep",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "escuchando",
+						"spanish": "escuchando",
+						"english": "listening",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "voz",
+						"spanish": "voz",
+						"english": "voice",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "entre",
+						"spanish": "entre",
+						"english": "between",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "las",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "olas",
+						"spanish": "olas",
+						"english": "waves",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "entre",
+						"spanish": "entre",
+						"english": "between",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "espuma",
+						"spanish": "espuma",
+						"english": "foam",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I keep listening to your voice between the waves, between the foam."
+		},
+		{
+			"sentence": "Mientras tenga que cambiar la radio de estación porque cada canción me hable de ti, de ti, de ti.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tenga",
+						"spanish": "tenga",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "to",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cambiar",
+						"spanish": "cambiar",
+						"english": "change",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "radio",
+						"spanish": "radio",
+						"english": "radio",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "estacion",
+						"spanish": "estación",
+						"english": "station",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "porque",
+						"spanish": "porque",
+						"english": "because",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cada",
+						"spanish": "cada",
+						"english": "each",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "cancion",
+						"spanish": "canción",
+						"english": "song",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hable",
+						"spanish": "hable",
+						"english": "speaks",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I have to change the radio station because each song speaks to me of you, of you, of you."
+		},
+		{
+			"sentence": "Me hable de ti.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "Me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hable",
+						"spanish": "hable",
+						"english": "talked",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Talked to me about you."
+		},
+		{
+			"sentence": "La vida se me esconde detrás de una promesa sin cumplir.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "La",
+						"english": "The",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vida",
+						"spanish": "vida",
+						"english": "life",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "itself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esconde",
+						"spanish": "esconde",
+						"english": "hides",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "detras",
+						"spanish": "detrás",
+						"english": "behind",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "promesa",
+						"spanish": "promesa",
+						"english": "promise",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sin",
+						"spanish": "sin",
+						"english": "without",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cumplir",
+						"spanish": "cumplir",
+						"english": "fulfilling",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Life itself hides from me behind a promise without fulfilling."
+		},
+		{
+			"sentence": "De donde nace alguna inspiración, de donde nace otra canción.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "De",
+						"english": "From",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "donde",
+						"spanish": "donde",
+						"english": "where",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "nace",
+						"spanish": "nace",
+						"english": "is born",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "alguna",
+						"spanish": "alguna",
+						"english": "some",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "inspiracion",
+						"spanish": "inspiración",
+						"english": "inspiration",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "from",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "donde",
+						"spanish": "donde",
+						"english": "where",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "nace",
+						"spanish": "nace",
+						"english": "is born",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "otra",
+						"spanish": "otra",
+						"english": "another",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "cancion",
+						"spanish": "canción",
+						"english": "song",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "From where some inspiration is born, from where another song is born."
+		},
+		{
+			"sentence": "Y ya no sé bien quién se esconde.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ya",
+						"spanish": "ya",
+						"english": "already",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "I know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "bien",
+						"spanish": "bien",
+						"english": "well",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "quien",
+						"spanish": "quién",
+						"english": "who",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "himself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esconde",
+						"spanish": "esconde",
+						"english": "hides",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And I already don't know well who hides."
+		},
+		{
+			"sentence": "Yo ya no sé lo que se esconde.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "Yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ya",
+						"spanish": "ya",
+						"english": "already",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "itself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esconde",
+						"spanish": "esconde",
+						"english": "hides",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I already don't know what hides."
+		},
+		{
+			"sentence": "Y yo sé que tal vez tú nunca escuches mi canción, yo sé.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tal",
+						"spanish": "tal",
+						"english": "such",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vez",
+						"spanish": "vez",
+						"english": "time",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "tu",
+						"spanish": "tú",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "nunca",
+						"spanish": "nunca",
+						"english": "never",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "escuches",
+						"spanish": "escuches",
+						"english": "listen",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "cancion",
+						"spanish": "canción",
+						"english": "song",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And I know that maybe you never listen to my song, I know."
+		},
+		{
+			"sentence": "Y yo sé que tal vez te siga usando a ti robándote mi inspiración.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tal",
+						"spanish": "tal",
+						"english": "such",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vez",
+						"spanish": "vez",
+						"english": "time",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siga",
+						"spanish": "siga",
+						"english": "I keep",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "usando",
+						"spanish": "usando",
+						"english": "using",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "to",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "robandote",
+						"spanish": "robándote",
+						"english": "stealing",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "inspiracion",
+						"spanish": "inspiración",
+						"english": "inspiration",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And I know that maybe I keep using you, stealing my inspiration."
+		},
+		{
+			"sentence": "Mientras siga viendo tu cara en la cara de la luna.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siga",
+						"spanish": "siga",
+						"english": "I keep",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "viendo",
+						"spanish": "viendo",
+						"english": "seeing",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cara",
+						"spanish": "cara",
+						"english": "face",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cara",
+						"spanish": "cara",
+						"english": "face",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "luna",
+						"spanish": "luna",
+						"english": "moon",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I keep seeing your face in the face of the moon."
+		},
+		{
+			"sentence": "Mientras siga escuchando tu voz entre las olas, entre la espuma.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siga",
+						"spanish": "siga",
+						"english": "I keep",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "escuchando",
+						"spanish": "escuchando",
+						"english": "listening",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "voz",
+						"spanish": "voz",
+						"english": "voice",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "entre",
+						"spanish": "entre",
+						"english": "between",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "las",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "olas",
+						"spanish": "olas",
+						"english": "waves",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "entre",
+						"spanish": "entre",
+						"english": "between",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "espuma",
+						"spanish": "espuma",
+						"english": "foam",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I keep listening to your voice between the waves, between the foam."
+		},
+		{
+			"sentence": "Mientras tenga que cambiar la radio de estación porque cada canción me hable de ti, de ti, de ti.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tenga",
+						"spanish": "tenga",
+						"english": "I have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "to",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cambiar",
+						"spanish": "cambiar",
+						"english": "change",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "radio",
+						"spanish": "radio",
+						"english": "radio",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "estacion",
+						"spanish": "estación",
+						"english": "station",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "porque",
+						"spanish": "porque",
+						"english": "because",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cada",
+						"spanish": "cada",
+						"english": "each",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "cancion",
+						"spanish": "canción",
+						"english": "song",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hable",
+						"spanish": "hable",
+						"english": "speaks",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I have to change the radio station because each song speaks to me of you, of you, of you."
+		},
+		{
+			"sentence": "Yo seguiré buscando o seguiré escapando tal vez de ti, tal vez de mí.",
+			"tokens": [
+				{
+					"token": {
+						"spanish": "Mientras",
+						"normalizedToken": "mientras",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "siga",
+						"normalizedToken": "siga",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "viendo",
+						"normalizedToken": "viendo",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "tu",
+						"normalizedToken": "tu",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "cara",
+						"normalizedToken": "cara",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "en",
+						"normalizedToken": "en",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "la",
+						"normalizedToken": "la",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "cara",
+						"normalizedToken": "cara",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "la",
+						"normalizedToken": "la",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "luna",
+						"normalizedToken": "luna",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I will keep searching or I will keep escaping maybe of you, maybe of me."
+		},
+		{
+			"sentence": "Yo seguiré buscándole una explicación a esta canción.",
+			"tokens": [
+				{
+					"token": {
+						"spanish": "Mientras",
+						"normalizedToken": "mientras",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "siga",
+						"normalizedToken": "siga",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "escuchando",
+						"normalizedToken": "escuchando",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "tu",
+						"normalizedToken": "tu",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "voz",
+						"normalizedToken": "voz",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "entre",
+						"normalizedToken": "entre",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "las",
+						"normalizedToken": "las",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "olas",
+						"normalizedToken": "olas",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"spanish": "entre",
+						"normalizedToken": "entre",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "la",
+						"normalizedToken": "la",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "espuma",
+						"normalizedToken": "espuma",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I will keep searching for an explanation to this song."
+		},
+		{
+			"sentence": "Mientras siga viendo tu cara en la cara de la luna.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "tenga",
+						"normalizedToken": "tenga",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "que",
+						"normalizedToken": "que",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "cambiar",
+						"normalizedToken": "cambiar",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "radio",
+						"normalizedToken": "radio",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "estación",
+						"normalizedToken": "estacion",
+						"hasSpecialChar": true,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "porque",
+						"normalizedToken": "porque",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "cada",
+						"normalizedToken": "cada",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "canción",
+						"normalizedToken": "cancion",
+						"hasSpecialChar": true,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "me",
+						"normalizedToken": "me",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "hable",
+						"normalizedToken": "hable",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "ti",
+						"normalizedToken": "ti",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "ti",
+						"normalizedToken": "ti",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "ti",
+						"normalizedToken": "ti",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I keep seeing your face in the face of the moon."
+		},
+		{
+			"sentence": "Mientras siga escuchando tu voz entre las olas, entre la espuma.",
+			"tokens": [
+				{
+					"token": {
+						"spanish": "Yo",
+						"normalizedToken": "yo",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "seguiré",
+						"normalizedToken": "seguire",
+						"hasSpecialChar": true,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "buscando",
+						"normalizedToken": "buscando",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "o",
+						"normalizedToken": "o",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "seguiré",
+						"normalizedToken": "seguire",
+						"hasSpecialChar": true,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "escapando",
+						"normalizedToken": "escapando",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "tal",
+						"normalizedToken": "tal",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "vez",
+						"normalizedToken": "vez",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "de",
+						"normalizedToken": "de",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "ti",
+						"normalizedToken": "ti",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"spanish": "tal",
+						"normalizedToken": "tal",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "vez",
+						"normalizedToken": "vez",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "de",
+						"normalizedToken": "de",
+						"hasSpecialChar": false,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"spanish": "mí",
+						"normalizedToken": "mi",
+						"hasSpecialChar": true,
+						"english": "",
+						"wordType": ""
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I keep listening to your voice between the waves, between the foam."
+		},
+		{
+			"sentence": "Mientras tenga que cambiar la radio de estación porque cada canción me hable de ti, de ti, de ti.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tenga",
+						"spanish": "tenga",
+						"english": "I have to",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cambiar",
+						"spanish": "cambiar",
+						"english": "change",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "radio",
+						"spanish": "radio",
+						"english": "radio",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "estacion",
+						"spanish": "estación",
+						"english": "station",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "porque",
+						"spanish": "porque",
+						"english": "because",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cada",
+						"spanish": "cada",
+						"english": "each",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "cancion",
+						"spanish": "canción",
+						"english": "song",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hable",
+						"spanish": "hable",
+						"english": "speaks",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I have to change the radio station because each song speaks to me of you, of you, of you."
+		},
+		{
+			"sentence": "Mientras siga viendo tu cara en la cara de la luna.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siga",
+						"spanish": "siga",
+						"english": "I keep",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "viendo",
+						"spanish": "viendo",
+						"english": "seeing",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cara",
+						"spanish": "cara",
+						"english": "face",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cara",
+						"spanish": "cara",
+						"english": "face",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "luna",
+						"spanish": "luna",
+						"english": "moon",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I keep seeing your face in the face of the moon."
+		},
+		{
+			"sentence": "Mientras siga escuchando tu voz entre las olas, entre la espuma.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siga",
+						"spanish": "siga",
+						"english": "I keep",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "escuchando",
+						"spanish": "escuchando",
+						"english": "listening",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tu",
+						"spanish": "tu",
+						"english": "your",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "voz",
+						"spanish": "voz",
+						"english": "voice",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "entre",
+						"spanish": "entre",
+						"english": "among",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "las",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "olas",
+						"spanish": "olas",
+						"english": "waves",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "entre",
+						"spanish": "entre",
+						"english": "among",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "espuma",
+						"spanish": "espuma",
+						"english": "foam",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I keep listening to your voice among the waves, among the foam."
+		},
+		{
+			"sentence": "Mientras tenga que cambiar la radio de estación porque cada canción me hable de ti, de ti, de ti.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tenga",
+						"spanish": "tenga",
+						"english": "I have to",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cambiar",
+						"spanish": "cambiar",
+						"english": "change",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "radio",
+						"spanish": "radio",
+						"english": "radio",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "estacion",
+						"spanish": "estación",
+						"english": "station",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "porque",
+						"spanish": "porque",
+						"english": "because",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cada",
+						"spanish": "cada",
+						"english": "each",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "cancion",
+						"spanish": "canción",
+						"english": "song",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hable",
+						"spanish": "hable",
+						"english": "speaks",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While I have to change the radio station because each song speaks to me of you, of you, of you."
+		},
+		{
+			"sentence": "Me hable de ti.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hable",
+						"spanish": "hable",
+						"english": "spoke",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "He spoke to me of you."
+		},
+		{
+			"sentence": "Me hable de ti.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hable",
+						"spanish": "hable",
+						"english": "spoke",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "He spoke to me of you."
+		},
+		{
+			"sentence": "De ti.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "De",
+						"english": "Of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Of you."
+		},
+		{
+			"sentence": "Me hable de ti.",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hable",
+						"spanish": "hable",
+						"english": "spoke",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ti",
+						"spanish": "ti",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "He spoke to me of you."
+		}
+	]
+}

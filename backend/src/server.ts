@@ -1,5 +1,5 @@
 import express from 'express';
-import {addNewSong} from './utils/addNewSong';
+import {addNewSong} from './utils/songs/addNewSong';
 
 const app = express();
 const port = 3000;
