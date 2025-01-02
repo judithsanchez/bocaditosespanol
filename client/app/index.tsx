@@ -1,38 +1,52 @@
-import {StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {Text, useTheme} from 'react-native-paper';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import {ThemedButton} from '@/components/ThemedButton';
+import {Sentences} from '@/components/Sentences';
+import songData from '@/tempData/buenos-aires-anakena.json';
 
 export default function HomeScreen() {
 	const theme = useTheme();
+
 	return (
 		<ParallaxScrollView>
 			<View
-				style={[
-					styles.titleContainer,
-					{backgroundColor: theme.colors.background},
-				]}
+				style={[styles.container, {backgroundColor: theme.colors.background}]}
 			>
-				<ThemedButton />
-				<Text variant="headlineLarge">Welcome ISABELLA!</Text>
+				{/* Navigation Bar */}
+				<View style={styles.navBar}>
+					<ThemedButton />
+				</View>
+
+				{/* Title Container */}
+				<View style={styles.titleContainer}>
+					<Text variant="headlineLarge">Buenos Aires</Text>
+				</View>
+
+				{/* Sentences Container */}
+				<View style={styles.sentencesContainer}>
+					<Sentences data={songData.data} />
+				</View>
 			</View>
 		</ParallaxScrollView>
 	);
 }
 
 const styles = StyleSheet.create({
-	titleContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		gap: 8,
+	container: {
+		flex: 1,
 		padding: 16,
-		elevation: 0,
 	},
-	reactLogo: {
-		height: 178,
-		width: 290,
-		bottom: 0,
-		left: 0,
-		position: 'absolute',
+	navBar: {
+		flexDirection: 'row',
+		justifyContent: 'flex-end',
+		padding: 16,
+	},
+	titleContainer: {
+		alignItems: 'center',
+		marginBottom: 24,
+	},
+	sentencesContainer: {
+		flex: 1,
 	},
 });

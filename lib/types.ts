@@ -1,3 +1,5 @@
+import {IWord, TokenType} from 'lib/types';
+
 export interface ISong {
 	songId: string;
 	metadata: {
@@ -15,4 +17,15 @@ export interface ISong {
 	};
 	createdAt: string;
 	updatedAt: string;
+}
+
+export interface ISentence {
+	sentence: string;
+	translation: string;
+	tokens: IToken[];
+}
+
+export interface IToken {
+	token: string | IWord;
+	type: TokenType;
 }

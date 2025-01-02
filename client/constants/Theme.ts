@@ -4,12 +4,12 @@ export const lightTheme = {
 	...MD3LightTheme,
 	colors: {
 		primary: '#47D8E0',
-		onPrimary: '#FFFFFF',
+		onPrimary: '#FAFAFA',
 		primaryContainer: '#C3F2F5',
 		onPrimaryContainer: '#002F33',
 
 		secondary: '#FA70B6',
-		onSecondary: '#FFFFFF',
+		onSecondary: '#FAFAFA',
 		secondaryContainer: '#FFD9E7',
 		onSecondaryContainer: '#3D0021',
 
@@ -19,7 +19,7 @@ export const lightTheme = {
 		onTertiaryContainer: '#262000',
 
 		error: '#B3261E',
-		onError: '#FFFFFF',
+		onError: '#FAFAFA',
 		errorContainer: '#F9DEDC',
 		onErrorContainer: '#410E0B',
 
