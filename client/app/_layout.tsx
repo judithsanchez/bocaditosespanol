@@ -1,39 +1,48 @@
-import {DarkTheme, DefaultTheme, ThemeProvider} from '@react-navigation/native';
-import {useFonts} from 'expo-font';
+import {PaperProvider} from 'react-native-paper';
+import {lightTheme, darkTheme} from '@/constants/Theme';
 import {Stack} from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
 import {StatusBar} from 'expo-status-bar';
-import {useEffect} from 'react';
-import 'react-native-reanimated';
+import {useState, createContext, useContext} from 'react';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import {useColorScheme} from '@/hooks/useColorScheme';
+type ThemeContextType = {
+	isDarkMode: boolean;
+	toggleTheme: () => void;
+};
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+export const ThemeContext = createContext<ThemeContextType>({
+	isDarkMode: false,
+	toggleTheme: () => {},
+});
+
+export function useAppTheme() {
+	return useContext(ThemeContext);
+}
 
 export default function RootLayout() {
-	const colorScheme = useColorScheme();
-	const [loaded] = useFonts({
-		SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-	});
+	const [isDarkMode, setIsDarkMode] = useState(true);
+	const theme = isDarkMode ? darkTheme : lightTheme;
 
-	useEffect(() => {
-		if (loaded) {
-			SplashScreen.hideAsync();
-		}
-	}, [loaded]);
-
-	if (!loaded) {
-		return null;
-	}
+	const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
 	return (
-		<ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-			<Stack>
-				<Stack.Screen name="(tabs)" options={{headerShown: false}} />
-				<Stack.Screen name="+not-found" />
-			</Stack>
-			<StatusBar style="auto" />
-		</ThemeProvider>
+		<SafeAreaProvider>
+			<ThemeContext.Provider value={{isDarkMode, toggleTheme}}>
+				<PaperProvider theme={theme}>
+					<Stack
+						screenOptions={{
+							headerStyle: {
+								backgroundColor: theme.colors.surface,
+							},
+							headerTintColor: theme.colors.onSurface,
+							contentStyle: {
+								backgroundColor: theme.colors.background,
+							},
+						}}
+					></Stack>
+					<StatusBar style={isDarkMode ? 'light' : 'dark'} />
+				</PaperProvider>
+			</ThemeContext.Provider>
+		</SafeAreaProvider>
 	);
 }
