@@ -1,7 +1,8 @@
 import emojiRegex from 'emoji-regex';
-import {ISentence, IToken, TokenType} from '../lib/types';
+import {TokenType} from '../lib/types';
 import {errors} from '../lib/constants';
 import {normalizeString} from './normalizeString';
+import {ISentence, IToken} from '../../../lib/types';
 
 const tokenizeSentences = (sentence: string): ISentence => {
 	if (typeof sentence !== 'string') {
@@ -42,8 +43,8 @@ const tokenizeSentences = (sentence: string): ISentence => {
 	return {
 		sentence: trimmedSentence,
 		translation: '',
+		literalTranslation: '',
 		tokens: tokens,
 	};
 };
-
 export {tokenizeSentences};

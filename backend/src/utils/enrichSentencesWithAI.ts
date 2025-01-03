@@ -4,8 +4,9 @@ import {
 	HarmCategory,
 	SchemaType,
 } from '@google/generative-ai';
-import {ISentence, WordType} from '../lib/types';
+import {WordType} from '../lib/types';
 import {config} from 'dotenv';
+import {ISentence} from '../../../lib/types';
 config();
 
 // TODO: cover with unit test
@@ -25,6 +26,7 @@ const sentenceSchema = {
 		properties: {
 			sentence: {type: SchemaType.STRING},
 			translation: {type: SchemaType.STRING},
+			literalTranslation: {type: SchemaType.STRING},
 			tokens: {
 				type: SchemaType.ARRAY,
 				items: {
@@ -80,7 +82,7 @@ const model = genAI.getGenerativeModel({
 	],
 });
 
-export async function augmentSentences(
+export async function enrichSentencesWithAI(
 	sentences: ISentence[],
 ): Promise<ISentence[]> {
 	console.log('\n🎯 Starting batch sentence augmentation');
@@ -101,6 +103,9 @@ STRICT PROCESSING RULES:
 1. OUTPUT MUST BE AN ARRAY of processed sentences
 2. For EACH sentence in the array:
       - Add complete English translation
+	  - ADD literal word-for-word translation that maintains Spanish grammar structure
+			Example: "Yo tengo hambre" → "I have hunger"
+			Example: "Me gusta bailar" → "To me pleases to dance"
       - ADD english translation for each word token
       - ADD grammatical type from: ${Object.values(WordType).join(', ')}
       - KEEP all existing properties and punctuation tokens

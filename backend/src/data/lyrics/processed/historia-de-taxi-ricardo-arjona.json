@@ -104,7 +104,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "It was ten o'clock at night, I was piloting my ship."
+      "translation": "It was ten o'clock at night, I was piloting my ship.",
+      "literalTranslation": "It was the ten of the night, I was piloting my ship."
     },
     {
       "sentence": "Era mi taxi un Volkswagen del año 68.",
@@ -185,7 +186,7 @@
             "normalizedToken": "68",
             "spanish": "68",
             "english": "68",
-            "wordType": "noun"
+            "wordType": "number"
           },
           "type": "word"
         },
@@ -194,7 +195,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "It was my taxi, a Volkswagen from the year 68."
+      "translation": "My taxi was a Volkswagen from the year 1968.",
+      "literalTranslation": "Was my taxi a Volkswagen of the year 68."
     },
     {
       "sentence": "Era un día de esos malos, donde no hubo pasaje.",
@@ -308,7 +310,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "It was one of those bad days, where there was no passage."
+      "translation": "It was one of those bad days, where there was no passage.",
+      "literalTranslation": "It was a day of those bad, where not there was passage."
     },
     {
       "sentence": "Las lentejuelas de un traje me hicieron la parada.",
@@ -408,7 +411,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "The sequins of a suit made me stop."
+      "translation": "The sequins of a suit made me stop.",
+      "literalTranslation": "The sequins of a suit to me made the stop."
     },
     {
       "sentence": "Era una rubia preciosa, llevaba minifalda.",
@@ -439,7 +443,7 @@
             "normalizedToken": "rubia",
             "spanish": "rubia",
             "english": "blonde",
-            "wordType": "noun"
+            "wordType": "adjective"
           },
           "type": "word"
         },
@@ -482,7 +486,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "She was a gorgeous blonde, she was wearing a miniskirt."
+      "translation": "She was a gorgeous blonde, she was wearing a miniskirt.",
+      "literalTranslation": "She was a blonde gorgeous, she was wearing miniskirt."
     },
     {
       "sentence": "El escote en su espalda llegaba justo a la gloria.",
@@ -592,7 +597,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "The neckline on her back reached right to the glory."
+      "translation": "The neckline on her back reached right to the glory.",
+      "literalTranslation": "The neckline on her back arrived right to the glory."
     },
     {
       "sentence": "Una lágrima negra rodaba en su mejilla.",
@@ -672,7 +678,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "A black tear rolled down her cheek."
+      "translation": "A black tear rolled down her cheek.",
+      "literalTranslation": "A tear black rolled on her cheek."
     },
     {
       "sentence": "Mientras que el retrovisor decía: ¡Ve qué pantorrillas!",
@@ -683,7 +690,7 @@
             "normalizedToken": "mientras",
             "spanish": "Mientras",
             "english": "While",
-            "wordType": "conjunction"
+            "wordType": "adverb"
           },
           "type": "word"
         },
@@ -770,7 +777,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "While the rearview mirror said: See what calves!"
+      "translation": "While the rearview mirror said: See what calves!",
+      "literalTranslation": "While that the rearview mirror said: See what calves!"
     },
     {
       "sentence": "Yo vi un poco más.",
@@ -811,7 +819,7 @@
             "normalizedToken": "poco",
             "spanish": "poco",
             "english": "little",
-            "wordType": "noun"
+            "wordType": "adjective"
           },
           "type": "word"
         },
@@ -830,7 +838,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "I saw a little more."
+      "translation": "I saw a little more.",
+      "literalTranslation": "I saw a little more."
     },
     {
       "sentence": "Eran las diez con cuarenta, zigzagueava en reforma.",
@@ -894,7 +903,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "zigzagueava",
             "spanish": "zigzagueava",
-            "english": "zigzagged",
+            "english": "I was zigzagging",
             "wordType": "verb"
           },
           "type": "word"
@@ -914,7 +923,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "reforma",
             "spanish": "reforma",
-            "english": "reconstruction",
+            "english": "Reforma",
             "wordType": "noun"
           },
           "type": "word"
@@ -924,7 +933,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "It was ten forty, it zigzagged in reconstruction."
+      "translation": "It was ten forty, I was zigzagging in Reforma.",
+      "literalTranslation": "It was the ten with forty, I was zigzagging in Reforma."
     },
     {
       "sentence": "Me dijo: Me llamo Norma, mientras cruzaba la pierna.",
@@ -934,7 +944,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "me",
             "spanish": "Me",
-            "english": "I",
+            "english": "me",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -958,7 +968,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "me",
             "spanish": "Me",
-            "english": "I",
+            "english": "me",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -1002,7 +1012,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "cruzaba",
             "spanish": "cruzaba",
-            "english": "crossed",
+            "english": "was crossing",
             "wordType": "verb"
           },
           "type": "word"
@@ -1012,7 +1022,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "la",
             "spanish": "la",
-            "english": "my",
+            "english": "the",
             "wordType": "article"
           },
           "type": "word"
@@ -1032,7 +1042,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "He said: My name is Norma, while I was crossing my leg."
+      "translation": "She told me: My name is Norma, while I crossed my leg.",
+      "literalTranslation": "To me said: To me call Norma, while crossed the leg."
     },
     {
       "sentence": "Sacó un cigarro, algo extraño, de esos que te dan risa.",
@@ -1160,7 +1171,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "He took out a strange cigarette, of those that make you laugh."
+      "translation": "He took out a cigarette, something strange, of those that make you laugh.",
+      "literalTranslation": "Took out a cigarette, something strange, of those that to you give laughter."
     },
     {
       "sentence": "Le ofrecí fuego de prisa y me temblaba la mano.",
@@ -1200,8 +1212,8 @@
             "hasSpecialChar": false,
             "normalizedToken": "de",
             "spanish": "de",
-            "english": "quickly",
-            "wordType": "adverb"
+            "english": "of",
+            "wordType": "preposition"
           },
           "type": "word"
         },
@@ -1230,7 +1242,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "me",
             "spanish": "me",
-            "english": "my",
+            "english": "me",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -1240,7 +1252,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "temblaba",
             "spanish": "temblaba",
-            "english": "trembled",
+            "english": "was shaking",
             "wordType": "verb"
           },
           "type": "word"
@@ -1250,7 +1262,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "la",
             "spanish": "la",
-            "english": "my",
+            "english": "the",
             "wordType": "article"
           },
           "type": "word"
@@ -1270,7 +1282,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "I offered him fire quickly and my hand was trembling."
+      "translation": "I offered him fire quickly and my hand was shaking.",
+      "literalTranslation": "To him offered fire of hurry and to me trembled the hand."
     },
     {
       "sentence": "Le pregunté por quién llora y me dijo: Por un tipo que se cree que por rico, puede venir a engañarme.",
@@ -1300,7 +1313,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "por",
             "spanish": "por",
-            "english": "because",
+            "english": "because of",
             "wordType": "preposition"
           },
           "type": "word"
@@ -1340,7 +1353,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "me",
             "spanish": "me",
-            "english": "he",
+            "english": "me",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -1364,7 +1377,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "por",
             "spanish": "Por",
-            "english": "for",
+            "english": "For",
             "wordType": "preposition"
           },
           "type": "word"
@@ -1414,7 +1427,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "cree",
             "spanish": "cree",
-            "english": "thinks",
+            "english": "believes",
             "wordType": "verb"
           },
           "type": "word"
@@ -1434,7 +1447,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "por",
             "spanish": "por",
-            "english": "because",
+            "english": "because of",
             "wordType": "preposition"
           },
           "type": "word"
@@ -1488,7 +1501,7 @@
             "hasSpecialChar": true,
             "normalizedToken": "enganarme",
             "spanish": "engañarme",
-            "english": "cheat me",
+            "english": "deceive me",
             "wordType": "verb"
           },
           "type": "word"
@@ -1498,7 +1511,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "I asked him for whom he cries and he said: For a guy that thinks that because he is rich, he can come to cheat me."
+      "translation": "I asked him for whom she cries and he said to me: For a guy that believes that because of being rich, he can come to deceive me.",
+      "literalTranslation": "To him asked for who cries and to me said: For a guy that himself believes that for rich, can come to deceive me."
     },
     {
       "sentence": "No caiga usted por amores, debe de levantarse (le dije).",
@@ -1508,7 +1522,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "no",
             "spanish": "No",
-            "english": "don't",
+            "english": "Don't",
             "wordType": "adverb"
           },
           "type": "word"
@@ -1612,8 +1626,14 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "Don't fall for love, you must get up (I said)."
+      "translation": "Don't fall for love, you must get up (I said).",
+      "literalTranslation": "No fall you for loves, must of get up (to him said)."
     },
+    null,
+    null,
+    null,
+    null,
+    null,
     {
       "sentence": "¿Qué es lo que hace un taxista con sus sueños de cama?",
       "tokens": [
@@ -1746,7 +1766,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "What does a taxi driver do with his bed dreams?"
+      "translation": "What does a taxi driver do with his bed dreams?",
+      "literalTranslation": "What is what does a taxi driver with his dreams of bed?"
     },
     {
       "sentence": "Me pregunté.",
@@ -1776,7 +1797,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "I asked myself."
+      "translation": "I wondered.",
+      "literalTranslation": "Myself I asked."
     },
     {
       "sentence": "Lo vi abrazando y besando a una humilde muchacha.",
@@ -1786,7 +1808,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "lo",
             "spanish": "Lo",
-            "english": "him",
+            "english": "Him",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -1876,7 +1898,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "I saw him hugging and kissing a humble girl."
+      "translation": "I saw him hugging and kissing a humble girl.",
+      "literalTranslation": "Him I saw hugging and kissing to a humble girl."
     },
     {
       "sentence": "Es de clase muy sencilla, lo sé por su facha.",
@@ -1990,7 +2013,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "She is from a very simple class, I know it by her appearance."
+      "translation": "She's from a very simple class, I know it by her appearance.",
+      "literalTranslation": "She is of class very simple, it I know by her appearance."
     },
     {
       "sentence": "Me sonreía en el espejo y se sentaba de lado.",
@@ -2000,7 +2024,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "me",
             "spanish": "Me",
-            "english": "me",
+            "english": "To me",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -2010,7 +2034,7 @@
             "hasSpecialChar": true,
             "normalizedToken": "sonreia",
             "spanish": "sonreía",
-            "english": "smiled",
+            "english": "she smiled",
             "wordType": "verb"
           },
           "type": "word"
@@ -2060,7 +2084,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "se",
             "spanish": "se",
-            "english": "she",
+            "english": "herself",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -2100,7 +2124,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "She smiled at me in the mirror and sat to the side."
+      "translation": "She smiled at me in the mirror and sat sideways.",
+      "literalTranslation": "To me she smiled in the mirror and herself sat of side."
     },
     {
       "sentence": "Yo estaba idiotizado con el espejo empañado.",
@@ -2180,7 +2205,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "I was idiotized with the fogged mirror."
+      "translation": "I was idiotized with the fogged mirror.",
+      "literalTranslation": "I was idiotized with the mirror fogged."
     },
     {
       "sentence": "Me dijo: Doble en la esquina, iremos hasta mi casa.",
@@ -2190,7 +2216,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "me",
             "spanish": "Me",
-            "english": "me",
+            "english": "Me",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -2224,7 +2250,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "en",
             "spanish": "en",
-            "english": "at",
+            "english": "on",
             "wordType": "preposition"
           },
           "type": "word"
@@ -2298,7 +2324,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "She said to me: Turn at the corner, we will go to my house."
+      "translation": "She said: Turn on the corner, we'll go to my house.",
+      "literalTranslation": "To me she said: Turn on the corner, we will go to my house."
     },
     {
       "sentence": "Después de un par de tequilas, veremos que es lo que pasa.",
@@ -2402,7 +2429,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "lo",
             "spanish": "lo",
-            "english": "what",
+            "english": "it",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -2432,7 +2459,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "After a couple of tequilas, we will see what happens."
+      "translation": "After a couple of tequilas, we'll see what happens.",
+      "literalTranslation": "After of a couple of tequilas, we will see that is what happens."
     },
     {
       "sentence": "Para qué describir lo que hicimos en la alfombra.",
@@ -2472,7 +2500,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "lo",
             "spanish": "lo",
-            "english": "what",
+            "english": "it",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -2502,7 +2530,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "en",
             "spanish": "en",
-            "english": "on",
+            "english": "in",
             "wordType": "preposition"
           },
           "type": "word"
@@ -2532,7 +2560,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "Why describe what we did on the carpet."
+      "translation": "Why describe what we did on the carpet?",
+      "literalTranslation": "To what describe it that we did in the carpet."
     },
     {
       "sentence": "Si basta con resumir que le besé hasta la sombra.",
@@ -2552,7 +2581,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "basta",
             "spanish": "basta",
-            "english": "it's enough",
+            "english": "is enough",
             "wordType": "verb"
           },
           "type": "word"
@@ -2572,7 +2601,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "resumir",
             "spanish": "resumir",
-            "english": "summarizing",
+            "english": "summarize",
             "wordType": "verb"
           },
           "type": "word"
@@ -2642,7 +2671,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "If it is enough to summarize that I kissed her until the shadow."
+      "translation": "If it's enough to summarize that I kissed her until the shadow.",
+      "literalTranslation": "If is enough with summarize that to her I kissed until the shadow."
     },
     {
       "sentence": "Y un poco más.",
@@ -2692,7 +2722,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "And a little more."
+      "translation": "And a little more.",
+      "literalTranslation": "And a little more."
     },
     {
       "sentence": "No se sienta usted tan sola, sufro, aunque no es lo mismo.",
@@ -2702,8 +2733,8 @@
             "hasSpecialChar": false,
             "normalizedToken": "no",
             "spanish": "No",
-            "english": "Do not",
-            "wordType": "verb"
+            "english": "Don't",
+            "wordType": "adverb"
           },
           "type": "word"
         },
@@ -2830,7 +2861,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "Don't feel so alone, I suffer, although it's not the same."
+      "translation": "Don't feel so alone, I suffer, although it is not the same.",
+      "literalTranslation": "No you feel yourself so alone, I suffer, although not is the same."
     },
     {
       "sentence": "Mi mujer y mi horario han abierto un abismo.",
@@ -2840,7 +2872,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "mi",
             "spanish": "Mi",
-            "english": "my",
+            "english": "My",
             "wordType": "article"
           },
           "type": "word"
@@ -2910,7 +2942,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "un",
             "spanish": "un",
-            "english": "an",
+            "english": "a",
             "wordType": "article"
           },
           "type": "word"
@@ -2930,7 +2962,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "My wife and my schedule have opened an abyss."
+      "translation": "My woman and my schedule have opened an abyss.",
+      "literalTranslation": "My woman and my schedule have opened a abyss."
     },
     {
       "sentence": "Cómo se sufre ambos lados de las clases sociales.",
@@ -3030,7 +3063,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "How one suffers on both sides of the social classes."
+      "translation": "How one suffers both sides of the social classes.",
+      "literalTranslation": "How one suffers both sides of the classes social."
     },
     {
       "sentence": "Usted sufre en su mansión, yo sufro en los arrabales.",
@@ -3134,7 +3168,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "arrabales",
             "spanish": "arrabales",
-            "english": "slums",
+            "english": "outskirts",
             "wordType": "noun"
           },
           "type": "word"
@@ -3144,7 +3178,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "You suffer in your mansion, I suffer in the slums."
+      "translation": "You suffer in your mansion, I suffer in the outskirts.",
+      "literalTranslation": "You suffer in your mansion, I suffer in the outskirts."
     },
     {
       "sentence": "Me dijo: Vente conmigo, que sepa no estoy sola.",
@@ -3154,7 +3189,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "me",
             "spanish": "Me",
-            "english": "me",
+            "english": "Me",
             "wordType": "pronoun"
           },
           "type": "word"
@@ -3164,7 +3199,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "dijo",
             "spanish": "dijo",
-            "english": "told",
+            "english": "said",
             "wordType": "verb"
           },
           "type": "word"
@@ -3178,7 +3213,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "vente",
             "spanish": "Vente",
-            "english": "come",
+            "english": "Come",
             "wordType": "verb"
           },
           "type": "word"
@@ -3212,7 +3247,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "sepa",
             "spanish": "sepa",
-            "english": "you know",
+            "english": "know",
             "wordType": "verb"
           },
           "type": "word"
@@ -3252,7 +3287,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "He told me: Come with me, that you know I'm not alone."
+      "translation": "He said to me: Come with me, that you know I am not alone.",
+      "literalTranslation": "Me said: Come with me, that know not I am alone."
     },
     {
       "sentence": "Se hizo en el pelo una cola, fuimos al bar donde estaban.",
@@ -3386,7 +3422,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "She made a ponytail in her hair, we went to the bar where they were."
+      "translation": "She made a ponytail in her hair, we went to the bar where they were.",
+      "literalTranslation": "She made in the hair a ponytail, we went to the bar where they were."
     },
     {
       "sentence": "Entramos precisamente él abrazaba una chica.",
@@ -3396,7 +3433,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "entramos",
             "spanish": "Entramos",
-            "english": "we entered",
+            "english": "We entered",
             "wordType": "verb"
           },
           "type": "word"
@@ -3456,7 +3493,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "We entered, precisely he was hugging a girl."
+      "translation": "We entered; precisely, he was hugging a girl.",
+      "literalTranslation": "We entered precisely he was hugging a girl."
     },
     {
       "sentence": "Mira si es grande el destino y esta ciudad es chica.",
@@ -3576,7 +3614,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "Look if destiny is big and this city is small."
+      "translation": "Look if destiny is big and this city is small.",
+      "literalTranslation": "Look if is big the destiny and this city is small."
     },
     {
       "sentence": "Era mi mujer.",
@@ -3606,7 +3645,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "mujer",
             "spanish": "mujer",
-            "english": "wife",
+            "english": "woman",
             "wordType": "noun"
           },
           "type": "word"
@@ -3616,246 +3655,11 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "It was my wife."
+      "translation": "It was my woman.",
+      "literalTranslation": "It was my woman."
     },
-    {
-      "sentence": "¿Qué es lo que hace un taxista seduciendo a la vida?",
-      "tokens": [
-        {
-          "token": "¿",
-          "type": "punctuationSign"
-        },
-        {
-          "token": {
-            "hasSpecialChar": true,
-            "normalizedToken": "que",
-            "spanish": "Qué",
-            "english": "What",
-            "wordType": "pronoun"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "es",
-            "spanish": "es",
-            "english": "is",
-            "wordType": "verb"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "lo",
-            "spanish": "lo",
-            "english": "it",
-            "wordType": "pronoun"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "que",
-            "spanish": "que",
-            "english": "that",
-            "wordType": "pronoun"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "hace",
-            "spanish": "hace",
-            "english": "does",
-            "wordType": "verb"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "un",
-            "spanish": "un",
-            "english": "a",
-            "wordType": "article"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "taxista",
-            "spanish": "taxista",
-            "english": "taxi driver",
-            "wordType": "noun"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "seduciendo",
-            "spanish": "seduciendo",
-            "english": "seducing",
-            "wordType": "verb"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "a",
-            "spanish": "a",
-            "english": "to",
-            "wordType": "preposition"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "la",
-            "spanish": "la",
-            "english": "the",
-            "wordType": "article"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "vida",
-            "spanish": "vida",
-            "english": "life",
-            "wordType": "noun"
-          },
-          "type": "word"
-        },
-        {
-          "token": "?",
-          "type": "punctuationSign"
-        }
-      ],
-      "translation": "What is it that a taxi driver does seducing life?"
-    },
-    {
-      "sentence": "¿Qué es lo que hace un taxista construyendo una herida?",
-      "tokens": [
-        {
-          "token": "¿",
-          "type": "punctuationSign"
-        },
-        {
-          "token": {
-            "hasSpecialChar": true,
-            "normalizedToken": "que",
-            "spanish": "Qué",
-            "english": "What",
-            "wordType": "pronoun"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "es",
-            "spanish": "es",
-            "english": "is",
-            "wordType": "verb"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "lo",
-            "spanish": "lo",
-            "english": "it",
-            "wordType": "pronoun"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "que",
-            "spanish": "que",
-            "english": "that",
-            "wordType": "pronoun"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "hace",
-            "spanish": "hace",
-            "english": "does",
-            "wordType": "verb"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "un",
-            "spanish": "un",
-            "english": "a",
-            "wordType": "article"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "taxista",
-            "spanish": "taxista",
-            "english": "taxi driver",
-            "wordType": "noun"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "construyendo",
-            "spanish": "construyendo",
-            "english": "building",
-            "wordType": "verb"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "una",
-            "spanish": "una",
-            "english": "a",
-            "wordType": "article"
-          },
-          "type": "word"
-        },
-        {
-          "token": {
-            "hasSpecialChar": false,
-            "normalizedToken": "herida",
-            "spanish": "herida",
-            "english": "wound",
-            "wordType": "noun"
-          },
-          "type": "word"
-        },
-        {
-          "token": "?",
-          "type": "punctuationSign"
-        }
-      ],
-      "translation": "What is it that a taxi driver does building a wound?"
-    },
+    null,
+    null,
     {
       "sentence": "¿Qué es lo que hace un taxista cuando un caballero coincide con su mujer en horario y esmero?",
       "tokens": [
@@ -4038,7 +3842,7 @@
             "hasSpecialChar": false,
             "normalizedToken": "esmero",
             "spanish": "esmero",
-            "english": "diligence",
+            "english": "care",
             "wordType": "noun"
           },
           "type": "word"
@@ -4048,7 +3852,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "What is it that a taxi driver does when a gentleman coincides with his woman in schedule and diligence?"
+      "translation": "What does a taxi driver do when a gentleman coincides with his wife in schedule and care?",
+      "literalTranslation": "What is it that does a taxi driver when a gentleman coincides with his woman in schedule and care?"
     },
     {
       "sentence": "Me pregunté.",
@@ -4068,7 +3873,7 @@
             "hasSpecialChar": true,
             "normalizedToken": "pregunte",
             "spanish": "pregunté",
-            "english": "wondered",
+            "english": "asked myself",
             "wordType": "verb"
           },
           "type": "word"
@@ -4078,7 +3883,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "I wondered."
+      "translation": "I wondered.",
+      "literalTranslation": "Myself I asked."
     },
     {
       "sentence": "Desde aquella noche, ellos juegan a engañarnos.",
@@ -4099,7 +3905,7 @@
             "normalizedToken": "aquella",
             "spanish": "aquella",
             "english": "that",
-            "wordType": "pronoun"
+            "wordType": "adjective"
           },
           "type": "word"
         },
@@ -4152,7 +3958,7 @@
             "hasSpecialChar": true,
             "normalizedToken": "enganarnos",
             "spanish": "engañarnos",
-            "english": "deceive us",
+            "english": "trick us",
             "wordType": "verb"
           },
           "type": "word"
@@ -4162,7 +3968,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "Since that night, they play at deceiving us."
+      "translation": "Since that night, they play at tricking us.",
+      "literalTranslation": "Since that night, they play to trick us."
     },
     {
       "sentence": "Se ven en el mismo bar.",
@@ -4232,7 +4039,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "They see each other in the same bar."
+      "translation": "They see each other in the same bar.",
+      "literalTranslation": "Themselves see in the same bar."
     },
     {
       "sentence": "Y la rubia para el taxi, siempre a las diez en el mismo lugar.",
@@ -4337,7 +4145,7 @@
             "normalizedToken": "diez",
             "spanish": "diez",
             "english": "ten",
-            "wordType": "number"
+            "wordType": "noun"
           },
           "type": "word"
         },
@@ -4386,7 +4194,8 @@
           "type": "punctuationSign"
         }
       ],
-      "translation": "And the blonde for the taxi, always at ten in the same place."
+      "translation": "And the blonde for the taxi, always at ten in the same place.",
+      "literalTranslation": "And the blonde for the taxi, always to the ten in the same place."
     }
   ]
 }
