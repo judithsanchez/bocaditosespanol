@@ -4,7 +4,7 @@ import {
 	HarmCategory,
 	SchemaType,
 } from '@google/generative-ai';
-import {WordType} from '../lib/types';
+import {PartOfSpeech} from '../lib/types';
 import {config} from 'dotenv';
 import {ISentence} from '../../../lib/types';
 config();
@@ -24,6 +24,7 @@ const sentenceSchema = {
 	items: {
 		type: SchemaType.OBJECT,
 		properties: {
+			sentenceId: {type: SchemaType.STRING},
 			sentence: {type: SchemaType.STRING},
 			translation: {type: SchemaType.STRING},
 			literalTranslation: {type: SchemaType.STRING},
@@ -39,7 +40,9 @@ const sentenceSchema = {
 								normalizedToken: {type: SchemaType.STRING},
 								english: {type: SchemaType.STRING},
 								hasSpecialChar: {type: SchemaType.BOOLEAN},
-								wordType: {type: SchemaType.STRING},
+								partOfSpeech: {type: SchemaType.STRING},
+								isSlang: {type: SchemaType.BOOLEAN},
+								isCognate: {type: SchemaType.BOOLEAN},
 							},
 							required: ['spanish', 'normalizedToken', 'hasSpecialChar'],
 						},
@@ -52,7 +55,7 @@ const sentenceSchema = {
 				},
 			},
 		},
-		required: ['sentence', 'translation', 'tokens'],
+		required: ['sentenceId', 'sentence', 'translation', 'tokens'],
 	},
 };
 console.log('⚙️ Configuring Gemini model');
@@ -107,7 +110,7 @@ STRICT PROCESSING RULES:
 			Example: "Yo tengo hambre" → "I have hunger"
 			Example: "Me gusta bailar" → "To me pleases to dance"
       - ADD english translation for each word token
-      - ADD grammatical type from: ${Object.values(WordType).join(', ')}
+      - ADD grammatical type from: ${Object.values(PartOfSpeech).join(', ')}
       - KEEP all existing properties and punctuation tokens
 3. Response Format:
       - Must be an array matching input length
@@ -124,17 +127,17 @@ Generate response as an array of fully processed sentences.`,
 
 		const result = await model.generateContent(prompt);
 		const response = await result.response.text();
-		console.log('📤 Gemini response:', response);
+		// console.log('📤 Gemini response:', response);
 		let enrichedBatch = JSON.parse(response);
 		if (!Array.isArray(enrichedBatch)) {
 			console.log('Converting single response to array');
 			enrichedBatch = [enrichedBatch];
 		}
-		console.log(
-			'🔍 Parsed data type:',
-			typeof enrichedBatch,
-			Array.isArray(enrichedBatch),
-		);
+		// console.log(
+		// 	'🔍 Parsed data type:',
+		// 	typeof enrichedBatch,
+		// 	Array.isArray(enrichedBatch),
+		// );
 
 		const processedSentences = enrichedBatch.map(
 			(enrichedSentence: ISentence, index: number) => {

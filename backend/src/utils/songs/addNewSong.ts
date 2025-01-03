@@ -57,7 +57,7 @@ export async function addNewSong({
 		});
 
 		const processor = new TextProcessor(rawLyrics);
-		const processedLyrics = await processor.processTextData();
+		const processedLyrics = await processor.processText();
 
 		const processedLyricsContent = {
 			songId,

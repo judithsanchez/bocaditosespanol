@@ -15,9 +15,10 @@ export interface IVerb {
 		| 'pronominal'
 		| 'copulative'
 		| 'impersonal';
-	gerund?: string;
-	pastParticiple?: string;
+	gerund?: boolean;
+	pastParticiple?: boolean;
 	auxiliary?: 'haber' | 'ser' | 'estar';
+	verbRegularity?: VerbRegularity;
 }
 
 export enum VerbTense {
@@ -52,7 +53,6 @@ export enum VerbRegularity {
 	Regular = 'regular',
 	IrregularStem = 'stemChange',
 	IrregularAll = 'irregular',
-	Defective = 'defective',
 }
 
 export enum ConjugationPattern {

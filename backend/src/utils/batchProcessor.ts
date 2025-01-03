@@ -9,6 +9,7 @@ export async function batchProcessor<T>({
 }: BatchProcessorConfig<T>): Promise<T[]> {
 	const results: T[] = [];
 	const totalBatches = Math.ceil(items.length / batchSize);
+	console.log(`Total batches: ${totalBatches}`);
 
 	for (let i = 0; i < items.length; i += batchSize) {
 		const currentBatch = Math.floor(i / batchSize) + 1;

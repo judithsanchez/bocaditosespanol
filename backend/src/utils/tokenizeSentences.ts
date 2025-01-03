@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from 'uuid';
 import emojiRegex from 'emoji-regex';
 import {TokenType} from '../lib/types';
 import {errors} from '../lib/constants';
@@ -41,10 +42,12 @@ const tokenizeSentences = (sentence: string): ISentence => {
 		});
 
 	return {
+		sentenceId: `sentence-${uuidv4()}`,
 		sentence: trimmedSentence,
 		translation: '',
 		literalTranslation: '',
 		tokens: tokens,
 	};
 };
+
 export {tokenizeSentences};

@@ -1,0 +1,4483 @@
+{
+	"songId": "historia-de-taxi-ricardo-arjona",
+	"processedLyricsId": "processed-historia-de-taxi-ricardo-arjona",
+	"data": [
+		{
+			"sentence": "Eran las diez de la noche, piloteaba mi nave.",
+			"sentenceId": "sentence-4ef86d6f-6dfc-4dea-b435-271695559e59",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "eran",
+						"spanish": "Eran",
+						"english": "It was",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "las",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "diez",
+						"spanish": "diez",
+						"english": "ten",
+						"wordType": "numeral"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "noche",
+						"spanish": "noche",
+						"english": "night",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "piloteaba",
+						"spanish": "piloteaba",
+						"english": "I was piloting",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "nave",
+						"spanish": "nave",
+						"english": "ship",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "It was ten o'clock at night, I was piloting my ship.",
+			"literalTranslation": "It was the ten of the night, I was piloting my ship."
+		},
+		{
+			"sentence": "Era mi taxi un Volkswagen del año 68.",
+			"sentenceId": "sentence-8880dc3a-97a6-480c-9229-5d76cff05d42",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "era",
+						"spanish": "Era",
+						"english": "It was",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "taxi",
+						"spanish": "taxi",
+						"english": "taxi",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "volkswagen",
+						"spanish": "Volkswagen",
+						"english": "Volkswagen",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "del",
+						"spanish": "del",
+						"english": "of the",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "ano",
+						"spanish": "año",
+						"english": "year",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "68",
+						"spanish": "68",
+						"english": "68",
+						"wordType": "numeral"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "It was my taxi, a 1968 Volkswagen.",
+			"literalTranslation": "It was my taxi a Volkswagen of the year 68."
+		},
+		{
+			"sentence": "Era un día de esos malos, donde no hubo pasaje.",
+			"sentenceId": "sentence-f4463a0a-00a2-47d1-a8a0-0a162fe4e9e2",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "era",
+						"spanish": "Era",
+						"english": "It was",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "dia",
+						"spanish": "día",
+						"english": "day",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esos",
+						"spanish": "esos",
+						"english": "those",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "malos",
+						"spanish": "malos",
+						"english": "bad",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "donde",
+						"spanish": "donde",
+						"english": "where",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hubo",
+						"spanish": "hubo",
+						"english": "there was",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pasaje",
+						"spanish": "pasaje",
+						"english": "passage",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "It was one of those bad days, where there was no passage.",
+			"literalTranslation": "It was a day of those bad, where not there was passage."
+		},
+		{
+			"sentence": "Las lentejuelas de un traje me hicieron la parada.",
+			"sentenceId": "sentence-17fb9760-9a93-47da-804f-2d30983bc1a1",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "Las",
+						"english": "The",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lentejuelas",
+						"spanish": "lentejuelas",
+						"english": "sequins",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "traje",
+						"spanish": "traje",
+						"english": "suit",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hicieron",
+						"spanish": "hicieron",
+						"english": "made",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "parada",
+						"spanish": "parada",
+						"english": "stop",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "The sequins of a suit made me stop.",
+			"literalTranslation": "The sequins of a suit to me made the stop."
+		},
+		{
+			"sentence": "Era una rubia preciosa, llevaba minifalda.",
+			"sentenceId": "sentence-3ff5c46b-f194-4569-b721-b2820d15e303",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "era",
+						"spanish": "Era",
+						"english": "She was",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "rubia",
+						"spanish": "rubia",
+						"english": "blonde",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "preciosa",
+						"spanish": "preciosa",
+						"english": "gorgeous",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "llevaba",
+						"spanish": "llevaba",
+						"english": "she was wearing",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "minifalda",
+						"spanish": "minifalda",
+						"english": "miniskirt",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "She was a gorgeous blonde, she was wearing a miniskirt.",
+			"literalTranslation": "She was a blonde gorgeous, she was wearing miniskirt."
+		},
+		{
+			"sentence": "El escote en su espalda llegaba justo a la gloria.",
+			"sentenceId": "sentence-ac371bfe-54b4-4465-b1dd-4d75b294d1d6",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "El",
+						"english": "The",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "escote",
+						"spanish": "escote",
+						"english": "neckline",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "on",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "su",
+						"spanish": "su",
+						"english": "her",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "espalda",
+						"spanish": "espalda",
+						"english": "back",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "llegaba",
+						"spanish": "llegaba",
+						"english": "reached",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "justo",
+						"spanish": "justo",
+						"english": "right",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "to",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "gloria",
+						"spanish": "gloria",
+						"english": "glory",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "The neckline on her back reached right to the glory.",
+			"literalTranslation": "The neckline on her back reached right to the glory."
+		},
+		{
+			"sentence": "Una lágrima negra rodaba en su mejilla.",
+			"sentenceId": "sentence-19c4e05c-c968-4351-a344-7aba71162e91",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "Una",
+						"english": "A",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "lagrima",
+						"spanish": "lágrima",
+						"english": "tear",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "negra",
+						"spanish": "negra",
+						"english": "black",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "rodaba",
+						"spanish": "rodaba",
+						"english": "rolled",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "on",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "su",
+						"spanish": "su",
+						"english": "her",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mejilla",
+						"spanish": "mejilla",
+						"english": "cheek",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "A black tear rolled down her cheek.",
+			"literalTranslation": "A tear black rolled on her cheek."
+		},
+		{
+			"sentence": "Mientras que el retrovisor decía: ¡Ve qué pantorrillas!",
+			"sentenceId": "sentence-d2ea0853-c081-4d29-8f76-6549eff4be5d",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "Mientras",
+						"english": "While",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "retrovisor",
+						"spanish": "retrovisor",
+						"english": "rearview mirror",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "decia",
+						"spanish": "decía",
+						"english": "said",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ":",
+					"type": "punctuationSign"
+				},
+				{
+					"token": "¡",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ve",
+						"spanish": "Ve",
+						"english": "See",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "que",
+						"spanish": "qué",
+						"english": "what",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pantorrillas",
+						"spanish": "pantorrillas",
+						"english": "calves",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": "!",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "While the rearview mirror said: See what calves!",
+			"literalTranslation": "While that the rearview mirror said: See what calves!"
+		},
+		{
+			"sentence": "Yo vi un poco más.",
+			"sentenceId": "sentence-f77638e0-0160-4b08-9160-ccffa7cf2294",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "Yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vi",
+						"spanish": "vi",
+						"english": "saw",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "poco",
+						"spanish": "poco",
+						"english": "little",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "mas",
+						"spanish": "más",
+						"english": "more",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I saw a little more.",
+			"literalTranslation": "I saw a little more."
+		},
+		{
+			"sentence": "Eran las diez con cuarenta, zigzagueava en reforma.",
+			"sentenceId": "sentence-8355f59f-810c-44b4-898d-5e74b5d9356b",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "eran",
+						"spanish": "Eran",
+						"english": "It was",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "las",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "diez",
+						"spanish": "diez",
+						"english": "ten",
+						"wordType": "numeral"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "con",
+						"spanish": "con",
+						"english": "with",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cuarenta",
+						"spanish": "cuarenta",
+						"english": "forty",
+						"wordType": "numeral"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "zigzagueava",
+						"spanish": "zigzagueava",
+						"english": "I was zigzagging",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "reforma",
+						"spanish": "reforma",
+						"english": "reformation",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "It was ten forty, I was zigzagging in reformation.",
+			"literalTranslation": "It was the ten with forty, I was zigzagging in reformation."
+		},
+		{
+			"sentence": "Me dijo: Me llamo Norma, mientras cruzaba la pierna.",
+			"sentenceId": "sentence-7b068e08-975e-40ca-a725-3c01fe87feaa",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "Me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dijo",
+						"spanish": "dijo",
+						"english": "told",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ":",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "Me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "llamo",
+						"spanish": "llamo",
+						"english": "call",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "norma",
+						"spanish": "Norma",
+						"english": "Norma",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mientras",
+						"spanish": "mientras",
+						"english": "while",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cruzaba",
+						"spanish": "cruzaba",
+						"english": "I was crossing",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pierna",
+						"spanish": "pierna",
+						"english": "leg",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "He told me: My name is Norma, while I crossed my leg.",
+			"literalTranslation": "Me told: Me call Norma, while crossed the leg."
+		},
+		{
+			"sentence": "Sacó un cigarro, algo extraño, de esos que te dan risa.",
+			"sentenceId": "sentence-1b0d30ee-f8d9-4fb4-97a6-c6c26852b8e2",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "saco",
+						"spanish": "Sacó",
+						"english": "He took out",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cigarro",
+						"spanish": "cigarro",
+						"english": "cigarette",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "algo",
+						"spanish": "algo",
+						"english": "something",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "extrano",
+						"spanish": "extraño",
+						"english": "strange",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esos",
+						"spanish": "esos",
+						"english": "those",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "te",
+						"spanish": "te",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dan",
+						"spanish": "dan",
+						"english": "give",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "risa",
+						"spanish": "risa",
+						"english": "laughter",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "He took out a cigarette, something strange, of those that make you laugh.",
+			"literalTranslation": "Took out a cigarette, something strange, of those that to you give laughter."
+		},
+		{
+			"sentence": "Le ofrecí fuego de prisa y me temblaba la mano.",
+			"sentenceId": "sentence-0c26479a-d490-41df-9721-3f1c39e6d7db",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "le",
+						"spanish": "Le",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "ofreci",
+						"spanish": "ofrecí",
+						"english": "offered",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "fuego",
+						"spanish": "fuego",
+						"english": "fire",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "prisa",
+						"spanish": "prisa",
+						"english": "haste",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "me",
+						"english": "my",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "temblaba",
+						"spanish": "temblaba",
+						"english": "was shaking",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mano",
+						"spanish": "mano",
+						"english": "hand",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I offered him fire in a hurry and my hand was shaking.",
+			"literalTranslation": "To him I offered fire of haste and me was shaking the hand."
+		},
+		{
+			"sentence": "Le pregunté por quién llora y me dijo: Por un tipo que se cree que por rico, puede venir a engañarme.",
+			"sentenceId": "sentence-f30dc32e-3611-4005-914c-7f33ac1c2adf",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "le",
+						"spanish": "Le",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "pregunte",
+						"spanish": "pregunté",
+						"english": "asked",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "because",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "quien",
+						"spanish": "quién",
+						"english": "whom",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "llora",
+						"spanish": "llora",
+						"english": "she cries",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "me",
+						"english": "me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dijo",
+						"spanish": "dijo",
+						"english": "told",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ":",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "Por",
+						"english": "For",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tipo",
+						"spanish": "tipo",
+						"english": "guy",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "himself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cree",
+						"spanish": "cree",
+						"english": "believes",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "because",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "rico",
+						"spanish": "rico",
+						"english": "rich",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "puede",
+						"spanish": "puede",
+						"english": "can",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "venir",
+						"spanish": "venir",
+						"english": "come",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "to",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "enganarme",
+						"spanish": "engañarme",
+						"english": "deceive me",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I asked him for whom she cries and he told me: For a guy that believes that because he is rich, he can come to deceive me.",
+			"literalTranslation": "To him I asked for who cries and me told: For a guy that himself believes that for rich, can come to deceive me."
+		},
+		{
+			"sentence": "No caiga usted por amores, debe de levantarse (le dije).",
+			"sentenceId": "sentence-840262e8-9f06-4ea2-9ab9-2915c3986506",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "No",
+						"english": "Do not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "caiga",
+						"spanish": "caiga",
+						"english": "fall",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "usted",
+						"spanish": "usted",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "amores",
+						"spanish": "amores",
+						"english": "love",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "debe",
+						"spanish": "debe",
+						"english": "must",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "to",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "levantarse",
+						"spanish": "levantarse",
+						"english": "get up",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "(le",
+						"spanish": "(le",
+						"english": "(I)",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dije)",
+						"spanish": "dije)",
+						"english": "told you)",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Do not fall for love, you must get up (I told you).",
+			"literalTranslation": "No fall you for loves, must to get up (to you I said)."
+		},
+		{
+			"sentence": "¿Qué es lo que hace un taxista con sus sueños de cama?",
+			"sentenceId": "sentence-52c411ca-6bea-4fcd-a9a9-6e9f0c18aaf5",
+			"tokens": [
+				{
+					"token": "¿",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "que",
+						"spanish": "Qué",
+						"english": "What",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hace",
+						"spanish": "hace",
+						"english": "does",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "taxista",
+						"spanish": "taxista",
+						"english": "taxi driver",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "con",
+						"spanish": "con",
+						"english": "with",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sus",
+						"spanish": "sus",
+						"english": "his",
+						"wordType": "determiner"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "suenos",
+						"spanish": "sueños",
+						"english": "dreams",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cama",
+						"spanish": "cama",
+						"english": "bed",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": "?",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "What does a taxi driver do with his bed dreams?",
+			"literalTranslation": "What is it that does a taxi driver with his dreams of bed?"
+		},
+		{
+			"sentence": "Me pregunté.",
+			"sentenceId": "sentence-23e1dc09-9f42-4a7a-acc0-96536ee8070a",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "pregunte",
+						"spanish": "pregunté",
+						"english": "asked myself",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I asked myself.",
+			"literalTranslation": "Myself I asked."
+		},
+		{
+			"sentence": "Lo vi abrazando y besando a una humilde muchacha.",
+			"sentenceId": "sentence-561ff0b7-d165-4d2d-9d93-3132ecc31567",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "Lo",
+						"english": "Him",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vi",
+						"spanish": "vi",
+						"english": "saw",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "abrazando",
+						"spanish": "abrazando",
+						"english": "hugging",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "besando",
+						"spanish": "besando",
+						"english": "kissing",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "a",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "humilde",
+						"spanish": "humilde",
+						"english": "humble",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "muchacha",
+						"spanish": "muchacha",
+						"english": "girl",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I saw him hugging and kissing a humble girl.",
+			"literalTranslation": "Him I saw hugging and kissing to a humble girl."
+		},
+		{
+			"sentence": "Es de clase muy sencilla, lo sé por su facha.",
+			"sentenceId": "sentence-9d8e9ab8-4100-458a-a77b-4a04f78d881e",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "Es",
+						"english": "She is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "clase",
+						"spanish": "clase",
+						"english": "class",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "muy",
+						"spanish": "muy",
+						"english": "very",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sencilla",
+						"spanish": "sencilla",
+						"english": "simple",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "se",
+						"spanish": "sé",
+						"english": "I know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "por",
+						"spanish": "por",
+						"english": "by",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "su",
+						"spanish": "su",
+						"english": "her",
+						"wordType": "determiner"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "facha",
+						"spanish": "facha",
+						"english": "appearance",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "She is from a very simple class, I know it by her appearance.",
+			"literalTranslation": "She is of class very simple, it I know by her appearance."
+		},
+		{
+			"sentence": "Me sonreía en el espejo y se sentaba de lado.",
+			"sentenceId": "sentence-bd14042b-5626-4149-91aa-14130b420ba0",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "Me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "sonreia",
+						"spanish": "sonreía",
+						"english": "smiled",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "espejo",
+						"spanish": "espejo",
+						"english": "mirror",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "herself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sentaba",
+						"spanish": "sentaba",
+						"english": "sat",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "to the",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lado",
+						"spanish": "lado",
+						"english": "side",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "She smiled at me in the mirror and sat sideways.",
+			"literalTranslation": "To me smiled in the mirror and herself sat of side."
+		},
+		{
+			"sentence": "Yo estaba idiotizado con el espejo empañado.",
+			"sentenceId": "sentence-e107d94f-99c2-47a1-a7e6-33ceeed9ee4d",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "Yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "estaba",
+						"spanish": "estaba",
+						"english": "was",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "idiotizado",
+						"spanish": "idiotizado",
+						"english": "idiotized",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "con",
+						"spanish": "con",
+						"english": "with",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "espejo",
+						"spanish": "espejo",
+						"english": "mirror",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "empanado",
+						"spanish": "empañado",
+						"english": "fogged",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I was idiotized with the fogged mirror.",
+			"literalTranslation": "I was idiotized with the mirror fogged."
+		},
+		{
+			"sentence": "Me dijo: Doble en la esquina, iremos hasta mi casa.",
+			"sentenceId": "sentence-fe40b7cc-1b83-4f69-a9a3-0a255649e34f",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "Me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dijo",
+						"spanish": "dijo",
+						"english": "said",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ":",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "doble",
+						"spanish": "Doble",
+						"english": "Turn",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "at",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esquina",
+						"spanish": "esquina",
+						"english": "corner",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "iremos",
+						"spanish": "iremos",
+						"english": "we will go",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hasta",
+						"spanish": "hasta",
+						"english": "to",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "determiner"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "casa",
+						"spanish": "casa",
+						"english": "house",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "She said to me: Turn at the corner, we will go to my house.",
+			"literalTranslation": "To me said: Turn in the corner, we will go to my house."
+		},
+		{
+			"sentence": "Después de un par de tequilas, veremos que es lo que pasa.",
+			"sentenceId": "sentence-a919ed3f-2e09-4247-9ec5-36394fa0e764",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "despues",
+						"spanish": "Después",
+						"english": "After",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "par",
+						"spanish": "par",
+						"english": "couple",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tequilas",
+						"spanish": "tequilas",
+						"english": "tequilas",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "veremos",
+						"spanish": "veremos",
+						"english": "we will see",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pasa",
+						"spanish": "pasa",
+						"english": "happens",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "After a couple of tequilas, we will see what happens.",
+			"literalTranslation": "After of a couple of tequilas, we will see that is it that happens."
+		},
+		{
+			"sentence": "Para qué describir lo que hicimos en la alfombra.",
+			"sentenceId": "sentence-20a320f6-ef7c-4679-9214-f2daa3565a5b",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "para",
+						"spanish": "Para",
+						"english": "Why",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "que",
+						"spanish": "qué",
+						"english": "should",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "describir",
+						"spanish": "describir",
+						"english": "describe",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hicimos",
+						"spanish": "hicimos",
+						"english": "we did",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "on",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "alfombra",
+						"spanish": "alfombra",
+						"english": "carpet",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Why describe what we did on the carpet?",
+			"literalTranslation": "For what describe it that we did on the carpet."
+		},
+		{
+			"sentence": "Si basta con resumir que le besé hasta la sombra.",
+			"sentenceId": "sentence-47b98c56-152b-4f56-b39f-4f62e8c390f1",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "si",
+						"spanish": "Si",
+						"english": "If",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "basta",
+						"spanish": "basta",
+						"english": "it's enough",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "con",
+						"spanish": "con",
+						"english": "with",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "resumir",
+						"spanish": "resumir",
+						"english": "to summarize",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "le",
+						"spanish": "le",
+						"english": "him",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "bese",
+						"spanish": "besé",
+						"english": "I kissed",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hasta",
+						"spanish": "hasta",
+						"english": "until",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sombra",
+						"spanish": "sombra",
+						"english": "shadow",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "If it's enough to summarize that I kissed him until the shadow.",
+			"literalTranslation": "If is enough with to summarize that to him I kissed until the shadow."
+		},
+		{
+			"sentence": "Y un poco más.",
+			"sentenceId": "sentence-778445d5-4f37-4fda-929a-0daa219562d6",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "poco",
+						"spanish": "poco",
+						"english": "little",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "mas",
+						"spanish": "más",
+						"english": "more",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And a little more.",
+			"literalTranslation": "And a little more."
+		},
+		{
+			"sentence": "No se sienta usted tan sola, sufro, aunque no es lo mismo.",
+			"sentenceId": "sentence-d5a5709b-b94b-40a9-9af5-fcf60e8ac52c",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "No",
+						"english": "Do not",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "yourself",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sienta",
+						"spanish": "sienta",
+						"english": "feel",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "usted",
+						"spanish": "usted",
+						"english": "you",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "tan",
+						"spanish": "tan",
+						"english": "so",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sola",
+						"spanish": "sola",
+						"english": "alone",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sufro",
+						"spanish": "sufro",
+						"english": "I suffer",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "aunque",
+						"spanish": "aunque",
+						"english": "although",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mismo",
+						"spanish": "mismo",
+						"english": "same",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Don't feel so alone, I suffer, although it's not the same.",
+			"literalTranslation": "No you yourself feel so alone, I suffer, although not is the same."
+		},
+		{
+			"sentence": "Mi mujer y mi horario han abierto un abismo.",
+			"sentenceId": "sentence-4ade4b63-030d-4468-b590-4fa3b8a6038d",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "Mi",
+						"english": "My",
+						"wordType": "determiner"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mujer",
+						"spanish": "mujer",
+						"english": "woman",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "determiner"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "horario",
+						"spanish": "horario",
+						"english": "schedule",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "han",
+						"spanish": "han",
+						"english": "have",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "abierto",
+						"spanish": "abierto",
+						"english": "opened",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "abismo",
+						"spanish": "abismo",
+						"english": "abyss",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "My wife and my schedule have opened an abyss.",
+			"literalTranslation": "My woman and my schedule have opened a abyss."
+		},
+		{
+			"sentence": "Cómo se sufre ambos lados de las clases sociales.",
+			"sentenceId": "sentence-c774462f-8c54-4428-82c2-fe262085a779",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "como",
+						"spanish": "Cómo",
+						"english": "How",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "se",
+						"english": "one",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sufre",
+						"spanish": "sufre",
+						"english": "suffers",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ambos",
+						"spanish": "ambos",
+						"english": "both",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lados",
+						"spanish": "lados",
+						"english": "sides",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "de",
+						"spanish": "de",
+						"english": "of",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "las",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "clases",
+						"spanish": "clases",
+						"english": "classes",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sociales",
+						"spanish": "sociales",
+						"english": "social",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "How both sides of the social classes suffer.",
+			"literalTranslation": "How one suffers both sides of the classes social."
+		},
+		{
+			"sentence": "Usted sufre en su mansión, yo sufro en los arrabales.",
+			"sentenceId": "sentence-3b3c42b5-9854-4248-9ee2-d71895a55e0f",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "usted",
+						"spanish": "Usted",
+						"english": "You",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sufre",
+						"spanish": "sufre",
+						"english": "suffer",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "su",
+						"spanish": "su",
+						"english": "your",
+						"wordType": "determiner"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "mansion",
+						"spanish": "mansión",
+						"english": "mansion",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "yo",
+						"spanish": "yo",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sufro",
+						"spanish": "sufro",
+						"english": "suffer",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "los",
+						"spanish": "los",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "arrabales",
+						"spanish": "arrabales",
+						"english": "slums",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "You suffer in your mansion, I suffer in the slums.",
+			"literalTranslation": "You suffer in your mansion, I suffer in the slums."
+		},
+		{
+			"sentence": "Me dijo: Vente conmigo, que sepa no estoy sola.",
+			"sentenceId": "sentence-216d6e89-4731-4662-934b-3616919a4dd4",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "Me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "dijo",
+						"spanish": "dijo",
+						"english": "said",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ":",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vente",
+						"spanish": "Vente",
+						"english": "Come",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "conmigo",
+						"spanish": "conmigo",
+						"english": "with me",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sepa",
+						"spanish": "sepa",
+						"english": "know",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "no",
+						"spanish": "no",
+						"english": "not",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "estoy",
+						"spanish": "estoy",
+						"english": "am",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "sola",
+						"spanish": "sola",
+						"english": "alone",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "He told me: Come with me, so you know I'm not alone.",
+			"literalTranslation": "Me said: Come with me, that know not I am alone."
+		},
+		{
+			"sentence": "Se hizo en el pelo una cola, fuimos al bar donde estaban.",
+			"sentenceId": "sentence-771a9d94-9857-4c85-ab78-ab64afa9b183",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "Se",
+						"english": "She",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hizo",
+						"spanish": "hizo",
+						"english": "made",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "pelo",
+						"spanish": "pelo",
+						"english": "hair",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cola",
+						"spanish": "cola",
+						"english": "ponytail",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "fuimos",
+						"spanish": "fuimos",
+						"english": "we went",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "al",
+						"spanish": "al",
+						"english": "to the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "bar",
+						"spanish": "bar",
+						"english": "bar",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "donde",
+						"spanish": "donde",
+						"english": "where",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "estaban",
+						"spanish": "estaban",
+						"english": "they were",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "She made a ponytail in her hair; we went to the bar where they were.",
+			"literalTranslation": "She did in the hair a ponytail, we went to the bar where they were."
+		},
+		{
+			"sentence": "Entramos precisamente él abrazaba una chica.",
+			"sentenceId": "sentence-6fb86894-213a-4267-a16d-a80d7ed1f40b",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "entramos",
+						"spanish": "Entramos",
+						"english": "We entered",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "precisamente",
+						"spanish": "precisamente",
+						"english": "precisely",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "el",
+						"spanish": "él",
+						"english": "he",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "abrazaba",
+						"spanish": "abrazaba",
+						"english": "was hugging",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "chica",
+						"spanish": "chica",
+						"english": "girl",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "We entered, precisely he was hugging a girl.",
+			"literalTranslation": "We entered precisely he hugged a girl."
+		},
+		{
+			"sentence": "Mira si es grande el destino y esta ciudad es chica.",
+			"sentenceId": "sentence-7196954b-b832-4420-bfe0-4acfe81d537e",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mira",
+						"spanish": "Mira",
+						"english": "Look",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "si",
+						"spanish": "si",
+						"english": "if",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "grande",
+						"spanish": "grande",
+						"english": "big",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "destino",
+						"spanish": "destino",
+						"english": "destiny",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esta",
+						"spanish": "esta",
+						"english": "this",
+						"wordType": "determiner"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ciudad",
+						"spanish": "ciudad",
+						"english": "city",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "chica",
+						"spanish": "chica",
+						"english": "small",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Look if destiny is big and this city is small.",
+			"literalTranslation": "Look if is big the destiny and this city is small."
+		},
+		{
+			"sentence": "Era mi mujer.",
+			"sentenceId": "sentence-7cbafb3a-7c7e-4692-b955-a60365f76804",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "era",
+						"spanish": "Era",
+						"english": "It was",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mi",
+						"spanish": "mi",
+						"english": "my",
+						"wordType": "determiner"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mujer",
+						"spanish": "mujer",
+						"english": "wife",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "It was my wife.",
+			"literalTranslation": "It was my woman."
+		},
+		{
+			"sentence": "¿Qué es lo que hace un taxista seduciendo a la vida?",
+			"sentenceId": "sentence-d98a04e8-095e-47ce-9435-fdb01c976823",
+			"tokens": [
+				{
+					"token": "¿",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "que",
+						"spanish": "Qué",
+						"english": "What",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hace",
+						"spanish": "hace",
+						"english": "does",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "taxista",
+						"spanish": "taxista",
+						"english": "taxi driver",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "seduciendo",
+						"spanish": "seduciendo",
+						"english": "seducing",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "to",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "vida",
+						"spanish": "vida",
+						"english": "life",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": "?",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "What is it that a taxi driver does seducing life?",
+			"literalTranslation": "What is it that does a taxi driver seducing to the life?"
+		},
+		{
+			"sentence": "¿Qué es lo que hace un taxista construyendo una herida?",
+			"sentenceId": "sentence-4f57e5f3-d402-49a2-b5ba-2e2c9b8f0b8f",
+			"tokens": [
+				{
+					"token": "¿",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "que",
+						"spanish": "Qué",
+						"english": "What",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hace",
+						"spanish": "hace",
+						"english": "does",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "taxista",
+						"spanish": "taxista",
+						"english": "taxi driver",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "construyendo",
+						"spanish": "construyendo",
+						"english": "building",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "una",
+						"spanish": "una",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "herida",
+						"spanish": "herida",
+						"english": "wound",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": "?",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "What is it that a taxi driver does building a wound?",
+			"literalTranslation": "What is it that does a taxi driver building a wound?"
+		},
+		{
+			"sentence": "¿Qué es lo que hace un taxista cuando un caballero coincide con su mujer en horario y esmero?",
+			"sentenceId": "sentence-3b9b6beb-8344-4ede-a8c9-4a8005e53377",
+			"tokens": [
+				{
+					"token": "¿",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "que",
+						"spanish": "Qué",
+						"english": "What",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "es",
+						"spanish": "es",
+						"english": "is",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lo",
+						"spanish": "lo",
+						"english": "it",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "que",
+						"spanish": "que",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "hace",
+						"spanish": "hace",
+						"english": "does",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "taxista",
+						"spanish": "taxista",
+						"english": "taxi driver",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "cuando",
+						"spanish": "cuando",
+						"english": "when",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "un",
+						"spanish": "un",
+						"english": "a",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "caballero",
+						"spanish": "caballero",
+						"english": "gentleman",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "coincide",
+						"spanish": "coincide",
+						"english": "coincides",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "con",
+						"spanish": "con",
+						"english": "with",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "su",
+						"spanish": "su",
+						"english": "his",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mujer",
+						"spanish": "mujer",
+						"english": "woman",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "horario",
+						"spanish": "horario",
+						"english": "schedule",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "y",
+						"english": "and",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "esmero",
+						"spanish": "esmero",
+						"english": "care",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": "?",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "What is it that a taxi driver does when a gentleman coincides with his wife in schedule and care?",
+			"literalTranslation": "What is it that does a taxi driver when a gentleman coincides with his woman in schedule and care?"
+		},
+		{
+			"sentence": "Me pregunté.",
+			"sentenceId": "sentence-865de85e-9c1c-4fbb-b06d-7385fbbbb1cc",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "me",
+						"spanish": "Me",
+						"english": "I",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "pregunte",
+						"spanish": "pregunté",
+						"english": "asked myself",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "I asked myself.",
+			"literalTranslation": "Myself I asked."
+		},
+		{
+			"sentence": "Desde aquella noche, ellos juegan a engañarnos.",
+			"sentenceId": "sentence-d2d1f7ec-46a6-4247-8c95-cd22a271f83c",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "desde",
+						"spanish": "Desde",
+						"english": "Since",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "aquella",
+						"spanish": "aquella",
+						"english": "that",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "noche",
+						"spanish": "noche",
+						"english": "night",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ellos",
+						"spanish": "ellos",
+						"english": "they",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "juegan",
+						"spanish": "juegan",
+						"english": "play",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "to",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": true,
+						"normalizedToken": "enganarnos",
+						"spanish": "engañarnos",
+						"english": "deceive us",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "Since that night, they play at deceiving us.",
+			"literalTranslation": "Since that night, they play to deceive us."
+		},
+		{
+			"sentence": "Se ven en el mismo bar.",
+			"sentenceId": "sentence-f13a6f31-6bea-433a-8cc4-184dfdca50d3",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "se",
+						"spanish": "Se",
+						"english": "They",
+						"wordType": "pronoun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "ven",
+						"spanish": "ven",
+						"english": "see",
+						"wordType": "verb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mismo",
+						"spanish": "mismo",
+						"english": "same",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "bar",
+						"spanish": "bar",
+						"english": "bar",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "They see each other in the same bar.",
+			"literalTranslation": "Themselves see in the same bar."
+		},
+		{
+			"sentence": "Y la rubia para el taxi, siempre a las diez en el mismo lugar.",
+			"sentenceId": "sentence-6c02ad2d-3cf4-4e6d-bf18-b2341a5a2736",
+			"tokens": [
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "y",
+						"spanish": "Y",
+						"english": "And",
+						"wordType": "conjunction"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "la",
+						"spanish": "la",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "rubia",
+						"spanish": "rubia",
+						"english": "blonde",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "para",
+						"spanish": "para",
+						"english": "for",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "taxi",
+						"spanish": "taxi",
+						"english": "taxi",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ",",
+					"type": "punctuationSign"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "siempre",
+						"spanish": "siempre",
+						"english": "always",
+						"wordType": "adverb"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "a",
+						"spanish": "a",
+						"english": "at",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "las",
+						"spanish": "las",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "diez",
+						"spanish": "diez",
+						"english": "ten",
+						"wordType": "numeral"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "en",
+						"spanish": "en",
+						"english": "in",
+						"wordType": "preposition"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "el",
+						"spanish": "el",
+						"english": "the",
+						"wordType": "article"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "mismo",
+						"spanish": "mismo",
+						"english": "same",
+						"wordType": "adjective"
+					},
+					"type": "word"
+				},
+				{
+					"token": {
+						"hasSpecialChar": false,
+						"normalizedToken": "lugar",
+						"spanish": "lugar",
+						"english": "place",
+						"wordType": "noun"
+					},
+					"type": "word"
+				},
+				{
+					"token": ".",
+					"type": "punctuationSign"
+				}
+			],
+			"translation": "And the blonde for the taxi, always at ten in the same place.",
+			"literalTranslation": "And the blonde for the taxi, always to the ten in the same place."
+		}
+	],
+	"processingMetadata": {
+		"originalSentenceCount": 47,
+		"uniqueSentenceCount": 0,
+		"enrichedSentenceCount": 0,
+		"finalSentenceCount": 42,
+		"processedAt": "2025-01-03T22:19:15.493Z"
+	}
+}

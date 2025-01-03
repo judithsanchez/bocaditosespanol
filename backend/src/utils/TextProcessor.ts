@@ -14,61 +14,25 @@ export class TextProcessor implements ITextProcessor {
 		RETRY_ATTEMPTS: 3,
 	};
 
-	public processedText: ISentence[];
+	public formattedSentences: ISentence[] = [];
+	public enrichedSentences: ISentence[] = [];
+	public processedText: ISentence[] = [];
 
 	constructor(public textData: string) {
 		if (!textData) {
 			throw new Error(errors.invalidTextData);
 		}
-		this.processedText = [];
 	}
 
-	async processTextData(): Promise<ISentence[]> {
-		const splittedParagraph = paragraphSplitter(this.textData);
-		const tokenizedText: ISentence[] = splittedParagraph.map(sentence =>
-			tokenizeSentences(sentence),
-		);
+	private formatSentences(text: string): ISentence[] {
+		const splittedParagraph = paragraphSplitter(text);
+		return splittedParagraph.map(sentence => tokenizeSentences(sentence));
+	}
 
-		console.log('\n📊 Processing Statistics:');
-		console.log(
-			`Total sentences before deduplication: ${tokenizedText.length}`,
-		);
-
-		// Log original sentences
-		console.log('\nOriginal sentences:');
-		tokenizedText.forEach((s, i) => console.log(`${i + 1}. ${s.sentence}`));
-
-		// Create unique sentences map
-		const uniqueSentencesMap = new Map<string, ISentence>();
-		tokenizedText.forEach(sentence => {
-			if (!uniqueSentencesMap.has(sentence.sentence)) {
-				uniqueSentencesMap.set(sentence.sentence, sentence);
-			}
-		});
-
-		const uniqueSentences = Array.from(uniqueSentencesMap.values());
-
-		// Log duplicate information
-		console.log('\nDuplicate sentences:');
-		const sentenceCounts = new Map();
-		tokenizedText.forEach(s => {
-			const count = sentenceCounts.get(s.sentence) || 0;
-			sentenceCounts.set(s.sentence, count + 1);
-		});
-
-		for (const [sentence, count] of sentenceCounts) {
-			if (count > 1) {
-				console.log(`"${sentence}" appears ${count} times`);
-			}
-		}
-
-		console.log(`\nUnique sentences to process: ${uniqueSentences.length}`);
-		console.log(
-			`Duplicates removed: ${tokenizedText.length - uniqueSentences.length}`,
-		);
-
-		// Continue with existing processing...
-		const enrichedUniqueSentences = await batchProcessor<ISentence>({
+	private async enrichSentences(
+		uniqueSentences: ISentence[],
+	): Promise<ISentence[]> {
+		const enrichedSentences = await batchProcessor<ISentence>({
 			items: uniqueSentences,
 			processingFn: enrichSentencesWithAI,
 			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
@@ -79,15 +43,13 @@ export class TextProcessor implements ITextProcessor {
 			},
 		});
 
-		// Create lookup map of processed results
-		const processedSentencesMap = new Map(
-			enrichedUniqueSentences.map(enriched => [enriched.sentence, enriched]),
-		);
+		return enrichedSentences;
+	}
 
-		// Map back to original array preserving order
-		this.processedText = tokenizedText.map(
-			original => processedSentencesMap.get(original.sentence)!,
-		);
+	public async processText(): Promise<ISentence[]> {
+		this.formattedSentences = this.formatSentences(this.textData);
+
+		this.processedText = await this.enrichSentences(this.formattedSentences);
 
 		return this.processedText;
 	}

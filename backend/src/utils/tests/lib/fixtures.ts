@@ -1,4 +1,4 @@
-import {IToken, IWord, TokenType} from 'lib/types';
+import {IWord, TokenType} from 'lib/types';
 
 export const paragraphSplitterFixtures = {
 	basicSentences: {
