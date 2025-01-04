@@ -4,7 +4,8 @@
 	"version": "0.0.0",
 	"type": "commonjs",
 	"scripts": {
-		"start": "ts-node src/server.ts",
+		"start": "node dist/server.js",
+		"dev": "nodemon src/server.ts",
 		"clear-cache": "rm -rf node_modules/.cache",
 		"test": "jest --coverage --verbose",
 		"test:watch": "jest --watchAll"

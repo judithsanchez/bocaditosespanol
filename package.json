@@ -8,5 +8,8 @@
 		"react-native-safe-area-context": "^5.0.0",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.7.2"
+	},
+	"devDependencies": {
+		"nodemon": "^3.1.9"
 	}
 }

@@ -11,13 +11,29 @@ config();
 
 // TODO: cover with unit test
 
+/**
+ * Current Implementation Note:
+ * We're using a hybrid approach to handle different token types due to Gemini AI's schema limitations:
+ *
+ * 1. Gemini AI Limitation:
+ *    - Cannot properly handle polymorphic token structures
+ *    - Schema validation doesn't support discriminated unions
+ *    - Struggles with conditional property requirements based on token type
+ *
+ * 2. Our Solution:
+ *    - Let Gemini AI process and enrich word tokens with linguistic analysis
+ *    - Preserve original emoji and punctuation tokens from input
+ *    - Post-process the response to merge both sources
+ *
+ * This approach maintains data integrity while working around current AI model constraints.
+ * Future improvements may be possible as Gemini's schema capabilities evolve.
+ */
+
 console.log('🚀 Initializing AI Text Processor');
 
 const genAI = new GoogleGenerativeAI(
 	process.env.GOOGLE_GENERATIVE_AI_KEY ?? '',
 );
-
-console.log('📋 Setting up sentence schema');
 
 const sentenceSchema = {
 	type: SchemaType.ARRAY,
@@ -70,7 +86,7 @@ const sentenceSchema = {
 		required: ['sentenceId', 'sentence', 'translation', 'tokens'],
 	},
 };
-console.log('⚙️ Configuring Gemini model');
+
 const model = genAI.getGenerativeModel({
 	model: 'gemini-1.5-flash',
 	generationConfig: {
@@ -202,22 +218,18 @@ Generate response as an array of fully processed sentences.`,
 		const response = await result.response.text();
 		let enrichedBatch = JSON.parse(response);
 
-		// Convert to array if single item
 		if (!Array.isArray(enrichedBatch)) {
 			enrichedBatch = [enrichedBatch];
 		}
 
-		// Process each sentence
 		const processedSentences = enrichedBatch.map(
 			(enrichedSentence: {tokens: any[]}, sentenceIndex: number) => {
 				const originalSentence = sentences[sentenceIndex];
 
-				// Replace non-word tokens with original ones
 				const correctedTokens = enrichedSentence.tokens.map(
 					(token: any, tokenIndex: number) => {
 						const originalToken = originalSentence.tokens[tokenIndex];
 
-						// If token is emoji or punctuation, use original
 						if (
 							originalToken.type === 'emoji' ||
 							originalToken.type === 'punctuationSign'
@@ -225,7 +237,6 @@ Generate response as an array of fully processed sentences.`,
 							return originalToken;
 						}
 
-						// Keep AI-enriched word tokens
 						return token;
 					},
 				);

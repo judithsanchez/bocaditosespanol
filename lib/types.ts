@@ -20,12 +20,15 @@ export interface ISong {
 }
 
 export interface ISentence {
+	sentenceId: string;
 	sentence: string;
 	translation: string;
 	tokens: IToken[];
+	literalTranslation: string;
 }
 
 export interface IToken {
-	token: string | IWord;
+	tokenId: string;
+	content: string | IWord;
 	type: TokenType;
 }
