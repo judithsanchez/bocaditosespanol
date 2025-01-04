@@ -17,12 +17,12 @@ export interface IWord {
 	wordId: string;
 	spanish: string;
 	normalizedToken: string;
-	english?: Promise<string> | string;
+	english: Promise<string> | string;
 	hasSpecialChar: boolean;
-	partOfSpeech?: Promise<string> | string;
-	isSlang?: boolean;
-	isCognate?: boolean;
-	isFalseCognate?: boolean;
+	partOfSpeech: Promise<string> | string;
+	isSlang: boolean;
+	isCognate: boolean;
+	isFalseCognate: boolean;
 	grammaticalInfo?:
 		| IVerb
 		| INoun

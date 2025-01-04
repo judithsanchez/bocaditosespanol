@@ -23,11 +23,11 @@ export enum PronounCase {
 }
 
 export interface IPronoun {
-	pronounType: PronounType;
-	person?: GrammaticalPerson;
-	gender?: GrammaticalGender;
-	number?: GrammaticalNumber;
-	case?: PronounCase;
+	pronounType: PronounType | '';
+	person?: GrammaticalPerson | '';
+	gender?: GrammaticalGender | '';
+	number?: GrammaticalNumber | '';
+	case?: PronounCase | '';
 	isReflexive?: boolean;
 	isReciprocal?: boolean;
 }

@@ -23,7 +23,7 @@ const tokenizeSentences = (sentence: string): ISentence => {
 		.split(regex)
 		.filter(token => token.trim() !== '')
 		.map(token => {
-			const tokenId = `token-${uuidv4()}`;
+			const tokenId = `token-${token}`;
 
 			if (emojiRegex().test(token)) {
 				return {
@@ -39,7 +39,7 @@ const tokenizeSentences = (sentence: string): ISentence => {
 				};
 			} else {
 				const wordContent: IWord = {
-					wordId: `word-${uuidv4()}`,
+					wordId: `word-${normalizeString(token)}`,
 					spanish: token,
 					normalizedToken: normalizeString(token),
 					hasSpecialChar: token.toLowerCase() !== normalizeString(token),

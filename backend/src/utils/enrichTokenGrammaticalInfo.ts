@@ -8,7 +8,6 @@ import {
 	GrammaticalGender,
 	GrammaticalNumber,
 	GrammaticalPerson,
-	PartOfSpeech,
 } from '../lib/types';
 import {config} from 'dotenv';
 import {ISentence} from '../../../lib/types';
@@ -19,24 +18,24 @@ import {
 	VerbRegularity,
 	VerbTense,
 	VerbVoice,
-} from 'lib/grammaticalInfo/verbsTypes';
-import {AdverbType} from 'lib/grammaticalInfo/adverbsTypes';
-import {ArticleType} from 'lib/grammaticalInfo/articlesTypes';
+} from '../lib/grammaticalInfo/verbsTypes';
+import {AdverbType} from '../lib/grammaticalInfo/adverbsTypes';
+import {ArticleType} from '../lib/grammaticalInfo/articlesTypes';
 import {
 	ConjunctionFunction,
 	ConjunctionType,
-} from 'lib/grammaticalInfo/conjunctionsTypes';
-import {DeterminerType} from 'lib/grammaticalInfo/determinersTypes';
+} from '../lib/grammaticalInfo/conjunctionsTypes';
+import {DeterminerType} from '../lib/grammaticalInfo/determinersTypes';
 import {
 	InterjectionEmotion,
 	InterjectionType,
-} from 'lib/grammaticalInfo/interjectionsTypes';
-import {NumeralType} from 'lib/grammaticalInfo/numeralsTypes';
+} from '../lib/grammaticalInfo/interjectionsTypes';
+import {NumeralType} from '../lib/grammaticalInfo/numeralsTypes';
 import {
 	ContractsWith,
 	PrepositionType,
-} from 'lib/grammaticalInfo/prepositionsTypes';
-import {PronounCase, PronounType} from 'lib/grammaticalInfo/pronounsTypes';
+} from '../lib/grammaticalInfo/prepositionsTypes';
+import {PronounCase, PronounType} from '../lib/grammaticalInfo/pronounsTypes';
 config();
 
 // TODO: cover with unit test
@@ -287,7 +286,7 @@ const model = genAI.getGenerativeModel({
 		},
 	],
 });
-export async function enrichSentencesWithAI(
+export async function gramaticallyEnrichSentencesWithAI(
 	sentences: ISentence[],
 ): Promise<ISentence[]> {
 	console.log('\n📊 Input Statistics:', sentences.length);
@@ -310,77 +309,129 @@ CRITICAL REQUIREMENTS:
 
 STRICT PROCESSING RULES:
 1. OUTPUT MUST BE AN ARRAY of processed sentences
-2. For EACH sentence in the array:
-	  - ADD complete English translation
-	  - ADD literal word-for-word translation that maintains Spanish grammar structure but still makes sense on the context
-			Example: "Yo tengo hambre" → "I have hunger"
-			Example: "Me gusta bailar" → "To me pleases to dance"
-	  - ADD english translation for each word token
-	  - ADD grammatical type on the property partOfSpeech from: ${Object.values(
-			PartOfSpeech,
-		).join(', ')}
-	  - KEEP all other existing properties untocuhed
+2. ONLY for VERB TOKENS ADD ALL THE grammaticalInformation according to the following interfaces and enums:
 
-3. ONLY for WORD TOKENS (leave emojis and punctuationSigns, and othe properties untouched):
+	a) If the partOfSpeech is a VERB:
 
-	a) ENGLISH TRANSLATION (english)
-		- Add an english translation for each word token
-		- Make sure the word translation is relevante to the context of the sentence
+    - add to the grammaticalInfo property an exact obejct with the interface IVerb (see references below)
+    - complete all the properties of the IVerb interface with the corresponding information (see the enums on references)
 
-	b) SLANG DETECTION (isSlang)
-	 - Mark the property isSlang true if the word is:
-		 * Informal/colloquial Spanish
-		 * Regional expressions
-		 * Youth language
-		 * Street vocabulary
+    *** References
 
-	c) COGNATE DETECTION (isCognate)
-	 - Mark true ONLY if ALL these conditions are met:
-		 * Shares similar spelling with English (at least 75% letters match)
-		 * Has identical or very close meaning in English
-		 * Shares same etymology/Latin or Greek root
-		 * Examples: 
-			 - "familia/family" (similar spelling + same meaning)
-			 - "hospital/hospital" (identical spelling + same meaning)
-			 - "música/music" (similar spelling + same meaning)
-	 - Mark false for all other cases
+        interface IVerb {
+            tense: VerbTense;
+            mood: VerbMood;
+            person: GrammaticalPerson;
+            number: GrammaticalNumber;
+            isRegular: boolean;
+            infinitive: string;
+            conjugationPattern: ConjugationPattern;
+            voice: VerbVoice;
+            verbClass: VerbClass;
+            gerund: boolean;
+            pastParticiple: boolean;
+            auxiliary: VerbAuxiliary;
+            verbRegularity: VerbRegularity;
+            isReflexive: boolean;
+        }
 
-	d) FALSE COGNATE DETECTION (isFalseCognate)
-	 - Mark true ONLY if ALL these conditions are met:
-		 * Looks nearly identical to an English word (at least 75% letters match)
-		 * Has a completely different meaning in English
-		 * Is commonly mistaken by English speakers
-		 * Examples: 
-			 - "embarazada" (means pregnant, not embarrassed)
-			 - "éxito" (means success, not exit)
-			 - "pretender" (means to intend, not to pretend)
-			 - "recordar" (means to remember, not to record)
-	 - Mark false for all other cases
+        enum VerbTense {
+            Present = 'present',
+            PresentPerfect = 'presentPerfect',
+            Imperfect = 'imperfect',
+            Preterite = 'preterite',
+            PastPerfect = 'pastPerfect',
+            Future = 'future',
+            FuturePerfect = 'futurePerfect',
+            Conditional = 'conditional',
+            ConditionalPerfect = 'conditionalPerfect',
 
-CRITICAL TOKEN HANDLING:
-1. For tokens where type="word":
-   - Enrich with linguistic analysis
-   - Add translations
-   - Add part of speech
-   - Analyze for cognates/false cognates
-   - Keep full word token structure
+            SubjunctivePresent = 'subjunctivePresent',
+            SubjunctivePerfect = 'subjunctivePerfect',
+            SubjunctiveImperfect = 'subjunctiveImperfect',
+            SubjunctivePastPerfect = 'subjunctivePastPerfect',
+            SubjunctiveFuture = 'subjunctiveFuture',
+            SubjunctiveFuturePerfect = 'subjunctiveFuturePerfect',
+        }
 
-2. For tokens where type="punctuationSign" or type="emoji":
-   - DO NOT MODIFY THESE TOKENS
-   - KEEP EXACTLY AS PROVIDED IN INPUT
-   - PRESERVE ORIGINAL STRUCTURE
-   - DO NOT ATTEMPT TO ANALYZE
 
-Example token handling:
-- Word token: Full analysis with all properties
-- Punctuation token: Leave unchanged from input
-- Emoji token: Leave unchanged from input
+        enum VerbTense {
+            Present = 'present',
+            PresentPerfect = 'presentPerfect',
+            Imperfect = 'imperfect',
+            Preterite = 'preterite',
+            PastPerfect = 'pastPerfect',
+            Future = 'future',
+            FuturePerfect = 'futurePerfect',
+            Conditional = 'conditional',
+            ConditionalPerfect = 'conditionalPerfect',
 
-4. Response Format:
-	  - Must be an array matching input length
-	  - Must follow exact schema structure
-	  - Must preserve sentence and token order
-	  - Must maintain all existing token properties
+            SubjunctivePresent = 'subjunctivePresent',
+            SubjunctivePerfect = 'subjunctivePerfect',
+            SubjunctiveImperfect = 'subjunctiveImperfect',
+            SubjunctivePastPerfect = 'subjunctivePastPerfect',
+            SubjunctiveFuture = 'subjunctiveFuture',
+            SubjunctiveFuturePerfect = 'subjunctiveFuturePerfect',
+        }
+
+        enum VerbMood {
+            Indicative = 'indicative',
+            Subjunctive = 'subjunctive',
+            Imperative = 'imperative',
+            Infinitive = 'infinitive',
+            Gerund = 'gerund',
+            Participle = 'participle',
+        }
+
+        enum VerbRegularity {
+            Regular = 'regular',
+            IrregularStem = 'stemChange',
+            IrregularAll = 'irregular',
+        }
+
+        enum VerbVoice {
+            Active = 'active',
+            Passive = 'passive',
+        }
+
+        enum VerbClass {
+            Transitive = 'transitive',
+            Intransitive = 'intransitive',
+            Pronominal = 'pronominal',
+            Copulative = 'copulative',
+            Impersonal = 'impersonal',
+        }
+
+        enum VerbAuxiliary {
+            Haber = 'haber',
+            Ser = 'ser',
+            Estar = 'estar',
+        }
+
+        enum ConjugationPattern {
+            AR = 'ar',
+            ER = 'er',
+            IR = 'ir',
+
+            E_IE = 'e->ie',
+            O_UE = 'o->ue',
+            E_I = 'e->i',
+            U_UE = 'u->ue',
+            I_IE = 'i->ie',
+
+            IRREGULAR = 'irregular',
+            G_ADDITION = 'g-add',
+            C_ZC = 'c->zc',
+            I_Y = 'i->y',
+
+            IR_E_I = 'ir_e->i',
+            ER_O_UE = 'er_o->ue',
+            AR_E_IE = 'ar_e->ie',
+        }
+
+
+    - enrich all the properties witht their corresponden information
+
 
 Generate response as an array of fully processed sentences.`,
 						},

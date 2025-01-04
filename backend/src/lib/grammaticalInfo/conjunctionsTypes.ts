@@ -18,6 +18,6 @@ export enum ConjunctionFunction {
 }
 
 export interface IConjunction {
-	conjunctionType: ConjunctionType;
-	conjunctionFunction: ConjunctionFunction;
+	conjunctionType: ConjunctionType | '';
+	conjunctionFunction: ConjunctionFunction | '';
 }

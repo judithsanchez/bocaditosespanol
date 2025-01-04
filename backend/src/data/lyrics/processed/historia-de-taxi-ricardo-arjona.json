@@ -4,7 +4,7 @@
   "data": [
     {
       "sentence": "Pero ella estaba embarazada.",
-      "sentenceId": "sentence-dc2d3d57-c2ed-4144-b98e-c3d67da0b43f",
+      "sentenceId": "sentence-560d77a9-0597-4afa-a2a0-10d68a0ce6f0",
       "tokens": [
         {
           "content": {
@@ -16,7 +16,11 @@
             "normalizedToken": "pero",
             "partOfSpeech": "conjunction",
             "spanish": "Pero",
-            "wordId": "word-9b74e724-6b67-4f7c-bff1-4cac14ede82c"
+            "wordId": "word-pero",
+            "grammaticalInfo": {
+              "conjunctionType": "",
+              "conjunctionFunction": ""
+            }
           },
           "type": "word"
         },
@@ -30,7 +34,16 @@
             "normalizedToken": "ella",
             "partOfSpeech": "pronoun",
             "spanish": "ella",
-            "wordId": "word-79b6a236-30b2-4c98-ac8f-51b64ab0a003"
+            "wordId": "word-ella",
+            "grammaticalInfo": {
+              "pronounType": "",
+              "person": "",
+              "gender": "",
+              "number": "",
+              "case": "",
+              "isReflexive": false,
+              "isReciprocal": false
+            }
           },
           "type": "word"
         },
@@ -44,7 +57,23 @@
             "normalizedToken": "estaba",
             "partOfSpeech": "verb",
             "spanish": "estaba",
-            "wordId": "word-f67f04f6-f4ef-4783-9eef-bc4a0920dc68"
+            "wordId": "word-estaba",
+            "grammaticalInfo": {
+              "tense": "",
+              "mood": "",
+              "person": "",
+              "number": "",
+              "isRegular": false,
+              "infinitive": "",
+              "conjugationPattern": "",
+              "voice": "",
+              "verbClass": "",
+              "gerund": false,
+              "pastParticiple": false,
+              "auxiliary": "",
+              "verbRegularity": "",
+              "isReflexive": false
+            }
           },
           "type": "word"
         },
@@ -58,12 +87,17 @@
             "normalizedToken": "embarazada",
             "partOfSpeech": "adjective",
             "spanish": "embarazada",
-            "wordId": "word-0b51b1ff-3be7-4a26-98fe-985e845be2d6"
+            "wordId": "word-embarazada",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isPastParticiple": false
+            }
           },
           "type": "word"
         },
         {
-          "tokenId": "token-8980b795-be13-4f43-9e84-e25b39cf5483",
+          "tokenId": "token-.",
           "content": ".",
           "type": "punctuationSign"
         }
@@ -73,11 +107,11 @@
     },
     {
       "sentence": "Eran las diez de la noche, piloteaba mi nave.",
-      "sentenceId": "sentence-06b28d79-b4a0-482b-a580-9b63d25215d5",
+      "sentenceId": "sentence-06708f77-cf43-4b57-aee7-33660291c781",
       "tokens": [
         {
           "content": {
-            "english": "They were",
+            "english": "It was",
             "hasSpecialChar": false,
             "isCognate": true,
             "isFalseCognate": false,
@@ -85,7 +119,23 @@
             "normalizedToken": "eran",
             "partOfSpeech": "verb",
             "spanish": "Eran",
-            "wordId": "word-978581a2-d275-436a-a190-4d79adb28995"
+            "wordId": "word-eran",
+            "grammaticalInfo": {
+              "tense": "",
+              "mood": "",
+              "person": "",
+              "number": "",
+              "isRegular": false,
+              "infinitive": "",
+              "conjugationPattern": "",
+              "voice": "",
+              "verbClass": "",
+              "gerund": false,
+              "pastParticiple": false,
+              "auxiliary": "",
+              "verbRegularity": "",
+              "isReflexive": false
+            }
           },
           "type": "word"
         },
@@ -99,7 +149,12 @@
             "normalizedToken": "las",
             "partOfSpeech": "article",
             "spanish": "las",
-            "wordId": "word-6a4bb459-03f9-44d7-889b-2848e79dabb2"
+            "wordId": "word-las",
+            "grammaticalInfo": {
+              "articleType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -113,7 +168,12 @@
             "normalizedToken": "diez",
             "partOfSpeech": "numeral",
             "spanish": "diez",
-            "wordId": "word-d71237e6-2423-427a-8c60-27c962fe3ff6"
+            "wordId": "word-diez",
+            "grammaticalInfo": {
+              "numeralType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -127,7 +187,11 @@
             "normalizedToken": "de",
             "partOfSpeech": "preposition",
             "spanish": "de",
-            "wordId": "word-7245f637-1a5b-4a3a-a957-f53b686ddc84"
+            "wordId": "word-de",
+            "grammaticalInfo": {
+              "prepositionType": "",
+              "contractsWith": ""
+            }
           },
           "type": "word"
         },
@@ -141,7 +205,12 @@
             "normalizedToken": "la",
             "partOfSpeech": "article",
             "spanish": "la",
-            "wordId": "word-03a57cb3-36a7-4f99-bdae-8e8b542061e1"
+            "wordId": "word-la",
+            "grammaticalInfo": {
+              "articleType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -155,12 +224,18 @@
             "normalizedToken": "noche",
             "partOfSpeech": "noun",
             "spanish": "noche",
-            "wordId": "word-925f6dd1-1802-4250-aab7-f88445185c7d"
+            "wordId": "word-noche",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
         {
-          "tokenId": "token-e1cfe03e-97c7-40e5-b9ef-270feae7a4ec",
+          "tokenId": "token-,",
           "content": ",",
           "type": "punctuationSign"
         },
@@ -174,7 +249,23 @@
             "normalizedToken": "piloteaba",
             "partOfSpeech": "verb",
             "spanish": "piloteaba",
-            "wordId": "word-d101e22b-9851-487d-8d47-74a7f19ce748"
+            "wordId": "word-piloteaba",
+            "grammaticalInfo": {
+              "tense": "",
+              "mood": "",
+              "person": "",
+              "number": "",
+              "isRegular": false,
+              "infinitive": "",
+              "conjugationPattern": "",
+              "voice": "",
+              "verbClass": "",
+              "gerund": false,
+              "pastParticiple": false,
+              "auxiliary": "",
+              "verbRegularity": "",
+              "isReflexive": false
+            }
           },
           "type": "word"
         },
@@ -188,7 +279,12 @@
             "normalizedToken": "mi",
             "partOfSpeech": "determiner",
             "spanish": "mi",
-            "wordId": "word-36646aad-7572-48bc-82ec-b1a7147dea75"
+            "wordId": "word-mi",
+            "grammaticalInfo": {
+              "determinerType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -196,28 +292,34 @@
           "content": {
             "english": "ship",
             "hasSpecialChar": false,
-            "isCognate": true,
+            "isCognate": false,
             "isFalseCognate": false,
             "isSlang": false,
             "normalizedToken": "nave",
             "partOfSpeech": "noun",
             "spanish": "nave",
-            "wordId": "word-f0abde10-a145-4da4-b737-195f714ef007"
+            "wordId": "word-nave",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
         {
-          "tokenId": "token-e2c9ebf2-7f24-4d26-982f-004cc0a870c9",
+          "tokenId": "token-.",
           "content": ".",
           "type": "punctuationSign"
         }
       ],
       "translation": "It was ten o'clock at night, I was piloting my ship.",
-      "literalTranslation": "They were the ten of the night, I was piloting my ship."
+      "literalTranslation": "It was the ten of the night, I was piloting my ship."
     },
     {
       "sentence": "Era mi taxi un Volkswagen del año 68.",
-      "sentenceId": "sentence-418747b6-ff96-4530-9cbd-ab2a7127cffd",
+      "sentenceId": "sentence-1e2abfd6-5444-4f72-97d9-c14ce9d1b445",
       "tokens": [
         {
           "content": {
@@ -229,7 +331,23 @@
             "normalizedToken": "era",
             "partOfSpeech": "verb",
             "spanish": "Era",
-            "wordId": "word-0e8a81c6-29e6-4e63-897e-494a1950fcdc"
+            "wordId": "word-era",
+            "grammaticalInfo": {
+              "tense": "",
+              "mood": "",
+              "person": "",
+              "number": "",
+              "isRegular": false,
+              "infinitive": "",
+              "conjugationPattern": "",
+              "voice": "",
+              "verbClass": "",
+              "gerund": false,
+              "pastParticiple": false,
+              "auxiliary": "",
+              "verbRegularity": "",
+              "isReflexive": false
+            }
           },
           "type": "word"
         },
@@ -243,7 +361,12 @@
             "normalizedToken": "mi",
             "partOfSpeech": "determiner",
             "spanish": "mi",
-            "wordId": "word-fd507de3-4501-48d0-bae6-574b18f8c418"
+            "wordId": "word-mi",
+            "grammaticalInfo": {
+              "determinerType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -257,7 +380,13 @@
             "normalizedToken": "taxi",
             "partOfSpeech": "noun",
             "spanish": "taxi",
-            "wordId": "word-cb5488e0-dbec-4311-964b-878fbd55b847"
+            "wordId": "word-taxi",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
@@ -271,7 +400,12 @@
             "normalizedToken": "un",
             "partOfSpeech": "article",
             "spanish": "un",
-            "wordId": "word-3fd7c239-dd44-4fab-9481-5cbaa867f6f1"
+            "wordId": "word-un",
+            "grammaticalInfo": {
+              "articleType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -285,13 +419,19 @@
             "normalizedToken": "volkswagen",
             "partOfSpeech": "noun",
             "spanish": "Volkswagen",
-            "wordId": "word-0786e746-e223-496f-a5b8-8b142fed0e38"
+            "wordId": "word-volkswagen",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
         {
           "content": {
-            "english": "of",
+            "english": "from",
             "hasSpecialChar": false,
             "isCognate": true,
             "isFalseCognate": false,
@@ -299,21 +439,31 @@
             "normalizedToken": "del",
             "partOfSpeech": "preposition",
             "spanish": "del",
-            "wordId": "word-8663ca0f-92a3-49df-9b80-a09ffffbb482"
+            "wordId": "word-del",
+            "grammaticalInfo": {
+              "prepositionType": "",
+              "contractsWith": ""
+            }
           },
           "type": "word"
         },
         {
           "content": {
-            "english": "the",
-            "hasSpecialChar": false,
+            "english": "year",
+            "hasSpecialChar": true,
             "isCognate": true,
             "isFalseCognate": false,
             "isSlang": false,
             "normalizedToken": "ano",
             "partOfSpeech": "noun",
             "spanish": "año",
-            "wordId": "word-ecfab879-dacd-4e3e-91a3-6be8ea922b69"
+            "wordId": "word-ano",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
@@ -327,22 +477,27 @@
             "normalizedToken": "68",
             "partOfSpeech": "numeral",
             "spanish": "68",
-            "wordId": "word-5a4fbd71-e452-43ad-b41a-84bb8c5dc758"
+            "wordId": "word-68",
+            "grammaticalInfo": {
+              "numeralType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
         {
-          "tokenId": "token-dbaac323-1225-4be1-bf21-d635c346246b",
+          "tokenId": "token-.",
           "content": ".",
           "type": "punctuationSign"
         }
       ],
-      "translation": "It was my taxi, a 1968 Volkswagen.",
+      "translation": "It was my taxi, a Volkswagen from the year 68.",
       "literalTranslation": "It was my taxi a Volkswagen of the year 68."
     },
     {
       "sentence": "Era un día de esos malos, donde no hubo pasaje.",
-      "sentenceId": "sentence-671996d6-642f-4f12-9f53-9dceaab79b7e",
+      "sentenceId": "sentence-1fafccbf-b847-4ec8-a5ce-5f3bf9ab1703",
       "tokens": [
         {
           "content": {
@@ -354,7 +509,23 @@
             "normalizedToken": "era",
             "partOfSpeech": "verb",
             "spanish": "Era",
-            "wordId": "word-05f6d484-5b90-40be-9c46-0602fabe6753"
+            "wordId": "word-era",
+            "grammaticalInfo": {
+              "tense": "",
+              "mood": "",
+              "person": "",
+              "number": "",
+              "isRegular": false,
+              "infinitive": "",
+              "conjugationPattern": "",
+              "voice": "",
+              "verbClass": "",
+              "gerund": false,
+              "pastParticiple": false,
+              "auxiliary": "",
+              "verbRegularity": "",
+              "isReflexive": false
+            }
           },
           "type": "word"
         },
@@ -368,7 +539,12 @@
             "normalizedToken": "un",
             "partOfSpeech": "article",
             "spanish": "un",
-            "wordId": "word-0ac3022c-4efc-46fd-b874-6c81822e3e96"
+            "wordId": "word-un",
+            "grammaticalInfo": {
+              "articleType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -382,7 +558,13 @@
             "normalizedToken": "dia",
             "partOfSpeech": "noun",
             "spanish": "día",
-            "wordId": "word-75f10a1d-3c81-4fd8-93b7-8b38c89b4c43"
+            "wordId": "word-dia",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
@@ -396,7 +578,11 @@
             "normalizedToken": "de",
             "partOfSpeech": "preposition",
             "spanish": "de",
-            "wordId": "word-322e2ac2-85f8-4069-a85c-139d4eff98cb"
+            "wordId": "word-de",
+            "grammaticalInfo": {
+              "prepositionType": "",
+              "contractsWith": ""
+            }
           },
           "type": "word"
         },
@@ -410,7 +596,12 @@
             "normalizedToken": "esos",
             "partOfSpeech": "determiner",
             "spanish": "esos",
-            "wordId": "word-4de2b291-0b10-4ad1-87bd-7bd664aa82f0"
+            "wordId": "word-esos",
+            "grammaticalInfo": {
+              "determinerType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -424,12 +615,17 @@
             "normalizedToken": "malos",
             "partOfSpeech": "adjective",
             "spanish": "malos",
-            "wordId": "word-348b4b8a-6719-4d5f-bb49-571fd3b7f6e6"
+            "wordId": "word-malos",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isPastParticiple": false
+            }
           },
           "type": "word"
         },
         {
-          "tokenId": "token-05a02dc3-1253-496a-95de-64bac4733990",
+          "tokenId": "token-,",
           "content": ",",
           "type": "punctuationSign"
         },
@@ -443,7 +639,11 @@
             "normalizedToken": "donde",
             "partOfSpeech": "adverb",
             "spanish": "donde",
-            "wordId": "word-b0103958-d507-4a83-8e73-6a31efc15c70"
+            "wordId": "word-donde",
+            "grammaticalInfo": {
+              "adverbType": "",
+              "usesMente": false
+            }
           },
           "type": "word"
         },
@@ -457,7 +657,11 @@
             "normalizedToken": "no",
             "partOfSpeech": "adverb",
             "spanish": "no",
-            "wordId": "word-7e835eba-2aad-4414-929f-41c4674cf6df"
+            "wordId": "word-no",
+            "grammaticalInfo": {
+              "adverbType": "",
+              "usesMente": false
+            }
           },
           "type": "word"
         },
@@ -465,13 +669,29 @@
           "content": {
             "english": "there was",
             "hasSpecialChar": false,
-            "isCognate": true,
+            "isCognate": false,
             "isFalseCognate": false,
             "isSlang": false,
             "normalizedToken": "hubo",
             "partOfSpeech": "verb",
             "spanish": "hubo",
-            "wordId": "word-a2d4a79d-3914-4d00-89d2-ce3d4bf18dd6"
+            "wordId": "word-hubo",
+            "grammaticalInfo": {
+              "tense": "",
+              "mood": "",
+              "person": "",
+              "number": "",
+              "isRegular": false,
+              "infinitive": "",
+              "conjugationPattern": "",
+              "voice": "",
+              "verbClass": "",
+              "gerund": false,
+              "pastParticiple": false,
+              "auxiliary": "",
+              "verbRegularity": "",
+              "isReflexive": false
+            }
           },
           "type": "word"
         },
@@ -485,12 +705,18 @@
             "normalizedToken": "pasaje",
             "partOfSpeech": "noun",
             "spanish": "pasaje",
-            "wordId": "word-064b1cda-1d7b-4842-b17b-6804441c650b"
+            "wordId": "word-pasaje",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
         {
-          "tokenId": "token-599ad079-dd1a-4a34-ac22-1558a6525511",
+          "tokenId": "token-.",
           "content": ".",
           "type": "punctuationSign"
         }
@@ -500,7 +726,7 @@
     },
     {
       "sentence": "Las lentejuelas de un traje me hicieron la parada.",
-      "sentenceId": "sentence-0a54cfc1-ea52-40ae-affd-8ab18cff1bab",
+      "sentenceId": "sentence-45734617-23ac-4c45-95e6-8d699308237b",
       "tokens": [
         {
           "content": {
@@ -512,7 +738,12 @@
             "normalizedToken": "las",
             "partOfSpeech": "article",
             "spanish": "Las",
-            "wordId": "word-4dabe084-fc26-48d6-a33b-7e1ad60729b4"
+            "wordId": "word-las",
+            "grammaticalInfo": {
+              "articleType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -526,7 +757,13 @@
             "normalizedToken": "lentejuelas",
             "partOfSpeech": "noun",
             "spanish": "lentejuelas",
-            "wordId": "word-c2f8446e-485e-46e3-bb84-d13d77640c71"
+            "wordId": "word-lentejuelas",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
@@ -540,7 +777,11 @@
             "normalizedToken": "de",
             "partOfSpeech": "preposition",
             "spanish": "de",
-            "wordId": "word-f1d745f0-fe13-4bb0-980b-18367d0bfcd1"
+            "wordId": "word-de",
+            "grammaticalInfo": {
+              "prepositionType": "",
+              "contractsWith": ""
+            }
           },
           "type": "word"
         },
@@ -554,7 +795,12 @@
             "normalizedToken": "un",
             "partOfSpeech": "article",
             "spanish": "un",
-            "wordId": "word-423d5b7c-45b7-4a77-aae0-8def7fd3541d"
+            "wordId": "word-un",
+            "grammaticalInfo": {
+              "articleType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -568,7 +814,13 @@
             "normalizedToken": "traje",
             "partOfSpeech": "noun",
             "spanish": "traje",
-            "wordId": "word-c3a27df2-14c7-4d75-aa7d-5c95c47b7dff"
+            "wordId": "word-traje",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
@@ -582,7 +834,16 @@
             "normalizedToken": "me",
             "partOfSpeech": "pronoun",
             "spanish": "me",
-            "wordId": "word-e90e5720-ec23-4566-a68b-fbeb37cb635e"
+            "wordId": "word-me",
+            "grammaticalInfo": {
+              "pronounType": "",
+              "person": "",
+              "gender": "",
+              "number": "",
+              "case": "",
+              "isReflexive": false,
+              "isReciprocal": false
+            }
           },
           "type": "word"
         },
@@ -596,7 +857,23 @@
             "normalizedToken": "hicieron",
             "partOfSpeech": "verb",
             "spanish": "hicieron",
-            "wordId": "word-7da7394a-d2d5-4deb-a494-e343d9e16f62"
+            "wordId": "word-hicieron",
+            "grammaticalInfo": {
+              "tense": "",
+              "mood": "",
+              "person": "",
+              "number": "",
+              "isRegular": false,
+              "infinitive": "",
+              "conjugationPattern": "",
+              "voice": "",
+              "verbClass": "",
+              "gerund": false,
+              "pastParticiple": false,
+              "auxiliary": "",
+              "verbRegularity": "",
+              "isReflexive": false
+            }
           },
           "type": "word"
         },
@@ -610,7 +887,12 @@
             "normalizedToken": "la",
             "partOfSpeech": "article",
             "spanish": "la",
-            "wordId": "word-652d8fec-4080-4e64-a4c7-e9f59122fb1b"
+            "wordId": "word-la",
+            "grammaticalInfo": {
+              "articleType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -624,22 +906,28 @@
             "normalizedToken": "parada",
             "partOfSpeech": "noun",
             "spanish": "parada",
-            "wordId": "word-305e7f58-9250-48c4-b157-1ec3f6e648ba"
+            "wordId": "word-parada",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
         {
-          "tokenId": "token-c7663bfc-745f-47ca-9f46-ae1d5efdd05b",
+          "tokenId": "token-.",
           "content": ".",
           "type": "punctuationSign"
         }
       ],
       "translation": "The sequins of a suit made me stop.",
-      "literalTranslation": "The sequins of a suit to me made the stop."
+      "literalTranslation": "The sequins of a suit me made the stop."
     },
     {
       "sentence": "Yo tenia una idea.",
-      "sentenceId": "sentence-8d435317-2a33-42cf-aeb1-f07819b9a81d",
+      "sentenceId": "sentence-70076d8d-faaa-4be4-80b7-3f5997498cf3",
       "tokens": [
         {
           "content": {
@@ -651,7 +939,16 @@
             "normalizedToken": "yo",
             "partOfSpeech": "pronoun",
             "spanish": "Yo",
-            "wordId": "word-0c0fa69c-2fa2-4cbc-ad85-6ef8a0f0c950"
+            "wordId": "word-yo",
+            "grammaticalInfo": {
+              "pronounType": "",
+              "person": "",
+              "gender": "",
+              "number": "",
+              "case": "",
+              "isReflexive": false,
+              "isReciprocal": false
+            }
           },
           "type": "word"
         },
@@ -665,7 +962,23 @@
             "normalizedToken": "tenia",
             "partOfSpeech": "verb",
             "spanish": "tenia",
-            "wordId": "word-766cee7e-2c56-4374-a305-3e680f16c825"
+            "wordId": "word-tenia",
+            "grammaticalInfo": {
+              "tense": "",
+              "mood": "",
+              "person": "",
+              "number": "",
+              "isRegular": false,
+              "infinitive": "",
+              "conjugationPattern": "",
+              "voice": "",
+              "verbClass": "",
+              "gerund": false,
+              "pastParticiple": false,
+              "auxiliary": "",
+              "verbRegularity": "",
+              "isReflexive": false
+            }
           },
           "type": "word"
         },
@@ -679,7 +992,12 @@
             "normalizedToken": "una",
             "partOfSpeech": "article",
             "spanish": "una",
-            "wordId": "word-965ed113-0ac8-4ede-95b1-f37303674efb"
+            "wordId": "word-una",
+            "grammaticalInfo": {
+              "articleType": "",
+              "gender": "",
+              "number": ""
+            }
           },
           "type": "word"
         },
@@ -693,12 +1011,18 @@
             "normalizedToken": "idea",
             "partOfSpeech": "noun",
             "spanish": "idea",
-            "wordId": "word-2bc1f2f0-0275-49db-bd95-110753354f34"
+            "wordId": "word-idea",
+            "grammaticalInfo": {
+              "gender": "",
+              "number": "",
+              "isProperNoun": false,
+              "diminutive": false
+            }
           },
           "type": "word"
         },
         {
-          "tokenId": "token-cecaf747-769c-4490-b6f4-29eb59116e92",
+          "tokenId": "token-.",
           "content": ".",
           "type": "punctuationSign"
         }

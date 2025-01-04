@@ -9,7 +9,7 @@ export enum DeterminerType {
 	Relative = 'relative',
 }
 export interface IDeterminer {
-	determinerType: DeterminerType;
-	gender: GrammaticalGender;
-	number: GrammaticalNumber;
+	determinerType: DeterminerType | '';
+	gender: GrammaticalGender | '';
+	number: GrammaticalNumber | '';
 }

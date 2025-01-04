@@ -11,6 +11,6 @@ export enum AdverbType {
 }
 
 export interface IAdverb {
-	adverbType: AdverbType;
-	usesMente?: boolean;
+	adverbType: AdverbType | '';
+	usesMente?: boolean | '';
 }

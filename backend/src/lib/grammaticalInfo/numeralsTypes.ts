@@ -7,7 +7,7 @@ export enum NumeralType {
 	Fractional = 'fractional',
 }
 export interface INumeral {
-	numeralType: NumeralType;
-	gender?: GrammaticalGender;
-	number?: GrammaticalNumber;
+	numeralType: NumeralType | '';
+	gender?: GrammaticalGender | '';
+	number?: GrammaticalNumber | '';
 }

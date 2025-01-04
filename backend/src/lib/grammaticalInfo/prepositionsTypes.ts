@@ -10,6 +10,6 @@ export enum ContractsWith {
 }
 
 export interface IPreposition {
-	prepositionType: PrepositionType;
-	contractsWith?: ContractsWith;
+	prepositionType: PrepositionType | '';
+	contractsWith?: ContractsWith | '';
 }

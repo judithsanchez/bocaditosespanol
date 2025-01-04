@@ -16,6 +16,6 @@ export enum InterjectionType {
 }
 
 export interface IInterjection {
-	interjectionEmotion: InterjectionEmotion;
-	interjectoinType?: InterjectionType;
+	interjectionEmotion: InterjectionEmotion | '';
+	interjectoinType?: InterjectionType | '';
 }

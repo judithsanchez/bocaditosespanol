@@ -6,7 +6,7 @@ export enum ArticleType {
 }
 
 export interface IArticle {
-	articleType: ArticleType;
-	gender: GrammaticalGender;
-	number: GrammaticalNumber;
+	articleType: ArticleType | '';
+	gender: GrammaticalGender | '';
+	number: GrammaticalNumber | '';
 }

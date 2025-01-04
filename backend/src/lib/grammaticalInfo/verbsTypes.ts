@@ -1,19 +1,19 @@
 import {GrammaticalNumber, GrammaticalPerson} from 'lib/types';
 
 export interface IVerb {
-	tense: VerbTense;
-	mood: VerbMood;
-	person: GrammaticalPerson;
-	number: GrammaticalNumber;
+	tense: VerbTense | '';
+	mood: VerbMood | '';
+	person: GrammaticalPerson | '';
+	number: GrammaticalNumber | '';
 	isRegular: boolean;
-	infinitive: string;
-	conjugationPattern: ConjugationPattern;
-	voice?: VerbVoice;
-	verbClass?: VerbClass;
-	gerund?: boolean;
-	pastParticiple?: boolean;
-	auxiliary?: VerbAuxiliary;
-	verbRegularity?: VerbRegularity;
+	infinitive: string | '';
+	conjugationPattern: ConjugationPattern | '';
+	voice: VerbVoice | '';
+	verbClass: VerbClass | '';
+	gerund: boolean;
+	pastParticiple: boolean;
+	auxiliary: VerbAuxiliary | '';
+	verbRegularity: VerbRegularity | '';
 	isReflexive: boolean;
 }
 

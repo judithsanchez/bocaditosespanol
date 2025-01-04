@@ -10,6 +10,7 @@ import {ISentence} from '../../../lib/types';
 config();
 
 // TODO: cover with unit test
+// TODO: figure out why the cognates are not being handled correctly
 
 /**
  * Current Implementation Note:
@@ -161,9 +162,8 @@ STRICT PROCESSING RULES:
 
 	c) COGNATE DETECTION (isCognate)
 	 - Mark true ONLY if ALL these conditions are met:
-		 * Shares similar spelling with English (at least 75% letters match)
+		 * Shares very similar spelling with English
 		 * Has identical or very close meaning in English
-		 * Shares same etymology/Latin or Greek root
 		 * Examples: 
 			 - "familia/family" (similar spelling + same meaning)
 			 - "hospital/hospital" (identical spelling + same meaning)
@@ -172,7 +172,7 @@ STRICT PROCESSING RULES:
 
 	d) FALSE COGNATE DETECTION (isFalseCognate)
 	 - Mark true ONLY if ALL these conditions are met:
-		 * Looks nearly identical to an English word (at least 75% letters match)
+		 * Looks nearly identical to an English word
 		 * Has a completely different meaning in English
 		 * Is commonly mistaken by English speakers
 		 * Examples: 

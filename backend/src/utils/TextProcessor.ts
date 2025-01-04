@@ -1,7 +1,7 @@
 import {paragraphSplitter} from './paragraphSplitter';
 import {tokenizeSentences} from './tokenizeSentences';
 import {batchProcessor} from './batchProcessor';
-import {ITextProcessor} from '../lib/types';
+import {ITextProcessor, IWord, PartOfSpeech} from '../lib/types';
 import {enrichSentencesWithAI} from './enrichSentencesWithAI';
 import {errors} from '../lib/constants';
 import {ISentence} from '../../../lib/types';
@@ -16,7 +16,8 @@ export class TextProcessor implements ITextProcessor {
 
 	public formattedSentences: ISentence[] = [];
 	public enrichedSentences: ISentence[] = [];
-	public gramaricallyEnrichedSentences: ISentence[] = [];
+	// public gramaticallyEnrichedSentences: ISentence[] = [];
+	public enrichedTokensWithGrammaticalProperties: ISentence[] = [];
 	public processedText: ISentence[] = [];
 
 	constructor(public textData: string) {
@@ -51,9 +52,9 @@ export class TextProcessor implements ITextProcessor {
 	// private async gramaticallyEnrichSentences(
 	// 	sentences: ISentence[],
 	// ): Promise<ISentence[]> {
-	// 	this.gramaricallyEnrichedSentences = await batchProcessor<ISentence>({
+	// 	this.gramaticallyEnrichedSentences = await batchProcessor<ISentence>({
 	// 		items: sentences,
-	// 		processingFn: enrichTokenGrammaticalInfo,
+	// 		processingFn: gramaticallyEnrichSentencesWithAI,
 	// 		batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
 	// 		options: {
 	// 			retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
@@ -62,12 +63,135 @@ export class TextProcessor implements ITextProcessor {
 	// 		},
 	// 	});
 
-	// 	return this.gramaricallyEnrichedSentences;
+	// 	return this.gramaticallyEnrichedSentences;
 	// }
+
+	private enrichTokensWithGrammaticalProperties(
+		sentences: ISentence[],
+	): ISentence[] {
+		return sentences.map(sentence => {
+			sentence.tokens = sentence.tokens.map(token => {
+				if (token.type === 'word') {
+					const word = token.content as IWord;
+
+					if (typeof word.partOfSpeech === 'string') {
+						switch (word.partOfSpeech.toLowerCase()) {
+							case PartOfSpeech.Verb:
+								word.grammaticalInfo = {
+									tense: '',
+									mood: '',
+									person: '',
+									number: '',
+									isRegular: false,
+									infinitive: '',
+									conjugationPattern: '',
+									voice: '',
+									verbClass: '',
+									gerund: false,
+									pastParticiple: false,
+									auxiliary: '',
+									verbRegularity: '',
+									isReflexive: false,
+								};
+								break;
+
+							case PartOfSpeech.Noun:
+								word.grammaticalInfo = {
+									gender: '',
+									number: '',
+									isProperNoun: false,
+									diminutive: false,
+								};
+								break;
+
+							case PartOfSpeech.Adjective:
+								word.grammaticalInfo = {
+									gender: '',
+									number: '',
+									isPastParticiple: false,
+								};
+								break;
+
+							case PartOfSpeech.Adverb:
+								word.grammaticalInfo = {
+									adverbType: '',
+									usesMente: false,
+								};
+								break;
+
+							case PartOfSpeech.Article:
+								word.grammaticalInfo = {
+									articleType: '',
+									gender: '',
+									number: '',
+								};
+								break;
+
+							case PartOfSpeech.Conjunction:
+								word.grammaticalInfo = {
+									conjunctionType: '',
+									conjunctionFunction: '',
+								};
+								break;
+
+							case PartOfSpeech.Determiner:
+								word.grammaticalInfo = {
+									determinerType: '',
+									gender: '',
+									number: '',
+								};
+								break;
+
+							case PartOfSpeech.Interjection:
+								word.grammaticalInfo = {
+									interjectionEmotion: '',
+									interjectoinType: '',
+								};
+								break;
+
+							case PartOfSpeech.Numeral:
+								word.grammaticalInfo = {
+									numeralType: '',
+									gender: '',
+									number: '',
+								};
+								break;
+
+							case PartOfSpeech.Preposition:
+								word.grammaticalInfo = {
+									prepositionType: '',
+									contractsWith: '',
+								};
+								break;
+
+							case PartOfSpeech.Pronoun:
+								word.grammaticalInfo = {
+									pronounType: '',
+									person: '',
+									gender: '',
+									number: '',
+									case: '',
+									isReflexive: false,
+									isReciprocal: false,
+								};
+								break;
+						}
+					}
+				}
+				return token;
+			});
+			return sentence;
+		});
+	}
 
 	public async processText(): Promise<ISentence[]> {
 		this.formatSentences(this.textData);
 		await this.enrichSentences(this.formattedSentences);
-		return this.enrichedSentences;
+
+		this.processedText = this.enrichTokensWithGrammaticalProperties(
+			this.enrichedSentences,
+		);
+
+		return this.processedText;
 	}
 }
