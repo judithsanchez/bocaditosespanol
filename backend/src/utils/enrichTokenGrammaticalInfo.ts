@@ -298,142 +298,79 @@ export async function gramaticallyEnrichSentencesWithAI(
 					role: 'user',
 					parts: [
 						{
-							text: `Linguistic Analysis Task for Spanish-English Learning:
+							text: `Analyze and complete the grammatical properties for each word in these Spanish sentences:
 
 Input Array: ${JSON.stringify(sentences)}
 
-CRITICAL REQUIREMENTS:
-1. MUST return an ARRAY with EXACTLY ${sentences.length} processed sentences
-2. Each sentence must maintain its original position in the array
-3. Process ALL sentences
+Task:
+1. Each word token has a grammaticalInfo object with the correct structure based on its part of speech:
 
-STRICT PROCESSING RULES:
-1. OUTPUT MUST BE AN ARRAY of processed sentences
-2. ONLY for VERB TOKENS ADD ALL THE grammaticalInformation according to the following interfaces and enums:
+VERBS should include:
+- tense (present, preterite, imperfect, etc.)
+- mood (indicative, subjunctive, imperative)
+- person (first, second, third)
+- number (singular, plural)
+- isRegular (true/false)
+- infinitive (base form)
+- conjugationPattern (-ar, -er, -ir)
+- voice (active, passive)
+- verbClass (transitive, intransitive, etc.)
+- gerund (true/false)
+- pastParticiple (true/false)
+- isReflexive (true/false)
 
-	a) If the partOfSpeech is a VERB:
+NOUNS should include:
+- gender (masculine, feminine)
+- number (singular, plural)
+- isProperNoun (true/false)
+- diminutive (true/false)
 
-    - add to the grammaticalInfo property an exact obejct with the interface IVerb (see references below)
-    - complete all the properties of the IVerb interface with the corresponding information (see the enums on references)
+ADJECTIVES should include:
+- gender (masculine, feminine)
+- number (singular, plural)
+- isPastParticiple (true/false)
 
-    *** References
+ADVERBS should include:
+- adverbType (manner, time, place, etc.)
+- usesMente (true/false)
 
-        interface IVerb {
-            tense: VerbTense;
-            mood: VerbMood;
-            person: GrammaticalPerson;
-            number: GrammaticalNumber;
-            isRegular: boolean;
-            infinitive: string;
-            conjugationPattern: ConjugationPattern;
-            voice: VerbVoice;
-            verbClass: VerbClass;
-            gerund: boolean;
-            pastParticiple: boolean;
-            auxiliary: VerbAuxiliary;
-            verbRegularity: VerbRegularity;
-            isReflexive: boolean;
-        }
+ARTICLES should include:
+- articleType (definite, indefinite)
+- gender (masculine, feminine)
+- number (singular, plural)
 
-        enum VerbTense {
-            Present = 'present',
-            PresentPerfect = 'presentPerfect',
-            Imperfect = 'imperfect',
-            Preterite = 'preterite',
-            PastPerfect = 'pastPerfect',
-            Future = 'future',
-            FuturePerfect = 'futurePerfect',
-            Conditional = 'conditional',
-            ConditionalPerfect = 'conditionalPerfect',
+PRONOUNS should include:
+- pronounType (personal, demonstrative, etc.)
+- pronounCase (nominative, accusative, etc.)
+- gender (masculine, feminine)
+- number (singular, plural)
+- person (first, second, third)
+- isReciprocal (true/false)
 
-            SubjunctivePresent = 'subjunctivePresent',
-            SubjunctivePerfect = 'subjunctivePerfect',
-            SubjunctiveImperfect = 'subjunctiveImperfect',
-            SubjunctivePastPerfect = 'subjunctivePastPerfect',
-            SubjunctiveFuture = 'subjunctiveFuture',
-            SubjunctiveFuturePerfect = 'subjunctiveFuturePerfect',
-        }
+PREPOSITIONS should include:
+- prepositionType (simple, compound)
+- contractsWith (article, pronoun)
 
+CONJUNCTIONS should include:
+- conjunctionType (coordinating, subordinating)
+- conjunctionFunction (additive, adversative, etc.)
 
-        enum VerbTense {
-            Present = 'present',
-            PresentPerfect = 'presentPerfect',
-            Imperfect = 'imperfect',
-            Preterite = 'preterite',
-            PastPerfect = 'pastPerfect',
-            Future = 'future',
-            FuturePerfect = 'futurePerfect',
-            Conditional = 'conditional',
-            ConditionalPerfect = 'conditionalPerfect',
+DETERMINERS should include:
+- determinersType (demonstrative, possessive, etc.)
+- gender (masculine, feminine)
+- number (singular, plural)
 
-            SubjunctivePresent = 'subjunctivePresent',
-            SubjunctivePerfect = 'subjunctivePerfect',
-            SubjunctiveImperfect = 'subjunctiveImperfect',
-            SubjunctivePastPerfect = 'subjunctivePastPerfect',
-            SubjunctiveFuture = 'subjunctiveFuture',
-            SubjunctiveFuturePerfect = 'subjunctiveFuturePerfect',
-        }
+INTERJECTIONS should include:
+- interjectionType (emotional, onomatopoeic)
+- interjectionEmotion (joy, surprise, etc.)
 
-        enum VerbMood {
-            Indicative = 'indicative',
-            Subjunctive = 'subjunctive',
-            Imperative = 'imperative',
-            Infinitive = 'infinitive',
-            Gerund = 'gerund',
-            Participle = 'participle',
-        }
+NUMERALS should include:
+- numeralType (cardinal, ordinal, etc.)
+- gender (masculine, feminine)
+- number (singular, plural)
 
-        enum VerbRegularity {
-            Regular = 'regular',
-            IrregularStem = 'stemChange',
-            IrregularAll = 'irregular',
-        }
-
-        enum VerbVoice {
-            Active = 'active',
-            Passive = 'passive',
-        }
-
-        enum VerbClass {
-            Transitive = 'transitive',
-            Intransitive = 'intransitive',
-            Pronominal = 'pronominal',
-            Copulative = 'copulative',
-            Impersonal = 'impersonal',
-        }
-
-        enum VerbAuxiliary {
-            Haber = 'haber',
-            Ser = 'ser',
-            Estar = 'estar',
-        }
-
-        enum ConjugationPattern {
-            AR = 'ar',
-            ER = 'er',
-            IR = 'ir',
-
-            E_IE = 'e->ie',
-            O_UE = 'o->ue',
-            E_I = 'e->i',
-            U_UE = 'u->ue',
-            I_IE = 'i->ie',
-
-            IRREGULAR = 'irregular',
-            G_ADDITION = 'g-add',
-            C_ZC = 'c->zc',
-            I_Y = 'i->y',
-
-            IR_E_I = 'ir_e->i',
-            ER_O_UE = 'er_o->ue',
-            AR_E_IE = 'ar_e->ie',
-        }
-
-
-    - enrich all the properties witht their corresponden information
-
-
-Generate response as an array of fully processed sentences.`,
+2. Fill in all empty properties of the grammaticalInfo object with the appropriate grammatical values
+3. Keep all existing properties and structure intact while providing accurate grammatical analysis for Spanish language rules.`,
 						},
 					],
 				},

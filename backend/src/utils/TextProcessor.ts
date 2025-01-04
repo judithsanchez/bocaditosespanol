@@ -5,6 +5,7 @@ import {ITextProcessor, IWord, PartOfSpeech} from '../lib/types';
 import {enrichSentencesWithAI} from './enrichSentencesWithAI';
 import {errors} from '../lib/constants';
 import {ISentence} from '../../../lib/types';
+import {gramaticallyEnrichSentencesWithAI} from './enrichTokenGrammaticalInfo';
 
 export class TextProcessor implements ITextProcessor {
 	private static readonly RATE_LIMITS = {
@@ -16,8 +17,8 @@ export class TextProcessor implements ITextProcessor {
 
 	public formattedSentences: ISentence[] = [];
 	public enrichedSentences: ISentence[] = [];
-	// public gramaticallyEnrichedSentences: ISentence[] = [];
 	public enrichedTokensWithGrammaticalProperties: ISentence[] = [];
+	public gramaticallyEnrichedSentences: ISentence[] = [];
 	public processedText: ISentence[] = [];
 
 	constructor(public textData: string) {
@@ -49,27 +50,10 @@ export class TextProcessor implements ITextProcessor {
 		return this.enrichedSentences;
 	}
 
-	// private async gramaticallyEnrichSentences(
-	// 	sentences: ISentence[],
-	// ): Promise<ISentence[]> {
-	// 	this.gramaticallyEnrichedSentences = await batchProcessor<ISentence>({
-	// 		items: sentences,
-	// 		processingFn: gramaticallyEnrichSentencesWithAI,
-	// 		batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
-	// 		options: {
-	// 			retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
-	// 			delayBetweenBatches: TextProcessor.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
-	// 			maxRequestsPerMinute: TextProcessor.RATE_LIMITS.REQUESTS_PER_MINUTE,
-	// 		},
-	// 	});
-
-	// 	return this.gramaticallyEnrichedSentences;
-	// }
-
 	private enrichTokensWithGrammaticalProperties(
 		sentences: ISentence[],
 	): ISentence[] {
-		return sentences.map(sentence => {
+		this.enrichedTokensWithGrammaticalProperties = sentences.map(sentence => {
 			sentence.tokens = sentence.tokens.map(token => {
 				if (token.type === 'word') {
 					const word = token.content as IWord;
@@ -182,14 +166,35 @@ export class TextProcessor implements ITextProcessor {
 			});
 			return sentence;
 		});
+
+		return this.enrichedTokensWithGrammaticalProperties;
+	}
+
+	private async gramaticallyEnrichSentences(
+		sentences: ISentence[],
+	): Promise<ISentence[]> {
+		this.gramaticallyEnrichedSentences = await batchProcessor<ISentence>({
+			items: sentences,
+			processingFn: gramaticallyEnrichSentencesWithAI,
+			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
+			options: {
+				retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
+				delayBetweenBatches: TextProcessor.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
+				maxRequestsPerMinute: TextProcessor.RATE_LIMITS.REQUESTS_PER_MINUTE,
+			},
+		});
+
+		return this.gramaticallyEnrichedSentences;
 	}
 
 	public async processText(): Promise<ISentence[]> {
 		this.formatSentences(this.textData);
 		await this.enrichSentences(this.formattedSentences);
 
-		this.processedText = this.enrichTokensWithGrammaticalProperties(
-			this.enrichedSentences,
+		this.enrichTokensWithGrammaticalProperties(this.enrichedSentences);
+
+		this.processedText = await this.gramaticallyEnrichSentences(
+			this.enrichedTokensWithGrammaticalProperties,
 		);
 
 		return this.processedText;
