@@ -16,6 +16,7 @@ export class TextProcessor implements ITextProcessor {
 
 	public formattedSentences: ISentence[] = [];
 	public enrichedSentences: ISentence[] = [];
+	public gramaricallyEnrichedSentences: ISentence[] = [];
 	public processedText: ISentence[] = [];
 
 	constructor(public textData: string) {
@@ -26,14 +27,15 @@ export class TextProcessor implements ITextProcessor {
 
 	private formatSentences(text: string): ISentence[] {
 		const splittedParagraph = paragraphSplitter(text);
-		return splittedParagraph.map(sentence => tokenizeSentences(sentence));
+		this.formattedSentences = splittedParagraph.map(sentence =>
+			tokenizeSentences(sentence),
+		);
+		return this.formattedSentences;
 	}
 
-	private async enrichSentences(
-		uniqueSentences: ISentence[],
-	): Promise<ISentence[]> {
-		const enrichedSentences = await batchProcessor<ISentence>({
-			items: uniqueSentences,
+	private async enrichSentences(sentences: ISentence[]): Promise<ISentence[]> {
+		this.enrichedSentences = await batchProcessor<ISentence>({
+			items: sentences,
 			processingFn: enrichSentencesWithAI,
 			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
 			options: {
@@ -43,14 +45,29 @@ export class TextProcessor implements ITextProcessor {
 			},
 		});
 
-		return enrichedSentences;
+		return this.enrichedSentences;
 	}
 
+	// private async gramaticallyEnrichSentences(
+	// 	sentences: ISentence[],
+	// ): Promise<ISentence[]> {
+	// 	this.gramaricallyEnrichedSentences = await batchProcessor<ISentence>({
+	// 		items: sentences,
+	// 		processingFn: enrichTokenGrammaticalInfo,
+	// 		batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
+	// 		options: {
+	// 			retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
+	// 			delayBetweenBatches: TextProcessor.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
+	// 			maxRequestsPerMinute: TextProcessor.RATE_LIMITS.REQUESTS_PER_MINUTE,
+	// 		},
+	// 	});
+
+	// 	return this.gramaricallyEnrichedSentences;
+	// }
+
 	public async processText(): Promise<ISentence[]> {
-		this.formattedSentences = this.formatSentences(this.textData);
-
-		this.processedText = await this.enrichSentences(this.formattedSentences);
-
-		return this.processedText;
+		this.formatSentences(this.textData);
+		await this.enrichSentences(this.formattedSentences);
+		return this.enrichedSentences;
 	}
 }

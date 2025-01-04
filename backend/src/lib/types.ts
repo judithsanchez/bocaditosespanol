@@ -14,6 +14,7 @@ import {IVerb} from './grammaticalInfo/verbsTypes';
 export type TokenType = 'word' | 'emoji' | 'punctuationSign';
 
 export interface IWord {
+	wordId: string;
 	spanish: string;
 	normalizedToken: string;
 	english?: Promise<string> | string;
@@ -34,7 +35,8 @@ export interface IWord {
 		| INoun
 		| INumeral
 		| IPreposition
-		| IPronoun;
+		| IPronoun
+		| null;
 }
 
 export enum PartOfSpeech {

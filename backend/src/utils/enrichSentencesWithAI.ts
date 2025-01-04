@@ -33,9 +33,10 @@ const sentenceSchema = {
 				items: {
 					type: SchemaType.OBJECT,
 					properties: {
-						token: {
+						content: {
 							type: SchemaType.OBJECT,
 							properties: {
+								wordId: {type: SchemaType.STRING},
 								spanish: {type: SchemaType.STRING},
 								normalizedToken: {type: SchemaType.STRING},
 								english: {type: SchemaType.STRING},
@@ -43,15 +44,26 @@ const sentenceSchema = {
 								partOfSpeech: {type: SchemaType.STRING},
 								isSlang: {type: SchemaType.BOOLEAN},
 								isCognate: {type: SchemaType.BOOLEAN},
+								isFalseCognate: {type: SchemaType.BOOLEAN},
 							},
-							required: ['spanish', 'normalizedToken', 'hasSpecialChar'],
+							required: [
+								'wordId',
+								'spanish',
+								'normalizedToken',
+								'english',
+								'hasSpecialChar',
+								'partOfSpeech',
+								'isSlang',
+								'isCognate',
+								'isFalseCognate',
+							],
 						},
 						type: {
 							type: SchemaType.STRING,
-							enum: ['word'],
+							enum: ['word', 'punctuationSign', 'emoji'],
 						},
 					},
-					required: ['token', 'type'],
+					required: ['content', 'type'],
 				},
 			},
 		},
@@ -84,12 +96,10 @@ const model = genAI.getGenerativeModel({
 		},
 	],
 });
-
 export async function enrichSentencesWithAI(
 	sentences: ISentence[],
 ): Promise<ISentence[]> {
-	console.log('\n🎯 Starting batch sentence augmentation');
-	console.log(`Processing batch of ${sentences.length} sentences`);
+	console.log('\n📊 Input Statistics:', sentences.length);
 
 	try {
 		const prompt = {
@@ -102,21 +112,84 @@ export async function enrichSentencesWithAI(
 
 Input Array: ${JSON.stringify(sentences)}
 
+CRITICAL REQUIREMENTS:
+1. MUST return an ARRAY with EXACTLY ${sentences.length} processed sentences
+2. Each sentence must maintain its original position in the array
+3. Process ALL sentences
+
 STRICT PROCESSING RULES:
 1. OUTPUT MUST BE AN ARRAY of processed sentences
 2. For EACH sentence in the array:
-      - Add complete English translation
-	  - ADD literal word-for-word translation that maintains Spanish grammar structure
+	  - ADD complete English translation
+	  - ADD literal word-for-word translation that maintains Spanish grammar structure but still makes sense on the context
 			Example: "Yo tengo hambre" → "I have hunger"
 			Example: "Me gusta bailar" → "To me pleases to dance"
-      - ADD english translation for each word token
-      - ADD grammatical type from: ${Object.values(PartOfSpeech).join(', ')}
-      - KEEP all existing properties and punctuation tokens
-3. Response Format:
-      - Must be an array matching input length
-      - Must follow exact schema structure
-      - Must preserve sentence and token order
-      - Must maintain all existing token properties
+	  - ADD english translation for each word token
+	  - ADD grammatical type on the property partOfSpeech from: ${Object.values(
+			PartOfSpeech,
+		).join(', ')}
+	  - KEEP all other existing properties untocuhed
+
+3. ONLY for WORD TOKENS (leave emojis and punctuationSigns, and othe properties untouched):
+
+	a) ENGLISH TRANSLATION (english)
+		- Add an english translation for each word token
+		- Make sure the word translation is relevante to the context of the sentence
+
+	b) SLANG DETECTION (isSlang)
+	 - Mark the property isSlang true if the word is:
+		 * Informal/colloquial Spanish
+		 * Regional expressions
+		 * Youth language
+		 * Street vocabulary
+
+	c) COGNATE DETECTION (isCognate)
+	 - Mark true ONLY if ALL these conditions are met:
+		 * Shares similar spelling with English (at least 75% letters match)
+		 * Has identical or very close meaning in English
+		 * Shares same etymology/Latin or Greek root
+		 * Examples: 
+			 - "familia/family" (similar spelling + same meaning)
+			 - "hospital/hospital" (identical spelling + same meaning)
+			 - "música/music" (similar spelling + same meaning)
+	 - Mark false for all other cases
+
+	d) FALSE COGNATE DETECTION (isFalseCognate)
+	 - Mark true ONLY if ALL these conditions are met:
+		 * Looks nearly identical to an English word (at least 75% letters match)
+		 * Has a completely different meaning in English
+		 * Is commonly mistaken by English speakers
+		 * Examples: 
+			 - "embarazada" (means pregnant, not embarrassed)
+			 - "éxito" (means success, not exit)
+			 - "pretender" (means to intend, not to pretend)
+			 - "recordar" (means to remember, not to record)
+	 - Mark false for all other cases
+
+CRITICAL TOKEN HANDLING:
+1. For tokens where type="word":
+   - Enrich with linguistic analysis
+   - Add translations
+   - Add part of speech
+   - Analyze for cognates/false cognates
+   - Keep full word token structure
+
+2. For tokens where type="punctuationSign" or type="emoji":
+   - DO NOT MODIFY THESE TOKENS
+   - KEEP EXACTLY AS PROVIDED IN INPUT
+   - PRESERVE ORIGINAL STRUCTURE
+   - DO NOT ATTEMPT TO ANALYZE
+
+Example token handling:
+- Word token: Full analysis with all properties
+- Punctuation token: Leave unchanged from input
+- Emoji token: Leave unchanged from input
+
+4. Response Format:
+	  - Must be an array matching input length
+	  - Must follow exact schema structure
+	  - Must preserve sentence and token order
+	  - Must maintain all existing token properties
 
 Generate response as an array of fully processed sentences.`,
 						},
@@ -127,48 +200,47 @@ Generate response as an array of fully processed sentences.`,
 
 		const result = await model.generateContent(prompt);
 		const response = await result.response.text();
-		// console.log('📤 Gemini response:', response);
 		let enrichedBatch = JSON.parse(response);
+
+		// Convert to array if single item
 		if (!Array.isArray(enrichedBatch)) {
-			console.log('Converting single response to array');
 			enrichedBatch = [enrichedBatch];
 		}
-		// console.log(
-		// 	'🔍 Parsed data type:',
-		// 	typeof enrichedBatch,
-		// 	Array.isArray(enrichedBatch),
-		// );
 
+		// Process each sentence
 		const processedSentences = enrichedBatch.map(
-			(enrichedSentence: ISentence, index: number) => {
-				const originalSentence = sentences[index];
+			(enrichedSentence: {tokens: any[]}, sentenceIndex: number) => {
+				const originalSentence = sentences[sentenceIndex];
 
-				const enrichedTokensMap = new Map(
-					enrichedSentence.tokens.map((token: any) => [
-						token.token.spanish,
-						token,
-					]),
+				// Replace non-word tokens with original ones
+				const correctedTokens = enrichedSentence.tokens.map(
+					(token: any, tokenIndex: number) => {
+						const originalToken = originalSentence.tokens[tokenIndex];
+
+						// If token is emoji or punctuation, use original
+						if (
+							originalToken.type === 'emoji' ||
+							originalToken.type === 'punctuationSign'
+						) {
+							return originalToken;
+						}
+
+						// Keep AI-enriched word tokens
+						return token;
+					},
 				);
-
-				const mergedTokens = originalSentence.tokens.map(originalToken => {
-					if (originalToken.type !== 'word') {
-						return originalToken;
-					}
-					const spanish = (originalToken.token as any).spanish;
-					return enrichedTokensMap.get(spanish) || originalToken;
-				});
 
 				return {
 					...enrichedSentence,
-					tokens: mergedTokens,
+					tokens: correctedTokens,
 				};
 			},
 		);
 
-		console.log('✅ Batch processing completed\n');
+		console.log('✅ Processing completed\n');
 		return processedSentences;
 	} catch (error) {
-		console.error('❌ Error during batch processing:', error);
-		throw new Error(`Error processing batch: ${error}`);
+		console.error('❌ Error:', error);
+		throw error;
 	}
 }

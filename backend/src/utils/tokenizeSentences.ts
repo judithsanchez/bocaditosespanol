@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 import emojiRegex from 'emoji-regex';
-import {TokenType} from '../lib/types';
+import {IWord, TokenType} from '../lib/types';
 import {errors} from '../lib/constants';
 import {normalizeString} from './normalizeString';
 import {ISentence, IToken} from '../../../lib/types';
@@ -23,24 +23,41 @@ const tokenizeSentences = (sentence: string): ISentence => {
 		.split(regex)
 		.filter(token => token.trim() !== '')
 		.map(token => {
+			const tokenId = `token-${uuidv4()}`;
+
 			if (emojiRegex().test(token)) {
-				return {token, type: 'emoji' as TokenType};
+				return {
+					tokenId,
+					content: token,
+					type: 'emoji' as TokenType,
+				};
 			} else if (/^[.?!¡¿,:;'"\\s-]+$/.test(token)) {
-				return {token, type: 'punctuationSign' as TokenType};
+				return {
+					tokenId,
+					content: token,
+					type: 'punctuationSign' as TokenType,
+				};
 			} else {
-				const spanish = token;
-				const normalizedToken = normalizeString(spanish);
-				const hasSpecialChar = spanish.toLowerCase() !== normalizedToken;
-				const english = '';
-				const wordType = '';
+				const wordContent: IWord = {
+					wordId: `word-${uuidv4()}`,
+					spanish: token,
+					normalizedToken: normalizeString(token),
+					hasSpecialChar: token.toLowerCase() !== normalizeString(token),
+					english: '',
+					partOfSpeech: '',
+					isSlang: false,
+					isCognate: false,
+					isFalseCognate: false,
+					grammaticalInfo: null,
+				};
 
 				return {
-					token: {spanish, normalizedToken, hasSpecialChar, english, wordType},
+					tokenId,
+					content: wordContent,
 					type: 'word' as TokenType,
 				};
 			}
 		});
-
 	return {
 		sentenceId: `sentence-${uuidv4()}`,
 		sentence: trimmedSentence,
