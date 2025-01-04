@@ -5,7 +5,7 @@
 	"type": "commonjs",
 	"scripts": {
 		"start": "node dist/server.js",
-		"dev": "nodemon src/server.ts",
+		"dev": "nodemon --ignore 'src/data/*' src/server.ts",
 		"clear-cache": "rm -rf node_modules/.cache",
 		"test": "jest --coverage --verbose",
 		"test:watch": "jest --watchAll"

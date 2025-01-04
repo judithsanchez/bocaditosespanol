@@ -1,15 +1,23 @@
+export enum ConjunctionType {
+	coordinating = 'coordinating',
+	subordinating = 'subordinating',
+}
+
+export enum ConjunctionFunction {
+	additive = 'additive',
+	adversative = 'adversative',
+	disjunctive = 'disjunctive',
+	causal = 'causal',
+	temporal = 'temporal',
+	conditional = 'conditional',
+	concessive = 'concessive',
+	consecutive = 'consecutive',
+	comparative = 'comparative',
+	final = 'final',
+	modal = 'modal',
+}
+
 export interface IConjunction {
-	type: 'coordinating' | 'subordinating';
-	function:
-		| 'additive'
-		| 'adversative'
-		| 'disjunctive'
-		| 'causal'
-		| 'temporal'
-		| 'conditional'
-		| 'concessive'
-		| 'consecutive'
-		| 'comparative'
-		| 'final'
-		| 'modal';
+	conjunctionType: ConjunctionType;
+	conjunctionFunction: ConjunctionFunction;
 }

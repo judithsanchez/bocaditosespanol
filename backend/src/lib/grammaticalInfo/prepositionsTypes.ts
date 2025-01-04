@@ -1,4 +1,15 @@
+export enum PrepositionType {
+	Simple = 'simple',
+	Compound = 'compound',
+	Locution = 'locution',
+}
+
+export enum ContractsWith {
+	Article = 'article',
+	Pronoun = 'pronoun',
+}
+
 export interface IPreposition {
-	type: 'simple' | 'compound' | 'locution';
-	contractsWith?: 'article' | 'pronoun';
+	prepositionType: PrepositionType;
+	contractsWith?: ContractsWith;
 }

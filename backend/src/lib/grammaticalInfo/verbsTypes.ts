@@ -8,17 +8,13 @@ export interface IVerb {
 	isRegular: boolean;
 	infinitive: string;
 	conjugationPattern: ConjugationPattern;
-	voice?: 'active' | 'passive';
-	verbClass?:
-		| 'transitive'
-		| 'intransitive'
-		| 'pronominal'
-		| 'copulative'
-		| 'impersonal';
+	voice?: VerbVoice;
+	verbClass?: VerbClass;
 	gerund?: boolean;
 	pastParticiple?: boolean;
-	auxiliary?: 'haber' | 'ser' | 'estar';
+	auxiliary?: VerbAuxiliary;
 	verbRegularity?: VerbRegularity;
+	isReflexive: boolean;
 }
 
 export enum VerbTense {
@@ -53,6 +49,25 @@ export enum VerbRegularity {
 	Regular = 'regular',
 	IrregularStem = 'stemChange',
 	IrregularAll = 'irregular',
+}
+
+export enum VerbVoice {
+	Active = 'active',
+	Passive = 'passive',
+}
+
+export enum VerbClass {
+	Transitive = 'transitive',
+	Intransitive = 'intransitive',
+	Pronominal = 'pronominal',
+	Copulative = 'copulative',
+	Impersonal = 'impersonal',
+}
+
+export enum VerbAuxiliary {
+	Haber = 'haber',
+	Ser = 'ser',
+	Estar = 'estar',
 }
 
 export enum ConjugationPattern {

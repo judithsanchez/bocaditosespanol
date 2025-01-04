@@ -1,13 +1,16 @@
+export enum AdverbType {
+	Manner = 'manner',
+	Time = 'time',
+	Place = 'place',
+	Degree = 'degree',
+	Affirmation = 'affirmation',
+	Negation = 'negation',
+	Interrogative = 'interrogative',
+	Exclamative = 'exclamative',
+	Doubt = 'doubt',
+}
+
 export interface IAdverb {
-	type:
-		| 'manner'
-		| 'time'
-		| 'place'
-		| 'degree'
-		| 'affirmation'
-		| 'negation'
-		| 'interrogative'
-		| 'exclamative'
-		| 'doubt';
+	adverbType: AdverbType;
 	usesMente?: boolean;
 }

@@ -48,7 +48,6 @@ const tokenizeSentences = (sentence: string): ISentence => {
 					isSlang: false,
 					isCognate: false,
 					isFalseCognate: false,
-					grammaticalInfo: null,
 				};
 
 				return {

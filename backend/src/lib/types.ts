@@ -35,8 +35,7 @@ export interface IWord {
 		| INoun
 		| INumeral
 		| IPreposition
-		| IPronoun
-		| null;
+		| IPronoun;
 }
 
 export enum PartOfSpeech {

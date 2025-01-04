@@ -1,4 +1,21 @@
+export enum InterjectionEmotion {
+	SURPRISE = 'surprise',
+	JOY = 'joy',
+	PAIN = 'pain',
+	ANGER = 'anger',
+	GREETING = 'greeting',
+	OTHER = 'other',
+}
+
+export enum InterjectionType {
+	ONOMATOPOEIC = 'onomatopoeic',
+	COURTESY = 'courtesy',
+	EMPHATIC = 'emphatic',
+	VULGAR = 'vulgar',
+	GENERIC = 'generic',
+}
+
 export interface IInterjection {
-	emotion: 'surprise' | 'joy' | 'pain' | 'anger' | 'greeting' | 'other';
-	type?: 'onomatopoeic' | 'courtesy' | 'emphatic' | 'vulgar' | 'generic';
+	interjectionEmotion: InterjectionEmotion;
+	interjectoinType?: InterjectionType;
 }

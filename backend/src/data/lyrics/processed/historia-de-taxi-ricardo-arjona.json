@@ -1,710 +1,710 @@
 {
-	"songId": "historia-de-taxi-ricardo-arjona",
-	"processedLyricsId": "processed-historia-de-taxi-ricardo-arjona",
-	"data": [
-		{
-			"sentence": "Pero ella estaba embarazada.",
-			"sentenceId": "sentence-60b4d9b2-d96b-44d7-9e8d-79162b13e543",
-			"tokens": [
-				{
-					"content": {
-						"english": "But",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "pero",
-						"partOfSpeech": "conjunction",
-						"spanish": "Pero",
-						"wordId": "word-caf8946d-053d-4bff-b583-688bf954f725"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "she",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "ella",
-						"partOfSpeech": "pronoun",
-						"spanish": "ella",
-						"wordId": "word-a5aff95d-2280-4df3-93da-fddf10f6b2e6"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "was",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "estaba",
-						"partOfSpeech": "verb",
-						"spanish": "estaba",
-						"wordId": "word-ac1e9d80-7cba-4c24-a1a0-1431422de34c"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "pregnant",
-						"hasSpecialChar": false,
-						"isCognate": false,
-						"isFalseCognate": true,
-						"isSlang": false,
-						"normalizedToken": "embarazada",
-						"partOfSpeech": "adjective",
-						"spanish": "embarazada",
-						"wordId": "word-1587b344-6eb6-4340-bbf7-74718d0895c2"
-					},
-					"type": "word"
-				},
-				{
-					"tokenId": "token-de6db302-dd69-47fd-aaac-8417331859c0",
-					"content": ".",
-					"type": "punctuationSign"
-				}
-			],
-			"translation": "But she was pregnant.",
-			"literalTranslation": "But she was pregnant."
-		},
-		{
-			"sentence": "Eran las diez de la noche, piloteaba mi nave.",
-			"sentenceId": "sentence-587b7f90-ad1e-45e8-b035-a1f0b1408eae",
-			"tokens": [
-				{
-					"content": {
-						"english": "They were",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "eran",
-						"partOfSpeech": "verb",
-						"spanish": "Eran",
-						"wordId": "word-cee639c2-7013-4f11-989c-6a5fd6148f65"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "the",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "las",
-						"partOfSpeech": "article",
-						"spanish": "las",
-						"wordId": "word-5b7c5fb1-2c8b-43e3-9abd-45cf270f2761"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "ten",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "diez",
-						"partOfSpeech": "numeral",
-						"spanish": "diez",
-						"wordId": "word-63871348-9a39-4dd2-b082-c5a10eb1eb56"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "of",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "de",
-						"partOfSpeech": "preposition",
-						"spanish": "de",
-						"wordId": "word-9b47bfe6-3627-4c78-991e-eaa9c8e336a4"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "the",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "la",
-						"partOfSpeech": "article",
-						"spanish": "la",
-						"wordId": "word-d5948785-55b0-46e2-bf0a-3ed72d69249b"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "night",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "noche",
-						"partOfSpeech": "noun",
-						"spanish": "noche",
-						"wordId": "word-38093d02-4fc0-430b-b397-df756a20f864"
-					},
-					"type": "word"
-				},
-				{
-					"tokenId": "token-f62f5f54-c1c1-4b6a-8902-153c07a8c264",
-					"content": ",",
-					"type": "punctuationSign"
-				},
-				{
-					"content": {
-						"english": "I was piloting",
-						"hasSpecialChar": false,
-						"isCognate": false,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "piloteaba",
-						"partOfSpeech": "verb",
-						"spanish": "piloteaba",
-						"wordId": "word-830534ce-6a22-45ee-b2e0-bf34b5124045"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "my",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "mi",
-						"partOfSpeech": "determiner",
-						"spanish": "mi",
-						"wordId": "word-f1a17266-4c57-414b-a2f3-64a4701a0081"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "ship",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "nave",
-						"partOfSpeech": "noun",
-						"spanish": "nave",
-						"wordId": "word-7dc78bf5-3858-475c-b1ff-179d8231d805"
-					},
-					"type": "word"
-				},
-				{
-					"tokenId": "token-921fb779-5b1d-4fd7-8a95-f5068dbb908e",
-					"content": ".",
-					"type": "punctuationSign"
-				}
-			],
-			"translation": "It was ten o'clock at night, I was piloting my ship.",
-			"literalTranslation": "They were the ten of the night, I was piloting my ship."
-		},
-		{
-			"sentence": "Era mi taxi un Volkswagen del año 68.",
-			"sentenceId": "sentence-63cafc37-efe1-48d0-a2b1-cb79f212d663",
-			"tokens": [
-				{
-					"content": {
-						"english": "It was",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "era",
-						"partOfSpeech": "verb",
-						"spanish": "Era",
-						"wordId": "word-9ed0a5b4-2172-40d3-9f6a-8a6e10ac4c77"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "my",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "mi",
-						"partOfSpeech": "determiner",
-						"spanish": "mi",
-						"wordId": "word-262fcc12-2619-4536-b6d6-d2a9b54d757f"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "taxi",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "taxi",
-						"partOfSpeech": "noun",
-						"spanish": "taxi",
-						"wordId": "word-fabb0946-5c81-4aab-9703-8428b44b6368"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "a",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "un",
-						"partOfSpeech": "article",
-						"spanish": "un",
-						"wordId": "word-ef95f8ce-efc2-424c-9b10-9c1b64a1cb23"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "Volkswagen",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "volkswagen",
-						"partOfSpeech": "noun",
-						"spanish": "Volkswagen",
-						"wordId": "word-66be03db-eeeb-42db-8b8c-5b867139fbe5"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "of",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "del",
-						"partOfSpeech": "preposition",
-						"spanish": "del",
-						"wordId": "word-37309c6b-b43b-42ae-ac43-f96243b174c8"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "the",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "ano",
-						"partOfSpeech": "noun",
-						"spanish": "año",
-						"wordId": "word-36705f2f-36e6-4f9a-9ce7-b997427952c6"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "68",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "68",
-						"partOfSpeech": "numeral",
-						"spanish": "68",
-						"wordId": "word-cfca8ea3-4a67-4977-8df3-6e9ed269d4ec"
-					},
-					"type": "word"
-				},
-				{
-					"tokenId": "token-3048076c-3d9d-49dc-a5e1-48c617fe08d4",
-					"content": ".",
-					"type": "punctuationSign"
-				}
-			],
-			"translation": "It was my taxi, a 1968 Volkswagen.",
-			"literalTranslation": "It was my taxi a Volkswagen of the year 68."
-		},
-		{
-			"sentence": "Era un día de esos malos, donde no hubo pasaje.",
-			"sentenceId": "sentence-0fd6d436-4312-4ac5-b6a9-55097a437f22",
-			"tokens": [
-				{
-					"content": {
-						"english": "It was",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "era",
-						"partOfSpeech": "verb",
-						"spanish": "Era",
-						"wordId": "word-ee1346a2-ba9c-4024-b6d8-e325a1019d93"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "a",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "un",
-						"partOfSpeech": "article",
-						"spanish": "un",
-						"wordId": "word-f9181270-6b91-4c88-9d7e-2d395cbde911"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "day",
-						"hasSpecialChar": true,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "dia",
-						"partOfSpeech": "noun",
-						"spanish": "día",
-						"wordId": "word-3ad9dc19-e7ee-4644-8923-6295b391dd09"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "of",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "de",
-						"partOfSpeech": "preposition",
-						"spanish": "de",
-						"wordId": "word-76fc9171-d2d4-42b6-8b81-67144fc5063b"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "those",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "esos",
-						"partOfSpeech": "determiner",
-						"spanish": "esos",
-						"wordId": "word-eeb1633b-f994-4b50-9686-0f20ef3c8bdc"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "bad",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "malos",
-						"partOfSpeech": "adjective",
-						"spanish": "malos",
-						"wordId": "word-c046cfb9-a358-423b-9704-939c3a2400a6"
-					},
-					"type": "word"
-				},
-				{
-					"tokenId": "token-136aac60-7a59-478e-acef-f36473238688",
-					"content": ",",
-					"type": "punctuationSign"
-				},
-				{
-					"content": {
-						"english": "where",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "donde",
-						"partOfSpeech": "adverb",
-						"spanish": "donde",
-						"wordId": "word-abf47c0f-838e-4ad5-83a7-1b566cd4f335"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "there",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "no",
-						"partOfSpeech": "adverb",
-						"spanish": "no",
-						"wordId": "word-bd4917b7-7456-4497-a73b-0d88fc414ef1"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "was",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "hubo",
-						"partOfSpeech": "verb",
-						"spanish": "hubo",
-						"wordId": "word-1c939af0-c417-4a7a-98c1-473260146ed9"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "passage",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "pasaje",
-						"partOfSpeech": "noun",
-						"spanish": "pasaje",
-						"wordId": "word-7af0b76e-a088-4990-a0a3-fa787ada2274"
-					},
-					"type": "word"
-				},
-				{
-					"tokenId": "token-17864433-a906-4e35-823c-3fd468fafa7f",
-					"content": ".",
-					"type": "punctuationSign"
-				}
-			],
-			"translation": "It was one of those bad days, where there was no passage.",
-			"literalTranslation": "It was a day of those bad, where not there was passage."
-		},
-		{
-			"sentence": "Las lentejuelas de un traje me hicieron la parada.",
-			"sentenceId": "sentence-1e2c7763-1022-4a34-a0e7-d37bbb461084",
-			"tokens": [
-				{
-					"content": {
-						"english": "The",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "las",
-						"partOfSpeech": "article",
-						"spanish": "Las",
-						"wordId": "word-b71e1238-cc5b-42fe-bce1-033f93582059"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "sequins",
-						"hasSpecialChar": false,
-						"isCognate": false,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "lentejuelas",
-						"partOfSpeech": "noun",
-						"spanish": "lentejuelas",
-						"wordId": "word-c6a2b760-179e-46e6-b21e-0fa960e11b8c"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "of",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "de",
-						"partOfSpeech": "preposition",
-						"spanish": "de",
-						"wordId": "word-a093472f-1934-4ab5-be44-abeaac8affb0"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "a",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "un",
-						"partOfSpeech": "article",
-						"spanish": "un",
-						"wordId": "word-7e74d370-c297-484e-8d1b-035983f4b55b"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "suit",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "traje",
-						"partOfSpeech": "noun",
-						"spanish": "traje",
-						"wordId": "word-35852924-1cf5-41e5-9262-647cfc6db5a9"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "made",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "me",
-						"partOfSpeech": "pronoun",
-						"spanish": "me",
-						"wordId": "word-d2268bee-3505-4547-a59b-38d07586ba34"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "me",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "hicieron",
-						"partOfSpeech": "verb",
-						"spanish": "hicieron",
-						"wordId": "word-9863a7ea-8c9e-43d1-8e48-fefdf86fd43e"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "the",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "la",
-						"partOfSpeech": "article",
-						"spanish": "la",
-						"wordId": "word-a3ab41eb-77be-4afd-a2ce-1cfbca3d4acd"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "stop",
-						"hasSpecialChar": false,
-						"isCognate": false,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "parada",
-						"partOfSpeech": "noun",
-						"spanish": "parada",
-						"wordId": "word-9f469603-f657-41be-bb49-d7a8b8228be0"
-					},
-					"type": "word"
-				},
-				{
-					"tokenId": "token-2c302d4a-8db9-457d-bf16-4f4c8c9ee002",
-					"content": ".",
-					"type": "punctuationSign"
-				}
-			],
-			"translation": "The sequins of a suit made me stop.",
-			"literalTranslation": "The sequins of a suit me did the stop."
-		},
-		{
-			"sentence": "Yo tenia una idea.",
-			"sentenceId": "sentence-21f00b61-b539-42d0-93b4-fdb3e31ec474",
-			"tokens": [
-				{
-					"content": {
-						"english": "I",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "yo",
-						"partOfSpeech": "pronoun",
-						"spanish": "Yo",
-						"wordId": "word-bc4b99a3-47ab-4efd-b425-0b250c322ec6"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "had",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "tenia",
-						"partOfSpeech": "verb",
-						"spanish": "tenia",
-						"wordId": "word-6154ac6c-2168-4f8d-abe1-5452efd99ab2"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "an",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "una",
-						"partOfSpeech": "article",
-						"spanish": "una",
-						"wordId": "word-56d21470-7498-4048-adff-751115dd5295"
-					},
-					"type": "word"
-				},
-				{
-					"content": {
-						"english": "idea",
-						"hasSpecialChar": false,
-						"isCognate": true,
-						"isFalseCognate": false,
-						"isSlang": false,
-						"normalizedToken": "idea",
-						"partOfSpeech": "noun",
-						"spanish": "idea",
-						"wordId": "word-a630c545-990b-4c8e-97ad-2cd4c861b521"
-					},
-					"type": "word"
-				},
-				{
-					"tokenId": "token-dae9c52e-661a-4b8d-9677-ae442088e3cf",
-					"content": ".",
-					"type": "punctuationSign"
-				}
-			],
-			"translation": "I had an idea.",
-			"literalTranslation": "I had an idea."
-		}
-	]
+  "songId": "historia-de-taxi-ricardo-arjona",
+  "processedLyricsId": "processed-historia-de-taxi-ricardo-arjona",
+  "data": [
+    {
+      "sentence": "Pero ella estaba embarazada.",
+      "sentenceId": "sentence-dc2d3d57-c2ed-4144-b98e-c3d67da0b43f",
+      "tokens": [
+        {
+          "content": {
+            "english": "But",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "pero",
+            "partOfSpeech": "conjunction",
+            "spanish": "Pero",
+            "wordId": "word-9b74e724-6b67-4f7c-bff1-4cac14ede82c"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "she",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "ella",
+            "partOfSpeech": "pronoun",
+            "spanish": "ella",
+            "wordId": "word-79b6a236-30b2-4c98-ac8f-51b64ab0a003"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "was",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "estaba",
+            "partOfSpeech": "verb",
+            "spanish": "estaba",
+            "wordId": "word-f67f04f6-f4ef-4783-9eef-bc4a0920dc68"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "pregnant",
+            "hasSpecialChar": false,
+            "isCognate": false,
+            "isFalseCognate": true,
+            "isSlang": false,
+            "normalizedToken": "embarazada",
+            "partOfSpeech": "adjective",
+            "spanish": "embarazada",
+            "wordId": "word-0b51b1ff-3be7-4a26-98fe-985e845be2d6"
+          },
+          "type": "word"
+        },
+        {
+          "tokenId": "token-8980b795-be13-4f43-9e84-e25b39cf5483",
+          "content": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "But she was pregnant.",
+      "literalTranslation": "But she was pregnant."
+    },
+    {
+      "sentence": "Eran las diez de la noche, piloteaba mi nave.",
+      "sentenceId": "sentence-06b28d79-b4a0-482b-a580-9b63d25215d5",
+      "tokens": [
+        {
+          "content": {
+            "english": "They were",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "eran",
+            "partOfSpeech": "verb",
+            "spanish": "Eran",
+            "wordId": "word-978581a2-d275-436a-a190-4d79adb28995"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "the",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "las",
+            "partOfSpeech": "article",
+            "spanish": "las",
+            "wordId": "word-6a4bb459-03f9-44d7-889b-2848e79dabb2"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "ten",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "diez",
+            "partOfSpeech": "numeral",
+            "spanish": "diez",
+            "wordId": "word-d71237e6-2423-427a-8c60-27c962fe3ff6"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "of",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "de",
+            "partOfSpeech": "preposition",
+            "spanish": "de",
+            "wordId": "word-7245f637-1a5b-4a3a-a957-f53b686ddc84"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "the",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "la",
+            "partOfSpeech": "article",
+            "spanish": "la",
+            "wordId": "word-03a57cb3-36a7-4f99-bdae-8e8b542061e1"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "night",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "noche",
+            "partOfSpeech": "noun",
+            "spanish": "noche",
+            "wordId": "word-925f6dd1-1802-4250-aab7-f88445185c7d"
+          },
+          "type": "word"
+        },
+        {
+          "tokenId": "token-e1cfe03e-97c7-40e5-b9ef-270feae7a4ec",
+          "content": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "content": {
+            "english": "I was piloting",
+            "hasSpecialChar": false,
+            "isCognate": false,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "piloteaba",
+            "partOfSpeech": "verb",
+            "spanish": "piloteaba",
+            "wordId": "word-d101e22b-9851-487d-8d47-74a7f19ce748"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "my",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "mi",
+            "partOfSpeech": "determiner",
+            "spanish": "mi",
+            "wordId": "word-36646aad-7572-48bc-82ec-b1a7147dea75"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "ship",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "nave",
+            "partOfSpeech": "noun",
+            "spanish": "nave",
+            "wordId": "word-f0abde10-a145-4da4-b737-195f714ef007"
+          },
+          "type": "word"
+        },
+        {
+          "tokenId": "token-e2c9ebf2-7f24-4d26-982f-004cc0a870c9",
+          "content": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "It was ten o'clock at night, I was piloting my ship.",
+      "literalTranslation": "They were the ten of the night, I was piloting my ship."
+    },
+    {
+      "sentence": "Era mi taxi un Volkswagen del año 68.",
+      "sentenceId": "sentence-418747b6-ff96-4530-9cbd-ab2a7127cffd",
+      "tokens": [
+        {
+          "content": {
+            "english": "It was",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "era",
+            "partOfSpeech": "verb",
+            "spanish": "Era",
+            "wordId": "word-0e8a81c6-29e6-4e63-897e-494a1950fcdc"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "my",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "mi",
+            "partOfSpeech": "determiner",
+            "spanish": "mi",
+            "wordId": "word-fd507de3-4501-48d0-bae6-574b18f8c418"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "taxi",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "taxi",
+            "partOfSpeech": "noun",
+            "spanish": "taxi",
+            "wordId": "word-cb5488e0-dbec-4311-964b-878fbd55b847"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "a",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "un",
+            "partOfSpeech": "article",
+            "spanish": "un",
+            "wordId": "word-3fd7c239-dd44-4fab-9481-5cbaa867f6f1"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "Volkswagen",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "volkswagen",
+            "partOfSpeech": "noun",
+            "spanish": "Volkswagen",
+            "wordId": "word-0786e746-e223-496f-a5b8-8b142fed0e38"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "of",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "del",
+            "partOfSpeech": "preposition",
+            "spanish": "del",
+            "wordId": "word-8663ca0f-92a3-49df-9b80-a09ffffbb482"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "the",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "ano",
+            "partOfSpeech": "noun",
+            "spanish": "año",
+            "wordId": "word-ecfab879-dacd-4e3e-91a3-6be8ea922b69"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "68",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "68",
+            "partOfSpeech": "numeral",
+            "spanish": "68",
+            "wordId": "word-5a4fbd71-e452-43ad-b41a-84bb8c5dc758"
+          },
+          "type": "word"
+        },
+        {
+          "tokenId": "token-dbaac323-1225-4be1-bf21-d635c346246b",
+          "content": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "It was my taxi, a 1968 Volkswagen.",
+      "literalTranslation": "It was my taxi a Volkswagen of the year 68."
+    },
+    {
+      "sentence": "Era un día de esos malos, donde no hubo pasaje.",
+      "sentenceId": "sentence-671996d6-642f-4f12-9f53-9dceaab79b7e",
+      "tokens": [
+        {
+          "content": {
+            "english": "It was",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "era",
+            "partOfSpeech": "verb",
+            "spanish": "Era",
+            "wordId": "word-05f6d484-5b90-40be-9c46-0602fabe6753"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "a",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "un",
+            "partOfSpeech": "article",
+            "spanish": "un",
+            "wordId": "word-0ac3022c-4efc-46fd-b874-6c81822e3e96"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "day",
+            "hasSpecialChar": true,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "dia",
+            "partOfSpeech": "noun",
+            "spanish": "día",
+            "wordId": "word-75f10a1d-3c81-4fd8-93b7-8b38c89b4c43"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "of",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "de",
+            "partOfSpeech": "preposition",
+            "spanish": "de",
+            "wordId": "word-322e2ac2-85f8-4069-a85c-139d4eff98cb"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "those",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "esos",
+            "partOfSpeech": "determiner",
+            "spanish": "esos",
+            "wordId": "word-4de2b291-0b10-4ad1-87bd-7bd664aa82f0"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "bad",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "malos",
+            "partOfSpeech": "adjective",
+            "spanish": "malos",
+            "wordId": "word-348b4b8a-6719-4d5f-bb49-571fd3b7f6e6"
+          },
+          "type": "word"
+        },
+        {
+          "tokenId": "token-05a02dc3-1253-496a-95de-64bac4733990",
+          "content": ",",
+          "type": "punctuationSign"
+        },
+        {
+          "content": {
+            "english": "where",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "donde",
+            "partOfSpeech": "adverb",
+            "spanish": "donde",
+            "wordId": "word-b0103958-d507-4a83-8e73-6a31efc15c70"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "not",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "no",
+            "partOfSpeech": "adverb",
+            "spanish": "no",
+            "wordId": "word-7e835eba-2aad-4414-929f-41c4674cf6df"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "there was",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "hubo",
+            "partOfSpeech": "verb",
+            "spanish": "hubo",
+            "wordId": "word-a2d4a79d-3914-4d00-89d2-ce3d4bf18dd6"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "passage",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "pasaje",
+            "partOfSpeech": "noun",
+            "spanish": "pasaje",
+            "wordId": "word-064b1cda-1d7b-4842-b17b-6804441c650b"
+          },
+          "type": "word"
+        },
+        {
+          "tokenId": "token-599ad079-dd1a-4a34-ac22-1558a6525511",
+          "content": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "It was one of those bad days, where there was no passage.",
+      "literalTranslation": "It was a day of those bad, where not there was passage."
+    },
+    {
+      "sentence": "Las lentejuelas de un traje me hicieron la parada.",
+      "sentenceId": "sentence-0a54cfc1-ea52-40ae-affd-8ab18cff1bab",
+      "tokens": [
+        {
+          "content": {
+            "english": "The",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "las",
+            "partOfSpeech": "article",
+            "spanish": "Las",
+            "wordId": "word-4dabe084-fc26-48d6-a33b-7e1ad60729b4"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "sequins",
+            "hasSpecialChar": false,
+            "isCognate": false,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "lentejuelas",
+            "partOfSpeech": "noun",
+            "spanish": "lentejuelas",
+            "wordId": "word-c2f8446e-485e-46e3-bb84-d13d77640c71"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "of",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "de",
+            "partOfSpeech": "preposition",
+            "spanish": "de",
+            "wordId": "word-f1d745f0-fe13-4bb0-980b-18367d0bfcd1"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "a",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "un",
+            "partOfSpeech": "article",
+            "spanish": "un",
+            "wordId": "word-423d5b7c-45b7-4a77-aae0-8def7fd3541d"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "suit",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "traje",
+            "partOfSpeech": "noun",
+            "spanish": "traje",
+            "wordId": "word-c3a27df2-14c7-4d75-aa7d-5c95c47b7dff"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "me",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "me",
+            "partOfSpeech": "pronoun",
+            "spanish": "me",
+            "wordId": "word-e90e5720-ec23-4566-a68b-fbeb37cb635e"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "made",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "hicieron",
+            "partOfSpeech": "verb",
+            "spanish": "hicieron",
+            "wordId": "word-7da7394a-d2d5-4deb-a494-e343d9e16f62"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "the",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "la",
+            "partOfSpeech": "article",
+            "spanish": "la",
+            "wordId": "word-652d8fec-4080-4e64-a4c7-e9f59122fb1b"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "stop",
+            "hasSpecialChar": false,
+            "isCognate": false,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "parada",
+            "partOfSpeech": "noun",
+            "spanish": "parada",
+            "wordId": "word-305e7f58-9250-48c4-b157-1ec3f6e648ba"
+          },
+          "type": "word"
+        },
+        {
+          "tokenId": "token-c7663bfc-745f-47ca-9f46-ae1d5efdd05b",
+          "content": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "The sequins of a suit made me stop.",
+      "literalTranslation": "The sequins of a suit to me made the stop."
+    },
+    {
+      "sentence": "Yo tenia una idea.",
+      "sentenceId": "sentence-8d435317-2a33-42cf-aeb1-f07819b9a81d",
+      "tokens": [
+        {
+          "content": {
+            "english": "I",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "yo",
+            "partOfSpeech": "pronoun",
+            "spanish": "Yo",
+            "wordId": "word-0c0fa69c-2fa2-4cbc-ad85-6ef8a0f0c950"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "had",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "tenia",
+            "partOfSpeech": "verb",
+            "spanish": "tenia",
+            "wordId": "word-766cee7e-2c56-4374-a305-3e680f16c825"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "an",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "una",
+            "partOfSpeech": "article",
+            "spanish": "una",
+            "wordId": "word-965ed113-0ac8-4ede-95b1-f37303674efb"
+          },
+          "type": "word"
+        },
+        {
+          "content": {
+            "english": "idea",
+            "hasSpecialChar": false,
+            "isCognate": true,
+            "isFalseCognate": false,
+            "isSlang": false,
+            "normalizedToken": "idea",
+            "partOfSpeech": "noun",
+            "spanish": "idea",
+            "wordId": "word-2bc1f2f0-0275-49db-bd95-110753354f34"
+          },
+          "type": "word"
+        },
+        {
+          "tokenId": "token-cecaf747-769c-4490-b6f4-29eb59116e92",
+          "content": ".",
+          "type": "punctuationSign"
+        }
+      ],
+      "translation": "I had an idea.",
+      "literalTranslation": "I had an idea."
+    }
+  ]
 }

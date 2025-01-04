@@ -1,7 +1,13 @@
 import {GrammaticalGender, GrammaticalNumber} from 'lib/types';
 
+export enum NumeralType {
+	Cardinal = 'cardinal',
+	Ordinal = 'ordinal',
+	Multiplicative = 'multiplicative',
+	Fractional = 'fractional',
+}
 export interface INumeral {
-	type: 'cardinal' | 'ordinal' | 'multiplicative' | 'fractional';
+	numeralType: NumeralType;
 	gender?: GrammaticalGender;
 	number?: GrammaticalNumber;
 }
