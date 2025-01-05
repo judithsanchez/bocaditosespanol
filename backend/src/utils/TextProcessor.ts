@@ -275,7 +275,7 @@ export class TextProcessor implements ITextProcessor {
 			token => token.tokenType !== TokenType.Word,
 		);
 
-		const enrichedWordTokens = await batchProcessor<IWord>({
+		this.enrichedTokens = await batchProcessor<IWord>({
 			items: wordTokens,
 			processingFn: enrichWordTokens,
 			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
@@ -285,10 +285,15 @@ export class TextProcessor implements ITextProcessor {
 				maxRequestsPerMinute: TextProcessor.RATE_LIMITS.REQUESTS_PER_MINUTE,
 			},
 		});
+
 		// TODO: find a better way to add the properties
-		const enrichedTokensWithGrammar = enrichedWordTokens.map(word => {
-			if (typeof word.partOfSpeech === 'string') {
-				switch (word.partOfSpeech.toLowerCase()) {
+		const enrichedTokensWithGrammar = this.enrichedTokens.map(token => {
+			if (
+				token.tokenType === TokenType.Word &&
+				typeof token.partOfSpeech === 'string'
+			) {
+				const word = token as IWord;
+				switch (word.partOfSpeech) {
 					case PartOfSpeech.Verb:
 						word.grammaticalInfo = {
 							tense: '',
@@ -388,8 +393,9 @@ export class TextProcessor implements ITextProcessor {
 						};
 						break;
 				}
+				return word;
 			}
-			return word;
+			return token;
 		});
 
 		this.enrichedTokens = [...enrichedTokensWithGrammar, ...nonWordTokens];

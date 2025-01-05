@@ -39,7 +39,7 @@ export async function addNewSong(songData: AddSongRequest) {
 		await saveToDatabase({
 			song: processor.formattedTextEntry,
 			sentences: processor.enrichedSentences,
-			tokens: processor.deduplicatedTokens,
+			tokens: processor.enrichedTokens,
 		});
 
 		return {

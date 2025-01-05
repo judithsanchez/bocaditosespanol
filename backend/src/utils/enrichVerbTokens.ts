@@ -1,6 +1,5 @@
 import {GoogleGenerativeAI} from '@google/generative-ai';
 import {config} from 'dotenv';
-import {IToken} from '../../../lib/types';
 import {geminiSafetySettings, geminiVerbTokenSchema} from 'lib/constants';
 import {
 	ConjugationPattern,
@@ -9,6 +8,7 @@ import {
 	VerbTense,
 	VerbVoice,
 } from 'lib/grammaticalInfo/verbsTypes';
+import {IWord} from 'lib/types';
 config();
 
 // TODO: cover with unit test
@@ -47,7 +47,7 @@ const model = genAI.getGenerativeModel({
 	safetySettings: geminiSafetySettings,
 });
 
-export async function enrichVerbTokens(tokens: IToken[]): Promise<IToken[]> {
+export async function enrichVerbTokens(tokens: IWord[]): Promise<IWord[]> {
 	console.log('� Processing verb tokens:', tokens.length);
 
 	const model = genAI.getGenerativeModel({
