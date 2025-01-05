@@ -7,6 +7,7 @@ import {
 import {PartOfSpeech} from '../lib/types';
 import {config} from 'dotenv';
 import {ISentence} from '../../../lib/types';
+import {geminiSafetySettings, geminiSentenceSchema} from 'lib/constants';
 config();
 
 // TODO: cover with unit test
@@ -36,83 +37,15 @@ const genAI = new GoogleGenerativeAI(
 	process.env.GOOGLE_GENERATIVE_AI_KEY ?? '',
 );
 
-const sentenceSchema = {
-	type: SchemaType.ARRAY,
-	items: {
-		type: SchemaType.OBJECT,
-		properties: {
-			sentenceId: {type: SchemaType.STRING},
-			sentence: {type: SchemaType.STRING},
-			translation: {type: SchemaType.STRING},
-			literalTranslation: {type: SchemaType.STRING},
-			tokens: {
-				type: SchemaType.ARRAY,
-				items: {
-					type: SchemaType.OBJECT,
-					properties: {
-						content: {
-							type: SchemaType.OBJECT,
-							properties: {
-								wordId: {type: SchemaType.STRING},
-								spanish: {type: SchemaType.STRING},
-								normalizedToken: {type: SchemaType.STRING},
-								english: {type: SchemaType.STRING},
-								hasSpecialChar: {type: SchemaType.BOOLEAN},
-								partOfSpeech: {type: SchemaType.STRING},
-								isSlang: {type: SchemaType.BOOLEAN},
-								isCognate: {type: SchemaType.BOOLEAN},
-								isFalseCognate: {type: SchemaType.BOOLEAN},
-							},
-							required: [
-								'wordId',
-								'spanish',
-								'normalizedToken',
-								'english',
-								'hasSpecialChar',
-								'partOfSpeech',
-								'isSlang',
-								'isCognate',
-								'isFalseCognate',
-							],
-						},
-						type: {
-							type: SchemaType.STRING,
-							enum: ['word', 'punctuationSign', 'emoji'],
-						},
-					},
-					required: ['content', 'type'],
-				},
-			},
-		},
-		required: ['sentenceId', 'sentence', 'translation', 'tokens'],
-	},
-};
-
 const model = genAI.getGenerativeModel({
 	model: 'gemini-1.5-flash',
 	generationConfig: {
 		responseMimeType: 'application/json',
-		responseSchema: sentenceSchema,
+		responseSchema: geminiSentenceSchema,
 	},
-	safetySettings: [
-		{
-			category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-			threshold: HarmBlockThreshold.BLOCK_NONE,
-		},
-		{
-			category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-			threshold: HarmBlockThreshold.BLOCK_NONE,
-		},
-		{
-			category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-			threshold: HarmBlockThreshold.BLOCK_NONE,
-		},
-		{
-			category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-			threshold: HarmBlockThreshold.BLOCK_NONE,
-		},
-	],
+	safetySettings: geminiSafetySettings,
 });
+
 export async function enrichSentencesWithAI(
 	sentences: ISentence[],
 ): Promise<ISentence[]> {

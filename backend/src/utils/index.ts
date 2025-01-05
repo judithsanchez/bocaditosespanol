@@ -1,9 +1,4 @@
-export {getAllSongs} from './songs/getAllSongs';
-export {getSongById} from './songs/getSongById';
-export {getSongsByGenre} from './songs/getSongsByGenre';
-export {getSongsByInterpreter} from './songs/getSongsByInterpreter';
-export {searchSongs} from './songs/searchSongs';
-export {addNewSong} from './songs/addNewSong';
+// export {addNewSong} from './songs/addNewSong';
 export {normalizeString} from './normalizeString';
-export {paragraphSplitter} from './paragraphSplitter';
+export {splitParagraph} from './splitParagraph';
 export {tokenizeSentences} from './tokenizeSentences';

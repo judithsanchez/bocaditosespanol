@@ -1,6 +1,6 @@
-import {IWord, TokenType} from 'lib/types';
+import {TokenType} from 'lib/types';
 
-export const paragraphSplitterFixtures = {
+export const splitParagraphFixtures = {
 	basicSentences: {
 		input: 'This is a sentence. And this is another one.',
 		expected: ['This is a sentence.', 'And this is another one.'],

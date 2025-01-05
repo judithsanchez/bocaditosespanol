@@ -1,4 +1,4 @@
-import {ISentence} from '../../../lib/types';
+import {AddSongRequest, ISentence, ISong} from '../../../lib/types';
 import {IAdjective} from './grammaticalInfo/adjectivesTypes';
 import {IAdverb} from './grammaticalInfo/adverbsTypes';
 import {IArticle} from './grammaticalInfo/articlesTypes';
@@ -11,10 +11,27 @@ import {IPreposition} from './grammaticalInfo/prepositionsTypes';
 import {IPronoun} from './grammaticalInfo/pronounsTypes';
 import {IVerb} from './grammaticalInfo/verbsTypes';
 
-export type TokenType = 'word' | 'emoji' | 'punctuationSign';
+export enum TokenType {
+	Word = 'word',
+	Emoji = 'emoji',
+	PunctuationSign = 'punctuationSign',
+}
+
+export interface IPunctuationSign {
+	tokenType: TokenType.PunctuationSign;
+	tokenId: string;
+	content: string;
+}
+
+export interface IEmoji {
+	tokenType: TokenType.Emoji;
+	tokenId: string;
+	content: string;
+}
 
 export interface IWord {
-	wordId: string;
+	tokenId: string;
+	tokenType: TokenType.Word;
 	spanish: string;
 	normalizedToken: string;
 	english: Promise<string> | string;
@@ -23,6 +40,7 @@ export interface IWord {
 	isSlang: boolean;
 	isCognate: boolean;
 	isFalseCognate: boolean;
+	sentenceContext: string;
 	grammaticalInfo?:
 		| IVerb
 		| INoun
@@ -75,10 +93,33 @@ export enum GrammaticalGender {
 }
 
 export interface ITextProcessor {
-	processedText: ISentence[];
-	textData: string;
+	splittedParagraph: string[];
 	formattedSentences: ISentence[];
-	enrichedSentences: ISentence[];
+	originalSentencesIds: string[];
+	formattedTextEntry: ISong; // TODO: later add IVideoTranscript
+	tokenizedSentences: ISentence[];
+	deduplicatedSentences: ISentence[];
+	originalTokens: Array<IWord | IPunctuationSign | IEmoji>;
+	deduplicatedTokens: Array<IWord | IPunctuationSign | IEmoji>;
+
+	splitParagraph(string: string): string[];
+	formatSentences(params: {
+		sentences: string[];
+		author: string;
+		title: string;
+	}): ISentence[];
+	getOriginalSentencesIds(sentences: ISentence[]): string[];
+	formatTextEntry(
+		requestBody: AddSongRequest,
+		originalSentencesIds: string[],
+	): ISong;
+	tokenizeSentences(sentences: ISentence[]): ISentence[];
+	deduplicateSentences(sentences: ISentence[]): ISentence[];
+	deduplicateTokens(
+		tokens: Array<IWord | IPunctuationSign | IEmoji>,
+	): Array<IWord | IPunctuationSign | IEmoji>;
+
+	processText(): Promise<void>;
 }
 
 export interface IText {}

@@ -1,34 +1,36 @@
-import {IWord, TokenType} from 'lib/types';
+import {IEmoji, IPunctuationSign, IWord} from 'lib/types';
+
+export interface AddSongRequest {
+	interpreter: string;
+	feat?: string;
+	title: string;
+	youtube: string;
+	genre: string[];
+	language: string;
+	releaseDate: string;
+	lyrics: string;
+}
 
 export interface ISong {
 	songId: string;
 	metadata: {
 		interpreter: string;
 		feat?: string;
-		songName: string;
+		title: string;
 		youtube: string;
-		genre: string;
+		genre: string[];
 		language: string;
 		releaseDate: string;
 	};
-	jsonFiles: {
-		raw: string;
-		processed: string;
-	};
+	lyrics: string[]; // TODO: rename to sentencesIds or something similar
 	createdAt: string;
 	updatedAt: string;
 }
 
 export interface ISentence {
 	sentenceId: string;
-	sentence: string;
+	content: string;
 	translation: string;
-	tokens: IToken[];
 	literalTranslation: string;
-}
-
-export interface IToken {
-	tokenId: string;
-	content: string | IWord;
-	type: TokenType;
+	tokenIds: string[];
 }
