@@ -45,7 +45,7 @@ export async function addNewSong(songData: AddSongRequest) {
 		return {
 			song: processor.formattedTextEntry,
 			sentences: processor.enrichedSentences,
-			tokens: processor.deduplicatedTokens,
+			tokens: processor.enrichedTokens,
 			stats: {
 				originalSentencesCount: processor.splittedParagraph.length,
 				originalSentencesIds: processor.originalSentencesIds,
@@ -53,6 +53,7 @@ export async function addNewSong(songData: AddSongRequest) {
 				originalTokensCount: processor.originalTokens.length,
 				deduplicatedTokensCount: processor.deduplicatedTokens.length,
 				enrichenedSentencesCount: processor.enrichedSentences.length,
+				enrichenedTokensCount: processor.enrichedTokens.length,
 			},
 		};
 	} catch (error) {

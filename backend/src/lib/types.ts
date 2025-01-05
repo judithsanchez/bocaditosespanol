@@ -101,6 +101,7 @@ export interface ITextProcessor {
 	deduplicatedSentences: ISentence[];
 	originalTokens: Array<IWord | IPunctuationSign | IEmoji>;
 	deduplicatedTokens: Array<IWord | IPunctuationSign | IEmoji>;
+	enrichedTokens: Array<IWord | IPunctuationSign | IEmoji>;
 
 	splitParagraph(string: string): string[];
 	formatSentences(params: {
@@ -118,6 +119,9 @@ export interface ITextProcessor {
 	deduplicateTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Array<IWord | IPunctuationSign | IEmoji>;
+	enrichTokens(
+		tokens: Array<IWord | IPunctuationSign | IEmoji>,
+	): Promise<Array<IWord | IPunctuationSign | IEmoji>>;
 
 	processText(): Promise<void>;
 }

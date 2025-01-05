@@ -3,6 +3,7 @@ import {
 	IPunctuationSign,
 	ITextProcessor,
 	IWord,
+	PartOfSpeech,
 	TokenType,
 } from '../lib/types';
 import {errors} from '../lib/constants';
@@ -10,6 +11,7 @@ import {AddSongRequest, ISentence, ISong} from '../../../lib/types';
 import emojiRegex from 'emoji-regex';
 import {batchProcessor} from './batchProcessor';
 import {enrichSentencesWithAI} from './enrichSentencesWithAI';
+import {enrichWordTokens} from './enrichWordTokens';
 
 // TODO: review what properties and methos should be public/private
 
@@ -38,6 +40,8 @@ export class TextProcessor implements ITextProcessor {
 	public deduplicatedTokens: Array<IWord | IPunctuationSign | IEmoji> = []; // this is what I will send to ai for the translations
 
 	public enrichedSentences: ISentence[] = [];
+
+	public enrichedTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
 
 	constructor(public textData: AddSongRequest) {
 		if (!textData.lyrics) {
@@ -245,7 +249,7 @@ export class TextProcessor implements ITextProcessor {
 		return this.deduplicatedTokens;
 	}
 
-	private async enrichSentences(sentences: ISentence[]): Promise<ISentence[]> {
+	public async enrichSentences(sentences: ISentence[]): Promise<ISentence[]> {
 		this.enrichedSentences = await batchProcessor<ISentence>({
 			items: sentences,
 			processingFn: enrichSentencesWithAI,
@@ -260,48 +264,173 @@ export class TextProcessor implements ITextProcessor {
 		return this.enrichedSentences;
 	}
 
+	public async enrichTokens(
+		tokens: Array<IWord | IPunctuationSign | IEmoji>,
+	): Promise<Array<IWord | IPunctuationSign | IEmoji>> {
+		const wordTokens = tokens.filter(
+			(token): token is IWord => token.tokenType === TokenType.Word,
+		);
+
+		const nonWordTokens = tokens.filter(
+			token => token.tokenType !== TokenType.Word,
+		);
+
+		const enrichedWordTokens = await batchProcessor<IWord>({
+			items: wordTokens,
+			processingFn: enrichWordTokens,
+			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
+			options: {
+				retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
+				delayBetweenBatches: TextProcessor.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
+				maxRequestsPerMinute: TextProcessor.RATE_LIMITS.REQUESTS_PER_MINUTE,
+			},
+		});
+		// TODO: find a better way to add the properties
+		const enrichedTokensWithGrammar = enrichedWordTokens.map(word => {
+			if (typeof word.partOfSpeech === 'string') {
+				switch (word.partOfSpeech.toLowerCase()) {
+					case PartOfSpeech.Verb:
+						word.grammaticalInfo = {
+							tense: '',
+							mood: '',
+							person: '',
+							number: '',
+							isRegular: false,
+							infinitive: '',
+							conjugationPattern: '',
+							voice: '',
+							verbClass: '',
+							gerund: false,
+							pastParticiple: false,
+							auxiliary: '',
+							verbRegularity: '',
+							isReflexive: false,
+						};
+						break;
+					case PartOfSpeech.Noun:
+						word.grammaticalInfo = {
+							gender: '',
+							number: '',
+							isProperNoun: false,
+							diminutive: false,
+						};
+						break;
+
+					case PartOfSpeech.Adjective:
+						word.grammaticalInfo = {
+							gender: '',
+							number: '',
+							isPastParticiple: false,
+						};
+						break;
+
+					case PartOfSpeech.Adverb:
+						word.grammaticalInfo = {
+							adverbType: '',
+							usesMente: false,
+						};
+						break;
+
+					case PartOfSpeech.Article:
+						word.grammaticalInfo = {
+							articleType: '',
+							gender: '',
+							number: '',
+						};
+						break;
+
+					case PartOfSpeech.Conjunction:
+						word.grammaticalInfo = {
+							conjunctionType: '',
+							conjunctionFunction: '',
+						};
+						break;
+
+					case PartOfSpeech.Determiner:
+						word.grammaticalInfo = {
+							determinerType: '',
+							gender: '',
+							number: '',
+						};
+						break;
+
+					case PartOfSpeech.Interjection:
+						word.grammaticalInfo = {
+							interjectionEmotion: '',
+							interjectoinType: '',
+						};
+						break;
+
+					case PartOfSpeech.Numeral:
+						word.grammaticalInfo = {
+							numeralType: '',
+							gender: '',
+							number: '',
+						};
+						break;
+
+					case PartOfSpeech.Preposition:
+						word.grammaticalInfo = {
+							prepositionType: '',
+							contractsWith: '',
+						};
+						break;
+
+					case PartOfSpeech.Pronoun:
+						word.grammaticalInfo = {
+							pronounType: '',
+							person: '',
+							gender: '',
+							number: '',
+							case: '',
+							isReflexive: false,
+							isReciprocal: false,
+						};
+						break;
+				}
+			}
+			return word;
+		});
+
+		this.enrichedTokens = [...enrichedTokensWithGrammar, ...nonWordTokens];
+
+		return this.enrichedTokens;
+	}
 	public async processText(): Promise<void> {
+		console.log('Starting text processing with data:', {
+			title: this.textData.title,
+			lyricsLength: this.textData.lyrics.length,
+		});
+
 		this.splitParagraph(this.textData.lyrics);
+		console.log('Split paragraphs:', this.splittedParagraph.length);
 
 		this.formatSentences({
 			sentences: this.splittedParagraph,
 			author: this.textData.interpreter,
 			title: this.textData.title,
 		});
+		console.log('Formatted sentences:', this.formattedSentences.length);
 
-		this.getOriginalSentencesIds(this.formattedSentences);
+		this.tokenizeSentences(this.formattedSentences);
+		console.log('Tokenized sentences:', this.tokenizedSentences.length);
+		console.log('Original tokens:', this.originalTokens.length);
+
+		this.deduplicateSentences(this.tokenizedSentences);
+		console.log('Deduplicated sentences:', this.deduplicatedSentences.length);
+
+		this.deduplicateTokens(this.originalTokens);
+		console.log('Deduplicated tokens:', this.deduplicatedTokens.length);
 
 		this.formatTextEntry(this.textData, this.originalSentencesIds);
 
-		this.tokenizeSentences(this.formattedSentences);
-
-		this.deduplicateSentences(this.tokenizedSentences);
-
-		this.deduplicateTokens(this.originalTokens);
-
 		await this.enrichSentences(this.deduplicatedSentences);
+		console.log('Enriched sentences:', this.enrichedSentences.length);
+
+		await this.enrichTokens(this.deduplicatedTokens);
+		console.log('Enriched tokens:', this.enrichedTokens.length);
 	}
 }
-
-// public enrichedSentences: ISentence[] = [];
-// public enrichedTokensWithGrammaticalProperties: ISentence[] = [];
-// public gramaticallyEnrichedSentences: ISentence[] = [];
-// public processedText: ISentence[] = [];
-
-// private async enrichSentences(sentences: ISentence[]): Promise<ISentence[]> {
-// 	this.enrichedSentences = await batchProcessor<ISentence>({
-// 		items: sentences,
-// 		processingFn: enrichSentencesWithAI,
-// 		batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
-// 		options: {
-// 			retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
-// 			delayBetweenBatches: TextProcessor.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
-// 			maxRequestsPerMinute: TextProcessor.RATE_LIMITS.REQUESTS_PER_MINUTE,
-// 		},
-// 	});
-
-// 	return this.enrichedSentences;
-// }
 
 // private enrichTokensWithGrammaticalProperties(
 // 	sentences: ISentence[],
@@ -422,33 +551,3 @@ export class TextProcessor implements ITextProcessor {
 
 // 	return this.enrichedTokensWithGrammaticalProperties;
 // }
-
-// private async gramaticallyEnrichSentences(
-// 	sentences: ISentence[],
-// ): Promise<ISentence[]> {
-// 	this.gramaticallyEnrichedSentences = await batchProcessor<ISentence>({
-// 		items: sentences,
-// 		processingFn: gramaticallyEnrichSentencesWithAI,
-// 		batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
-// 		options: {
-// 			retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
-// 			delayBetweenBatches: TextProcessor.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
-// 			maxRequestsPerMinute: TextProcessor.RATE_LIMITS.REQUESTS_PER_MINUTE,
-// 		},
-// 	});
-
-// 	return this.gramaticallyEnrichedSentences;
-// }
-
-// public async processText(): Promise<ISentence[]> {
-// 	this.formatSentences(this.textData);
-// 	await this.enrichSentences(this.formattedSentences);
-
-// 	this.enrichTokensWithGrammaticalProperties(this.enrichedSentences);
-
-// 	this.processedText = this.enrichTokensWithGrammaticalProperties(
-// 		this.enrichedSentences,
-// 	);
-
-// 	return this.processedText;
-//
