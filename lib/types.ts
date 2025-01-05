@@ -1,5 +1,3 @@
-import {IEmoji, IPunctuationSign, IWord} from 'lib/types';
-
 export interface AddSongRequest {
 	interpreter: string;
 	feat?: string;

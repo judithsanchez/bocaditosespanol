@@ -1,6 +1,7 @@
 import {errors} from '../../lib/constants';
 import {AddSongRequest} from '../../../../lib/types';
 import {TextProcessor} from '../../utils/TextProcessor';
+import {saveToDatabase} from '../../utils/saveToDatabase';
 
 export async function addNewSong(songData: AddSongRequest) {
 	if (
@@ -34,6 +35,12 @@ export async function addNewSong(songData: AddSongRequest) {
 			'Deduplicated Tokens Count:',
 			processor.deduplicatedTokens.length,
 		);
+
+		await saveToDatabase({
+			song: processor.formattedTextEntry,
+			sentences: processor.deduplicatedSentences,
+			tokens: processor.deduplicatedTokens,
+		});
 
 		return {
 			song: processor.formattedTextEntry,

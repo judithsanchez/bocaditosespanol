@@ -10,6 +10,8 @@ import {AddSongRequest, ISentence, ISong} from '../../../lib/types';
 import emojiRegex from 'emoji-regex';
 import {normalizeString} from './normalizeString';
 
+// TODO: review what properties and methos should be public/private
+
 export class TextProcessor implements ITextProcessor {
 	private static readonly RATE_LIMITS = {
 		REQUESTS_PER_MINUTE: 1,
