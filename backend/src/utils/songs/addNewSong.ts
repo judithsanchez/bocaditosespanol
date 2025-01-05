@@ -20,31 +20,31 @@ export async function addNewSong(songData: AddSongRequest) {
 		const processor = new TextProcessor(songData);
 		await processor.processText();
 
-		console.log('\n📊 Processing Statistics:');
-		console.log(
-			'Original Sentences Count:',
-			processor.splittedParagraph.length,
-		);
-		console.log('Original Sentences IDs:', processor.originalSentencesIds);
-		console.log(
-			'Deduplicated Sentences Count:',
-			processor.deduplicatedSentences.length,
-		);
-		console.log('Original Tokens Count:', processor.originalTokens.length);
-		console.log(
-			'Deduplicated Tokens Count:',
-			processor.deduplicatedTokens.length,
-		);
+		// console.log('\n📊 Processing Statistics:');
+		// console.log(
+		// 	'Original Sentences Count:',
+		// 	processor.splittedParagraph.length,
+		// );
+		// console.log('Original Sentences IDs:', processor.originalSentencesIds);
+		// console.log(
+		// 	'Deduplicated Sentences Count:',
+		// 	processor.deduplicatedSentences.length,
+		// );
+		// console.log('Original Tokens Count:', processor.originalTokens.length);
+		// console.log(
+		// 	'Deduplicated Tokens Count:',
+		// 	processor.deduplicatedTokens.length,
+		// );
 
 		await saveToDatabase({
 			song: processor.formattedTextEntry,
-			sentences: processor.deduplicatedSentences,
+			sentences: processor.enrichedSentences,
 			tokens: processor.deduplicatedTokens,
 		});
 
 		return {
 			song: processor.formattedTextEntry,
-			sentences: processor.deduplicatedSentences,
+			sentences: processor.enrichedSentences,
 			tokens: processor.deduplicatedTokens,
 			stats: {
 				originalSentencesCount: processor.splittedParagraph.length,
@@ -52,6 +52,7 @@ export async function addNewSong(songData: AddSongRequest) {
 				deduplicatedSentencesCount: processor.deduplicatedSentences.length,
 				originalTokensCount: processor.originalTokens.length,
 				deduplicatedTokensCount: processor.deduplicatedTokens.length,
+				enrichenedSentencesCount: processor.enrichedSentences.length,
 			},
 		};
 	} catch (error) {

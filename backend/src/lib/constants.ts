@@ -16,6 +16,20 @@ export const errors = {
 	baseNameWithExtension: 'Please provide base name without extension',
 	songIdMismatch: (expected: string, found: string) =>
 		`Song ID mismatch in file. Expected: ${expected}, Found: ${found}`,
+	aiProcessing: {
+		requestFailed: 'AI request failed:',
+		invalidResponse: 'Invalid AI response format:',
+		parsingError: 'Error parsing AI response:',
+		emptyResponse: 'Received empty response from AI',
+		schemaValidation: 'Response schema validation failed:',
+	},
+	batchProcessing: {
+		invalidBatchSize: 'Invalid batch size provided',
+		processingFailed: 'Batch processing failed:',
+		retryLimitExceeded: 'Retry limit exceeded for batch:',
+		emptyBatch: 'Empty batch provided for processing',
+		rateLimitExceeded: 'Rate limit exceeded, cooling down',
+	},
 };
 
 export const logs = {
@@ -66,58 +80,10 @@ export const geminiSafetySettings = [
 	},
 ];
 
-export const geminiSentenceSchema = {
-	type: SchemaType.ARRAY,
-	items: {
-		type: SchemaType.OBJECT,
-		properties: {
-			sentenceId: {type: SchemaType.STRING},
-			sentence: {type: SchemaType.STRING},
-			translation: {type: SchemaType.STRING},
-			literalTranslation: {type: SchemaType.STRING},
-			tokens: {
-				type: SchemaType.ARRAY,
-				items: {
-					type: SchemaType.OBJECT,
-					properties: {
-						content: {
-							type: SchemaType.OBJECT,
-							properties: {
-								wordId: {type: SchemaType.STRING},
-								spanish: {type: SchemaType.STRING},
-								normalizedToken: {type: SchemaType.STRING},
-								english: {type: SchemaType.STRING},
-								hasSpecialChar: {type: SchemaType.BOOLEAN},
-								partOfSpeech: {type: SchemaType.STRING},
-								isSlang: {type: SchemaType.BOOLEAN},
-								isCognate: {type: SchemaType.BOOLEAN},
-								isFalseCognate: {type: SchemaType.BOOLEAN},
-							},
-							required: [
-								'wordId',
-								'spanish',
-								'normalizedToken',
-								'english',
-								'hasSpecialChar',
-								'partOfSpeech',
-								'isSlang',
-								'isCognate',
-								'isFalseCognate',
-							],
-						},
-						type: {
-							type: SchemaType.STRING,
-							enum: ['word', 'punctuationSign', 'emoji'],
-						},
-					},
-					required: ['content', 'type'],
-				},
-			},
-		},
-		required: ['sentenceId', 'sentence', 'translation', 'tokens'],
-	},
-};
-
+//  - ADD english translation for each word token
+// 	  - ADD grammatical type on the property partOfSpeech from: ${Object.values(
+// 			PartOfSpeech,
+// 		).join(', ')}
 export const geminiVerbTokenSchema = {
 	type: SchemaType.ARRAY,
 	items: {

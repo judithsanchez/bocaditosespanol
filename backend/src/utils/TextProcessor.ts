@@ -8,7 +8,8 @@ import {
 import {errors} from '../lib/constants';
 import {AddSongRequest, ISentence, ISong} from '../../../lib/types';
 import emojiRegex from 'emoji-regex';
-import {normalizeString} from './normalizeString';
+import {batchProcessor} from './batchProcessor';
+import {enrichSentencesWithAI} from './enrichSentencesWithAI';
 
 // TODO: review what properties and methos should be public/private
 
@@ -36,11 +37,30 @@ export class TextProcessor implements ITextProcessor {
 
 	public deduplicatedTokens: Array<IWord | IPunctuationSign | IEmoji> = []; // this is what I will send to ai for the translations
 
+	public enrichedSentences: ISentence[] = [];
+
 	constructor(public textData: AddSongRequest) {
 		if (!textData.lyrics) {
 			throw new Error(errors.invalidTextData);
 		}
 	}
+
+	public normalizeString = (string: string): string => {
+		if (typeof string !== 'string') {
+			throw new TypeError(errors.mustBeString);
+		}
+
+		return string
+			.trim()
+			.toLowerCase()
+			.replace(/\s+/g, ' ')
+			.replace(
+				/[áéíóú]/g,
+				accentedVowel => 'aeiou'['áéíóú'.indexOf(accentedVowel)],
+			)
+			.replace(/[ñ]/g, 'n')
+			.replace(/[ü]/g, 'u');
+	};
 
 	public splitParagraph = (string: string): string[] => {
 		if (typeof string !== 'string') {
@@ -170,8 +190,9 @@ export class TextProcessor implements ITextProcessor {
 						tokenObj = {
 							tokenId: `token-${token.toLowerCase()}`,
 							spanish: token,
-							normalizedToken: normalizeString(token),
-							hasSpecialChar: token.toLowerCase() !== normalizeString(token),
+							normalizedToken: this.normalizeString(token),
+							hasSpecialChar:
+								token.toLowerCase() !== this.normalizeString(token),
 							english: '',
 							partOfSpeech: '',
 							isSlang: false,
@@ -224,6 +245,21 @@ export class TextProcessor implements ITextProcessor {
 		return this.deduplicatedTokens;
 	}
 
+	private async enrichSentences(sentences: ISentence[]): Promise<ISentence[]> {
+		this.enrichedSentences = await batchProcessor<ISentence>({
+			items: sentences,
+			processingFn: enrichSentencesWithAI,
+			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
+			options: {
+				retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
+				delayBetweenBatches: TextProcessor.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
+				maxRequestsPerMinute: TextProcessor.RATE_LIMITS.REQUESTS_PER_MINUTE,
+			},
+		});
+
+		return this.enrichedSentences;
+	}
+
 	public async processText(): Promise<void> {
 		this.splitParagraph(this.textData.lyrics);
 
@@ -242,6 +278,8 @@ export class TextProcessor implements ITextProcessor {
 		this.deduplicateSentences(this.tokenizedSentences);
 
 		this.deduplicateTokens(this.originalTokens);
+
+		await this.enrichSentences(this.deduplicatedSentences);
 	}
 }
 
