@@ -40,7 +40,6 @@ export interface IWord {
 	isSlang: boolean;
 	isCognate: boolean;
 	isFalseCognate: boolean;
-	sentenceContext: string;
 	grammaticalInfo?:
 		| IVerb
 		| INoun

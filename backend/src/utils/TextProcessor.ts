@@ -12,6 +12,7 @@ import emojiRegex from 'emoji-regex';
 import {batchProcessor} from './batchProcessor';
 import {enrichSentencesWithAI} from './enrichSentencesWithAI';
 import {enrichWordTokens} from './enrichWordTokens';
+import {enrichVerbTokens} from './enrichVerbTokens';
 
 // TODO: review what properties and methos should be public/private
 
@@ -296,13 +297,13 @@ export class TextProcessor implements ITextProcessor {
 				switch (word.partOfSpeech) {
 					case PartOfSpeech.Verb:
 						word.grammaticalInfo = {
-							tense: '',
+							tense: [],
 							mood: '',
-							person: '',
+							person: [],
 							number: '',
 							isRegular: false,
 							infinitive: '',
-							conjugationPattern: '',
+							conjugationPattern: [],
 							voice: '',
 							verbClass: '',
 							gerund: false,
@@ -398,7 +399,61 @@ export class TextProcessor implements ITextProcessor {
 			return token;
 		});
 
-		this.enrichedTokens = [...enrichedTokensWithGrammar, ...nonWordTokens];
+		const verbTokens = enrichedTokensWithGrammar.filter(
+			(token): token is IWord =>
+				token.tokenType === TokenType.Word &&
+				typeof token.partOfSpeech === 'string' &&
+				token.partOfSpeech === PartOfSpeech.Verb,
+		);
+
+		// Create a type for the simplified version
+		type SimplifiedVerb = Pick<
+			IWord,
+			'tokenId' | 'spanish' | 'grammaticalInfo'
+		>;
+
+		const filteredVerbTokens = verbTokens.map(
+			token =>
+				({
+					tokenId: token.tokenId,
+					spanish: token.spanish,
+					grammaticalInfo: token.grammaticalInfo,
+				} as SimplifiedVerb),
+		);
+
+		const enrichedVerbTokens = await batchProcessor<SimplifiedVerb>({
+			items: filteredVerbTokens,
+			processingFn: enrichVerbTokens,
+			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
+			options: {
+				retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
+				delayBetweenBatches: TextProcessor.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
+				maxRequestsPerMinute: TextProcessor.RATE_LIMITS.REQUESTS_PER_MINUTE,
+			},
+		});
+
+		const mergedVerbTokens = verbTokens.map(originalToken => {
+			const enrichedToken = enrichedVerbTokens.find(
+				t => t.tokenId === originalToken.tokenId,
+			);
+			return {
+				...originalToken,
+				grammaticalInfo:
+					enrichedToken?.grammaticalInfo || originalToken.grammaticalInfo,
+			};
+		});
+
+		const nonVerbTokens = enrichedTokensWithGrammar.filter(
+			token =>
+				token.tokenType !== TokenType.Word ||
+				token.partOfSpeech !== PartOfSpeech.Verb,
+		);
+
+		this.enrichedTokens = [
+			...mergedVerbTokens,
+			...nonVerbTokens,
+			...nonWordTokens,
+		];
 
 		return this.enrichedTokens;
 	}
@@ -437,123 +492,3 @@ export class TextProcessor implements ITextProcessor {
 		console.log('Enriched tokens:', this.enrichedTokens.length);
 	}
 }
-
-// private enrichTokensWithGrammaticalProperties(
-// 	sentences: ISentence[],
-// ): ISentence[] {
-// 	this.enrichedTokensWithGrammaticalProperties = sentences.map(sentence => {
-// 		sentence.tokens = sentence.tokens.map(token => {
-// 			if (token.type === 'word') {
-// 				const word = token.content as IWord;
-
-// 				if (typeof word.partOfSpeech === 'string') {
-// 					switch (word.partOfSpeech.toLowerCase()) {
-// 						case PartOfSpeech.Verb:
-// 							word.grammaticalInfo = {
-// 								tense: '',
-// 								mood: '',
-// 								person: '',
-// 								number: '',
-// 								isRegular: false,
-// 								infinitive: '',
-// 								conjugationPattern: '',
-// 								voice: '',
-// 								verbClass: '',
-// 								gerund: false,
-// 								pastParticiple: false,
-// 								auxiliary: '',
-// 								verbRegularity: '',
-// 								isReflexive: false,
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Noun:
-// 							word.grammaticalInfo = {
-// 								gender: '',
-// 								number: '',
-// 								isProperNoun: false,
-// 								diminutive: false,
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Adjective:
-// 							word.grammaticalInfo = {
-// 								gender: '',
-// 								number: '',
-// 								isPastParticiple: false,
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Adverb:
-// 							word.grammaticalInfo = {
-// 								adverbType: '',
-// 								usesMente: false,
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Article:
-// 							word.grammaticalInfo = {
-// 								articleType: '',
-// 								gender: '',
-// 								number: '',
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Conjunction:
-// 							word.grammaticalInfo = {
-// 								conjunctionType: '',
-// 								conjunctionFunction: '',
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Determiner:
-// 							word.grammaticalInfo = {
-// 								determinerType: '',
-// 								gender: '',
-// 								number: '',
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Interjection:
-// 							word.grammaticalInfo = {
-// 								interjectionEmotion: '',
-// 								interjectoinType: '',
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Numeral:
-// 							word.grammaticalInfo = {
-// 								numeralType: '',
-// 								gender: '',
-// 								number: '',
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Preposition:
-// 							word.grammaticalInfo = {
-// 								prepositionType: '',
-// 								contractsWith: '',
-// 							};
-// 							break;
-
-// 						case PartOfSpeech.Pronoun:
-// 							word.grammaticalInfo = {
-// 								pronounType: '',
-// 								person: '',
-// 								gender: '',
-// 								number: '',
-// 								case: '',
-// 								isReflexive: false,
-// 								isReciprocal: false,
-// 							};
-// 							break;
-// 					}
-// 				}
-// 			}
-// 			return token;
-// 		});
-// 		return sentence;
-// 	});
-
-// 	return this.enrichedTokensWithGrammaticalProperties;
-// }

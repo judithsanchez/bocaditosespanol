@@ -1,13 +1,13 @@
 import {GrammaticalNumber, GrammaticalPerson} from 'lib/types';
 
 export interface IVerb {
-	tense: VerbTense | '';
+	tense: VerbTense[] | [];
 	mood: VerbMood | '';
-	person: GrammaticalPerson | '';
-	number: GrammaticalNumber | '';
+	person: GrammaticalPerson[] | [];
+	number: '';
 	isRegular: boolean;
 	infinitive: string | '';
-	conjugationPattern: ConjugationPattern | '';
+	conjugationPattern: ConjugationPattern[] | [];
 	voice: VerbVoice | '';
 	verbClass: VerbClass | '';
 	gerund: boolean;

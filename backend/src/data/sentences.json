@@ -1,7 +1,7 @@
 [
   {
     "content": "Ella estaba embarazada y tenía una idea, mi pana.",
-    "literalTranslation": "She was pregnant and had an idea, my friend.",
+    "literalTranslation": "She was pregnant and had an idea, my pana.",
     "sentenceId": "sentence-1-historia-de-taxi-ricardo-arjona",
     "tokenIds": [
       "token-ella",
@@ -20,7 +20,7 @@
   },
   {
     "content": "Eran las diez de la noche, piloteaba mi nave.",
-    "literalTranslation": "It was ten o'clock at night, I was piloting my ship.",
+    "literalTranslation": "They were the ten of the night, I was piloting my ship.",
     "sentenceId": "sentence-2-historia-de-taxi-ricardo-arjona",
     "tokenIds": [
       "token-eran",
@@ -35,7 +35,7 @@
       "token-nave",
       "token-."
     ],
-    "translation": "It was ten o'clock at night, I was driving my taxi."
+    "translation": "It was ten o'clock at night, I was driving my car."
   },
   {
     "content": "Era mi taxi un Volkswagen del año 68.",

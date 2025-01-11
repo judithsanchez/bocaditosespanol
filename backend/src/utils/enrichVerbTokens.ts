@@ -1,36 +1,22 @@
-import {GoogleGenerativeAI} from '@google/generative-ai';
+import {GoogleGenerativeAI, SchemaType} from '@google/generative-ai';
 import {config} from 'dotenv';
-import {geminiSafetySettings, geminiVerbTokenSchema} from 'lib/constants';
+import {geminiSafetySettings} from '../lib/constants';
 import {
 	ConjugationPattern,
+	IVerb,
+	VerbAuxiliary,
 	VerbClass,
 	VerbMood,
+	VerbRegularity,
 	VerbTense,
 	VerbVoice,
-} from 'lib/grammaticalInfo/verbsTypes';
-import {IWord} from 'lib/types';
+} from '../lib/grammaticalInfo/verbsTypes';
+import {IWord} from '../lib/types';
 config();
 
 // TODO: cover with unit test
 // TODO: figure out why the cognates are not being handled correctly
-
-/**
- * Current Implementation Note:
- * We're using a hybrid approach to handle different token types due to Gemini AI's schema limitations:
- *
- * 1. Gemini AI Limitation:
- *    - Cannot properly handle polymorphic token structures
- *    - Schema validation doesn't support discriminated unions
- *    - Struggles with conditional property requirements based on token type
- *
- * 2. Our Solution:
- *    - Let Gemini AI process and enrich word tokens with linguistic analysis
- *    - Preserve original emoji and punctuation tokens from input
- *    - Post-process the response to merge both sources
- *
- * This approach maintains data integrity while working around current AI model constraints.
- * Future improvements may be possible as Gemini's schema capabilities evolve.
- */
+// TODO: make english translations also an array
 
 console.log('🚀 Initializing AI Text Processor');
 
@@ -38,24 +24,86 @@ const genAI = new GoogleGenerativeAI(
 	process.env.GOOGLE_GENERATIVE_AI_KEY ?? '',
 );
 
-const model = genAI.getGenerativeModel({
-	model: 'gemini-1.5-flash',
-	generationConfig: {
-		responseMimeType: 'application/json',
-		responseSchema: geminiVerbTokenSchema,
+export const verbTokenSchema = {
+	type: SchemaType.ARRAY,
+	items: {
+		type: SchemaType.OBJECT,
+		properties: {
+			tokenId: {type: SchemaType.STRING},
+			spanish: {type: SchemaType.STRING},
+			grammaticalInfo: {
+				type: SchemaType.OBJECT,
+				properties: {
+					tense: {
+						type: SchemaType.ARRAY,
+						items: {
+							type: SchemaType.STRING,
+							enum: Object.values(VerbTense),
+						},
+					},
+					mood: {type: SchemaType.STRING, enum: Object.values(VerbMood)},
+					person: {
+						type: SchemaType.ARRAY,
+						items: {type: SchemaType.STRING},
+					},
+					number: {type: SchemaType.STRING},
+					isRegular: {type: SchemaType.BOOLEAN},
+					infinitive: {type: SchemaType.STRING},
+					conjugationPattern: {
+						type: SchemaType.ARRAY,
+						items: {
+							type: SchemaType.STRING,
+							enum: Object.values(ConjugationPattern),
+						},
+					},
+					voice: {type: SchemaType.STRING, enum: Object.values(VerbVoice)},
+					verbClass: {type: SchemaType.STRING, enum: Object.values(VerbClass)},
+					gerund: {type: SchemaType.BOOLEAN},
+					pastParticiple: {type: SchemaType.BOOLEAN},
+					auxiliary: {
+						type: SchemaType.STRING,
+						enum: Object.values(VerbAuxiliary),
+					},
+					verbRegularity: {
+						type: SchemaType.STRING,
+						enum: Object.values(VerbRegularity),
+					},
+					isReflexive: {type: SchemaType.BOOLEAN},
+				},
+				required: [
+					'tense',
+					'mood',
+					'person',
+					'number',
+					'isRegular',
+					'infinitive',
+					'conjugationPattern',
+					'voice',
+					'verbClass',
+					'gerund',
+					'pastParticiple',
+					'auxiliary',
+					'verbRegularity',
+					'isReflexive',
+				],
+			},
+		},
+		required: ['tokenId', 'spanish', 'grammaticalInfo'],
 	},
-	safetySettings: geminiSafetySettings,
-});
-
-export async function enrichVerbTokens(tokens: IWord[]): Promise<IWord[]> {
+};
+export async function enrichVerbTokens(
+	tokens: Pick<IWord, 'tokenId' | 'spanish' | 'grammaticalInfo'>[],
+): Promise<Pick<IWord, 'tokenId' | 'spanish' | 'grammaticalInfo'>[]> {
 	console.log('� Processing verb tokens:', tokens.length);
 
 	const model = genAI.getGenerativeModel({
 		model: 'gemini-1.5-flash',
 		generationConfig: {
 			responseMimeType: 'application/json',
-			responseSchema: geminiVerbTokenSchema,
+			responseSchema: verbTokenSchema,
 		},
+		systemInstruction:
+			'Spanish Verb Analysis Task: analyze each of the verbs and return the enriched verb tokens array.',
 		safetySettings: geminiSafetySettings,
 	});
 
@@ -66,24 +114,7 @@ export async function enrichVerbTokens(tokens: IWord[]): Promise<IWord[]> {
 					role: 'user',
 					parts: [
 						{
-							text: `Spanish Verb Analysis Task:
-
-Input Verbs: ${JSON.stringify(tokens)}
-
-Requirements:
-1. Analyze ONLY verb tokens
-2. For each verb determine:
-	 - Tense (${Object.values(VerbTense).join(', ')})
-	 - Mood (${Object.values(VerbMood).join(', ')})
-	 - Person and Number
-	 - Regular/Irregular status
-	 - Infinitive form
-	 - Conjugation pattern (${Object.values(ConjugationPattern).join(', ')})
-	 - Voice (${Object.values(VerbVoice).join(', ')})
-	 - Verb class (${Object.values(VerbClass).join(', ')})
-	 - Additional properties (gerund, participle, auxiliary verb)
-
-Return the enriched verb tokens array.`,
+							text: `Input Verbs: ${JSON.stringify(tokens)}`,
 						},
 					],
 				},
