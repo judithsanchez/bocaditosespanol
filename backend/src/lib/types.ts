@@ -32,9 +32,9 @@ export interface IEmoji {
 export interface IWord {
 	tokenId: string;
 	tokenType: TokenType.Word;
-	spanish: string;
+	originalText: string;
 	normalizedToken: string;
-	english: Promise<string> | string;
+	translations: {english: Promise<string[]> | string[]};
 	hasSpecialChar: boolean;
 	partOfSpeech: Promise<string> | string;
 	isSlang: boolean;

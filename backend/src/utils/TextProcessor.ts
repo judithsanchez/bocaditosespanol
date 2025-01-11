@@ -157,7 +157,7 @@ export class TextProcessor implements ITextProcessor {
 				language: requestBody.language,
 				releaseDate: requestBody.releaseDate,
 			},
-			lyrics: originalSentencesIds,
+			lyrics: this.originalSentencesIds,
 			createdAt: new Date().toISOString(),
 			updatedAt: new Date().toISOString(),
 		};
@@ -194,17 +194,16 @@ export class TextProcessor implements ITextProcessor {
 					} else {
 						tokenObj = {
 							tokenId: `token-${token.toLowerCase()}`,
-							spanish: token,
+							tokenType: TokenType.Word,
+							originalText: token,
 							normalizedToken: this.normalizeString(token),
+							translations: {english: []},
 							hasSpecialChar:
 								token.toLowerCase() !== this.normalizeString(token),
-							english: '',
 							partOfSpeech: '',
 							isSlang: false,
 							isCognate: false,
 							isFalseCognate: false,
-							sentenceContext: sentence.content,
-							tokenType: TokenType.Word,
 						} as IWord;
 					}
 					this.originalTokens.push(tokenObj);
@@ -303,12 +302,11 @@ export class TextProcessor implements ITextProcessor {
 							number: '',
 							isRegular: false,
 							infinitive: '',
-							conjugationPattern: [],
+							// conjugationPattern: [],
 							voice: '',
 							verbClass: '',
 							gerund: false,
 							pastParticiple: false,
-							auxiliary: '',
 							verbRegularity: '',
 							isReflexive: false,
 						};
@@ -409,14 +407,14 @@ export class TextProcessor implements ITextProcessor {
 		// Create a type for the simplified version
 		type SimplifiedVerb = Pick<
 			IWord,
-			'tokenId' | 'spanish' | 'grammaticalInfo'
+			'tokenId' | 'originalText' | 'grammaticalInfo'
 		>;
 
 		const filteredVerbTokens = verbTokens.map(
 			token =>
 				({
 					tokenId: token.tokenId,
-					spanish: token.spanish,
+					originalText: token.originalText,
 					grammaticalInfo: token.grammaticalInfo,
 				} as SimplifiedVerb),
 		);
@@ -471,7 +469,7 @@ export class TextProcessor implements ITextProcessor {
 			author: this.textData.interpreter,
 			title: this.textData.title,
 		});
-		console.log('Formatted sentences:', this.formattedSentences.length);
+		console.log('Formatted sentences:', this.formattedSentences);
 
 		this.tokenizeSentences(this.formattedSentences);
 		console.log('Tokenized sentences:', this.tokenizedSentences.length);
@@ -484,7 +482,8 @@ export class TextProcessor implements ITextProcessor {
 		console.log('Deduplicated tokens:', this.deduplicatedTokens.length);
 
 		this.formatTextEntry(this.textData, this.originalSentencesIds);
-
+		console.log('Original sentence IDs:', this.originalSentencesIds);
+		console.log('Final song object:', this.formattedTextEntry);
 		await this.enrichSentences(this.deduplicatedSentences);
 		console.log('Enriched sentences:', this.enrichedSentences.length);
 

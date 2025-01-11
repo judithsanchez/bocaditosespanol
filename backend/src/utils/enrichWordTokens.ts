@@ -4,6 +4,8 @@ import {IWord, PartOfSpeech, TokenType} from '../lib/types';
 import {geminiSafetySettings} from '../lib/constants';
 config();
 
+// TODO: check why isFalseCognate is sometimes not present
+
 const genAI = new GoogleGenerativeAI(
 	process.env.GOOGLE_GENERATIVE_AI_KEY ?? '',
 );
@@ -14,26 +16,33 @@ const wordSchema = {
 		type: SchemaType.OBJECT,
 		properties: {
 			tokenId: {type: SchemaType.STRING},
-			tokenType: {type: SchemaType.STRING},
-			spanish: {type: SchemaType.STRING},
-			english: {type: SchemaType.STRING},
-			partOfSpeech: {
-				type: SchemaType.STRING,
-				enum: Object.values(PartOfSpeech),
+			tokenType: {type: SchemaType.STRING, enum: [TokenType.Word]},
+			originalText: {type: SchemaType.STRING},
+			normalizedToken: {type: SchemaType.STRING},
+			translations: {
+				type: SchemaType.OBJECT,
+				properties: {
+					english: {
+						type: SchemaType.ARRAY,
+						items: {type: SchemaType.STRING},
+					},
+				},
 			},
+			hasSpecialChar: {type: SchemaType.BOOLEAN},
+			partOfSpeech: {type: SchemaType.STRING},
 			isSlang: {type: SchemaType.BOOLEAN},
 			isCognate: {type: SchemaType.BOOLEAN},
-			isFalseCognate: {type: SchemaType.BOOLEAN},
 		},
 		required: [
 			'tokenId',
 			'tokenType',
-			'spanish',
-			'english',
+			'originalText',
+			'normalizedToken',
+			'translations',
+			'hasSpecialChar',
 			'partOfSpeech',
 			'isSlang',
 			'isCognate',
-			'isFalseCognate',
 		],
 	},
 };
@@ -42,7 +51,7 @@ export async function enrichWordTokens(words: IWord[]): Promise<IWord[]> {
 	console.log('\n🎯 Word Enrichment Pipeline Started');
 	console.log('📊 Input Statistics:', {
 		wordCount: words.length,
-		firstWord: words[0]?.spanish || 'No words provided',
+		firstWord: words[0]?.originalText || 'No words provided',
 	});
 
 	const model = genAI.getGenerativeModel({
@@ -52,6 +61,8 @@ export async function enrichWordTokens(words: IWord[]): Promise<IWord[]> {
 			responseSchema: wordSchema,
 		},
 		safetySettings: geminiSafetySettings,
+		systemInstruction:
+			'Spanish Analysis Task: analyze each of the words and enrich them',
 	});
 
 	const prompt = {
@@ -67,7 +78,14 @@ Input Array: ${JSON.stringify(words)}
 REQUIREMENTS:
 1. Return array with EXACTLY ${words.length} processed words
 2. For EACH word provide:
-    - Accurate English translation contextually meaninful to the sentence they belong to
+   - Include only the essential translations that capture the word's core meaning and function:
+     Examples:
+     * "las" -> ["the"]
+     * "taxi" -> ["taxi"]
+     * "era" -> ["was", "used to be"] 
+     * "ella" -> ["she", "her"]
+     * "de" -> ["of", "from", "about"]
+
     - Part of speech from allowed values: ${Object.values(PartOfSpeech).join(
 			', ',
 		)}

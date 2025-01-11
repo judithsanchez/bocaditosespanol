@@ -20,21 +20,21 @@ export async function addNewSong(songData: AddSongRequest) {
 		const processor = new TextProcessor(songData);
 		await processor.processText();
 
-		// console.log('\n📊 Processing Statistics:');
-		// console.log(
-		// 	'Original Sentences Count:',
-		// 	processor.splittedParagraph.length,
-		// );
-		// console.log('Original Sentences IDs:', processor.originalSentencesIds);
-		// console.log(
-		// 	'Deduplicated Sentences Count:',
-		// 	processor.deduplicatedSentences.length,
-		// );
-		// console.log('Original Tokens Count:', processor.originalTokens.length);
-		// console.log(
-		// 	'Deduplicated Tokens Count:',
-		// 	processor.deduplicatedTokens.length,
-		// );
+		console.log('\n📊 Processing Statistics:');
+		console.log(
+			'Original Sentences Count:',
+			processor.splittedParagraph.length,
+		);
+		console.log('Original Sentences IDs:', processor.originalSentencesIds);
+		console.log(
+			'Deduplicated Sentences Count:',
+			processor.deduplicatedSentences.length,
+		);
+		console.log('Original Tokens Count:', processor.originalTokens.length);
+		console.log(
+			'Deduplicated Tokens Count:',
+			processor.deduplicatedTokens.length,
+		);
 
 		await saveToDatabase({
 			song: processor.formattedTextEntry,

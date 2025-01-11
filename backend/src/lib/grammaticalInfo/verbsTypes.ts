@@ -1,4 +1,4 @@
-import {GrammaticalNumber, GrammaticalPerson} from 'lib/types';
+import {GrammaticalPerson} from 'lib/types';
 
 export interface IVerb {
 	tense: VerbTense[] | [];
@@ -7,12 +7,11 @@ export interface IVerb {
 	number: '';
 	isRegular: boolean;
 	infinitive: string | '';
-	conjugationPattern: ConjugationPattern[] | [];
+	// conjugationPattern: ConjugationPattern[] | [];
 	voice: VerbVoice | '';
 	verbClass: VerbClass | '';
 	gerund: boolean;
 	pastParticiple: boolean;
-	auxiliary: VerbAuxiliary | '';
 	verbRegularity: VerbRegularity | '';
 	isReflexive: boolean;
 }
@@ -64,29 +63,22 @@ export enum VerbClass {
 	Impersonal = 'impersonal',
 }
 
-export enum VerbAuxiliary {
-	Haber = 'haber',
-	Ser = 'ser',
-	Estar = 'estar',
-}
+// export enum ConjugationPattern {
+// 	AR = 'ar',
+// 	ER = 'er',
+// 	IR = 'ir',
 
-export enum ConjugationPattern {
-	AR = 'ar',
-	ER = 'er',
-	IR = 'ir',
+// 	E_IE = 'e->ie',
+// 	O_UE = 'o->ue',
+// 	E_I = 'e->i',
+// 	U_UE = 'u->ue',
+// 	I_IE = 'i->ie',
 
-	E_IE = 'e->ie',
-	O_UE = 'o->ue',
-	E_I = 'e->i',
-	U_UE = 'u->ue',
-	I_IE = 'i->ie',
+// 	G_ADDITION = 'g-add',
+// 	C_ZC = 'c->zc',
+// 	I_Y = 'i->y',
 
-	IRREGULAR = 'irregular',
-	G_ADDITION = 'g-add',
-	C_ZC = 'c->zc',
-	I_Y = 'i->y',
-
-	IR_E_I = 'ir_e->i',
-	ER_O_UE = 'er_o->ue',
-	AR_E_IE = 'ar_e->ie',
-}
+// 	IR_E_I = 'ir_e->i',
+// 	ER_O_UE = 'er_o->ue',
+// 	AR_E_IE = 'ar_e->ie',
+// }

@@ -2,21 +2,17 @@ import {GoogleGenerativeAI, SchemaType} from '@google/generative-ai';
 import {config} from 'dotenv';
 import {geminiSafetySettings} from '../lib/constants';
 import {
-	ConjugationPattern,
-	IVerb,
-	VerbAuxiliary,
 	VerbClass,
 	VerbMood,
 	VerbRegularity,
 	VerbTense,
 	VerbVoice,
 } from '../lib/grammaticalInfo/verbsTypes';
-import {IWord} from '../lib/types';
+import {GrammaticalNumber, GrammaticalPerson, IWord} from '../lib/types';
 config();
 
 // TODO: cover with unit test
 // TODO: figure out why the cognates are not being handled correctly
-// TODO: make english translations also an array
 
 console.log('🚀 Initializing AI Text Processor');
 
@@ -30,7 +26,7 @@ export const verbTokenSchema = {
 		type: SchemaType.OBJECT,
 		properties: {
 			tokenId: {type: SchemaType.STRING},
-			spanish: {type: SchemaType.STRING},
+			originalText: {type: SchemaType.STRING},
 			grammaticalInfo: {
 				type: SchemaType.OBJECT,
 				properties: {
@@ -49,21 +45,17 @@ export const verbTokenSchema = {
 					number: {type: SchemaType.STRING},
 					isRegular: {type: SchemaType.BOOLEAN},
 					infinitive: {type: SchemaType.STRING},
-					conjugationPattern: {
-						type: SchemaType.ARRAY,
-						items: {
-							type: SchemaType.STRING,
-							enum: Object.values(ConjugationPattern),
-						},
-					},
+					// conjugationPattern: {
+					// 	type: SchemaType.ARRAY,
+					// 	items: {
+					// 		type: SchemaType.STRING,
+					// 		enum: Object.values(ConjugationPattern),
+					// 	},
+					// },
 					voice: {type: SchemaType.STRING, enum: Object.values(VerbVoice)},
 					verbClass: {type: SchemaType.STRING, enum: Object.values(VerbClass)},
 					gerund: {type: SchemaType.BOOLEAN},
 					pastParticiple: {type: SchemaType.BOOLEAN},
-					auxiliary: {
-						type: SchemaType.STRING,
-						enum: Object.values(VerbAuxiliary),
-					},
 					verbRegularity: {
 						type: SchemaType.STRING,
 						enum: Object.values(VerbRegularity),
@@ -77,23 +69,22 @@ export const verbTokenSchema = {
 					'number',
 					'isRegular',
 					'infinitive',
-					'conjugationPattern',
+					// 'conjugationPattern',
 					'voice',
 					'verbClass',
 					'gerund',
 					'pastParticiple',
-					'auxiliary',
 					'verbRegularity',
 					'isReflexive',
 				],
 			},
 		},
-		required: ['tokenId', 'spanish', 'grammaticalInfo'],
+		required: ['tokenId', 'originalText', 'grammaticalInfo'],
 	},
 };
 export async function enrichVerbTokens(
-	tokens: Pick<IWord, 'tokenId' | 'spanish' | 'grammaticalInfo'>[],
-): Promise<Pick<IWord, 'tokenId' | 'spanish' | 'grammaticalInfo'>[]> {
+	tokens: Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[],
+): Promise<Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[]> {
 	console.log('� Processing verb tokens:', tokens.length);
 
 	const model = genAI.getGenerativeModel({
@@ -102,8 +93,37 @@ export async function enrichVerbTokens(
 			responseMimeType: 'application/json',
 			responseSchema: verbTokenSchema,
 		},
-		systemInstruction:
-			'Spanish Verb Analysis Task: analyze each of the verbs and return the enriched verb tokens array.',
+		systemInstruction: `
+			Spanish Verb Analysis Task: Analyze each of the verbs and return the enriched verb tokens array.
+			For each verb, provide detailed grammatical information including:
+			- Tense: Identify all possible tenses the verb can be in. Possible values include: ${Object.values(
+				VerbTense,
+			).join(', ')}.
+			- Mood: Specify the mood of the verb. Possible values include: ${Object.values(
+				VerbMood,
+			).join(', ')}.
+			- Person: List all possible grammatical persons (e.g., first, second, third) the verb can represent. 
+			  For example, if the verb is "estaba," it should include both first and third person. Possible values include: ${Object.values(
+					GrammaticalPerson,
+				).join(', ')}.
+			- Number: Specify whether the verb is singular or plural. Possible values include: ${Object.values(
+				GrammaticalNumber,
+			).join(', ')}.
+			- Regularity: Indicate if the verb is regular or irregular. Possible values include: ${Object.values(
+				VerbRegularity,
+			).join(', ')}.
+			- Infinitive: Provide the infinitive form of the verb.
+
+			- Voice: Specify the voice (e.g., active, passive). Possible values include: ${Object.values(
+				VerbVoice,
+			).join(', ')}.
+			- Verb Class: Indicate the class of the verb. Possible values include: ${Object.values(
+				VerbClass,
+			).join(', ')}.
+			- Gerund and Past Participle: Specify if the verb can be used as a gerund or past participle.
+			- Reflexivity: Indicate if the verb is reflexive.
+			Ensure that all possible interpretations of the verb are considered, especially in ambiguous cases.
+		`,
 		safetySettings: geminiSafetySettings,
 	});
 
