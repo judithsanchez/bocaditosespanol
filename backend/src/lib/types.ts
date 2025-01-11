@@ -108,7 +108,6 @@ export interface ITextProcessor {
 		author: string;
 		title: string;
 	}): ISentence[];
-	getOriginalSentencesIds(sentences: ISentence[]): string[];
 	formatTextEntry(
 		requestBody: AddSongRequest,
 		originalSentencesIds: string[],

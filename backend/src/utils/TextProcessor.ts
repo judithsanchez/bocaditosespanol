@@ -133,11 +133,6 @@ export class TextProcessor implements ITextProcessor {
 		return formattedSentences;
 	};
 
-	public getOriginalSentencesIds = (sentences: ISentence[]): string[] => {
-		this.originalSentencesIds = sentences.map(sentence => sentence.sentenceId);
-		return this.originalSentencesIds;
-	};
-
 	public formatTextEntry = (
 		requestBody: AddSongRequest,
 		originalSentencesIds: string[],
@@ -455,39 +450,30 @@ export class TextProcessor implements ITextProcessor {
 
 		return this.enrichedTokens;
 	}
-	public async processText(): Promise<void> {
-		console.log('Starting text processing with data:', {
-			title: this.textData.title,
-			lyricsLength: this.textData.lyrics.length,
-		});
 
+	public async processText(): Promise<void> {
 		this.splitParagraph(this.textData.lyrics);
-		console.log('Split paragraphs:', this.splittedParagraph.length);
 
 		this.formatSentences({
 			sentences: this.splittedParagraph,
 			author: this.textData.interpreter,
 			title: this.textData.title,
 		});
-		console.log('Formatted sentences:', this.formattedSentences);
+
+		this.originalSentencesIds = this.formattedSentences.map(
+			sentence => sentence.sentenceId,
+		);
 
 		this.tokenizeSentences(this.formattedSentences);
-		console.log('Tokenized sentences:', this.tokenizedSentences.length);
-		console.log('Original tokens:', this.originalTokens.length);
 
 		this.deduplicateSentences(this.tokenizedSentences);
-		console.log('Deduplicated sentences:', this.deduplicatedSentences.length);
 
 		this.deduplicateTokens(this.originalTokens);
-		console.log('Deduplicated tokens:', this.deduplicatedTokens.length);
 
 		this.formatTextEntry(this.textData, this.originalSentencesIds);
-		console.log('Original sentence IDs:', this.originalSentencesIds);
-		console.log('Final song object:', this.formattedTextEntry);
+
 		await this.enrichSentences(this.deduplicatedSentences);
-		console.log('Enriched sentences:', this.enrichedSentences.length);
 
 		await this.enrichTokens(this.deduplicatedTokens);
-		console.log('Enriched tokens:', this.enrichedTokens.length);
 	}
 }

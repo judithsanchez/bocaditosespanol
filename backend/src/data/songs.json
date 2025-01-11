@@ -11,8 +11,16 @@
       "language": "spanish",
       "releaseDate": "1994"
     },
-    "lyrics": [],
-    "createdAt": "2025-01-11T15:59:46.498Z",
-    "updatedAt": "2025-01-11T15:59:46.499Z"
+    "lyrics": [
+      "sentence-1-historia-de-taxi-ricardo-arjona",
+      "sentence-2-historia-de-taxi-ricardo-arjona",
+      "sentence-3-historia-de-taxi-ricardo-arjona",
+      "sentence-4-historia-de-taxi-ricardo-arjona",
+      "sentence-2-historia-de-taxi-ricardo-arjona",
+      "sentence-3-historia-de-taxi-ricardo-arjona",
+      "sentence-4-historia-de-taxi-ricardo-arjona"
+    ],
+    "createdAt": "2025-01-11T19:54:27.816Z",
+    "updatedAt": "2025-01-11T19:54:27.816Z"
   }
 ]

@@ -78,10 +78,12 @@ Input Array: ${JSON.stringify(words)}
 REQUIREMENTS:
 1. Return array with EXACTLY ${words.length} processed words
 2. For EACH word provide:
-   - Include only the essential translations that capture the word's core meaning and function:
+   - Include all possible accurate translations. 
+   - For verbs do not include the pronouns.
      Examples:
+	 * "estaba" -> ["was", "used to be"]
      * "las" -> ["the"]
-     * "taxi" -> ["taxi"]
+     * "taxi" -> ["taxi", "cab"]
      * "era" -> ["was", "used to be"] 
      * "ella" -> ["she", "her"]
      * "de" -> ["of", "from", "about"]

@@ -7,7 +7,6 @@ export interface IVerb {
 	number: '';
 	isRegular: boolean;
 	infinitive: string | '';
-	// conjugationPattern: ConjugationPattern[] | [];
 	voice: VerbVoice | '';
 	verbClass: VerbClass | '';
 	gerund: boolean;
