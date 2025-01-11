@@ -32,6 +32,7 @@ const wordSchema = {
 			partOfSpeech: {type: SchemaType.STRING},
 			isSlang: {type: SchemaType.BOOLEAN},
 			isCognate: {type: SchemaType.BOOLEAN},
+			isFalseCognate: {type: SchemaType.BOOLEAN},
 		},
 		required: [
 			'tokenId',
@@ -43,6 +44,7 @@ const wordSchema = {
 			'partOfSpeech',
 			'isSlang',
 			'isCognate',
+			'isFalseCognate',
 		],
 	},
 };

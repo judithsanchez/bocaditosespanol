@@ -22,5 +22,26 @@
     ],
     "createdAt": "2025-01-11T19:54:27.816Z",
     "updatedAt": "2025-01-11T19:54:27.816Z"
+  },
+  {
+    "songId": "el-taxi-arjona",
+    "metadata": {
+      "interpreter": "arjona",
+      "title": "el taxi",
+      "youtube": "https://www.youtube.com/watch?v=-apU2sviHCM&ab_channel=RicardoArjonaVEVO",
+      "genre": [
+        "pop"
+      ],
+      "language": "spanish",
+      "releaseDate": "1994"
+    },
+    "lyrics": [
+      "sentence-1-el-taxi-arjona",
+      "sentence-2-el-taxi-arjona",
+      "sentence-3-el-taxi-arjona",
+      "sentence-1-el-taxi-arjona"
+    ],
+    "createdAt": "2025-01-11T20:17:37.489Z",
+    "updatedAt": "2025-01-11T20:17:37.489Z"
   }
 ]

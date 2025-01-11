@@ -136,3 +136,35 @@ export interface BatchProcessorConfig<T> {
 		maxRequestsPerMinute: number;
 	};
 }
+
+export interface IStoredWord {
+	tokenId: string;
+	tokenType: string;
+	originalText: string;
+	normalizedToken: string;
+	translations: {
+		english: string[];
+	};
+	hasSpecialChar: boolean;
+	partOfSpeech: string;
+	isSlang: boolean;
+	isCognate: boolean;
+	isFalseCognate: boolean;
+	grammaticalInfo?: {
+		[key: string]: string | boolean | string[] | number;
+	};
+}
+
+export interface IStoredPunctuationSign {
+	tokenId: string;
+	content: string;
+	tokenType: string;
+}
+
+export interface IStoredEmoji {
+	tokenId: string;
+	content: string;
+	tokenType: string;
+}
+
+export type StoredToken = IStoredWord | IStoredPunctuationSign | IStoredEmoji;

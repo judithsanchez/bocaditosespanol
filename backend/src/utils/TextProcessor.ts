@@ -4,6 +4,7 @@ import {
 	ITextProcessor,
 	IWord,
 	PartOfSpeech,
+	StoredToken,
 	TokenType,
 } from '../lib/types';
 import {errors} from '../lib/constants';
@@ -13,6 +14,7 @@ import {batchProcessor} from './batchProcessor';
 import {enrichSentencesWithAI} from './enrichSentencesWithAI';
 import {enrichWordTokens} from './enrichWordTokens';
 import {enrichVerbTokens} from './enrichVerbTokens';
+import existingTokens from '../data/tokens.json';
 
 // TODO: review what properties and methos should be public/private
 
@@ -233,14 +235,25 @@ export class TextProcessor implements ITextProcessor {
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Array<IWord | IPunctuationSign | IEmoji> {
 		const uniqueTokens = new Map<string, IWord | IPunctuationSign | IEmoji>();
+		const newTokensForAI = new Map<string, IWord | IPunctuationSign | IEmoji>();
 
 		tokens.forEach(token => {
-			if (!uniqueTokens.has(token.tokenId)) {
+			const existingToken = existingTokens.find(
+				t => t.tokenId === token.tokenId,
+			);
+
+			if (existingToken) {
+				uniqueTokens.set(
+					token.tokenId,
+					existingToken as IWord | IPunctuationSign | IEmoji,
+				);
+			} else if (!uniqueTokens.has(token.tokenId)) {
 				uniqueTokens.set(token.tokenId, token);
+				newTokensForAI.set(token.tokenId, token);
 			}
 		});
 
-		this.deduplicatedTokens = Array.from(uniqueTokens.values());
+		this.deduplicatedTokens = Array.from(newTokensForAI.values());
 		return this.deduplicatedTokens;
 	}
 
