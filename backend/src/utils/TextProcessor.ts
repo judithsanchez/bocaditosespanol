@@ -4,7 +4,6 @@ import {
 	ITextProcessor,
 	IWord,
 	PartOfSpeech,
-	StoredToken,
 	TokenType,
 } from '../lib/types';
 import {errors} from '../lib/constants';
@@ -14,9 +13,8 @@ import {batchProcessor} from './batchProcessor';
 import {enrichSentencesWithAI} from './enrichSentencesWithAI';
 import {enrichWordTokens} from './enrichWordTokens';
 import {enrichVerbTokens} from './enrichVerbTokens';
-import {TokenDictionary} from './TokenDictionary';
-import {initializeDataStructures} from './initializeDataStructures';
 import {Logger} from './Logger';
+import {DatabaseService} from '../services/DatabaseService';
 
 // TODO: review what properties and methos should be public/private
 
@@ -28,7 +26,7 @@ export class TextProcessor implements ITextProcessor {
 		RETRY_ATTEMPTS: 3,
 	};
 
-	private readonly tokenDictionary: TokenDictionary;
+	private readonly db = new DatabaseService();
 
 	private readonly logger = new Logger('TextProcessor', true);
 
@@ -58,7 +56,6 @@ export class TextProcessor implements ITextProcessor {
 			this.logger.error('Invalid text data', new Error(errors.invalidTextData));
 			throw new Error(errors.invalidTextData);
 		}
-		this.tokenDictionary = new TokenDictionary();
 		this.logger.info('Text processor initialized', {
 			title: textData.title,
 			interpreter: textData.interpreter,
@@ -329,7 +326,7 @@ export class TextProcessor implements ITextProcessor {
 
 		let existingTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
 		try {
-			existingTokens = await this.tokenDictionary.getTokens();
+			existingTokens = await this.db.getTokens();
 			this.logger.info('Retrieved existing tokens', {
 				existingTokensCount: existingTokens.length,
 			});
@@ -409,6 +406,11 @@ export class TextProcessor implements ITextProcessor {
 			totalTokens: tokens.length,
 			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
 		});
+
+		if (this.deduplicatedTokens.length === 0) {
+			this.logger.info('No new tokens to enrich - skipping enrichment phase');
+			return (this.enrichedTokens = []);
+		}
 
 		const wordTokens = tokens.filter(
 			(token): token is IWord => token.tokenType === TokenType.Word,
@@ -633,10 +635,6 @@ export class TextProcessor implements ITextProcessor {
 	public async processText(): Promise<void> {
 		this.logger.start('processText');
 
-		await initializeDataStructures();
-
-		await this.tokenDictionary.load();
-
 		this.logger.info('Processing text content', {
 			lyrics: this.textData.lyrics.substring(0, 50) + '...',
 			title: this.textData.title,
@@ -674,7 +672,7 @@ export class TextProcessor implements ITextProcessor {
 
 		this.enrichedTokens = await this.enrichTokens(this.deduplicatedTokens);
 
-		await this.tokenDictionary.addTokens(this.enrichedTokens);
+		await this.db.saveTokens(this.enrichedTokens);
 
 		this.logger.end('processText');
 	}

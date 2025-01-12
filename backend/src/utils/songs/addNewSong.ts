@@ -1,10 +1,11 @@
 import {errors} from '../../lib/constants';
 import {AddSongRequest} from '../../../../lib/types';
-import {TextProcessor} from '../../utils/TextProcessor';
-import {saveToDatabase} from '../../utils/saveToDatabase';
+import {TextProcessor} from '../TextProcessor';
+import {DatabaseService} from '../../services/DatabaseService';
 import {Logger} from '../Logger';
 
 const logger = new Logger('AddNewSong');
+const db = new DatabaseService();
 
 export async function addNewSong(songData: AddSongRequest) {
 	logger.start('addNewSong');
@@ -18,25 +19,20 @@ export async function addNewSong(songData: AddSongRequest) {
 		!songData.releaseDate ||
 		!songData.lyrics
 	) {
-		logger.error('Invalid song data provided', new Error(errors.invalidData));
 		throw new Error(errors.invalidData);
 	}
 
 	try {
-		logger.info('Creating text processor', {title: songData.title});
 		const processor = new TextProcessor(songData);
-
-		logger.info('Processing text');
 		await processor.processText();
 
-		logger.info('Saving to database');
-		await saveToDatabase({
-			song: processor.formattedTextEntry,
-			sentences: processor.enrichedSentences,
-			tokens: processor.enrichedTokens,
-		});
+		await Promise.all([
+			db.saveSong(processor.formattedTextEntry),
+			db.saveSentences(processor.enrichedSentences),
+			db.saveTokens(processor.enrichedTokens),
+		]);
 
-		const result = {
+		return {
 			song: processor.formattedTextEntry,
 			sentences: processor.enrichedSentences,
 			tokens: processor.enrichedTokens,
@@ -50,12 +46,7 @@ export async function addNewSong(songData: AddSongRequest) {
 				enrichenedTokensCount: processor.enrichedTokens.length,
 			},
 		};
-
-		logger.info('Song processing completed', {stats: result.stats});
-		logger.end('addNewSong');
-		return result;
 	} catch (error) {
-		logger.error('Failed to process song', error);
 		throw new Error(`${errors.processingError}: ${error}`);
 	}
 }
