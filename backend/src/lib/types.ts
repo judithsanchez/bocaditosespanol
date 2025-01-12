@@ -116,7 +116,7 @@ export interface ITextProcessor {
 	deduplicateSentences(sentences: ISentence[]): ISentence[];
 	deduplicateTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
-	): Array<IWord | IPunctuationSign | IEmoji>;
+	): Promise<Array<IWord | IPunctuationSign | IEmoji>>;
 	enrichTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Promise<Array<IWord | IPunctuationSign | IEmoji>>;

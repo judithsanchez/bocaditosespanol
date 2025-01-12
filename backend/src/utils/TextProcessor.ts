@@ -14,7 +14,9 @@ import {batchProcessor} from './batchProcessor';
 import {enrichSentencesWithAI} from './enrichSentencesWithAI';
 import {enrichWordTokens} from './enrichWordTokens';
 import {enrichVerbTokens} from './enrichVerbTokens';
-import existingTokens from '../data/tokens.json';
+import {TokenDictionary} from './TokenDictionary';
+import {initializeDataStructures} from './initializeDataStructures';
+import {Logger} from './Logger';
 
 // TODO: review what properties and methos should be public/private
 
@@ -26,6 +28,10 @@ export class TextProcessor implements ITextProcessor {
 		RETRY_ATTEMPTS: 3,
 	};
 
+	private readonly tokenDictionary: TokenDictionary;
+
+	private readonly logger = new Logger('TextProcessor', true);
+
 	public splittedParagraph: string[] = [];
 
 	public formattedSentences: ISentence[] = [];
@@ -36,28 +42,43 @@ export class TextProcessor implements ITextProcessor {
 
 	public tokenizedSentences: ISentence[] = [];
 
-	public deduplicatedSentences: ISentence[] = []; // this is what I will send to ai for the translations
+	public deduplicatedSentences: ISentence[] = [];
 
 	public originalTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
 
-	public deduplicatedTokens: Array<IWord | IPunctuationSign | IEmoji> = []; // this is what I will send to ai for the translations
+	public deduplicatedTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
 
 	public enrichedSentences: ISentence[] = [];
 
 	public enrichedTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
 
-	constructor(public textData: AddSongRequest) {
+	constructor(private readonly textData: AddSongRequest) {
+		this.logger.start('constructor');
 		if (!textData.lyrics) {
+			this.logger.error('Invalid text data', new Error(errors.invalidTextData));
 			throw new Error(errors.invalidTextData);
 		}
+		this.tokenDictionary = new TokenDictionary();
+		this.logger.info('Text processor initialized', {
+			title: textData.title,
+			interpreter: textData.interpreter,
+			lyricsLength: textData.lyrics.length,
+		});
+		this.logger.end('constructor');
 	}
 
 	public normalizeString = (string: string): string => {
+		this.logger.start('normalizeString');
+
 		if (typeof string !== 'string') {
+			this.logger.error(
+				'Invalid input type',
+				new TypeError(errors.mustBeString),
+			);
 			throw new TypeError(errors.mustBeString);
 		}
 
-		return string
+		const normalizedString = string
 			.trim()
 			.toLowerCase()
 			.replace(/\s+/g, ' ')
@@ -67,10 +88,19 @@ export class TextProcessor implements ITextProcessor {
 			)
 			.replace(/[ñ]/g, 'n')
 			.replace(/[ü]/g, 'u');
+
+		this.logger.end('normalizeString');
+		return normalizedString;
 	};
 
 	public splitParagraph = (string: string): string[] => {
+		this.logger.start('splitParagraph');
+
 		if (typeof string !== 'string') {
+			this.logger.error(
+				'Invalid input type',
+				new TypeError(errors.mustBeString),
+			);
 			throw new TypeError(errors.mustBeString);
 		}
 
@@ -100,6 +130,11 @@ export class TextProcessor implements ITextProcessor {
 		}
 
 		this.splittedParagraph = sentences;
+		this.logger.info('Paragraph split completed', {
+			sentencesCount: sentences.length,
+			firstSentence: sentences[0],
+		});
+		this.logger.end('splitParagraph');
 		return sentences;
 	};
 
@@ -112,6 +147,7 @@ export class TextProcessor implements ITextProcessor {
 		author: string;
 		title: string;
 	}): ISentence[] => {
+		this.logger.start('formatSentences');
 		const sentenceMap = new Map<string, number>();
 
 		const formattedSentences = sentences.map(sentence => {
@@ -132,6 +168,11 @@ export class TextProcessor implements ITextProcessor {
 		});
 
 		this.formattedSentences = formattedSentences;
+		this.logger.info('Sentences formatted', {
+			totalSentences: formattedSentences.length,
+			uniqueSentences: sentenceMap.size,
+		});
+		this.logger.end('formatSentences');
 		return formattedSentences;
 	};
 
@@ -231,30 +272,38 @@ export class TextProcessor implements ITextProcessor {
 		return this.deduplicatedSentences;
 	}
 
-	public deduplicateTokens(
+	public async deduplicateTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
-	): Array<IWord | IPunctuationSign | IEmoji> {
-		const uniqueTokens = new Map<string, IWord | IPunctuationSign | IEmoji>();
-		const newTokensForAI = new Map<string, IWord | IPunctuationSign | IEmoji>();
+	): Promise<Array<IWord | IPunctuationSign | IEmoji>> {
+		const uniqueTokensInText = new Map<
+			string,
+			IWord | IPunctuationSign | IEmoji
+		>();
 
 		tokens.forEach(token => {
-			const existingToken = existingTokens.find(
-				t => t.tokenId === token.tokenId,
-			);
-
-			if (existingToken) {
-				uniqueTokens.set(
-					token.tokenId,
-					existingToken as IWord | IPunctuationSign | IEmoji,
-				);
-			} else if (!uniqueTokens.has(token.tokenId)) {
-				uniqueTokens.set(token.tokenId, token);
-				newTokensForAI.set(token.tokenId, token);
+			if (!uniqueTokensInText.has(token.tokenId)) {
+				uniqueTokensInText.set(token.tokenId, token);
 			}
 		});
 
-		this.deduplicatedTokens = Array.from(newTokensForAI.values());
-		return this.deduplicatedTokens;
+		let existingTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
+		try {
+			existingTokens = await this.tokenDictionary.getTokens();
+		} catch (error) {
+			console.log('No existing tokens found, proceeding with new tokens');
+		}
+
+		const newTokensForProcessing = Array.from(
+			uniqueTokensInText.values(),
+		).filter(
+			newToken =>
+				!existingTokens.some(
+					existingToken => existingToken.tokenId === newToken.tokenId,
+				),
+		);
+
+		this.deduplicatedTokens = newTokensForProcessing;
+		return newTokensForProcessing;
 	}
 
 	public async enrichSentences(sentences: ISentence[]): Promise<ISentence[]> {
@@ -412,7 +461,6 @@ export class TextProcessor implements ITextProcessor {
 				token.partOfSpeech === PartOfSpeech.Verb,
 		);
 
-		// Create a type for the simplified version
 		type SimplifiedVerb = Pick<
 			IWord,
 			'tokenId' | 'originalText' | 'grammaticalInfo'
@@ -465,28 +513,20 @@ export class TextProcessor implements ITextProcessor {
 	}
 
 	public async processText(): Promise<void> {
-		this.splitParagraph(this.textData.lyrics);
+		await initializeDataStructures();
+		await this.tokenDictionary.load();
 
-		this.formatSentences({
+		this.splittedParagraph = this.splitParagraph(this.textData.lyrics);
+		this.formattedSentences = this.formatSentences({
 			sentences: this.splittedParagraph,
 			author: this.textData.interpreter,
 			title: this.textData.title,
 		});
 
-		this.originalSentencesIds = this.formattedSentences.map(
-			sentence => sentence.sentenceId,
-		);
+		this.tokenizedSentences = this.tokenizeSentences(this.formattedSentences);
+		this.deduplicatedTokens = await this.deduplicateTokens(this.originalTokens);
+		this.enrichedTokens = await this.enrichTokens(this.deduplicatedTokens);
 
-		this.tokenizeSentences(this.formattedSentences);
-
-		this.deduplicateSentences(this.tokenizedSentences);
-
-		this.deduplicateTokens(this.originalTokens);
-
-		this.formatTextEntry(this.textData, this.originalSentencesIds);
-
-		await this.enrichSentences(this.deduplicatedSentences);
-
-		await this.enrichTokens(this.deduplicatedTokens);
+		await this.tokenDictionary.addTokens(this.enrichedTokens);
 	}
 }

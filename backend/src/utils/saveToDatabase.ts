@@ -2,6 +2,9 @@ import {readFile, writeFile} from 'fs/promises';
 import {join} from 'path';
 import {ISentence, ISong} from '../../../lib/types';
 import {IEmoji, IPunctuationSign, IWord} from 'lib/types';
+import {Logger} from './Logger';
+
+const logger = new Logger('DatabaseOperations');
 
 export async function saveToDatabase({
 	song,
@@ -12,10 +15,10 @@ export async function saveToDatabase({
 	sentences: ISentence[];
 	tokens: Array<IWord | IPunctuationSign | IEmoji>;
 }) {
+	logger.start('saveToDatabase');
 	const dbPath = join(__dirname, '../data');
 
-	console.log('\n📁 Database Operation Started');
-	console.log('📊 Input Data Statistics:', {
+	logger.info('Starting database operation', {
 		song: {
 			id: song.songId,
 			title: song.metadata.title,
@@ -25,36 +28,34 @@ export async function saveToDatabase({
 		tokensCount: tokens.length,
 	});
 
-	// Helper function to read and parse JSON files
 	async function readJsonFile(filename: string) {
-		console.log(`📖 Reading ${filename}...`);
+		logger.info('Reading file', {filename});
 		try {
 			const content = await readFile(join(dbPath, filename), 'utf-8');
 			const data = JSON.parse(content);
-			console.log(`✅ Successfully read ${filename}:`, {
+			logger.info('File read successfully', {
+				filename,
 				recordCount: Array.isArray(data) ? data.length : 'Not an array',
 			});
 			return data;
 		} catch (error) {
-			console.log(`⚠️ File ${filename} not found or empty, creating new array`);
+			logger.info('File not found or empty, creating new array', {filename});
 			return [];
 		}
 	}
 
-	// Helper function to write JSON files
 	async function writeJsonFile(filename: string, data: unknown) {
-		console.log(`💾 Writing ${filename}...`);
+		logger.info('Writing file', {filename});
 		try {
 			await writeFile(join(dbPath, filename), JSON.stringify(data, null, 2));
-			console.log(`✅ Successfully wrote ${filename}`);
+			logger.info('File written successfully', {filename});
 		} catch (error) {
-			console.error(`❌ Error writing ${filename}:`, error);
+			logger.error(`Failed to write file: ${filename}`, error);
 			throw error;
 		}
 	}
 
 	try {
-		// Read existing data
 		const [existingSongs, existingSentences, existingTokens] =
 			await Promise.all([
 				readJsonFile('songs.json'),
@@ -62,20 +63,17 @@ export async function saveToDatabase({
 				readJsonFile('tokens.json'),
 			]);
 
-		// Check for duplicates
 		const isDuplicateSong = existingSongs.some(
 			(s: ISong) => s.songId === song.songId,
 		);
 		if (isDuplicateSong) {
-			console.log('\n🎵 Duplicate Song Detected:', {
-				songId: song.songId,
-				title: song.metadata.title,
-				interpreter: song.metadata.interpreter,
-			});
+			logger.error(
+				'Duplicate song detected',
+				new Error(`Song with ID ${song.songId} already exists`),
+			);
 			throw new Error(`Song with ID ${song.songId} already exists`);
 		}
 
-		// Log duplicate checks
 		const duplicateSentences = sentences.filter(newSentence =>
 			existingSentences.some(
 				(existingSentence: ISentence) =>
@@ -90,12 +88,11 @@ export async function saveToDatabase({
 			),
 		);
 
-		console.log('\n🔍 Duplicate Analysis:', {
+		logger.info('Duplicate analysis completed', {
 			duplicateSentencesCount: duplicateSentences.length,
 			duplicateTokensCount: duplicateTokens.length,
 		});
 
-		// Filter out duplicates
 		const newSentences = sentences.filter(
 			newSentence => !duplicateSentences.includes(newSentence),
 		);
@@ -103,26 +100,26 @@ export async function saveToDatabase({
 			newToken => !duplicateTokens.includes(newToken),
 		);
 
-		// Save all data
 		await Promise.all([
 			writeJsonFile('songs.json', [...existingSongs, song]),
 			writeJsonFile('sentences.json', [...existingSentences, ...newSentences]),
 			writeJsonFile('tokens.json', [...existingTokens, ...newTokens]),
 		]);
 
-		console.log('\n✅ Database Operation Complete:', {
+		logger.info('Database operation completed', {
 			addedSong: song.songId,
 			addedSentences: newSentences.length,
 			addedTokens: newTokens.length,
 		});
 
+		logger.end('saveToDatabase');
 		return {
 			addedSong: song,
 			addedSentences: newSentences.length,
 			addedTokens: newTokens.length,
 		};
 	} catch (error) {
-		console.error('\n❌ Database Operation Failed:', error);
+		logger.error('Database operation failed', error);
 		throw error;
 	}
 }
