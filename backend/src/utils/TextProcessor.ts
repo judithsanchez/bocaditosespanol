@@ -68,13 +68,7 @@ export class TextProcessor implements ITextProcessor {
 	}
 
 	public normalizeString = (string: string): string => {
-		this.logger.start('normalizeString');
-
 		if (typeof string !== 'string') {
-			this.logger.error(
-				'Invalid input type',
-				new TypeError(errors.mustBeString),
-			);
 			throw new TypeError(errors.mustBeString);
 		}
 
@@ -89,7 +83,6 @@ export class TextProcessor implements ITextProcessor {
 			.replace(/[ñ]/g, 'n')
 			.replace(/[ü]/g, 'u');
 
-		this.logger.end('normalizeString');
 		return normalizedString;
 	};
 
@@ -176,10 +169,9 @@ export class TextProcessor implements ITextProcessor {
 		return formattedSentences;
 	};
 
-	public formatTextEntry = (
-		requestBody: AddSongRequest,
-		originalSentencesIds: string[],
-	): ISong => {
+	public formatTextEntry = (requestBody: AddSongRequest): ISong => {
+		this.logger.start('formatTextEntry');
+
 		const song: ISong = {
 			songId: `${requestBody.title
 				.toLowerCase()
@@ -201,10 +193,23 @@ export class TextProcessor implements ITextProcessor {
 		};
 
 		this.formattedTextEntry = song;
+
+		this.logger.info('Text entry formatted', {
+			songId: song.songId,
+			title: song.metadata.title,
+			interpreter: song.metadata.interpreter,
+			lyricsCount: song.lyrics.length,
+			genre: song.metadata.genre,
+			language: song.metadata.language,
+		});
+
+		this.logger.end('formatTextEntry');
 		return song;
 	};
 
 	public tokenizeSentences = (sentences: ISentence[]): ISentence[] => {
+		this.logger.start('tokenizeSentences');
+
 		const tokenizedSentences = sentences.map(sentence => {
 			const trimmedContent = sentence.content.trim().replace(/\s+/g, ' ');
 
@@ -255,11 +260,33 @@ export class TextProcessor implements ITextProcessor {
 		});
 
 		this.tokenizedSentences = tokenizedSentences;
+
+		this.logger.info('Sentences tokenized', {
+			sentencesProcessed: sentences.length,
+			totalTokensGenerated: this.originalTokens.length,
+			tokenTypes: {
+				words: this.originalTokens.filter(t => t.tokenType === TokenType.Word)
+					.length,
+				punctuation: this.originalTokens.filter(
+					t => t.tokenType === TokenType.PunctuationSign,
+				).length,
+				emojis: this.originalTokens.filter(t => t.tokenType === TokenType.Emoji)
+					.length,
+			},
+		});
+
+		this.logger.end('tokenizeSentences');
 		return tokenizedSentences;
 	};
 
 	public deduplicateSentences(sentences: ISentence[]): ISentence[] {
+		this.logger.start('deduplicateSentences');
+
 		const uniqueSentences = new Map<string, ISentence>();
+
+		this.logger.info('Starting deduplication', {
+			inputSentences: sentences.length,
+		});
 
 		sentences.forEach(sentence => {
 			const key = sentence.content;
@@ -269,16 +296,30 @@ export class TextProcessor implements ITextProcessor {
 		});
 
 		this.deduplicatedSentences = Array.from(uniqueSentences.values());
+
+		this.logger.info('Deduplication completed', {
+			originalCount: sentences.length,
+			uniqueCount: this.deduplicatedSentences.length,
+			duplicatesRemoved: sentences.length - this.deduplicatedSentences.length,
+		});
+
+		this.logger.end('deduplicateSentences');
 		return this.deduplicatedSentences;
 	}
 
 	public async deduplicateTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Promise<Array<IWord | IPunctuationSign | IEmoji>> {
+		this.logger.start('deduplicateTokens');
+
 		const uniqueTokensInText = new Map<
 			string,
 			IWord | IPunctuationSign | IEmoji
 		>();
+
+		this.logger.info('Starting token deduplication', {
+			inputTokens: tokens.length,
+		});
 
 		tokens.forEach(token => {
 			if (!uniqueTokensInText.has(token.tokenId)) {
@@ -289,8 +330,11 @@ export class TextProcessor implements ITextProcessor {
 		let existingTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
 		try {
 			existingTokens = await this.tokenDictionary.getTokens();
+			this.logger.info('Retrieved existing tokens', {
+				existingTokensCount: existingTokens.length,
+			});
 		} catch (error) {
-			console.log('No existing tokens found, proceeding with new tokens');
+			this.logger.info('No existing tokens found, proceeding with new tokens');
 		}
 
 		const newTokensForProcessing = Array.from(
@@ -303,10 +347,38 @@ export class TextProcessor implements ITextProcessor {
 		);
 
 		this.deduplicatedTokens = newTokensForProcessing;
+
+		this.logger.info('Token deduplication completed', {
+			originalTokens: tokens.length,
+			uniqueTokensInText: uniqueTokensInText.size,
+			existingTokens: existingTokens.length,
+			newTokensForProcessing: newTokensForProcessing.length,
+			tokenTypes: {
+				words: newTokensForProcessing.filter(
+					t => t.tokenType === TokenType.Word,
+				).length,
+				punctuation: newTokensForProcessing.filter(
+					t => t.tokenType === TokenType.PunctuationSign,
+				).length,
+				emojis: newTokensForProcessing.filter(
+					t => t.tokenType === TokenType.Emoji,
+				).length,
+			},
+		});
+
+		this.logger.end('deduplicateTokens');
 		return newTokensForProcessing;
 	}
 
 	public async enrichSentences(sentences: ISentence[]): Promise<ISentence[]> {
+		this.logger.start('enrichSentences');
+
+		this.logger.info('Starting sentence enrichment', {
+			sentencesToProcess: sentences.length,
+			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
+			retryAttempts: TextProcessor.RATE_LIMITS.RETRY_ATTEMPTS,
+		});
+
 		this.enrichedSentences = await batchProcessor<ISentence>({
 			items: sentences,
 			processingFn: enrichSentencesWithAI,
@@ -318,12 +390,26 @@ export class TextProcessor implements ITextProcessor {
 			},
 		});
 
+		this.logger.info('Sentence enrichment completed', {
+			inputSentences: sentences.length,
+			enrichedSentences: this.enrichedSentences.length,
+			enrichmentSuccess: sentences.length === this.enrichedSentences.length,
+		});
+
+		this.logger.end('enrichSentences');
 		return this.enrichedSentences;
 	}
 
 	public async enrichTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Promise<Array<IWord | IPunctuationSign | IEmoji>> {
+		this.logger.start('enrichTokens');
+
+		this.logger.info('Starting token enrichment', {
+			totalTokens: tokens.length,
+			batchSize: TextProcessor.RATE_LIMITS.BATCH_SIZE,
+		});
+
 		const wordTokens = tokens.filter(
 			(token): token is IWord => token.tokenType === TokenType.Word,
 		);
@@ -331,6 +417,11 @@ export class TextProcessor implements ITextProcessor {
 		const nonWordTokens = tokens.filter(
 			token => token.tokenType !== TokenType.Word,
 		);
+
+		this.logger.info('Token classification complete', {
+			wordTokens: wordTokens.length,
+			nonWordTokens: nonWordTokens.length,
+		});
 
 		this.enrichedTokens = await batchProcessor<IWord>({
 			items: wordTokens,
@@ -343,6 +434,10 @@ export class TextProcessor implements ITextProcessor {
 			},
 		});
 
+		this.logger.info('Initial word enrichment completed', {
+			enrichedWords: this.enrichedTokens.length,
+		});
+
 		// TODO: find a better way to add the properties
 		const enrichedTokensWithGrammar = this.enrichedTokens.map(token => {
 			if (
@@ -350,6 +445,12 @@ export class TextProcessor implements ITextProcessor {
 				typeof token.partOfSpeech === 'string'
 			) {
 				const word = token as IWord;
+
+				this.logger.info('Processing word grammar', {
+					word: word.originalText,
+					partOfSpeech: word.partOfSpeech,
+				});
+
 				switch (word.partOfSpeech) {
 					case PartOfSpeech.Verb:
 						word.grammaticalInfo = {
@@ -461,6 +562,10 @@ export class TextProcessor implements ITextProcessor {
 				token.partOfSpeech === PartOfSpeech.Verb,
 		);
 
+		this.logger.info('Verb tokens identified', {
+			verbCount: verbTokens.length,
+		});
+
 		type SimplifiedVerb = Pick<
 			IWord,
 			'tokenId' | 'originalText' | 'grammaticalInfo'
@@ -486,6 +591,10 @@ export class TextProcessor implements ITextProcessor {
 			},
 		});
 
+		this.logger.info('Verb enrichment completed', {
+			enrichedVerbs: enrichedVerbTokens.length,
+		});
+
 		const mergedVerbTokens = verbTokens.map(originalToken => {
 			const enrichedToken = enrichedVerbTokens.find(
 				t => t.tokenId === originalToken.tokenId,
@@ -509,24 +618,64 @@ export class TextProcessor implements ITextProcessor {
 			...nonWordTokens,
 		];
 
+		this.logger.info('Token enrichment completed', {
+			totalEnrichedTokens: this.enrichedTokens.length,
+			enrichedVerbs: mergedVerbTokens.length,
+			nonVerbTokens: nonVerbTokens.length,
+			nonWordTokens: nonWordTokens.length,
+		});
+
+		this.logger.end('enrichTokens');
+
 		return this.enrichedTokens;
 	}
 
 	public async processText(): Promise<void> {
+		this.logger.start('processText');
+
 		await initializeDataStructures();
+
 		await this.tokenDictionary.load();
 
+		this.logger.info('Processing text content', {
+			lyrics: this.textData.lyrics.substring(0, 50) + '...',
+			title: this.textData.title,
+		});
+
 		this.splittedParagraph = this.splitParagraph(this.textData.lyrics);
+
 		this.formattedSentences = this.formatSentences({
 			sentences: this.splittedParagraph,
 			author: this.textData.interpreter,
 			title: this.textData.title,
 		});
 
+		this.originalSentencesIds = this.formattedSentences.map(
+			sentence => sentence.sentenceId,
+		);
+		this.logger.info('Original sentence IDs stored', {
+			totalIds: this.originalSentencesIds.length,
+			allSentenceIds: this.originalSentencesIds,
+		});
+
+		this.formattedTextEntry = this.formatTextEntry(this.textData);
+
 		this.tokenizedSentences = this.tokenizeSentences(this.formattedSentences);
+
+		this.deduplicatedSentences = this.deduplicateSentences(
+			this.tokenizedSentences,
+		);
+
+		this.enrichedSentences = await this.enrichSentences(
+			this.deduplicatedSentences,
+		);
+
 		this.deduplicatedTokens = await this.deduplicateTokens(this.originalTokens);
+
 		this.enrichedTokens = await this.enrichTokens(this.deduplicatedTokens);
 
 		await this.tokenDictionary.addTokens(this.enrichedTokens);
+
+		this.logger.end('processText');
 	}
 }

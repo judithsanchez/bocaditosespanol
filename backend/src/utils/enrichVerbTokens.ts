@@ -9,12 +9,15 @@ import {
 	VerbVoice,
 } from '../lib/grammaticalInfo/verbsTypes';
 import {GrammaticalNumber, GrammaticalPerson, IWord} from '../lib/types';
+import {Logger} from './Logger';
 config();
 
 // TODO: cover with unit test
 // TODO: figure out why the cognates are not being handled correctly
 
-console.log('🚀 Initializing AI Text Processor');
+const logger = new Logger('VerbEnricher');
+
+logger.info('Initializing AI Text Processor');
 
 const genAI = new GoogleGenerativeAI(
 	process.env.GOOGLE_GENERATIVE_AI_KEY ?? '',
@@ -85,7 +88,8 @@ export const verbTokenSchema = {
 export async function enrichVerbTokens(
 	tokens: Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[],
 ): Promise<Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[]> {
-	console.log('� Processing verb tokens:', tokens.length);
+	logger.start('enrichVerbTokens');
+	logger.info('Processing verb tokens', {count: tokens.length});
 
 	const model = genAI.getGenerativeModel({
 		model: 'gemini-1.5-flash',
@@ -141,11 +145,20 @@ export async function enrichVerbTokens(
 			],
 		};
 
+		logger.info('Sending request to AI model');
 		const result = await model.generateContent(prompt);
 		const response = await result.response.text();
-		return JSON.parse(response);
+
+		const enrichedVerbs = JSON.parse(response);
+		logger.info('Verbs enriched successfully', {
+			inputCount: tokens.length,
+			outputCount: enrichedVerbs.length,
+		});
+
+		logger.end('enrichVerbTokens');
+		return enrichedVerbs;
 	} catch (error) {
-		console.error('❌ Error:', error);
+		logger.error('Verb enrichment failed', error);
 		throw error;
 	}
 }

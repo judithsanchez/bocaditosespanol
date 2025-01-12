@@ -2,9 +2,12 @@ import {GoogleGenerativeAI, SchemaType} from '@google/generative-ai';
 import {config} from 'dotenv';
 import {IWord, PartOfSpeech, TokenType} from '../lib/types';
 import {geminiSafetySettings} from '../lib/constants';
+import {Logger} from './Logger';
 config();
 
 // TODO: check why isFalseCognate is sometimes not present
+
+const logger = new Logger('WordEnricher');
 
 const genAI = new GoogleGenerativeAI(
 	process.env.GOOGLE_GENERATIVE_AI_KEY ?? '',
@@ -50,8 +53,8 @@ const wordSchema = {
 };
 
 export async function enrichWordTokens(words: IWord[]): Promise<IWord[]> {
-	console.log('\n🎯 Word Enrichment Pipeline Started');
-	console.log('📊 Input Statistics:', {
+	logger.start('enrichWordTokens');
+	logger.info('Word enrichment pipeline started', {
 		wordCount: words.length,
 		firstWord: words[0]?.originalText || 'No words provided',
 	});
@@ -127,28 +130,30 @@ Process ALL words maintaining schema structure.
 	};
 
 	try {
+		logger.info('Sending request to AI model');
+
 		const result = await model.generateContent(prompt);
 		const response = await result.response.text();
 
 		if (!response) {
+			logger.error(
+				'Empty AI response received',
+				new Error('Empty AI response'),
+			);
 			throw new Error('Empty AI response received');
 		}
 
 		const enrichedWords = JSON.parse(response);
-
-		if (!Array.isArray(enrichedWords)) {
-			throw new Error('Invalid response format - expected array');
-		}
-
-		console.log('✨ Enrichment Complete:', {
+		logger.info('Enrichment completed', {
 			inputCount: words.length,
 			outputCount: enrichedWords.length,
 			sample: enrichedWords[0],
 		});
 
+		logger.end('enrichWordTokens');
 		return enrichedWords;
 	} catch (error) {
-		console.error('💥 Word Enrichment Error:', error);
+		logger.error('Word enrichment failed', error);
 		throw new Error('Failed to enrich words with AI');
 	}
 }

@@ -2,9 +2,10 @@ import {GoogleGenerativeAI, SchemaType} from '@google/generative-ai';
 import {config} from 'dotenv';
 import {ISentence} from '../../../lib/types';
 import {errors, geminiSafetySettings} from '../lib/constants';
+import {Logger} from './Logger';
 config();
 
-console.log('🚀 Initializing AI Text Processor');
+const logger = new Logger('SentenceEnricher');
 
 const genAI = new GoogleGenerativeAI(
 	process.env.GOOGLE_GENERATIVE_AI_KEY ?? '',
@@ -30,6 +31,7 @@ const sentenceSchema = {
 		],
 	},
 };
+
 const model = genAI.getGenerativeModel({
 	model: 'gemini-1.5-flash',
 	generationConfig: {
@@ -42,14 +44,14 @@ const model = genAI.getGenerativeModel({
 export async function enrichSentencesWithAI(
 	sentences: ISentence[],
 ): Promise<ISentence[]> {
-	console.log('\n🎯 AI Enrichment Pipeline Started');
-	console.log('📊 Input Statistics:', {
+	logger.start('enrichSentencesWithAI');
+	logger.info('Starting AI enrichment pipeline', {
 		sentenceCount: sentences.length,
 		firstSentence: sentences[0]?.content || 'No sentences provided',
 	});
 
 	try {
-		console.log('🔧 Configuring AI Request');
+		logger.info('Configuring AI request');
 		const prompt = {
 			contents: [
 				{
@@ -85,59 +87,38 @@ Generate response as an array of fully processed sentences.`,
 				},
 			],
 		};
-		console.log('📤 Sending Request to Gemini');
-		const result = await model.generateContent(prompt);
 
-		console.log('📥 Received Raw Response');
+		logger.info('Sending request to Gemini');
+		const result = await model.generateContent(prompt);
 		const response = await result.response.text();
-		console.log('🔍 Raw Response Length:', response.length);
+
+		logger.info('Processing AI response', {
+			responseLength: response.length,
+		});
 
 		if (!response) {
+			logger.error(
+				'Empty AI response',
+				new Error(errors.aiProcessing.emptyResponse),
+			);
 			throw new Error(errors.aiProcessing.emptyResponse);
 		}
 
-		try {
-			console.log('🔄 Parsing JSON Response');
-			const enrichedSentences = JSON.parse(response);
-			console.log('✨ Enriched Data Structure:', {
-				type: Array.isArray(enrichedSentences)
-					? 'array'
-					: typeof enrichedSentences,
-				length: Array.isArray(enrichedSentences) ? enrichedSentences.length : 1,
-			});
+		const enrichedSentences = JSON.parse(response);
+		logger.info('Enrichment completed', {
+			inputCount: sentences.length,
+			outputCount: enrichedSentences.length,
+			samplesProcessed: enrichedSentences.map((s: ISentence) => ({
+				id: s.sentenceId,
+				hasTranslation: !!s.translation,
+				hasLiteralTranslation: !!s.literalTranslation,
+			})),
+		});
 
-			if (
-				!Array.isArray(enrichedSentences) &&
-				typeof enrichedSentences !== 'object'
-			) {
-				throw new Error(errors.aiProcessing.invalidResponse);
-			}
-
-			// Schema validation check
-			if (!enrichedSentences[0]?.sentenceId || !enrichedSentences[0]?.content) {
-				throw new Error(errors.aiProcessing.schemaValidation);
-			}
-
-			const finalResponse = Array.isArray(enrichedSentences)
-				? enrichedSentences
-				: [enrichedSentences];
-
-			console.log('🎉 Processing Summary:', {
-				inputCount: sentences.length,
-				outputCount: finalResponse.length,
-				samplesProcessed: finalResponse.map(s => ({
-					id: s.sentenceId,
-					hasTranslation: !!s.translation,
-					hasLiteralTranslation: !!s.literalTranslation,
-				})),
-			});
-
-			return finalResponse;
-		} catch (parseError) {
-			throw new Error(`${errors.aiProcessing.parsingError} `);
-		}
+		logger.end('enrichSentencesWithAI');
+		return enrichedSentences;
 	} catch (error) {
-		console.error('💥 AI Processing Error:');
-		throw new Error(`${errors.aiProcessing.requestFailed}`);
+		logger.error('AI processing failed', error);
+		throw error;
 	}
 }
