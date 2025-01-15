@@ -1,0 +1,121 @@
+{
+  "historia-de-taxi-ricardo-arjona": [
+    {
+      "content": "Ella estaba embarazada y tenía una idea, mi pana.",
+      "literalTranslation": "She was pregnant and had an idea, my friend.",
+      "sentenceId": "sentence-1-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-ella",
+        "token-estaba",
+        "token-embarazada",
+        "token-y",
+        "token-tenía",
+        "token-una",
+        "token-idea",
+        "token-,",
+        "token-mi",
+        "token-pana",
+        "token-."
+      ],
+      "translation": "She was pregnant and had an idea, my friend."
+    },
+    {
+      "content": "Eran las diez de la noche, piloteaba mi nave.",
+      "literalTranslation": "They were the ten of the night, I was piloting my ship.",
+      "sentenceId": "sentence-2-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-eran",
+        "token-las",
+        "token-diez",
+        "token-de",
+        "token-la",
+        "token-noche",
+        "token-,",
+        "token-piloteaba",
+        "token-mi",
+        "token-nave",
+        "token-."
+      ],
+      "translation": "It was ten o'clock at night, I was driving my car."
+    },
+    {
+      "content": "Era mi taxi un Volkswagen del año 68.",
+      "literalTranslation": "Was my taxi a Volkswagen of the year 68.",
+      "sentenceId": "sentence-3-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-era",
+        "token-mi",
+        "token-taxi",
+        "token-un",
+        "token-volkswagen",
+        "token-del",
+        "token-año",
+        "token-68",
+        "token-."
+      ],
+      "translation": "My taxi was a 1968 Volkswagen."
+    },
+    {
+      "content": "Era una rubia.",
+      "literalTranslation": "Was a blonde.",
+      "sentenceId": "sentence-4-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-era",
+        "token-una",
+        "token-rubia",
+        "token-."
+      ],
+      "translation": "She was a blonde."
+    }
+  ],
+  "el-taxi-arjona": [
+    {
+      "content": "Era una rubia.",
+      "literalTranslation": "It was a blonde.",
+      "sentenceId": "sentence-1-el-taxi-arjona",
+      "tokenIds": [
+        "token-era",
+        "token-una",
+        "token-rubia",
+        "token-."
+      ],
+      "translation": "She was a blonde."
+    },
+    {
+      "content": "Eran las diez de la noche, piloteaba mi nave.",
+      "literalTranslation": "They were the ten of the night, I was piloting my ship.",
+      "sentenceId": "sentence-2-el-taxi-arjona",
+      "tokenIds": [
+        "token-eran",
+        "token-las",
+        "token-diez",
+        "token-de",
+        "token-la",
+        "token-noche",
+        "token-,",
+        "token-piloteaba",
+        "token-mi",
+        "token-nave",
+        "token-."
+      ],
+      "translation": "It was ten o'clock at night, I was piloting my ship."
+    },
+    {
+      "content": "Era mi taxi un Volkswagen del año 68.",
+      "literalTranslation": "It was my taxi a Volkswagen of the year 68.",
+      "sentenceId": "sentence-3-el-taxi-arjona",
+      "tokenIds": [
+        "token-era",
+        "token-mi",
+        "token-taxi",
+        "token-un",
+        "token-volkswagen",
+        "token-del",
+        "token-año",
+        "token-68",
+        "token-."
+      ],
+      "translation": "My taxi was a 1968 Volkswagen."
+    }
+  ]
+}

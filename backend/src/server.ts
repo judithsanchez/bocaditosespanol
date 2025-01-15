@@ -1,22 +1,23 @@
 import express from 'express';
-import {addNewSong} from './utils/songs/addNewSong';
 import {Logger} from './utils/Logger';
+import {SongProcessingPipeline} from './pipeline/SongProcessingPipeline';
 
 const app = express();
 const port = 3000;
 const logger = new Logger('Server');
+const pipeline = new SongProcessingPipeline();
 
 app.use(express.json());
 
 app.post('/songs', async (req, res) => {
 	logger.start('postSong');
 	try {
-		const newSong = await addNewSong(req.body);
-		logger.info('Song added successfully', {songId: newSong.song.songId});
-		res.status(201).json(newSong);
+		const result = await pipeline.processText(req.body);
+		logger.info('Song processed successfully', {songId: result.song.songId});
+		res.status(201).json(result);
 	} catch (error) {
 		if (error instanceof Error) {
-			logger.error('Failed to add song', error);
+			logger.error('Failed to process song', error);
 			res.status(400).json({error: error.message});
 		} else {
 			logger.error('Unknown error occurred', error);

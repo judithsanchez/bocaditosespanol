@@ -57,29 +57,40 @@ export class DatabaseService {
 		}
 	}
 
-	async saveSong(song: ISong): Promise<void> {
-		const songs = (await this.readFile('songs.json')) || [];
-		if (songs.some((s: ISong) => s.songId === song.songId)) {
-			throw new Error(`Song with ID ${song.songId} already exists`);
+	async saveTextEntry(
+		entry: ISong,
+		contentType: 'song' | 'transcript' | 'podcast',
+	): Promise<void> {
+		const entries = (await this.readFile('text-entries.json')) || {};
+
+		// Initialize content type array if it doesn't exist
+		if (!entries[contentType]) {
+			entries[contentType] = [];
 		}
-		await this.writeFile('songs.json', [...songs, song]);
-	}
 
-	async saveSentences(sentences: ISentence[]): Promise<void> {
-		const existingSentences = (await this.readFile('sentences.json')) || [];
-		const newSentences = sentences.filter(
-			newSentence =>
-				!existingSentences.some(
-					(existing: ISentence) =>
-						existing.sentenceId === newSentence.sentenceId,
-				),
-		);
-		await this.writeFile('sentences.json', [
-			...existingSentences,
-			...newSentences,
-		]);
-	}
+		// Add new entry to the appropriate content type array
+		entries[contentType].push(entry);
 
+		await this.writeFile('text-entries.json', entries);
+	}
+	async saveSentences(
+		sentences: ISentence[],
+		songMetadata: {title: string; interpreter: string},
+	): Promise<void> {
+		const existingSentences = (await this.readFile('sentences.json')) || {};
+
+		// Create song key (e.g., "historia-de-taxi-ricardo-arjona")
+		const songKey = `${songMetadata.title
+			.toLowerCase()
+			.replace(/\s+/g, '-')}-${songMetadata.interpreter
+			.toLowerCase()
+			.replace(/\s+/g, '-')}`;
+
+		// Add or update the song's sentences
+		existingSentences[songKey] = sentences;
+
+		await this.writeFile('sentences.json', existingSentences);
+	}
 	async saveTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Promise<void> {

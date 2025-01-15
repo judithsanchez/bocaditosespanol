@@ -95,7 +95,7 @@ export interface ITextProcessor {
 	splittedParagraph: string[];
 	formattedSentences: ISentence[];
 	originalSentencesIds: string[];
-	formattedTextEntry: ISong; // TODO: later add IVideoTranscript
+	formattedTextEntry: ISong;
 	tokenizedSentences: ISentence[];
 	deduplicatedSentences: ISentence[];
 	originalTokens: Array<IWord | IPunctuationSign | IEmoji>;
