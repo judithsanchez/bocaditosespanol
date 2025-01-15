@@ -12,9 +12,6 @@ import {GrammaticalNumber, GrammaticalPerson, IWord} from '../lib/types';
 import {Logger} from './Logger';
 config();
 
-// TODO: cover with unit test
-// TODO: figure out why the cognates are not being handled correctly
-
 const logger = new Logger('VerbEnricher');
 
 logger.info('Initializing AI Text Processor');
@@ -48,13 +45,6 @@ export const verbTokenSchema = {
 					number: {type: SchemaType.STRING},
 					isRegular: {type: SchemaType.BOOLEAN},
 					infinitive: {type: SchemaType.STRING},
-					// conjugationPattern: {
-					// 	type: SchemaType.ARRAY,
-					// 	items: {
-					// 		type: SchemaType.STRING,
-					// 		enum: Object.values(ConjugationPattern),
-					// 	},
-					// },
 					voice: {type: SchemaType.STRING, enum: Object.values(VerbVoice)},
 					verbClass: {type: SchemaType.STRING, enum: Object.values(VerbClass)},
 					gerund: {type: SchemaType.BOOLEAN},
@@ -72,7 +62,6 @@ export const verbTokenSchema = {
 					'number',
 					'isRegular',
 					'infinitive',
-					// 'conjugationPattern',
 					'voice',
 					'verbClass',
 					'gerund',

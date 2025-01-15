@@ -49,7 +49,6 @@ export interface IWord {
 		| IConjunction
 		| IDeterminer
 		| IInterjection
-		| INoun
 		| INumeral
 		| IPreposition
 		| IPronoun;
@@ -124,7 +123,9 @@ export interface ITextProcessor {
 	processText(): Promise<void>;
 }
 
-export interface IText {}
+export interface IText {
+	content: string;
+}
 
 export interface BatchProcessorConfig<T> {
 	items: T[];

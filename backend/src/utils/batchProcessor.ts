@@ -1,4 +1,4 @@
-import {BatchProcessorConfig} from 'lib/types';
+import {BatchProcessorConfig} from '../lib/types';
 import {errors} from '../lib/constants';
 import {Logger} from './Logger';
 

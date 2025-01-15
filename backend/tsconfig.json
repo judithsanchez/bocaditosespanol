@@ -18,7 +18,11 @@
 			"@utils/*": ["src/utils/*"],
 			"@data/*": ["src/data/*"],
 			"@lib/*": ["src/lib/*"]
-		}
+		},
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"allowUnusedLabels": false,
+		"allowUnreachableCode": false
 	},
 	"include": ["src", "types"],
 	"types": ["jest"]

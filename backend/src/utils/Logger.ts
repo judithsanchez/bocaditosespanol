@@ -27,7 +27,7 @@ export class Logger {
 ------------------------------------------------------------`);
 	}
 
-	info(message: string, data?: any) {
+	info(message: string, data?: Record<string, unknown>) {
 		console.log(`
 ℹ️  ${this.getTimestamp()} | ${this.context}
 📝 ${message}
@@ -35,15 +35,14 @@ ${data ? `📦 Data: ${JSON.stringify(data, null, 2)}` : ''}
 ------------------------------------------------------------`);
 	}
 
-	error(message: string, error: any) {
+	error(message: string, error: Error | unknown) {
 		console.error(`
 ❌ ${this.getTimestamp()} | ${this.context}
 💥 ${message}
-🔍 Error: ${error.message}
-${error.stack ? `📚 Stack: ${error.stack}` : ''}
+🔍 Error: ${error instanceof Error ? error.message : String(error)}
+${error instanceof Error && error.stack ? `📚 Stack: ${error.stack}` : ''}
 ------------------------------------------------------------`);
 	}
-
 	private getTimestamp(): string {
 		return new Date().toISOString();
 	}

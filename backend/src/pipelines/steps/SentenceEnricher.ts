@@ -1,9 +1,9 @@
 import {PipelineStep} from '../Pipeline';
-import {Logger} from '../../utils/Logger';
-import {enrichSentencesWithAI} from '../../utils/enrichSentencesWithAI';
+import {Logger} from '../../utils/index';
+import {enrichSentencesWithAI} from '../../utils/index';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 
-export class SentenceEnricherStep
+export class SentenceEnricherSteps
 	implements PipelineStep<SongProcessingContext>
 {
 	private readonly logger = new Logger('SentenceEnricherStep');
@@ -13,7 +13,6 @@ export class SentenceEnricherStep
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		// Enrich only deduplicated sentences
 		context.sentences.enriched = await enrichSentencesWithAI(
 			context.sentences.deduplicated,
 		);

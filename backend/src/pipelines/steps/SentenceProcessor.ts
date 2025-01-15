@@ -1,8 +1,8 @@
 import {PipelineStep} from '../Pipeline';
-import {errors} from '../../lib/constants';
-import {Logger} from '../../utils/Logger';
-import {SongProcessingContext} from 'pipeline/SongProcessingPipeline';
+import {Logger} from '../../utils/index';
+import {SongProcessingContext} from 'pipelines/SongProcessingPipeline';
 import {ISentence} from '../../../../lib/types';
+import {errors} from '../../lib/constants';
 
 export class SentenceProcessorStep
 	implements PipelineStep<SongProcessingContext>
@@ -14,22 +14,18 @@ export class SentenceProcessorStep
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		// Split text into sentences
 		context.sentences.raw = this.splitParagraph(context.rawInput.lyrics);
 
-		// Format sentences with IDs
 		context.sentences.formatted = this.formatSentences({
 			sentences: context.sentences.raw,
 			author: context.rawInput.interpreter,
 			title: context.rawInput.title,
 		});
 
-		// Store original sentence IDs for lyrics mapping
 		context.sentences.originalSentencesIds = context.sentences.formatted.map(
 			s => s.sentenceId,
 		);
 
-		// Deduplicate sentences while preserving order
 		const seen = new Set();
 		context.sentences.deduplicated = context.sentences.formatted.filter(
 			sentence => {
@@ -102,8 +98,12 @@ export class SentenceProcessorStep
 					.toLowerCase()
 					.replace(/\s+/g, '-')}-${author.toLowerCase().replace(/\s+/g, '-')}`,
 				content: sentence,
-				translation: '',
-				literalTranslation: '',
+				translations: {
+					english: {
+						literal: '',
+						contextual: '',
+					},
+				},
 				tokenIds: [],
 			};
 		});

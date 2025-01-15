@@ -20,7 +20,7 @@ export interface ISong {
 		language: string;
 		releaseDate: string;
 	};
-	lyrics: string[]; // TODO: rename to sentencesIds or something similar
+	lyrics: string[];
 	createdAt: string;
 	updatedAt: string;
 }
@@ -28,7 +28,11 @@ export interface ISong {
 export interface ISentence {
 	sentenceId: string;
 	content: string;
-	translation: string;
-	literalTranslation: string;
+	translations: {
+		english: {
+			literal: Promise<string> | string;
+			contextual: Promise<string> | string;
+		};
+	};
 	tokenIds: string[];
 }

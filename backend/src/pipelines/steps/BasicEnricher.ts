@@ -1,6 +1,6 @@
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
-import {Logger} from '../../utils/Logger';
+import {Logger} from '../../utils/index';
 import {TokenType, PartOfSpeech, IWord} from '../../lib/types';
 import {batchProcessor} from '../../utils/batchProcessor';
 import {enrichWordTokens} from '../../utils/enrichWordTokens';
@@ -20,7 +20,6 @@ export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		// Filter word tokens for basic enrichment
 		const wordTokens = context.tokens.all.filter(
 			(token): token is IWord => token.tokenType === TokenType.Word,
 		);
@@ -29,7 +28,6 @@ export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 			totalTokens: wordTokens.length,
 		});
 
-		// Process tokens in batches
 		const enrichedTokens = await batchProcessor<IWord>({
 			items: wordTokens,
 			processingFn: enrichWordTokens,
@@ -42,12 +40,10 @@ export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 			},
 		});
 
-		// Add grammatical structure templates based on part of speech
 		const enrichedWithStructure = enrichedTokens.map(token =>
 			this.addGrammaticalStructure(token),
 		);
 
-		// Update context with enriched tokens
 		context.tokens.enriched = [
 			...enrichedWithStructure,
 			...context.tokens.all.filter(t => t.tokenType !== TokenType.Word),
@@ -97,17 +93,19 @@ export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 					isProperNoun: false,
 					diminutive: false,
 				};
-			// Add other parts of speech templates
 			default:
 				return {};
 		}
 	}
 
 	private getPartOfSpeechStats(tokens: IWord[]): Record<string, number> {
-		return tokens.reduce((acc, token) => {
-			const pos = (token.partOfSpeech as string) || 'unknown';
-			acc[pos] = (acc[pos] || 0) + 1;
-			return acc;
-		}, {} as Record<string, number>);
+		return tokens.reduce(
+			(acc, token) => {
+				const pos = (token.partOfSpeech as string) || 'unknown';
+				acc[pos] = (acc[pos] || 0) + 1;
+				return acc;
+			},
+			{} as Record<string, number>,
+		);
 	}
 }

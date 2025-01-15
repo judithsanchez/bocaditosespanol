@@ -8,22 +8,29 @@
 		"dev": "nodemon --ignore 'src/data/*' src/server.ts",
 		"clear-cache": "rm -rf node_modules/.cache",
 		"test": "jest --coverage --verbose",
-		"test:watch": "jest --watchAll"
+		"test:watch": "jest --watchAll",
+		"check:all": "npm run lint && npm run check:types && npm run check:unused && npm run check:deps && npm run check:circular",
+		"check:types": "tsc --noEmit",
+		"check:unused": "ts-prune",
+		"check:deps": "depcheck",
+		"check:circular": "madge --circular .",
+		"lint": "eslint . --ext .ts",
+		"format": "prettier --write \"src/**/*.ts\""
 	},
 	"dependencies": {
 		"@google/generative-ai": "^0.21.0",
 		"@types/express": "^5.0.0",
-		"axios": "^1.6.8",
 		"dotenv": "^16.4.7",
 		"emoji-regex": "^10.3.0",
 		"express": "^4.21.2",
-		"react-router-dom": "^6.23.1",
-		"uuid": "^11.0.3"
+		"react-router-dom": "^6.23.1"
 	},
 	"devDependencies": {
 		"@testing-library/react": "^15.0.7",
 		"@types/jest": "^29.5.14",
 		"@types/uuid": "^10.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.20.0",
+		"@typescript-eslint/parser": "^8.20.0",
 		"babel-jest": "^29.7.0",
 		"esbuild-jest": "^0.4.0",
 		"eslint": "^8.38.0",

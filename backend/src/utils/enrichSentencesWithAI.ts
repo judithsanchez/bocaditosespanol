@@ -18,20 +18,28 @@ const sentenceSchema = {
 		properties: {
 			sentenceId: {type: SchemaType.STRING},
 			content: {type: SchemaType.STRING},
-			translation: {type: SchemaType.STRING},
-			literalTranslation: {type: SchemaType.STRING},
-			tokenIds: {type: SchemaType.ARRAY, items: {type: SchemaType.STRING}},
+			translations: {
+				type: SchemaType.OBJECT,
+				properties: {
+					english: {
+						type: SchemaType.OBJECT,
+						properties: {
+							literal: {type: SchemaType.STRING},
+							contextual: {type: SchemaType.STRING},
+						},
+						required: ['literal', 'contextual'],
+					},
+				},
+				required: ['english'],
+			},
+			tokenIds: {
+				type: SchemaType.ARRAY,
+				items: {type: SchemaType.STRING},
+			},
 		},
-		required: [
-			'sentenceId',
-			'content',
-			'translation',
-			'literalTranslation',
-			'tokenIds',
-		],
+		required: ['sentenceId', 'content', 'translations', 'tokenIds'],
 	},
 };
-
 const model = genAI.getGenerativeModel({
 	model: 'gemini-1.5-flash',
 	generationConfig: {
@@ -70,7 +78,7 @@ CRITICAL REQUIREMENTS:
 STRICT PROCESSING RULES:
 1. OUTPUT MUST BE AN ARRAY of processed sentences
 2. For EACH sentence in the array:
-	  - ADD complete English translation
+	  - ADD complete English contextual translation
 	  - ADD literal word-for-word translation that maintains Spanish grammar structure but still makes sense on the context
 			Example: "Yo tengo hambre" → "I have hunger"
 			Example: "Me gusta bailar" → "To me pleases to dance"
@@ -110,8 +118,8 @@ Generate response as an array of fully processed sentences.`,
 			outputCount: enrichedSentences.length,
 			samplesProcessed: enrichedSentences.map((s: ISentence) => ({
 				id: s.sentenceId,
-				hasTranslation: !!s.translation,
-				hasLiteralTranslation: !!s.literalTranslation,
+				hasTranslation: !!s.translations.english.contextual,
+				hasLiteralTranslation: !!s.translations.english.literal,
 			})),
 		});
 

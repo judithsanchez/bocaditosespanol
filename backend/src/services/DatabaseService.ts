@@ -3,7 +3,6 @@ import {existsSync} from 'fs';
 import {join} from 'path';
 import {ISentence, ISong} from '../../../lib/types';
 import {IEmoji, IPunctuationSign, IWord, TokenType} from '../lib/types';
-import {Logger} from '../utils/Logger';
 
 interface TokenStorage {
 	words: {
@@ -27,7 +26,6 @@ interface TokenStorage {
 
 export class DatabaseService {
 	private readonly dbPath = join(__dirname, '../data');
-	private readonly logger = new Logger('DatabaseService');
 
 	private tokens: TokenStorage = {
 		words: {
@@ -63,12 +61,10 @@ export class DatabaseService {
 	): Promise<void> {
 		const entries = (await this.readFile('text-entries.json')) || {};
 
-		// Initialize content type array if it doesn't exist
 		if (!entries[contentType]) {
 			entries[contentType] = [];
 		}
 
-		// Add new entry to the appropriate content type array
 		entries[contentType].push(entry);
 
 		await this.writeFile('text-entries.json', entries);
@@ -79,14 +75,12 @@ export class DatabaseService {
 	): Promise<void> {
 		const existingSentences = (await this.readFile('sentences.json')) || {};
 
-		// Create song key (e.g., "historia-de-taxi-ricardo-arjona")
 		const songKey = `${songMetadata.title
 			.toLowerCase()
 			.replace(/\s+/g, '-')}-${songMetadata.interpreter
 			.toLowerCase()
 			.replace(/\s+/g, '-')}`;
 
-		// Add or update the song's sentences
 		existingSentences[songKey] = sentences;
 
 		await this.writeFile('sentences.json', existingSentences);
@@ -94,10 +88,8 @@ export class DatabaseService {
 	async saveTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Promise<void> {
-		// Load existing tokens or create new structure
 		let currentTokens = await this.readFile('tokens.json');
 
-		// Only initialize structure if file doesn't exist
 		if (!currentTokens) {
 			currentTokens = {
 				words: {
@@ -120,7 +112,6 @@ export class DatabaseService {
 
 		this.tokens = currentTokens;
 
-		// Add new tokens while preserving existing ones
 		for (const token of tokens) {
 			await this.addToken(token);
 		}
@@ -211,7 +202,7 @@ export class DatabaseService {
 		try {
 			const content = await readFile(join(this.dbPath, filename), 'utf-8');
 			return JSON.parse(content);
-		} catch (error) {
+		} catch {
 			return null;
 		}
 	}

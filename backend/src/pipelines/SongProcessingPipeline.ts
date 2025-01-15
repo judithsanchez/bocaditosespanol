@@ -1,14 +1,16 @@
 import {Pipeline} from './Pipeline';
 import {ContentType} from './types/PipelineTypes';
 import {AddSongRequest, ISentence, ISong} from '../../../lib/types';
-import {InputValidatorStep} from './steps/InputValidator';
-import {SentenceProcessorStep} from './steps/SentenceProcessor';
-import {BasicEnricherStep} from './steps/BasicEnricher';
-import {SpecializedEnricherStep} from './steps/SpecializedEnricher';
 import {IEmoji, IPunctuationSign, IWord} from 'lib/types';
 import {DatabaseService} from '../services/DatabaseService';
-import {SentenceEnricherStep} from './steps/SentenceEnricherStep';
-import {TokenProcessorStep} from './steps/TokenProcessor';
+import {
+	InputValidatorStep,
+	TokenProcessorStep,
+	SentenceProcessorStep,
+	BasicEnricherStep,
+	SpecializedEnricherStep,
+	SentenceEnricherSteps,
+} from './steps/index';
 
 export interface SongProcessingContext {
 	rawInput: AddSongRequest;
@@ -41,7 +43,7 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				new InputValidatorStep(ContentType.SONG),
 				new SentenceProcessorStep(),
 				new TokenProcessorStep(),
-				new SentenceEnricherStep(),
+				new SentenceEnricherSteps(),
 				new BasicEnricherStep(),
 				new SpecializedEnricherStep(),
 			],

@@ -1,8 +1,4 @@
-import {
-	HarmBlockThreshold,
-	HarmCategory,
-	SchemaType,
-} from '@google/generative-ai';
+import {HarmBlockThreshold, HarmCategory} from '@google/generative-ai';
 
 export const errors = {
 	mustBeString: 'Input must be a string',

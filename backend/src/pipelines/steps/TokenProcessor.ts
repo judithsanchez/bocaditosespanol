@@ -2,7 +2,7 @@ import emojiRegex from 'emoji-regex';
 import {IEmoji, IPunctuationSign, IWord, TokenType} from '../../lib/types';
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
-import {Logger} from '../../utils/Logger';
+import {Logger} from '../../utils/index';
 
 export class TokenProcessorStep implements PipelineStep<SongProcessingContext> {
 	private readonly logger = new Logger('TokenProcessorStep');
@@ -12,24 +12,19 @@ export class TokenProcessorStep implements PipelineStep<SongProcessingContext> {
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		// Process each sentence and collect all tokens
 		const processedSentences = context.sentences.formatted.map(sentence => {
 			const tokens = this.tokenizeSentence(sentence.content);
 
-			// Store tokens in context.tokens.all
 			context.tokens.all.push(...tokens);
 
-			// Return updated sentence with tokenIds
 			return {
 				...sentence,
 				tokenIds: tokens.map(token => token.tokenId),
 			};
 		});
 
-		// Update ALL sentences (including duplicates) with their tokenIds
 		context.sentences.formatted = processedSentences;
 
-		// The deduplicated sentences should also get their tokenIds
 		context.sentences.deduplicated = context.sentences.deduplicated.map(
 			sentence => {
 				const matchingSentence = processedSentences.find(

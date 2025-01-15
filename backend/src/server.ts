@@ -1,6 +1,6 @@
 import express from 'express';
 import {Logger} from './utils/Logger';
-import {SongProcessingPipeline} from './pipeline/SongProcessingPipeline';
+import {SongProcessingPipeline} from './pipelines/SongProcessingPipeline';
 
 const app = express();
 const port = 3000;

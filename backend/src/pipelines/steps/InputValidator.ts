@@ -1,7 +1,7 @@
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {errors} from '../../lib/constants';
-import {Logger} from '../../utils/Logger';
+import {Logger} from '../../utils/index';
 import {ContentType} from '../types/PipelineTypes';
 import {AddSongRequest} from '../../../../lib/types';
 
@@ -21,9 +21,7 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 			case ContentType.SONG:
 				this.validateSongInput(context.rawInput);
 				break;
-			case ContentType.TRANSCRIPT:
-				this.validateTranscriptInput(context.rawInput);
-				break;
+
 			default:
 				throw new Error('Unsupported content type');
 		}
@@ -79,31 +77,5 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 		if (!youtubeUrlPattern.test(input.youtube)) {
 			throw new Error('Invalid YouTube URL format');
 		}
-	}
-
-	private validateTranscriptInput(input: any): void {
-		if (
-			!input.title ||
-			!input.videoId ||
-			!input.language ||
-			!input.transcript
-		) {
-			throw new Error(errors.invalidData);
-		}
-
-		if (
-			typeof input.title !== 'string' ||
-			typeof input.videoId !== 'string' ||
-			typeof input.language !== 'string' ||
-			typeof input.transcript !== 'string'
-		) {
-			throw new Error(errors.invalidTextData);
-		}
-
-		this.logger.info('Transcript validation completed', {
-			title: input.title,
-			videoId: input.videoId,
-			transcriptLength: input.transcript.length,
-		});
 	}
 }
