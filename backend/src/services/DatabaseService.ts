@@ -31,7 +31,12 @@ interface TokenStorage {
 }
 
 export class DatabaseService {
-	private readonly dbPath = join(__dirname, '../data');
+	private readonly dbPath = join(
+		__dirname,
+		'..',
+		'..',
+		process.env.NODE_ENV === 'production' ? 'dist/data' : 'src/data',
+	);
 
 	private tokens: TokenStorage = {
 		words: {
@@ -52,6 +57,7 @@ export class DatabaseService {
 	};
 
 	constructor() {
+		console.log('Database path:', this.dbPath);
 		this.initializeDataStructures();
 	}
 
@@ -206,9 +212,13 @@ export class DatabaseService {
 
 	async readFile(filename: string) {
 		try {
-			const content = await readFile(join(this.dbPath, filename), 'utf-8');
+			const filePath = join(this.dbPath, filename);
+			console.log('Attempting to read file:', filePath);
+			const content = await readFile(filePath, 'utf-8');
+			console.log('File content:', content);
 			return JSON.parse(content);
-		} catch {
+		} catch (error) {
+			console.log('Error reading file:', error);
 			return null;
 		}
 	}
