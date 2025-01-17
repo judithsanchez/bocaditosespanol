@@ -2,7 +2,7 @@ export interface AddSongRequest {
 	interpreter: string;
 	feat?: string;
 	title: string;
-	youtube: string;
+	spotify: string;
 	genre: string[];
 	language: string;
 	releaseDate: string;
@@ -15,7 +15,7 @@ export interface ISong {
 		interpreter: string;
 		feat?: string;
 		title: string;
-		youtube: string;
+		spotify: string;
 		genre: string[];
 		language: string;
 		releaseDate: string;

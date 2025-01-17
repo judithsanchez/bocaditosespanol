@@ -54,16 +54,16 @@ describe('InputValidatorStep', () => {
 			);
 		});
 
-		it('should throw error for invalid YouTube URL format', async () => {
+		it('should throw error for invalid spotify URL format', async () => {
 			const invalidContext = {
 				...validContext,
 				rawInput: {
 					...validContext.rawInput,
-					youtube: 'invalid-url',
+					spotify: 'invalid-url',
 				},
 			};
 			await expect(validator.process(invalidContext)).rejects.toThrow(
-				'Invalid YouTube URL format',
+				'Invalid spotify URL format',
 			);
 		});
 
@@ -108,18 +108,18 @@ describe('InputValidatorStep', () => {
 			);
 		});
 
-		it('should accept valid YouTube URLs with different formats', async () => {
-			const validYouTubeUrls = [
-				'https://youtube.com/watch?v=dQw4w9WgXcQ',
-				'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+		it('should accept valid spotify URLs with different formats', async () => {
+			const validspotifyUrls = [
+				'https://spotify.com/watch?v=dQw4w9WgXcQ',
+				'https://www.spotify.com/watch?v=dQw4w9WgXcQ',
 			];
 
-			for (const url of validYouTubeUrls) {
+			for (const url of validspotifyUrls) {
 				const context = {
 					...validContext,
 					rawInput: {
 						...validContext.rawInput,
-						youtube: url,
+						spotify: url,
 					},
 				};
 				const result = await validator.process(context);

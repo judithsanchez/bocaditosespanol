@@ -274,30 +274,30 @@ export const inputValidatorFixtures = {
 	validSongInput: {
 		interpreter: 'Test Artist',
 		title: 'Test Song',
-		youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+		spotify: 'https://www.spotify.com/watch?v=dQw4w9WgXcQ',
 		genre: ['pop'],
 		language: 'es',
 		releaseDate: '2023-01-01',
 		lyrics: 'Test lyrics',
 	},
-	validYoutubeUrls: [
-		'https://youtube.com/watch?v=dQw4w9WgXcQ',
-		'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+	validspotifyUrls: [
+		'https://spotify.com/watch?v=dQw4w9WgXcQ',
+		'https://www.spotify.com/watch?v=dQw4w9WgXcQ',
 	],
 	invalidInputs: {
 		emptyInterpreter: {
 			interpreter: '',
 			title: 'Test Song',
-			youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+			spotify: 'https://www.spotify.com/watch?v=dQw4w9WgXcQ',
 			genre: ['pop'],
 			language: 'es',
 			releaseDate: '2023-01-01',
 			lyrics: 'Test lyrics',
 		},
-		invalidYoutubeUrl: {
+		invalidspotifyUrl: {
 			interpreter: 'Test Artist',
 			title: 'Test Song',
-			youtube: 'invalid-url',
+			spotify: 'invalid-url',
 			genre: ['pop'],
 			language: 'es',
 			releaseDate: '2023-01-01',
@@ -306,7 +306,7 @@ export const inputValidatorFixtures = {
 		invalidGenreFormat: {
 			interpreter: 'Test Artist',
 			title: 'Test Song',
-			youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+			spotify: 'https://www.spotify.com/watch?v=dQw4w9WgXcQ',
 			genre: 'pop' as any,
 			language: 'es',
 			releaseDate: '2023-01-01',
@@ -315,7 +315,7 @@ export const inputValidatorFixtures = {
 		emptyLyrics: {
 			interpreter: 'Test Artist',
 			title: 'Test Song',
-			youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+			spotify: 'https://www.spotify.com/watch?v=dQw4w9WgXcQ',
 			genre: ['pop'],
 			language: 'es',
 			releaseDate: '2023-01-01',

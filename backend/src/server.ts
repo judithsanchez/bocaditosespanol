@@ -95,8 +95,14 @@ app.get('/songs/:songId', async (req, res) => {
 			};
 		});
 
+		// Create enhanced response object with both metadata and sentences
+		const response = {
+			metadata: songEntry.metadata,
+			sentences: orderedSentences,
+		};
+
 		logger.info('Song data retrieved successfully', {songId});
-		res.status(200).json(orderedSentences);
+		res.status(200).json(response);
 	} catch (error) {
 		if (error instanceof Error) {
 			logger.error('Failed to retrieve song data', error);

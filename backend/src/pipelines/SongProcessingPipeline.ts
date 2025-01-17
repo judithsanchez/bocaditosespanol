@@ -84,7 +84,7 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				interpreter: input.interpreter,
 				feat: input.feat,
 				title: input.title,
-				youtube: input.youtube,
+				spotify: input.spotify,
 				genre: input.genre,
 				language: input.language,
 				releaseDate: input.releaseDate,
