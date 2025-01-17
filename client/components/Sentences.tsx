@@ -1,64 +1,124 @@
 import {View, StyleSheet, Platform} from 'react-native';
-import {Surface, Text, useTheme} from 'react-native-paper';
-import type {ISentence, IToken} from '../../lib/types';
-import {TooltipSurface} from './TooltipSurface';
+import {Surface, Text, useTheme, Button} from 'react-native-paper';
+import {useEffect, useState} from 'react';
+
+type Token = {
+	content: string;
+	tokenType: string;
+	partOfSpeech?: string;
+	translations?: {
+		english: string[];
+	};
+};
+
+type Sentence = {
+	sentenceId: string;
+	content: string;
+	translations: {
+		english: {
+			literal: string;
+			contextual: string;
+		};
+	};
+	tokenIds: string[];
+	tokens: Token[];
+};
 
 type SentencesProps = {
-	data: ISentence[];
+	songId: string;
 };
 
-const TokenComponent = ({token}: {token: IToken}) => {
+export function Sentences({songId}: SentencesProps) {
 	const theme = useTheme();
-	const spanishWord =
-		typeof token.token === 'string' ? token.token : token.token.spanish;
-	const englishTranslation =
-		typeof token.token === 'string' ? '' : token.token.english;
+	const [sentences, setSentences] = useState<Sentence[]>([]);
+	const [showContextual, setShowContextual] = useState(false);
+	const [showLiteral, setShowLiteral] = useState(false);
+	const [showTokens, setShowTokens] = useState(false);
 
-	if (token.type === 'word') {
-		return (
-			<TooltipSurface tooltipContent={englishTranslation || ''}>
-				<View style={styles.tokenContainer}>
-					<Text style={[styles.token, {color: theme.colors.onSurface}]}>
-						{spanishWord}
-					</Text>
-				</View>
-			</TooltipSurface>
-		);
-	} else {
-		return (
-			<View style={styles.tokenContainer}>
-				<Text style={[styles.token, {color: theme.colors.onSurface}]}>
-					{spanishWord}
-				</Text>
-			</View>
-		);
-	}
-};
-
-export function Sentences({data}: SentencesProps) {
-	const theme = useTheme();
+	useEffect(() => {
+		fetch(`http://localhost:3000/songs/${songId}`)
+			.then(response => response.json())
+			.then(data => setSentences(data));
+	}, [songId]);
 
 	return (
 		<View
 			style={[styles.container, Platform.OS === 'web' && styles.webContainer]}
 		>
-			{data.map((sentence, index) => (
+			<View style={styles.buttonContainer}>
+				<Button
+					mode={showContextual ? 'contained' : 'outlined'}
+					onPress={() => setShowContextual(!showContextual)}
+					style={styles.toggleButton}
+				>
+					Contextual Translation
+				</Button>
+				<Button
+					mode={showLiteral ? 'contained' : 'outlined'}
+					onPress={() => setShowLiteral(!showLiteral)}
+					style={styles.toggleButton}
+				>
+					Literal Translation
+				</Button>
+				<Button
+					mode={showTokens ? 'contained' : 'outlined'}
+					onPress={() => setShowTokens(!showTokens)}
+					style={styles.toggleButton}
+				>
+					Tokens
+				</Button>
+			</View>
+
+			{sentences.map((sentence, index) => (
 				<Surface
-					key={index}
+					key={`sentence-${index}`}
 					style={[
 						styles.sentenceContainer,
 						{backgroundColor: theme.colors.surface},
 					]}
 					elevation={1}
 				>
-					<View style={styles.tokensContainer}>
-						{sentence.tokens.map((token, tokenIndex) => (
-							<TokenComponent key={tokenIndex} token={token} />
-						))}
-					</View>
-					<Text variant="bodyMedium" style={{color: theme.colors.primary}}>
-						{sentence.translation}
+					<Text style={[styles.spanish, {color: theme.colors.onSurface}]}>
+						{sentence.content}
 					</Text>
+
+					{showContextual && (
+						<Text style={[styles.translation, {color: theme.colors.onSurface}]}>
+							{sentence.translations.english.contextual}
+						</Text>
+					)}
+
+					{showLiteral && (
+						<Text style={[styles.translation, {color: theme.colors.onSurface}]}>
+							{sentence.translations.english.literal}
+						</Text>
+					)}
+
+					{showTokens && (
+						<View style={styles.tokensContainer}>
+							{sentence.tokens?.map(
+								(token, tokenIndex) =>
+									token && (
+										<Text
+											key={`token-${tokenIndex}`}
+											style={[
+												styles.token,
+												{color: theme.colors.onSurface},
+												token.partOfSpeech === 'verb' && {
+													backgroundImage: `linear-gradient(120deg, ${theme.colors.secondary}80 0%, ${theme.colors.secondary}80 100%)`,
+													backgroundRepeat: 'no-repeat',
+													backgroundSize: '100% 50%',
+													backgroundPosition: '0 120%',
+													cursor: 'pointer',
+												},
+											]}
+										>
+											{token.content}
+										</Text>
+									),
+							)}
+						</View>
+					)}
 				</Surface>
 			))}
 		</View>
@@ -67,32 +127,42 @@ export function Sentences({data}: SentencesProps) {
 
 const styles = StyleSheet.create({
 	container: {
-		gap: 16,
-		padding: 16,
 		flex: 1,
+		gap: 16,
 	},
 	webContainer: {
-		maxWidth: 600, // Limit the width on web
-		marginHorizontal: 'auto', // Center horizontally on web
+		maxWidth: 800,
+		alignSelf: 'center',
+	},
+	buttonContainer: {
+		flexDirection: 'row',
+		justifyContent: 'center',
+		gap: 8,
+		marginBottom: 16,
+	},
+	toggleButton: {
+		flex: 1,
 	},
 	sentenceContainer: {
 		padding: 16,
 		borderRadius: 8,
-		alignItems: 'center', // Center content horizontally
+		gap: 8,
+	},
+	spanish: {
+		fontSize: 18,
+		fontWeight: '500',
+	},
+	translation: {
+		fontSize: 16,
 	},
 	tokensContainer: {
 		flexDirection: 'row',
 		flexWrap: 'wrap',
 		gap: 4,
-		marginBottom: 8,
-		justifyContent: 'center', // Center tokens horizontally
-		alignItems: 'center', // Center tokens vertically
-	},
-	tokenContainer: {
-		alignItems: 'center',
-		justifyContent: 'center',
+		marginTop: 8,
 	},
 	token: {
-		fontSize: 16,
+		fontSize: 14,
+		fontStyle: 'italic',
 	},
 });

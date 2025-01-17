@@ -17,7 +17,7 @@ const numeralTokenSchema = {
 		type: SchemaType.OBJECT,
 		properties: {
 			tokenId: {type: SchemaType.STRING},
-			originalText: {type: SchemaType.STRING},
+			content: {type: SchemaType.STRING},
 			grammaticalInfo: {
 				type: SchemaType.OBJECT,
 				properties: {
@@ -37,13 +37,13 @@ const numeralTokenSchema = {
 				required: ['numeralType', 'gender', 'number'],
 			},
 		},
-		required: ['tokenId', 'originalText', 'grammaticalInfo'],
+		required: ['tokenId', 'content', 'grammaticalInfo'],
 	},
 };
 
 export async function enrichNumeralTokens(
-	tokens: Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[],
-): Promise<Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[]> {
+	tokens: Pick<IWord, 'tokenId' | 'content' | 'grammaticalInfo'>[],
+): Promise<Pick<IWord, 'tokenId' | 'content' | 'grammaticalInfo'>[]> {
 	logger.start('enrichNumeralTokens');
 	logger.info('Processing numeral tokens', {count: tokens.length});
 

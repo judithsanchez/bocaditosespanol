@@ -20,7 +20,7 @@ const interjectionTokenSchema = {
 		type: SchemaType.OBJECT,
 		properties: {
 			tokenId: {type: SchemaType.STRING},
-			originalText: {type: SchemaType.STRING},
+			content: {type: SchemaType.STRING},
 			grammaticalInfo: {
 				type: SchemaType.OBJECT,
 				properties: {
@@ -36,13 +36,13 @@ const interjectionTokenSchema = {
 				required: ['interjectionEmotion', 'interjectionType'],
 			},
 		},
-		required: ['tokenId', 'originalText', 'grammaticalInfo'],
+		required: ['tokenId', 'content', 'grammaticalInfo'],
 	},
 };
 
 export async function enrichInterjectionTokens(
-	tokens: Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[],
-): Promise<Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[]> {
+	tokens: Pick<IWord, 'tokenId' | 'content' | 'grammaticalInfo'>[],
+): Promise<Pick<IWord, 'tokenId' | 'content' | 'grammaticalInfo'>[]> {
 	logger.start('enrichInterjectionTokens');
 	logger.info('Processing interjection tokens', {count: tokens.length});
 

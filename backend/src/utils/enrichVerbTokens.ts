@@ -26,7 +26,7 @@ export const verbTokenSchema = {
 		type: SchemaType.OBJECT,
 		properties: {
 			tokenId: {type: SchemaType.STRING},
-			originalText: {type: SchemaType.STRING},
+			content: {type: SchemaType.STRING},
 			grammaticalInfo: {
 				type: SchemaType.OBJECT,
 				properties: {
@@ -71,12 +71,12 @@ export const verbTokenSchema = {
 				],
 			},
 		},
-		required: ['tokenId', 'originalText', 'grammaticalInfo'],
+		required: ['tokenId', 'content', 'grammaticalInfo'],
 	},
 };
 export async function enrichVerbTokens(
-	tokens: Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[],
-): Promise<Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[]> {
+	tokens: Pick<IWord, 'tokenId' | 'content' | 'grammaticalInfo'>[],
+): Promise<Pick<IWord, 'tokenId' | 'content' | 'grammaticalInfo'>[]> {
 	logger.start('enrichVerbTokens');
 	logger.info('Processing verb tokens', {count: tokens.length});
 

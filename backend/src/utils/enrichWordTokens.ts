@@ -20,7 +20,7 @@ const wordSchema = {
 		properties: {
 			tokenId: {type: SchemaType.STRING},
 			tokenType: {type: SchemaType.STRING, enum: [TokenType.Word]},
-			originalText: {type: SchemaType.STRING},
+			content: {type: SchemaType.STRING},
 			normalizedToken: {type: SchemaType.STRING},
 			translations: {
 				type: SchemaType.OBJECT,
@@ -40,7 +40,7 @@ const wordSchema = {
 		required: [
 			'tokenId',
 			'tokenType',
-			'originalText',
+			'content',
 			'normalizedToken',
 			'translations',
 			'hasSpecialChar',
@@ -56,7 +56,7 @@ export async function enrichWordTokens(words: IWord[]): Promise<IWord[]> {
 	logger.start('enrichWordTokens');
 	logger.info('Word enrichment pipeline started', {
 		wordCount: words.length,
-		firstWord: words[0]?.originalText || 'No words provided',
+		firstWord: words[0]?.content || 'No words provided',
 	});
 
 	const model = genAI.getGenerativeModel({

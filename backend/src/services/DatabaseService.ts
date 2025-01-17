@@ -198,7 +198,7 @@ export class DatabaseService {
 		return allTokens;
 	}
 
-	private async readFile(filename: string) {
+	async readFile(filename: string) {
 		try {
 			const content = await readFile(join(this.dbPath, filename), 'utf-8');
 			return JSON.parse(content);

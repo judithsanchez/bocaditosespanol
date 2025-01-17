@@ -20,7 +20,7 @@ const prepositionTokenSchema = {
 		type: SchemaType.OBJECT,
 		properties: {
 			tokenId: {type: SchemaType.STRING},
-			originalText: {type: SchemaType.STRING},
+			content: {type: SchemaType.STRING},
 			grammaticalInfo: {
 				type: SchemaType.OBJECT,
 				properties: {
@@ -36,13 +36,13 @@ const prepositionTokenSchema = {
 				required: ['prepositionType', 'contractsWith'],
 			},
 		},
-		required: ['tokenId', 'originalText', 'grammaticalInfo'],
+		required: ['tokenId', 'content', 'grammaticalInfo'],
 	},
 };
 
 export async function enrichPrepositionTokens(
-	tokens: Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[],
-): Promise<Pick<IWord, 'tokenId' | 'originalText' | 'grammaticalInfo'>[]> {
+	tokens: Pick<IWord, 'tokenId' | 'content' | 'grammaticalInfo'>[],
+): Promise<Pick<IWord, 'tokenId' | 'content' | 'grammaticalInfo'>[]> {
 	logger.start('enrichPrepositionTokens');
 	logger.info('Processing preposition tokens', {count: tokens.length});
 

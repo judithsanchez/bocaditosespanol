@@ -86,7 +86,7 @@ export class TokenProcessorStep implements PipelineStep<SongProcessingContext> {
 
 		return {
 			tokenId: `token-${token.toLowerCase()}`,
-			originalText: token,
+			content: token,
 			normalizedToken: token.toLowerCase(),
 			tokenType: TokenType.Word,
 			translations: {english: []},

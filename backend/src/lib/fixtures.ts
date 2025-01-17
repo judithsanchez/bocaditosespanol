@@ -361,7 +361,7 @@ export const tokenProcessorFixtures = {
 			expected: [
 				{
 					tokenId: 'token-hello',
-					originalText: 'Hello',
+					content: 'Hello',
 					normalizedToken: 'hello',
 					tokenType: TokenType.Word,
 					translations: {english: []},
@@ -373,7 +373,7 @@ export const tokenProcessorFixtures = {
 				},
 				{
 					tokenId: 'token-world',
-					originalText: 'world',
+					content: 'world',
 					normalizedToken: 'world',
 					tokenType: TokenType.Word,
 					translations: {english: []},
@@ -395,7 +395,7 @@ export const tokenProcessorFixtures = {
 			expected: [
 				{
 					tokenId: 'token-hello',
-					originalText: 'Hello',
+					content: 'Hello',
 					normalizedToken: 'hello',
 					tokenType: TokenType.Word,
 					translations: {english: []},
@@ -412,7 +412,7 @@ export const tokenProcessorFixtures = {
 				},
 				{
 					tokenId: 'token-world',
-					originalText: 'world',
+					content: 'world',
 					normalizedToken: 'world',
 					tokenType: TokenType.Word,
 					translations: {english: []},
@@ -444,7 +444,7 @@ export const tokenProcessorFixtures = {
 				},
 				{
 					tokenId: 'token-hola',
-					originalText: 'Hola',
+					content: 'Hola',
 					normalizedToken: 'hola',
 					tokenType: TokenType.Word,
 					translations: {english: []},
@@ -456,7 +456,7 @@ export const tokenProcessorFixtures = {
 				},
 				{
 					tokenId: 'token-señor',
-					originalText: 'señor',
+					content: 'señor',
 					normalizedToken: 'señor',
 					tokenType: TokenType.Word,
 					translations: {english: []},
@@ -483,7 +483,7 @@ export const basicEnricherFixtures = {
 			all: [
 				{
 					tokenId: 'token-1',
-					originalText: 'canta',
+					content: 'canta',
 					normalizedToken: 'canta',
 					tokenType: TokenType.Word,
 					translations: {english: ['sings']},
@@ -495,7 +495,7 @@ export const basicEnricherFixtures = {
 				},
 				{
 					tokenId: 'token-2',
-					originalText: 'gato',
+					content: 'gato',
 					normalizedToken: 'gato',
 					tokenType: TokenType.Word,
 					translations: {english: ['cat']},
@@ -522,7 +522,7 @@ export const basicEnricherFixtures = {
 		enrichedWords: [
 			{
 				tokenId: 'token-1',
-				originalText: 'canta',
+				content: 'canta',
 				normalizedToken: 'canta',
 				tokenType: TokenType.Word,
 				translations: {english: ['sings']},
@@ -548,7 +548,7 @@ export const basicEnricherFixtures = {
 			},
 			{
 				tokenId: 'token-2',
-				originalText: 'gato',
+				content: 'gato',
 				normalizedToken: 'gato',
 				tokenType: TokenType.Word,
 				translations: {english: ['cat']},
@@ -575,7 +575,7 @@ export const basicEnricherFixtures = {
 			all: [
 				{
 					tokenId: 'token-1',
-					originalText: 'canta',
+					content: 'canta',
 					normalizedToken: 'canta',
 					tokenType: TokenType.Word,
 					translations: {english: ['sings']},
@@ -601,7 +601,7 @@ export const basicEnricherFixtures = {
 				},
 				{
 					tokenId: 'token-2',
-					originalText: 'gato',
+					content: 'gato',
 					normalizedToken: 'gato',
 					tokenType: TokenType.Word,
 					translations: {english: ['cat']},
@@ -626,7 +626,7 @@ export const basicEnricherFixtures = {
 			enriched: [
 				{
 					tokenId: 'token-1',
-					originalText: 'canta',
+					content: 'canta',
 					normalizedToken: 'canta',
 					tokenType: TokenType.Word,
 					translations: {english: ['sings']},
@@ -652,7 +652,7 @@ export const basicEnricherFixtures = {
 				},
 				{
 					tokenId: 'token-2',
-					originalText: 'gato',
+					content: 'gato',
 					normalizedToken: 'gato',
 					tokenType: TokenType.Word,
 					translations: {english: ['cat']},
@@ -682,28 +682,28 @@ export const basicEnricherFixtures = {
 		input: [
 			{
 				tokenId: 'token-1',
-				originalText: 'canta',
+				content: 'canta',
 				normalizedToken: 'canta',
 				tokenType: TokenType.Word,
 				partOfSpeech: PartOfSpeech.Verb,
 			} as IWord,
 			{
 				tokenId: 'token-2',
-				originalText: 'gato',
+				content: 'gato',
 				normalizedToken: 'gato',
 				tokenType: TokenType.Word,
 				partOfSpeech: PartOfSpeech.Noun,
 			} as IWord,
 			{
 				tokenId: 'token-3',
-				originalText: 'rápido',
+				content: 'rápido',
 				normalizedToken: 'rapido',
 				tokenType: TokenType.Word,
 				partOfSpeech: PartOfSpeech.Adjective,
 			} as IWord,
 			{
 				tokenId: 'token-4',
-				originalText: 'gato',
+				content: 'gato',
 				normalizedToken: 'gato',
 				tokenType: TokenType.Word,
 				partOfSpeech: PartOfSpeech.Noun,
@@ -733,7 +733,7 @@ export const basicEnricherFixtures = {
 		},
 		unknownPartOfSpeech: {
 			tokenId: 'token-unknown',
-			originalText: 'test',
+			content: 'test',
 			normalizedToken: 'test',
 			tokenType: TokenType.Word,
 			partOfSpeech: 'unknown',
@@ -741,7 +741,7 @@ export const basicEnricherFixtures = {
 		},
 		missingPartOfSpeech: {
 			tokenId: 'token-missing',
-			originalText: 'test',
+			content: 'test',
 			normalizedToken: 'test',
 			tokenType: TokenType.Word,
 			partOfSpeech: undefined,

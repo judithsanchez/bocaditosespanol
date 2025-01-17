@@ -140,7 +140,7 @@ export class SpecializedEnricherStep
 
 			const simplifiedTokens = tokens.map(token => ({
 				tokenId: token.tokenId,
-				originalText: token.originalText,
+				content: token.content,
 				grammaticalInfo: token.grammaticalInfo,
 			}));
 
@@ -252,7 +252,7 @@ export class SpecializedEnricherStep
 // 		enrichmentFunction: (
 // 			items: Array<{
 // 				tokenId: string;
-// 				originalText: string;
+// 				content: string;
 // 				grammaticalInfo: any;
 // 			}>,
 // 		) => Promise<any[]>,
@@ -261,7 +261,7 @@ export class SpecializedEnricherStep
 
 // 		const simplifiedTokens = tokens.map(token => ({
 // 			tokenId: token.tokenId,
-// 			originalText: token.originalText,
+// 			content: token.content,
 // 			grammaticalInfo: token.grammaticalInfo,
 // 		}));
 

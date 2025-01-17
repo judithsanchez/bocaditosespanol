@@ -32,7 +32,7 @@ export interface IEmoji {
 export interface IWord {
 	tokenId: string;
 	tokenType: TokenType.Word;
-	originalText: string;
+	content: string;
 	normalizedToken: string;
 	translations: {english: Promise<string[]> | string[]};
 	hasSpecialChar: boolean;
@@ -141,7 +141,7 @@ export interface BatchProcessorConfig<T> {
 export interface IStoredWord {
 	tokenId: string;
 	tokenType: string;
-	originalText: string;
+	content: string;
 	normalizedToken: string;
 	translations: {
 		english: string[];
