@@ -1011,5 +1011,793 @@
         }
       }
     }
+  ],
+  "weltita-bad-bunny": [
+    {
+      "content": "Baby, te voy a dar una vuelta por la playita.",
+      "sentenceId": "sentence-1-weltita-bad-bunny",
+      "tokenIds": [
+        "token-baby",
+        "token-,",
+        "token-te",
+        "token-voy",
+        "token-a",
+        "token-dar",
+        "token-una",
+        "token-vuelta",
+        "token-por",
+        "token-la",
+        "token-playita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Baby, I'm gonna take you for a ride on the beach.",
+          "literal": "Baby, I you go to give a turn for the beach."
+        }
+      }
+    },
+    {
+      "content": "Te voy a llenar de besitos la carita.",
+      "sentenceId": "sentence-2-weltita-bad-bunny",
+      "tokenIds": [
+        "token-te",
+        "token-voy",
+        "token-a",
+        "token-llenar",
+        "token-de",
+        "token-besitos",
+        "token-la",
+        "token-carita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm gonna cover your face in kisses.",
+          "literal": "I you go to fill of little kisses the face."
+        }
+      }
+    },
+    {
+      "content": "Un día conmigo es lo que tú necesitas.",
+      "sentenceId": "sentence-3-weltita-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-día",
+        "token-conmigo",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-tú",
+        "token-necesitas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A day with me is what you need.",
+          "literal": "A day with me is what you need."
+        }
+      }
+    },
+    {
+      "content": "Sonriendo, tú te ves más bonita.",
+      "sentenceId": "sentence-4-weltita-bad-bunny",
+      "tokenIds": [
+        "token-sonriendo",
+        "token-,",
+        "token-tú",
+        "token-te",
+        "token-ves",
+        "token-más",
+        "token-bonita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Smiling, you look more beautiful.",
+          "literal": "Smiling, you yourself see more pretty."
+        }
+      }
+    },
+    {
+      "content": "Baby, yo sé, baby, yo sé.",
+      "sentenceId": "sentence-5-weltita-bad-bunny",
+      "tokenIds": [
+        "token-baby",
+        "token-,",
+        "token-yo",
+        "token-sé",
+        "token-,",
+        "token-baby",
+        "token-,",
+        "token-yo",
+        "token-sé",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Baby, I know, baby, I know.",
+          "literal": "Baby, I know, baby, I know."
+        }
+      }
+    },
+    {
+      "content": "La vida es así, la vida es así.",
+      "sentenceId": "sentence-6-weltita-bad-bunny",
+      "tokenIds": [
+        "token-la",
+        "token-vida",
+        "token-es",
+        "token-así",
+        "token-,",
+        "token-la",
+        "token-vida",
+        "token-es",
+        "token-así",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Life is like that, life is like that.",
+          "literal": "The life is like that, the life is like that."
+        }
+      }
+    },
+    {
+      "content": "Pero ponte el traje de baño, mami, que te voy a buscar.",
+      "sentenceId": "sentence-7-weltita-bad-bunny",
+      "tokenIds": [
+        "token-pero",
+        "token-ponte",
+        "token-el",
+        "token-traje",
+        "token-de",
+        "token-baño",
+        "token-,",
+        "token-mami",
+        "token-,",
+        "token-que",
+        "token-tе",
+        "token-voy",
+        "token-a",
+        "token-buscar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "But put on your swimsuit, mami, I'm going to look for you.",
+          "literal": "But put yourself the suit of bath, mommy, that you I go to look for."
+        }
+      }
+    },
+    {
+      "content": "Te dejo mojadita, el Sol te va a secar, sí, te va a quemar.",
+      "sentenceId": "sentence-8-weltita-bad-bunny",
+      "tokenIds": [
+        "token-te",
+        "token-dejo",
+        "token-mojadita",
+        "token-,",
+        "token-el",
+        "token-sol",
+        "token-tе",
+        "token-va",
+        "token-a",
+        "token-secar",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-te",
+        "token-va",
+        "token-a",
+        "token-quemar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'll leave you wet, the sun will dry you, yes, it will burn you.",
+          "literal": "I leave you wet, the sun you goes to dry, yes, you goes to burn."
+        }
+      }
+    },
+    {
+      "content": "Tú eres mi canción favorita y en repeat te voy a tocar.",
+      "sentenceId": "sentence-9-weltita-bad-bunny",
+      "tokenIds": [
+        "token-tú",
+        "token-eres",
+        "token-mi",
+        "token-canción",
+        "token-favorita",
+        "token-y",
+        "token-en",
+        "token-repeat",
+        "token-te",
+        "token-voy",
+        "token-a",
+        "token-tocar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You're my favorite song and I'm going to play you on repeat.",
+          "literal": "You are my song favorite and in repeat you I go to touch."
+        }
+      }
+    },
+    {
+      "content": "Ey, te la voy a aplicar.",
+      "sentenceId": "sentence-10-weltita-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-te",
+        "token-la",
+        "token-voy",
+        "token-a",
+        "token-aplicar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, I'm going to apply it to you.",
+          "literal": "Hey, to you it I go to apply."
+        }
+      }
+    },
+    {
+      "content": "Quiero dibujar corazoncitos en la orilla.",
+      "sentenceId": "sentence-11-weltita-bad-bunny",
+      "tokenIds": [
+        "token-quiero",
+        "token-dibujar",
+        "token-corazoncitos",
+        "token-en",
+        "token-la",
+        "token-orilla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I want to draw little hearts on the shore.",
+          "literal": "I want to draw little hearts on the shore."
+        }
+      }
+    },
+    {
+      "content": "Tranquila, mami, yo te cargo la silla.",
+      "sentenceId": "sentence-12-weltita-bad-bunny",
+      "tokenIds": [
+        "token-tranquila",
+        "token-,",
+        "token-mami",
+        "token-,",
+        "token-yo",
+        "token-te",
+        "token-cargo",
+        "token-la",
+        "token-silla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Easy, mommy, I'll carry the chair for you.",
+          "literal": "Calm, mommy, I you carry the chair."
+        }
+      }
+    },
+    {
+      "content": "Esos ojitos lindos, me encanta cómo brillan.",
+      "sentenceId": "sentence-13-weltita-bad-bunny",
+      "tokenIds": [
+        "token-esos",
+        "token-ojitos",
+        "token-lindos",
+        "token-,",
+        "token-me",
+        "token-encanta",
+        "token-cómo",
+        "token-brillan",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Those pretty eyes, I love how they shine.",
+          "literal": "Those little eyes pretty, me it-enchants how they shine."
+        }
+      }
+    },
+    {
+      "content": "¿Cómo una diosa puede ser tan sencilla?",
+      "sentenceId": "sentence-14-weltita-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-cómo",
+        "token-una",
+        "token-diosa",
+        "token-puede",
+        "token-ser",
+        "token-tan",
+        "token-sencilla",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "How can a goddess be so simple?",
+          "literal": "How a goddess can be so simple?"
+        }
+      }
+    },
+    {
+      "content": "Y por un beso de la flaca, yo daría lo que fuera.",
+      "sentenceId": "sentence-15-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-por",
+        "token-un",
+        "token-beso",
+        "token-de",
+        "token-la",
+        "token-flaca",
+        "token-,",
+        "token-yo",
+        "token-daría",
+        "token-lo",
+        "token-que",
+        "token-fuera",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And for a kiss from the skinny girl, I would give anything.",
+          "literal": "And for a kiss of the skinny girl, I would give what it were."
+        }
+      }
+    },
+    {
+      "content": "Tú me dices si adentro o afuera, debajo del agua, nadie se entera.",
+      "sentenceId": "sentence-16-weltita-bad-bunny",
+      "tokenIds": [
+        "token-tú",
+        "token-me",
+        "token-dices",
+        "token-si",
+        "token-adentro",
+        "token-o",
+        "token-afuera",
+        "token-,",
+        "token-debajo",
+        "token-del",
+        "token-agua",
+        "token-,",
+        "token-nadie",
+        "token-se",
+        "token-entera",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You tell me if inside or outside, underwater, nobody knows.",
+          "literal": "You me tell if inside or outside, under the water, nobody enters."
+        }
+      }
+    },
+    {
+      "content": "Contigo me siento distinto.",
+      "sentenceId": "sentence-17-weltita-bad-bunny",
+      "tokenIds": [
+        "token-contigo",
+        "token-me",
+        "token-siento",
+        "token-distinto",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With you I feel different.",
+          "literal": "With you I myself feel different."
+        }
+      }
+    },
+    {
+      "content": "Hay algo cuando nos miramos.",
+      "sentenceId": "sentence-18-weltita-bad-bunny",
+      "tokenIds": [
+        "token-hay",
+        "token-algo",
+        "token-cuando",
+        "token-nos",
+        "token-miramos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "There's something when we look at each other.",
+          "literal": "There is something when us we look at each other."
+        }
+      }
+    },
+    {
+      "content": "Y en el pozo nos dimos la mano y gritamos: ¡Jacinto!",
+      "sentenceId": "sentence-19-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-en",
+        "token-el",
+        "token-pozo",
+        "token-nos",
+        "token-dimos",
+        "token-la",
+        "token-mano",
+        "token-y",
+        "token-gritamos",
+        "token-:",
+        "token-¡",
+        "token-jacinto",
+        "token-!",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And in the well we shook hands and shouted: Jacinto!",
+          "literal": "And in the well us we gave the hand and we shouted: Jacinto!"
+        }
+      }
+    },
+    {
+      "content": "Cuando no estoy en la buena, tú me llevas a hacer castillos de arena.",
+      "sentenceId": "sentence-20-weltita-bad-bunny",
+      "tokenIds": [
+        "token-cuando",
+        "token-no",
+        "token-estoy",
+        "token-en",
+        "token-la",
+        "token-buena",
+        "token-,",
+        "token-tú",
+        "token-me",
+        "token-llevas",
+        "token-a",
+        "token-hacer",
+        "token-castillos",
+        "token-de",
+        "token-arena",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "When I'm not doing well, you take me to make sandcastles.",
+          "literal": "When not I am in the good, you me take to do castles of sand."
+        }
+      }
+    },
+    {
+      "content": "Y los castillos se convierten en aldea.",
+      "sentenceId": "sentence-21-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-los",
+        "token-castillos",
+        "token-se",
+        "token-convierten",
+        "token-en",
+        "token-aldea",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And the castles turn into a village.",
+          "literal": "And the castles themselves convert into village."
+        }
+      }
+    },
+    {
+      "content": "Un pueblito donde no existen problemas.",
+      "sentenceId": "sentence-22-weltita-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-pueblito",
+        "token-donde",
+        "token-no",
+        "token-existen",
+        "token-problemas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A small town where there are no problems.",
+          "literal": "A small town where not exist problems."
+        }
+      }
+    },
+    {
+      "content": "Y ahí soñamos con un futuro.",
+      "sentenceId": "sentence-23-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-ahí",
+        "token-soñamos",
+        "token-con",
+        "token-un",
+        "token-futuro",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And there we dream of a future.",
+          "literal": "And there we dream with a future."
+        }
+      }
+    },
+    {
+      "content": "Que estemos bien, no hace falta mucho.",
+      "sentenceId": "sentence-24-weltita-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-estemos",
+        "token-bien",
+        "token-",
+        "token-no",
+        "token-hace",
+        "token-falta",
+        "token-mucho",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "That we are well, it doesn't take much.",
+          "literal": "That we are well, not makes lacking much."
+        }
+      }
+    },
+    {
+      "content": "Por un segundo, nos olvidamos de todo.",
+      "sentenceId": "sentence-25-weltita-bad-bunny",
+      "tokenIds": [
+        "token-por",
+        "token-un",
+        "token-segundo",
+        "token-",
+        "token-nos",
+        "token-olvidamos",
+        "token-de",
+        "token-todo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "For a second, we forget everything.",
+          "literal": "For a second, us we forget of everything."
+        }
+      }
+    },
+    {
+      "content": "Aquí solo somos tú y yo.",
+      "sentenceId": "sentence-26-weltita-bad-bunny",
+      "tokenIds": [
+        "token-aquí",
+        "token-solo",
+        "token-somos",
+        "token-tú",
+        "token-y",
+        "token-yo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It's just you and me here.",
+          "literal": "Here only we are you and I."
+        }
+      }
+    },
+    {
+      "content": "Vamos a besarnos frente a las olas.",
+      "sentenceId": "sentence-27-weltita-bad-bunny",
+      "tokenIds": [
+        "token-vamos",
+        "token-a",
+        "token-besarnos",
+        "token-frente",
+        "token-a",
+        "token-las",
+        "token-olas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Let's kiss in front of the waves.",
+          "literal": "Let's to kiss ourselves in front of the waves."
+        }
+      }
+    },
+    {
+      "content": "Aunque sea de piquito, de piquito, de piquito pin-pin.",
+      "sentenceId": "sentence-28-weltita-bad-bunny",
+      "tokenIds": [
+        "token-aunque",
+        "token-sea",
+        "token-de",
+        "token-piquito",
+        "token-,",
+        "token-de",
+        "token-piquito",
+        "token-,",
+        "token-de",
+        "token-piquito",
+        "token-pin",
+        "token--",
+        "token-pin",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Even if it's just a peck, a peck, a little peck.",
+          "literal": "Although it is of little peck, of little peck, of little peck pin-pin."
+        }
+      }
+    },
+    {
+      "content": "Hay mucho mosquito en la costa, baby, voy a poner un screen.",
+      "sentenceId": "sentence-29-weltita-bad-bunny",
+      "tokenIds": [
+        "token-hay",
+        "token-mucho",
+        "token-mosquito",
+        "token-en",
+        "token-la",
+        "token-costa",
+        "token-,",
+        "token-baby",
+        "token-,",
+        "token-voy",
+        "token-a",
+        "token-poner",
+        "token-un",
+        "token-screen",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "There are a lot of mosquitoes on the coast, baby, I'm going to put up a screen.",
+          "literal": "There is a lot mosquito in the coast, baby, I go to put a screen."
+        }
+      }
+    },
+    {
+      "content": "Sudadita, el Sol te da y eso brilla como blin-blin.",
+      "sentenceId": "sentence-30-weltita-bad-bunny",
+      "tokenIds": [
+        "token-sudadita",
+        "token-,",
+        "token-el",
+        "token-sol",
+        "token-te",
+        "token-da",
+        "token-y",
+        "token-eso",
+        "token-brilla",
+        "token-como",
+        "token-blin",
+        "token--",
+        "token-blin",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Sweaty, the sun hits you and that shines like bling-bling.",
+          "literal": "Sweaty, the sun you gives and that shines like blin-blin."
+        }
+      }
+    },
+    {
+      "content": "Vamos a quedarnos por Maya, después te llevo a París.",
+      "sentenceId": "sentence-31-weltita-bad-bunny",
+      "tokenIds": [
+        "token-vamos",
+        "token-a",
+        "token-quedarnos",
+        "token-por",
+        "token-maya",
+        "token-,",
+        "token-después",
+        "token-te",
+        "token-llevo",
+        "token-a",
+        "token-parís",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Let's stay in Maya, then I'll take you to Paris.",
+          "literal": "Let's to stay for Maya, then I you take to Paris."
+        }
+      }
+    },
+    {
+      "content": "Por eso es que me gusta ir contigo a la playita.",
+      "sentenceId": "sentence-32-weltita-bad-bunny",
+      "tokenIds": [
+        "token-por",
+        "token-eso",
+        "token-es",
+        "token-que",
+        "token-me",
+        "token-gusta",
+        "token-ir",
+        "token-contigo",
+        "token-a",
+        "token-la",
+        "token-playita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "That's why I like going to the beach with you.",
+          "literal": "For that it is that to me likes to go with you to the beach."
+        }
+      }
+    },
+    {
+      "content": "Y llenarte de besitos la carita.",
+      "sentenceId": "sentence-33-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-llenarte",
+        "token-de",
+        "token-besitos",
+        "token-la",
+        "token-carita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And fill your face with little kisses.",
+          "literal": "And to fill you of little kisses the face."
+        }
+      }
+    },
+    {
+      "content": "Y un día juntitos es lo que yo necesito.",
+      "sentenceId": "sentence-34-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-un",
+        "token-día",
+        "token-juntitos",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-yo",
+        "token-necesito",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And a day together is what I need.",
+          "literal": "And a day together is what I need."
+        }
+      }
+    },
+    {
+      "content": "Sonriendo, tú te ves más bonito.",
+      "sentenceId": "sentence-35-weltita-bad-bunny",
+      "tokenIds": [
+        "token-sonriendo",
+        "token-,",
+        "token-tú",
+        "token-te",
+        "token-ves",
+        "token-más",
+        "token-bonito",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Smiling, you look more handsome.",
+          "literal": "Smiling, you yourself see more handsome."
+        }
+      }
+    }
   ]
 }
