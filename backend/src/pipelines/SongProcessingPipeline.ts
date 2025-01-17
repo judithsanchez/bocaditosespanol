@@ -1,7 +1,13 @@
 import {Pipeline} from './Pipeline';
 import {ContentType} from './types/PipelineTypes';
-import {AddSongRequest, ISentence, ISong} from '../../../lib/types';
-import {IEmoji, IPunctuationSign, IWord} from 'lib/types';
+import {
+	AddSongRequest,
+	IEmoji,
+	IPunctuationSign,
+	ISentence,
+	ISong,
+	IWord,
+} from 'lib/types';
 import {DatabaseService} from '../services/DatabaseService';
 import {
 	InputValidatorStep,

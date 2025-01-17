@@ -1,7 +1,7 @@
 import {SentenceProcessorStep} from '../SentenceProcessor';
 import {splitParagraphFixtures} from '../../../lib/fixtures';
 import {SongProcessingContext} from '../../SongProcessingPipeline';
-import {ISong} from '../../../../../lib/types';
+import {ISong} from 'lib/types';
 
 describe('SentenceProcessorStep', () => {
 	let processor: SentenceProcessorStep;

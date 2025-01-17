@@ -1,4 +1,3 @@
-import {AddSongRequest, ISentence, ISong} from '../../../lib/types';
 import {IAdjective} from './grammaticalInfo/adjectivesTypes';
 import {IAdverb} from './grammaticalInfo/adverbsTypes';
 import {IArticle} from './grammaticalInfo/articlesTypes';
@@ -10,6 +9,45 @@ import {INumeral} from './grammaticalInfo/numeralsTypes';
 import {IPreposition} from './grammaticalInfo/prepositionsTypes';
 import {IPronoun} from './grammaticalInfo/pronounsTypes';
 import {IVerb} from './grammaticalInfo/verbsTypes';
+
+export interface AddSongRequest {
+	interpreter: string;
+	feat?: string;
+	title: string;
+	spotify: string;
+	genre: string[];
+	language: string;
+	releaseDate: string;
+	lyrics: string;
+}
+
+export interface ISong {
+	songId: string;
+	metadata: {
+		interpreter: string;
+		feat?: string;
+		title: string;
+		spotify: string;
+		genre: string[];
+		language: string;
+		releaseDate: string;
+	};
+	lyrics: string[];
+	createdAt: string;
+	updatedAt: string;
+}
+
+export interface ISentence {
+	sentenceId: string;
+	content: string;
+	translations: {
+		english: {
+			literal: Promise<string> | string;
+			contextual: Promise<string> | string;
+		};
+	};
+	tokenIds: string[];
+}
 
 export enum TokenType {
 	Word = 'word',

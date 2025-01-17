@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import styled from 'styled-components';
 import Sentences from '../components/Sentence';
+import {API_URL} from '../config';
 
 type ISentence = {
 	sentenceId: string;
@@ -60,7 +61,7 @@ const SelectedSong = () => {
 
 	useEffect(() => {
 		if (songId) {
-			fetch(`http://localhost:3000/songs/${songId}`)
+			fetch(`${API_URL}/songs/${songId}`)
 				.then(response => response.json())
 				.then(data => {
 					data.sentences.forEach((sentence: ISentence, index: number) => {

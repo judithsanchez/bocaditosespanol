@@ -1,8 +1,14 @@
 import {readFile, writeFile, mkdir} from 'fs/promises';
 import {existsSync} from 'fs';
 import {join} from 'path';
-import {ISentence, ISong} from '../../../lib/types';
-import {IEmoji, IPunctuationSign, IWord, TokenType} from '../lib/types';
+import {
+	IEmoji,
+	IPunctuationSign,
+	ISentence,
+	ISong,
+	IWord,
+	TokenType,
+} from '../lib/types';
 
 interface TokenStorage {
 	words: {

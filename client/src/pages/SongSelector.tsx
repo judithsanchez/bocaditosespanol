@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
+import {API_URL} from '../config';
 
 interface Song {
 	songId: string;
@@ -48,7 +49,7 @@ const SongSelector = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch('http://localhost:3000/songs')
+		fetch(`${API_URL}/songs`)
 			.then(response => response.json())
 			.then(data => setSongs(data))
 			.catch(error => console.error('Error fetching songs:', error));

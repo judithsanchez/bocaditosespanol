@@ -5,12 +5,16 @@ import {DatabaseService} from './services/DatabaseService';
 import cors from 'cors';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const logger = new Logger('Server');
 const pipeline = new SongProcessingPipeline();
 
 app.use(express.json());
 app.use(cors());
+
+app.get('/', (_req, res) => {
+	res.send('Hola hola caracolas!');
+});
 
 app.post('/songs', async (req, res) => {
 	logger.start('postSong');

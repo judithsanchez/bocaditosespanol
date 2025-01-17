@@ -1,8 +1,8 @@
 import {PipelineStep} from '../Pipeline';
 import {Logger} from '../../utils/index';
 import {SongProcessingContext} from 'pipelines/SongProcessingPipeline';
-import {ISentence} from '../../../../lib/types';
 import {errors} from '../../lib/constants';
+import {ISentence} from 'lib/types';
 
 export class SentenceProcessorStep
 	implements PipelineStep<SongProcessingContext>

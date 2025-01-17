@@ -52,11 +52,6 @@ export const testMessages = {
 	writeOperationFailed: 'Write operation failed',
 };
 
-export const urls = {
-	local: 'http://localhost:3000/',
-	songs: 'http://localhost:3000/songs',
-};
-
 export const geminiSafetySettings = [
 	{
 		category: HarmCategory.HARM_CATEGORY_HARASSMENT,

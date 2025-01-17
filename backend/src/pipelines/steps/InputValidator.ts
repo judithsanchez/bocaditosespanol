@@ -3,7 +3,7 @@ import {SongProcessingContext} from '../SongProcessingPipeline';
 import {errors} from '../../lib/constants';
 import {Logger} from '../../utils/index';
 import {ContentType} from '../types/PipelineTypes';
-import {AddSongRequest} from '../../../../lib/types';
+import {AddSongRequest} from 'lib/types';
 
 export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 	private readonly logger: Logger;

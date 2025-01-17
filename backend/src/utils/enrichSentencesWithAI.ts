@@ -1,8 +1,8 @@
 import {GoogleGenerativeAI, SchemaType} from '@google/generative-ai';
 import {config} from 'dotenv';
-import {ISentence} from '../../../lib/types';
 import {errors, geminiSafetySettings} from '../lib/constants';
 import {Logger} from './Logger';
+import {ISentence} from 'lib/types';
 config();
 
 const logger = new Logger('SentenceEnricher');
