@@ -5,7 +5,7 @@
 	"type": "commonjs",
 	"scripts": {
 		"build": "tsc && npm run copy-data",
-		"copy-data": "mkdir -p dist/data && cp src/data/*.json dist/data/",
+		"copy-data": "mkdir -p public && cp -r dist/* public/",
 		"start": "NODE_ENV=production node dist/server.js",
 		"dev": "NODE_ENV=development nodemon src/server.ts",
 		"clear-cache": "rm -rf node_modules/.cache",
