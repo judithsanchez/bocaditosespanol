@@ -31,12 +31,12 @@ interface TokenStorage {
 }
 
 export class DatabaseService {
-	private readonly dbPath = join(
-		__dirname,
-		'..',
-		'..',
-		process.env.NODE_ENV === 'production' ? 'dist/data' : 'src/data',
-	);
+	private getDataPath() {
+		if (process.env.NODE_ENV === 'production') {
+			return '/data';
+		}
+		return join(__dirname, '..', '..', 'public/data');
+	}
 
 	private tokens: TokenStorage = {
 		words: {
@@ -57,13 +57,13 @@ export class DatabaseService {
 	};
 
 	constructor() {
-		console.log('Database path:', this.dbPath);
+		console.log('Database path:', this.getDataPath());
 		this.initializeDataStructures();
 	}
 
 	private async initializeDataStructures() {
-		if (!existsSync(this.dbPath)) {
-			await mkdir(this.dbPath, {recursive: true});
+		if (!existsSync(this.getDataPath())) {
+			await mkdir(this.getDataPath(), {recursive: true});
 		}
 	}
 
@@ -81,6 +81,7 @@ export class DatabaseService {
 
 		await this.writeFile('text-entries.json', entries);
 	}
+
 	async saveSentences(
 		sentences: ISentence[],
 		songMetadata: {title: string; interpreter: string},
@@ -97,6 +98,7 @@ export class DatabaseService {
 
 		await this.writeFile('sentences.json', existingSentences);
 	}
+
 	async saveTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Promise<void> {
@@ -184,6 +186,7 @@ export class DatabaseService {
 			token,
 		};
 	}
+
 	async getTokens(): Promise<Array<IWord | IPunctuationSign | IEmoji>> {
 		const tokens = await this.readFile('tokens.json');
 		if (!tokens) return [];
@@ -212,7 +215,7 @@ export class DatabaseService {
 
 	async readFile(filename: string) {
 		try {
-			const filePath = join(this.dbPath, filename);
+			const filePath = join(this.getDataPath(), filename);
 			console.log('Attempting to read file:', filePath);
 			const content = await readFile(filePath, 'utf-8');
 			console.log('File content:', content);
@@ -224,6 +227,9 @@ export class DatabaseService {
 	}
 
 	private async writeFile(filename: string, data: unknown) {
-		await writeFile(join(this.dbPath, filename), JSON.stringify(data, null, 2));
+		await writeFile(
+			join(this.getDataPath(), filename),
+			JSON.stringify(data, null, 2),
+		);
 	}
 }

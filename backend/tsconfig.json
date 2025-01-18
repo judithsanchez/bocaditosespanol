@@ -13,6 +13,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"baseUrl": "src",
+		"rootDir": ".",
 		"outDir": "dist",
 		"paths": {
 			"@utils/*": ["src/utils/*"],
@@ -24,6 +25,7 @@
 		"allowUnusedLabels": false,
 		"allowUnreachableCode": false
 	},
-	"include": ["src", "types"],
+	"include": ["api/**/*", "src", "types"],
+	"exclude": ["node_modules"],
 	"types": ["jest"]
 }

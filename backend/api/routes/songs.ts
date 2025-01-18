@@ -1,40 +1,13 @@
 import express from 'express';
-import {Logger} from './utils/Logger';
-import {SongProcessingPipeline} from './pipelines/SongProcessingPipeline';
-import {DatabaseService} from './services/DatabaseService';
-import cors from 'cors';
+import {SongProcessingPipeline} from '../../src/pipelines/SongProcessingPipeline';
+import {Logger} from '../../src/utils/Logger';
+import {DatabaseService} from '../../src/services/DatabaseService';
 
-const app = express();
-const port = process.env.PORT || 3000;
-const logger = new Logger('Server');
+const router = express.Router();
+const logger = new Logger('Songs');
 const pipeline = new SongProcessingPipeline();
 
-app.use(express.json());
-app.use(cors());
-
-app.get('/', (_req, res) => {
-	res.send('Hola hola caracolas!');
-});
-
-app.post('/songs', async (req, res) => {
-	logger.start('postSong');
-	try {
-		const result = await pipeline.processText(req.body);
-		logger.info('Song processed successfully', {songId: result.song.songId});
-		res.status(201).json(result);
-	} catch (error) {
-		if (error instanceof Error) {
-			logger.error('Failed to process song', error);
-			res.status(400).json({error: error.message});
-		} else {
-			logger.error('Unknown error occurred', error);
-			res.status(400).json({error: 'An unknown error occurred'});
-		}
-	}
-	logger.end('postSong');
-});
-
-app.get('/songs', async (_req, res) => {
+router.get('/', async (_req, res) => {
 	logger.start('getAllSongs');
 	try {
 		const dbService = new DatabaseService();
@@ -62,7 +35,7 @@ app.get('/songs', async (_req, res) => {
 	logger.end('getAllSongs');
 });
 
-app.get('/songs/:songId', async (req, res) => {
+router.get('/:songId', async (req, res) => {
 	logger.start('getSong');
 	try {
 		const songId = req.params.songId;
@@ -99,7 +72,6 @@ app.get('/songs/:songId', async (req, res) => {
 			};
 		});
 
-		// Create enhanced response object with both metadata and sentences
 		const response = {
 			metadata: songEntry.metadata,
 			sentences: orderedSentences,
@@ -119,6 +91,22 @@ app.get('/songs/:songId', async (req, res) => {
 	logger.end('getSong');
 });
 
-app.listen(port, () => {
-	logger.info('Server started', {port});
+router.post('/', async (req, res) => {
+	logger.start('postSong');
+	try {
+		const result = await pipeline.processText(req.body);
+		logger.info('Song processed successfully', {songId: result.song.songId});
+		res.status(201).json(result);
+	} catch (error) {
+		if (error instanceof Error) {
+			logger.error('Failed to process song', error);
+			res.status(400).json({error: error.message});
+		} else {
+			logger.error('Unknown error occurred', error);
+			res.status(400).json({error: 'An unknown error occurred'});
+		}
+	}
+	logger.end('postSong');
 });
+
+export default router;
