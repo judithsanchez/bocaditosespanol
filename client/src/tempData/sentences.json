@@ -1,1783 +1,2712 @@
 {
-	"historia-de-taxi-ricardo-arjona": [
-		{
-			"content": "Eran las diez de la noche, piloteaba mi nave.",
-			"sentenceId": "sentence-1-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-eran",
-				"token-las",
-				"token-diez",
-				"token-de",
-				"token-la",
-				"token-noche",
-				"token-,",
-				"token-piloteaba",
-				"token-mi",
-				"token-nave",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "It was ten o'clock at night, I was piloting my ship.",
-					"literal": "It was the ten of the night, I was piloting my ship."
-				}
-			}
-		},
-		{
-			"content": "Era mi taxi un Volkswagen del año 68.",
-			"sentenceId": "sentence-2-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-era",
-				"token-mi",
-				"token-taxi",
-				"token-un",
-				"token-volkswagen",
-				"token-del",
-				"token-año",
-				"token-68",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "My taxi was a 1968 Volkswagen.",
-					"literal": "Was my taxi a Volkswagen of the year 68."
-				}
-			}
-		},
-		{
-			"content": "Era un día de esos malos, donde no hubo pasaje.",
-			"sentenceId": "sentence-3-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-era",
-				"token-un",
-				"token-día",
-				"token-de",
-				"token-esos",
-				"token-malos",
-				"token-,",
-				"token-donde",
-				"token-no",
-				"token-hubo",
-				"token-pasaje",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "It was one of those bad days where there were no passengers.",
-					"literal": "It was a day of those bad, where not there was passage."
-				}
-			}
-		},
-		{
-			"content": "Las lentejuelas de un traje me hicieron la parada.",
-			"sentenceId": "sentence-4-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-las",
-				"token-lentejuelas",
-				"token-de",
-				"token-un",
-				"token-traje",
-				"token-me",
-				"token-hicieron",
-				"token-la",
-				"token-parada",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "The sequins of a suit got me a fare.",
-					"literal": "The sequins of a suit me did the stop."
-				}
-			}
-		},
-		{
-			"content": "Era una rubia preciosa, llevaba minifalda.",
-			"sentenceId": "sentence-5-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-era",
-				"token-una",
-				"token-rubia",
-				"token-preciosa",
-				"token-,",
-				"token-llevaba",
-				"token-minifalda",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She was a gorgeous blonde, wearing a miniskirt.",
-					"literal": "Was a blonde precious, she was wearing miniskirt."
-				}
-			}
-		},
-		{
-			"content": "El escote en su espalda llegaba justo a la gloria.",
-			"sentenceId": "sentence-6-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-el",
-				"token-escote",
-				"token-en",
-				"token-su",
-				"token-espalda",
-				"token-llegaba",
-				"token-justo",
-				"token-a",
-				"token-la",
-				"token-gloria",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "The low-cut neckline on her back went right to the glory.",
-					"literal": "The neckline in her back arrived just to the glory."
-				}
-			}
-		},
-		{
-			"content": "Una lágrima negra rodaba en su mejilla.",
-			"sentenceId": "sentence-7-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-una",
-				"token-lágrima",
-				"token-negra",
-				"token-rodaba",
-				"token-en",
-				"token-su",
-				"token-mejilla",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "A single black tear rolled down her cheek.",
-					"literal": "A tear black rolled in her cheek."
-				}
-			}
-		},
-		{
-			"content": "Mientras que el retrovisor decía: ¡Ve qué pantorrillas!",
-			"sentenceId": "sentence-8-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-mientras",
-				"token-que",
-				"token-el",
-				"token-retrovisor",
-				"token-decía",
-				"token-:",
-				"token-¡",
-				"token-ve",
-				"token-qué",
-				"token-pantorrillas",
-				"token-!",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Meanwhile the rearview mirror said: Check out those calves!",
-					"literal": "While that the rearview mirror said: See what calves!"
-				}
-			}
-		},
-		{
-			"content": "Yo vi un poco más.",
-			"sentenceId": "sentence-9-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-yo",
-				"token-vi",
-				"token-un",
-				"token-poco",
-				"token-más",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I saw a little more.",
-					"literal": "I saw a little more."
-				}
-			}
-		},
-		{
-			"content": "Eran las diez con cuarenta, zigzagueava en reforma.",
-			"sentenceId": "sentence-10-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-eran",
-				"token-las",
-				"token-diez",
-				"token-con",
-				"token-cuarenta",
-				"token-,",
-				"token-zigzagueava",
-				"token-en",
-				"token-reforma",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "It was ten forty, swerving through Reforma avenue.",
-					"literal": "They were the ten with forty, zigzagueing in Reforma."
-				}
-			}
-		},
-		{
-			"content": "Me dijo: Me llamo Norma, mientras cruzaba la pierna.",
-			"sentenceId": "sentence-11-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-me",
-				"token-dijo",
-				"token-:",
-				"token-me",
-				"token-llamo",
-				"token-norma",
-				"token-,",
-				"token-mientras",
-				"token-cruzaba",
-				"token-la",
-				"token-pierna",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She said: My name is Norma, as she crossed her leg.",
-					"literal": "She said to me: I call myself Norma, while I crossed the leg."
-				}
-			}
-		},
-		{
-			"content": "Sacó un cigarro, algo extraño, de esos que te dan risa.",
-			"sentenceId": "sentence-12-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-sacó",
-				"token-un",
-				"token-cigarro",
-				"token-,",
-				"token-algo",
-				"token-extraño",
-				"token-,",
-				"token-de",
-				"token-esos",
-				"token-que",
-				"token-te",
-				"token-dan",
-				"token-risa",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She pulled out a cigarette, a strange one, of those that make you laugh.",
-					"literal": "She took out a cigarette, something strange, of those that to you give laugh."
-				}
-			}
-		},
-		{
-			"content": "Le ofrecí fuego de prisa y me temblaba la mano.",
-			"sentenceId": "sentence-13-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-le",
-				"token-ofrecí",
-				"token-fuego",
-				"token-de",
-				"token-prisa",
-				"token-y",
-				"token-me",
-				"token-temblaba",
-				"token-la",
-				"token-mano",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I quickly offered her a light, and my hand was shaking.",
-					"literal": "To her I offered fire of hurry and to me trembled the hand."
-				}
-			}
-		},
-		{
-			"content": "Le pregunté por quién llora y me dijo: Por un tipo que se cree que por rico, puede venir a engañarme.",
-			"sentenceId": "sentence-14-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-le",
-				"token-pregunté",
-				"token-por",
-				"token-quién",
-				"token-llora",
-				"token-y",
-				"token-me",
-				"token-dijo",
-				"token-:",
-				"token-por",
-				"token-un",
-				"token-tipo",
-				"token-que",
-				"token-se",
-				"token-cree",
-				"token-que",
-				"token-por",
-				"token-rico",
-				"token-,",
-				"token-puede",
-				"token-venir",
-				"token-a",
-				"token-engañarme",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I asked her who she was crying for, and she said: For a guy who thinks that because he's rich, he can come and deceive me.",
-					"literal": "To her I asked for who cries and to me she said: For a type that himself believes that for rich, can come to deceive me."
-				}
-			}
-		},
-		{
-			"content": "No caiga usted por amores, debe de levantarse (le dije).",
-			"sentenceId": "sentence-15-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-no",
-				"token-caiga",
-				"token-usted",
-				"token-por",
-				"token-amores",
-				"token-,",
-				"token-debe",
-				"token-de",
-				"token-levantarse",
-				"token-(le",
-				"token-dije)",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Don't fall for love, you should get up (I told her).",
-					"literal": "No fall you for loves, must of get up (to her I said)."
-				}
-			}
-		},
-		{
-			"content": "Cuente con un servidor, si lo que quiere es vengarse.",
-			"sentenceId": "sentence-16-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-cuente",
-				"token-con",
-				"token-un",
-				"token-servidor",
-				"token-,",
-				"token-si",
-				"token-lo",
-				"token-que",
-				"token-quiere",
-				"token-es",
-				"token-vengarse",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Count on me if you want revenge.",
-					"literal": "Count with a server, if what you want is to avenge yourself."
-				}
-			}
-		},
-		{
-			"content": "Y me sonrió.",
-			"sentenceId": "sentence-17-historia-de-taxi-ricardo-arjona",
-			"tokenIds": ["token-y", "token-me", "token-sonrió", "token-."],
-			"translations": {
-				"english": {
-					"contextual": "And she smiled at me.",
-					"literal": "And me smiled."
-				}
-			}
-		},
-		{
-			"content": "¿Qué es lo que hace un taxista seduciendo a la vida?",
-			"sentenceId": "sentence-18-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-¿",
-				"token-qué",
-				"token-es",
-				"token-lo",
-				"token-que",
-				"token-hace",
-				"token-un",
-				"token-taxista",
-				"token-seduciendo",
-				"token-a",
-				"token-la",
-				"token-vida",
-				"token-?"
-			],
-			"translations": {
-				"english": {
-					"contextual": "What does a taxi driver do seducing life?",
-					"literal": "What is what does a taxi driver seducing to the life?"
-				}
-			}
-		},
-		{
-			"content": "¿Qué es lo que hace un taxista construyendo una herida?",
-			"sentenceId": "sentence-19-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-¿",
-				"token-qué",
-				"token-es",
-				"token-lo",
-				"token-que",
-				"token-hace",
-				"token-un",
-				"token-taxista",
-				"token-construyendo",
-				"token-una",
-				"token-herida",
-				"token-?"
-			],
-			"translations": {
-				"english": {
-					"contextual": "What is a taxi driver doing building a wound?",
-					"literal": "What is what does a taxi driver building a wound?"
-				}
-			}
-		},
-		{
-			"content": "¿Qué es lo que hace un taxista enfrente de una dama?",
-			"sentenceId": "sentence-20-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-¿",
-				"token-qué",
-				"token-es",
-				"token-lo",
-				"token-que",
-				"token-hace",
-				"token-un",
-				"token-taxista",
-				"token-enfrente",
-				"token-de",
-				"token-una",
-				"token-dama",
-				"token-?"
-			],
-			"translations": {
-				"english": {
-					"contextual": "What does a taxi driver do in front of a lady?",
-					"literal": "What is what does a taxi driver in front of a lady?"
-				}
-			}
-		},
-		{
-			"content": "¿Qué es lo que hace un taxista con sus sueños de cama?",
-			"sentenceId": "sentence-21-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-¿",
-				"token-qué",
-				"token-es",
-				"token-lo",
-				"token-que",
-				"token-hace",
-				"token-un",
-				"token-taxista",
-				"token-con",
-				"token-sus",
-				"token-sueños",
-				"token-de",
-				"token-cama",
-				"token-?"
-			],
-			"translations": {
-				"english": {
-					"contextual": "What does a taxi driver do with his bed dreams?",
-					"literal": "What is what does a taxi driver with his dreams of bed?"
-				}
-			}
-		},
-		{
-			"content": "Me pregunté.",
-			"sentenceId": "sentence-22-historia-de-taxi-ricardo-arjona",
-			"tokenIds": ["token-me", "token-pregunté", "token-."],
-			"translations": {
-				"english": {
-					"contextual": "I wondered.",
-					"literal": "Myself I asked."
-				}
-			}
-		},
-		{
-			"content": "Lo vi abrazando y besando a una humilde muchacha.",
-			"sentenceId": "sentence-23-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-lo",
-				"token-vi",
-				"token-abrazando",
-				"token-y",
-				"token-besando",
-				"token-a",
-				"token-una",
-				"token-humilde",
-				"token-muchacha",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I saw him hugging and kissing a humble girl.",
-					"literal": "Him I saw hugging and kissing to a humble girl."
-				}
-			}
-		},
-		{
-			"content": "Es de clase muy sencilla, lo sé por su facha.",
-			"sentenceId": "sentence-24-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-es",
-				"token-de",
-				"token-clase",
-				"token-muy",
-				"token-sencilla",
-				"token-,",
-				"token-lo",
-				"token-sé",
-				"token-por",
-				"token-su",
-				"token-facha",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She's from a very simple class, I know it by her looks.",
-					"literal": "Is of class very simple, it I know by her appearance."
-				}
-			}
-		},
-		{
-			"content": "Me sonreía en el espejo y se sentaba de lado.",
-			"sentenceId": "sentence-25-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-me",
-				"token-sonreía",
-				"token-en",
-				"token-el",
-				"token-espejo",
-				"token-y",
-				"token-se",
-				"token-sentaba",
-				"token-de",
-				"token-lado",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She smiled at me in the mirror and sat sideways.",
-					"literal": "To me smiled in the mirror and herself sat of side."
-				}
-			}
-		},
-		{
-			"content": "Yo estaba idiotizado con el espejo empañado.",
-			"sentenceId": "sentence-26-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-yo",
-				"token-estaba",
-				"token-idiotizado",
-				"token-con",
-				"token-el",
-				"token-espejo",
-				"token-empañado",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I was mesmerized by the fogged mirror.",
-					"literal": "I was idiotized with the mirror fogged."
-				}
-			}
-		},
-		{
-			"content": "Me dijo: Doble en la esquina, iremos hasta mi casa.",
-			"sentenceId": "sentence-27-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-me",
-				"token-dijo",
-				"token-:",
-				"token-doble",
-				"token-en",
-				"token-la",
-				"token-esquina",
-				"token-,",
-				"token-iremos",
-				"token-hasta",
-				"token-mi",
-				"token-casa",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "He told me: Turn on the corner, we'll go to my house.",
-					"literal": "To me said: Turn on the corner, we will go to my house."
-				}
-			}
-		},
-		{
-			"content": "Después de un par de tequilas, veremos que es lo que pasa.",
-			"sentenceId": "sentence-28-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-después",
-				"token-de",
-				"token-un",
-				"token-par",
-				"token-de",
-				"token-tequilas",
-				"token-,",
-				"token-veremos",
-				"token-que",
-				"token-es",
-				"token-lo",
-				"token-que",
-				"token-pasa",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "After a couple of tequilas, we'll see what happens.",
-					"literal": "After of a pair of tequilas, we will see that is what happens."
-				}
-			}
-		},
-		{
-			"content": "Para qué describir lo que hicimos en la alfombra.",
-			"sentenceId": "sentence-29-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-para",
-				"token-qué",
-				"token-describir",
-				"token-lo",
-				"token-que",
-				"token-hicimos",
-				"token-en",
-				"token-la",
-				"token-alfombra",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Why describe what we did on the carpet.",
-					"literal": "For what describe what we did in the carpet."
-				}
-			}
-		},
-		{
-			"content": "Si basta con resumir que le besé hasta la sombra.",
-			"sentenceId": "sentence-30-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-si",
-				"token-basta",
-				"token-con",
-				"token-resumir",
-				"token-que",
-				"token-le",
-				"token-besé",
-				"token-hasta",
-				"token-la",
-				"token-sombra",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "If it's enough to summarize that I kissed her until the shadow.",
-					"literal": "If is enough with summarize that to her I kissed until the shadow."
-				}
-			}
-		},
-		{
-			"content": "Y un poco más.",
-			"sentenceId": "sentence-31-historia-de-taxi-ricardo-arjona",
-			"tokenIds": ["token-y", "token-un", "token-poco", "token-más", "token-."],
-			"translations": {
-				"english": {
-					"contextual": "And a little more.",
-					"literal": "And a little more."
-				}
-			}
-		},
-		{
-			"content": "No se sienta usted tan sola, sufro, aunque no es lo mismo.",
-			"sentenceId": "sentence-32-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-no",
-				"token-se",
-				"token-sienta",
-				"token-usted",
-				"token-tan",
-				"token-sola",
-				"token-,",
-				"token-sufro",
-				"token-,",
-				"token-aunque",
-				"token-no",
-				"token-es",
-				"token-lo",
-				"token-mismo",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Don't feel so alone, I suffer, although it's not the same.",
-					"literal": "No you feel yourself so alone, I suffer, although not it is the same."
-				}
-			}
-		},
-		{
-			"content": "Mi mujer y mi horario han abierto un abismo.",
-			"sentenceId": "sentence-33-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-mi",
-				"token-mujer",
-				"token-y",
-				"token-mi",
-				"token-horario",
-				"token-han",
-				"token-abierto",
-				"token-un",
-				"token-abismo",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "My wife and my work schedule have opened a chasm.",
-					"literal": "My woman and my schedule have opened a chasm."
-				}
-			}
-		},
-		{
-			"content": "Cómo se sufre ambos lados de las clases sociales.",
-			"sentenceId": "sentence-34-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-cómo",
-				"token-se",
-				"token-sufre",
-				"token-ambos",
-				"token-lados",
-				"token-de",
-				"token-las",
-				"token-clases",
-				"token-sociales",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "How both sides of the social classes suffer.",
-					"literal": "How oneself suffers both sides of the social classes."
-				}
-			}
-		},
-		{
-			"content": "Usted sufre en su mansión, yo sufro en los arrabales.",
-			"sentenceId": "sentence-35-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-usted",
-				"token-sufre",
-				"token-en",
-				"token-su",
-				"token-mansión",
-				"token-,",
-				"token-yo",
-				"token-sufro",
-				"token-en",
-				"token-los",
-				"token-arrabales",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "You suffer in your mansion, I suffer in the slums.",
-					"literal": "You suffer in your mansion, I suffer in the outskirts."
-				}
-			}
-		},
-		{
-			"content": "Me dijo: Vente conmigo, que sepa no estoy sola.",
-			"sentenceId": "sentence-36-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-me",
-				"token-dijo",
-				"token-:",
-				"token-vente",
-				"token-conmigo",
-				"token-,",
-				"token-que",
-				"token-sepa",
-				"token-no",
-				"token-estoy",
-				"token-sola",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "He told me: Come with me, so you know I'm not alone.",
-					"literal": "He said to me: Come with me, that (s)he knows I am not alone."
-				}
-			}
-		},
-		{
-			"content": "Se hizo en el pelo una cola, fuimos al bar donde estaban.",
-			"sentenceId": "sentence-37-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-se",
-				"token-hizo",
-				"token-en",
-				"token-el",
-				"token-pelo",
-				"token-una",
-				"token-cola",
-				"token-,",
-				"token-fuimos",
-				"token-al",
-				"token-bar",
-				"token-donde",
-				"token-estaban",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She made a ponytail, we went to the bar where they were.",
-					"literal": "She did in the hair a ponytail, we went to the bar where they were."
-				}
-			}
-		},
-		{
-			"content": "Entramos precisamente él abrazaba una chica.",
-			"sentenceId": "sentence-38-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-entramos",
-				"token-precisamente",
-				"token-él",
-				"token-abrazaba",
-				"token-una",
-				"token-chica",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "We entered, precisely he was hugging a girl.",
-					"literal": "We entered precisely he hugged a girl."
-				}
-			}
-		},
-		{
-			"content": "Mira si es grande el destino y esta ciudad es chica.",
-			"sentenceId": "sentence-39-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-mira",
-				"token-si",
-				"token-es",
-				"token-grande",
-				"token-el",
-				"token-destino",
-				"token-y",
-				"token-esta",
-				"token-ciudad",
-				"token-es",
-				"token-chica",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Look how big destiny is and this city is small.",
-					"literal": "Look if it is big the destiny and this city is girl."
-				}
-			}
-		},
-		{
-			"content": "Era mi mujer.",
-			"sentenceId": "sentence-40-historia-de-taxi-ricardo-arjona",
-			"tokenIds": ["token-era", "token-mi", "token-mujer", "token-."],
-			"translations": {
-				"english": {
-					"contextual": "It was my wife.",
-					"literal": "It was my woman."
-				}
-			}
-		},
-		{
-			"content": "¿Qué es lo que hace un taxista cuando un caballero coincide con su mujer en horario y esmero?",
-			"sentenceId": "sentence-41-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-¿",
-				"token-qué",
-				"token-es",
-				"token-lo",
-				"token-que",
-				"token-hace",
-				"token-un",
-				"token-taxista",
-				"token-cuando",
-				"token-un",
-				"token-caballero",
-				"token-coincide",
-				"token-con",
-				"token-su",
-				"token-mujer",
-				"token-en",
-				"token-horario",
-				"token-y",
-				"token-esmero",
-				"token-?"
-			],
-			"translations": {
-				"english": {
-					"contextual": "What does a taxi driver do when a gentleman coincides with his wife in schedule and effort?",
-					"literal": "What is what does a taxi driver when a gentleman coincides with his woman in schedule and effort?"
-				}
-			}
-		},
-		{
-			"content": "Desde aquella noche, ellos juegan a engañarnos.",
-			"sentenceId": "sentence-42-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-desde",
-				"token-aquella",
-				"token-noche",
-				"token-,",
-				"token-ellos",
-				"token-juegan",
-				"token-a",
-				"token-engañarnos",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Since that night, they've been playing a game to deceive us.",
-					"literal": "From that night, they play to deceive-us."
-				}
-			}
-		},
-		{
-			"content": "Se ven en el mismo bar.",
-			"sentenceId": "sentence-43-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-se",
-				"token-ven",
-				"token-en",
-				"token-el",
-				"token-mismo",
-				"token-bar",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "They see each other at the same bar.",
-					"literal": "Themselves see in the same bar."
-				}
-			}
-		},
-		{
-			"content": "Y la rubia para el taxi, siempre a las diez en el mismo lugar.",
-			"sentenceId": "sentence-44-historia-de-taxi-ricardo-arjona",
-			"tokenIds": [
-				"token-y",
-				"token-la",
-				"token-rubia",
-				"token-para",
-				"token-el",
-				"token-taxi",
-				"token-,",
-				"token-siempre",
-				"token-a",
-				"token-las",
-				"token-diez",
-				"token-en",
-				"token-el",
-				"token-mismo",
-				"token-lugar",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And the blonde woman calls for a taxi, always at ten o'clock in the same place.",
-					"literal": "And the blonde for the taxi, always to the ten in the same place."
-				}
-			}
-		}
-	],
-	"weltita-bad-bunny": [
-		{
-			"content": "Baby, te voy a dar una vuelta por la playita.",
-			"sentenceId": "sentence-1-weltita-bad-bunny",
-			"tokenIds": [
-				"token-baby",
-				"token-,",
-				"token-te",
-				"token-voy",
-				"token-a",
-				"token-dar",
-				"token-una",
-				"token-vuelta",
-				"token-por",
-				"token-la",
-				"token-playita",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Baby, I'm gonna take you for a ride on the beach.",
-					"literal": "Baby, I you go to give a turn for the beach."
-				}
-			}
-		},
-		{
-			"content": "Te voy a llenar de besitos la carita.",
-			"sentenceId": "sentence-2-weltita-bad-bunny",
-			"tokenIds": [
-				"token-te",
-				"token-voy",
-				"token-a",
-				"token-llenar",
-				"token-de",
-				"token-besitos",
-				"token-la",
-				"token-carita",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I'm gonna cover your face in kisses.",
-					"literal": "I you go to fill of little kisses the face."
-				}
-			}
-		},
-		{
-			"content": "Un día conmigo es lo que tú necesitas.",
-			"sentenceId": "sentence-3-weltita-bad-bunny",
-			"tokenIds": [
-				"token-un",
-				"token-día",
-				"token-conmigo",
-				"token-es",
-				"token-lo",
-				"token-que",
-				"token-tú",
-				"token-necesitas",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "A day with me is what you need.",
-					"literal": "A day with me is what you need."
-				}
-			}
-		},
-		{
-			"content": "Sonriendo, tú te ves más bonita.",
-			"sentenceId": "sentence-4-weltita-bad-bunny",
-			"tokenIds": [
-				"token-sonriendo",
-				"token-,",
-				"token-tú",
-				"token-te",
-				"token-ves",
-				"token-más",
-				"token-bonita",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Smiling, you look more beautiful.",
-					"literal": "Smiling, you yourself see more pretty."
-				}
-			}
-		},
-		{
-			"content": "Baby, yo sé, baby, yo sé.",
-			"sentenceId": "sentence-5-weltita-bad-bunny",
-			"tokenIds": [
-				"token-baby",
-				"token-,",
-				"token-yo",
-				"token-sé",
-				"token-,",
-				"token-baby",
-				"token-,",
-				"token-yo",
-				"token-sé",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Baby, I know, baby, I know.",
-					"literal": "Baby, I know, baby, I know."
-				}
-			}
-		},
-		{
-			"content": "La vida es así, la vida es así.",
-			"sentenceId": "sentence-6-weltita-bad-bunny",
-			"tokenIds": [
-				"token-la",
-				"token-vida",
-				"token-es",
-				"token-así",
-				"token-,",
-				"token-la",
-				"token-vida",
-				"token-es",
-				"token-así",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Life is like that, life is like that.",
-					"literal": "The life is like that, the life is like that."
-				}
-			}
-		},
-		{
-			"content": "Pero ponte el traje de baño, mami, que te voy a buscar.",
-			"sentenceId": "sentence-7-weltita-bad-bunny",
-			"tokenIds": [
-				"token-pero",
-				"token-ponte",
-				"token-el",
-				"token-traje",
-				"token-de",
-				"token-baño",
-				"token-,",
-				"token-mami",
-				"token-,",
-				"token-que",
-				"token-tе",
-				"token-voy",
-				"token-a",
-				"token-buscar",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "But put on your swimsuit, mami, I'm going to look for you.",
-					"literal": "But put yourself the suit of bath, mommy, that you I go to look for."
-				}
-			}
-		},
-		{
-			"content": "Te dejo mojadita, el Sol te va a secar, sí, te va a quemar.",
-			"sentenceId": "sentence-8-weltita-bad-bunny",
-			"tokenIds": [
-				"token-te",
-				"token-dejo",
-				"token-mojadita",
-				"token-,",
-				"token-el",
-				"token-sol",
-				"token-tе",
-				"token-va",
-				"token-a",
-				"token-secar",
-				"token-,",
-				"token-sí",
-				"token-,",
-				"token-te",
-				"token-va",
-				"token-a",
-				"token-quemar",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I'll leave you wet, the sun will dry you, yes, it will burn you.",
-					"literal": "I leave you wet, the sun you goes to dry, yes, you goes to burn."
-				}
-			}
-		},
-		{
-			"content": "Tú eres mi canción favorita y en repeat te voy a tocar.",
-			"sentenceId": "sentence-9-weltita-bad-bunny",
-			"tokenIds": [
-				"token-tú",
-				"token-eres",
-				"token-mi",
-				"token-canción",
-				"token-favorita",
-				"token-y",
-				"token-en",
-				"token-repeat",
-				"token-te",
-				"token-voy",
-				"token-a",
-				"token-tocar",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "You're my favorite song and I'm going to play you on repeat.",
-					"literal": "You are my song favorite and in repeat you I go to touch."
-				}
-			}
-		},
-		{
-			"content": "Ey, te la voy a aplicar.",
-			"sentenceId": "sentence-10-weltita-bad-bunny",
-			"tokenIds": [
-				"token-ey",
-				"token-,",
-				"token-te",
-				"token-la",
-				"token-voy",
-				"token-a",
-				"token-aplicar",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Hey, I'm going to apply it to you.",
-					"literal": "Hey, to you it I go to apply."
-				}
-			}
-		},
-		{
-			"content": "Quiero dibujar corazoncitos en la orilla.",
-			"sentenceId": "sentence-11-weltita-bad-bunny",
-			"tokenIds": [
-				"token-quiero",
-				"token-dibujar",
-				"token-corazoncitos",
-				"token-en",
-				"token-la",
-				"token-orilla",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I want to draw little hearts on the shore.",
-					"literal": "I want to draw little hearts on the shore."
-				}
-			}
-		},
-		{
-			"content": "Tranquila, mami, yo te cargo la silla.",
-			"sentenceId": "sentence-12-weltita-bad-bunny",
-			"tokenIds": [
-				"token-tranquila",
-				"token-,",
-				"token-mami",
-				"token-,",
-				"token-yo",
-				"token-te",
-				"token-cargo",
-				"token-la",
-				"token-silla",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Easy, mommy, I'll carry the chair for you.",
-					"literal": "Calm, mommy, I you carry the chair."
-				}
-			}
-		},
-		{
-			"content": "Esos ojitos lindos, me encanta cómo brillan.",
-			"sentenceId": "sentence-13-weltita-bad-bunny",
-			"tokenIds": [
-				"token-esos",
-				"token-ojitos",
-				"token-lindos",
-				"token-,",
-				"token-me",
-				"token-encanta",
-				"token-cómo",
-				"token-brillan",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Those pretty eyes, I love how they shine.",
-					"literal": "Those little eyes pretty, me it-enchants how they shine."
-				}
-			}
-		},
-		{
-			"content": "¿Cómo una diosa puede ser tan sencilla?",
-			"sentenceId": "sentence-14-weltita-bad-bunny",
-			"tokenIds": [
-				"token-¿",
-				"token-cómo",
-				"token-una",
-				"token-diosa",
-				"token-puede",
-				"token-ser",
-				"token-tan",
-				"token-sencilla",
-				"token-?"
-			],
-			"translations": {
-				"english": {
-					"contextual": "How can a goddess be so simple?",
-					"literal": "How a goddess can be so simple?"
-				}
-			}
-		},
-		{
-			"content": "Y por un beso de la flaca, yo daría lo que fuera.",
-			"sentenceId": "sentence-15-weltita-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-por",
-				"token-un",
-				"token-beso",
-				"token-de",
-				"token-la",
-				"token-flaca",
-				"token-,",
-				"token-yo",
-				"token-daría",
-				"token-lo",
-				"token-que",
-				"token-fuera",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And for a kiss from the skinny girl, I would give anything.",
-					"literal": "And for a kiss of the skinny girl, I would give what it were."
-				}
-			}
-		},
-		{
-			"content": "Tú me dices si adentro o afuera, debajo del agua, nadie se entera.",
-			"sentenceId": "sentence-16-weltita-bad-bunny",
-			"tokenIds": [
-				"token-tú",
-				"token-me",
-				"token-dices",
-				"token-si",
-				"token-adentro",
-				"token-o",
-				"token-afuera",
-				"token-,",
-				"token-debajo",
-				"token-del",
-				"token-agua",
-				"token-,",
-				"token-nadie",
-				"token-se",
-				"token-entera",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "You tell me if inside or outside, underwater, nobody knows.",
-					"literal": "You me tell if inside or outside, under the water, nobody enters."
-				}
-			}
-		},
-		{
-			"content": "Contigo me siento distinto.",
-			"sentenceId": "sentence-17-weltita-bad-bunny",
-			"tokenIds": [
-				"token-contigo",
-				"token-me",
-				"token-siento",
-				"token-distinto",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "With you I feel different.",
-					"literal": "With you I myself feel different."
-				}
-			}
-		},
-		{
-			"content": "Hay algo cuando nos miramos.",
-			"sentenceId": "sentence-18-weltita-bad-bunny",
-			"tokenIds": [
-				"token-hay",
-				"token-algo",
-				"token-cuando",
-				"token-nos",
-				"token-miramos",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "There's something when we look at each other.",
-					"literal": "There is something when us we look at each other."
-				}
-			}
-		},
-		{
-			"content": "Y en el pozo nos dimos la mano y gritamos: ¡Jacinto!",
-			"sentenceId": "sentence-19-weltita-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-en",
-				"token-el",
-				"token-pozo",
-				"token-nos",
-				"token-dimos",
-				"token-la",
-				"token-mano",
-				"token-y",
-				"token-gritamos",
-				"token-:",
-				"token-¡",
-				"token-jacinto",
-				"token-!",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And in the well we shook hands and shouted: Jacinto!",
-					"literal": "And in the well us we gave the hand and we shouted: Jacinto!"
-				}
-			}
-		},
-		{
-			"content": "Cuando no estoy en la buena, tú me llevas a hacer castillos de arena.",
-			"sentenceId": "sentence-20-weltita-bad-bunny",
-			"tokenIds": [
-				"token-cuando",
-				"token-no",
-				"token-estoy",
-				"token-en",
-				"token-la",
-				"token-buena",
-				"token-,",
-				"token-tú",
-				"token-me",
-				"token-llevas",
-				"token-a",
-				"token-hacer",
-				"token-castillos",
-				"token-de",
-				"token-arena",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "When I'm not doing well, you take me to make sandcastles.",
-					"literal": "When not I am in the good, you me take to do castles of sand."
-				}
-			}
-		},
-		{
-			"content": "Y los castillos se convierten en aldea.",
-			"sentenceId": "sentence-21-weltita-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-los",
-				"token-castillos",
-				"token-se",
-				"token-convierten",
-				"token-en",
-				"token-aldea",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And the castles turn into a village.",
-					"literal": "And the castles themselves convert into village."
-				}
-			}
-		},
-		{
-			"content": "Un pueblito donde no existen problemas.",
-			"sentenceId": "sentence-22-weltita-bad-bunny",
-			"tokenIds": [
-				"token-un",
-				"token-pueblito",
-				"token-donde",
-				"token-no",
-				"token-existen",
-				"token-problemas",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "A small town where there are no problems.",
-					"literal": "A small town where not exist problems."
-				}
-			}
-		},
-		{
-			"content": "Y ahí soñamos con un futuro.",
-			"sentenceId": "sentence-23-weltita-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-ahí",
-				"token-soñamos",
-				"token-con",
-				"token-un",
-				"token-futuro",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And there we dream of a future.",
-					"literal": "And there we dream with a future."
-				}
-			}
-		},
-		{
-			"content": "Que estemos bien, no hace falta mucho.",
-			"sentenceId": "sentence-24-weltita-bad-bunny",
-			"tokenIds": [
-				"token-que",
-				"token-estemos",
-				"token-bien",
-				"token-,",
-				"token-no",
-				"token-hace",
-				"token-falta",
-				"token-mucho",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "That we are well, it doesn't take much.",
-					"literal": "That we are well, not makes lacking much."
-				}
-			}
-		},
-		{
-			"content": "Por un segundo, nos olvidamos de todo.",
-			"sentenceId": "sentence-25-weltita-bad-bunny",
-			"tokenIds": [
-				"token-por",
-				"token-un",
-				"token-segundo",
-				"token-",
-				"token-nos",
-				"token-olvidamos",
-				"token-de",
-				"token-todo",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "For a second, we forget everything.",
-					"literal": "For a second, us we forget of everything."
-				}
-			}
-		},
-		{
-			"content": "Aquí solo somos tú y yo.",
-			"sentenceId": "sentence-26-weltita-bad-bunny",
-			"tokenIds": [
-				"token-aquí",
-				"token-solo",
-				"token-somos",
-				"token-tú",
-				"token-y",
-				"token-yo",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "It's just you and me here.",
-					"literal": "Here only we are you and I."
-				}
-			}
-		},
-		{
-			"content": "Vamos a besarnos frente a las olas.",
-			"sentenceId": "sentence-27-weltita-bad-bunny",
-			"tokenIds": [
-				"token-vamos",
-				"token-a",
-				"token-besarnos",
-				"token-frente",
-				"token-a",
-				"token-las",
-				"token-olas",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Let's kiss in front of the waves.",
-					"literal": "Let's to kiss ourselves in front of the waves."
-				}
-			}
-		},
-		{
-			"content": "Aunque sea de piquito, de piquito, de piquito pin-pin.",
-			"sentenceId": "sentence-28-weltita-bad-bunny",
-			"tokenIds": [
-				"token-aunque",
-				"token-sea",
-				"token-de",
-				"token-piquito",
-				"token-,",
-				"token-de",
-				"token-piquito",
-				"token-,",
-				"token-de",
-				"token-piquito",
-				"token-pin",
-				"token--",
-				"token-pin",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Even if it's just a peck, a peck, a little peck.",
-					"literal": "Although it is of little peck, of little peck, of little peck pin-pin."
-				}
-			}
-		},
-		{
-			"content": "Hay mucho mosquito en la costa, baby, voy a poner un screen.",
-			"sentenceId": "sentence-29-weltita-bad-bunny",
-			"tokenIds": [
-				"token-hay",
-				"token-mucho",
-				"token-mosquito",
-				"token-en",
-				"token-la",
-				"token-costa",
-				"token-,",
-				"token-baby",
-				"token-,",
-				"token-voy",
-				"token-a",
-				"token-poner",
-				"token-un",
-				"token-screen",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "There are a lot of mosquitoes on the coast, baby, I'm going to put up a screen.",
-					"literal": "There is a lot mosquito in the coast, baby, I go to put a screen."
-				}
-			}
-		},
-		{
-			"content": "Sudadita, el Sol te da y eso brilla como blin-blin.",
-			"sentenceId": "sentence-30-weltita-bad-bunny",
-			"tokenIds": [
-				"token-sudadita",
-				"token-,",
-				"token-el",
-				"token-sol",
-				"token-te",
-				"token-da",
-				"token-y",
-				"token-eso",
-				"token-brilla",
-				"token-como",
-				"token-blin",
-				"token--",
-				"token-blin",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Sweaty, the sun hits you and that shines like bling-bling.",
-					"literal": "Sweaty, the sun you gives and that shines like blin-blin."
-				}
-			}
-		},
-		{
-			"content": "Vamos a quedarnos por Maya, después te llevo a París.",
-			"sentenceId": "sentence-31-weltita-bad-bunny",
-			"tokenIds": [
-				"token-vamos",
-				"token-a",
-				"token-quedarnos",
-				"token-por",
-				"token-maya",
-				"token-,",
-				"token-después",
-				"token-te",
-				"token-llevo",
-				"token-a",
-				"token-parís",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Let's stay in Maya, then I'll take you to Paris.",
-					"literal": "Let's to stay for Maya, then I you take to Paris."
-				}
-			}
-		},
-		{
-			"content": "Por eso es que me gusta ir contigo a la playita.",
-			"sentenceId": "sentence-32-weltita-bad-bunny",
-			"tokenIds": [
-				"token-por",
-				"token-eso",
-				"token-es",
-				"token-que",
-				"token-me",
-				"token-gusta",
-				"token-ir",
-				"token-contigo",
-				"token-a",
-				"token-la",
-				"token-playita",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "That's why I like going to the beach with you.",
-					"literal": "For that it is that to me likes to go with you to the beach."
-				}
-			}
-		},
-		{
-			"content": "Y llenarte de besitos la carita.",
-			"sentenceId": "sentence-33-weltita-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-llenarte",
-				"token-de",
-				"token-besitos",
-				"token-la",
-				"token-carita",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And fill your face with little kisses.",
-					"literal": "And to fill you of little kisses the face."
-				}
-			}
-		},
-		{
-			"content": "Y un día juntitos es lo que yo necesito.",
-			"sentenceId": "sentence-34-weltita-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-un",
-				"token-día",
-				"token-juntitos",
-				"token-es",
-				"token-lo",
-				"token-que",
-				"token-yo",
-				"token-necesito",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And a day together is what I need.",
-					"literal": "And a day together is what I need."
-				}
-			}
-		},
-		{
-			"content": "Sonriendo, tú te ves más bonito.",
-			"sentenceId": "sentence-35-weltita-bad-bunny",
-			"tokenIds": [
-				"token-sonriendo",
-				"token-,",
-				"token-tú",
-				"token-te",
-				"token-ves",
-				"token-más",
-				"token-bonito",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Smiling, you look more handsome.",
-					"literal": "Smiling, you yourself see more handsome."
-				}
-			}
-		}
-	]
+  "historia-de-taxi-ricardo-arjona": [
+    {
+      "content": "Eran las diez de la noche, piloteaba mi nave.",
+      "sentenceId": "sentence-1-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-eran",
+        "token-las",
+        "token-diez",
+        "token-de",
+        "token-la",
+        "token-noche",
+        "token-,",
+        "token-piloteaba",
+        "token-mi",
+        "token-nave",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It was ten o'clock at night, I was piloting my ship.",
+          "literal": "It was the ten of the night, I was piloting my ship."
+        }
+      }
+    },
+    {
+      "content": "Era mi taxi un Volkswagen del año 68.",
+      "sentenceId": "sentence-2-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-era",
+        "token-mi",
+        "token-taxi",
+        "token-un",
+        "token-volkswagen",
+        "token-del",
+        "token-año",
+        "token-68",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "My taxi was a 1968 Volkswagen.",
+          "literal": "Was my taxi a Volkswagen of the year 68."
+        }
+      }
+    },
+    {
+      "content": "Era un día de esos malos, donde no hubo pasaje.",
+      "sentenceId": "sentence-3-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-era",
+        "token-un",
+        "token-día",
+        "token-de",
+        "token-esos",
+        "token-malos",
+        "token-,",
+        "token-donde",
+        "token-no",
+        "token-hubo",
+        "token-pasaje",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It was one of those bad days where there were no passengers.",
+          "literal": "It was a day of those bad, where not there was passage."
+        }
+      }
+    },
+    {
+      "content": "Las lentejuelas de un traje me hicieron la parada.",
+      "sentenceId": "sentence-4-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-las",
+        "token-lentejuelas",
+        "token-de",
+        "token-un",
+        "token-traje",
+        "token-me",
+        "token-hicieron",
+        "token-la",
+        "token-parada",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "The sequins of a suit got me a fare.",
+          "literal": "The sequins of a suit me did the stop."
+        }
+      }
+    },
+    {
+      "content": "Era una rubia preciosa, llevaba minifalda.",
+      "sentenceId": "sentence-5-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-era",
+        "token-una",
+        "token-rubia",
+        "token-preciosa",
+        "token-,",
+        "token-llevaba",
+        "token-minifalda",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She was a gorgeous blonde, wearing a miniskirt.",
+          "literal": "Was a blonde precious, she was wearing miniskirt."
+        }
+      }
+    },
+    {
+      "content": "El escote en su espalda llegaba justo a la gloria.",
+      "sentenceId": "sentence-6-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-el",
+        "token-escote",
+        "token-en",
+        "token-su",
+        "token-espalda",
+        "token-llegaba",
+        "token-justo",
+        "token-a",
+        "token-la",
+        "token-gloria",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "The low-cut neckline on her back went right to the glory.",
+          "literal": "The neckline in her back arrived just to the glory."
+        }
+      }
+    },
+    {
+      "content": "Una lágrima negra rodaba en su mejilla.",
+      "sentenceId": "sentence-7-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-una",
+        "token-lágrima",
+        "token-negra",
+        "token-rodaba",
+        "token-en",
+        "token-su",
+        "token-mejilla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A single black tear rolled down her cheek.",
+          "literal": "A tear black rolled in her cheek."
+        }
+      }
+    },
+    {
+      "content": "Mientras que el retrovisor decía: ¡Ve qué pantorrillas!",
+      "sentenceId": "sentence-8-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-mientras",
+        "token-que",
+        "token-el",
+        "token-retrovisor",
+        "token-decía",
+        "token-:",
+        "token-¡",
+        "token-ve",
+        "token-qué",
+        "token-pantorrillas",
+        "token-!",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Meanwhile the rearview mirror said: Check out those calves!",
+          "literal": "While that the rearview mirror said: See what calves!"
+        }
+      }
+    },
+    {
+      "content": "Yo vi un poco más.",
+      "sentenceId": "sentence-9-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-yo",
+        "token-vi",
+        "token-un",
+        "token-poco",
+        "token-más",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I saw a little more.",
+          "literal": "I saw a little more."
+        }
+      }
+    },
+    {
+      "content": "Eran las diez con cuarenta, zigzagueava en reforma.",
+      "sentenceId": "sentence-10-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-eran",
+        "token-las",
+        "token-diez",
+        "token-con",
+        "token-cuarenta",
+        "token-,",
+        "token-zigzagueava",
+        "token-en",
+        "token-reforma",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It was ten forty, swerving through Reforma avenue.",
+          "literal": "They were the ten with forty, zigzagueing in Reforma."
+        }
+      }
+    },
+    {
+      "content": "Me dijo: Me llamo Norma, mientras cruzaba la pierna.",
+      "sentenceId": "sentence-11-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-me",
+        "token-dijo",
+        "token-:",
+        "token-me",
+        "token-llamo",
+        "token-norma",
+        "token-,",
+        "token-mientras",
+        "token-cruzaba",
+        "token-la",
+        "token-pierna",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She said: My name is Norma, as she crossed her leg.",
+          "literal": "She said to me: I call myself Norma, while I crossed the leg."
+        }
+      }
+    },
+    {
+      "content": "Sacó un cigarro, algo extraño, de esos que te dan risa.",
+      "sentenceId": "sentence-12-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-sacó",
+        "token-un",
+        "token-cigarro",
+        "token-,",
+        "token-algo",
+        "token-extraño",
+        "token-,",
+        "token-de",
+        "token-esos",
+        "token-que",
+        "token-te",
+        "token-dan",
+        "token-risa",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She pulled out a cigarette, a strange one, of those that make you laugh.",
+          "literal": "She took out a cigarette, something strange, of those that to you give laugh."
+        }
+      }
+    },
+    {
+      "content": "Le ofrecí fuego de prisa y me temblaba la mano.",
+      "sentenceId": "sentence-13-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-le",
+        "token-ofrecí",
+        "token-fuego",
+        "token-de",
+        "token-prisa",
+        "token-y",
+        "token-me",
+        "token-temblaba",
+        "token-la",
+        "token-mano",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I quickly offered her a light, and my hand was shaking.",
+          "literal": "To her I offered fire of hurry and to me trembled the hand."
+        }
+      }
+    },
+    {
+      "content": "Le pregunté por quién llora y me dijo: Por un tipo que se cree que por rico, puede venir a engañarme.",
+      "sentenceId": "sentence-14-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-le",
+        "token-pregunté",
+        "token-por",
+        "token-quién",
+        "token-llora",
+        "token-y",
+        "token-me",
+        "token-dijo",
+        "token-:",
+        "token-por",
+        "token-un",
+        "token-tipo",
+        "token-que",
+        "token-se",
+        "token-cree",
+        "token-que",
+        "token-por",
+        "token-rico",
+        "token-,",
+        "token-puede",
+        "token-venir",
+        "token-a",
+        "token-engañarme",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I asked her who she was crying for, and she said: For a guy who thinks that because he's rich, he can come and deceive me.",
+          "literal": "To her I asked for who cries and to me she said: For a type that himself believes that for rich, can come to deceive me."
+        }
+      }
+    },
+    {
+      "content": "No caiga usted por amores, debe de levantarse (le dije).",
+      "sentenceId": "sentence-15-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-no",
+        "token-caiga",
+        "token-usted",
+        "token-por",
+        "token-amores",
+        "token-,",
+        "token-debe",
+        "token-de",
+        "token-levantarse",
+        "token-(le",
+        "token-dije)",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Don't fall for love, you should get up (I told her).",
+          "literal": "No fall you for loves, must of get up (to her I said)."
+        }
+      }
+    },
+    {
+      "content": "Cuente con un servidor, si lo que quiere es vengarse.",
+      "sentenceId": "sentence-16-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-cuente",
+        "token-con",
+        "token-un",
+        "token-servidor",
+        "token-,",
+        "token-si",
+        "token-lo",
+        "token-que",
+        "token-quiere",
+        "token-es",
+        "token-vengarse",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Count on me if you want revenge.",
+          "literal": "Count with a server, if what you want is to avenge yourself."
+        }
+      }
+    },
+    {
+      "content": "Y me sonrió.",
+      "sentenceId": "sentence-17-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-y",
+        "token-me",
+        "token-sonrió",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And she smiled at me.",
+          "literal": "And me smiled."
+        }
+      }
+    },
+    {
+      "content": "¿Qué es lo que hace un taxista seduciendo a la vida?",
+      "sentenceId": "sentence-18-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-¿",
+        "token-qué",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-hace",
+        "token-un",
+        "token-taxista",
+        "token-seduciendo",
+        "token-a",
+        "token-la",
+        "token-vida",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "What does a taxi driver do seducing life?",
+          "literal": "What is what does a taxi driver seducing to the life?"
+        }
+      }
+    },
+    {
+      "content": "¿Qué es lo que hace un taxista construyendo una herida?",
+      "sentenceId": "sentence-19-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-¿",
+        "token-qué",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-hace",
+        "token-un",
+        "token-taxista",
+        "token-construyendo",
+        "token-una",
+        "token-herida",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "What is a taxi driver doing building a wound?",
+          "literal": "What is what does a taxi driver building a wound?"
+        }
+      }
+    },
+    {
+      "content": "¿Qué es lo que hace un taxista enfrente de una dama?",
+      "sentenceId": "sentence-20-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-¿",
+        "token-qué",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-hace",
+        "token-un",
+        "token-taxista",
+        "token-enfrente",
+        "token-de",
+        "token-una",
+        "token-dama",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "What does a taxi driver do in front of a lady?",
+          "literal": "What is what does a taxi driver in front of a lady?"
+        }
+      }
+    },
+    {
+      "content": "¿Qué es lo que hace un taxista con sus sueños de cama?",
+      "sentenceId": "sentence-21-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-¿",
+        "token-qué",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-hace",
+        "token-un",
+        "token-taxista",
+        "token-con",
+        "token-sus",
+        "token-sueños",
+        "token-de",
+        "token-cama",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "What does a taxi driver do with his bed dreams?",
+          "literal": "What is what does a taxi driver with his dreams of bed?"
+        }
+      }
+    },
+    {
+      "content": "Me pregunté.",
+      "sentenceId": "sentence-22-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-me",
+        "token-pregunté",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I wondered.",
+          "literal": "Myself I asked."
+        }
+      }
+    },
+    {
+      "content": "Lo vi abrazando y besando a una humilde muchacha.",
+      "sentenceId": "sentence-23-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-lo",
+        "token-vi",
+        "token-abrazando",
+        "token-y",
+        "token-besando",
+        "token-a",
+        "token-una",
+        "token-humilde",
+        "token-muchacha",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I saw him hugging and kissing a humble girl.",
+          "literal": "Him I saw hugging and kissing to a humble girl."
+        }
+      }
+    },
+    {
+      "content": "Es de clase muy sencilla, lo sé por su facha.",
+      "sentenceId": "sentence-24-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-es",
+        "token-de",
+        "token-clase",
+        "token-muy",
+        "token-sencilla",
+        "token-,",
+        "token-lo",
+        "token-sé",
+        "token-por",
+        "token-su",
+        "token-facha",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She's from a very simple class, I know it by her looks.",
+          "literal": "Is of class very simple, it I know by her appearance."
+        }
+      }
+    },
+    {
+      "content": "Me sonreía en el espejo y se sentaba de lado.",
+      "sentenceId": "sentence-25-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-me",
+        "token-sonreía",
+        "token-en",
+        "token-el",
+        "token-espejo",
+        "token-y",
+        "token-se",
+        "token-sentaba",
+        "token-de",
+        "token-lado",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She smiled at me in the mirror and sat sideways.",
+          "literal": "To me smiled in the mirror and herself sat of side."
+        }
+      }
+    },
+    {
+      "content": "Yo estaba idiotizado con el espejo empañado.",
+      "sentenceId": "sentence-26-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-yo",
+        "token-estaba",
+        "token-idiotizado",
+        "token-con",
+        "token-el",
+        "token-espejo",
+        "token-empañado",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I was mesmerized by the fogged mirror.",
+          "literal": "I was idiotized with the mirror fogged."
+        }
+      }
+    },
+    {
+      "content": "Me dijo: Doble en la esquina, iremos hasta mi casa.",
+      "sentenceId": "sentence-27-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-me",
+        "token-dijo",
+        "token-:",
+        "token-doble",
+        "token-en",
+        "token-la",
+        "token-esquina",
+        "token-,",
+        "token-iremos",
+        "token-hasta",
+        "token-mi",
+        "token-casa",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "He told me: Turn on the corner, we'll go to my house.",
+          "literal": "To me said: Turn on the corner, we will go to my house."
+        }
+      }
+    },
+    {
+      "content": "Después de un par de tequilas, veremos que es lo que pasa.",
+      "sentenceId": "sentence-28-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-después",
+        "token-de",
+        "token-un",
+        "token-par",
+        "token-de",
+        "token-tequilas",
+        "token-,",
+        "token-veremos",
+        "token-que",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-pasa",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "After a couple of tequilas, we'll see what happens.",
+          "literal": "After of a pair of tequilas, we will see that is what happens."
+        }
+      }
+    },
+    {
+      "content": "Para qué describir lo que hicimos en la alfombra.",
+      "sentenceId": "sentence-29-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-para",
+        "token-qué",
+        "token-describir",
+        "token-lo",
+        "token-que",
+        "token-hicimos",
+        "token-en",
+        "token-la",
+        "token-alfombra",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Why describe what we did on the carpet.",
+          "literal": "For what describe what we did in the carpet."
+        }
+      }
+    },
+    {
+      "content": "Si basta con resumir que le besé hasta la sombra.",
+      "sentenceId": "sentence-30-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-si",
+        "token-basta",
+        "token-con",
+        "token-resumir",
+        "token-que",
+        "token-le",
+        "token-besé",
+        "token-hasta",
+        "token-la",
+        "token-sombra",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "If it's enough to summarize that I kissed her until the shadow.",
+          "literal": "If is enough with summarize that to her I kissed until the shadow."
+        }
+      }
+    },
+    {
+      "content": "Y un poco más.",
+      "sentenceId": "sentence-31-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-y",
+        "token-un",
+        "token-poco",
+        "token-más",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And a little more.",
+          "literal": "And a little more."
+        }
+      }
+    },
+    {
+      "content": "No se sienta usted tan sola, sufro, aunque no es lo mismo.",
+      "sentenceId": "sentence-32-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-no",
+        "token-se",
+        "token-sienta",
+        "token-usted",
+        "token-tan",
+        "token-sola",
+        "token-,",
+        "token-sufro",
+        "token-,",
+        "token-aunque",
+        "token-no",
+        "token-es",
+        "token-lo",
+        "token-mismo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Don't feel so alone, I suffer, although it's not the same.",
+          "literal": "No you feel yourself so alone, I suffer, although not it is the same."
+        }
+      }
+    },
+    {
+      "content": "Mi mujer y mi horario han abierto un abismo.",
+      "sentenceId": "sentence-33-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-mi",
+        "token-mujer",
+        "token-y",
+        "token-mi",
+        "token-horario",
+        "token-han",
+        "token-abierto",
+        "token-un",
+        "token-abismo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "My wife and my work schedule have opened a chasm.",
+          "literal": "My woman and my schedule have opened a chasm."
+        }
+      }
+    },
+    {
+      "content": "Cómo se sufre ambos lados de las clases sociales.",
+      "sentenceId": "sentence-34-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-cómo",
+        "token-se",
+        "token-sufre",
+        "token-ambos",
+        "token-lados",
+        "token-de",
+        "token-las",
+        "token-clases",
+        "token-sociales",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "How both sides of the social classes suffer.",
+          "literal": "How oneself suffers both sides of the social classes."
+        }
+      }
+    },
+    {
+      "content": "Usted sufre en su mansión, yo sufro en los arrabales.",
+      "sentenceId": "sentence-35-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-usted",
+        "token-sufre",
+        "token-en",
+        "token-su",
+        "token-mansión",
+        "token-,",
+        "token-yo",
+        "token-sufro",
+        "token-en",
+        "token-los",
+        "token-arrabales",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You suffer in your mansion, I suffer in the slums.",
+          "literal": "You suffer in your mansion, I suffer in the outskirts."
+        }
+      }
+    },
+    {
+      "content": "Me dijo: Vente conmigo, que sepa no estoy sola.",
+      "sentenceId": "sentence-36-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-me",
+        "token-dijo",
+        "token-:",
+        "token-vente",
+        "token-conmigo",
+        "token-,",
+        "token-que",
+        "token-sepa",
+        "token-no",
+        "token-estoy",
+        "token-sola",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "He told me: Come with me, so you know I'm not alone.",
+          "literal": "He said to me: Come with me, that (s)he knows I am not alone."
+        }
+      }
+    },
+    {
+      "content": "Se hizo en el pelo una cola, fuimos al bar donde estaban.",
+      "sentenceId": "sentence-37-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-se",
+        "token-hizo",
+        "token-en",
+        "token-el",
+        "token-pelo",
+        "token-una",
+        "token-cola",
+        "token-,",
+        "token-fuimos",
+        "token-al",
+        "token-bar",
+        "token-donde",
+        "token-estaban",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She made a ponytail, we went to the bar where they were.",
+          "literal": "She did in the hair a ponytail, we went to the bar where they were."
+        }
+      }
+    },
+    {
+      "content": "Entramos precisamente él abrazaba una chica.",
+      "sentenceId": "sentence-38-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-entramos",
+        "token-precisamente",
+        "token-él",
+        "token-abrazaba",
+        "token-una",
+        "token-chica",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "We entered, precisely he was hugging a girl.",
+          "literal": "We entered precisely he hugged a girl."
+        }
+      }
+    },
+    {
+      "content": "Mira si es grande el destino y esta ciudad es chica.",
+      "sentenceId": "sentence-39-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-mira",
+        "token-si",
+        "token-es",
+        "token-grande",
+        "token-el",
+        "token-destino",
+        "token-y",
+        "token-esta",
+        "token-ciudad",
+        "token-es",
+        "token-chica",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Look how big destiny is and this city is small.",
+          "literal": "Look if it is big the destiny and this city is girl."
+        }
+      }
+    },
+    {
+      "content": "Era mi mujer.",
+      "sentenceId": "sentence-40-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-era",
+        "token-mi",
+        "token-mujer",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It was my wife.",
+          "literal": "It was my woman."
+        }
+      }
+    },
+    {
+      "content": "¿Qué es lo que hace un taxista cuando un caballero coincide con su mujer en horario y esmero?",
+      "sentenceId": "sentence-41-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-¿",
+        "token-qué",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-hace",
+        "token-un",
+        "token-taxista",
+        "token-cuando",
+        "token-un",
+        "token-caballero",
+        "token-coincide",
+        "token-con",
+        "token-su",
+        "token-mujer",
+        "token-en",
+        "token-horario",
+        "token-y",
+        "token-esmero",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "What does a taxi driver do when a gentleman coincides with his wife in schedule and effort?",
+          "literal": "What is what does a taxi driver when a gentleman coincides with his woman in schedule and effort?"
+        }
+      }
+    },
+    {
+      "content": "Desde aquella noche, ellos juegan a engañarnos.",
+      "sentenceId": "sentence-42-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-desde",
+        "token-aquella",
+        "token-noche",
+        "token-,",
+        "token-ellos",
+        "token-juegan",
+        "token-a",
+        "token-engañarnos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Since that night, they've been playing a game to deceive us.",
+          "literal": "From that night, they play to deceive-us."
+        }
+      }
+    },
+    {
+      "content": "Se ven en el mismo bar.",
+      "sentenceId": "sentence-43-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-se",
+        "token-ven",
+        "token-en",
+        "token-el",
+        "token-mismo",
+        "token-bar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "They see each other at the same bar.",
+          "literal": "Themselves see in the same bar."
+        }
+      }
+    },
+    {
+      "content": "Y la rubia para el taxi, siempre a las diez en el mismo lugar.",
+      "sentenceId": "sentence-44-historia-de-taxi-ricardo-arjona",
+      "tokenIds": [
+        "token-y",
+        "token-la",
+        "token-rubia",
+        "token-para",
+        "token-el",
+        "token-taxi",
+        "token-,",
+        "token-siempre",
+        "token-a",
+        "token-las",
+        "token-diez",
+        "token-en",
+        "token-el",
+        "token-mismo",
+        "token-lugar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And the blonde woman calls for a taxi, always at ten o'clock in the same place.",
+          "literal": "And the blonde for the taxi, always to the ten in the same place."
+        }
+      }
+    }
+  ],
+  "weltita-bad-bunny": [
+    {
+      "content": "Baby, te voy a dar una vuelta por la playita.",
+      "sentenceId": "sentence-1-weltita-bad-bunny",
+      "tokenIds": [
+        "token-baby",
+        "token-,",
+        "token-te",
+        "token-voy",
+        "token-a",
+        "token-dar",
+        "token-una",
+        "token-vuelta",
+        "token-por",
+        "token-la",
+        "token-playita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Baby, I'm gonna take you for a ride on the beach.",
+          "literal": "Baby, I you go to give a turn for the beach."
+        }
+      }
+    },
+    {
+      "content": "Te voy a llenar de besitos la carita.",
+      "sentenceId": "sentence-2-weltita-bad-bunny",
+      "tokenIds": [
+        "token-te",
+        "token-voy",
+        "token-a",
+        "token-llenar",
+        "token-de",
+        "token-besitos",
+        "token-la",
+        "token-carita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm gonna cover your face in kisses.",
+          "literal": "I you go to fill of little kisses the face."
+        }
+      }
+    },
+    {
+      "content": "Un día conmigo es lo que tú necesitas.",
+      "sentenceId": "sentence-3-weltita-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-día",
+        "token-conmigo",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-tú",
+        "token-necesitas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A day with me is what you need.",
+          "literal": "A day with me is what you need."
+        }
+      }
+    },
+    {
+      "content": "Sonriendo, tú te ves más bonita.",
+      "sentenceId": "sentence-4-weltita-bad-bunny",
+      "tokenIds": [
+        "token-sonriendo",
+        "token-,",
+        "token-tú",
+        "token-te",
+        "token-ves",
+        "token-más",
+        "token-bonita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Smiling, you look more beautiful.",
+          "literal": "Smiling, you yourself see more pretty."
+        }
+      }
+    },
+    {
+      "content": "Baby, yo sé, baby, yo sé.",
+      "sentenceId": "sentence-5-weltita-bad-bunny",
+      "tokenIds": [
+        "token-baby",
+        "token-,",
+        "token-yo",
+        "token-sé",
+        "token-,",
+        "token-baby",
+        "token-,",
+        "token-yo",
+        "token-sé",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Baby, I know, baby, I know.",
+          "literal": "Baby, I know, baby, I know."
+        }
+      }
+    },
+    {
+      "content": "La vida es así, la vida es así.",
+      "sentenceId": "sentence-6-weltita-bad-bunny",
+      "tokenIds": [
+        "token-la",
+        "token-vida",
+        "token-es",
+        "token-así",
+        "token-,",
+        "token-la",
+        "token-vida",
+        "token-es",
+        "token-así",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Life is like that, life is like that.",
+          "literal": "The life is like that, the life is like that."
+        }
+      }
+    },
+    {
+      "content": "Pero ponte el traje de baño, mami, que te voy a buscar.",
+      "sentenceId": "sentence-7-weltita-bad-bunny",
+      "tokenIds": [
+        "token-pero",
+        "token-ponte",
+        "token-el",
+        "token-traje",
+        "token-de",
+        "token-baño",
+        "token-,",
+        "token-mami",
+        "token-,",
+        "token-que",
+        "token-tе",
+        "token-voy",
+        "token-a",
+        "token-buscar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "But put on your swimsuit, mami, I'm going to look for you.",
+          "literal": "But put yourself the suit of bath, mommy, that you I go to look for."
+        }
+      }
+    },
+    {
+      "content": "Te dejo mojadita, el Sol te va a secar, sí, te va a quemar.",
+      "sentenceId": "sentence-8-weltita-bad-bunny",
+      "tokenIds": [
+        "token-te",
+        "token-dejo",
+        "token-mojadita",
+        "token-,",
+        "token-el",
+        "token-sol",
+        "token-tе",
+        "token-va",
+        "token-a",
+        "token-secar",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-te",
+        "token-va",
+        "token-a",
+        "token-quemar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'll leave you wet, the sun will dry you, yes, it will burn you.",
+          "literal": "I leave you wet, the sun you goes to dry, yes, you goes to burn."
+        }
+      }
+    },
+    {
+      "content": "Tú eres mi canción favorita y en repeat te voy a tocar.",
+      "sentenceId": "sentence-9-weltita-bad-bunny",
+      "tokenIds": [
+        "token-tú",
+        "token-eres",
+        "token-mi",
+        "token-canción",
+        "token-favorita",
+        "token-y",
+        "token-en",
+        "token-repeat",
+        "token-te",
+        "token-voy",
+        "token-a",
+        "token-tocar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You're my favorite song and I'm going to play you on repeat.",
+          "literal": "You are my song favorite and in repeat you I go to touch."
+        }
+      }
+    },
+    {
+      "content": "Ey, te la voy a aplicar.",
+      "sentenceId": "sentence-10-weltita-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-te",
+        "token-la",
+        "token-voy",
+        "token-a",
+        "token-aplicar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, I'm going to apply it to you.",
+          "literal": "Hey, to you it I go to apply."
+        }
+      }
+    },
+    {
+      "content": "Quiero dibujar corazoncitos en la orilla.",
+      "sentenceId": "sentence-11-weltita-bad-bunny",
+      "tokenIds": [
+        "token-quiero",
+        "token-dibujar",
+        "token-corazoncitos",
+        "token-en",
+        "token-la",
+        "token-orilla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I want to draw little hearts on the shore.",
+          "literal": "I want to draw little hearts on the shore."
+        }
+      }
+    },
+    {
+      "content": "Tranquila, mami, yo te cargo la silla.",
+      "sentenceId": "sentence-12-weltita-bad-bunny",
+      "tokenIds": [
+        "token-tranquila",
+        "token-,",
+        "token-mami",
+        "token-,",
+        "token-yo",
+        "token-te",
+        "token-cargo",
+        "token-la",
+        "token-silla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Easy, mommy, I'll carry the chair for you.",
+          "literal": "Calm, mommy, I you carry the chair."
+        }
+      }
+    },
+    {
+      "content": "Esos ojitos lindos, me encanta cómo brillan.",
+      "sentenceId": "sentence-13-weltita-bad-bunny",
+      "tokenIds": [
+        "token-esos",
+        "token-ojitos",
+        "token-lindos",
+        "token-,",
+        "token-me",
+        "token-encanta",
+        "token-cómo",
+        "token-brillan",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Those pretty eyes, I love how they shine.",
+          "literal": "Those little eyes pretty, me it-enchants how they shine."
+        }
+      }
+    },
+    {
+      "content": "¿Cómo una diosa puede ser tan sencilla?",
+      "sentenceId": "sentence-14-weltita-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-cómo",
+        "token-una",
+        "token-diosa",
+        "token-puede",
+        "token-ser",
+        "token-tan",
+        "token-sencilla",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "How can a goddess be so simple?",
+          "literal": "How a goddess can be so simple?"
+        }
+      }
+    },
+    {
+      "content": "Y por un beso de la flaca, yo daría lo que fuera.",
+      "sentenceId": "sentence-15-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-por",
+        "token-un",
+        "token-beso",
+        "token-de",
+        "token-la",
+        "token-flaca",
+        "token-,",
+        "token-yo",
+        "token-daría",
+        "token-lo",
+        "token-que",
+        "token-fuera",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And for a kiss from the skinny girl, I would give anything.",
+          "literal": "And for a kiss of the skinny girl, I would give what it were."
+        }
+      }
+    },
+    {
+      "content": "Tú me dices si adentro o afuera, debajo del agua, nadie se entera.",
+      "sentenceId": "sentence-16-weltita-bad-bunny",
+      "tokenIds": [
+        "token-tú",
+        "token-me",
+        "token-dices",
+        "token-si",
+        "token-adentro",
+        "token-o",
+        "token-afuera",
+        "token-,",
+        "token-debajo",
+        "token-del",
+        "token-agua",
+        "token-,",
+        "token-nadie",
+        "token-se",
+        "token-entera",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You tell me if inside or outside, underwater, nobody knows.",
+          "literal": "You me tell if inside or outside, under the water, nobody enters."
+        }
+      }
+    },
+    {
+      "content": "Contigo me siento distinto.",
+      "sentenceId": "sentence-17-weltita-bad-bunny",
+      "tokenIds": [
+        "token-contigo",
+        "token-me",
+        "token-siento",
+        "token-distinto",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With you I feel different.",
+          "literal": "With you I myself feel different."
+        }
+      }
+    },
+    {
+      "content": "Hay algo cuando nos miramos.",
+      "sentenceId": "sentence-18-weltita-bad-bunny",
+      "tokenIds": [
+        "token-hay",
+        "token-algo",
+        "token-cuando",
+        "token-nos",
+        "token-miramos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "There's something when we look at each other.",
+          "literal": "There is something when us we look at each other."
+        }
+      }
+    },
+    {
+      "content": "Y en el pozo nos dimos la mano y gritamos: ¡Jacinto!",
+      "sentenceId": "sentence-19-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-en",
+        "token-el",
+        "token-pozo",
+        "token-nos",
+        "token-dimos",
+        "token-la",
+        "token-mano",
+        "token-y",
+        "token-gritamos",
+        "token-:",
+        "token-¡",
+        "token-jacinto",
+        "token-!",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And in the well we shook hands and shouted: Jacinto!",
+          "literal": "And in the well us we gave the hand and we shouted: Jacinto!"
+        }
+      }
+    },
+    {
+      "content": "Cuando no estoy en la buena, tú me llevas a hacer castillos de arena.",
+      "sentenceId": "sentence-20-weltita-bad-bunny",
+      "tokenIds": [
+        "token-cuando",
+        "token-no",
+        "token-estoy",
+        "token-en",
+        "token-la",
+        "token-buena",
+        "token-,",
+        "token-tú",
+        "token-me",
+        "token-llevas",
+        "token-a",
+        "token-hacer",
+        "token-castillos",
+        "token-de",
+        "token-arena",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "When I'm not doing well, you take me to make sandcastles.",
+          "literal": "When not I am in the good, you me take to do castles of sand."
+        }
+      }
+    },
+    {
+      "content": "Y los castillos se convierten en aldea.",
+      "sentenceId": "sentence-21-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-los",
+        "token-castillos",
+        "token-se",
+        "token-convierten",
+        "token-en",
+        "token-aldea",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And the castles turn into a village.",
+          "literal": "And the castles themselves convert into village."
+        }
+      }
+    },
+    {
+      "content": "Un pueblito donde no existen problemas.",
+      "sentenceId": "sentence-22-weltita-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-pueblito",
+        "token-donde",
+        "token-no",
+        "token-existen",
+        "token-problemas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A small town where there are no problems.",
+          "literal": "A small town where not exist problems."
+        }
+      }
+    },
+    {
+      "content": "Y ahí soñamos con un futuro.",
+      "sentenceId": "sentence-23-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-ahí",
+        "token-soñamos",
+        "token-con",
+        "token-un",
+        "token-futuro",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And there we dream of a future.",
+          "literal": "And there we dream with a future."
+        }
+      }
+    },
+    {
+      "content": "Que estemos bien, no hace falta mucho.",
+      "sentenceId": "sentence-24-weltita-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-estemos",
+        "token-bien",
+        "token-,",
+        "token-no",
+        "token-hace",
+        "token-falta",
+        "token-mucho",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "That we are well, it doesn't take much.",
+          "literal": "That we are well, not makes lacking much."
+        }
+      }
+    },
+    {
+      "content": "Por un segundo, nos olvidamos de todo.",
+      "sentenceId": "sentence-25-weltita-bad-bunny",
+      "tokenIds": [
+        "token-por",
+        "token-un",
+        "token-segundo",
+        "token-",
+        "token-nos",
+        "token-olvidamos",
+        "token-de",
+        "token-todo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "For a second, we forget everything.",
+          "literal": "For a second, us we forget of everything."
+        }
+      }
+    },
+    {
+      "content": "Aquí solo somos tú y yo.",
+      "sentenceId": "sentence-26-weltita-bad-bunny",
+      "tokenIds": [
+        "token-aquí",
+        "token-solo",
+        "token-somos",
+        "token-tú",
+        "token-y",
+        "token-yo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It's just you and me here.",
+          "literal": "Here only we are you and I."
+        }
+      }
+    },
+    {
+      "content": "Vamos a besarnos frente a las olas.",
+      "sentenceId": "sentence-27-weltita-bad-bunny",
+      "tokenIds": [
+        "token-vamos",
+        "token-a",
+        "token-besarnos",
+        "token-frente",
+        "token-a",
+        "token-las",
+        "token-olas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Let's kiss in front of the waves.",
+          "literal": "Let's to kiss ourselves in front of the waves."
+        }
+      }
+    },
+    {
+      "content": "Aunque sea de piquito, de piquito, de piquito pin-pin.",
+      "sentenceId": "sentence-28-weltita-bad-bunny",
+      "tokenIds": [
+        "token-aunque",
+        "token-sea",
+        "token-de",
+        "token-piquito",
+        "token-,",
+        "token-de",
+        "token-piquito",
+        "token-,",
+        "token-de",
+        "token-piquito",
+        "token-pin",
+        "token--",
+        "token-pin",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Even if it's just a peck, a peck, a little peck.",
+          "literal": "Although it is of little peck, of little peck, of little peck pin-pin."
+        }
+      }
+    },
+    {
+      "content": "Hay mucho mosquito en la costa, baby, voy a poner un screen.",
+      "sentenceId": "sentence-29-weltita-bad-bunny",
+      "tokenIds": [
+        "token-hay",
+        "token-mucho",
+        "token-mosquito",
+        "token-en",
+        "token-la",
+        "token-costa",
+        "token-,",
+        "token-baby",
+        "token-,",
+        "token-voy",
+        "token-a",
+        "token-poner",
+        "token-un",
+        "token-screen",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "There are a lot of mosquitoes on the coast, baby, I'm going to put up a screen.",
+          "literal": "There is a lot mosquito in the coast, baby, I go to put a screen."
+        }
+      }
+    },
+    {
+      "content": "Sudadita, el Sol te da y eso brilla como blin-blin.",
+      "sentenceId": "sentence-30-weltita-bad-bunny",
+      "tokenIds": [
+        "token-sudadita",
+        "token-,",
+        "token-el",
+        "token-sol",
+        "token-te",
+        "token-da",
+        "token-y",
+        "token-eso",
+        "token-brilla",
+        "token-como",
+        "token-blin",
+        "token--",
+        "token-blin",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Sweaty, the sun hits you and that shines like bling-bling.",
+          "literal": "Sweaty, the sun you gives and that shines like blin-blin."
+        }
+      }
+    },
+    {
+      "content": "Vamos a quedarnos por Maya, después te llevo a París.",
+      "sentenceId": "sentence-31-weltita-bad-bunny",
+      "tokenIds": [
+        "token-vamos",
+        "token-a",
+        "token-quedarnos",
+        "token-por",
+        "token-maya",
+        "token-,",
+        "token-después",
+        "token-te",
+        "token-llevo",
+        "token-a",
+        "token-parís",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Let's stay in Maya, then I'll take you to Paris.",
+          "literal": "Let's to stay for Maya, then I you take to Paris."
+        }
+      }
+    },
+    {
+      "content": "Por eso es que me gusta ir contigo a la playita.",
+      "sentenceId": "sentence-32-weltita-bad-bunny",
+      "tokenIds": [
+        "token-por",
+        "token-eso",
+        "token-es",
+        "token-que",
+        "token-me",
+        "token-gusta",
+        "token-ir",
+        "token-contigo",
+        "token-a",
+        "token-la",
+        "token-playita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "That's why I like going to the beach with you.",
+          "literal": "For that it is that to me likes to go with you to the beach."
+        }
+      }
+    },
+    {
+      "content": "Y llenarte de besitos la carita.",
+      "sentenceId": "sentence-33-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-llenarte",
+        "token-de",
+        "token-besitos",
+        "token-la",
+        "token-carita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And fill your face with little kisses.",
+          "literal": "And to fill you of little kisses the face."
+        }
+      }
+    },
+    {
+      "content": "Y un día juntitos es lo que yo necesito.",
+      "sentenceId": "sentence-34-weltita-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-un",
+        "token-día",
+        "token-juntitos",
+        "token-es",
+        "token-lo",
+        "token-que",
+        "token-yo",
+        "token-necesito",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And a day together is what I need.",
+          "literal": "And a day together is what I need."
+        }
+      }
+    },
+    {
+      "content": "Sonriendo, tú te ves más bonito.",
+      "sentenceId": "sentence-35-weltita-bad-bunny",
+      "tokenIds": [
+        "token-sonriendo",
+        "token-,",
+        "token-tú",
+        "token-te",
+        "token-ves",
+        "token-más",
+        "token-bonito",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Smiling, you look more handsome.",
+          "literal": "Smiling, you yourself see more handsome."
+        }
+      }
+    }
+  ],
+  "nuevayol-bad-bunny": [
+    {
+      "content": "¡Nueva Yol!",
+      "sentenceId": "sentence-1-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¡",
+        "token-nueva",
+        "token-yol",
+        "token-!"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "New York!",
+          "literal": "New York!"
+        }
+      }
+    },
+    {
+      "content": "Si te quieres divertir.",
+      "sentenceId": "sentence-2-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-si",
+        "token-te",
+        "token-quieres",
+        "token-divertir",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "If you want to have fun.",
+          "literal": "If you yourself want to amuse yourself."
+        }
+      }
+    },
+    {
+      "content": "Con encanto y con primor.",
+      "sentenceId": "sentence-3-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-con",
+        "token-encanto",
+        "token-y",
+        "token-con",
+        "token-primor",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With charm and refinement.",
+          "literal": "With charm and with refinement."
+        }
+      }
+    },
+    {
+      "content": "Solo tienes que vivir.",
+      "sentenceId": "sentence-4-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-solo",
+        "token-tienes",
+        "token-que",
+        "token-vivir",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You only have to live.",
+          "literal": "Only you have to live."
+        }
+      }
+    },
+    {
+      "content": "¿Para dónde?.",
+      "sentenceId": "sentence-5-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-para",
+        "token-dónde",
+        "token-?",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Where to?",
+          "literal": "For where?"
+        }
+      }
+    },
+    {
+      "content": "Un verano en Nueva York.",
+      "sentenceId": "sentence-6-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-verano",
+        "token-en",
+        "token-nueva",
+        "token-york",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A summer in New York.",
+          "literal": "A summer in New York."
+        }
+      }
+    },
+    {
+      "content": "¡Nueva York!.",
+      "sentenceId": "sentence-7-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¡",
+        "token-nueva",
+        "token-york",
+        "token-!",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "New York!",
+          "literal": "New York!"
+        }
+      }
+    },
+    {
+      "content": "¿Pero qué es esto?.",
+      "sentenceId": "sentence-8-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-pero",
+        "token-qué",
+        "token-es",
+        "token-esto",
+        "token-?",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "But what is this?",
+          "literal": "But what is this?"
+        }
+      }
+    },
+    {
+      "content": "¿Y este frío?",
+      "sentenceId": "sentence-9-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-y",
+        "token-este",
+        "token-frío",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And this cold?",
+          "literal": "And this cold?"
+        }
+      }
+    },
+    {
+      "content": "Un ratito nada más.",
+      "sentenceId": "sentence-10-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-ratito",
+        "token-nada",
+        "token-más",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Just a little while.",
+          "literal": "A little while only."
+        }
+      }
+    },
+    {
+      "content": "Ey, ey, ey, 4 de julio, 4th de July.",
+      "sentenceId": "sentence-11-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-ey",
+        "token-,",
+        "token-ey",
+        "token-,",
+        "token-4",
+        "token-de",
+        "token-julio",
+        "token-,",
+        "token-4th",
+        "token-de",
+        "token-july",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, hey, hey, July 4th, 4th of July.",
+          "literal": "Ey, ey, ey, 4 of July, 4th of July."
+        }
+      }
+    },
+    {
+      "content": "Ando con mi primo borracho, rulay Los míos en El Bronx saben la que hay.",
+      "sentenceId": "sentence-12-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-ando",
+        "token-con",
+        "token-mi",
+        "token-primo",
+        "token-borracho",
+        "token-,",
+        "token-rulay",
+        "token-los",
+        "token-míos",
+        "token-en",
+        "token-el",
+        "token-bronx",
+        "token-saben",
+        "token-la",
+        "token-que",
+        "token-hay",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm with my drunk cousin, rulay My people in The Bronx know what's up.",
+          "literal": "I am with my cousin drunk, rulay My ones in The Bronx know what there is."
+        }
+      }
+    },
+    {
+      "content": "Con la nota en high, por Washington Heights .Willie Colón, me dicen еl malo, ey.",
+      "sentenceId": "sentence-13-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-con",
+        "token-la",
+        "token-nota",
+        "token-en",
+        "token-high",
+        "token-,",
+        "token-por",
+        "token-washington",
+        "token-heights",
+        "token-.",
+        "token-willie",
+        "token-colón",
+        "token-,",
+        "token-me",
+        "token-dicen",
+        "token-еl",
+        "token-malo",
+        "token-,",
+        "token-ey",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With the note on high, through Washington Heights. Willie Colón, they call me the bad one, hey.",
+          "literal": "With the note in high, for Washington Heights. Willie Colón, they tell me the bad one, ey."
+        }
+      }
+    },
+    {
+      "content": "Porque pasan los años y sigo dando palos.",
+      "sentenceId": "sentence-14-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-porque",
+        "token-pasan",
+        "token-los",
+        "token-años",
+        "token-y",
+        "token-sigo",
+        "token-dando",
+        "token-palos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Because the years go by and I keep giving blows.",
+          "literal": "Because pass the years and I continue giving blows."
+        }
+      }
+    },
+    {
+      "content": "Vendiеndo discos como cuadros Frida Kahlo.",
+      "sentenceId": "sentence-15-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-vendiеndo",
+        "token-discos",
+        "token-como",
+        "token-cuadros",
+        "token-frida",
+        "token-kahlo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Selling records like Frida Kahlo paintings.",
+          "literal": "Selling records like paintings Frida Kahlo."
+        }
+      }
+    },
+    {
+      "content": "El perico es blanco, sí, sí, el tusi rosita, eh, eh.",
+      "sentenceId": "sentence-16-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-el",
+        "token-perico",
+        "token-es",
+        "token-blanco",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-el",
+        "token-tusi",
+        "token-rosita",
+        "token-,",
+        "token-eh",
+        "token-,",
+        "token-eh",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "The parrot is white, yes, yes, the rosy tusi, uh, uh.",
+          "literal": "The parrot is white, yes, yes, the rosy tusi, uh, uh."
+        }
+      }
+    },
+    {
+      "content": "No te confundas, no, no, mejor evita, ey.",
+      "sentenceId": "sentence-17-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-no",
+        "token-te",
+        "token-confundas",
+        "token-,",
+        "token-no",
+        "token-,",
+        "token-no",
+        "token-,",
+        "token-mejor",
+        "token-evita",
+        "token-,",
+        "token-ey",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Don't be confused, no, no, better avoid it, hey.",
+          "literal": "No you confuse, no, no, better avoid, hey."
+        }
+      }
+    },
+    {
+      "content": "Un shot de cañita en casa de Toñita y PR se siente cerquita.",
+      "sentenceId": "sentence-18-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-shot",
+        "token-de",
+        "token-cañita",
+        "token-en",
+        "token-casa",
+        "token-de",
+        "token-toñita",
+        "token-y",
+        "token-pr",
+        "token-se",
+        "token-siente",
+        "token-cerquita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A shot of caña at Toñita's house and PR feels close by.",
+          "literal": "A shot of caña in house of Toñita and PR itself feels near."
+        }
+      }
+    },
+    {
+      "content": "Sí, sí, sí, como el campeonato, nadie me lo quita.",
+      "sentenceId": "sentence-19-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-sí",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-como",
+        "token-el",
+        "token-campeonato",
+        "token-,",
+        "token-nadie",
+        "token-me",
+        "token-lo",
+        "token-quita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Yes, yes, yes, like the championship, nobody takes it away from me.",
+          "literal": "Yes, yes, yes, as the championship, nobody me it takes."
+        }
+      }
+    },
+    {
+      "content": "The best, el mejor.",
+      "sentenceId": "sentence-20-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-the",
+        "token-best",
+        "token-,",
+        "token-el",
+        "token-mejor",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "The best, the best.",
+          "literal": "The best, the best."
+        }
+      }
+    },
+    {
+      "content": "Number one, the best, el mejor, ¿okey?",
+      "sentenceId": "sentence-21-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-number",
+        "token-one",
+        "token-,",
+        "token-the",
+        "token-best",
+        "token-,",
+        "token-el",
+        "token-mejor",
+        "token-,",
+        "token-¿",
+        "token-okey",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Number one, the best, the best, okay?",
+          "literal": "Number one, the best, the best, okay?"
+        }
+      }
+    },
+    {
+      "content": "¡Puerto Rico!",
+      "sentenceId": "sentence-22-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¡",
+        "token-puerto",
+        "token-rico",
+        "token-!"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Puerto Rico!",
+          "literal": "Puerto Rico!"
+        }
+      }
+    },
+    {
+      "content": "¿Cómo Bad Bunny va a ser rey del pop?",
+      "sentenceId": "sentence-23-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-cómo",
+        "token-bad",
+        "token-bunny",
+        "token-va",
+        "token-a",
+        "token-ser",
+        "token-rey",
+        "token-del",
+        "token-pop",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "How is Bad Bunny going to be the king of pop?",
+          "literal": "How Bad Bunny is going to be king of the pop?"
+        }
+      }
+    },
+    {
+      "content": "Ey, con reggaeton y dembow.",
+      "sentenceId": "sentence-24-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-con",
+        "token-reggaeton",
+        "token-y",
+        "token-dembow",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, with reggaeton and dembow.",
+          "literal": "Ey, with reggaeton and dembow."
+        }
+      }
+    },
+    {
+      "content": "Sí, con reggaeton y dembow.",
+      "sentenceId": "sentence-25-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-sí",
+        "token-,",
+        "token-con",
+        "token-reggaeton",
+        "token-y",
+        "token-dembow",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Yes, with reggaeton and dembow.",
+          "literal": "Yes, with reggaeton and dembow."
+        }
+      }
+    },
+    {
+      "content": "Me siento como el Lápiz en Capea El Dough.",
+      "sentenceId": "sentence-26-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-me",
+        "token-siento",
+        "token-como",
+        "token-el",
+        "token-lápiz",
+        "token-en",
+        "token-capea",
+        "token-el",
+        "token-dough",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I feel like the Pencil in Capea El Dough.",
+          "literal": "To me feels like the Pencil in Capea The Dough."
+        }
+      }
+    },
+    {
+      "content": "Cuando yo nací, fue que nació el flow.",
+      "sentenceId": "sentence-27-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-cuando",
+        "token-yo",
+        "token-nací",
+        "token-,",
+        "token-fue",
+        "token-que",
+        "token-nació",
+        "token-el",
+        "token-flow",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "When I was born, that was when the flow was born.",
+          "literal": "When I was born, was that was born the flow."
+        }
+      }
+    },
+    {
+      "content": "De lado a lado, ping pong.",
+      "sentenceId": "sentence-28-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-de",
+        "token-lado",
+        "token-a",
+        "token-lado",
+        "token-,",
+        "token-ping",
+        "token-pong",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "From side to side, ping pong.",
+          "literal": "From side to side, ping pong."
+        }
+      }
+    },
+    {
+      "content": "Un flow pesado, Big Pun.",
+      "sentenceId": "sentence-29-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-flow",
+        "token-pesado",
+        "token-,",
+        "token-big",
+        "token-pun",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A heavy flow, Big Pun.",
+          "literal": "A flow heavy, Big Pun."
+        }
+      }
+    },
+    {
+      "content": "Con silenciador, les robamos las gatas.",
+      "sentenceId": "sentence-30-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-con",
+        "token-silenciador",
+        "token-,",
+        "token-les",
+        "token-robamos",
+        "token-las",
+        "token-gatas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With silencer, we stole the cats.",
+          "literal": "With silencer, to them stole the cats."
+        }
+      }
+    },
+    {
+      "content": "James Bond, ey.",
+      "sentenceId": "sentence-31-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-james",
+        "token-bond",
+        "token-,",
+        "token-ey",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "James Bond, hey.",
+          "literal": "James Bond, ey."
+        }
+      }
+    },
+    {
+      "content": "Yo estoy en la mía, no tengo adversario, no.",
+      "sentenceId": "sentence-32-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-yo",
+        "token-estoy",
+        "token-en",
+        "token-la",
+        "token-mía",
+        "token-,",
+        "token-no",
+        "token-tengo",
+        "token-adversario",
+        "token-,",
+        "token-no",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm in my own world, I have no opponent, no.",
+          "literal": "I am in my mine, not I have adversary, not."
+        }
+      }
+    },
+    {
+      "content": "Con Los Yankees y Los Met, Juan Soto.",
+      "sentenceId": "sentence-33-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-con",
+        "token-los",
+        "token-yankees",
+        "token-y",
+        "token-los",
+        "token-met",
+        "token-,",
+        "token-juan",
+        "token-soto",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With the Yankees and the Mets, Juan Soto.",
+          "literal": "With the Yankees and the Mets, Juan Soto."
+        }
+      }
+    },
+    {
+      "content": "A correr, que otra vez la sacamos del estadio.",
+      "sentenceId": "sentence-34-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-a",
+        "token-correr",
+        "token-,",
+        "token-que",
+        "token-otra",
+        "token-vez",
+        "token-la",
+        "token-sacamos",
+        "token-del",
+        "token-estadio",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Let's run, because we're going to take it out of the stadium again.",
+          "literal": "To run, that other time we take it out of the stadium."
+        }
+      }
+    },
+    {
+      "content": "Ya mismo nos vamos.",
+      "sentenceId": "sentence-35-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-ya",
+        "token-mismo",
+        "token-nos",
+        "token-vamos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "We're leaving right now.",
+          "literal": "Already same we go."
+        }
+      }
+    },
+    {
+      "content": "Un verano en Nueva.",
+      "sentenceId": "sentence-36-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-verano",
+        "token-en",
+        "token-nueva",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A summer in New York.",
+          "literal": "A summer in New."
+        }
+      }
+    },
+    {
+      "content": "Un ratito más, un ratito.",
+      "sentenceId": "sentence-37-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-ratito",
+        "token-más",
+        "token-,",
+        "token-un",
+        "token-ratito",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A little while longer, a little while.",
+          "literal": "A little while more, a little while."
+        }
+      }
+    },
+    {
+      "content": "Shh, cuidado, que nadie nos escuche.",
+      "sentenceId": "sentence-38-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-shh",
+        "token-,",
+        "token-cuidado",
+        "token-,",
+        "token-que",
+        "token-nadie",
+        "token-nos",
+        "token-escuche",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Shh, be careful, lest anyone hear us.",
+          "literal": "Shh, careful, that no one us listen."
+        }
+      }
+    },
+    {
+      "content": "Shh, cuidado.",
+      "sentenceId": "sentence-39-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-shh",
+        "token-,",
+        "token-cuidado",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Shh, be careful.",
+          "literal": "Shh, careful."
+        }
+      }
+    },
+    {
+      "content": "Tú tienes piquete, mami, yo también.",
+      "sentenceId": "sentence-40-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-tú",
+        "token-tienes",
+        "token-piquete",
+        "token-,",
+        "token-mami",
+        "token-,",
+        "token-yo",
+        "token-también",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You have a sting, mommy, I too.",
+          "literal": "You have sting, mommy, I also."
+        }
+      }
+    },
+    {
+      "content": "Tú estás buena, yo estoy bueno también.",
+      "sentenceId": "sentence-41-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-tú",
+        "token-estás",
+        "token-buena",
+        "token-,",
+        "token-yo",
+        "token-estoy",
+        "token-bueno",
+        "token-también",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You're pretty, I'm good too.",
+          "literal": "You are good, I am good also."
+        }
+      }
+    },
+    {
+      "content": "Huelo rico y ando con los de cien.",
+      "sentenceId": "sentence-42-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-huelo",
+        "token-rico",
+        "token-y",
+        "token-ando",
+        "token-con",
+        "token-los",
+        "token-de",
+        "token-cien",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I smell good and I'm with the rich ones.",
+          "literal": "I smell rich and I walk with the of one hundred."
+        }
+      }
+    },
+    {
+      "content": "Si tú lo quieres, lo tienes que mover.",
+      "sentenceId": "sentence-43-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-si",
+        "token-tú",
+        "token-lo",
+        "token-quieres",
+        "token-,",
+        "token-lo",
+        "token-tienes",
+        "token-que",
+        "token-mover",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "If you want it, you have to move it.",
+          "literal": "If you it want, it you have to move."
+        }
+      }
+    },
+    {
+      "content": "Lo tienes que mover.",
+      "sentenceId": "sentence-44-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-lo",
+        "token-tienes",
+        "token-que",
+        "token-mover",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You have to move it.",
+          "literal": "It you have to move."
+        }
+      }
+    }
+  ]
 }

@@ -14,7 +14,7 @@ describe('SentenceProcessorStep', () => {
 				interpreter: 'Test Artist',
 				title: 'Test Song',
 				lyrics: splitParagraphFixtures.spanishSentences.input,
-				spotify: 'https://spotify.com/test',
+				youtube: 'https://youtube.com/test',
 				genre: ['test'],
 				language: 'es',
 				releaseDate: '2023-01-01',

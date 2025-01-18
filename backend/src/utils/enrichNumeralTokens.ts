@@ -48,7 +48,7 @@ export async function enrichNumeralTokens(
 	logger.info('Processing numeral tokens', {count: tokens.length});
 
 	const model = genAI.getGenerativeModel({
-		model: 'gemini-1.5-flash',
+		model: 'gemini-1.5-flash-8b',
 		generationConfig: {
 			responseMimeType: 'application/json',
 			responseSchema: numeralTokenSchema,

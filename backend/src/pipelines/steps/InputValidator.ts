@@ -49,7 +49,7 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 		return !!(
 			input.interpreter &&
 			input.title &&
-			input.spotify &&
+			input.youtube &&
 			input.genre &&
 			input.language &&
 			input.releaseDate &&
@@ -61,7 +61,7 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 		if (
 			typeof input.interpreter !== 'string' ||
 			typeof input.title !== 'string' ||
-			typeof input.spotify !== 'string' ||
+			typeof input.youtube !== 'string' ||
 			typeof input.language !== 'string' ||
 			typeof input.lyrics !== 'string'
 		) {
@@ -70,12 +70,6 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 
 		if (!Array.isArray(input.genre)) {
 			throw new Error(errors.invalidData);
-		}
-
-		const spotifyUrlPattern =
-			/^https:\/\/(www\.)?spotify\.com\/watch\?v=[\w-]+/;
-		if (!spotifyUrlPattern.test(input.spotify)) {
-			throw new Error('Invalid spotify URL format');
 		}
 	}
 }

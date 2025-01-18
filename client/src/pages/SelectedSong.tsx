@@ -40,16 +40,16 @@ const Container = styled.div`
 	padding: 2rem;
 `;
 
-const SpotifyContainer = styled.div`
+const YoutubeContainer = styled.div`
 	position: sticky;
-	top: 4.5rem; // NavBar height (4rem) + 1rem spacing
+	top: 4.5rem; // NavBar height (4rem) + 0.5rem spacing
 	width: 350px;
-	height: 80px;
+	height: 200px;
 	border-radius: 8px;
 	overflow: hidden;
 	z-index: 1; // Lower than NavBar's z-index but higher than content
-	background: ${props =>
-		props.theme.colors.background}; // Match your theme background
+	margin-bottom: 2rem;
+	background: ${props => props.theme.colors.background};
 
 	iframe {
 		border: none;
@@ -62,7 +62,7 @@ const SpotifyContainer = styled.div`
 const SelectedSong = () => {
 	const {songId} = useParams();
 	const [sentences, setSentences] = useState<Array<ISentence> | null>(null);
-	const [spotifyUrl, setSpotifyUrl] = useState<string>('');
+	const [youtubeUrl, setyoutubeUrl] = useState<string>('');
 
 	interface TokensData {
 		words: Record<string, Record<string, IWord>>;
@@ -95,7 +95,7 @@ const SelectedSong = () => {
 	// 					}
 	// 				});
 	// 				setSentences(data.sentences);
-	// 				setSpotifyUrl(data.metadata.spotify);
+	// 				setyoutubeUrl(data.metadata.youtube);
 	// 			});
 	// 	}
 	// }, [songId]);
@@ -111,7 +111,7 @@ const SelectedSong = () => {
 				return null;
 			}
 
-			setSpotifyUrl(songEntry.metadata.spotify);
+			setyoutubeUrl(songEntry.metadata.youtube);
 
 			const songSentences = tempSentences[songId];
 
@@ -135,15 +135,18 @@ const SelectedSong = () => {
 
 	return (
 		<Container>
-			<SpotifyContainer>
+			<YoutubeContainer>
 				<iframe
-					style={{borderRadius: '12px'}}
-					src={spotifyUrl}
-					width="100%"
-					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-					loading="lazy"
+					width="350px"
+					height="200px"
+					style={{borderRadius: '10px'}}
+					src={youtubeUrl}
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
 				></iframe>
-			</SpotifyContainer>
+			</YoutubeContainer>
 
 			{sentences &&
 				sentences.map((sentence, index) => (

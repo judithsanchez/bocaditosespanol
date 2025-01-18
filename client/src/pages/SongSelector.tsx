@@ -12,7 +12,7 @@ interface Song {
 	metadata: {
 		interpreter: string;
 		title: string;
-		spotifyTrackId: string;
+		youtubeTrackId: string;
 	};
 }
 
