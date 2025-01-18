@@ -1,7 +1,11 @@
+/* eslint-disable */
+// @ts-nocheck
+
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
-import {API_URL} from '../config';
+// import {API_URL} from '../config';
+import textEntries from '../tempData/text-entries.json';
 
 interface Song {
 	songId: string;
@@ -48,11 +52,20 @@ const SongSelector = () => {
 	const [songs, setSongs] = useState<Song[]>([]);
 	const navigate = useNavigate();
 
+	// useEffect(() => {
+	// 	fetch(`${API_URL}/songs`)
+	// 		.then(response => response.json())
+	// 		.then(data => setSongs(data))
+	// 		.catch(error => console.error('Error fetching songs:', error));
+	// }, []);
+
 	useEffect(() => {
-		fetch(`${API_URL}/songs`)
-			.then(response => response.json())
-			.then(data => setSongs(data))
-			.catch(error => console.error('Error fetching songs:', error));
+		const songs = textEntries.song || [];
+		const simplifiedSongs = songs.map(song => ({
+			songId: song.songId,
+			metadata: song.metadata,
+		}));
+		setSongs(simplifiedSongs);
 	}, []);
 
 	return (
