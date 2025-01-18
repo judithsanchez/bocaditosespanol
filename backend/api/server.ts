@@ -1,4 +1,4 @@
-import express from 'express';
+import express, {Request, Response} from 'express';
 import cors from 'cors';
 import songRoutes from './routes/songs';
 import {Logger} from '../src/utils/Logger';
@@ -16,6 +16,10 @@ app.get('/', (_req, res) => {
 
 app.use('/songs', songRoutes);
 
-app.listen(port, () => {
-	logger.info('Server started', {port});
-});
+if (process.env.NODE_ENV === 'development') {
+	app.listen(port, () => {
+		logger.info('Development server started', {port});
+	});
+}
+
+export default (req: Request, res: Response) => app(req, res);

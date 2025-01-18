@@ -4,8 +4,7 @@
 	"version": "0.0.0",
 	"type": "commonjs",
 	"scripts": {
-		"build": "tsc && npm run copy-data",
-		"copy-data": "mkdir -p public/data && cp -r src/data/* public/data/",
+		"build": "tsc && mkdir -p dist/public/data && cp -r public/data/* dist/public/data/",
 		"vercel-build": "npm run build",
 		"start": "NODE_ENV=production node dist/api/server.js",
 		"dev": "NODE_ENV=development nodemon",
@@ -36,6 +35,7 @@
 		"@types/uuid": "^10.0.0",
 		"@typescript-eslint/eslint-plugin": "^8.20.0",
 		"@typescript-eslint/parser": "^8.20.0",
+		"@vercel/node": "^4.0.0",
 		"babel-jest": "^29.7.0",
 		"esbuild-jest": "^0.4.0",
 		"eslint": "^8.38.0",
