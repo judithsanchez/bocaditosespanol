@@ -12,6 +12,13 @@
 	],
 	"routes": [
 		{
+			"src": "/songs(.*)",
+			"dest": "dist/api/server.js",
+			"headers": {
+				"Access-Control-Allow-Origin": "https://www.bocaditosespanol.com"
+			}
+		},
+		{
 			"src": "/data/(.*)",
 			"dest": "/public/data/$1"
 		},
