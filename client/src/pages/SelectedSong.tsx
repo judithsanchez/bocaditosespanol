@@ -41,7 +41,7 @@ const Container = styled.div`
 `;
 
 const YoutubeContainer = styled.div`
-	position: sticky;
+	// position: sticky;
 	top: 4.5rem; // NavBar height (4rem) + 0.5rem spacing
 	width: 350px;
 	// height: 200px;
