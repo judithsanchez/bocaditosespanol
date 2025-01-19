@@ -1,6 +1,6 @@
 /* eslint-disable */
 // @ts-nocheck
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
 import {useParams} from 'react-router-dom';
 import styled from 'styled-components';
 import Sentences from '../components/Sentence';
@@ -44,7 +44,7 @@ const YoutubeContainer = styled.div`
 	position: sticky;
 	top: 4.5rem; // NavBar height (4rem) + 0.5rem spacing
 	width: 350px;
-	height: 200px;
+	// height: 200px;
 	border-radius: 8px;
 	overflow: hidden;
 	z-index: 1; // Lower than NavBar's z-index but higher than content
@@ -59,10 +59,79 @@ const YoutubeContainer = styled.div`
 	}
 `;
 
+const PlayerControls = styled.div`
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	padding: 0.5rem;
+	background: ${props => props.theme.colors.background};
+`;
+
+const ControlButton = styled.button`
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	border: none;
+	background: ${props => props.theme.colors.primary};
+	color: white;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.9;
+	}
+`;
+
+// Add these time control functions
+const seekForward = () => {
+	if (playerRef.current) {
+		const currentTime = playerRef.current.getCurrentTime();
+		playerRef.current.seekTo(currentTime + 5, true);
+	}
+};
+
+const seekBackward = () => {
+	if (playerRef.current) {
+		const currentTime = playerRef.current.getCurrentTime();
+		playerRef.current.seekTo(currentTime - 5, true);
+	}
+};
+
+declare global {
+	interface Window {
+		YT: any;
+		onYouTubeIframeAPIReady: () => void;
+	}
+}
 const SelectedSong = () => {
 	const {songId} = useParams();
 	const [sentences, setSentences] = useState<Array<ISentence> | null>(null);
 	const [youtubeUrl, setyoutubeUrl] = useState<string>('');
+	const playerRef = useRef<any>(null);
+	const [isPlaying, setIsPlaying] = useState(false);
+
+	// Player control functions defined first
+	const togglePlayPause = () => {
+		if (playerRef.current) {
+			if (isPlaying) {
+				playerRef.current.pauseVideo();
+			} else {
+				playerRef.current.playVideo();
+			}
+		}
+	};
+
+	const seekForward = () => {
+		if (playerRef.current) {
+			const currentTime = playerRef.current.getCurrentTime();
+			playerRef.current.seekTo(currentTime + 5, true);
+		}
+	};
+
+	const seekBackward = () => {
+		if (playerRef.current) {
+			const currentTime = playerRef.current.getCurrentTime();
+			playerRef.current.seekTo(currentTime - 5, true);
+		}
+	};
 
 	interface TokensData {
 		words: Record<string, Record<string, IWord>>;
@@ -84,22 +153,6 @@ const SelectedSong = () => {
 		return allTokens;
 	};
 
-	// useEffect(() => {
-	// 	if (songId) {
-	// 		fetch(`${API_URL}/songs/${songId}`)
-	// 			.then(response => response.json())
-	// 			.then(data => {
-	// 				data.sentences.forEach((sentence: ISentence, index: number) => {
-	// 					if (sentence.tokens.some(token => token === null)) {
-	// 						console.log(`Found null token in sentence ${index}:`, sentence);
-	// 					}
-	// 				});
-	// 				setSentences(data.sentences);
-	// 				setyoutubeUrl(data.metadata.youtube);
-	// 			});
-	// 	}
-	// }, [songId]);
-
 	useEffect(() => {
 		if (songId) {
 			const songEntry = tempTextEntries.song.find(
@@ -116,7 +169,6 @@ const SelectedSong = () => {
 			const songSentences = tempSentences[songId];
 
 			const tokens = getAllTokens(tempTokens);
-			console.log(tokens);
 
 			const sentencesWithTokens = songSentences.map(sentence => ({
 				...sentence,
@@ -129,6 +181,50 @@ const SelectedSong = () => {
 		}
 	}, [songId]);
 
+	const initializePlayer = () => {
+		if (!window.YT) {
+			const tag = document.createElement('script');
+			tag.src = 'https://www.youtube.com/iframe_api';
+			const firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+			window.onYouTubeIframeAPIReady = () => {
+				createPlayer();
+			};
+		} else {
+			createPlayer();
+		}
+	};
+
+	const createPlayer = () => {
+		const videoId = youtubeUrl.split('embed/').pop()?.split('?')[0]; // Better URL parsing
+
+		playerRef.current = new window.YT.Player('youtube-player', {
+			height: '200',
+			width: '350',
+			videoId,
+			playerVars: {
+				controls: 0, // Hide default controls
+				rel: 0, // Don't show related videos
+			},
+			events: {
+				onReady: event => {
+					// Player is ready to receive commands
+					playerRef.current = event.target; // This is important!
+				},
+				onStateChange: event => {
+					setIsPlaying(event.data === window.YT.PlayerState.PLAYING);
+				},
+			},
+		});
+	};
+
+	useEffect(() => {
+		if (youtubeUrl) {
+			initializePlayer();
+		}
+	}, [youtubeUrl]);
+
 	if (!sentences) {
 		return <div>Loading...</div>;
 	}
@@ -136,18 +232,15 @@ const SelectedSong = () => {
 	return (
 		<Container>
 			<YoutubeContainer>
-				<iframe
-					width="350px"
-					height="200px"
-					style={{borderRadius: '10px'}}
-					src={youtubeUrl}
-					title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin"
-				></iframe>
+				<div id="youtube-player"></div>
+				<PlayerControls>
+					<ControlButton onClick={seekBackward}>-5s</ControlButton>
+					<ControlButton onClick={togglePlayPause}>
+						{isPlaying ? 'Pause' : 'Play'}
+					</ControlButton>
+					<ControlButton onClick={seekForward}>+5s</ControlButton>
+				</PlayerControls>
 			</YoutubeContainer>
-
 			{sentences &&
 				sentences.map((sentence, index) => (
 					<Sentences key={`sentence-${index}`} sentence={sentence} />
