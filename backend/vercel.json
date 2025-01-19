@@ -21,10 +21,6 @@
 		{
 			"src": "/data/(.*)",
 			"dest": "/public/data/$1"
-		},
-		{
-			"src": "/(.*)",
-			"dest": "dist/api/server.js"
 		}
 	]
 }
