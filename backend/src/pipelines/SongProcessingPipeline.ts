@@ -31,11 +31,11 @@ export interface SongProcessingContext {
 		all: Array<IWord | IPunctuationSign | IEmoji>;
 		words: IWord[];
 		deduplicated: Array<IWord | IPunctuationSign | IEmoji>;
+		newTokens: Array<IWord | IPunctuationSign | IEmoji>;
 		enriched: Array<IWord | IPunctuationSign | IEmoji>;
 	};
 	song: ISong;
 }
-
 export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 	private readonly db = new DatabaseService();
 
@@ -67,9 +67,10 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				enriched: [],
 			},
 			tokens: {
-				all: [],
+				all: [], // all tokens from the lyrics
 				words: [],
-				deduplicated: [],
+				deduplicated: [], // unique tokens within the same lyrics
+				newTokens: [],
 				enriched: [],
 			},
 			song: {} as ISong,

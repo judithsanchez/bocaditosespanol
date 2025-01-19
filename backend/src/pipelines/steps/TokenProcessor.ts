@@ -3,6 +3,7 @@ import {IEmoji, IPunctuationSign, IWord, TokenType} from '../../lib/types';
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
+import {DatabaseService} from '../../services/DatabaseService';
 
 export class TokenProcessorStep implements PipelineStep<SongProcessingContext> {
 	private readonly logger = new Logger('TokenProcessorStep');
@@ -49,10 +50,41 @@ export class TokenProcessorStep implements PipelineStep<SongProcessingContext> {
 			).length,
 		});
 
+		context.tokens.deduplicated = this.deduplicateTokens(context.tokens.all);
+
+		console.log(
+			'deduplicated tokens:',
+			JSON.stringify(context.tokens.deduplicated, null, 2),
+		);
+
+		const db = new DatabaseService();
+
+		const filteredTokensAgainstDb = await db.filterExistingTokens(
+			context.tokens.deduplicated,
+		);
+
+		console.log(
+			'filteredTokensAgainstDb:',
+			JSON.stringify(filteredTokensAgainstDb, null, 2),
+		);
+
+		context.tokens.newTokens = filteredTokensAgainstDb.newTokens;
+
 		this.logger.end('process');
 		return context;
 	}
 
+	private deduplicateTokens(
+		tokens: Array<IWord | IPunctuationSign | IEmoji>,
+	): Array<IWord | IPunctuationSign | IEmoji> {
+		const uniqueTokens = new Map<string, IWord | IPunctuationSign | IEmoji>();
+		tokens.forEach(token => {
+			if (!uniqueTokens.has(token.tokenId)) {
+				uniqueTokens.set(token.tokenId, token);
+			}
+		});
+		return Array.from(uniqueTokens.values());
+	}
 	private tokenizeSentence(
 		content: string,
 	): Array<IWord | IPunctuationSign | IEmoji> {

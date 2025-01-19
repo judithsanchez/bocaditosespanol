@@ -20,7 +20,7 @@ export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		const wordTokens = context.tokens.all.filter(
+		const wordTokens = context.tokens.newTokens.filter(
 			(token): token is IWord => token.tokenType === TokenType.Word,
 		);
 
@@ -46,7 +46,7 @@ export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 
 		context.tokens.enriched = [
 			...enrichedWithStructure,
-			...context.tokens.all.filter(t => t.tokenType !== TokenType.Word),
+			...context.tokens.newTokens.filter(t => t.tokenType !== TokenType.Word),
 		];
 
 		this.logger.info('Basic enrichment completed', {

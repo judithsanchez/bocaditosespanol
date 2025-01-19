@@ -5,8 +5,6 @@ import {geminiSafetySettings} from '../lib/constants';
 import {Logger} from './Logger';
 config();
 
-// TODO: check why isFalseCognate is sometimes not present
-
 const logger = new Logger('WordEnricher');
 
 const genAI = new GoogleGenerativeAI(
@@ -66,8 +64,13 @@ export async function enrichWordTokens(words: IWord[]): Promise<IWord[]> {
 			responseSchema: wordSchema,
 		},
 		safetySettings: geminiSafetySettings,
-		systemInstruction:
-			'Spanish Analysis Task: analyze each of the words and enrich them',
+		systemInstruction: `
+    You are a bilingual Spanish-English linguistic expert with advanced knowledge of grammar, vocabulary, and idiomatic expressions in both languages. 
+    Your role is to analyze Spanish words, detect whether they are slang, cognates, or false cognates, 
+    and assign each word its correct part of speech and accurate English translations. 
+    Use formal dictionary definitions, and account for common real-world usage where relevant (e.g., spanglish). 
+    Be precise, concise, and ensure the output strictly follows the JSON schema requested.
+  `,
 	});
 
 	const prompt = {
@@ -80,48 +83,74 @@ export async function enrichWordTokens(words: IWord[]): Promise<IWord[]> {
 
 Input Array: ${JSON.stringify(words)}
 
-REQUIREMENTS:
-1. Return array with EXACTLY ${words.length} processed words
-2. For EACH word provide:
-   - Include all possible accurate translations. 
-   - For verbs do not include the pronouns.
-     Examples:
-	 * "estaba" -> ["was", "used to be"]
+GOAL:
+Enrich each Spanish word in the input array by providing:
+- All possible accurate English translations (no pronouns for verb forms).
+- Part of speech (one of: ${Object.values(PartOfSpeech).join(', ')}).
+- Boolean flags:
+  1) "isSlang" -> true if the word is Spanglish or a borrowed/informal usage in Spanish
+  2) "isCognate" -> true if Spanish and English share ≥75% spelling overlap *and* have the same primary meaning
+  3) "isFalseCognate" -> true if Spanish and English share ≥75% spelling overlap *but* the primary meanings differ significantly
+
+RETURN REQUIREMENTS:
+1. The output must be a JSON array of length exactly ${words.length}.
+2. Each element of the array must preserve the same order as the input.
+3. Each element must follow the schema structure:
+   {
+     "tokenId": string,
+     "tokenType": "word",
+     "content": string,
+     "normalizedToken": string,
+     "translations": {
+       "english": string[]
+     },
+     "hasSpecialChar": boolean,
+     "partOfSpeech": string,
+     "isSlang": boolean,
+     "isCognate": boolean,
+     "isFalseCognate": boolean
+   }
+
+DEFINITIONS & EXAMPLES:
+
+1) TRANSLATIONS
+   - Include all possible, commonly accepted dictionary meanings in English.
+   - For verbs, do not prepend pronouns (e.g., "estaba" -> ["was", "used to be"]).
+   - Examples:
+     * "estaba" -> ["was", "used to be"]
      * "las" -> ["the"]
      * "taxi" -> ["taxi", "cab"]
-     * "era" -> ["was", "used to be"] 
+     * "era" -> ["was", "used to be"]
      * "ella" -> ["she", "her"]
      * "de" -> ["of", "from", "about"]
 
-    - Part of speech from allowed values: ${Object.values(PartOfSpeech).join(
-			', ',
-		)}
-    - Boolean flags for: isSlang, isCognate, isFalseCognate
+2) PART OF SPEECH
+   - Must be one of: ${Object.values(PartOfSpeech).join(', ')} (e.g., "noun", "verb", "adjective", etc.)
 
-4. COGNATE ANALYSIS RULES:
-    - Mark isCognate=true if the word meets ALL the following criteria:
-      * Similar spelling: Shares a significant number of letters and phonetic patterns
-        - Example threshold: ≥75% character overlap
-      * Similar meaning: Matches primary dictionary definitions in both languages
-      * Examples: doctor/doctor, animal/animal, idea/idea, familia/family, biology/biología
-      * **Context-sensitive validation required**: Exclude cases where meanings diverge in specific contexts.
-	  
-    - Mark isFalseCognate=true if the word meets ALL the following criteria:
-      * Similar spelling or phonetics: Shares a significant number of letters or phonetic similarity
-        - Example threshold: ≥75% character overlap
-      * **Different meaning**: English and Spanish meanings must differ significantly in core usage.
-      * Examples: embarazada(pregnant)/embarrassed, actual(current)/actual, carpeta(folder)/carpet
-      * Both flags cannot be true simultaneously.
-    - Cognates and false cognates must be mutually exclusive:
-      * If meaning matches, isCognate=true and isFalseCognate=false
-      * If meaning diverges significantly, isCognate=false and isFalseCognate=true
+3) isSlang
+   - Mark true if it is a Spanglish term, a borrowed English word written into Spanish, or generally informal usage not found in standard dictionaries.
+   - Mark false otherwise.
+   - Example: "textear" -> isSlang=true; "idea" -> isSlang=false.
 
-5. CONTEXTUAL ANALYSIS:
-    - Use formal dictionary definitions as the baseline for translation and meaning comparison.
-    - Adjust for regional variations and informal or colloquial use where flagged (e.g., slang).
-    - Resolve ambiguities using both linguistic context and common usage.
+4) COGNATE ANALYSIS
+   - Mark "isCognate"=true if:
+     a) The Spanish word and an English word share ≥75% spelling/phonetic overlap (examples: "idea" in Spanish and English, "doctor" in Spanish and English, "animal"/"animal", "biología"/"biology").
+     b) They share the same or very similar primary meaning.
+   - Mark "isFalseCognate"=true if:
+     a) The Spanish word and an English word share ≥75% spelling/phonetic overlap
+     b) BUT they differ *significantly* in meaning (false friends). 
+     *Examples: "carpeta" (folder) vs. "carpet", "embarazada" (pregnant) vs. "embarrassed", "actual" (current) vs. "actual" (real).
+   - These flags must be mutually exclusive:
+     * if "isCognate"=true, then "isFalseCognate"=false
+     * if "isFalseCognate"=true, then "isCognate"=false
 
-Process ALL words maintaining schema structure.
+5) ADDITIONAL CLARIFICATIONS
+   - Use standard Spanish dictionary definitions to determine meaning.
+   - If you suspect the word has a regionally informal usage or is derived from English, set "isSlang"=true.
+   - For borderline cases, rely on the **most common usage**.
+
+IMPORTANT:
+- Return only the enriched JSON array. Do not include explanations or extra text.
 `,
 					},
 				],

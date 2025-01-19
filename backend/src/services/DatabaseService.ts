@@ -99,6 +99,23 @@ export class DatabaseService {
 		await this.writeFile('sentences.json', existingSentences);
 	}
 
+	async filterExistingTokens(
+		tokens: Array<IWord | IPunctuationSign | IEmoji>,
+	): Promise<{
+		existingTokens: Array<IWord | IPunctuationSign | IEmoji>;
+		newTokens: Array<IWord | IPunctuationSign | IEmoji>;
+	}> {
+		const existingDbTokens = await this.getTokens();
+		const existingTokenIds = new Set(existingDbTokens.map(t => t.tokenId));
+
+		return {
+			existingTokens: tokens.filter(token =>
+				existingTokenIds.has(token.tokenId),
+			),
+			newTokens: tokens.filter(token => !existingTokenIds.has(token.tokenId)),
+		};
+	}
+
 	async saveTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Promise<void> {
@@ -216,9 +233,7 @@ export class DatabaseService {
 	async readFile(filename: string) {
 		try {
 			const filePath = join(this.getDataPath(), filename);
-			console.log('Attempting to read file:', filePath);
 			const content = await readFile(filePath, 'utf-8');
-			console.log('File content:', content);
 			return JSON.parse(content);
 		} catch (error) {
 			console.log('Error reading file:', error);

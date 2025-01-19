@@ -12,7 +12,7 @@ import {IVerb} from './grammaticalInfo/verbsTypes';
 
 export interface AddSongRequest {
 	interpreter: string;
-	feat?: string;
+	feat?: string[];
 	title: string;
 	youtube: string;
 	genre: string[];
@@ -25,7 +25,7 @@ export interface ISong {
 	songId: string;
 	metadata: {
 		interpreter: string;
-		feat?: string;
+		feat?: string[];
 		title: string;
 		youtube: string;
 		genre: string[];
