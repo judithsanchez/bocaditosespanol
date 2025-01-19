@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "tsc && mkdir -p dist/public/data && cp -r public/data/* dist/public/data/",
 		"vercel-build": "npm run build",
-		"start": "NODE_ENV=production node dist/api/server.js",
+		"start": "node dist/api/server.js",
 		"dev": "NODE_ENV=development nodemon",
 		"clear-cache": "rm -rf node_modules/.cache",
 		"test": "jest --coverage --verbose",

@@ -45,10 +45,10 @@ const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
 
 app.use(errorHandler);
 
-if (process.env.NODE_ENV === 'development') {
-	app.listen(port, () => {
-		logger.info('Development server started', {port});
-	});
-}
+// if (process.env.NODE_ENV === 'development') {
+app.listen(port, () => {
+	logger.info('Development server started', {port});
+});
+// }
 
 export default (req: Request, res: Response) => app(req, res);
