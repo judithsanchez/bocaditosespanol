@@ -50,7 +50,11 @@ export class SentenceProcessorStep
 			throw new TypeError(errors.mustBeString);
 		}
 
-		const normalizedText = text.replace(/\s+/g, ' ').replace(/[\n\r]+/g, ' ');
+		const lowercaseText = text.toLowerCase();
+
+		const normalizedText = lowercaseText
+			.replace(/\s+/g, ' ')
+			.replace(/[\n\r]+/g, ' ');
 
 		const sentenceEndRegex = /(?:[.!?]|\.{3})(?:\s+|$)/g;
 		const sentences: string[] = [];
