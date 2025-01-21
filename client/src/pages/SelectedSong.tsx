@@ -44,7 +44,7 @@ const YoutubeContainer = styled.div`
 	// position: sticky;
 	top: 4.5rem; // NavBar height (4rem) + 0.5rem spacing
 	width: 350px;
-	// height: 200px;
+	height: 200px;
 	border-radius: 8px;
 	overflow: hidden;
 	z-index: 1; // Lower than NavBar's z-index but higher than content
@@ -60,11 +60,19 @@ const YoutubeContainer = styled.div`
 `;
 
 const PlayerControls = styled.div`
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	display: flex;
 	justify-content: center;
 	gap: 1rem;
-	padding: 0.5rem;
+	padding: 1rem;
 	background: ${props => props.theme.colors.background};
+	box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+	transform: translateY(${props => (props.visible ? '0' : '100%')});
+	z-index: 1000; // Make sure this is higher than other elements
 `;
 
 const ControlButton = styled.button`
@@ -80,21 +88,6 @@ const ControlButton = styled.button`
 	}
 `;
 
-// Add these time control functions
-const seekForward = () => {
-	if (playerRef.current) {
-		const currentTime = playerRef.current.getCurrentTime();
-		playerRef.current.seekTo(currentTime + 5, true);
-	}
-};
-
-const seekBackward = () => {
-	if (playerRef.current) {
-		const currentTime = playerRef.current.getCurrentTime();
-		playerRef.current.seekTo(currentTime - 5, true);
-	}
-};
-
 declare global {
 	interface Window {
 		YT: any;
@@ -107,6 +100,8 @@ const SelectedSong = () => {
 	const [youtubeUrl, setyoutubeUrl] = useState<string>('');
 	const playerRef = useRef<any>(null);
 	const [isPlaying, setIsPlaying] = useState(false);
+	const [showFloatingControls, setShowFloatingControls] = useState(false);
+	const videoContainerRef = useRef(null);
 
 	// Player control functions defined first
 	const togglePlayPause = () => {
@@ -204,7 +199,7 @@ const SelectedSong = () => {
 			width: '350',
 			videoId,
 			playerVars: {
-				controls: 0, // Hide default controls
+				controls: 1, // Hide default controls
 				rel: 0, // Don't show related videos
 			},
 			events: {
@@ -225,22 +220,42 @@ const SelectedSong = () => {
 		}
 	}, [youtubeUrl]);
 
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				console.log('Intersection ratio:', entry.intersectionRatio);
+				console.log('Is intersecting:', entry.isIntersecting);
+				setShowFloatingControls(!entry.isIntersecting);
+			},
+			{
+				threshold: 0.5,
+			},
+		);
+
+		console.log('Video container ref:', videoContainerRef.current);
+		if (videoContainerRef.current) {
+			observer.observe(videoContainerRef.current);
+		}
+
+		return () => observer.disconnect();
+	}, []);
+
 	if (!sentences) {
 		return <div>Loading...</div>;
 	}
 
 	return (
 		<Container>
-			<YoutubeContainer>
+			<YoutubeContainer ref={videoContainerRef}>
 				<div id="youtube-player"></div>
-				<PlayerControls>
-					<ControlButton onClick={seekBackward}>-5s</ControlButton>
-					<ControlButton onClick={togglePlayPause}>
-						{isPlaying ? 'Pause' : 'Play'}
-					</ControlButton>
-					<ControlButton onClick={seekForward}>+5s</ControlButton>
-				</PlayerControls>
 			</YoutubeContainer>
+			<PlayerControls visible={showFloatingControls}>
+				<ControlButton onClick={seekBackward}>-5s</ControlButton>
+				<ControlButton onClick={togglePlayPause}>
+					{isPlaying ? 'Pause' : 'Play'}
+				</ControlButton>
+				<ControlButton onClick={seekForward}>+5s</ControlButton>
+			</PlayerControls>
 			{sentences &&
 				sentences.map((sentence, index) => (
 					<Sentences key={`sentence-${index}`} sentence={sentence} />
