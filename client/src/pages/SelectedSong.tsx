@@ -31,6 +31,12 @@ type Token = {
 	};
 };
 
+const getVideoIdFromUrl = (url: string) => {
+	const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+	const match = url.match(regExp);
+	return match && match[2].length === 11 ? match[2] : null;
+};
+
 const Container = styled.div`
 	width: 100%;
 	display: flex;
@@ -65,29 +71,38 @@ const PlayerControls = styled.div`
 	left: 0;
 	right: 0;
 	display: flex;
-	justify-content: center;
-	gap: 1rem;
-	padding: 1rem;
-	background: ${props => props.theme.colors.background};
+	justify-content: space-around;
+	align-items: center;
+	padding: 1.2rem 4rem;
+	background: ${props => props.theme.colors.surface};
 	box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease;
-	transform: translateY(${props => (props.visible ? '0' : '100%')});
-	z-index: 1000; // Make sure this is higher than other elements
+	z-index: 1000;
 `;
 
 const ControlButton = styled.button`
-	padding: 0.5rem 1rem;
-	border-radius: 4px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%; // This makes it perfectly round
 	border: none;
 	background: ${props => props.theme.colors.primary};
-	color: white;
+	color: ${props => props.theme.colors.onPrimary};
+	font-size: 1.5rem;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 0.2s ease;
 
 	&:hover {
-		opacity: 0.9;
+		transform: scale(1.05);
+		background: ${props => props.theme.colors.primaryContainer};
+		color: ${props => props.theme.colors.onPrimaryContainer};
+	}
+
+	&:active {
+		transform: scale(0.95);
 	}
 `;
-
 declare global {
 	interface Window {
 		YT: any;
@@ -95,15 +110,14 @@ declare global {
 	}
 }
 const SelectedSong = () => {
+	const videoContainerRef = useRef<HTMLDivElement>(null);
 	const {songId} = useParams();
 	const [sentences, setSentences] = useState<Array<ISentence> | null>(null);
 	const [youtubeUrl, setyoutubeUrl] = useState<string>('');
 	const playerRef = useRef<any>(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showFloatingControls, setShowFloatingControls] = useState(false);
-	const videoContainerRef = useRef(null);
 
-	// Player control functions defined first
 	const togglePlayPause = () => {
 		if (playerRef.current) {
 			if (isPlaying) {
@@ -192,20 +206,24 @@ const SelectedSong = () => {
 	};
 
 	const createPlayer = () => {
-		const videoId = youtubeUrl.split('embed/').pop()?.split('?')[0]; // Better URL parsing
+		const videoId = getVideoIdFromUrl(youtubeUrl);
+
+		if (!videoId) {
+			console.log('Invalid YouTube URL');
+			return;
+		}
 
 		playerRef.current = new window.YT.Player('youtube-player', {
 			height: '200',
 			width: '350',
 			videoId,
 			playerVars: {
-				controls: 1, // Hide default controls
-				rel: 0, // Don't show related videos
+				controls: 1,
+				rel: 0,
 			},
 			events: {
 				onReady: event => {
-					// Player is ready to receive commands
-					playerRef.current = event.target; // This is important!
+					playerRef.current = event.target;
 				},
 				onStateChange: event => {
 					setIsPlaying(event.data === window.YT.PlayerState.PLAYING);
@@ -220,48 +238,25 @@ const SelectedSong = () => {
 		}
 	}, [youtubeUrl]);
 
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				console.log('Intersection ratio:', entry.intersectionRatio);
-				console.log('Is intersecting:', entry.isIntersecting);
-				setShowFloatingControls(!entry.isIntersecting);
-			},
-			{
-				threshold: 0.5,
-			},
-		);
-
-		console.log('Video container ref:', videoContainerRef.current);
-		if (videoContainerRef.current) {
-			observer.observe(videoContainerRef.current);
-		}
-
-		return () => observer.disconnect();
-	}, []);
-
 	if (!sentences) {
 		return <div>Loading...</div>;
 	}
-
 	return (
 		<Container>
-			<YoutubeContainer ref={videoContainerRef}>
+			<YoutubeContainer>
 				<div id="youtube-player"></div>
 			</YoutubeContainer>
-			<PlayerControls visible={showFloatingControls}>
-				<ControlButton onClick={seekBackward}>-5s</ControlButton>
+			<PlayerControls>
+				<ControlButton onClick={seekBackward}>⏪</ControlButton>
 				<ControlButton onClick={togglePlayPause}>
-					{isPlaying ? 'Pause' : 'Play'}
+					{isPlaying ? '⏸️' : '▶️'}
 				</ControlButton>
-				<ControlButton onClick={seekForward}>+5s</ControlButton>
+				<ControlButton onClick={seekForward}>⏩</ControlButton>
 			</PlayerControls>
-			{sentences &&
-				sentences.map((sentence, index) => (
-					<Sentences key={`sentence-${index}`} sentence={sentence} />
-				))}
+			{sentences?.map((sentence, index) => (
+				<Sentences key={`sentence-${index}`} sentence={sentence} />
+			))}
 		</Container>
 	);
 };
-
 export default SelectedSong;
