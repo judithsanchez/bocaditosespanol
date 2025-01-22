@@ -5,6 +5,7 @@ import {useParams} from 'react-router-dom';
 import Sentences from '../components/Sentence';
 // import {API_URL} from '../config';
 import {useYoutubePlayer} from '../hooks/useYoutubePlayer';
+import {useScrollPosition} from '../hooks/useScrollPosition';
 import {ISentence} from '../types/SelectedSong.types';
 import {
 	Container,
@@ -15,7 +16,6 @@ import {
 import tempTextEntries from '../tempData/text-entries.json';
 import tempSentences from '../tempData/sentences.json';
 import tempTokens from '../tempData/tokens.json';
-
 type TokensData = {
 	words: Record<string, Record<string, IWord>>;
 	punctuationSigns: Record<string, IPunctuationSign>;
@@ -41,6 +41,7 @@ const SelectedSong = () => {
 	const [sentences, setSentences] = useState<Array<ISentence> | null>(null);
 	const [youtubeUrl, setYoutubeUrl] = useState<string>('');
 	const {isPlaying, controls} = useYoutubePlayer(youtubeUrl);
+	const showControls = useScrollPosition('youtube-player');
 
 	useEffect(() => {
 		if (songId) {
@@ -73,7 +74,7 @@ const SelectedSong = () => {
 			<YoutubeContainer>
 				<div id="youtube-player"></div>
 			</YoutubeContainer>
-			<PlayerControls>
+			<PlayerControls visible={showControls}>
 				<ControlButton onClick={controls.seekBackward}>⏪</ControlButton>
 				<ControlButton onClick={controls.togglePlayPause}>
 					{isPlaying ? '⏸️' : '▶️'}
@@ -86,5 +87,4 @@ const SelectedSong = () => {
 		</Container>
 	);
 };
-
 export default SelectedSong;

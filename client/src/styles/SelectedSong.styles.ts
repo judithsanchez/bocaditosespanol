@@ -28,7 +28,7 @@ export const YoutubeContainer = styled.div`
 	}
 `;
 
-export const PlayerControls = styled.div`
+export const PlayerControls = styled.div<{visible: boolean}>`
 	border: none;
 	border-radius: 50px;
 	width: 350px;
@@ -47,8 +47,12 @@ export const PlayerControls = styled.div`
 		inset 0 1px 2px rgba(255, 255, 255, 0.15);
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	z-index: 10;
+	opacity: ${props => (props.visible ? 1 : 0)};
+	visibility: ${props => (props.visible ? 'visible' : 'hidden')};
+	transition:
+		opacity 0.3s ease,
+		visibility 0.3s ease;
 `;
-
 export const ControlButton = styled.button`%;
 	border: none;
 	background: none;
