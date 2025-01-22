@@ -13,6 +13,7 @@ import {
 	Input,
 	SubmitButton,
 	FeedbackIcon,
+	ButtonFeedbackContainer,
 } from '../styles/Sentence.styles';
 import {ISentence, LearningMode} from '../types/SelectedSong.types';
 
@@ -36,8 +37,20 @@ const Sentence = ({
 	};
 
 	const handleSubmit = () => {
-		const isAnswerCorrect =
-			userInput.trim().toLowerCase() === sentence.content.toLowerCase();
+		const normalizeString = (str: string) => {
+			return str
+				.toLowerCase()
+				.normalize('NFD')
+				.replace(/[\u0300-\u036f]/g, '')
+				.replace(/[¿¡.,!?""'']/g, '')
+				.replace(/\s+/g, ' ')
+				.trim();
+		};
+
+		const normalizedInput = normalizeString(userInput);
+		const normalizedCorrect = normalizeString(sentence.content);
+
+		const isAnswerCorrect = normalizedInput === normalizedCorrect;
 		setIsCorrect(isAnswerCorrect);
 	};
 
@@ -91,9 +104,7 @@ const Sentence = ({
 								);
 							})}
 						</TokensContainer>
-						<Translation>
-							{/* Empty translation container to maintain spacing */}
-						</Translation>
+						<Translation></Translation>
 					</>
 				);
 
@@ -109,10 +120,12 @@ const Sentence = ({
 								onChange={e => setUserInput(e.target.value)}
 								placeholder="Type the Spanish sentence..."
 							/>
-							<SubmitButton onClick={handleSubmit}>Check</SubmitButton>
-							{isCorrect !== null && (
-								<FeedbackIcon>{isCorrect ? '👍' : '👎'}</FeedbackIcon>
-							)}
+							<ButtonFeedbackContainer>
+								<SubmitButton onClick={handleSubmit}>Check</SubmitButton>
+								{isCorrect !== null && (
+									<FeedbackIcon>{isCorrect ? '👍🏻' : '👎🏻'}</FeedbackIcon>
+								)}
+							</ButtonFeedbackContainer>
 						</WritingContainer>
 					</>
 				);
