@@ -7,6 +7,7 @@ export const Container = styled.div`
 	align-items: center;
 	gap: 2rem;
 	padding: 2rem;
+	margin-bottom: 7.5rem;
 `;
 
 export const YoutubeContainer = styled.div`
@@ -28,27 +29,30 @@ export const YoutubeContainer = styled.div`
 `;
 
 export const PlayerControls = styled.div`
+	border: none;
+	border-radius: 50px;
+	width: 350px;
 	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	padding: 1.2rem 4rem;
 	background: ${props => props.theme.colors.surface};
-	box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
+	box-shadow:
+		0 8px 24px rgba(0, 0, 0, 0.12),
+		0 4px 8px rgba(0, 0, 0, 0.08),
+		inset 0 1px 2px rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	z-index: 10;
 `;
 
-export const ControlButton = styled.button`
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
+export const ControlButton = styled.button`%;
 	border: none;
-	background: ${props => props.theme.colors.primary};
-	color: ${props => props.theme.colors.onPrimary};
-	font-size: 1.5rem;
+	background: none;
+	font-size: 2.5rem;
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
@@ -56,12 +60,6 @@ export const ControlButton = styled.button`
 	transition: transform 0.2s ease;
 
 	&:hover {
-		transform: scale(1.05);
-		background: ${props => props.theme.colors.tertiary};
-		color: ${props => props.theme.colors.onPrimaryContainer};
-	}
-
-	&:active {
-		transform: scale(0.95);
+		transform: scale(1.2);
 	}
 `;

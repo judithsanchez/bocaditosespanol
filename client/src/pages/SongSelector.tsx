@@ -6,69 +6,13 @@ import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 // import {API_URL} from '../config';
 import textEntries from '../tempData/text-entries.json';
-
-interface Song {
-	songId: string;
-	metadata: {
-		interpreter: string;
-		title: string;
-		youtubeTrackId: string;
-	};
-}
-
-const Container = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-`;
-
-const SearchInput = styled.input`
-	width: 80%;
-	padding: 0.8rem;
-	margin: 2rem; // Added horizontal margins
-	border-radius: 8px;
-	border: 2px solid ${props => props.theme.colors.surface};
-	font-size: 1.1rem;
-	background-color: ${props => props.theme.colors.surface};
-	color: ${props => props.theme.colors.onSurface};
-
-	&:focus {
-		outline: none;
-		border-color: ${props => props.theme.colors.primary};
-	}
-`;
-const Title = styled.h1`
-	color: ${props => props.theme.colors.onBackground};
-	margin-bottom: 2rem;
-	text-align: center;
-`;
-
-const SongListContainer = styled.div`
-	width: 80%; // This creates the narrower content area
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-`;
-
-const SongButton = styled.button`
-	width: 100%; // Now this is 100% of the SongListContainer
-	padding: 1rem;
-	margin: 0.5rem 0;
-	border-radius: 8px;
-	border: none;
-	background-color: ${props => props.theme.colors.surface};
-	color: ${props => props.theme.colors.onSurface};
-	cursor: pointer;
-	transition: all 0.2s ease;
-	font-size: 1.1rem;
-
-	&:hover {
-		background-color: ${props => props.theme.colors.secondary};
-		color: ${props => props.theme.colors.background};
-		transform: translateY(-2px);
-	}
-`;
+import {Song} from '../types/song.types';
+import {
+	Container,
+	SearchInput,
+	SongListContainer,
+	SongButton,
+} from '../styles/SongSelector.styles';
 
 const SongSelector = () => {
 	const [songs, setSongs] = useState<Song[]>([]);
@@ -98,6 +42,7 @@ const SongSelector = () => {
 			song.metadata.interpreter.toLowerCase().includes(searchTermLower)
 		);
 	});
+
 	return (
 		<Container>
 			<SearchInput
