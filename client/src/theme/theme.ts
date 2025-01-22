@@ -1,26 +1,25 @@
 export const lightTheme = {
 	colors: {
 		primary: '#1A9BA3',
-		onPrimary: '#FAFAFA',
-		primaryContainer: '#C3F2F5',
+		onPrimary: '#FFFFFF',
+		primaryContainer: '#E5F8FA',
 		onPrimaryContainer: '#002F33',
 		secondary: '#FA70B6',
-		onSecondary: '#FAFAFA',
-		secondaryContainer: '#FFD9E7',
+		onSecondary: '#FFFFFF',
+		secondaryContainer: '#FFE4F0',
 		onSecondaryContainer: '#3D0021',
 		tertiary: '#FDEA4E',
 		onTertiary: '#403600',
 		tertiaryContainer: '#FFF8BE',
 		onTertiaryContainer: '#262000',
-		background: '#E5E1E6',
-		onBackground: '#333333',
-		surface: '#E5E1E6',
-		onSurface: '#333333',
-		navbar: '#E5E1E6',
-		// New semantic colors
+		background: '#F8F9FA',
+		onBackground: '#1A1A1A',
+		surface: '#FFFFFF',
+		onSurface: '#1A1A1A',
+		navbar: '#FFFFFF',
 		cognate: '#A82F62',
 		falseCognate: '#7F7DCF',
-		slang: '#FFB800', // Adjusted from FFD600 for better contrast
+		slang: '#FFB800',
 	},
 };
 export const darkTheme = {

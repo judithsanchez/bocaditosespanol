@@ -11,18 +11,26 @@ export const SearchInput = styled.input`
 	width: 80%;
 	padding: 0.8rem;
 	margin: 2rem;
-	border-radius: 8px;
-	border: 2px solid ${props => props.theme.colors.surface};
+	border-radius: 12px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
 	font-size: 1.1rem;
 	background-color: ${props => props.theme.colors.surface};
 	color: ${props => props.theme.colors.onSurface};
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	transition: all 0.2s ease;
 
 	&:focus {
 		outline: none;
 		border-color: ${props => props.theme.colors.primary};
+		box-shadow: 0 4px 12px rgba(26, 155, 163, 0.15);
+		transform: translateY(-1px);
+	}
+
+	&::placeholder {
+		color: ${props => props.theme.colors.onSurface};
+		opacity: 0.6;
 	}
 `;
-
 export const Title = styled.h1`
 	color: ${props => props.theme.colors.onBackground};
 	margin-bottom: 2rem;
