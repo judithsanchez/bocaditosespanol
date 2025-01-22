@@ -29,3 +29,33 @@ export const Translation = styled.p`
 	font-style: italic;
 	text-align: center;
 `;
+
+export const WritingContainer = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+`;
+
+export const Input = styled.input`
+	width: 100%;
+	padding: 0.8rem;
+	border-radius: 4px;
+	border: 1px solid ${props => props.theme.colors.border};
+	background: ${props => props.theme.colors.background};
+	color: ${props => props.theme.colors.text};
+`;
+
+export const SubmitButton = styled.button`
+	padding: 0.5rem 2rem;
+	border-radius: 4px;
+	border: none;
+	background: ${props => props.theme.colors.primary};
+	color: white;
+	cursor: pointer;
+`;
+
+export const FeedbackIcon = styled.div`
+	font-size: 2rem;
+`;

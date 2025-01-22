@@ -67,3 +67,45 @@ export const ControlButton = styled.button`%;
 		transform: scale(1.2);
 	}
 `;
+
+export const ModeSelector = styled.div`
+	width: 350px;
+	display: flex;
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+	padding: 0.5rem;
+	background: ${props => props.theme.colors.primaryContainer};
+	border-radius: 25px;
+	justify-content: space-between;
+`;
+
+export const ModeButton = styled.button<{active: boolean}>`
+	flex: 1;
+	padding: 1rem 1.5rem;
+	border-radius: 20px;
+	border: none;
+	font-size: 1rem;
+	font-weight: 600;
+	background: ${props =>
+		props.active ? props.theme.colors.primary : 'transparent'};
+	color: ${props =>
+		props.active
+			? props.theme.colors.onPrimary
+			: props.theme.colors.onPrimaryContainer};
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: ${props =>
+		props.active ? '0 4px 12px rgba(26, 155, 163, 0.2)' : 'none'};
+
+	&:hover {
+		transform: translateY(-2px);
+		background: ${props =>
+			props.active
+				? props.theme.colors.primary
+				: props.theme.colors.primaryContainer};
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+`;

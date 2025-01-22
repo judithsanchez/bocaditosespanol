@@ -12,10 +12,14 @@ import {
 	YoutubeContainer,
 	PlayerControls,
 	ControlButton,
+	ModeSelector,
+	ModeButton,
 } from '../styles/SelectedSong.styles';
 import tempTextEntries from '../tempData/text-entries.json';
 import tempSentences from '../tempData/sentences.json';
 import tempTokens from '../tempData/tokens.json';
+import {LearningMode} from '../types/SelectedSong.types';
+
 type TokensData = {
 	words: Record<string, Record<string, IWord>>;
 	punctuationSigns: Record<string, IPunctuationSign>;
@@ -42,6 +46,9 @@ const SelectedSong = () => {
 	const [youtubeUrl, setYoutubeUrl] = useState<string>('');
 	const {isPlaying, controls} = useYoutubePlayer(youtubeUrl);
 	const showControls = useScrollPosition('youtube-player');
+	const [learningMode, setLearningMode] = useState<LearningMode>(
+		LearningMode.DEFAULT,
+	);
 
 	useEffect(() => {
 		if (songId) {
@@ -81,8 +88,32 @@ const SelectedSong = () => {
 				</ControlButton>
 				<ControlButton onClick={controls.seekForward}>⏩</ControlButton>
 			</PlayerControls>
+			<ModeSelector>
+				<ModeButton
+					active={learningMode === LearningMode.DEFAULT}
+					onClick={() => setLearningMode(LearningMode.DEFAULT)}
+				>
+					Show All
+				</ModeButton>
+				<ModeButton
+					active={learningMode === LearningMode.HIDE_TRANSLATIONS}
+					onClick={() => setLearningMode(LearningMode.HIDE_TRANSLATIONS)}
+				>
+					Hide Translations
+				</ModeButton>
+				<ModeButton
+					active={learningMode === LearningMode.WRITING_PRACTICE}
+					onClick={() => setLearningMode(LearningMode.WRITING_PRACTICE)}
+				>
+					Writing Practice
+				</ModeButton>
+			</ModeSelector>
 			{sentences?.map((sentence, index) => (
-				<Sentences key={`sentence-${index}`} sentence={sentence} />
+				<Sentences
+					key={`sentence-${index}`}
+					sentence={sentence}
+					mode={learningMode}
+				/>
 			))}
 		</Container>
 	);
