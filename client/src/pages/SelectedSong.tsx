@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom';
 import Sentences from '../components/Sentence';
 // import {API_URL} from '../config';
 import {useYoutubePlayer} from '../hooks/useYoutubePlayer';
-import {ISentence} from '../types/song.types';
+import {ISentence} from '../types/SelectedSong.types';
 import {
 	Container,
 	YoutubeContainer,
