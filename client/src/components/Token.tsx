@@ -15,6 +15,14 @@ export const TokenComponent = ({
 	const leftAttachedPunctuation = ['.', ',', '?', '!', ':', ';'];
 	const rightAttachedPunctuation = ['¿', '¡'];
 
+	const handleClick = () => {
+		if (token.tokenType !== 'punctuationSign') {
+			if (onClick) {
+				onClick();
+			}
+		}
+	};
+
 	const getTokenStyle = () => {
 		switch (token.tokenType) {
 			case 'word':
@@ -42,7 +50,8 @@ export const TokenComponent = ({
 			isCognate={token.isCognate}
 			isFalseCognate={token.isFalseCognate}
 			isSlang={token.isSlang}
-			onClick={onClick}
+			isPunctuation={token.tokenType === 'punctuationSign'}
+			onClick={handleClick}
 		>
 			{token.content.toLowerCase()}
 		</TokenElement>

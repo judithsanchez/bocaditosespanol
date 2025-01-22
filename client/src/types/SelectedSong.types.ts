@@ -25,3 +25,9 @@ export interface TokensData {
 	punctuationSigns: string;
 	emojis: string;
 }
+
+export enum LearningMode {
+	DEFAULT = 'default',
+	HIDE_TRANSLATIONS = 'hideTranslations',
+	WRITING_PRACTICE = 'writingPractice',
+}

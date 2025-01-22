@@ -6,50 +6,17 @@ import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 // import {API_URL} from '../config';
 import textEntries from '../tempData/text-entries.json';
-
-interface Song {
-	songId: string;
-	metadata: {
-		interpreter: string;
-		title: string;
-		youtubeTrackId: string;
-	};
-}
-
-const Container = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-`;
-
-const Title = styled.h1`
-	color: ${props => props.theme.colors.onBackground};
-	margin-bottom: 2rem;
-	text-align: center;
-`;
-
-const SongButton = styled.button`
-	width: 100%;
-	padding: 1rem;
-	margin: 0.5rem 0;
-	border-radius: 8px;
-	border: none;
-	background-color: ${props => props.theme.colors.surface};
-	color: ${props => props.theme.colors.onSurface};
-	cursor: pointer;
-	transition: all 0.2s ease;
-	font-size: 1.1rem;
-
-	&:hover {
-		background-color: ${props => props.theme.colors.primaryContainer};
-		color: ${props => props.theme.colors.onPrimaryContainer};
-		transform: translateY(-2px);
-	}
-`;
+import {Song} from '../types/song.types';
+import {
+	Container,
+	SearchInput,
+	SongListContainer,
+	SongButton,
+} from '../styles/SongSelector.styles';
 
 const SongSelector = () => {
 	const [songs, setSongs] = useState<Song[]>([]);
+	const [searchTerm, setSearchTerm] = useState('');
 	const navigate = useNavigate();
 
 	// useEffect(() => {
@@ -68,17 +35,32 @@ const SongSelector = () => {
 		setSongs(simplifiedSongs);
 	}, []);
 
+	const filteredSongs = songs.filter(song => {
+		const searchTermLower = searchTerm.toLowerCase();
+		return (
+			song.metadata.title.toLowerCase().includes(searchTermLower) ||
+			song.metadata.interpreter.toLowerCase().includes(searchTermLower)
+		);
+	});
+
 	return (
 		<Container>
-			<Title>Choose a Song</Title>
-			{songs.map(song => (
-				<SongButton
-					key={song.songId}
-					onClick={() => navigate(`/songs/${song.songId}`)}
-				>
-					{song.metadata.title} - {song.metadata.interpreter}
-				</SongButton>
-			))}
+			<SearchInput
+				type="text"
+				placeholder="Search by title or interpreter..."
+				value={searchTerm}
+				onChange={e => setSearchTerm(e.target.value)}
+			/>
+			<SongListContainer>
+				{filteredSongs.map(song => (
+					<SongButton
+						key={song.songId}
+						onClick={() => navigate(`/songs/${song.songId}`)}
+					>
+						{song.metadata.title} - {song.metadata.interpreter}
+					</SongButton>
+				))}
+			</SongListContainer>
 		</Container>
 	);
 };

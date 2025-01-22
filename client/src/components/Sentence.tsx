@@ -9,11 +9,24 @@ import {
 	SentenceCard,
 	TokensContainer,
 	Translation,
+	WritingContainer,
+	Input,
+	SubmitButton,
+	FeedbackIcon,
+	ButtonFeedbackContainer,
 } from '../styles/Sentence.styles';
-import {ISentence} from '../types/SelectedSong.types';
+import {ISentence, LearningMode} from '../types/SelectedSong.types';
 
-const Sentence = ({sentence}: {sentence: ISentence}) => {
+const Sentence = ({
+	sentence,
+	mode,
+}: {
+	sentence: ISentence;
+	mode: LearningMode;
+}) => {
 	const [selectedToken, setSelectedToken] = useState<Token | null>(null);
+	const [userInput, setUserInput] = useState('');
+	const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
 	const handleTokenClick = (token: Token) => {
 		if (selectedToken?.content === token.content) {
@@ -23,27 +36,102 @@ const Sentence = ({sentence}: {sentence: ISentence}) => {
 		}
 	};
 
-	return (
-		<SentenceCard>
-			<TokensTranslations selectedToken={selectedToken} />
-			<TokensContainer>
-				{sentence?.tokens
-					?.filter(token => token !== null && token.content !== '.')
-					.map((token, tokenIndex) => (
-						<TokenComponent
-							key={`token-${tokenIndex}`}
-							token={token}
-							isSelected={selectedToken?.content === token.content}
-							onClick={() => handleTokenClick(token)}
-						/>
-					))}
-			</TokensContainer>
-			<Translation>
-				{sentence.translations.english.contextual
-					.toLowerCase()
-					.replace(/\.$/, '')}
-			</Translation>
-		</SentenceCard>
-	);
+	const handleSubmit = () => {
+		const normalizeString = (str: string) => {
+			return str
+				.toLowerCase()
+				.normalize('NFD')
+				.replace(/[\u0300-\u036f]/g, '')
+				.replace(/[¿¡.,!?""'']/g, '')
+				.replace(/\s+/g, ' ')
+				.trim();
+		};
+
+		const normalizedInput = normalizeString(userInput);
+		const normalizedCorrect = normalizeString(sentence.content);
+
+		const isAnswerCorrect = normalizedInput === normalizedCorrect;
+		setIsCorrect(isAnswerCorrect);
+	};
+
+	const renderContent = () => {
+		switch (mode) {
+			case LearningMode.DEFAULT:
+				return (
+					<>
+						<TokensTranslations selectedToken={selectedToken} />
+						<TokensContainer>
+							{sentence?.tokens?.map((token, tokenIndex) => {
+								if (
+									token.content === '.' &&
+									tokenIndex === sentence.tokens.length - 1
+								)
+									return null;
+								return (
+									<TokenComponent
+										key={`token-${tokenIndex}`}
+										token={token}
+										isSelected={selectedToken?.content === token.content}
+										onClick={() => handleTokenClick(token)}
+									/>
+								);
+							})}
+						</TokensContainer>
+						<Translation>
+							{sentence.translations.english.contextual}
+						</Translation>
+					</>
+				);
+
+			case LearningMode.HIDE_TRANSLATIONS:
+				return (
+					<>
+						<TokensTranslations selectedToken={selectedToken} />
+						<TokensContainer>
+							{sentence?.tokens?.map((token, tokenIndex) => {
+								if (
+									token.content === '.' &&
+									tokenIndex === sentence.tokens.length - 1
+								)
+									return null;
+								return (
+									<TokenComponent
+										key={`token-${tokenIndex}`}
+										token={token}
+										isSelected={selectedToken?.content === token.content}
+										onClick={() => handleTokenClick(token)}
+									/>
+								);
+							})}
+						</TokensContainer>
+						<Translation></Translation>
+					</>
+				);
+
+			case LearningMode.WRITING_PRACTICE:
+				return (
+					<>
+						<Translation>
+							{sentence.translations.english.contextual}
+						</Translation>
+						<WritingContainer>
+							<Input
+								value={userInput}
+								onChange={e => setUserInput(e.target.value)}
+								placeholder="Type the Spanish sentence..."
+							/>
+							<ButtonFeedbackContainer>
+								<SubmitButton onClick={handleSubmit}>Check</SubmitButton>
+								{isCorrect !== null && (
+									<FeedbackIcon>{isCorrect ? '👍🏻' : '👎🏻'}</FeedbackIcon>
+								)}
+							</ButtonFeedbackContainer>
+						</WritingContainer>
+					</>
+				);
+		}
+	};
+
+	return <SentenceCard>{renderContent()}</SentenceCard>;
 };
 export default Sentence;
