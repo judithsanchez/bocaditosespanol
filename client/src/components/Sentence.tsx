@@ -25,15 +25,10 @@ type ISentence = {
 	tokens: Token[];
 };
 
-const Container = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-`;
-
 const SentenceCard = styled.div`
+	min-height: 150px;
 	width: 350px;
-	height: 150px;
+	height: auto;
 	background-color: ${props => props.theme.colors.surface};
 	border-radius: 8px;
 	box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
@@ -41,7 +36,7 @@ const SentenceCard = styled.div`
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	padding: 1rem;
+	padding: 1.5rem;
 	gap: 1.5rem;
 `;
 const TokensContainer = styled.div`
@@ -52,8 +47,7 @@ const TokensContainer = styled.div`
 	text-align: center;
 `;
 
-const Token = styled.span<{
-	isVerb?: boolean;
+const BaseToken = styled.span<{
 	isSelected?: boolean;
 	isCognate?: boolean;
 	isFalseCognate?: boolean;
@@ -62,12 +56,10 @@ const Token = styled.span<{
 	font-size: 1.4rem;
 	font-family: 'Roboto', sans-serif;
 	font-weight: ${props => (props.isSelected ? '900' : '400')};
-	font-style: italic;
 	color: ${props =>
 		props.isSelected ? props.theme.colors.primary : 'inherit'};
 	cursor: pointer;
 	transition: all 0.2s ease;
-	text-decoration: none;
 
 	${props =>
 		props.isCognate &&
@@ -86,15 +78,22 @@ const Token = styled.span<{
 		`
 		border-bottom: 3px solid ${props.theme.colors.slang};
 	`}
+`;
 
-	${props =>
-		props.isVerb &&
-		`
-			background-image: linear-gradient(120deg, ${props.theme.colors.secondary}80 0%, ${props.theme.colors.secondary}80 100%);
-			background-repeat: no-repeat;
-			background-size: 100% 50%;
-			background-position: 0 120%;
-		`}
+const StyledWord = styled(BaseToken)`
+	font-style: italic;
+`;
+
+const StyledEmoji = styled(BaseToken)`
+	font-style: normal;
+	font-size: 1.6rem;
+`;
+
+const StyledPunctuation = styled(BaseToken)`
+	font-style: normal;
+	color: ${props => props.theme.colors.text}40;
+	margin-left: -0.3rem; // This pulls the punctuation closer to the previous token
+	padding-right: 0.5rem; // This maintains spacing with the next token
 `;
 const Translation = styled.p`
 	font-size: 12px;
@@ -123,6 +122,20 @@ const TokensTranslations = styled.div`
 	}
 `;
 
+const StyledPunctuationLeft = styled(BaseToken)`
+	font-style: normal;
+	color: ${props => props.theme.colors.text}40;
+	margin-left: -0.3rem;
+	padding-right: 0.5rem;
+`;
+
+const StyledPunctuationRight = styled(BaseToken)`
+	font-style: normal;
+	color: ${props => props.theme.colors.text}40;
+	margin-right: -0.3rem;
+	padding-left: 0.5rem;
+`;
+
 const Sentence = ({sentence}: {sentence: ISentence}) => {
 	const [selectedToken, setSelectedToken] = useState<Token | null>(null);
 
@@ -135,42 +148,77 @@ const Sentence = ({sentence}: {sentence: ISentence}) => {
 	};
 
 	return (
-		<Container>
-			<SentenceCard>
-				<TokensTranslations>
-					{selectedToken &&
-						selectedToken.translations?.english.map((translation, index) => (
-							<p key={`translation-${index}`}>{translation}</p>
-						))}
-				</TokensTranslations>
-				<TokensContainer>
-					{sentence?.tokens
-						?.filter(token => token !== null && token.content !== '.')
-						.map((token, tokenIndex) =>
-							token.tokenType === 'word' ? (
-								<Token
-									key={`token-${tokenIndex}`}
-									isSelected={selectedToken?.content === token.content}
-									isCognate={token.isCognate}
-									isFalseCognate={token.isFalseCognate}
-									isSlang={token.isSlang}
-									onClick={() => handleTokenClick(token)}
-								>
-									{token.content.toLowerCase()}
-								</Token>
-							) : (
-								<Token key={`token-${tokenIndex}`}>{token.content}</Token>
-							),
-						)}
-				</TokensContainer>
-				<Translation>
-					{sentence.translations.english.contextual
-						.toLowerCase()
-						.replace(/\.$/, '')}
-				</Translation>
-			</SentenceCard>
-		</Container>
+		<SentenceCard>
+			<TokensTranslations>
+				{selectedToken &&
+					selectedToken.translations?.english.map((translation, index) => (
+						<p key={`translation-${index}`}>{translation}</p>
+					))}
+			</TokensTranslations>
+			<TokensContainer>
+				{sentence?.tokens
+					?.filter(token => token !== null && token.content !== '.')
+					.map((token, tokenIndex) => (
+						<TokenComponent
+							key={`token-${tokenIndex}`}
+							token={token}
+							isSelected={selectedToken?.content === token.content}
+							onClick={() => handleTokenClick(token)}
+						/>
+					))}
+			</TokensContainer>
+			<Translation>
+				{sentence.translations.english.contextual
+					.toLowerCase()
+					.replace(/\.$/, '')}
+			</Translation>
+		</SentenceCard>
 	);
 };
-
 export default Sentence;
+
+const TokenComponent = ({
+	token,
+	isSelected,
+	onClick,
+}: {
+	token: Token;
+	isSelected?: boolean;
+	onClick?: () => void;
+}) => {
+	const leftAttachedPunctuation = ['.', ',', '?'];
+	const rightAttachedPunctuation = ['¿'];
+
+	const getTokenStyle = () => {
+		switch (token.tokenType) {
+			case 'word':
+				return StyledWord;
+			case 'emoji':
+				return StyledEmoji;
+			case 'punctuationSign':
+				if (leftAttachedPunctuation.includes(token.content)) {
+					return StyledPunctuationLeft;
+				}
+				if (rightAttachedPunctuation.includes(token.content)) {
+					return StyledPunctuationRight;
+				}
+				return BaseToken;
+			default:
+				return StyledWord;
+		}
+	};
+
+	const TokenElement = getTokenStyle();
+
+	return (
+		<TokenElement
+			isSelected={isSelected}
+			isCognate={token.isCognate}
+			isFalseCognate={token.isFalseCognate}
+			isSlang={token.isSlang}
+			onClick={onClick}
+		>
+			{token.content.toLowerCase()}
+		</TokenElement>
+	);
+};
