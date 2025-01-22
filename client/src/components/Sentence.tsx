@@ -1,16 +1,7 @@
 import styled from 'styled-components';
 import {useState} from 'react';
-type Token = {
-	content: string;
-	tokenType: string;
-	partOfSpeech?: string;
-	translations?: {
-		english: string[];
-	};
-	isCognate?: boolean;
-	isFalseCognate?: boolean;
-	isSlang?: boolean;
-};
+import {Token} from '../types/token.types';
+import {TokenComponent} from './Token/Token';
 
 type ISentence = {
 	sentenceId: string;
@@ -80,21 +71,6 @@ const BaseToken = styled.span<{
 	`}
 `;
 
-const StyledWord = styled(BaseToken)`
-	font-style: italic;
-`;
-
-const StyledEmoji = styled(BaseToken)`
-	font-style: normal;
-	font-size: 1.6rem;
-`;
-
-const StyledPunctuation = styled(BaseToken)`
-	font-style: normal;
-	color: ${props => props.theme.colors.text}40;
-	margin-left: -0.3rem; // This pulls the punctuation closer to the previous token
-	padding-right: 0.5rem; // This maintains spacing with the next token
-`;
 const Translation = styled.p`
 	font-size: 12px;
 	color: ${props => props.theme.colors.text}80;
@@ -120,20 +96,6 @@ const TokensTranslations = styled.div`
 		border-radius: 5px;
 		padding: 2px 8px;
 	}
-`;
-
-const StyledPunctuationLeft = styled(BaseToken)`
-	font-style: normal;
-	color: ${props => props.theme.colors.text}40;
-	margin-left: -0.3rem;
-	padding-right: 0.5rem;
-`;
-
-const StyledPunctuationRight = styled(BaseToken)`
-	font-style: normal;
-	color: ${props => props.theme.colors.text}40;
-	margin-right: -0.3rem;
-	padding-left: 0.5rem;
 `;
 
 const Sentence = ({sentence}: {sentence: ISentence}) => {
@@ -176,49 +138,3 @@ const Sentence = ({sentence}: {sentence: ISentence}) => {
 	);
 };
 export default Sentence;
-
-const TokenComponent = ({
-	token,
-	isSelected,
-	onClick,
-}: {
-	token: Token;
-	isSelected?: boolean;
-	onClick?: () => void;
-}) => {
-	const leftAttachedPunctuation = ['.', ',', '?'];
-	const rightAttachedPunctuation = ['¿'];
-
-	const getTokenStyle = () => {
-		switch (token.tokenType) {
-			case 'word':
-				return StyledWord;
-			case 'emoji':
-				return StyledEmoji;
-			case 'punctuationSign':
-				if (leftAttachedPunctuation.includes(token.content)) {
-					return StyledPunctuationLeft;
-				}
-				if (rightAttachedPunctuation.includes(token.content)) {
-					return StyledPunctuationRight;
-				}
-				return BaseToken;
-			default:
-				return StyledWord;
-		}
-	};
-
-	const TokenElement = getTokenStyle();
-
-	return (
-		<TokenElement
-			isSelected={isSelected}
-			isCognate={token.isCognate}
-			isFalseCognate={token.isFalseCognate}
-			isSlang={token.isSlang}
-			onClick={onClick}
-		>
-			{token.content.toLowerCase()}
-		</TokenElement>
-	);
-};
