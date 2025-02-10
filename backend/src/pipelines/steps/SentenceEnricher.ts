@@ -23,7 +23,14 @@ export class SentenceEnricherSteps
 
 		const enrichedSentences = await batchProcessor({
 			items: context.sentences.deduplicated,
-			processingFn: enrichSentencesWithAI,
+			processingFn: sentences =>
+				enrichSentencesWithAI(sentences, {
+					interpreter: context.rawInput.interpreter,
+					language: {
+						main: context.rawInput.language,
+						variant: [],
+					},
+				}),
 			batchSize: SentenceEnricherSteps.RATE_LIMITS.BATCH_SIZE,
 			options: {
 				retryAttempts: SentenceEnricherSteps.RATE_LIMITS.RETRY_ATTEMPTS,

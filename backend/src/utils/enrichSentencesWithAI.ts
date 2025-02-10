@@ -41,7 +41,7 @@ const sentenceSchema = {
 	},
 };
 const model = genAI.getGenerativeModel({
-	model: 'gemini-1.5-flash-8b',
+	model: 'gemini-2.0-flash-exp',
 	generationConfig: {
 		responseMimeType: 'application/json',
 		responseSchema: sentenceSchema,
@@ -51,6 +51,13 @@ const model = genAI.getGenerativeModel({
 
 export async function enrichSentencesWithAI(
 	sentences: ISentence[],
+	metadata: {
+		interpreter: string;
+		language: {
+			main: string;
+			variant: string[];
+		};
+	},
 ): Promise<ISentence[]> {
 	logger.start('enrichSentencesWithAI');
 	logger.info('Starting AI enrichment pipeline', {
@@ -68,26 +75,32 @@ export async function enrichSentencesWithAI(
 						{
 							text: `Linguistic Analysis Task for Spanish-English Learning:
 
+Context Information:
+- Artist/Interpreter: ${metadata.interpreter}
+- Main Language: ${metadata.language.main}
+- Language Variants/Dialects: ${metadata.language.variant.join(', ')}
+
 Input Array: ${JSON.stringify(sentences)}
 
 CRITICAL REQUIREMENTS:
 1. MUST return an ARRAY with EXACTLY ${sentences.length} processed sentences
 2. Each sentence must maintain its original position in the array
 3. Process ALL sentences
+4. Consider the artist's dialect and language variants in translations
 
 STRICT PROCESSING RULES:
 1. OUTPUT MUST BE AN ARRAY of processed sentences
 2. For EACH sentence in the array:
-	  - ADD complete English contextual translation
-	  - ADD literal word-for-word translation that maintains Spanish grammar structure but still makes sense on the context
-			Example: "Yo tengo hambre" → "I have hunger"
-			Example: "Me gusta bailar" → "To me pleases to dance"
-	  - KEEP all other existing properties untocuhed
+      - ADD complete English contextual translation considering ${metadata.interpreter}'s ${metadata.language.main} dialect
+      - ADD literal word-for-word translation that maintains ${metadata.language.main} grammar structure but still makes sense in context
+            Example: "Yo tengo hambre" → "I have hunger"
+            Example: "Me gusta bailar" → "To me pleases to dance"
+      - KEEP all other existing properties untouched
 
 3. Response Format:
-	  - Must be an array matching input length
-	  - Must follow exact schema structure
-	  - Must preserve sentence order
+      - Must be an array matching input length
+      - Must follow exact schema structure
+      - Must preserve sentence order
 
 Generate response as an array of fully processed sentences.`,
 						},

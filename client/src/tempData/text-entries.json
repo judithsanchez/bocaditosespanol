@@ -7,7 +7,10 @@
 				"title": "historia de taxi",
 				"youtube": "https://www.youtube.com/watch?v=-apU2sviHCM&ab_channel=RicardoArjonaVEVO",
 				"genre": ["pop"],
-				"language": "spanish",
+				"language": {
+					"main": "spanish",
+					"variant": ["guatemalan"]
+				},
 				"releaseDate": "1994"
 			},
 			"lyrics": [
@@ -69,7 +72,10 @@
 				"title": "WELTiTA",
 				"youtube": "https://www.youtube.com/watch?v=hitCWMxsMi4&ab_channel=BadBunny",
 				"genre": ["reggaeton", "latin trap"],
-				"language": "spanish",
+				"language": {
+					"main": "spanish",
+					"variant": ["puerto rican"]
+				},
 				"releaseDate": "2024-01-11"
 			},
 			"lyrics": [
@@ -132,7 +138,10 @@
 				"title": "NUEVAYoL",
 				"youtube": "https://www.youtube.com/watch?v=zAfrPjTvSNs&ab_channel=BadBunny",
 				"genre": ["reggaeton", "latin trap"],
-				"language": "spanish",
+				"language": {
+					"main": "spanish",
+					"variant": ["puerto rican"]
+				},
 				"releaseDate": "2024-01-11"
 			},
 			"lyrics": [
@@ -211,7 +220,10 @@
 				"title": "La Jumpa",
 				"youtube": "https://www.youtube.com/watch?v=ubbE6gyBf8k&ab_channel=Arcangel",
 				"genre": ["reggaeton"],
-				"language": "spanish",
+				"language": {
+					"main": "spanish",
+					"variant": ["puerto rican"]
+				},
 				"releaseDate": "2022-30-11"
 			},
 			"lyrics": [
@@ -311,7 +323,10 @@
 				"title": "DtMF",
 				"youtube": "https://www.youtube.com/watch?v=v9T_MGfzq7I&ab_channel=BadBunny",
 				"genre": ["reggaeton", "latin trap"],
-				"language": "spanish",
+				"language": {
+					"main": "spanish",
+					"variant": ["puerto rican"]
+				},
 				"releaseDate": "2024-01-11"
 			},
 			"lyrics": [
@@ -385,7 +400,10 @@
 				"title": "Caraluna",
 				"youtube": "https://www.youtube.com/watch?v=-zgDXIi1uYw&ab_channel=WarnerM%C3%BAsica",
 				"genre": ["latin pop"],
-				"language": "spanish",
+				"language": {
+					"main": "spanish",
+					"variant": ["colombian"]
+				},
 				"releaseDate": "2002-07-16"
 			},
 			"lyrics": [
@@ -431,6 +449,155 @@
 			],
 			"createdAt": "2025-01-19T11:53:54.402Z",
 			"updatedAt": "2025-01-19T11:53:54.402Z"
+		},
+		{
+			"songId": "pitorro-de-coco-bad-bunny",
+			"metadata": {
+				"interpreter": "Bad Bunny",
+				"title": "PIToRRO DE COCO",
+				"youtube": "https://www.youtube.com/watch?v=EVgd4gvY0hU&ab_channel=BadBunny",
+				"genre": ["reggaeton", "afro caribbean", "jíraba"],
+				"language": {
+					"main": "spanish",
+					"variant": ["puerto rican"]
+				},
+				"releaseDate": "2024-01-11"
+			},
+			"lyrics": [
+				"sentence-1-pitorro-de-coco-bad-bunny",
+				"sentence-2-pitorro-de-coco-bad-bunny",
+				"sentence-3-pitorro-de-coco-bad-bunny",
+				"sentence-4-pitorro-de-coco-bad-bunny",
+				"sentence-5-pitorro-de-coco-bad-bunny",
+				"sentence-5-pitorro-de-coco-bad-bunny",
+				"sentence-6-pitorro-de-coco-bad-bunny",
+				"sentence-7-pitorro-de-coco-bad-bunny",
+				"sentence-8-pitorro-de-coco-bad-bunny",
+				"sentence-9-pitorro-de-coco-bad-bunny",
+				"sentence-10-pitorro-de-coco-bad-bunny",
+				"sentence-11-pitorro-de-coco-bad-bunny",
+				"sentence-12-pitorro-de-coco-bad-bunny",
+				"sentence-13-pitorro-de-coco-bad-bunny",
+				"sentence-14-pitorro-de-coco-bad-bunny",
+				"sentence-15-pitorro-de-coco-bad-bunny",
+				"sentence-16-pitorro-de-coco-bad-bunny",
+				"sentence-17-pitorro-de-coco-bad-bunny",
+				"sentence-18-pitorro-de-coco-bad-bunny",
+				"sentence-19-pitorro-de-coco-bad-bunny",
+				"sentence-20-pitorro-de-coco-bad-bunny",
+				"sentence-21-pitorro-de-coco-bad-bunny",
+				"sentence-22-pitorro-de-coco-bad-bunny",
+				"sentence-23-pitorro-de-coco-bad-bunny",
+				"sentence-24-pitorro-de-coco-bad-bunny",
+				"sentence-25-pitorro-de-coco-bad-bunny",
+				"sentence-26-pitorro-de-coco-bad-bunny",
+				"sentence-27-pitorro-de-coco-bad-bunny",
+				"sentence-28-pitorro-de-coco-bad-bunny",
+				"sentence-29-pitorro-de-coco-bad-bunny",
+				"sentence-11-pitorro-de-coco-bad-bunny",
+				"sentence-12-pitorro-de-coco-bad-bunny",
+				"sentence-13-pitorro-de-coco-bad-bunny",
+				"sentence-14-pitorro-de-coco-bad-bunny",
+				"sentence-15-pitorro-de-coco-bad-bunny",
+				"sentence-16-pitorro-de-coco-bad-bunny",
+				"sentence-17-pitorro-de-coco-bad-bunny",
+				"sentence-30-pitorro-de-coco-bad-bunny",
+				"sentence-31-pitorro-de-coco-bad-bunny"
+			],
+			"createdAt": "2025-01-25T19:54:45.112Z",
+			"updatedAt": "2025-01-25T19:54:45.112Z"
+		},
+		{
+			"songId": "andrea-bad-bunny",
+			"metadata": {
+				"interpreter": "Bad Bunny",
+				"title": "Andrea",
+				"youtube": "https://www.youtube.com/watch?v=gjvTQTGogUM&ab_channel=BadBunny",
+				"genre": ["reggaeton", "indie pop"],
+				"language": {
+					"main": "spanish",
+					"variant": ["puerto rican"]
+				},
+				"releaseDate": "2022-05-06"
+			},
+			"lyrics": [
+				"sentence-1-andrea-bad-bunny",
+				"sentence-2-andrea-bad-bunny",
+				"sentence-3-andrea-bad-bunny",
+				"sentence-4-andrea-bad-bunny",
+				"sentence-5-andrea-bad-bunny",
+				"sentence-6-andrea-bad-bunny",
+				"sentence-7-andrea-bad-bunny",
+				"sentence-8-andrea-bad-bunny",
+				"sentence-9-andrea-bad-bunny",
+				"sentence-10-andrea-bad-bunny",
+				"sentence-11-andrea-bad-bunny",
+				"sentence-12-andrea-bad-bunny",
+				"sentence-13-andrea-bad-bunny",
+				"sentence-14-andrea-bad-bunny",
+				"sentence-15-andrea-bad-bunny",
+				"sentence-16-andrea-bad-bunny",
+				"sentence-17-andrea-bad-bunny",
+				"sentence-18-andrea-bad-bunny",
+				"sentence-19-andrea-bad-bunny",
+				"sentence-20-andrea-bad-bunny",
+				"sentence-21-andrea-bad-bunny",
+				"sentence-22-andrea-bad-bunny",
+				"sentence-23-andrea-bad-bunny",
+				"sentence-24-andrea-bad-bunny",
+				"sentence-25-andrea-bad-bunny",
+				"sentence-26-andrea-bad-bunny",
+				"sentence-27-andrea-bad-bunny",
+				"sentence-28-andrea-bad-bunny",
+				"sentence-29-andrea-bad-bunny",
+				"sentence-30-andrea-bad-bunny",
+				"sentence-31-andrea-bad-bunny",
+				"sentence-32-andrea-bad-bunny",
+				"sentence-33-andrea-bad-bunny",
+				"sentence-34-andrea-bad-bunny",
+				"sentence-35-andrea-bad-bunny",
+				"sentence-36-andrea-bad-bunny",
+				"sentence-37-andrea-bad-bunny",
+				"sentence-38-andrea-bad-bunny",
+				"sentence-39-andrea-bad-bunny",
+				"sentence-40-andrea-bad-bunny",
+				"sentence-41-andrea-bad-bunny",
+				"sentence-42-andrea-bad-bunny",
+				"sentence-43-andrea-bad-bunny",
+				"sentence-44-andrea-bad-bunny",
+				"sentence-45-andrea-bad-bunny",
+				"sentence-46-andrea-bad-bunny",
+				"sentence-47-andrea-bad-bunny",
+				"sentence-48-andrea-bad-bunny",
+				"sentence-49-andrea-bad-bunny",
+				"sentence-50-andrea-bad-bunny",
+				"sentence-51-andrea-bad-bunny",
+				"sentence-52-andrea-bad-bunny",
+				"sentence-53-andrea-bad-bunny",
+				"sentence-54-andrea-bad-bunny",
+				"sentence-55-andrea-bad-bunny",
+				"sentence-56-andrea-bad-bunny",
+				"sentence-57-andrea-bad-bunny",
+				"sentence-58-andrea-bad-bunny",
+				"sentence-59-andrea-bad-bunny",
+				"sentence-60-andrea-bad-bunny",
+				"sentence-60-andrea-bad-bunny",
+				"sentence-61-andrea-bad-bunny",
+				"sentence-62-andrea-bad-bunny",
+				"sentence-63-andrea-bad-bunny",
+				"sentence-31-andrea-bad-bunny",
+				"sentence-32-andrea-bad-bunny",
+				"sentence-33-andrea-bad-bunny",
+				"sentence-34-andrea-bad-bunny",
+				"sentence-35-andrea-bad-bunny",
+				"sentence-36-andrea-bad-bunny",
+				"sentence-64-andrea-bad-bunny",
+				"sentence-65-andrea-bad-bunny",
+				"sentence-66-andrea-bad-bunny",
+				"sentence-33-andrea-bad-bunny"
+			],
+			"createdAt": "2025-01-25T20:43:26.390Z",
+			"updatedAt": "2025-01-25T20:43:26.390Z"
 		}
 	]
 }

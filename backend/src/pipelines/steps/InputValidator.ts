@@ -3,7 +3,21 @@ import {SongProcessingContext} from '../SongProcessingPipeline';
 import {errors} from '../../lib/constants';
 import {Logger} from '../../utils/index';
 import {ContentType} from '../types/PipelineTypes';
-import {AddSongRequest} from 'lib/types';
+
+interface LanguageInfo {
+	main: string;
+	variant: string[];
+}
+
+interface AddSongRequest {
+	interpreter: string;
+	title: string;
+	youtube: string;
+	genre: string[];
+	language: LanguageInfo;
+	releaseDate: string;
+	lyrics: string;
+}
 
 export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 	private readonly logger: Logger;
@@ -19,7 +33,13 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 
 		switch (this.contentType) {
 			case ContentType.SONG:
-				this.validateSongInput(context.rawInput);
+				this.validateSongInput({
+					...context.rawInput,
+					language: {
+						main: context.rawInput.language,
+						variant: [],
+					},
+				});
 				break;
 
 			default:
@@ -62,8 +82,10 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 			typeof input.interpreter !== 'string' ||
 			typeof input.title !== 'string' ||
 			typeof input.youtube !== 'string' ||
-			typeof input.language !== 'string' ||
-			typeof input.lyrics !== 'string'
+			typeof input.lyrics !== 'string' ||
+			typeof input.language !== 'object' ||
+			!input.language.main ||
+			!Array.isArray(input.language.variant)
 		) {
 			throw new Error(errors.invalidTextData);
 		}
