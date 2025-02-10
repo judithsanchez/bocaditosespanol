@@ -12,6 +12,11 @@ import {
 	IVerb,
 } from './partsOfSpeech';
 
+export enum ContentType {
+	SONG = 'song',
+	TRANSCRIPT = 'transcript',
+}
+
 export interface ISentence {
 	sentenceId: string;
 	content: string;

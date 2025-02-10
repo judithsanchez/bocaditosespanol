@@ -15,6 +15,7 @@
 		"baseUrl": "src",
 		"rootDir": ".",
 		"outDir": "dist",
+		"composite": true,
 		"paths": {
 			"@utils/*": ["src/utils/*"],
 			"@data/*": ["src/data/*"],

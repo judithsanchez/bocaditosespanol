@@ -1,8 +1,12 @@
 import {GoogleGenerativeAI, SchemaType} from '@google/generative-ai';
 import {config} from 'dotenv';
 import {geminiSafetySettings} from '../lib/constants';
-import {DeterminerType} from '../lib/grammaticalInfo/determinersTypes';
-import {GrammaticalGender, GrammaticalNumber, IWord} from '../lib/types';
+import {
+	DeterminerType,
+	GrammaticalGender,
+	GrammaticalNumber,
+	IWord,
+} from '@bocaditosespanol/shared';
 import {Logger} from './Logger';
 config();
 

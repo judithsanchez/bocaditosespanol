@@ -5,7 +5,8 @@
 			"@shared/*": ["shared/*"],
 			"@client/*": ["client/src/*"],
 			"@backend/*": ["backend/src/*"]
-		}
+		},
+		"composite": true
 	},
 	"references": [
 		{"path": "./shared"},

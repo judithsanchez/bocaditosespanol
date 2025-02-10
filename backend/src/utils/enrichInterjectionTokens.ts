@@ -4,8 +4,8 @@ import {geminiSafetySettings} from '../lib/constants';
 import {
 	InterjectionEmotion,
 	InterjectionType,
-} from '../lib/grammaticalInfo/interjectionsTypes';
-import {IWord} from '../lib/types';
+	IWord,
+} from '@bocaditosespanol/shared';
 import {Logger} from './Logger';
 config();
 

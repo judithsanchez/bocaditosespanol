@@ -1,13 +1,5 @@
 import {Pipeline} from './Pipeline';
-import {ContentType} from './types/PipelineTypes';
-import {
-	AddSongRequest,
-	IEmoji,
-	IPunctuationSign,
-	ISentence,
-	ISong,
-	IWord,
-} from 'lib/types';
+import {AddSongRequest} from '../lib/types';
 import {DatabaseService} from '../services/DatabaseService';
 import {
 	InputValidatorStep,
@@ -17,6 +9,14 @@ import {
 	SpecializedEnricherStep,
 	SentenceEnricherSteps,
 } from './steps/index';
+import {
+	ISentence,
+	IWord,
+	IPunctuationSign,
+	IEmoji,
+	ISong,
+	ContentType,
+} from '@bocaditosespanol/shared';
 
 export interface SongProcessingContext {
 	rawInput: AddSongRequest;
@@ -67,9 +67,9 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				enriched: [],
 			},
 			tokens: {
-				all: [], // all tokens from the lyrics
+				all: [],
 				words: [],
-				deduplicated: [], // unique tokens within the same lyrics
+				deduplicated: [],
 				newTokens: [],
 				enriched: [],
 			},

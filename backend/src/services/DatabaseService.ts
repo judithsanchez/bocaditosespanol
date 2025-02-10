@@ -1,14 +1,15 @@
 import {readFile, writeFile, mkdir} from 'fs/promises';
 import {existsSync} from 'fs';
 import {join} from 'path';
+
 import {
-	IEmoji,
-	IPunctuationSign,
 	ISentence,
-	ISong,
 	IWord,
+	IPunctuationSign,
+	IEmoji,
+	ISong,
 	TokenType,
-} from '../lib/types';
+} from '@bocaditosespanol/shared';
 
 interface TokenStorage {
 	words: {

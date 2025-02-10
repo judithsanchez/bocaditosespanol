@@ -1,9 +1,9 @@
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
-import {TokenType, PartOfSpeech, IWord} from '../../lib/types';
 import {batchProcessor} from '../../utils/batchProcessor';
 import {enrichWordTokens} from '../../utils/enrichWordTokens';
+import {IWord, PartOfSpeech, TokenType} from '@bocaditosespanol/shared';
 
 export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 	private static readonly RATE_LIMITS = {

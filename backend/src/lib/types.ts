@@ -1,3 +1,11 @@
+import {
+	IEmoji,
+	IPunctuationSign,
+	ISentence,
+	ISong,
+	IWord,
+} from '@bocaditosespanol/shared';
+
 export interface AddSongRequest {
 	interpreter: string;
 	feat?: string[];

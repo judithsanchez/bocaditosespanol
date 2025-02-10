@@ -1,7 +1,11 @@
 import {GoogleGenerativeAI, SchemaType} from '@google/generative-ai';
 import {config} from 'dotenv';
 import {geminiSafetySettings} from '../lib/constants';
-import {GrammaticalGender, GrammaticalNumber, IWord} from '../lib/types';
+import {
+	GrammaticalGender,
+	GrammaticalNumber,
+	IWord,
+} from '@bocaditosespanol/shared';
 import {Logger} from './Logger';
 config();
 

@@ -2,10 +2,10 @@ import {GoogleGenerativeAI, SchemaType} from '@google/generative-ai';
 import {config} from 'dotenv';
 import {geminiSafetySettings} from '../lib/constants';
 import {
-	ConjunctionType,
 	ConjunctionFunction,
-} from '../lib/grammaticalInfo/conjunctionsTypes';
-import {IWord} from '../lib/types';
+	ConjunctionType,
+	IWord,
+} from '@bocaditosespanol/shared';
 import {Logger} from './Logger';
 config();
 
