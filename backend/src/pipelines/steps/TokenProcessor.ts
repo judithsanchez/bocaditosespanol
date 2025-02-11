@@ -1,5 +1,10 @@
 import emojiRegex from 'emoji-regex';
-import {IEmoji, IPunctuationSign, IWord, TokenType} from '../../lib/types';
+import {
+	IEmoji,
+	IPunctuationSign,
+	IWord,
+	TokenType,
+} from '@bocaditosespanol/shared';
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';

@@ -11,7 +11,6 @@ import {
 	InterjectionEmotion,
 	InterjectionType,
 	NumeralType,
-	PartOfSpeech,
 	PrepositionType,
 	PronounCase,
 	PronounType,

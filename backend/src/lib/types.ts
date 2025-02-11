@@ -15,6 +15,7 @@ export interface AddSongRequest {
 	language: string;
 	releaseDate: string;
 	lyrics: string;
+	aiProvider?: string;
 }
 
 export interface ITextProcessor {

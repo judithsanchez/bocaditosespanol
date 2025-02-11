@@ -2,8 +2,11 @@ import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {batchProcessor} from '../../utils/batchProcessor';
-import {enrichWordTokens} from '../../utils/enrichWordTokens';
-import {IWord, PartOfSpeech, TokenType} from '@bocaditosespanol/shared';
+import {IWord, TokenType} from '@bocaditosespanol/shared';
+import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
+import {BaseWordSchemaFactory} from '../../factories/BaseWordSchemaFactory';
+import {BaseWordInstructionFactory} from '../../factories/BaseWordSystemInstructionsFactory';
+import {AIProvider} from '../../lib/types';
 
 export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 	private static readonly RATE_LIMITS = {
@@ -14,6 +17,11 @@ export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 	};
 
 	private readonly logger = new Logger('BasicEnricherStep');
+	private readonly enricher: GenericAIEnricher;
+
+	constructor(aiProvider: AIProvider) {
+		this.enricher = new GenericAIEnricher(aiProvider);
+	}
 
 	async process(
 		context: SongProcessingContext,
@@ -28,9 +36,18 @@ export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 			totalTokens: wordTokens.length,
 		});
 
-		const enrichedTokens = await batchProcessor<IWord>({
+		const enrichedTokens = await batchProcessor({
 			items: wordTokens,
-			processingFn: enrichWordTokens,
+			processingFn: async tokens => {
+				const schema = BaseWordSchemaFactory.createSchema();
+				const instruction = BaseWordInstructionFactory.createInstruction();
+
+				return this.enricher.enrich({
+					input: tokens,
+					schema,
+					instruction,
+				});
+			},
 			batchSize: BasicEnricherStep.RATE_LIMITS.BATCH_SIZE,
 			options: {
 				retryAttempts: BasicEnricherStep.RATE_LIMITS.RETRY_ATTEMPTS,
@@ -40,62 +57,18 @@ export class BasicEnricherStep implements PipelineStep<SongProcessingContext> {
 			},
 		});
 
-		const enrichedWithStructure = enrichedTokens.map(token =>
-			this.addGrammaticalStructure(token),
-		);
-
 		context.tokens.enriched = [
-			...enrichedWithStructure,
+			...enrichedTokens,
 			...context.tokens.newTokens.filter(t => t.tokenType !== TokenType.Word),
 		];
 
 		this.logger.info('Basic enrichment completed', {
-			enrichedTokens: enrichedWithStructure.length,
-			byPartOfSpeech: this.getPartOfSpeechStats(enrichedWithStructure),
+			enrichedTokens: enrichedTokens.length,
+			byPartOfSpeech: this.getPartOfSpeechStats(enrichedTokens),
 		});
 
 		this.logger.end('process');
 		return context;
-	}
-
-	private addGrammaticalStructure(token: IWord): IWord {
-		if (!token.partOfSpeech || typeof token.partOfSpeech !== 'string')
-			return token;
-
-		const grammaticalInfo = this.getGrammaticalTemplate(token.partOfSpeech);
-		return {
-			...token,
-			grammaticalInfo,
-		};
-	}
-
-	private getGrammaticalTemplate(partOfSpeech: string): any {
-		switch (partOfSpeech) {
-			case PartOfSpeech.Verb:
-				return {
-					tense: [],
-					mood: '',
-					person: [],
-					number: '',
-					isRegular: false,
-					infinitive: '',
-					voice: '',
-					verbClass: '',
-					gerund: false,
-					pastParticiple: false,
-					verbRegularity: '',
-					isReflexive: false,
-				};
-			case PartOfSpeech.Noun:
-				return {
-					gender: '',
-					number: '',
-					isProperNoun: false,
-					diminutive: false,
-				};
-			default:
-				return {};
-		}
 	}
 
 	private getPartOfSpeechStats(tokens: IWord[]): Record<string, number> {

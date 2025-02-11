@@ -2,10 +2,12 @@ import express from 'express';
 import {SongProcessingPipeline} from '../../src/pipelines/SongProcessingPipeline';
 import {Logger} from '../../src/utils/Logger';
 import {DatabaseService} from '../../src/services/DatabaseService';
+import {GeminiProvider} from '../../src/providers/GeminiProvider';
 
 const router = express.Router();
 const logger = new Logger('Songs');
-const pipeline = new SongProcessingPipeline();
+const aiProvider = new GeminiProvider(process.env.GEMINI_API_KEY || '');
+const pipeline = new SongProcessingPipeline(aiProvider);
 
 router.get('/', async (_req, res) => {
 	logger.start('getAllSongs');

@@ -1,27 +1,19 @@
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
+import {AIProvider} from '../../lib/types';
 import {
 	TokenType,
-	PartOfSpeech,
 	IWord,
+	PartOfSpeech,
 	IPunctuationSign,
 	IEmoji,
-} from '../../lib/types';
+} from '@bocaditosespanol/shared';
+import {batchProcessor, Logger} from '../../utils/index';
+import {GenericAIEnricher} from '../../utils';
 import {
-	batchProcessor,
-	enrichVerbTokens,
-	enrichNounTokens,
-	enrichAdjectiveTokens,
-	enrichAdverbTokens,
-	enrichArticleTokens,
-	Logger,
-	enrichPronounTokens,
-	enrichConjunctionTokens,
-	enrichDeterminerTokens,
-	enrichInterjectionTokens,
-	enrichNumeralTokens,
-	enrichPrepositionTokens,
-} from '../../utils/index';
+	PartOfSpeechSchemaFactory,
+	SystemInstructionFactory,
+} from '../../factories';
 
 export class SpecializedEnricherStep
 	implements PipelineStep<SongProcessingContext>
@@ -34,7 +26,12 @@ export class SpecializedEnricherStep
 	};
 
 	private readonly logger = new Logger('SpecializedEnricherStep');
+	private readonly enricher: GenericAIEnricher;
 	private lastProcessingTime: number = 0;
+
+	constructor(aiProvider: AIProvider) {
+		this.enricher = new GenericAIEnricher(aiProvider);
+	}
 
 	private async enforceRateLimit() {
 		const now = Date.now();
@@ -62,27 +59,32 @@ export class SpecializedEnricherStep
 			{
 				type: PartOfSpeech.Verb,
 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Verb),
-				fn: enrichVerbTokens,
+				getSchema: PartOfSpeechSchemaFactory.createVerbSchema,
+				getInstruction: SystemInstructionFactory.createVerbInstruction,
 			},
 			{
 				type: PartOfSpeech.Noun,
 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Noun),
-				fn: enrichNounTokens,
+				getSchema: PartOfSpeechSchemaFactory.createNounSchema,
+				getInstruction: SystemInstructionFactory.createNounInstruction,
 			},
 			{
 				type: PartOfSpeech.Adjective,
 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Adjective),
-				fn: enrichAdjectiveTokens,
+				getSchema: PartOfSpeechSchemaFactory.createAdjectiveSchema,
+				getInstruction: SystemInstructionFactory.createAdjectiveInstruction,
 			},
 			{
 				type: PartOfSpeech.Adverb,
 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Adverb),
-				fn: enrichAdverbTokens,
+				getSchema: PartOfSpeechSchemaFactory.createAdverbSchema,
+				getInstruction: SystemInstructionFactory.createAdverbInstruction,
 			},
 			{
 				type: PartOfSpeech.Article,
 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Article),
-				fn: enrichArticleTokens,
+				getSchema: PartOfSpeechSchemaFactory.createArticleSchema,
+				getInstruction: SystemInstructionFactory.createArticleInstruction,
 			},
 			{
 				type: PartOfSpeech.Conjunction,
@@ -90,7 +92,8 @@ export class SpecializedEnricherStep
 					enrichedTokens,
 					PartOfSpeech.Conjunction,
 				),
-				fn: enrichConjunctionTokens,
+				getSchema: PartOfSpeechSchemaFactory.createConjunctionSchema,
+				getInstruction: SystemInstructionFactory.createConjunctionInstruction,
 			},
 			{
 				type: PartOfSpeech.Determiner,
@@ -98,7 +101,8 @@ export class SpecializedEnricherStep
 					enrichedTokens,
 					PartOfSpeech.Determiner,
 				),
-				fn: enrichDeterminerTokens,
+				getSchema: PartOfSpeechSchemaFactory.createDeterminerSchema,
+				getInstruction: SystemInstructionFactory.createDeterminerInstruction,
 			},
 			{
 				type: PartOfSpeech.Interjection,
@@ -106,12 +110,14 @@ export class SpecializedEnricherStep
 					enrichedTokens,
 					PartOfSpeech.Interjection,
 				),
-				fn: enrichInterjectionTokens,
+				getSchema: PartOfSpeechSchemaFactory.createInterjectionSchema,
+				getInstruction: SystemInstructionFactory.createInterjectionInstruction,
 			},
 			{
 				type: PartOfSpeech.Numeral,
 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Numeral),
-				fn: enrichNumeralTokens,
+				getSchema: PartOfSpeechSchemaFactory.createNumeralSchema,
+				getInstruction: SystemInstructionFactory.createNumeralInstruction,
 			},
 			{
 				type: PartOfSpeech.Preposition,
@@ -119,18 +125,20 @@ export class SpecializedEnricherStep
 					enrichedTokens,
 					PartOfSpeech.Preposition,
 				),
-				fn: enrichPrepositionTokens,
+				getSchema: PartOfSpeechSchemaFactory.createPrepositionSchema,
+				getInstruction: SystemInstructionFactory.createPrepositionInstruction,
 			},
 			{
 				type: PartOfSpeech.Pronoun,
 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Pronoun),
-				fn: enrichPronounTokens,
+				getSchema: PartOfSpeechSchemaFactory.createPronounSchema,
+				getInstruction: SystemInstructionFactory.createPronounInstruction,
 			},
 		];
 
 		const results = [];
 
-		for (const {type, tokens, fn} of enrichmentQueue) {
+		for (const {type, tokens, getSchema, getInstruction} of enrichmentQueue) {
 			if (tokens.length === 0) {
 				results.push({type, enriched: []});
 				continue;
@@ -146,7 +154,16 @@ export class SpecializedEnricherStep
 
 			const enriched = await batchProcessor({
 				items: simplifiedTokens,
-				processingFn: fn,
+				processingFn: async batchTokens => {
+					const schema = getSchema();
+					const instruction = getInstruction();
+
+					return this.enricher.enrich({
+						input: batchTokens,
+						schema,
+						instruction,
+					});
+				},
 				batchSize: SpecializedEnricherStep.RATE_LIMITS.BATCH_SIZE,
 				options: {
 					retryAttempts: SpecializedEnricherStep.RATE_LIMITS.RETRY_ATTEMPTS,
@@ -172,16 +189,16 @@ export class SpecializedEnricherStep
 			[] as IWord[],
 		);
 
-		context.tokens.enriched = [
-			...processedTokens,
-			...enrichedTokens.filter(
-				token =>
-					token.tokenType !== TokenType.Word ||
+		const remainingWords = enrichedTokens
+			.filter((token): token is IWord => token.tokenType === TokenType.Word)
+			.filter(
+				wordToken =>
 					!enrichmentQueue
 						.map(q => q.type)
-						.includes(token.partOfSpeech as PartOfSpeech),
-			),
-		];
+						.includes(wordToken.partOfSpeech as PartOfSpeech),
+			);
+
+		context.tokens.enriched = [...processedTokens, ...remainingWords];
 
 		this.logger.info('Specialized enrichment completed', {
 			totalTokens: context.tokens.enriched.length,
@@ -198,7 +215,7 @@ export class SpecializedEnricherStep
 		return context;
 	}
 
-	filterTokensByType(
+	private filterTokensByType(
 		enrichedTokens: (IWord | IPunctuationSign | IEmoji)[],
 		partOfSpeech: PartOfSpeech,
 	): IWord[] {
@@ -209,194 +226,3 @@ export class SpecializedEnricherStep
 		);
 	}
 }
-
-// import {PipelineStep} from '../Pipeline';
-// import {SongProcessingContext} from '../SongProcessingPipeline';
-// import {
-// 	TokenType,
-// 	PartOfSpeech,
-// 	IWord,
-// 	IPunctuationSign,
-// 	IEmoji,
-// } from '../../lib/types';
-// import {
-// 	batchProcessor,
-// 	enrichVerbTokens,
-// 	enrichNounTokens,
-// 	enrichAdjectiveTokens,
-// 	enrichAdverbTokens,
-// 	enrichArticleTokens,
-// 	Logger,
-// 	enrichPronounTokens,
-// 	enrichConjunctionTokens,
-// 	enrichDeterminerTokens,
-// 	enrichInterjectionTokens,
-// 	enrichNumeralTokens,
-// 	enrichPrepositionTokens,
-// } from '../../utils/index';
-
-// export class SpecializedEnricherStep
-// 	implements PipelineStep<SongProcessingContext>
-// {
-// 	private static readonly RATE_LIMITS = {
-// 		BATCH_SIZE: 10,
-// 		RETRY_ATTEMPTS: 3,
-// 		DELAY_BETWEEN_BATCHES: 6000,
-// 		REQUESTS_PER_MINUTE: 1,
-// 	};
-
-// 	private readonly logger = new Logger('SpecializedEnricherStep');
-
-// 	private async processTokensByType<T extends IWord>(
-// 		tokens: T[],
-// 		enrichmentFunction: (
-// 			items: Array<{
-// 				tokenId: string;
-// 				content: string;
-// 				grammaticalInfo: any;
-// 			}>,
-// 		) => Promise<any[]>,
-// 	): Promise<T[]> {
-// 		if (!tokens.length) return [];
-
-// 		const simplifiedTokens = tokens.map(token => ({
-// 			tokenId: token.tokenId,
-// 			content: token.content,
-// 			grammaticalInfo: token.grammaticalInfo,
-// 		}));
-
-// 		const enrichedTokens = await batchProcessor({
-// 			items: simplifiedTokens,
-// 			processingFn: enrichmentFunction,
-// 			batchSize: SpecializedEnricherStep.RATE_LIMITS.BATCH_SIZE,
-// 			options: {
-// 				retryAttempts: SpecializedEnricherStep.RATE_LIMITS.RETRY_ATTEMPTS,
-// 				delayBetweenBatches:
-// 					SpecializedEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
-// 				maxRequestsPerMinute:
-// 					SpecializedEnricherStep.RATE_LIMITS.REQUESTS_PER_MINUTE,
-// 			},
-// 		});
-
-// 		return tokens.map(originalToken => ({
-// 			...originalToken,
-// 			grammaticalInfo:
-// 				enrichedTokens.find(t => t.tokenId === originalToken.tokenId)
-// 					?.grammaticalInfo || originalToken.grammaticalInfo,
-// 		}));
-// 	}
-
-// 	async process(
-// 		context: SongProcessingContext,
-// 	): Promise<SongProcessingContext> {
-// 		this.logger.start('process');
-// 		const enrichedTokens = context.tokens.enriched;
-
-// 		const processingMap = {
-// 			[PartOfSpeech.Verb]: {
-// 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Verb),
-// 				fn: enrichVerbTokens,
-// 			},
-// 			[PartOfSpeech.Noun]: {
-// 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Noun),
-// 				fn: enrichNounTokens,
-// 			},
-// 			[PartOfSpeech.Adjective]: {
-// 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Adjective),
-// 				fn: enrichAdjectiveTokens,
-// 			},
-// 			[PartOfSpeech.Adverb]: {
-// 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Adverb),
-// 				fn: enrichAdverbTokens,
-// 			},
-// 			[PartOfSpeech.Article]: {
-// 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Article),
-// 				fn: enrichArticleTokens,
-// 			},
-// 			[PartOfSpeech.Conjunction]: {
-// 				tokens: this.filterTokensByType(
-// 					enrichedTokens,
-// 					PartOfSpeech.Conjunction,
-// 				),
-// 				fn: enrichConjunctionTokens,
-// 			},
-// 			[PartOfSpeech.Determiner]: {
-// 				tokens: this.filterTokensByType(
-// 					enrichedTokens,
-// 					PartOfSpeech.Determiner,
-// 				),
-// 				fn: enrichDeterminerTokens,
-// 			},
-// 			[PartOfSpeech.Interjection]: {
-// 				tokens: this.filterTokensByType(
-// 					enrichedTokens,
-// 					PartOfSpeech.Interjection,
-// 				),
-// 				fn: enrichInterjectionTokens,
-// 			},
-// 			[PartOfSpeech.Numeral]: {
-// 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Numeral),
-// 				fn: enrichNumeralTokens,
-// 			},
-// 			[PartOfSpeech.Preposition]: {
-// 				tokens: this.filterTokensByType(
-// 					enrichedTokens,
-// 					PartOfSpeech.Preposition,
-// 				),
-// 				fn: enrichPrepositionTokens,
-// 			},
-// 			[PartOfSpeech.Pronoun]: {
-// 				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Pronoun),
-// 				fn: enrichPronounTokens,
-// 			},
-// 		};
-
-// 		// Process all token types in parallel
-// 		const results = await Promise.all(
-// 			Object.entries(processingMap).map(async ([type, {tokens, fn}]) => ({
-// 				type,
-// 				enriched: await this.processTokensByType(tokens, fn),
-// 			})),
-// 		);
-
-// 		// Combine all enriched tokens
-// 		const processedTokens = results.reduce(
-// 			(acc, {enriched}) => [...acc, ...enriched],
-// 			[] as IWord[],
-// 		);
-
-// 		// Add back non-word tokens
-// 		context.tokens.enriched = [
-// 			...processedTokens,
-// 			...enrichedTokens.filter(
-// 				token =>
-// 					token.tokenType !== TokenType.Word ||
-// 					!Object.keys(processingMap).includes(token.partOfSpeech as string),
-// 			),
-// 		];
-
-// 		this.logger.info('Specialized enrichment completed', {
-// 			totalTokens: context.tokens.enriched.length,
-// 			...results.reduce(
-// 				(acc, {type, enriched}) => ({
-// 					...acc,
-// 					[`enriched${type}s`]: enriched.length,
-// 				}),
-// 				{},
-// 			),
-// 		});
-
-// 		this.logger.end('process');
-// 		return context;
-// 	}
-// 	filterTokensByType(
-// 		enrichedTokens: (IWord | IPunctuationSign | IEmoji)[],
-// 		partOfSpeech: PartOfSpeech,
-// 	): IWord[] {
-// 		return enrichedTokens.filter(
-// 			(token): token is IWord =>
-// 				token.tokenType === TokenType.Word &&
-// 				token.partOfSpeech === partOfSpeech,
-// 		);
-// 	}
-// }

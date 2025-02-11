@@ -2,7 +2,7 @@ import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {errors} from '../../lib/constants';
 import {Logger} from '../../utils/index';
-import {ContentType} from '../types/PipelineTypes';
+import {ContentType} from '@bocaditosespanol/shared';
 
 interface LanguageInfo {
 	main: string;
