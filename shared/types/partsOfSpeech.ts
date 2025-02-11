@@ -2,7 +2,7 @@ import {
 	GrammaticalGender,
 	GrammaticalNumber,
 	GrammaticalPerson,
-} from '@shared/types/common';
+} from './common';
 
 export interface INoun {
 	gender: GrammaticalGender | '';
