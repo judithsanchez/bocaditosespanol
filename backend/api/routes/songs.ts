@@ -1,13 +1,18 @@
 import express from 'express';
+import dotenv from 'dotenv';
 import {SongProcessingPipeline} from '../../src/pipelines/SongProcessingPipeline';
 import {Logger} from '../../src/utils/Logger';
 import {DatabaseService} from '../../src/services/DatabaseService';
 import {GeminiProvider} from '../../src/providers/GeminiProvider';
 
+dotenv.config();
+
 const router = express.Router();
 const logger = new Logger('Songs');
-const aiProvider = new GeminiProvider(process.env.GEMINI_API_KEY || '');
-const pipeline = new SongProcessingPipeline(aiProvider);
+const geminiProvider = new GeminiProvider(
+	process.env.GOOGLE_GENERATIVE_AI_KEY || '',
+);
+const pipeline = new SongProcessingPipeline(geminiProvider);
 
 router.get('/', async (_req, res) => {
 	logger.start('getAllSongs');

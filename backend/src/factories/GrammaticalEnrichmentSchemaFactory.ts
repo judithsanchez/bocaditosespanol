@@ -37,7 +37,7 @@ export class PartOfSpeechSchemaFactory {
 			isPastParticiple: true,
 		},
 	) {
-		return this.createSchema(properties);
+		return PartOfSpeechSchemaFactory.createSchema(properties);
 	}
 
 	static createNounSchema(
@@ -48,7 +48,7 @@ export class PartOfSpeechSchemaFactory {
 			diminutive: true,
 		},
 	) {
-		return this.createSchema(properties);
+		return PartOfSpeechSchemaFactory.createSchema(properties);
 	}
 
 	static createVerbSchema(

@@ -67,9 +67,9 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				enriched: [],
 			},
 			tokens: {
-				all: [], // all tokens from the lyrics
+				all: [],
 				words: [],
-				deduplicated: [], // unique tokens within the same lyrics
+				deduplicated: [],
 				newTokens: [],
 				enriched: [],
 			},
