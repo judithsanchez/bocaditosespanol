@@ -1,4 +1,4 @@
-import {BaseWordInstructionFactory} from '../BaseWordInstructionFactory';
+import {BaseWordInstructionFactory} from '../BaseWordSystemInstructionsFactory';
 import {PartOfSpeech} from '@bocaditosespanol/shared';
 
 describe('BaseWordInstructionFactory', () => {

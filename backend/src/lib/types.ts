@@ -92,3 +92,7 @@ export interface IStoredEmoji {
 }
 
 export type StoredToken = IStoredWord | IStoredPunctuationSign | IStoredEmoji;
+
+export interface AIProvider {
+	enrichContent(input: any, schema: any, instruction: string): Promise<any>;
+}
