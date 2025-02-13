@@ -53,42 +53,43 @@ export class GrammaticalEnricherStep
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
+
 		const enrichedTokens = context.tokens.enriched;
 
 		const enrichmentQueue = [
 			{
 				type: PartOfSpeech.Verb,
-				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Verb),
+				tokens: this.filterSensesByType(enrichedTokens, PartOfSpeech.Verb),
 				getSchema: PartOfSpeechSchemaFactory.createVerbSchema,
 				getInstruction: SystemInstructionFactory.createVerbInstruction,
 			},
 			{
 				type: PartOfSpeech.Noun,
-				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Noun),
+				tokens: this.filterSensesByType(enrichedTokens, PartOfSpeech.Noun),
 				getSchema: PartOfSpeechSchemaFactory.createNounSchema,
 				getInstruction: SystemInstructionFactory.createNounInstruction,
 			},
 			{
 				type: PartOfSpeech.Adjective,
-				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Adjective),
+				tokens: this.filterSensesByType(enrichedTokens, PartOfSpeech.Adjective),
 				getSchema: PartOfSpeechSchemaFactory.createAdjectiveSchema,
 				getInstruction: SystemInstructionFactory.createAdjectiveInstruction,
 			},
 			{
 				type: PartOfSpeech.Adverb,
-				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Adverb),
+				tokens: this.filterSensesByType(enrichedTokens, PartOfSpeech.Adverb),
 				getSchema: PartOfSpeechSchemaFactory.createAdverbSchema,
 				getInstruction: SystemInstructionFactory.createAdverbInstruction,
 			},
 			{
 				type: PartOfSpeech.Article,
-				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Article),
+				tokens: this.filterSensesByType(enrichedTokens, PartOfSpeech.Article),
 				getSchema: PartOfSpeechSchemaFactory.createArticleSchema,
 				getInstruction: SystemInstructionFactory.createArticleInstruction,
 			},
 			{
 				type: PartOfSpeech.Conjunction,
-				tokens: this.filterTokensByType(
+				tokens: this.filterSensesByType(
 					enrichedTokens,
 					PartOfSpeech.Conjunction,
 				),
@@ -97,7 +98,7 @@ export class GrammaticalEnricherStep
 			},
 			{
 				type: PartOfSpeech.Determiner,
-				tokens: this.filterTokensByType(
+				tokens: this.filterSensesByType(
 					enrichedTokens,
 					PartOfSpeech.Determiner,
 				),
@@ -106,7 +107,7 @@ export class GrammaticalEnricherStep
 			},
 			{
 				type: PartOfSpeech.Interjection,
-				tokens: this.filterTokensByType(
+				tokens: this.filterSensesByType(
 					enrichedTokens,
 					PartOfSpeech.Interjection,
 				),
@@ -115,13 +116,13 @@ export class GrammaticalEnricherStep
 			},
 			{
 				type: PartOfSpeech.Numeral,
-				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Numeral),
+				tokens: this.filterSensesByType(enrichedTokens, PartOfSpeech.Numeral),
 				getSchema: PartOfSpeechSchemaFactory.createNumeralSchema,
 				getInstruction: SystemInstructionFactory.createNumeralInstruction,
 			},
 			{
 				type: PartOfSpeech.Preposition,
-				tokens: this.filterTokensByType(
+				tokens: this.filterSensesByType(
 					enrichedTokens,
 					PartOfSpeech.Preposition,
 				),
@@ -130,7 +131,7 @@ export class GrammaticalEnricherStep
 			},
 			{
 				type: PartOfSpeech.Pronoun,
-				tokens: this.filterTokensByType(enrichedTokens, PartOfSpeech.Pronoun),
+				tokens: this.filterSensesByType(enrichedTokens, PartOfSpeech.Pronoun),
 				getSchema: PartOfSpeechSchemaFactory.createPronounSchema,
 				getInstruction: SystemInstructionFactory.createPronounInstruction,
 			},
@@ -233,7 +234,7 @@ export class GrammaticalEnricherStep
 		return context;
 	}
 
-	private filterTokensByType(
+	private filterSensesByType(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 		partOfSpeech: PartOfSpeech,
 	): IWord[] {

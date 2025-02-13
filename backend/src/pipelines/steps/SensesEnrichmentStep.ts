@@ -66,6 +66,10 @@ export class SensesEnrichmentStep
 				lastUpdated: Date.now(),
 			};
 		});
+
+		// this.logger.info('Updated enriched tokens:', {
+		// 	tokens: JSON.stringify(context.tokens.enriched, null, 2),
+		// });
 		this.logger.end('process');
 		return context;
 	}

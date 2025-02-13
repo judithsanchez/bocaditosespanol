@@ -9,7 +9,6 @@ import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {DatabaseService} from '../../services/DatabaseService';
-import {stringify} from 'uuid';
 
 export class TokenIdentificationStep
 	implements PipelineStep<SongProcessingContext>
@@ -135,7 +134,7 @@ export class TokenIdentificationStep
 			senses: [
 				{
 					content: '',
-					senseId: `sense-${token.toLowerCase()}`,
+					senseId: '',
 					tokenId: `token-${token.toLowerCase()}`,
 					hasSpecialChar: false,
 					translations: {english: []},

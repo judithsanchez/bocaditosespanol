@@ -1,5 +1,5 @@
 import {SchemaType} from '@google/generative-ai';
-import {PartOfSpeech, TokenType} from '@bocaditosespanol/shared';
+import {PartOfSpeech} from '@bocaditosespanol/shared';
 
 export class TokenAIEnrichmentFactory {
 	static createSenseSchema() {

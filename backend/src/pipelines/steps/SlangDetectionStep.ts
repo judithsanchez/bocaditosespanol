@@ -2,7 +2,6 @@ import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {batchProcessor} from '../../utils/batchProcessor';
-import {IWord, TokenType} from '@bocaditosespanol/shared';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
@@ -21,12 +20,8 @@ export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		const wordTokens = context.tokens.enriched.filter(
-			(token): token is IWord => token.tokenType === TokenType.Word,
-		);
-
 		const enrichedTokens = await batchProcessor({
-			items: wordTokens,
+			items: context.tokens.enriched,
 			processingFn: async tokens => {
 				const schema = TokenAIEnrichmentFactory.createSlangSchema();
 				const instruction =
