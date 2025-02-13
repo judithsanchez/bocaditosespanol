@@ -46,18 +46,25 @@ export interface IEmoji {
 	tokenId: string;
 	content: string;
 }
-
 export interface IWord {
 	tokenId: string;
 	tokenType: TokenType.Word;
 	content: string;
 	normalizedToken: string;
-	translations: {english: Promise<string[]> | string[]};
-	hasSpecialChar: boolean;
-	partOfSpeech: Promise<string> | string;
-	isSlang: boolean;
-	isCognate: boolean;
-	isFalseCognate: boolean;
+	isSlang?: boolean;
+	lastUpdated?: number;
+	isCognate?: boolean;
+	isFalseCognate?: boolean;
+	senses?: ISense[];
+}
+
+export interface ISense {
+	senseId: string;
+	tokenId: string;
+	content: string;
+	hasSpecialChar?: boolean;
+	partOfSpeech?: Promise<string> | string;
+	translations?: {english: Promise<string[]> | string[]};
 	grammaticalInfo?:
 		| IVerb
 		| INoun
@@ -69,7 +76,9 @@ export interface IWord {
 		| IInterjection
 		| INumeral
 		| IPreposition
-		| IPronoun;
+		| IPronoun
+		| {};
+	lastUpdated?: number;
 }
 
 export enum PartOfSpeech {

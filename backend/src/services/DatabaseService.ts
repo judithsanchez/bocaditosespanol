@@ -12,23 +12,9 @@ import {
 } from '@bocaditosespanol/shared';
 
 interface TokenStorage {
-	words: {
-		nouns: Record<string, IWord>;
-		verbs: Record<string, IWord>;
-		adjectives: Record<string, IWord>;
-		adverbs: Record<string, IWord>;
-		pronouns: Record<string, IWord>;
-		determiners: Record<string, IWord>;
-		articles: Record<string, IWord>;
-		prepositions: Record<string, IWord>;
-		conjunctions: Record<string, IWord>;
-		interjections: Record<string, IWord>;
-		numerals: Record<string, IWord>;
-		[key: string]: Record<string, IWord>;
-	};
+	words: Record<string, IWord>;
 	punctuationSigns: Record<string, IPunctuationSign>;
 	emojis: Record<string, IEmoji>;
-	[key: string]: any;
 }
 
 export class DatabaseService {
@@ -40,19 +26,7 @@ export class DatabaseService {
 	}
 
 	private tokens: TokenStorage = {
-		words: {
-			nouns: {},
-			verbs: {},
-			adjectives: {},
-			adverbs: {},
-			pronouns: {},
-			determiners: {},
-			articles: {},
-			prepositions: {},
-			conjunctions: {},
-			interjections: {},
-			numerals: {},
-		},
+		words: {},
 		punctuationSigns: {},
 		emojis: {},
 	};
@@ -124,19 +98,7 @@ export class DatabaseService {
 
 		if (!currentTokens) {
 			currentTokens = {
-				words: {
-					nouns: {},
-					verbs: {},
-					adjectives: {},
-					adverbs: {},
-					pronouns: {},
-					determiners: {},
-					articles: {},
-					prepositions: {},
-					conjunctions: {},
-					interjections: {},
-					numerals: {},
-				},
+				words: {},
 				punctuationSigns: {},
 				emojis: {},
 			};
@@ -152,83 +114,33 @@ export class DatabaseService {
 	}
 
 	private async addToken(token: IWord | IPunctuationSign | IEmoji) {
-		const {
-			category,
-			subcategory,
-			token: processedToken,
-		} = this.categorizeToken(token);
-
-		if (subcategory) {
-			if (!this.tokens[category][subcategory]) {
-				this.tokens[category][subcategory] = {};
-			}
-			this.tokens[category][subcategory][token.tokenId] = processedToken;
-		} else {
-			if (!this.tokens[category]) {
-				this.tokens[category] = {};
-			}
-			this.tokens[category][token.tokenId] = processedToken;
-		}
-	}
-
-	private categorizeToken(token: IWord | IPunctuationSign | IEmoji) {
-		const partOfSpeechMap: Record<string, string> = {
-			noun: 'nouns',
-			verb: 'verbs',
-			adjective: 'adjectives',
-			adverb: 'adverbs',
-			pronoun: 'pronouns',
-			determiner: 'determiners',
-			article: 'articles',
-			preposition: 'prepositions',
-			conjunction: 'conjunctions',
-			interjection: 'interjections',
-			numeral: 'numerals',
-		};
-
 		if (token.tokenType === TokenType.Word) {
-			const wordToken = token as IWord;
-			const subcategory =
-				partOfSpeechMap[wordToken.partOfSpeech as keyof typeof partOfSpeechMap];
-			return {
-				category: 'words',
-				subcategory,
-				token,
-			};
+			this.tokens.words[token.tokenId] = token as IWord;
+		} else if (token.tokenType === TokenType.PunctuationSign) {
+			this.tokens.punctuationSigns[token.tokenId] = token as IPunctuationSign;
+		} else {
+			this.tokens.emojis[token.tokenId] = token as IEmoji;
 		}
-		return {
-			category:
-				token.tokenType === TokenType.PunctuationSign
-					? 'punctuationSigns'
-					: 'emojis',
-			token,
-		};
 	}
 
 	async getTokens(): Promise<Array<IWord | IPunctuationSign | IEmoji>> {
-		const tokens = await this.readFile('tokens.json');
+		const tokens = (await this.readFile('tokens.json')) as TokenStorage;
 		if (!tokens) return [];
 
-		const allTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
+		const allTokens: Array<IWord | IPunctuationSign | IEmoji> = [
+			...(Object.values(tokens.words) as IWord[]),
+			...(Object.values(tokens.punctuationSigns) as IPunctuationSign[]),
+			...(Object.values(tokens.emojis) as IEmoji[]),
+		];
 
-		const wordCategories = tokens.words as Record<
-			string,
-			Record<string, IWord>
-		>;
-		Object.values(wordCategories).forEach(category => {
-			allTokens.push(...(Object.values(category) as IWord[]));
+		return allTokens.sort((a, b) => {
+			if (a.tokenType === TokenType.Word && b.tokenType === TokenType.Word) {
+				return (
+					((b as IWord).lastUpdated || 0) - ((a as IWord).lastUpdated || 0)
+				);
+			}
+			return 0;
 		});
-
-		const punctuationSigns = tokens.punctuationSigns as Record<
-			string,
-			IPunctuationSign
-		>;
-		const emojis = tokens.emojis as Record<string, IEmoji>;
-
-		allTokens.push(...Object.values(punctuationSigns));
-		allTokens.push(...Object.values(emojis));
-
-		return allTokens;
 	}
 
 	async readFile(filename: string) {

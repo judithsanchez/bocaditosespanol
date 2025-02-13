@@ -15,7 +15,7 @@ import {
 	SystemInstructionFactory,
 } from '../../factories';
 
-export class SpecializedEnricherStep
+export class GrammaticalEnricherStep
 	implements PipelineStep<SongProcessingContext>
 {
 	private static readonly RATE_LIMITS = {
@@ -25,7 +25,7 @@ export class SpecializedEnricherStep
 		REQUESTS_PER_MINUTE: 1,
 	};
 
-	private readonly logger = new Logger('SpecializedEnricherStep');
+	private readonly logger = new Logger('GrammaticalEnricherStep');
 	private readonly enricher: GenericAIEnricher;
 	private lastProcessingTime: number = 0;
 
@@ -39,10 +39,10 @@ export class SpecializedEnricherStep
 
 		if (
 			timeSinceLastProcess <
-			SpecializedEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES
+			GrammaticalEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES
 		) {
 			const waitTime =
-				SpecializedEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES -
+				GrammaticalEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES -
 				timeSinceLastProcess;
 			await new Promise(resolve => setTimeout(resolve, waitTime));
 		}
@@ -146,11 +146,17 @@ export class SpecializedEnricherStep
 
 			await this.enforceRateLimit();
 
-			const simplifiedTokens = tokens.map(token => ({
-				tokenId: token.tokenId,
-				content: token.content,
-				grammaticalInfo: token.grammaticalInfo,
-			}));
+			const simplifiedTokens = tokens.flatMap(
+				token =>
+					token.senses
+						?.filter(sense => sense.partOfSpeech === type)
+						.map(sense => ({
+							tokenId: token.tokenId,
+							senseId: sense.senseId,
+							content: token.content,
+							grammaticalInfo: sense.grammaticalInfo,
+						})) ?? [],
+			);
 
 			const enriched = await batchProcessor({
 				items: simplifiedTokens,
@@ -164,29 +170,41 @@ export class SpecializedEnricherStep
 						instruction,
 					});
 				},
-				batchSize: SpecializedEnricherStep.RATE_LIMITS.BATCH_SIZE,
+				batchSize: GrammaticalEnricherStep.RATE_LIMITS.BATCH_SIZE,
 				options: {
-					retryAttempts: SpecializedEnricherStep.RATE_LIMITS.RETRY_ATTEMPTS,
+					retryAttempts: GrammaticalEnricherStep.RATE_LIMITS.RETRY_ATTEMPTS,
 					delayBetweenBatches:
-						SpecializedEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
+						GrammaticalEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
 					maxRequestsPerMinute:
-						SpecializedEnricherStep.RATE_LIMITS.REQUESTS_PER_MINUTE,
+						GrammaticalEnricherStep.RATE_LIMITS.REQUESTS_PER_MINUTE,
 				},
 			});
 
 			const processedTokens = tokens.map(originalToken => ({
 				...originalToken,
-				grammaticalInfo:
-					enriched.find(t => t.tokenId === originalToken.tokenId)
-						?.grammaticalInfo || originalToken.grammaticalInfo,
-			}));
+				lastUpdated: Date.now(),
+				senses: originalToken.senses?.map(sense => {
+					const enrichedSense = enriched.find(
+						e =>
+							e.tokenId === originalToken.tokenId &&
+							e.senseId === sense.senseId,
+					);
 
+					return enrichedSense
+						? {
+								...sense,
+								lastUpdated: Date.now(),
+								grammaticalInfo: enrichedSense.grammaticalInfo,
+							}
+						: sense;
+				}),
+			}));
 			results.push({type, enriched: processedTokens});
 		}
 
-		const processedTokens = results.reduce(
+		const processedTokens = results.reduce<IWord[]>(
 			(acc, {enriched}) => [...acc, ...enriched],
-			[] as IWord[],
+			[],
 		);
 
 		const remainingWords = enrichedTokens
@@ -195,7 +213,7 @@ export class SpecializedEnricherStep
 				wordToken =>
 					!enrichmentQueue
 						.map(q => q.type)
-						.includes(wordToken.partOfSpeech as PartOfSpeech),
+						.includes(wordToken.senses?.[0]?.partOfSpeech as PartOfSpeech),
 			);
 
 		context.tokens.enriched = [...processedTokens, ...remainingWords];
@@ -216,13 +234,13 @@ export class SpecializedEnricherStep
 	}
 
 	private filterTokensByType(
-		enrichedTokens: (IWord | IPunctuationSign | IEmoji)[],
+		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 		partOfSpeech: PartOfSpeech,
 	): IWord[] {
-		return enrichedTokens.filter(
-			(token): token is IWord =>
-				token.tokenType === TokenType.Word &&
-				token.partOfSpeech === partOfSpeech,
-		);
+		return tokens.filter((token): token is IWord => {
+			if (token.tokenType !== TokenType.Word) return false;
+			if (!token.senses) return false;
+			return token.senses.some(sense => sense.partOfSpeech === partOfSpeech);
+		});
 	}
 }

@@ -10,11 +10,13 @@ import {
 import {DatabaseService} from '../services/DatabaseService';
 import {
 	InputValidatorStep,
-	TokenProcessorStep,
-	SentenceProcessorStep,
-	BasicEnricherStep,
-	SpecializedEnricherStep,
-	SentenceEnricherSteps,
+	SentenceFormatterStep,
+	SentenceAIEnricherSteps,
+	TokenIdentificationStep,
+	GrammaticalEnricherStep,
+	SensesEnrichmentStep,
+	CognateAnalysisStep,
+	SlangDetectionStep,
 } from './steps/index';
 import {AddSongRequest, AIProvider} from 'lib/types';
 
@@ -47,11 +49,13 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 			},
 			[
 				new InputValidatorStep(ContentType.SONG),
-				new SentenceProcessorStep(),
-				new TokenProcessorStep(),
-				new SentenceEnricherSteps(aiProvider),
-				new BasicEnricherStep(aiProvider),
-				new SpecializedEnricherStep(aiProvider),
+				new SentenceFormatterStep(),
+				new TokenIdentificationStep(),
+				new SentenceAIEnricherSteps(aiProvider),
+				new SensesEnrichmentStep(aiProvider),
+				new CognateAnalysisStep(aiProvider),
+				new SlangDetectionStep(aiProvider),
+				new GrammaticalEnricherStep(aiProvider),
 			],
 		);
 	}

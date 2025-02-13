@@ -1,6 +1,6 @@
 import {SchemaType} from '@google/generative-ai';
 import {TokenType, PartOfSpeech} from '@bocaditosespanol/shared';
-import {BaseWordSchemaFactory} from '../BaseWordSchemaFactory';
+import {BaseWordSchemaFactory} from '../TokenAIEnrichmentFactory';
 
 describe('BaseWordSchemaFactory', () => {
 	describe('createSchema', () => {

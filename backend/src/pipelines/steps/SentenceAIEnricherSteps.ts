@@ -8,7 +8,7 @@ import {ContentInstructionFactory} from '../../factories/ContentInstructionsFact
 import {AIProvider} from 'lib/types';
 import {ContentType} from '@bocaditosespanol/shared';
 
-export class SentenceEnricherSteps
+export class SentenceAIEnricherSteps
 	implements PipelineStep<SongProcessingContext>
 {
 	private static readonly RATE_LIMITS = {
@@ -18,7 +18,7 @@ export class SentenceEnricherSteps
 		REQUESTS_PER_MINUTE: 1,
 	};
 
-	private readonly logger = new Logger('SentenceEnricherStep');
+	private readonly logger = new Logger('SentenceAIEnricherSteps');
 	private readonly enricher: GenericAIEnricher;
 
 	constructor(aiProvider: AIProvider) {
@@ -46,13 +46,13 @@ export class SentenceEnricherSteps
 
 				return enriched;
 			},
-			batchSize: SentenceEnricherSteps.RATE_LIMITS.BATCH_SIZE,
+			batchSize: SentenceAIEnricherSteps.RATE_LIMITS.BATCH_SIZE,
 			options: {
-				retryAttempts: SentenceEnricherSteps.RATE_LIMITS.RETRY_ATTEMPTS,
+				retryAttempts: SentenceAIEnricherSteps.RATE_LIMITS.RETRY_ATTEMPTS,
 				delayBetweenBatches:
-					SentenceEnricherSteps.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
+					SentenceAIEnricherSteps.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
 				maxRequestsPerMinute:
-					SentenceEnricherSteps.RATE_LIMITS.REQUESTS_PER_MINUTE,
+					SentenceAIEnricherSteps.RATE_LIMITS.REQUESTS_PER_MINUTE,
 			},
 		});
 

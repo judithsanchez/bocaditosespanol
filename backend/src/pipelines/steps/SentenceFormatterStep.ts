@@ -4,10 +4,10 @@ import {SongProcessingContext} from 'pipelines/SongProcessingPipeline';
 import {errors} from '../../lib/constants';
 import {ISentence} from '@bocaditosespanol/shared';
 
-export class SentenceProcessorStep
+export class SentenceFormatterStep
 	implements PipelineStep<SongProcessingContext>
 {
-	private readonly logger = new Logger('SentenceProcessorStep');
+	private readonly logger = new Logger('SentenceFormatterStep');
 
 	async process(
 		context: SongProcessingContext,

@@ -9,9 +9,12 @@ import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {DatabaseService} from '../../services/DatabaseService';
+import {stringify} from 'uuid';
 
-export class TokenProcessorStep implements PipelineStep<SongProcessingContext> {
-	private readonly logger = new Logger('TokenProcessorStep');
+export class TokenIdentificationStep
+	implements PipelineStep<SongProcessingContext>
+{
+	private readonly logger = new Logger('TokenIdentificationStep');
 
 	async process(
 		context: SongProcessingContext,
@@ -126,12 +129,22 @@ export class TokenProcessorStep implements PipelineStep<SongProcessingContext> {
 			content: token,
 			normalizedToken: token.toLowerCase(),
 			tokenType: TokenType.Word,
-			translations: {english: []},
-			hasSpecialChar: /[áéíóúüñ]/i.test(token),
-			partOfSpeech: '',
 			isSlang: false,
 			isCognate: false,
 			isFalseCognate: false,
+			senses: [
+				{
+					content: '',
+					senseId: `sense-${token.toLowerCase()}`,
+					tokenId: `token-${token.toLowerCase()}`,
+					hasSpecialChar: false,
+					translations: {english: []},
+					partOfSpeech: '',
+					grammaticalInfo: {},
+					lastUpdated: Date.now(),
+				},
+			],
+			lastUpdated: Date.now(),
 		} as IWord;
 	}
 }
