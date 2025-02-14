@@ -27,6 +27,12 @@ export class SensesEnrichmentStep
 			(token): token is IWord => token.tokenType === TokenType.Word,
 		);
 
+		this.logger.info('Starting senses enrichment', {
+			tokensToProcess: wordTokens.length,
+			firstToken: wordTokens[0]?.content,
+			lastToken: wordTokens[wordTokens.length - 1]?.content,
+		});
+
 		const enrichedTokens = await batchProcessor({
 			items: wordTokens,
 			processingFn: async tokens => {
@@ -48,28 +54,32 @@ export class SensesEnrichmentStep
 			},
 		});
 
-		context.tokens.enriched = enrichedTokens.map(token => {
-			if ('senses' in token && token.senses) {
+		context.tokens.enriched = wordTokens.map(originalToken => {
+			const enrichedToken = enrichedTokens.find(
+				t => t.tokenId === originalToken.tokenId,
+			);
+
+			if (enrichedToken && 'senses' in enrichedToken && enrichedToken.senses) {
 				return {
-					...token,
-					tokenType: TokenType.Word,
-					lastUpdated: Date.now(),
-					senses: token.senses.map(sense => ({
+					...originalToken,
+					senses: enrichedToken.senses.map(sense => ({
 						...sense,
-						senseId: `sense-${sense.partOfSpeech}-${token.content}`,
+						senseId: `sense-${sense.partOfSpeech}-${originalToken.content}`,
 						lastUpdated: Date.now(),
 					})),
+					lastUpdated: Date.now(),
 				} as IWord;
 			}
-			return {
-				...token,
-				lastUpdated: Date.now(),
-			};
+			return originalToken;
 		});
 
-		// this.logger.info('Updated enriched tokens:', {
-		// 	tokens: JSON.stringify(context.tokens.enriched, null, 2),
-		// });
+		this.logger.info('Senses enrichment completed', {
+			processedTokens: context.tokens.enriched.length,
+			firstEnriched: context.tokens.enriched[0]?.content,
+			lastEnriched:
+				context.tokens.enriched[context.tokens.enriched.length - 1]?.content,
+		});
+
 		this.logger.end('process');
 		return context;
 	}

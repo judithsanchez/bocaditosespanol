@@ -6,6 +6,7 @@ import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
 import {AIProvider} from '../../lib/types';
+import {IWord} from '@bocaditosespanol/shared';
 
 export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 	private readonly logger = new Logger('SlangDetectionStep');
@@ -19,6 +20,13 @@ export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
+
+		this.logger.info('Starting slang detection', {
+			tokensToProcess: context.tokens.enriched.length,
+			firstToken: context.tokens.enriched[0]?.content,
+			lastToken:
+				context.tokens.enriched[context.tokens.enriched.length - 1]?.content,
+		});
 
 		const enrichedTokens = await batchProcessor({
 			items: context.tokens.enriched,
@@ -41,10 +49,28 @@ export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 			},
 		});
 
-		context.tokens.enriched = enrichedTokens.map(token => ({
-			...token,
-			lastUpdated: Date.now(),
-		}));
+		context.tokens.enriched = context.tokens.enriched.map(originalToken => {
+			const enrichedToken = enrichedTokens.find(
+				t => t.tokenId === originalToken.tokenId,
+			);
+
+			if (enrichedToken && 'isSlang' in enrichedToken) {
+				return {
+					...originalToken,
+					isSlang: enrichedToken.isSlang,
+					lastUpdated: Date.now(),
+				};
+			}
+			return originalToken;
+		});
+
+		this.logger.info('Slang detection completed', {
+			processedTokens: context.tokens.enriched.length,
+			slangTokensFound: context.tokens.enriched.filter(
+				(t): t is IWord => 'isSlang' in t && t.isSlang === true,
+			).length,
+		});
+
 		this.logger.end('process');
 		return context;
 	}

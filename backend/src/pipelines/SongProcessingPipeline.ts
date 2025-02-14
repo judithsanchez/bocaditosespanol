@@ -19,7 +19,10 @@ import {
 	SlangDetectionStep,
 } from './steps/index';
 import {AddSongRequest, AIProvider} from 'lib/types';
+import {Logger} from '../utils/index';
 
+// TODO: fix emoji recognition
+// TODO: fix false cognates because now is detecting incorrect info
 export interface SongProcessingContext {
 	rawInput: AddSongRequest;
 	sentences: {
@@ -32,6 +35,8 @@ export interface SongProcessingContext {
 	tokens: {
 		all: Array<IWord | IPunctuationSign | IEmoji>;
 		words: IWord[];
+		punctuationSigns: IPunctuationSign[];
+		emojis: IEmoji[];
 		deduplicated: Array<IWord | IPunctuationSign | IEmoji>;
 		newTokens: Array<IWord | IPunctuationSign | IEmoji>;
 		enriched: Array<IWord | IPunctuationSign | IEmoji>;
@@ -40,6 +45,7 @@ export interface SongProcessingContext {
 }
 export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 	private readonly db = new DatabaseService();
+	protected readonly logger = new Logger('SongProcessingPipeline');
 
 	constructor(aiProvider: AIProvider) {
 		super(
@@ -76,21 +82,27 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				deduplicated: [],
 				newTokens: [],
 				enriched: [],
+				punctuationSigns: [],
+				emojis: [],
 			},
 			song: {} as ISong,
 		};
 	}
 
 	async processText(input: AddSongRequest): Promise<SongProcessingContext> {
+		this.logger.start('processText');
+
 		const context = SongProcessingPipeline.createContext(input);
+		this.logger.info('Context created', {
+			interpreter: input.interpreter,
+			title: input.title,
+		});
+
 		const processedContext = await this.process(context);
+		this.logContextState('After pipeline processing', processedContext);
 
 		processedContext.song = {
-			songId: `${input.title
-				.toLowerCase()
-				.replace(/\s+/g, '-')}-${input.interpreter
-				.toLowerCase()
-				.replace(/\s+/g, '-')}`,
+			songId: `${input.title.toLowerCase().replace(/\s+/g, '-')}-${input.interpreter.toLowerCase().replace(/\s+/g, '-')}`,
 			metadata: {
 				interpreter: input.interpreter,
 				feat: input.feat,
@@ -105,13 +117,51 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 			updatedAt: new Date().toISOString(),
 		};
 
+		this.logger.info('Saving to database');
 		await this.db.saveSentences(processedContext.sentences.enriched, {
 			title: input.title,
 			interpreter: input.interpreter,
 		});
 		await this.db.saveTextEntry(processedContext.song, 'song');
-		await this.db.saveTokens(processedContext.tokens.enriched);
+		await this.db.saveTokens([
+			...processedContext.tokens.enriched,
+			...processedContext.tokens.punctuationSigns,
+			...processedContext.tokens.emojis,
+		]);
 
+		this.logger.info('Database operations completed');
+		this.logger.end('processText');
 		return processedContext;
+	}
+	private logContextState(stepName: string, context: SongProcessingContext) {
+		this.logger.info(`${stepName} - Context State`, {
+			sentences: {
+				raw: {
+					length: context.sentences.raw.length,
+					first: context.sentences.raw[0],
+					last: context.sentences.raw[context.sentences.raw.length - 1],
+				},
+				formatted: {
+					length: context.sentences.formatted.length,
+					first: context.sentences.formatted[0],
+					last: context.sentences.formatted[
+						context.sentences.formatted.length - 1
+					],
+				},
+				deduplicated: {
+					length: context.sentences.deduplicated.length,
+				},
+				enriched: {
+					length: context.sentences.enriched.length,
+				},
+			},
+			tokens: {
+				all: context.tokens.all.length,
+				words: context.tokens.words.length,
+				deduplicated: context.tokens.deduplicated.length,
+				newTokens: context.tokens.newTokens.length,
+				enriched: context.tokens.enriched.length,
+			},
+		});
 	}
 }

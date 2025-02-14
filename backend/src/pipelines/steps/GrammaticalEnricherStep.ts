@@ -7,6 +7,7 @@ import {
 	PartOfSpeech,
 	IPunctuationSign,
 	IEmoji,
+	ISense,
 } from '@bocaditosespanol/shared';
 import {batchProcessor, Logger} from '../../utils/index';
 import {GenericAIEnricher} from '../../utils';
@@ -54,7 +55,16 @@ export class GrammaticalEnricherStep
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
+		this.logger.info('Starting grammatical enrichment', {
+			tokensToProcess: context.tokens.enriched.length,
+			firstToken: context.tokens.enriched[0]?.content,
+			lastToken:
+				context.tokens.enriched[context.tokens.enriched.length - 1]?.content,
+		});
+
 		const enrichedTokens = context.tokens.enriched;
+
+		console.log(enrichedTokens);
 
 		const enrichmentQueue = [
 			{
@@ -137,7 +147,13 @@ export class GrammaticalEnricherStep
 			},
 		];
 
-		const results = [];
+		interface EnrichmentResult {
+			type: PartOfSpeech;
+			enriched: IWord[];
+		}
+
+		const results: EnrichmentResult[] = [];
+		console.log('enrichmentQueue:', results);
 
 		for (const {type, tokens, getSchema, getInstruction} of enrichmentQueue) {
 			if (tokens.length === 0) {
@@ -204,7 +220,7 @@ export class GrammaticalEnricherStep
 		}
 
 		const processedTokens = results.reduce<IWord[]>(
-			(acc, {enriched}) => [...acc, ...enriched],
+			(acc: IWord[], {enriched}: EnrichmentResult) => [...acc, ...enriched],
 			[],
 		);
 
@@ -212,28 +228,95 @@ export class GrammaticalEnricherStep
 			.filter((token): token is IWord => token.tokenType === TokenType.Word)
 			.filter(
 				wordToken =>
-					!enrichmentQueue
-						.map(q => q.type)
-						.includes(wordToken.senses?.[0]?.partOfSpeech as PartOfSpeech),
+					!wordToken.senses?.some(sense =>
+						enrichmentQueue
+							.map(q => q.type)
+							.includes(sense.partOfSpeech as PartOfSpeech),
+					),
 			);
+
+		this.logger.info('Processed tokens:', {
+			count: processedTokens.length,
+			tokens: processedTokens.map(t => ({
+				tokenId: t.tokenId,
+				content: t.content,
+				senses: t.senses?.map(s => s.partOfSpeech),
+			})),
+		});
+
+		this.logger.info('Remaining words:', {
+			count: remainingWords.length,
+			tokens: remainingWords.map(t => ({
+				tokenId: t.tokenId,
+				content: t.content,
+				senses: t.senses?.map(s => s.partOfSpeech),
+			})),
+		});
 
 		context.tokens.enriched = [...processedTokens, ...remainingWords];
 
-		this.logger.info('Specialized enrichment completed', {
+		this.logger.info('Final merged tokens:', {
 			totalTokens: context.tokens.enriched.length,
-			...results.reduce(
-				(acc, {type, enriched}) => ({
-					...acc,
-					[`enriched${type}s`]: enriched.length,
-				}),
-				{},
-			),
+			tokens: context.tokens.enriched.map(t => ({
+				tokenId: t.tokenId,
+				content: t.content,
+				senses: (t as IWord).senses?.map((s: ISense) => s.partOfSpeech),
+			})),
+		});
+
+		this.logger.info('Grammatical enrichment completed', {
+			totalProcessedTokens: context.tokens.enriched.length,
+			byPartOfSpeech: {
+				verbs: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Verb,
+				).length,
+				nouns: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Noun,
+				).length,
+				adjectives: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Adjective,
+				).length,
+				adverbs: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Adverb,
+				).length,
+				articles: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Article,
+				).length,
+				conjunctions: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Conjunction,
+				).length,
+				determiners: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Determiner,
+				).length,
+				interjections: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Interjection,
+				).length,
+				numerals: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Numeral,
+				).length,
+				prepositions: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Preposition,
+				).length,
+				pronouns: this.filterSensesByType(
+					context.tokens.enriched,
+					PartOfSpeech.Pronoun,
+				).length,
+			},
 		});
 
 		this.logger.end('process');
 		return context;
 	}
-
 	private filterSensesByType(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 		partOfSpeech: PartOfSpeech,

@@ -30,6 +30,11 @@ export class SentenceAIEnricherSteps
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
+		this.logger.info('Starting AI enrichment', {
+			sentencesToProcess: context.sentences.deduplicated.length,
+			batchSize: SentenceAIEnricherSteps.RATE_LIMITS.BATCH_SIZE,
+		});
+
 		const schema = ContentSchemaFactory.createSchema(ContentType.SONG);
 		const instruction = ContentInstructionFactory.createInstruction(
 			ContentType.SONG,
@@ -58,8 +63,11 @@ export class SentenceAIEnricherSteps
 
 		context.sentences.enriched = enrichedSentences;
 
-		this.logger.info('Sentence enrichment completed', {
-			totalSentences: context.sentences.enriched.length,
+		this.logger.info('AI enrichment completed', {
+			processedSentences: context.sentences.enriched.length,
+			firstEnriched: context.sentences.enriched[0],
+			lastEnriched:
+				context.sentences.enriched[context.sentences.enriched.length - 1],
 		});
 
 		this.logger.end('process');

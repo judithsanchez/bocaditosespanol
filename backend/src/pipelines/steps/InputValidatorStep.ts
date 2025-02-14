@@ -30,6 +30,11 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
+		this.logger.info('Processing input', {
+			interpreter: context.rawInput.interpreter,
+			title: context.rawInput.title,
+			lyricsLength: context.rawInput.lyrics.length,
+		});
 
 		switch (this.contentType) {
 			case ContentType.SONG:
@@ -47,10 +52,10 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 		}
 
 		context.sentences.raw = [context.rawInput.lyrics];
+		this.logger.info('Validation completed successfully');
 		this.logger.end('process');
 		return context;
 	}
-
 	private validateSongInput(input: AddSongRequest): void {
 		if (!this.validateRequiredFields(input)) {
 			throw new Error(errors.invalidData);

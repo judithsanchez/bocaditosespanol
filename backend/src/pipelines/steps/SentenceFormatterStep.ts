@@ -14,7 +14,15 @@ export class SentenceFormatterStep
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
+		const initialLength = context.sentences.raw.length;
 		context.sentences.raw = this.splitParagraph(context.rawInput.lyrics);
+
+		this.logger.info('Sentences split', {
+			before: initialLength,
+			after: context.sentences.raw.length,
+			firstSentence: context.sentences.raw[0],
+			lastSentence: context.sentences.raw[context.sentences.raw.length - 1],
+		});
 
 		context.sentences.formatted = this.formatSentences({
 			sentences: context.sentences.raw,
@@ -35,16 +43,14 @@ export class SentenceFormatterStep
 			},
 		);
 
-		this.logger.info('Sentence processing completed', {
-			rawCount: context.sentences.raw.length,
-			formattedCount: context.sentences.formatted.length,
-			deduplicatedCount: context.sentences.deduplicated.length,
+		this.logger.info('Formatting completed', {
+			formatted: context.sentences.formatted.length,
+			deduplicated: context.sentences.deduplicated.length,
 		});
 
 		this.logger.end('process');
 		return context;
 	}
-
 	private splitParagraph(text: string): string[] {
 		if (typeof text !== 'string') {
 			throw new TypeError(errors.mustBeString);

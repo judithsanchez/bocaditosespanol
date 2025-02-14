@@ -27,6 +27,12 @@ export class CognateAnalysisStep
 			(token): token is IWord => token.tokenType === TokenType.Word,
 		);
 
+		this.logger.info('Starting cognate analysis', {
+			tokensToAnalyze: wordTokens.length,
+			firstToken: wordTokens[0]?.content,
+			lastToken: wordTokens[wordTokens.length - 1]?.content,
+		});
+
 		const enrichedTokens = await batchProcessor({
 			items: wordTokens,
 			processingFn: async tokens => {
@@ -48,10 +54,32 @@ export class CognateAnalysisStep
 			},
 		});
 
-		context.tokens.enriched = enrichedTokens.map(token => ({
-			...token,
-			lastUpdated: Date.now(),
-		}));
+		context.tokens.enriched = context.tokens.enriched.map(originalToken => {
+			const enrichedToken = enrichedTokens.find(
+				t => t.tokenId === originalToken.tokenId,
+			);
+
+			if (enrichedToken) {
+				return {
+					...originalToken,
+					isCognate: enrichedToken.isCognate,
+					isFalseCognate: enrichedToken.isFalseCognate,
+					lastUpdated: Date.now(),
+				};
+			}
+			return originalToken;
+		});
+
+		this.logger.info('Cognate analysis completed', {
+			analyzedTokens: context.tokens.enriched.length,
+			cognatesFound: context.tokens.enriched.filter(
+				(t): t is IWord => 'isCognate' in t && t.isCognate === true,
+			).length,
+			falseCognatesFound: context.tokens.enriched.filter(
+				(t): t is IWord => 'isFalseCognate' in t && t.isFalseCognate === true,
+			).length,
+		});
+
 		this.logger.end('process');
 		return context;
 	}

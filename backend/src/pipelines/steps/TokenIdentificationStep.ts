@@ -20,6 +20,13 @@ export class TokenIdentificationStep
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
+		const tokenStats = {
+			before: {
+				all: context.tokens.all.length,
+				words: context.tokens.words.length,
+			},
+		};
+
 		const processedSentences = context.sentences.formatted.map(sentence => {
 			const tokens = this.tokenizeSentence(sentence.content);
 
@@ -45,19 +52,19 @@ export class TokenIdentificationStep
 			},
 		);
 
-		this.logger.info('Token processing completed', {
-			totalTokens: context.tokens.all.length,
-			wordTokens: context.tokens.all.filter(t => t.tokenType === TokenType.Word)
-				.length,
-			punctuationTokens: context.tokens.all.filter(
-				t => t.tokenType === TokenType.PunctuationSign,
-			).length,
-			emojiTokens: context.tokens.all.filter(
-				t => t.tokenType === TokenType.Emoji,
-			).length,
-		});
-
 		context.tokens.deduplicated = this.deduplicateTokens(context.tokens.all);
+
+		context.tokens.punctuationSigns = context.tokens.deduplicated.filter(
+			(token): token is IPunctuationSign =>
+				token.tokenType === TokenType.PunctuationSign,
+		);
+		context.tokens.emojis = context.tokens.deduplicated.filter(
+			(token): token is IEmoji => token.tokenType === TokenType.Emoji,
+		);
+
+		context.tokens.deduplicated = context.tokens.deduplicated.filter(
+			token => token.tokenType === TokenType.Word,
+		);
 
 		console.log(
 			'deduplicated tokens:',
@@ -77,10 +84,23 @@ export class TokenIdentificationStep
 
 		context.tokens.newTokens = filteredTokensAgainstDb.newTokens;
 
+		this.logger.info('Token identification completed', {
+			before: tokenStats.before,
+			after: {
+				all: context.tokens.all.length,
+				words: context.tokens.words.length,
+				deduplicated: context.tokens.deduplicated.length,
+				newTokens: context.tokens.newTokens.length,
+			},
+			sampleTokens: {
+				first: context.tokens.all[0],
+				last: context.tokens.all[context.tokens.all.length - 1],
+			},
+		});
+
 		this.logger.end('process');
 		return context;
 	}
-
 	private deduplicateTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Array<IWord | IPunctuationSign | IEmoji> {
