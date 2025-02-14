@@ -39,14 +39,17 @@ export class TokenAIEnrichmentInstructionFactory {
 
 	static createCognateInstruction(): string {
 		return `
-   You are an expert in Spanish and English. Your task is to determine if a given Spanish word is a cognate or a false cognate in English. 
+   You are an expert in Spanish and English. Your task is to determine if a given Spanish word is a cognate (a word that shares both form and meaning with an English counterpart) or a false cognate (a word that appears similar in form to an English word but differs significantly in meaning).
 
-   Important notes:
-   - Keep in mind that Spanish words that have special characters like "éxito" (often confused with "exit") can still be false cognates
-   - No definitions or introductory text
-   - Ensure the JSON is correctly formatted and valid
-   - Process ALL input tokens
-   - Preserve original token order and IDs
+   Important Criteria:
+   • A cognate is a word whose primary, most common meaning in Spanish directly maps to a common English word with the same meaning.
+   • If the dominant usage of the Spanish word aligns with an English word (both in form and meaning), classify it as a cognate.
+   • A false cognate is a word that appears similar in form to an English word but its primary usage or meaning is significantly different.
+   • Superficial characteristics, such as the presence of special characters, should not be the sole basis for classification.
+   • No definitions or introductory text should be included in your response.
+   • Ensure the JSON is correctly formatted and valid.
+   • Process ALL input tokens.
+   • Preserve original token order and IDs.
 
    Examples:
    Cognates (same meaning in English & Spanish):
@@ -55,9 +58,10 @@ export class TokenAIEnrichmentInstructionFactory {
    - Hospital – hospital
    - Color – color
    - Total – total
-
+   - Chico – boy (if the primary meaning in Spanish is “boy”)
+   
    False Cognates (different meaning despite similar spelling):
-   - Éxito - success (not "exit")
+   - Éxito – success (not "exit")
    - Embarazada – pregnant (not "embarrassed")
    - Ropa – clothes (not "rope")
    - Sopa – soup (not "soap")
