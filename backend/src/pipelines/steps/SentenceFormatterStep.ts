@@ -2,78 +2,84 @@ import {PipelineStep} from '../Pipeline';
 import {Logger} from '../../utils/index';
 import {SongProcessingContext} from 'pipelines/SongProcessingPipeline';
 import {errors} from '../../lib/constants';
-import {ISentence} from '@bocaditosespanol/shared';
+import {formattedSentencesSchema, ISentence} from '@bocaditosespanol/shared';
+import {z} from 'zod';
 
 export class SentenceFormatterStep
 	implements PipelineStep<SongProcessingContext>
 {
 	private readonly logger = new Logger('SentenceFormatterStep');
+	private static readonly SENTENCE_END_PATTERN = /(?:[.!?]|\.{3})(?:\s+|$)/g;
+	private static readonly WHITESPACE_PATTERN = /\s+/g;
+	private static readonly NEWLINE_PATTERN = /[\n\r]+/g;
 
 	async process(
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		const initialLength = context.sentences.raw.length;
-		context.sentences.raw = this.splitParagraph(context.rawInput.lyrics);
+		const validatedLyrics = this.validateInput(context.rawInput.lyrics);
+		const splittedSentences = this.splitParagraph(validatedLyrics);
 
-		this.logger.info('Sentences split', {
-			before: initialLength,
-			after: context.sentences.raw.length,
-			firstSentence: context.sentences.raw[0],
-			lastSentence: context.sentences.raw[context.sentences.raw.length - 1],
-		});
+		this.logSplitResults(splittedSentences);
 
 		context.sentences.formatted = this.formatSentences({
-			sentences: context.sentences.raw,
+			sentences: splittedSentences,
 			author: context.rawInput.interpreter,
 			title: context.rawInput.title,
 		});
 
-		context.sentences.originalSentencesIds = context.sentences.formatted.map(
-			s => s.sentenceId,
+		this.validateFormattedSentences(context.sentences.formatted);
+		context.sentences.deduplicated = this.deduplicateSentences(
+			context.sentences.formatted,
 		);
 
-		const seen = new Set();
-		context.sentences.deduplicated = context.sentences.formatted.filter(
-			sentence => {
-				const isDuplicate = seen.has(sentence.content);
-				seen.add(sentence.content);
-				return !isDuplicate;
-			},
-		);
-
-		this.logger.info('Formatting completed', {
-			formatted: context.sentences.formatted.length,
-			deduplicated: context.sentences.deduplicated.length,
-		});
+		this.logFormattingResults(context.sentences);
 
 		this.logger.end('process');
 		return context;
 	}
+
+	private validateInput(lyrics: string): string {
+		const lyricsSchema = z.string().min(1);
+		return lyricsSchema.parse(lyrics);
+	}
+
+	private validateFormattedSentences(sentences: ISentence[]): void {
+		const result = formattedSentencesSchema.safeParse(sentences);
+		if (!result.success) {
+			throw new Error(
+				`Sentence formatting validation failed: ${result.error.format()}`,
+			);
+		}
+	}
+
 	private splitParagraph(text: string): string[] {
 		if (typeof text !== 'string') {
 			throw new TypeError(errors.mustBeString);
 		}
 
-		const lowercaseText = text.toLowerCase();
+		const normalizedText = this.normalizeText(text);
+		return this.extractSentences(normalizedText);
+	}
 
-		const normalizedText = lowercaseText
-			.replace(/\s+/g, ' ')
-			.replace(/[\n\r]+/g, ' ');
+	private normalizeText(text: string): string {
+		return text
+			.toLowerCase()
+			.replace(SentenceFormatterStep.WHITESPACE_PATTERN, ' ')
+			.replace(SentenceFormatterStep.NEWLINE_PATTERN, ' ');
+	}
 
-		const sentenceEndRegex = /(?:[.!?]|\.{3})(?:\s+|$)/g;
+	private extractSentences(normalizedText: string): string[] {
 		const sentences: string[] = [];
 		let lastIndex = 0;
 
-		for (const match of normalizedText.matchAll(sentenceEndRegex)) {
+		for (const match of normalizedText.matchAll(
+			SentenceFormatterStep.SENTENCE_END_PATTERN,
+		)) {
 			if (match.index !== undefined) {
-				const sentence = normalizedText
-					.slice(lastIndex, match.index + match[0].length)
-					.trim();
-				if (sentence) {
-					sentences.push(sentence);
-				}
+				const sentence = this.extractSentence(normalizedText, lastIndex, match);
+				if (sentence) sentences.push(sentence);
 				lastIndex = match.index + match[0].length;
 			}
 		}
@@ -84,6 +90,14 @@ export class SentenceFormatterStep
 		}
 
 		return sentences;
+	}
+
+	private extractSentence(
+		text: string,
+		startIndex: number,
+		match: RegExpMatchArray,
+	): string {
+		return text.slice(startIndex, match.index! + match[0].length).trim();
 	}
 
 	private formatSentences({
@@ -102,20 +116,71 @@ export class SentenceFormatterStep
 				sentenceMap.set(sentence, sentenceMap.size + 1);
 			}
 
-			const sentenceNumber = sentenceMap.get(sentence);
-			return {
-				sentenceId: `sentence-${sentenceNumber}-${title
-					.toLowerCase()
-					.replace(/\s+/g, '-')}-${author.toLowerCase().replace(/\s+/g, '-')}`,
-				content: sentence,
-				translations: {
-					english: {
-						literal: '',
-						contextual: '',
-					},
+			return this.createSentence(
+				sentence,
+				sentenceMap.get(sentence)!,
+				title,
+				author,
+			);
+		});
+	}
+
+	private createSentence(
+		content: string,
+		number: number,
+		title: string,
+		author: string,
+	): ISentence {
+		return {
+			sentenceId: this.generateSentenceId(number, title, author),
+			content,
+			translations: {
+				english: {
+					literal: '',
+					contextual: '',
 				},
-				tokenIds: [],
-			};
+			},
+			tokenIds: [],
+		};
+	}
+
+	private generateSentenceId(
+		sentenceNumber: number,
+		title: string,
+		author: string,
+	): string {
+		return `sentence-${sentenceNumber}-${this.slugify(title)}-${this.slugify(author)}`;
+	}
+
+	private slugify(text: string): string {
+		return text
+			.toLowerCase()
+			.replace(SentenceFormatterStep.WHITESPACE_PATTERN, '-');
+	}
+
+	private deduplicateSentences(sentences: ISentence[]): ISentence[] {
+		const seen = new Set();
+		return sentences.filter(sentence => {
+			const isDuplicate = seen.has(sentence.content);
+			seen.add(sentence.content);
+			return !isDuplicate;
+		});
+	}
+
+	private logSplitResults(sentences: string[]): void {
+		this.logger.info('Sentences split', {
+			firstSentence: sentences[0],
+			lastSentence: sentences[sentences.length - 1],
+		});
+	}
+
+	private logFormattingResults(sentences: {
+		formatted: ISentence[];
+		deduplicated: ISentence[];
+	}): void {
+		this.logger.info('Formatting completed', {
+			formatted: sentences.formatted.length,
+			deduplicated: sentences.deduplicated.length,
 		});
 	}
 }

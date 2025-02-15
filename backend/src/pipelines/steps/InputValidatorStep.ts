@@ -1,23 +1,7 @@
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
-import {errors} from '../../lib/constants';
 import {Logger} from '../../utils/index';
-import {ContentType} from '@bocaditosespanol/shared';
-
-interface LanguageInfo {
-	main: string;
-	variant: string[];
-}
-
-interface AddSongRequest {
-	interpreter: string;
-	title: string;
-	youtube: string;
-	genre: string[];
-	language: LanguageInfo;
-	releaseDate: string;
-	lyrics: string;
-}
+import {ContentType, songRequestSchema} from '@bocaditosespanol/shared';
 
 export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 	private readonly logger: Logger;
@@ -30,73 +14,45 @@ export class InputValidatorStep implements PipelineStep<SongProcessingContext> {
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
-		this.logger.info('Processing input', {
-			interpreter: context.rawInput.interpreter,
-			title: context.rawInput.title,
-			lyricsLength: context.rawInput.lyrics.length,
-		});
 
-		switch (this.contentType) {
-			case ContentType.SONG:
-				this.validateSongInput({
-					...context.rawInput,
-					language: {
-						main: context.rawInput.language,
-						variant: [],
-					},
-				});
-				break;
+		this.logInputDetails(context);
+		await this.validateContentType(context);
 
-			default:
-				throw new Error('Unsupported content type');
-		}
-
-		context.sentences.raw = [context.rawInput.lyrics];
 		this.logger.info('Validation completed successfully');
 		this.logger.end('process');
 		return context;
 	}
-	private validateSongInput(input: AddSongRequest): void {
-		if (!this.validateRequiredFields(input)) {
-			throw new Error(errors.invalidData);
-		}
 
-		this.validateDataTypes(input);
-
-		this.logger.info('Input validation completed', {
-			title: input.title,
-			interpreter: input.interpreter,
-			lyricsLength: input.lyrics.length,
+	private logInputDetails(context: SongProcessingContext): void {
+		this.logger.info('Processing input', {
+			interpreter: context.rawInput.interpreter,
+			title: context.rawInput.title,
 		});
 	}
 
-	private validateRequiredFields(input: AddSongRequest): boolean {
-		return !!(
-			input.interpreter &&
-			input.title &&
-			input.youtube &&
-			input.genre &&
-			input.language &&
-			input.releaseDate &&
-			input.lyrics
-		);
+	private async validateContentType(
+		context: SongProcessingContext,
+	): Promise<void> {
+		switch (this.contentType) {
+			case ContentType.SONG:
+				await this.validateSongInput(context);
+				break;
+			default:
+				throw new Error(`Unsupported content type: ${this.contentType}`);
+		}
 	}
 
-	private validateDataTypes(input: AddSongRequest): void {
-		if (
-			typeof input.interpreter !== 'string' ||
-			typeof input.title !== 'string' ||
-			typeof input.youtube !== 'string' ||
-			typeof input.lyrics !== 'string' ||
-			typeof input.language !== 'object' ||
-			!input.language.main ||
-			!Array.isArray(input.language.variant)
-		) {
-			throw new Error(errors.invalidTextData);
-		}
+	private async validateSongInput(
+		context: SongProcessingContext,
+	): Promise<void> {
+		const result = songRequestSchema.safeParse(context.rawInput);
 
-		if (!Array.isArray(input.genre)) {
-			throw new Error(errors.invalidData);
+		if (!result.success) {
+			throw new Error(this.formatValidationError(result.error.format()));
 		}
+	}
+
+	private formatValidationError(error: unknown): string {
+		return `Validation failed: ${JSON.stringify(error)}`;
 	}
 }

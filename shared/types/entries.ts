@@ -10,6 +10,6 @@ export interface ISong {
 		releaseDate: string;
 	};
 	lyrics: string[];
-	createdAt: string;
-	updatedAt: string;
+	createdAt: number;
+	updatedAt: number;
 }

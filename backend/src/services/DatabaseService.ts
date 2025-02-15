@@ -9,6 +9,7 @@ import {
 	IEmoji,
 	ISong,
 	TokenType,
+	Token,
 } from '@bocaditosespanol/shared';
 
 interface TokenStorage {
@@ -74,11 +75,9 @@ export class DatabaseService {
 		await this.writeFile('sentences.json', existingSentences);
 	}
 
-	async filterExistingTokens(
-		tokens: Array<IWord | IPunctuationSign | IEmoji>,
-	): Promise<{
-		existingTokens: Array<IWord | IPunctuationSign | IEmoji>;
-		newTokens: Array<IWord | IPunctuationSign | IEmoji>;
+	async filterExistingTokens(tokens: Token[]): Promise<{
+		existingTokens: Token[];
+		newTokens: Token[];
 	}> {
 		const existingDbTokens = await this.getTokens();
 		const existingTokenIds = new Set(existingDbTokens.map(t => t.tokenId));

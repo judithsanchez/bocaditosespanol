@@ -4,7 +4,6 @@ import cors from 'cors';
 import songRoutes from './routes/songs';
 import {Logger} from '../src/utils/Logger';
 import {NextFunction} from 'express';
-import geminiTestRoutes from '../src/__tests__/GeminiTestController';
 
 interface Error {
 	message: string;
@@ -51,5 +50,3 @@ app.listen(port, () => {
 });
 
 export default (req: Request, res: Response) => app(req, res);
-
-app.use('/api', geminiTestRoutes);

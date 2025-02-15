@@ -1,4 +1,13 @@
-import {BatchProcessorConfig} from '../lib/types';
+export interface BatchProcessorConfig<T> {
+	items: T[];
+	processingFn: (items: T[]) => Promise<T[]>;
+	batchSize: number;
+	options: {
+		retryAttempts: number;
+		delayBetweenBatches: number;
+		maxRequestsPerMinute: number;
+	};
+}
 import {errors} from '../lib/constants';
 import {Logger} from './Logger';
 
@@ -109,7 +118,7 @@ export async function batchProcessor<T>({
 	logger.info('Batch processing completed', {
 		totalProcessed: results.length,
 		originalCount: items.length,
-		timestamp: new Date().toISOString(),
+		timestamp: Date.now(),
 	});
 
 	logger.end('batchProcessor');

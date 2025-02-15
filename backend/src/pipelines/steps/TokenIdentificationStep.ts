@@ -1,110 +1,89 @@
-import emojiRegex from 'emoji-regex';
 import {
-	IEmoji,
-	IPunctuationSign,
-	IWord,
+	Token,
 	TokenType,
+	WordToken,
+	PunctuationToken,
+	EmojiToken,
+	ISentence,
+	IWord,
+	IPunctuationSign,
+	IEmoji,
 } from '@bocaditosespanol/shared';
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {DatabaseService} from '../../services/DatabaseService';
+import {TokenFactory} from '../../factories/TokenFactory';
 
 export class TokenIdentificationStep
 	implements PipelineStep<SongProcessingContext>
 {
 	private readonly logger = new Logger('TokenIdentificationStep');
+	private readonly db: DatabaseService;
+
+	constructor(db: DatabaseService) {
+		this.db = db;
+	}
 
 	async process(
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		const tokenStats = {
-			before: {
-				all: context.tokens.all.length,
-				words: context.tokens.words.length,
-			},
-		};
-
-		const processedSentences = context.sentences.formatted.map(sentence => {
-			const tokens = this.tokenizeSentence(sentence.content);
-
-			context.tokens.all.push(...tokens);
-
-			return {
-				...sentence,
-				tokenIds: tokens.map(token => token.tokenId),
-			};
-		});
-
+		const processedSentences = this.processSentences(
+			context.sentences.formatted,
+		);
 		context.sentences.formatted = processedSentences;
 
-		context.sentences.deduplicated = context.sentences.deduplicated.map(
-			sentence => {
-				const matchingSentence = processedSentences.find(
-					processed => processed.content === sentence.content,
-				);
-				return {
-					...sentence,
-					tokenIds: matchingSentence?.tokenIds || [],
-				};
-			},
+		context.sentences.deduplicated = this.updateDedupedSentences(
+			context.sentences.deduplicated,
+			processedSentences,
 		);
 
-		context.tokens.deduplicated = this.deduplicateTokens(context.tokens.all);
+		const allTokens = this.collectTokensFromSentences(processedSentences);
+		context.tokens.deduplicated = this.deduplicateTokens(allTokens);
 
-		context.tokens.punctuationSigns = context.tokens.deduplicated.filter(
-			(token): token is IPunctuationSign =>
-				token.tokenType === TokenType.PunctuationSign,
-		);
-		context.tokens.emojis = context.tokens.deduplicated.filter(
-			(token): token is IEmoji => token.tokenType === TokenType.Emoji,
-		);
-
-		context.tokens.deduplicated = context.tokens.deduplicated.filter(
-			token => token.tokenType === TokenType.Word,
-		);
-
-		console.log(
-			'deduplicated tokens:',
-			JSON.stringify(context.tokens.deduplicated, null, 2),
-		);
-
-		const db = new DatabaseService();
-
-		const filteredTokensAgainstDb = await db.filterExistingTokens(
+		const {newTokens} = await this.db.filterExistingTokens(
 			context.tokens.deduplicated,
 		);
-
-		console.log(
-			'filteredTokensAgainstDb:',
-			JSON.stringify(filteredTokensAgainstDb, null, 2),
-		);
-
-		context.tokens.newTokens = filteredTokensAgainstDb.newTokens;
-
-		this.logger.info('Token identification completed', {
-			before: tokenStats.before,
-			after: {
-				all: context.tokens.all.length,
-				words: context.tokens.words.length,
-				deduplicated: context.tokens.deduplicated.length,
-				newTokens: context.tokens.newTokens.length,
-			},
-			sampleTokens: {
-				first: context.tokens.all[0],
-				last: context.tokens.all[context.tokens.all.length - 1],
-			},
-		});
+		this.categorizeTokens(context, newTokens);
 
 		this.logger.end('process');
 		return context;
 	}
-	private deduplicateTokens(
-		tokens: Array<IWord | IPunctuationSign | IEmoji>,
-	): Array<IWord | IPunctuationSign | IEmoji> {
-		const uniqueTokens = new Map<string, IWord | IPunctuationSign | IEmoji>();
+
+	private processSentences(sentences: ISentence[]): ISentence[] {
+		return sentences.map(sentence => ({
+			...sentence,
+			tokenIds: this.tokenizeSentence(sentence.content).map(
+				token => token.tokenId,
+			),
+		}));
+	}
+
+	private tokenizeSentence(content: string): Token[] {
+		const tokens = TokenFactory.splitIntoTokens(content);
+		return tokens.map(token => TokenFactory.createToken(token));
+	}
+	private categorizeTokens(
+		context: SongProcessingContext,
+		tokens: Token[],
+	): void {
+		context.tokens.words = tokens.filter(
+			(token): token is WordToken => token.tokenType === TokenType.Word,
+		) as IWord[];
+
+		context.tokens.punctuationSigns = tokens.filter(
+			(token): token is PunctuationToken =>
+				token.tokenType === TokenType.PunctuationSign,
+		) as IPunctuationSign[];
+
+		context.tokens.emojis = tokens.filter(
+			(token): token is EmojiToken => token.tokenType === TokenType.Emoji,
+		) as IEmoji[];
+	}
+	private deduplicateTokens(tokens: Token[]): Token[] {
+		const uniqueTokens = new Map<string, Token>();
 		tokens.forEach(token => {
 			if (!uniqueTokens.has(token.tokenId)) {
 				uniqueTokens.set(token.tokenId, token);
@@ -112,58 +91,24 @@ export class TokenIdentificationStep
 		});
 		return Array.from(uniqueTokens.values());
 	}
-	private tokenizeSentence(
-		content: string,
-	): Array<IWord | IPunctuationSign | IEmoji> {
-		const trimmedContent = content.trim().replace(/\s+/g, ' ');
-		const emojiPattern = emojiRegex();
-		const pattern = `(${emojiPattern.source}|\\.{3}|[.?!¡¿,:;'"\\s-])`;
-		const regex = new RegExp(pattern, 'gu');
 
-		return trimmedContent
-			.split(regex)
-			.filter(token => token.trim() !== '')
-			.map(token => this.createToken(token));
+	private updateDedupedSentences(
+		dedupedSentences: ISentence[],
+		processedSentences: ISentence[],
+	): ISentence[] {
+		return dedupedSentences.map(dedupedSentence => {
+			const matchingSentence = processedSentences.find(
+				s => s.content === dedupedSentence.content,
+			);
+			return matchingSentence
+				? {...dedupedSentence, tokenIds: matchingSentence.tokenIds}
+				: dedupedSentence;
+		});
 	}
 
-	private createToken(token: string): IWord | IPunctuationSign | IEmoji {
-		if (emojiRegex().test(token)) {
-			return {
-				tokenId: `token-${token}`,
-				content: token,
-				tokenType: TokenType.Emoji,
-			} as IEmoji;
-		}
-
-		if (/^[.?!¡¿,:;'"\\s-]+$/.test(token)) {
-			return {
-				tokenId: `token-${token}`,
-				content: token,
-				tokenType: TokenType.PunctuationSign,
-			} as IPunctuationSign;
-		}
-
-		return {
-			tokenId: `token-${token.toLowerCase()}`,
-			content: token,
-			normalizedToken: token.toLowerCase(),
-			tokenType: TokenType.Word,
-			isSlang: false,
-			isCognate: false,
-			isFalseCognate: false,
-			senses: [
-				{
-					content: '',
-					senseId: '',
-					tokenId: `token-${token.toLowerCase()}`,
-					hasSpecialChar: false,
-					translations: {english: []},
-					partOfSpeech: '',
-					grammaticalInfo: {},
-					lastUpdated: Date.now(),
-				},
-			],
-			lastUpdated: Date.now(),
-		} as IWord;
+	private collectTokensFromSentences(sentences: ISentence[]): Token[] {
+		return sentences.flatMap(sentence =>
+			this.tokenizeSentence(sentence.content),
+		);
 	}
 }

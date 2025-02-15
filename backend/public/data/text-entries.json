@@ -5,7 +5,7 @@
       "metadata": {
         "interpreter": "test",
         "title": "test",
-        "youtube": "www",
+        "youtube": "https://www.youtube.com/watch?v=example",
         "genre": [
           "test"
         ],
@@ -14,10 +14,12 @@
       },
       "lyrics": [
         "sentence-1-test-test",
+        "sentence-2-test-test",
+        "sentence-1-test-test",
         "sentence-2-test-test"
       ],
-      "createdAt": "2025-02-14T15:19:25.682Z",
-      "updatedAt": "2025-02-14T15:19:25.682Z"
+      "createdAt": 1739644258589,
+      "updatedAt": 1739644258589
     }
   ]
 }

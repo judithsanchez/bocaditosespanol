@@ -2,7 +2,7 @@ import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {batchProcessor} from '../../utils/batchProcessor';
-import {IWord, TokenType} from '@bocaditosespanol/shared';
+import {IWord} from '@bocaditosespanol/shared';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
@@ -23,18 +23,14 @@ export class SensesEnrichmentStep
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		const wordTokens = context.tokens.newTokens.filter(
-			(token): token is IWord => token.tokenType === TokenType.Word,
-		);
-
 		this.logger.info('Starting senses enrichment', {
-			tokensToProcess: wordTokens.length,
-			firstToken: wordTokens[0]?.content,
-			lastToken: wordTokens[wordTokens.length - 1]?.content,
+			tokensToProcess: context.tokens.words.length,
+			firstToken: context.tokens.words[0]?.content,
+			lastToken: context.tokens.words[context.tokens.words.length - 1]?.content,
 		});
 
 		const enrichedTokens = await batchProcessor({
-			items: wordTokens,
+			items: context.tokens.words,
 			processingFn: async tokens => {
 				const schema = TokenAIEnrichmentFactory.createSenseSchema();
 				const instruction =
@@ -54,7 +50,7 @@ export class SensesEnrichmentStep
 			},
 		});
 
-		context.tokens.enriched = wordTokens.map(originalToken => {
+		context.tokens.enriched = context.tokens.words.map(originalToken => {
 			const enrichedToken = enrichedTokens.find(
 				t => t.tokenId === originalToken.tokenId,
 			);

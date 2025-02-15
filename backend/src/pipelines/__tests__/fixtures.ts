@@ -1,4 +1,4 @@
-import {AddSongRequest} from '../../lib/types';
+import {AddSongRequest} from '@bocaditosespanol/shared';
 
 export const mockSongRequest: AddSongRequest = {
 	title: 'Vivir Mi Vida',
@@ -6,7 +6,7 @@ export const mockSongRequest: AddSongRequest = {
 	feat: [],
 	youtube: 'https://youtube.com/watch?v=YXnjy5YlDwk',
 	genre: ['salsa'],
-	language: 'es',
+	language: {main: 'es', variant: []},
 	releaseDate: '2013-07-23',
 	lyrics:
 		'Voy a reír, voy a bailar\nVivir mi vida lalalalá\nVoy a reír, voy a gozar\nVivir mi vida lalalalá',
@@ -33,10 +33,8 @@ export const expectedProcessedContext = {
 		enriched: [],
 	},
 	tokens: {
-		all: [],
 		words: [],
 		deduplicated: [],
-		newTokens: [],
 		enriched: [],
 	},
 	song: {

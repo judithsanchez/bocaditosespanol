@@ -6,6 +6,9 @@ import {
 	ISentence,
 	ISong,
 	IWord,
+	songRequestSchema,
+	AddSongRequest,
+	Token,
 } from '@bocaditosespanol/shared';
 import {DatabaseService} from '../services/DatabaseService';
 import {
@@ -18,36 +21,32 @@ import {
 	CognateAnalysisStep,
 	SlangDetectionStep,
 } from './steps/index';
-import {AddSongRequest, AIProvider} from 'lib/types';
+import {AIProvider} from 'lib/types';
 import {Logger} from '../utils/index';
 
 // TODO: fix emoji recognition
-// TODO: fix false cognates because now is detecting incorrect info
 export interface SongProcessingContext {
 	rawInput: AddSongRequest;
 	sentences: {
-		raw: string[];
 		formatted: ISentence[];
-		originalSentencesIds: string[];
 		deduplicated: ISentence[];
 		enriched: ISentence[];
 	};
 	tokens: {
-		all: Array<IWord | IPunctuationSign | IEmoji>;
 		words: IWord[];
 		punctuationSigns: IPunctuationSign[];
 		emojis: IEmoji[];
-		deduplicated: Array<IWord | IPunctuationSign | IEmoji>;
-		newTokens: Array<IWord | IPunctuationSign | IEmoji>;
-		enriched: Array<IWord | IPunctuationSign | IEmoji>;
+		deduplicated: Token[];
+		enriched: Token[];
 	};
 	song: ISong;
 }
 export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
-	private readonly db = new DatabaseService();
-	protected readonly logger = new Logger('SongProcessingPipeline');
-
+	private readonly db: DatabaseService;
+	protected readonly logger: Logger;
 	constructor(aiProvider: AIProvider) {
+		const db = new DatabaseService();
+
 		super(
 			{
 				name: 'SongProcessing',
@@ -56,7 +55,7 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 			[
 				new InputValidatorStep(ContentType.SONG),
 				new SentenceFormatterStep(),
-				new TokenIdentificationStep(),
+				new TokenIdentificationStep(db),
 				new SentenceAIEnricherSteps(aiProvider),
 				new SensesEnrichmentStep(aiProvider),
 				new CognateAnalysisStep(aiProvider),
@@ -64,23 +63,20 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				new GrammaticalEnricherStep(aiProvider),
 			],
 		);
+		this.db = new DatabaseService();
+		this.logger = new Logger('SongProcessingPipeline');
 	}
-
 	static createContext(input: AddSongRequest): SongProcessingContext {
 		return {
 			rawInput: input,
 			sentences: {
-				raw: [],
 				formatted: [],
-				originalSentencesIds: [],
 				deduplicated: [],
 				enriched: [],
 			},
 			tokens: {
-				all: [],
 				words: [],
 				deduplicated: [],
-				newTokens: [],
 				enriched: [],
 				punctuationSigns: [],
 				emojis: [],
@@ -92,7 +88,12 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 	async processText(input: AddSongRequest): Promise<SongProcessingContext> {
 		this.logger.start('processText');
 
-		const context = SongProcessingPipeline.createContext(input);
+		const validationResult = songRequestSchema.safeParse(input);
+		if (!validationResult.success) {
+			throw new Error(`Invalid song data: ${validationResult.error.message}`);
+		}
+
+		const context = SongProcessingPipeline.createContext(validationResult.data);
 		this.logger.info('Context created', {
 			interpreter: input.interpreter,
 			title: input.title,
@@ -109,12 +110,12 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				title: input.title,
 				youtube: input.youtube,
 				genre: input.genre,
-				language: input.language,
+				language: input.language.main,
 				releaseDate: input.releaseDate,
 			},
 			lyrics: processedContext.sentences.formatted.map(s => s.sentenceId),
-			createdAt: new Date().toISOString(),
-			updatedAt: new Date().toISOString(),
+			createdAt: Date.now(),
+			updatedAt: Date.now(),
 		};
 
 		this.logger.info('Saving to database');
@@ -136,11 +137,6 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 	private logContextState(stepName: string, context: SongProcessingContext) {
 		this.logger.info(`${stepName} - Context State`, {
 			sentences: {
-				raw: {
-					length: context.sentences.raw.length,
-					first: context.sentences.raw[0],
-					last: context.sentences.raw[context.sentences.raw.length - 1],
-				},
 				formatted: {
 					length: context.sentences.formatted.length,
 					first: context.sentences.formatted[0],
@@ -156,10 +152,8 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				},
 			},
 			tokens: {
-				all: context.tokens.all.length,
 				words: context.tokens.words.length,
 				deduplicated: context.tokens.deduplicated.length,
-				newTokens: context.tokens.newTokens.length,
 				enriched: context.tokens.enriched.length,
 			},
 		});

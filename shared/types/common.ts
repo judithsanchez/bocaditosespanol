@@ -1,16 +1,21 @@
-import {
-	IAdjective,
-	IAdverb,
-	IArticle,
-	IConjunction,
-	IDeterminer,
-	IInterjection,
-	INoun,
-	INumeral,
-	IPreposition,
-	IPronoun,
-	IVerb,
-} from './partsOfSpeech';
+import {z} from 'zod';
+
+export const songRequestSchema = z.object({
+	interpreter: z.string().min(1),
+	feat: z.array(z.string()).optional(),
+	title: z.string().min(1),
+	youtube: z.string().url(),
+	genre: z.array(z.string()),
+	language: z.object({
+		main: z.string(),
+		variant: z.array(z.string()),
+	}),
+	releaseDate: z.string(),
+	lyrics: z.string().min(1),
+	aiProvider: z.string().optional(),
+});
+
+export type AddSongRequest = z.infer<typeof songRequestSchema>;
 
 export enum ContentType {
 	SONG = 'song',
@@ -35,6 +40,53 @@ export enum TokenType {
 	PunctuationSign = 'punctuationSign',
 }
 
+const baseTokenSchema = z.object({
+	tokenId: z.string(),
+	content: z.string(),
+});
+
+export const emojiTokenSchema = baseTokenSchema.extend({
+	tokenType: z.literal(TokenType.Emoji),
+});
+
+export const punctuationTokenSchema = baseTokenSchema.extend({
+	tokenType: z.literal(TokenType.PunctuationSign),
+});
+
+export const wordTokenSchema = baseTokenSchema.extend({
+	tokenType: z.literal(TokenType.Word),
+	normalizedToken: z.string(),
+	isSlang: z.boolean(),
+	isCognate: z.boolean(),
+	isFalseCognate: z.boolean(),
+	lastUpdated: z.number(),
+	senses: z.array(
+		z.object({
+			senseId: z.string(),
+			tokenId: z.string(),
+			content: z.string(),
+			hasSpecialChar: z.boolean(),
+			translations: z.object({
+				english: z.array(z.string()),
+			}),
+			partOfSpeech: z.string(),
+			grammaticalInfo: z.record(z.any()),
+			lastUpdated: z.number(),
+		}),
+	),
+});
+
+export const tokenSchema = z.discriminatedUnion('tokenType', [
+	emojiTokenSchema,
+	punctuationTokenSchema,
+	wordTokenSchema,
+]);
+
+export type EmojiToken = z.infer<typeof emojiTokenSchema>;
+export type PunctuationToken = z.infer<typeof punctuationTokenSchema>;
+export type WordToken = z.infer<typeof wordTokenSchema>;
+export type Token = z.infer<typeof tokenSchema>;
+
 export interface IPunctuationSign {
 	tokenType: TokenType.PunctuationSign;
 	tokenId: string;
@@ -51,34 +103,32 @@ export interface IWord {
 	tokenType: TokenType.Word;
 	content: string;
 	normalizedToken: string;
-	isSlang?: boolean;
-	lastUpdated?: number;
-	isCognate?: boolean;
-	isFalseCognate?: boolean;
-	senses?: ISense[];
+	isSlang: boolean;
+	isCognate: boolean;
+	isFalseCognate: boolean;
+	lastUpdated: number;
+	senses: ISense[];
 }
-
 export interface ISense {
 	senseId: string;
 	tokenId: string;
 	content: string;
-	hasSpecialChar?: boolean;
-	partOfSpeech?: Promise<string> | string;
-	translations?: {english: Promise<string[]> | string[]};
-	grammaticalInfo?:
-		| IVerb
-		| INoun
-		| IAdjective
-		| IAdverb
-		| IArticle
-		| IConjunction
-		| IDeterminer
-		| IInterjection
-		| INumeral
-		| IPreposition
-		| IPronoun
-		| {};
-	lastUpdated?: number;
+	hasSpecialChar: boolean;
+	translations: {english: string[]};
+	partOfSpeech: string;
+	grammaticalInfo: Record<string, any>;
+	lastUpdated: number;
+}
+export interface IWord {
+	tokenId: string;
+	tokenType: TokenType.Word;
+	content: string;
+	normalizedToken: string;
+	isSlang: boolean;
+	isCognate: boolean;
+	isFalseCognate: boolean;
+	lastUpdated: number;
+	senses: ISense[];
 }
 
 export enum PartOfSpeech {
@@ -120,3 +170,17 @@ export enum GrammaticalGender {
 export interface IText {
 	content: string;
 }
+
+export const sentenceSchema = z.object({
+	sentenceId: z.string(),
+	content: z.string(),
+	translations: z.object({
+		english: z.object({
+			literal: z.string().or(z.instanceof(Promise)),
+			contextual: z.string().or(z.instanceof(Promise)),
+		}),
+	}),
+	tokenIds: z.array(z.string()),
+});
+
+export const formattedSentencesSchema = z.array(sentenceSchema);
