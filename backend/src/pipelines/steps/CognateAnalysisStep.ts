@@ -1,7 +1,7 @@
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
-import {batchProcessor} from '../../utils/batchProcessor';
+import {BatchProcessor} from '../../utils/BatchProcessor';
 import {IWord, TokenType} from '@bocaditosespanol/shared';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
@@ -13,9 +13,11 @@ export class CognateAnalysisStep
 {
 	private readonly logger = new Logger('CognateAnalysisStep');
 	private readonly enricher: GenericAIEnricher;
+	private readonly batchProcessor: BatchProcessor<IWord>;
 
 	constructor(aiProvider: AIProvider) {
 		this.enricher = new GenericAIEnricher(aiProvider);
+		this.batchProcessor = new BatchProcessor();
 	}
 
 	async process(
@@ -33,7 +35,7 @@ export class CognateAnalysisStep
 			lastToken: wordTokens[wordTokens.length - 1]?.content,
 		});
 
-		const enrichedTokens = await batchProcessor({
+		const enrichedTokens = await this.batchProcessor.process({
 			items: wordTokens,
 			processingFn: async tokens => {
 				const schema = TokenAIEnrichmentFactory.createCognateSchema();
@@ -51,6 +53,15 @@ export class CognateAnalysisStep
 				retryAttempts: 3,
 				delayBetweenBatches: 6000,
 				maxRequestsPerMinute: 1,
+				timeoutMs: 30000,
+			},
+			onProgress: progress => {
+				this.logger.info('Cognate analysis progress', {
+					processed: progress.processedItems,
+					total: progress.totalItems,
+					currentBatch: progress.currentBatch,
+					failedBatches: progress.failedBatches,
+				});
 			},
 		});
 

@@ -1,7 +1,7 @@
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
-import {batchProcessor} from '../../utils/batchProcessor';
+import {BatchProcessor} from '../../utils/BatchProcessor';
 import {IWord} from '@bocaditosespanol/shared';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
@@ -13,9 +13,11 @@ export class SensesEnrichmentStep
 {
 	private readonly logger = new Logger('SensesEnrichmentStep');
 	private readonly enricher: GenericAIEnricher;
+	private readonly batchProcessor: BatchProcessor<IWord>;
 
 	constructor(aiProvider: AIProvider) {
 		this.enricher = new GenericAIEnricher(aiProvider);
+		this.batchProcessor = new BatchProcessor();
 	}
 
 	async process(
@@ -29,7 +31,7 @@ export class SensesEnrichmentStep
 			lastToken: context.tokens.words[context.tokens.words.length - 1]?.content,
 		});
 
-		const enrichedTokens = await batchProcessor({
+		const enrichedTokens = await this.batchProcessor.process({
 			items: context.tokens.words,
 			processingFn: async tokens => {
 				const schema = TokenAIEnrichmentFactory.createSenseSchema();
@@ -47,6 +49,15 @@ export class SensesEnrichmentStep
 				retryAttempts: 3,
 				delayBetweenBatches: 6000,
 				maxRequestsPerMinute: 1,
+				timeoutMs: 30000,
+			},
+			onProgress: progress => {
+				this.logger.info('Senses enrichment progress', {
+					processed: progress.processedItems,
+					total: progress.totalItems,
+					currentBatch: progress.currentBatch,
+					failedBatches: progress.failedBatches,
+				});
 			},
 		});
 

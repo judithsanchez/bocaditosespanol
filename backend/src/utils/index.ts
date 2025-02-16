@@ -1,3 +1,3 @@
 export * from './Logger';
-export * from './batchProcessor';
+export * from './BatchProcessor';
 export * from './GenericAIEnricher';

@@ -2,27 +2,22 @@ import {PipelineStep} from '../Pipeline';
 import {Logger} from '../../utils/index';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {SongProcessingContext} from '../SongProcessingPipeline';
-import {batchProcessor} from '../../utils/batchProcessor';
 import {ContentSchemaFactory} from '../../factories/ContentSchemaFactory';
 import {ContentInstructionFactory} from '../../factories/ContentInstructionsFactory';
 import {AIProvider} from 'lib/types';
-import {ContentType} from '@bocaditosespanol/shared';
+import {ContentType, ISentence} from '@bocaditosespanol/shared';
+import {BatchProcessor} from '../../utils/BatchProcessor';
 
 export class SentenceAIEnricherSteps
 	implements PipelineStep<SongProcessingContext>
 {
-	private static readonly RATE_LIMITS = {
-		BATCH_SIZE: 5,
-		RETRY_ATTEMPTS: 3,
-		DELAY_BETWEEN_BATCHES: 6000,
-		REQUESTS_PER_MINUTE: 1,
-	};
-
 	private readonly logger = new Logger('SentenceAIEnricherSteps');
 	private readonly enricher: GenericAIEnricher;
+	private readonly batchProcessor: BatchProcessor<ISentence>;
 
 	constructor(aiProvider: AIProvider) {
 		this.enricher = new GenericAIEnricher(aiProvider);
+		this.batchProcessor = new BatchProcessor();
 	}
 
 	async process(
@@ -30,34 +25,35 @@ export class SentenceAIEnricherSteps
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
 
-		this.logger.info('Starting AI enrichment', {
-			sentencesToProcess: context.sentences.deduplicated.length,
-			batchSize: SentenceAIEnricherSteps.RATE_LIMITS.BATCH_SIZE,
-		});
-
 		const schema = ContentSchemaFactory.createSchema(ContentType.SONG);
 		const instruction = ContentInstructionFactory.createInstruction(
 			ContentType.SONG,
 		);
 
-		const enrichedSentences = await batchProcessor({
+		const enrichedSentences = await this.batchProcessor.process({
 			items: context.sentences.deduplicated,
 			processingFn: async sentences => {
-				const enriched = await this.enricher.enrich({
+				return this.enricher.enrich({
 					input: sentences,
 					schema,
 					instruction,
 				});
-
-				return enriched;
 			},
-			batchSize: SentenceAIEnricherSteps.RATE_LIMITS.BATCH_SIZE,
+			batchSize: 5,
 			options: {
-				retryAttempts: SentenceAIEnricherSteps.RATE_LIMITS.RETRY_ATTEMPTS,
-				delayBetweenBatches:
-					SentenceAIEnricherSteps.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
-				maxRequestsPerMinute:
-					SentenceAIEnricherSteps.RATE_LIMITS.REQUESTS_PER_MINUTE,
+				retryAttempts: 3,
+				delayBetweenBatches: 6000,
+				maxRequestsPerMinute: 1,
+				timeoutMs: 30000,
+			},
+			onProgress: progress => {
+				this.logger.info('Sentence enrichment progress', {
+					processed: progress.processedItems,
+					total: progress.totalItems,
+					currentBatch: progress.currentBatch,
+					failedBatches: progress.failedBatches,
+					estimatedTimeRemaining: progress.estimatedTimeRemaining,
+				});
 			},
 		});
 

@@ -9,12 +9,13 @@ import {
 	IEmoji,
 	ISense,
 } from '@bocaditosespanol/shared';
-import {batchProcessor, Logger} from '../../utils/index';
+import {Logger} from '../../utils/index';
 import {GenericAIEnricher} from '../../utils';
 import {
 	PartOfSpeechSchemaFactory,
 	SystemInstructionFactory,
 } from '../../factories';
+import {BatchProcessor} from '../../utils/BatchProcessor';
 
 export class GrammaticalEnricherStep
 	implements PipelineStep<SongProcessingContext>
@@ -28,10 +29,12 @@ export class GrammaticalEnricherStep
 
 	private readonly logger = new Logger('GrammaticalEnricherStep');
 	private readonly enricher: GenericAIEnricher;
+	private readonly batchProcessor: BatchProcessor<IWord>;
 	private lastProcessingTime: number = 0;
 
 	constructor(aiProvider: AIProvider) {
 		this.enricher = new GenericAIEnricher(aiProvider);
+		this.batchProcessor = new BatchProcessor();
 	}
 
 	private async enforceRateLimit() {
@@ -168,32 +171,36 @@ export class GrammaticalEnricherStep
 					token.senses
 						?.filter(sense => sense.partOfSpeech === type)
 						.map(sense => ({
-							tokenId: token.tokenId,
-							senseId: sense.senseId,
-							content: token.content,
-							grammaticalInfo: sense.grammaticalInfo,
+							...token,
+							senses: [{...sense}],
 						})) ?? [],
 			);
 
-			const enriched = await batchProcessor({
+			const enriched = await this.batchProcessor.process({
 				items: simplifiedTokens,
 				processingFn: async batchTokens => {
 					const schema = getSchema();
 					const instruction = getInstruction();
-
 					return this.enricher.enrich({
 						input: batchTokens,
 						schema,
 						instruction,
 					});
 				},
-				batchSize: GrammaticalEnricherStep.RATE_LIMITS.BATCH_SIZE,
+				batchSize: 10,
 				options: {
-					retryAttempts: GrammaticalEnricherStep.RATE_LIMITS.RETRY_ATTEMPTS,
-					delayBetweenBatches:
-						GrammaticalEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES,
-					maxRequestsPerMinute:
-						GrammaticalEnricherStep.RATE_LIMITS.REQUESTS_PER_MINUTE,
+					retryAttempts: 3,
+					delayBetweenBatches: 6000,
+					maxRequestsPerMinute: 1,
+					timeoutMs: 30000,
+				},
+				onProgress: progress => {
+					this.logger.info(`${type} enrichment progress`, {
+						processed: progress.processedItems,
+						total: progress.totalItems,
+						currentBatch: progress.currentBatch,
+						failedBatches: progress.failedBatches,
+					});
 				},
 			});
 
@@ -204,14 +211,14 @@ export class GrammaticalEnricherStep
 					const enrichedSense = enriched.find(
 						e =>
 							e.tokenId === originalToken.tokenId &&
-							e.senseId === sense.senseId,
+							e.senses?.[0]?.senseId === sense.senseId,
 					);
 
-					return enrichedSense
+					return enrichedSense?.senses?.[0]
 						? {
 								...sense,
 								lastUpdated: Date.now(),
-								grammaticalInfo: enrichedSense.grammaticalInfo,
+								grammaticalInfo: enrichedSense.senses[0].grammaticalInfo,
 							}
 						: sense;
 				}),

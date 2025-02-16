@@ -1,19 +1,21 @@
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
-import {batchProcessor} from '../../utils/batchProcessor';
+import {BatchProcessor} from '../../utils/BatchProcessor';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
 import {AIProvider} from '../../lib/types';
-import {IWord} from '@bocaditosespanol/shared';
+import {IWord, TokenType} from '@bocaditosespanol/shared';
 
 export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 	private readonly logger = new Logger('SlangDetectionStep');
 	private readonly enricher: GenericAIEnricher;
+	private readonly batchProcessor: BatchProcessor<IWord>;
 
 	constructor(aiProvider: AIProvider) {
 		this.enricher = new GenericAIEnricher(aiProvider);
+		this.batchProcessor = new BatchProcessor();
 	}
 
 	async process(
@@ -28,13 +30,14 @@ export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 				context.tokens.enriched[context.tokens.enriched.length - 1]?.content,
 		});
 
-		const enrichedTokens = await batchProcessor({
-			items: context.tokens.enriched,
+		const enrichedTokens = await this.batchProcessor.process({
+			items: context.tokens.enriched.filter(
+				(token): token is IWord => token.tokenType === TokenType.Word,
+			),
 			processingFn: async tokens => {
 				const schema = TokenAIEnrichmentFactory.createSlangSchema();
 				const instruction =
 					TokenAIEnrichmentInstructionFactory.createSlangInstruction();
-
 				return this.enricher.enrich({
 					input: tokens,
 					schema,
@@ -46,10 +49,22 @@ export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 				retryAttempts: 3,
 				delayBetweenBatches: 6000,
 				maxRequestsPerMinute: 1,
+				timeoutMs: 30000,
+			},
+			onProgress: progress => {
+				this.logger.info('Slang detection progress', {
+					processed: progress.processedItems,
+					total: progress.totalItems,
+					currentBatch: progress.currentBatch,
+					failedBatches: progress.failedBatches,
+				});
 			},
 		});
 
 		context.tokens.enriched = context.tokens.enriched.map(originalToken => {
+			if (originalToken.tokenType !== TokenType.Word) {
+				return originalToken;
+			}
 			const enrichedToken = enrichedTokens.find(
 				t => t.tokenId === originalToken.tokenId,
 			);
