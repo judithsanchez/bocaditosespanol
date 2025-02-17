@@ -21,7 +21,6 @@ import {
 	CognateAnalysisStep,
 	SlangDetectionStep,
 } from './steps/index';
-import {AIProvider} from 'lib/types';
 import {Logger} from '../utils/index';
 
 // TODO: fix emoji recognition
@@ -44,7 +43,8 @@ export interface SongProcessingContext {
 export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 	private readonly db: DatabaseService;
 	protected readonly logger: Logger;
-	constructor(aiProvider: AIProvider) {
+
+	constructor() {
 		const db = new DatabaseService();
 
 		super(
@@ -56,11 +56,11 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				new InputValidatorStep(ContentType.SONG),
 				new SentenceFormatterStep(),
 				new TokenIdentificationStep(db),
-				new SentenceAIEnricherSteps(aiProvider),
-				new SensesEnrichmentStep(aiProvider),
-				new CognateAnalysisStep(aiProvider),
-				new SlangDetectionStep(aiProvider),
-				new GrammaticalEnricherStep(aiProvider),
+				new SentenceAIEnricherSteps(),
+				new SensesEnrichmentStep(),
+				new CognateAnalysisStep(),
+				new SlangDetectionStep(),
+				new GrammaticalEnricherStep(),
 			],
 		);
 		this.db = new DatabaseService();

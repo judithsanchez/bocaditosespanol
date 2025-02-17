@@ -12,7 +12,6 @@ export const songRequestSchema = z.object({
 	}),
 	releaseDate: z.string(),
 	lyrics: z.string().min(1),
-	aiProvider: z.string().optional(),
 });
 
 export type AddSongRequest = z.infer<typeof songRequestSchema>;

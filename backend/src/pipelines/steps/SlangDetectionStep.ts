@@ -5,24 +5,26 @@ import {BatchProcessor} from '../../utils/BatchProcessor';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
-import {AIProvider} from '../../lib/types';
 import {IWord, TokenType} from '@bocaditosespanol/shared';
+import {AIProviderFactory} from '../../factories/index';
+import {AIStepType} from '../../config/AIConfig';
 
 export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 	private readonly logger = new Logger('SlangDetectionStep');
 	private readonly enricher: GenericAIEnricher;
 	private readonly batchProcessor: BatchProcessor<IWord>;
 
-	constructor(aiProvider: AIProvider) {
-		this.enricher = new GenericAIEnricher(aiProvider);
+	constructor() {
+		const provider = AIProviderFactory.getInstance().getProvider(
+			AIStepType.SLANG_DETECTION,
+		);
+		this.enricher = new GenericAIEnricher(provider);
 		this.batchProcessor = new BatchProcessor();
 	}
-
 	async process(
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
 		this.logger.start('process');
-
 		this.logger.info('Starting slang detection', {
 			tokensToProcess: context.tokens.enriched.length,
 			firstToken: context.tokens.enriched[0]?.content,

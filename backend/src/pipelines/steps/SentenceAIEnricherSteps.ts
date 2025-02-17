@@ -4,9 +4,10 @@ import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {ContentSchemaFactory} from '../../factories/ContentSchemaFactory';
 import {ContentInstructionFactory} from '../../factories/ContentInstructionsFactory';
-import {AIProvider} from 'lib/types';
 import {ContentType, ISentence} from '@bocaditosespanol/shared';
 import {BatchProcessor} from '../../utils/BatchProcessor';
+import {AIProviderFactory} from '../../factories/index';
+import {AIStepType} from '../../config/AIConfig';
 
 export class SentenceAIEnricherSteps
 	implements PipelineStep<SongProcessingContext>
@@ -15,11 +16,13 @@ export class SentenceAIEnricherSteps
 	private readonly enricher: GenericAIEnricher;
 	private readonly batchProcessor: BatchProcessor<ISentence>;
 
-	constructor(aiProvider: AIProvider) {
-		this.enricher = new GenericAIEnricher(aiProvider);
+	constructor() {
+		const provider = AIProviderFactory.getInstance().getProvider(
+			AIStepType.SENTENCE_ENRICHER,
+		);
+		this.enricher = new GenericAIEnricher(provider);
 		this.batchProcessor = new BatchProcessor();
 	}
-
 	async process(
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {

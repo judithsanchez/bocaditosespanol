@@ -6,7 +6,8 @@ import {IWord, TokenType} from '@bocaditosespanol/shared';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
-import {AIProvider} from '../../lib/types';
+import {AIProviderFactory} from '../../factories/index';
+import {AIStepType} from '../../config/AIConfig';
 
 export class CognateAnalysisStep
 	implements PipelineStep<SongProcessingContext>
@@ -15,11 +16,13 @@ export class CognateAnalysisStep
 	private readonly enricher: GenericAIEnricher;
 	private readonly batchProcessor: BatchProcessor<IWord>;
 
-	constructor(aiProvider: AIProvider) {
-		this.enricher = new GenericAIEnricher(aiProvider);
+	constructor() {
+		const provider = AIProviderFactory.getInstance().getProvider(
+			AIStepType.COGNATE_ANALYSIS,
+		);
+		this.enricher = new GenericAIEnricher(provider);
 		this.batchProcessor = new BatchProcessor();
 	}
-
 	async process(
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {

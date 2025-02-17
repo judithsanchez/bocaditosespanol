@@ -1,6 +1,5 @@
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
-import {AIProvider} from '../../lib/types';
 import {
 	TokenType,
 	IWord,
@@ -16,6 +15,8 @@ import {
 	SystemInstructionFactory,
 } from '../../factories';
 import {BatchProcessor} from '../../utils/BatchProcessor';
+import {AIProviderFactory} from '../../factories/index';
+import {AIStepType} from '../../config/AIConfig';
 
 export class GrammaticalEnricherStep
 	implements PipelineStep<SongProcessingContext>
@@ -26,17 +27,17 @@ export class GrammaticalEnricherStep
 		DELAY_BETWEEN_BATCHES: 6000,
 		REQUESTS_PER_MINUTE: 1,
 	};
-
 	private readonly logger = new Logger('GrammaticalEnricherStep');
 	private readonly enricher: GenericAIEnricher;
 	private readonly batchProcessor: BatchProcessor<IWord>;
 	private lastProcessingTime: number = 0;
-
-	constructor(aiProvider: AIProvider) {
-		this.enricher = new GenericAIEnricher(aiProvider);
+	constructor() {
+		const provider = AIProviderFactory.getInstance().getProvider(
+			AIStepType.GRAMMATICAL_ENRICHER,
+		);
+		this.enricher = new GenericAIEnricher(provider);
 		this.batchProcessor = new BatchProcessor();
 	}
-
 	private async enforceRateLimit() {
 		const now = Date.now();
 		const timeSinceLastProcess = now - this.lastProcessingTime;

@@ -29,6 +29,9 @@ export class GeminiProvider implements AIProvider {
 	constructor(
 		apiKey: string,
 		private modelName: string = 'gemini-2.0-flash',
+		private temperature: number = 0,
+		private topK: number = 10,
+		private topP: number = 0.5,
 	) {
 		this.genAI = new GoogleGenerativeAI(apiKey);
 		this.logger.info('Initialized with model', {modelName: this.modelName});
@@ -56,9 +59,9 @@ export class GeminiProvider implements AIProvider {
 			const model = this.genAI.getGenerativeModel({
 				model: this.modelName,
 				generationConfig: {
-					temperature: generationParams?.temperature ?? 0,
-					topK: generationParams?.topK ?? 10,
-					topP: generationParams?.topP ?? 0.5,
+					temperature: generationParams?.temperature ?? this.temperature,
+					topK: generationParams?.topK ?? this.topK,
+					topP: generationParams?.topP ?? this.topP,
 					responseMimeType: 'application/json',
 					responseSchema: schema,
 				},

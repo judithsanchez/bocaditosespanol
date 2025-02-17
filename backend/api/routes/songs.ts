@@ -3,16 +3,11 @@ import dotenv from 'dotenv';
 import {SongProcessingPipeline} from '../../src/pipelines/SongProcessingPipeline';
 import {Logger} from '../../src/utils/Logger';
 import {DatabaseService} from '../../src/services/DatabaseService';
-import {GeminiProvider} from '../../src/providers/GeminiProvider';
 
 dotenv.config();
 
 const router = express.Router();
 const logger = new Logger('Songs');
-const geminiProvider = new GeminiProvider(
-	process.env.GOOGLE_GENERATIVE_AI_KEY || '',
-);
-const pipeline = new SongProcessingPipeline(geminiProvider);
 
 router.get('/', async (_req, res) => {
 	logger.start('getAllSongs');
@@ -101,6 +96,7 @@ router.get('/:songId', async (req, res) => {
 router.post('/', async (req, res) => {
 	logger.start('postSong');
 	try {
+		const pipeline = new SongProcessingPipeline();
 		const result = await pipeline.processText(req.body);
 		logger.info('Song processed successfully', {songId: result.song.songId});
 		res.status(201).json(result);
