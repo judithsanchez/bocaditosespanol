@@ -15,14 +15,14 @@ export interface ProviderConfig {
 	baseUrl?: string;
 }
 
-// Global provider configuration - this is the only place to change the provider
+// TODO: figure out how to make it work with ollama
 export const ACTIVE_PROVIDER: ProviderConfig = {
-	// type: AIProviderType.GEMINI,
-	// modelName: 'gemini-2.0-flash',
+	type: AIProviderType.GEMINI,
+	modelName: 'gemini-2.0-flash',
 	// Uncomment for Ollama
-	type: AIProviderType.OLLAMA,
-	modelName: 'deepseek-r1',
-	baseUrl: 'http://localhost:11434',
+	// type: AIProviderType.OLLAMA,
+	// modelName: 'deepseek-r1',
+	// baseUrl: 'http://localhost:11434',
 };
 
 export enum AIStepType {

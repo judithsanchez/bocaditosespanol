@@ -1,14 +1,8 @@
 {
   "test-test": [
     {
-      "sentenceId": "sentence-1-test-test",
       "content": "hola hola caracola, ¿a dónde vas con esa idea chico?",
-      "translations": {
-        "english": {
-          "literal": "",
-          "contextual": ""
-        }
-      },
+      "sentenceId": "sentence-1-test-test",
       "tokenIds": [
         "token-hola",
         "token-hola",
@@ -23,24 +17,30 @@
         "token-idea",
         "token-chico",
         "token-?"
-      ]
-    },
-    {
-      "sentenceId": "sentence-2-test-test",
-      "content": "tío qué cabrón pana.",
+      ],
       "translations": {
         "english": {
-          "literal": "",
-          "contextual": ""
+          "contextual": "Hello, hello snail, where are you going with that idea, buddy?",
+          "literal": "hello hello snail, to where are you going with that idea boy?"
         }
-      },
+      }
+    },
+    {
+      "content": "tío qué cabrón pana.",
+      "sentenceId": "sentence-2-test-test",
       "tokenIds": [
         "token-tío",
         "token-qué",
         "token-cabrón",
         "token-pana",
         "token-."
-      ]
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Dude, what a jerk, pal.",
+          "literal": "guy what rascal buddy."
+        }
+      }
     }
   ]
 }
