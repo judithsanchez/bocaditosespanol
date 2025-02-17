@@ -7,7 +7,11 @@ import {ContentInstructionFactory} from '../../factories/ContentInstructionsFact
 import {ContentType, ISentence} from '@bocaditosespanol/shared';
 import {BatchProcessor} from '../../utils/BatchProcessor';
 import {AIProviderFactory} from '../../factories/index';
-import {AIStepType} from '../../config/AIConfig';
+import {
+	ACTIVE_PROVIDER,
+	AIStepType,
+	PROVIDER_BATCH_CONFIGS,
+} from '../../config/AIConfig';
 
 export class SentenceAIEnricherSteps
 	implements PipelineStep<SongProcessingContext>
@@ -21,8 +25,10 @@ export class SentenceAIEnricherSteps
 			AIStepType.SENTENCE_ENRICHER,
 		);
 		this.enricher = new GenericAIEnricher(provider);
-		this.batchProcessor = new BatchProcessor();
+		const batchConfig = PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type];
+		this.batchProcessor = new BatchProcessor(batchConfig);
 	}
+
 	async process(
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
@@ -43,12 +49,7 @@ export class SentenceAIEnricherSteps
 				});
 			},
 			batchSize: 5,
-			options: {
-				retryAttempts: 3,
-				delayBetweenBatches: 6000,
-				maxRequestsPerMinute: 1,
-				timeoutMs: 30000,
-			},
+			options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],
 			onProgress: progress => {
 				this.logger.info('Sentence enrichment progress', {
 					processed: progress.processedItems,

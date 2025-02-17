@@ -16,42 +16,26 @@ import {
 } from '../../factories';
 import {BatchProcessor} from '../../utils/BatchProcessor';
 import {AIProviderFactory} from '../../factories/index';
-import {AIStepType} from '../../config/AIConfig';
+import {
+	ACTIVE_PROVIDER,
+	AIStepType,
+	PROVIDER_BATCH_CONFIGS,
+} from '../../config/AIConfig';
 
 export class GrammaticalEnricherStep
 	implements PipelineStep<SongProcessingContext>
 {
-	private static readonly RATE_LIMITS = {
-		BATCH_SIZE: 10,
-		RETRY_ATTEMPTS: 3,
-		DELAY_BETWEEN_BATCHES: 6000,
-		REQUESTS_PER_MINUTE: 1,
-	};
 	private readonly logger = new Logger('GrammaticalEnricherStep');
 	private readonly enricher: GenericAIEnricher;
 	private readonly batchProcessor: BatchProcessor<IWord>;
-	private lastProcessingTime: number = 0;
+
 	constructor() {
 		const provider = AIProviderFactory.getInstance().getProvider(
 			AIStepType.GRAMMATICAL_ENRICHER,
 		);
 		this.enricher = new GenericAIEnricher(provider);
-		this.batchProcessor = new BatchProcessor();
-	}
-	private async enforceRateLimit() {
-		const now = Date.now();
-		const timeSinceLastProcess = now - this.lastProcessingTime;
-
-		if (
-			timeSinceLastProcess <
-			GrammaticalEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES
-		) {
-			const waitTime =
-				GrammaticalEnricherStep.RATE_LIMITS.DELAY_BETWEEN_BATCHES -
-				timeSinceLastProcess;
-			await new Promise(resolve => setTimeout(resolve, waitTime));
-		}
-		this.lastProcessingTime = Date.now();
+		const batchConfig = PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type];
+		this.batchProcessor = new BatchProcessor(batchConfig);
 	}
 
 	async process(
@@ -165,8 +149,6 @@ export class GrammaticalEnricherStep
 				continue;
 			}
 
-			await this.enforceRateLimit();
-
 			const simplifiedTokens = tokens.flatMap(
 				token =>
 					token.senses
@@ -189,12 +171,7 @@ export class GrammaticalEnricherStep
 					});
 				},
 				batchSize: 10,
-				options: {
-					retryAttempts: 3,
-					delayBetweenBatches: 6000,
-					maxRequestsPerMinute: 1,
-					timeoutMs: 30000,
-				},
+				options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],
 				onProgress: progress => {
 					this.logger.info(`${type} enrichment progress`, {
 						processed: progress.processedItems,

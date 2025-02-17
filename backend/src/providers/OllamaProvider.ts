@@ -1,3 +1,4 @@
+import {BatchOptions} from 'config/AIConfig';
 import {AIProvider} from '../lib/types';
 import {Logger} from '../utils/Logger';
 
@@ -13,8 +14,12 @@ export class OllamaProvider implements AIProvider {
 	constructor(
 		private baseUrl: string,
 		private modelName: string,
+		private batchConfig: BatchOptions,
 	) {
-		this.logger.info('Initialized with model', {modelName: this.modelName});
+		this.logger.info('Initialized with model', {
+			modelName: this.modelName,
+			batchConfig: this.batchConfig,
+		});
 	}
 
 	async enrichContent(
@@ -24,6 +29,11 @@ export class OllamaProvider implements AIProvider {
 		generationParams?: OllamaGenerationParams,
 	): Promise<any> {
 		this.logger.start('enrichContent');
+
+		const controller = new AbortController();
+		const timeout = setTimeout(() => {
+			controller.abort();
+		}, this.batchConfig.timeoutMs);
 
 		try {
 			const options = {
@@ -52,6 +62,7 @@ export class OllamaProvider implements AIProvider {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify(requestBody),
+				signal: controller.signal,
 			});
 
 			if (!response.ok) {
@@ -76,6 +87,8 @@ export class OllamaProvider implements AIProvider {
 		} catch (error) {
 			this.logger.error('Failed to enrich content', error);
 			throw error;
+		} finally {
+			clearTimeout(timeout);
 		}
 	}
 }

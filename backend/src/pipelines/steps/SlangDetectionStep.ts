@@ -7,7 +7,11 @@ import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
 import {IWord, TokenType} from '@bocaditosespanol/shared';
 import {AIProviderFactory} from '../../factories/index';
-import {AIStepType} from '../../config/AIConfig';
+import {
+	ACTIVE_PROVIDER,
+	AIStepType,
+	PROVIDER_BATCH_CONFIGS,
+} from '../../config/AIConfig';
 
 export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 	private readonly logger = new Logger('SlangDetectionStep');
@@ -19,8 +23,10 @@ export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 			AIStepType.SLANG_DETECTION,
 		);
 		this.enricher = new GenericAIEnricher(provider);
-		this.batchProcessor = new BatchProcessor();
+		const batchConfig = PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type];
+		this.batchProcessor = new BatchProcessor(batchConfig);
 	}
+
 	async process(
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
@@ -47,12 +53,7 @@ export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 				});
 			},
 			batchSize: 10,
-			options: {
-				retryAttempts: 3,
-				delayBetweenBatches: 6000,
-				maxRequestsPerMinute: 1,
-				timeoutMs: 30000,
-			},
+			options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],
 			onProgress: progress => {
 				this.logger.info('Slang detection progress', {
 					processed: progress.processedItems,

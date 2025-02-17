@@ -1,0 +1,25 @@
+{
+  "song": [
+    {
+      "songId": "test-test",
+      "metadata": {
+        "interpreter": "test",
+        "title": "test",
+        "youtube": "https://www.youtube.com/watch?v=example",
+        "genre": [
+          "test"
+        ],
+        "language": "spanish",
+        "releaseDate": "2024-01-11"
+      },
+      "lyrics": [
+        "sentence-1-test-test",
+        "sentence-2-test-test",
+        "sentence-1-test-test",
+        "sentence-2-test-test"
+      ],
+      "createdAt": 1739800409322,
+      "updatedAt": 1739800409322
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import {GoogleGenerativeAI} from '@google/generative-ai';
 import {AIProvider} from '../lib/types';
 import {Logger} from '../utils/Logger';
 import {HarmBlockThreshold, HarmCategory} from '@google/generative-ai';
+import {BatchOptions} from '../../src/config/AIConfig';
 
 export const geminiSafetySettings = [
 	{
@@ -32,11 +33,14 @@ export class GeminiProvider implements AIProvider {
 		private temperature: number = 0,
 		private topK: number = 10,
 		private topP: number = 0.5,
+		private batchConfig: BatchOptions,
 	) {
 		this.genAI = new GoogleGenerativeAI(apiKey);
-		this.logger.info('Initialized with model', {modelName: this.modelName});
+		this.logger.info('Initialized with model', {
+			modelName: this.modelName,
+			batchConfig: this.batchConfig,
+		});
 	}
-
 	async enrichContent(
 		input: any,
 		schema: any,

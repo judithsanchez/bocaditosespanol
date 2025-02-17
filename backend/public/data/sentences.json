@@ -1,0 +1,46 @@
+{
+  "test-test": [
+    {
+      "sentenceId": "sentence-1-test-test",
+      "content": "hola hola caracola, ¿a dónde vas con esa idea chico?",
+      "translations": {
+        "english": {
+          "literal": "",
+          "contextual": ""
+        }
+      },
+      "tokenIds": [
+        "token-hola",
+        "token-hola",
+        "token-caracola",
+        "token-,",
+        "token-¿",
+        "token-a",
+        "token-dónde",
+        "token-vas",
+        "token-con",
+        "token-esa",
+        "token-idea",
+        "token-chico",
+        "token-?"
+      ]
+    },
+    {
+      "sentenceId": "sentence-2-test-test",
+      "content": "tío qué cabrón pana.",
+      "translations": {
+        "english": {
+          "literal": "",
+          "contextual": ""
+        }
+      },
+      "tokenIds": [
+        "token-tío",
+        "token-qué",
+        "token-cabrón",
+        "token-pana",
+        "token-."
+      ]
+    }
+  ]
+}

@@ -7,7 +7,11 @@ import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
 import {AIProviderFactory} from '../../factories/index';
-import {AIStepType} from '../../config/AIConfig';
+import {
+	ACTIVE_PROVIDER,
+	AIStepType,
+	PROVIDER_BATCH_CONFIGS,
+} from '../../config/AIConfig';
 
 export class CognateAnalysisStep
 	implements PipelineStep<SongProcessingContext>
@@ -21,7 +25,8 @@ export class CognateAnalysisStep
 			AIStepType.COGNATE_ANALYSIS,
 		);
 		this.enricher = new GenericAIEnricher(provider);
-		this.batchProcessor = new BatchProcessor();
+		const batchConfig = PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type];
+		this.batchProcessor = new BatchProcessor(batchConfig);
 	}
 	async process(
 		context: SongProcessingContext,
@@ -52,12 +57,7 @@ export class CognateAnalysisStep
 				});
 			},
 			batchSize: 10,
-			options: {
-				retryAttempts: 3,
-				delayBetweenBatches: 6000,
-				maxRequestsPerMinute: 1,
-				timeoutMs: 30000,
-			},
+			options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],
 			onProgress: progress => {
 				this.logger.info('Cognate analysis progress', {
 					processed: progress.processedItems,

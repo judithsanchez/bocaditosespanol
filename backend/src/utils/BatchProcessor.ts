@@ -1,6 +1,7 @@
 import {z} from 'zod';
 import {Logger} from './Logger';
 import {errors} from '../lib/constants';
+import {BatchOptions} from 'config/AIConfig';
 
 const batchProgressSchema = z.object({
 	totalItems: z.number(),
@@ -81,11 +82,10 @@ export class BatchProcessor<T> {
 	private logger: Logger;
 	private rateLimiter: RateLimiter;
 
-	constructor() {
+	constructor(batchConfig: BatchOptions) {
 		this.logger = new Logger('BatchProcessor');
-		this.rateLimiter = new RateLimiter(60);
+		this.rateLimiter = new RateLimiter(batchConfig.maxRequestsPerMinute);
 	}
-
 	async process(config: BatchConfig<T>): Promise<T[]> {
 		// const validatedConfig = batchConfigSchema.parse(config);
 		this.logger.start('process');

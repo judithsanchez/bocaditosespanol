@@ -7,22 +7,25 @@ import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
 import {AIProviderFactory} from '../../factories/index';
-import {AIStepType} from '../../config/AIConfig';
+import {
+	ACTIVE_PROVIDER,
+	AIStepType,
+	PROVIDER_BATCH_CONFIGS,
+} from '../../config/AIConfig';
 
 export class SensesEnrichmentStep
 	implements PipelineStep<SongProcessingContext>
 {
 	private readonly logger = new Logger('SensesEnrichmentStep');
 	private readonly enricher: GenericAIEnricher;
-	private readonly batchProcessor: BatchProcessor<IWord>;
 
 	constructor() {
 		const provider = AIProviderFactory.getInstance().getProvider(
 			AIStepType.SENSES_ENRICHMENT,
 		);
 		this.enricher = new GenericAIEnricher(provider);
-		this.batchProcessor = new BatchProcessor();
 	}
+
 	async process(
 		context: SongProcessingContext,
 	): Promise<SongProcessingContext> {
@@ -34,7 +37,10 @@ export class SensesEnrichmentStep
 			lastToken: context.tokens.words[context.tokens.words.length - 1]?.content,
 		});
 
-		const enrichedTokens = await this.batchProcessor.process({
+		const batchConfig = PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type];
+		const batchProcessor = new BatchProcessor<IWord>(batchConfig);
+
+		const enrichedTokens = await batchProcessor.process({
 			items: context.tokens.words,
 			processingFn: async tokens => {
 				const schema = TokenAIEnrichmentFactory.createSenseSchema();
@@ -48,12 +54,7 @@ export class SensesEnrichmentStep
 				});
 			},
 			batchSize: 10,
-			options: {
-				retryAttempts: 3,
-				delayBetweenBatches: 6000,
-				maxRequestsPerMinute: 1,
-				timeoutMs: 30000,
-			},
+			options: batchConfig,
 			onProgress: progress => {
 				this.logger.info('Senses enrichment progress', {
 					processed: progress.processedItems,
