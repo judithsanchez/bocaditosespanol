@@ -21,6 +21,19 @@ export enum ContentType {
 	TRANSCRIPT = 'transcript',
 }
 
+export enum Difficulty {
+	BEGINNER = 'beginner',
+	INTERMEDIATE = 'intermediate',
+	ADVANCED = 'advanced',
+	EXPERT = 'expert',
+	MASTER = 'master',
+}
+
+export interface ILearningInsight {
+	difficulty?: Difficulty;
+	insight?: string;
+}
+
 export interface ISentence {
 	sentenceId: string;
 	content: string;
@@ -31,6 +44,7 @@ export interface ISentence {
 		};
 	};
 	tokenIds: string[];
+	learningInsights?: ILearningInsight;
 }
 
 export enum TokenType {
@@ -180,6 +194,12 @@ export const sentenceSchema = z.object({
 		}),
 	}),
 	tokenIds: z.array(z.string()),
+	learningInsights: z
+		.object({
+			difficulty: z.nativeEnum(Difficulty),
+			insight: z.string(),
+		})
+		.optional(),
 });
 
 export const formattedSentencesSchema = z.array(sentenceSchema);

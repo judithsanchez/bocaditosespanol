@@ -22,6 +22,7 @@ import {
 	SlangDetectionStep,
 } from './steps/index';
 import {Logger} from '../utils/index';
+import {SentenceLearningInsightsEnricherStep} from './steps/SentenceLearningInsightsEnricherStep';
 
 // TODO: fix emoji recognition
 export interface SongProcessingContext {
@@ -56,7 +57,10 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				new InputValidatorStep(ContentType.SONG),
 				new SentenceFormatterStep(),
 				new TokenIdentificationStep(db),
+				// TODO: fix plural
+				// TODO: move the translations to the sentences factories
 				new SentenceAIEnricherSteps(),
+				new SentenceLearningInsightsEnricherStep(),
 				new SensesEnrichmentStep(),
 				new CognateAnalysisStep(),
 				new SlangDetectionStep(),

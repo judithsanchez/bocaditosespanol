@@ -21,8 +21,12 @@
       "translations": {
         "english": {
           "contextual": "Hello, hello snail, where are you going with that idea, buddy?",
-          "literal": "hello hello snail, to where are you going with that idea boy?"
+          "literal": "hello hello snail, to where go you with that idea boy?"
         }
+      },
+      "learningInsights": {
+        "insight": "The expression \"hola hola caracola\" is a playful, rhyming greeting, often used in a lighthearted or teasing way. The word \"chico\" is a common term of endearment or casual address, especially in Spain.",
+        "difficulty": "intermediate"
       }
     },
     {
@@ -37,9 +41,13 @@
       ],
       "translations": {
         "english": {
-          "contextual": "Dude, what a jerk, pal.",
-          "literal": "guy what rascal buddy."
+          "contextual": "Dude, what a bastard, friend.",
+          "literal": "guy what bastard pal."
         }
+      },
+      "learningInsights": {
+        "insight": "This sentence uses slang common in Spain and Latin America. \"Tío\" (literally 'uncle') is used as 'dude' or 'man'. \"Cabrón\" can mean 'bastard' but is often used informally among friends. \"Pana\" is a colloquial term for 'friend' or 'buddy', primarily used in some Latin American countries.",
+        "difficulty": "advanced"
       }
     }
   ]

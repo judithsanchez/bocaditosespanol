@@ -31,8 +31,8 @@ export enum AIStepType {
 	SENTENCE_ENRICHER = 'SENTENCE_ENRICHER',
 	SENSES_ENRICHMENT = 'SENSES_ENRICHMENT',
 	SLANG_DETECTION = 'SLANG_DETECTION',
+	LEARNING_INSIGHTS_ENRICHER = 'learning_insights_enricher',
 }
-
 export const StepConfigs: Record<AIStepType, AIModelConfig> = {
 	[AIStepType.COGNATE_ANALYSIS]: {
 		temperature: 0.3,
@@ -58,6 +58,11 @@ export const StepConfigs: Record<AIStepType, AIModelConfig> = {
 		temperature: 0.8,
 		topK: 10,
 		topP: 0.8,
+	},
+	[AIStepType.LEARNING_INSIGHTS_ENRICHER]: {
+		temperature: 0.8,
+		topK: 50, // TODO: confirm this
+		topP: 0.85,
 	},
 };
 
