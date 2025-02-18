@@ -9,7 +9,6 @@ dotenv.config();
 const router = express.Router();
 const logger = new Logger('Songs');
 
-// TODO: figure out why on the add song response I do not see the actual data I am saving. there is a bunch of stuff missing but present on the json files
 router.get('/', async (_req, res) => {
 	logger.start('getAllSongs');
 	try {
@@ -94,6 +93,7 @@ router.get('/:songId', async (req, res) => {
 	logger.end('getSong');
 });
 
+// TODO: fix what we return from the call to match what we save on the databa
 router.post('/', async (req, res) => {
 	logger.start('postSong');
 	try {
