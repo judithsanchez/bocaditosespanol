@@ -108,7 +108,7 @@ const Sentence = ({
 					</>
 				);
 
-			case LearningMode.WRITING_PRACTICE:
+			case LearningMode.LISTENING_PRACTICE:
 				return (
 					<>
 						<Translation>

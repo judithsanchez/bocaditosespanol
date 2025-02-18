@@ -92,10 +92,10 @@ const SelectedSong = () => {
 					Hide Translations
 				</ModeButton>
 				<ModeButton
-					active={learningMode === LearningMode.WRITING_PRACTICE}
-					onClick={() => setLearningMode(LearningMode.WRITING_PRACTICE)}
+					active={learningMode === LearningMode.LISTENING_PRACTICE}
+					onClick={() => setLearningMode(LearningMode.LISTENING_PRACTICE)}
 				>
-					Writing Practice
+					Listening Practice
 				</ModeButton>
 			</ModeSelector>
 			{sentences?.map((sentence, index) => (
