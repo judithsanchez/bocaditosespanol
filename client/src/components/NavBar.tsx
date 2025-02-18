@@ -10,6 +10,10 @@ import {
 	ThemeToggle,
 } from '../styles/NavBar.styles';
 
+export interface ThemeContextType {
+	toggleTheme: () => void;
+	isDarkMode: boolean;
+}
 const NavBar = () => {
 	const {toggleTheme, isDarkMode} = useContext(ThemeContext);
 

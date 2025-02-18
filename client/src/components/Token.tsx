@@ -1,3 +1,4 @@
+import {z} from 'zod';
 import {
 	BaseToken,
 	StyledWord,
@@ -5,35 +6,70 @@ import {
 	StyledPunctuationLeft,
 	StyledPunctuationRight,
 } from '../styles/Token.styles';
-import {TokenComponentProps} from '../types/Token.types';
+import {TokenType} from '@bocaditosespanol/shared';
+
+const TokenSchema = z.object({
+	content: z.string(),
+	tokenType: z.nativeEnum(TokenType),
+	tokenId: z.string(),
+	isCognate: z.boolean().optional(),
+	isFalseCognate: z.boolean().optional(),
+	isSlang: z.boolean().optional(),
+});
+
+export type ValidatedToken = z.infer<typeof TokenSchema>;
+
+export interface TokenComponentProps {
+	token: ValidatedToken;
+	isSelected?: boolean;
+	onClick?: () => void;
+}
+
+export interface TokensTranslationsProps {
+	selectedToken: ValidatedToken | null;
+}
 
 export const TokenComponent = ({
 	token,
 	isSelected,
 	onClick,
 }: TokenComponentProps) => {
-	const leftAttachedPunctuation = ['.', ',', '?', '!', ':', ';'];
-	const rightAttachedPunctuation = ['¿', '¡'];
+	type LeftPunctuationMark = '.' | ',' | '?' | '!' | ':' | ';';
+	type RightPunctuationMark = '¿' | '¡';
+
+	const leftAttachedPunctuation: readonly LeftPunctuationMark[] = [
+		'.',
+		',',
+		'?',
+		'!',
+		':',
+		';',
+	];
+	const rightAttachedPunctuation: readonly RightPunctuationMark[] = ['¿', '¡'];
 
 	const handleClick = () => {
-		if (token.tokenType !== 'punctuationSign') {
-			if (onClick) {
-				onClick();
-			}
+		if (token.tokenType !== TokenType.PunctuationSign && onClick) {
+			onClick();
 		}
 	};
 
 	const getTokenStyle = () => {
 		switch (token.tokenType) {
-			case 'word':
+			case TokenType.Word:
 				return StyledWord;
-			case 'emoji':
+			case TokenType.Emoji:
 				return StyledEmoji;
-			case 'punctuationSign':
-				if (leftAttachedPunctuation.includes(token.content)) {
+			case TokenType.PunctuationSign:
+				if (
+					leftAttachedPunctuation.includes(token.content as LeftPunctuationMark)
+				) {
 					return StyledPunctuationLeft;
 				}
-				if (rightAttachedPunctuation.includes(token.content)) {
+				if (
+					rightAttachedPunctuation.includes(
+						token.content as RightPunctuationMark,
+					)
+				) {
 					return StyledPunctuationRight;
 				}
 				return BaseToken;
@@ -41,6 +77,12 @@ export const TokenComponent = ({
 				return StyledWord;
 		}
 	};
+
+	const parsedToken = TokenSchema.safeParse(token);
+	if (!parsedToken.success) {
+		console.error('Invalid token data:', parsedToken.error);
+		return null;
+	}
 
 	const TokenElement = getTokenStyle();
 
@@ -50,7 +92,7 @@ export const TokenComponent = ({
 			isCognate={token.isCognate}
 			isFalseCognate={token.isFalseCognate}
 			isSlang={token.isSlang}
-			isPunctuation={token.tokenType === 'punctuationSign'}
+			isPunctuation={token.tokenType === TokenType.PunctuationSign}
 			onClick={handleClick}
 		>
 			{token.content.toLowerCase()}

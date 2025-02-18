@@ -6,7 +6,6 @@ import Sentences from '../components/Sentence';
 // import {API_URL} from '../config';
 import {useYoutubePlayer} from '../hooks/useYoutubePlayer';
 import {useScrollPosition} from '../hooks/useScrollPosition';
-import {ISentence} from '../types/SelectedSong.types';
 import {
 	Container,
 	YoutubeContainer,
@@ -18,28 +17,19 @@ import {
 import tempTextEntries from '../tempData/text-entries.json';
 import tempSentences from '../tempData/sentences.json';
 import tempTokens from '../tempData/tokens.json';
-import {LearningMode} from '../types/SelectedSong.types';
+import {LearningMode, ISentence} from '@bocaditosespanol/shared';
 
-type TokensData = {
-	words: Record<string, Record<string, IWord>>;
-	punctuationSigns: Record<string, IPunctuationSign>;
-	emojis: Record<string, IEmoji>;
-};
-
+// TODO: rename writing practice to listening practice
 const getAllTokens = (tokensData: TokensData) => {
 	const allTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
 
-	Object.values(tokensData.words).forEach(category => {
-		allTokens.push(...Object.values(category));
-	});
+	allTokens.push(...Object.values(tokensData.words));
 
 	allTokens.push(...Object.values(tokensData.punctuationSigns));
-
 	allTokens.push(...Object.values(tokensData.emojis));
 
 	return allTokens;
 };
-
 const SelectedSong = () => {
 	const {songId} = useParams();
 	const [sentences, setSentences] = useState<Array<ISentence> | null>(null);
@@ -102,10 +92,10 @@ const SelectedSong = () => {
 					Hide Translations
 				</ModeButton>
 				<ModeButton
-					active={learningMode === LearningMode.WRITING_PRACTICE}
-					onClick={() => setLearningMode(LearningMode.WRITING_PRACTICE)}
+					active={learningMode === LearningMode.LISTENING_PRACTICE}
+					onClick={() => setLearningMode(LearningMode.LISTENING_PRACTICE)}
 				>
-					Writing Practice
+					Listening Practice
 				</ModeButton>
 			</ModeSelector>
 			{sentences?.map((sentence, index) => (

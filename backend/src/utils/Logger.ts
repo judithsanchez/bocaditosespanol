@@ -43,7 +43,7 @@ ${data ? `📦 Data: ${JSON.stringify(data, null, 2)}` : ''}
 ${error instanceof Error && error.stack ? `📚 Stack: ${error.stack}` : ''}
 ------------------------------------------------------------`);
 	}
-	private getTimestamp(): string {
-		return new Date().toISOString();
+	private getTimestamp(): number {
+		return Date.now();
 	}
 }

@@ -1,4 +1,4 @@
-import {IWord, PartOfSpeech, TokenType} from 'lib/types';
+import {IWord, PartOfSpeech, TokenType} from '@bocaditosespanol/shared';
 
 export const splitParagraphFixtures = {
 	basicSentences: {

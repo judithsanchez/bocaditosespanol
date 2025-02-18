@@ -11,7 +11,7 @@ export interface PipelineOptions {
 
 export class Pipeline<T> {
 	private steps: PipelineStep<T>[] = [];
-	private readonly logger: Logger;
+	protected readonly logger: Logger;
 
 	constructor(
 		private readonly options: PipelineOptions,
