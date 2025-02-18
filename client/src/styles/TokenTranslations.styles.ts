@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledTokensTranslations = styled.div`
-	height: 20px;
+	min-height: 0.2rem;
 	width: fit-content;
 	margin: 0 auto;
 	display: flex;

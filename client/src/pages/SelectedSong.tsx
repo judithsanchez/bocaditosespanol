@@ -19,20 +19,17 @@ import tempSentences from '../tempData/sentences.json';
 import tempTokens from '../tempData/tokens.json';
 import {LearningMode, ISentence} from '@bocaditosespanol/shared';
 
+// TODO: rename writing practice to listening practice
 const getAllTokens = (tokensData: TokensData) => {
 	const allTokens: Array<IWord | IPunctuationSign | IEmoji> = [];
 
-	Object.values(tokensData.words).forEach(category => {
-		allTokens.push(...Object.values(category));
-	});
+	allTokens.push(...Object.values(tokensData.words));
 
 	allTokens.push(...Object.values(tokensData.punctuationSigns));
-
 	allTokens.push(...Object.values(tokensData.emojis));
 
 	return allTokens;
 };
-
 const SelectedSong = () => {
 	const {songId} = useParams();
 	const [sentences, setSentences] = useState<Array<ISentence> | null>(null);
