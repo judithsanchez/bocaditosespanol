@@ -6,7 +6,6 @@ import Sentences from '../components/Sentence';
 // import {API_URL} from '../config';
 import {useYoutubePlayer} from '../hooks/useYoutubePlayer';
 import {useScrollPosition} from '../hooks/useScrollPosition';
-import {ISentence} from '../types/SelectedSong.types';
 import {
 	Container,
 	YoutubeContainer,
@@ -18,13 +17,7 @@ import {
 import tempTextEntries from '../tempData/text-entries.json';
 import tempSentences from '../tempData/sentences.json';
 import tempTokens from '../tempData/tokens.json';
-import {LearningMode} from '../types/SelectedSong.types';
-
-type TokensData = {
-	words: Record<string, Record<string, IWord>>;
-	punctuationSigns: Record<string, IPunctuationSign>;
-	emojis: Record<string, IEmoji>;
-};
+import {LearningMode, ISentence} from '@bocaditosespanol/shared';
 
 const getAllTokens = (tokensData: TokensData) => {
 	const allTokens: Array<IWord | IPunctuationSign | IEmoji> = [];

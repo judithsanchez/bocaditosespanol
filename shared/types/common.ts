@@ -203,3 +203,9 @@ export const sentenceSchema = z.object({
 });
 
 export const formattedSentencesSchema = z.array(sentenceSchema);
+
+export enum LearningMode {
+	DEFAULT = 'default',
+	HIDE_TRANSLATIONS = 'hideTranslations',
+	WRITING_PRACTICE = 'writingPractice',
+}

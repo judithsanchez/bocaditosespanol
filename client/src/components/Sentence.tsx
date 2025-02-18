@@ -15,7 +15,7 @@ import {
 	FeedbackIcon,
 	ButtonFeedbackContainer,
 } from '../styles/Sentence.styles';
-import {ISentence, LearningMode} from '../types/SelectedSong.types';
+import {ISentence, LearningMode} from '@bocaditosespanol/shared';
 
 const Sentence = ({
 	sentence,

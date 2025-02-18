@@ -1,6 +1,9 @@
 {
 	"compilerOptions": {
-		"composite": true
+		"composite": true,
+		"paths": {
+			"@bocaditosespanol/shared": ["../shared/dist"]
+		}
 	},
 	"files": [],
 	"references": [
