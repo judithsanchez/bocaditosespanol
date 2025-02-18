@@ -123,7 +123,6 @@ export class BatchProcessor<T> {
 		this.logger.end('process');
 		return results;
 	}
-
 	private async processBatch(
 		batch: T[],
 		progress: BatchProgress,
@@ -174,9 +173,9 @@ export class BatchProcessor<T> {
 					);
 				}
 
-				await new Promise(resolve =>
-					setTimeout(resolve, config.options.delayBetweenBatches),
-				);
+				const backoffDelay =
+					config.options.delayBetweenBatches * Math.pow(2, attempts);
+				await new Promise(resolve => setTimeout(resolve, backoffDelay));
 			}
 		}
 

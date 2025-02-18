@@ -77,10 +77,10 @@ export interface BatchOptions {
 export const PROVIDER_BATCH_CONFIGS: Record<AIProviderType, BatchOptions> = {
 	[AIProviderType.GEMINI]: {
 		retryAttempts: 3,
-		delayBetweenBatches: 200,
-		maxRequestsPerMinute: 60,
+		delayBetweenBatches: 1000,
+		maxRequestsPerMinute: 6,
 		timeoutMs: 30000,
-		maxConcurrentBatches: 4,
+		maxConcurrentBatches: 1,
 	},
 	[AIProviderType.OLLAMA]: {
 		retryAttempts: 3,
