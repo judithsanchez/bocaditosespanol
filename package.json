@@ -27,6 +27,7 @@
 	},
 	"scripts": {
 		"build": "npm run build:shared && npm run build:backend && npm run build:client",
+		"build:deploy": "npm run build:shared && npm run build:client",
 		"build:shared": "tsc -p shared/tsconfig.json",
 		"build:backend": "tsc -p backend/tsconfig.json",
 		"build:client": "vite build",
