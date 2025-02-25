@@ -30,7 +30,7 @@
 		"build:deploy": "npm run build:shared && npm run build:client",
 		"build:shared": "tsc -p shared/tsconfig.json",
 		"build:backend": "tsc -p backend/tsconfig.json",
-		"build:client": "vite build",
+		"build:client": "cd client && npm run build",
 		"watch:shared": "tsc -p shared/tsconfig.json --watch",
 		"watch:backend": "nodemon --watch backend --exec \"npm run build:backend\"",
 		"watch:client": "vite",
