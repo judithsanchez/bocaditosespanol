@@ -1,6 +1,0 @@
-{
-	"version": 2,
-	"buildCommand": "npm run build:deploy",
-	"outputDirectory": "client/dist",
-	"ignoreCommand": "echo 'Ignoring backend folder' || true"
-}
