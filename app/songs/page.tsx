@@ -3,7 +3,7 @@
 import {useState, useEffect} from 'react';
 import {useRouter} from 'next/navigation';
 import {
-	Container,
+	SongSelectorContainer,
 	SearchInput,
 	SongListContainer,
 	SongButton,
@@ -68,7 +68,7 @@ export default function SongSelector() {
 	});
 
 	return (
-		<Container>
+		<SongSelectorContainer>
 			<SearchInput
 				type="text"
 				placeholder="Search by title or interpreter..."
@@ -91,6 +91,6 @@ export default function SongSelector() {
 					<p>No songs found matching your search.</p>
 				)}
 			</SongListContainer>
-		</Container>
+		</SongSelectorContainer>
 	);
 }

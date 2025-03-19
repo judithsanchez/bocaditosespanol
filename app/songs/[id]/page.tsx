@@ -6,7 +6,7 @@ import Sentence from '@/components/Sentence';
 import {useYoutubePlayer} from '@/lib/hooks/useYoutubePlayer';
 import {useScrollPosition} from '@/lib/hooks/useScrollPosition';
 import {
-	Container,
+	SelectedSongContainer,
 	YoutubeContainer,
 	PlayerControls,
 	ControlButton,
@@ -31,7 +31,6 @@ export default function SelectedSong() {
 
 	useEffect(() => {
 		if (songId) {
-			// Try to get song data from localStorage first
 			const cachedSongData = localStorage.getItem(`song_${songId}`);
 
 			if (cachedSongData) {
@@ -79,7 +78,7 @@ export default function SelectedSong() {
 	if (!song) return <div>Song not found</div>;
 
 	return (
-		<Container>
+		<SelectedSongContainer>
 			<YoutubeContainer>
 				<div id="youtube-player"></div>
 			</YoutubeContainer>
@@ -117,6 +116,6 @@ export default function SelectedSong() {
 					mode={learningMode}
 				/>
 			))}
-		</Container>
+		</SelectedSongContainer>
 	);
 }

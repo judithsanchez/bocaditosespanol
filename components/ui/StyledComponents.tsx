@@ -8,7 +8,6 @@ export const HomeContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 80vh;
 	gap: 2rem;
 	background-color: ${props => props.theme.colors.background};
 `;
@@ -124,7 +123,7 @@ export const ThemeToggle = styled.button`
 	}
 `;
 
-export const Container = styled.div`
+export const SelectedSongContainer = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -245,6 +244,7 @@ export const SentenceCard = styled.div`
 	align-items: center;
 	padding: 1.5rem;
 	gap: 1.5rem;
+	margin: 1rem 0;
 `;
 
 export const TokensContainer = styled.div`
@@ -333,12 +333,16 @@ export const FeedbackIcon = styled.div`
 	transform: translateY(-50%);
 `;
 
-// export const Container = styled.div`
-// 	width: 100%;
-// 	display: flex;
-// 	flex-direction: column;
-// 	align-items: center;
-// `;
+export const SongSelectorContainer = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	padding: 2rem;
+	margin-bottom: 7.5rem;
+	background-color: ${props => props.theme.colors.background};
+`;
 
 export const SearchInput = styled.input`
 	width: 80%;
@@ -364,12 +368,6 @@ export const SearchInput = styled.input`
 		opacity: 0.6;
 	}
 `;
-
-// export const Title = styled.h1`
-// 	color: ${props => props.theme.colors.onBackground};
-// 	margin-bottom: 2rem;
-// 	text-align: center;
-// `;
 
 export const SongListContainer = styled.div`
 	width: 80%;
@@ -415,21 +413,21 @@ export const BaseToken = styled.span<{
 	${props =>
 		props.isCognate &&
 		`
-		border-bottom: 3px solid ${props.theme.colors.cognate};
-	`}
+    border-bottom: 3px solid ${props.theme.colors.cognate};
+  `}
 
 	${props =>
 		props.isFalseCognate &&
 		`
-		border-bottom: 3px solid ${props.theme.colors.falseCognate};
-	`}
-
-	${props =>
+    border-bottom: 3px solid ${props.theme.colors.falseCognate};
+  `}
+  ${props =>
 		props.isSlang &&
 		`
-		border-bottom: 3px solid ${props.theme.colors.slang};
-	`}
+    border-bottom: 3px solid ${props.theme.colors.slang};
+  `}
 `;
+
 export const StyledWord = styled(BaseToken)`
 	font-style: italic;
 `;
