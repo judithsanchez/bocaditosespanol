@@ -45,6 +45,7 @@ export interface ISentence {
 	};
 	tokenIds: string[];
 	learningInsights?: ILearningInsight;
+	tokens?: Token[];
 }
 
 export enum TokenType {

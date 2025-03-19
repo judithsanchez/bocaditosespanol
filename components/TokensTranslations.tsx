@@ -8,15 +8,17 @@ export interface TokensTranslationsProps {
 export const TokensTranslations = ({
 	selectedToken,
 }: TokensTranslationsProps) => {
+	if (!selectedToken || selectedToken.tokenType !== 'word') {
+		return null;
+	}
+
 	return (
 		<StyledTokensTranslations>
-			{selectedToken?.tokenType === 'word' &&
-				selectedToken.senses?.map(
-					(sense: {translations: {english: any[]}; senseId: any}) =>
-						sense.translations.english.map((translation, index) => (
-							<p key={`${sense.senseId}-translation-${index}`}>{translation}</p>
-						)),
-				)}
+			{selectedToken.senses?.map(sense =>
+				sense.translations.english.map((translation, index) => (
+					<p key={`${sense.senseId}-translation-${index}`}>{translation}</p>
+				)),
+			)}
 		</StyledTokensTranslations>
 	);
 };

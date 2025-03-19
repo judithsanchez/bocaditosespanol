@@ -22,7 +22,7 @@ export type ValidatedToken = z.infer<typeof TokenSchema>;
 export interface TokenComponentProps {
 	token: ValidatedToken;
 	isSelected?: boolean;
-	onClick?: () => void;
+	onClick?: (event: React.MouseEvent) => void;
 }
 
 export interface TokensTranslationsProps {
@@ -47,9 +47,11 @@ export const TokenComponent = ({
 	];
 	const rightAttachedPunctuation: readonly RightPunctuationMark[] = ['¿', '¡'];
 
-	const handleClick = () => {
-		if (token.tokenType !== TokenType.PunctuationSign && onClick) {
-			onClick();
+	const handleClick = (e: React.MouseEvent) => {
+		// Only handle clicks for word tokens
+		if (token.tokenType === TokenType.Word && onClick) {
+			e.stopPropagation(); // Prevent event bubbling
+			onClick(e);
 		}
 	};
 

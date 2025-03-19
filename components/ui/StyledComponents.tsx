@@ -472,3 +472,24 @@ export const StyledTokensTranslations = styled.div`
 		padding: 2px 8px;
 	}
 `;
+
+// Add these exports to your StyledComponents.tsx file
+export const SentenceContainer = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.3rem;
+	justify-content: center;
+	padding: 1rem;
+	cursor: pointer;
+`;
+
+export const TranslationContainer = styled.div`
+	margin-top: 1rem;
+	text-align: center;
+	color: ${props => props.theme.colors.onSurface};
+	font-size: 1rem;
+
+	p {
+		margin: 0.5rem 0;
+	}
+`;
