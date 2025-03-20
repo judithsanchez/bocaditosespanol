@@ -4,10 +4,10 @@ import {z} from 'zod';
 
 export async function GET(
 	request: Request,
-	{params}: {params: {songId: string}},
+	context: {params: {songId: string}},
 ) {
 	try {
-		const {songId} = await params;
+		const {songId} = context.params;
 		const dbService = new DatabaseService();
 
 		const textEntries = await dbService.readFile('text-entries.json');
