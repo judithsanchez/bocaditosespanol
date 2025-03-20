@@ -11,10 +11,12 @@ export async function GET() {
 		const textEntries = await dbService.readFile('text-entries.json');
 		const songs = textEntries.song || [];
 
-		const simplifiedSongs = songs.map((song: {songId: any; metadata: any}) => ({
-			songId: song.songId,
-			metadata: song.metadata,
-		}));
+		const simplifiedSongs = songs.map(
+			(song: {songId: unknown; metadata: unknown}) => ({
+				songId: song.songId,
+				metadata: song.metadata,
+			}),
+		);
 
 		return NextResponse.json(simplifiedSongs);
 	} catch (error) {

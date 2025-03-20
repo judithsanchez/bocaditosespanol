@@ -1,9 +1,10 @@
 import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
-import {ThemeProvider} from '@/components/ThemeContext'; // Not ThemeProvider.tsximport NavBar from '@/components/NavBar';
+import {ThemeProvider} from '@/components/ThemeContext';
 import StyledComponentsRegistry from '@/lib/registry';
 import NavBar from '@/components/NavBar';
+import {PageWrapper, MainContent} from '@/components/ui/StyledComponents';
 
 // Import fonts
 const geistSans = Geist({
@@ -28,8 +29,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 			<body>
 				<StyledComponentsRegistry>
 					<ThemeProvider>
-						<NavBar />
-						{children}
+						<PageWrapper>
+							<NavBar />
+							<MainContent>{children}</MainContent>
+						</PageWrapper>
 					</ThemeProvider>
 				</StyledComponentsRegistry>
 			</body>

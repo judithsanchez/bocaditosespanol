@@ -20,6 +20,7 @@ export const lightTheme = {
 		cognate: '#A82F62',
 		falseCognate: '#7F7DCF',
 		slang: '#FFB800',
+		text: '#1A1A1A',
 	},
 };
 
@@ -43,5 +44,6 @@ export const darkTheme = {
 		cognate: '#A82F62',
 		falseCognate: '#7F7DCF',
 		slang: '#FFB800',
+		text: '#E5E1E6',
 	},
 };

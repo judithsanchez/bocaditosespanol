@@ -1,7 +1,20 @@
 'use client';
-
 import styled from 'styled-components';
 import Link from 'next/link';
+
+export const PageWrapper = styled.div`
+	min-height: 100vh;
+	background-color: ${props => props.theme.colors.background};
+	display: flex;
+	flex-direction: column;
+`;
+
+export const MainContent = styled.main`
+	min-height: 100vh;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+`;
 
 export const HomeContainer = styled.div`
 	display: flex;
@@ -10,6 +23,8 @@ export const HomeContainer = styled.div`
 	align-items: center;
 	gap: 2rem;
 	background-color: ${props => props.theme.colors.background};
+	height: 100%; /* This makes it take the full height of MainContent */
+	flex: 1; /* This ensures it grows to fill available space */
 `;
 
 export const Title = styled.h1`
@@ -232,19 +247,20 @@ export const ModeButton = styled.button<{active: boolean}>`
 `;
 
 export const SentenceCard = styled.div`
-	min-height: 150px;
+	min-height: 200px; // Increased minimum height
 	width: 350px;
-	height: auto;
+	height: auto; // Will expand as needed
 	background-color: ${props => props.theme.colors.surface};
 	border-radius: 8px;
 	box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center; // Changed from space-around to center
 	align-items: center;
 	padding: 1.5rem;
 	gap: 1.5rem;
 	margin: 1rem 0;
+	position: relative; // Added for absolute positioning of children if needed
 `;
 
 export const TokensContainer = styled.div`
@@ -257,7 +273,7 @@ export const TokensContainer = styled.div`
 
 export const Translation = styled.p`
 	font-size: 12px;
-	color: ${props => props.theme.colors.text}80;
+	color: ${props => props.theme.colors.onSurface};
 	font-style: italic;
 	text-align: center;
 `;
@@ -342,6 +358,8 @@ export const SongSelectorContainer = styled.div`
 	padding: 2rem;
 	margin-bottom: 7.5rem;
 	background-color: ${props => props.theme.colors.background};
+	height: 100%; /* This makes it take the full height of MainContent */
+	flex: 1; /* This ensures it grows to fill available space */
 `;
 
 export const SearchInput = styled.input`
@@ -406,7 +424,9 @@ export const BaseToken = styled.span<{
 	font-family: 'Roboto', sans-serif;
 	font-weight: ${props => (props.isSelected ? '900' : '400')};
 	color: ${props =>
-		props.isSelected ? props.theme.colors.primary : 'inherit'};
+		props.isSelected
+			? props.theme.colors.primary
+			: props.theme.colors.onSurface};
 	cursor: ${props => (props.isPunctuation ? 'default' : 'pointer')};
 	transition: all 0.2s ease;
 
@@ -439,14 +459,14 @@ export const StyledEmoji = styled(BaseToken)`
 
 export const StyledPunctuationLeft = styled(BaseToken)`
 	font-style: normal;
-	color: ${props => props.theme.colors.text}40;
+	color: ${props => props.theme.colors.onSurface};
 	margin-left: -0.3rem;
 	padding-right: 0.5rem;
 `;
 
 export const StyledPunctuationRight = styled(BaseToken)`
 	font-style: normal;
-	color: ${props => props.theme.colors.text}40;
+	color: ${props => props.theme.colors.onSurface};
 	margin-right: -0.5rem;
 	padding-left: 0.5rem;
 `;
@@ -461,11 +481,13 @@ export const StyledTokensTranslations = styled.div`
 	gap: 0.5rem;
 	align-items: center;
 	justify-content: center;
+	transition: all 0.3s ease;
 
 	p {
 		font-size: 14px;
 		margin: 0;
-		background-color: ${props => props.theme.colors.primary}90;
+		background-color: ${props => props.theme.colors.primary};
+		color: ${props => props.theme.colors.onPrimary};
 		border-radius: 5px;
 		padding: 2px 8px;
 	}
@@ -490,4 +512,12 @@ export const TranslationContainer = styled.div`
 	p {
 		margin: 0.5rem 0;
 	}
+`;
+
+export const TokenTranslationsWrapper = styled.div`
+	min-height: 20px; // Reserve space for translations
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;

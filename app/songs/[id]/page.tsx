@@ -82,7 +82,7 @@ export default function SelectedSong() {
 			<YoutubeContainer>
 				<div id="youtube-player"></div>
 			</YoutubeContainer>
-			<PlayerControls visible={showControls}>
+			<PlayerControls visible={Boolean(showControls)}>
 				<ControlButton onClick={controls.seekBackward}>⏪</ControlButton>
 				<ControlButton onClick={controls.togglePlayPause}>
 					{isPlaying ? '⏸️' : '▶️'}

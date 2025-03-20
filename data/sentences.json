@@ -1,1483 +1,3909 @@
 {
-	"andrea-bad-bunny": [
-		{
-			"content": "quiero a alguien que se atreva.",
-			"sentenceId": "sentence-1-andrea-bad-bunny",
-			"tokenIds": [
-				"token-quiero",
-				"token-a",
-				"token-alguien",
-				"token-que",
-				"token-se",
-				"token-atreva",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I want someone who dares.",
-					"literal": "I want to someone that dares himself."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of 'se atreva' employs the subjunctive mood, which is triggered by the 'que' after 'alguien'. This construction is common when expressing desires or needs related to an indefinite person.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "cuatro de la mañana y andrea saliendo de la perla.",
-			"sentenceId": "sentence-2-andrea-bad-bunny",
-			"tokenIds": [
-				"token-cuatro",
-				"token-de",
-				"token-la",
-				"token-mañana",
-				"token-y",
-				"token-andrea",
-				"token-saliendo",
-				"token-de",
-				"token-la",
-				"token-perla",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Four in the morning and Andrea leaving La Perla.",
-					"literal": "Four of the morning and Andrea leaving from the pearl."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "muchos la critican sin conocerla.",
-			"sentenceId": "sentence-3-andrea-bad-bunny",
-			"tokenIds": [
-				"token-muchos",
-				"token-la",
-				"token-critican",
-				"token-sin",
-				"token-conocerla",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Many criticize her without knowing her.",
-					"literal": "Many her criticize without knowing her."
-				}
-			},
-			"learningInsights": {
-				"insight": "The placement of 'la' before 'critican' demonstrates the use of object pronouns in Spanish. Also, using the infinitive 'conocerla' after 'sin' is a standard construction to express 'without' + gerund.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "calle como un civic, inteligente como un tesla.",
-			"sentenceId": "sentence-4-andrea-bad-bunny",
-			"tokenIds": [
-				"token-calle",
-				"token-como",
-				"token-un",
-				"token-civic",
-				"token-,",
-				"token-inteligente",
-				"token-como",
-				"token-un",
-				"token-tesla",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Street smart like a Civic, intelligent like a Tesla.",
-					"literal": "Street like a Civic, intelligent like a Tesla."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "soñando con alguien que pueda comprenderla.",
-			"sentenceId": "sentence-5-andrea-bad-bunny",
-			"tokenIds": [
-				"token-soñando",
-				"token-con",
-				"token-alguien",
-				"token-que",
-				"token-pueda",
-				"token-comprenderla",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Dreaming of someone who can understand her.",
-					"literal": "Dreaming with someone that can understand her."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of 'pueda' is the subjunctive mood after 'que' when referring to an indefinite 'alguien'. This shows a common grammatical pattern when expressing desires or uncertainty about someone's ability.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "y no quiera cambiarla, solo quererla.",
-			"sentenceId": "sentence-6-andrea-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-no",
-				"token-quiera",
-				"token-cambiarla",
-				"token-,",
-				"token-solo",
-				"token-quererla",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "and don't try to change her, just love her.",
-					"literal": "and no want change her, only love her."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "solo quererla.",
-			"sentenceId": "sentence-7-andrea-bad-bunny",
-			"tokenIds": ["token-solo", "token-quererla", "token-."],
-			"translations": {
-				"english": {
-					"contextual": "just love her.",
-					"literal": "only love her."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "de la iupi para la inter, de la inter para sagrado.",
-			"sentenceId": "sentence-8-andrea-bad-bunny",
-			"tokenIds": [
-				"token-de",
-				"token-la",
-				"token-iupi",
-				"token-para",
-				"token-la",
-				"token-inter",
-				"token-,",
-				"token-de",
-				"token-la",
-				"token-inter",
-				"token-para",
-				"token-sagrado",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "from the UPI to the Inter, from the Inter to Sagrado.",
-					"literal": "from the UPI to the Inter, from the Inter to Sagrado."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "equivocándose de amores en lo que llega el indicado.",
-			"sentenceId": "sentence-9-andrea-bad-bunny",
-			"tokenIds": [
-				"token-equivocándose",
-				"token-de",
-				"token-amores",
-				"token-en",
-				"token-lo",
-				"token-que",
-				"token-llega",
-				"token-el",
-				"token-indicado",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "making mistakes in love while waiting for the right one.",
-					"literal": "making mistakes of loves in what arrives the indicated."
-				}
-			},
-			"learningInsights": {
-				"insight": "The phrase \"equivocándose de amores\" is a common way to express making mistakes in love. Also, note the use of \"en lo que\" to mean \"while\" or \"during the time that\" something else happens. The word \"indicado\" is used as a noun here, referring to the right person.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "quiere quedarse en pr, no irse para ningún estado, pero todo se ha complicado.",
-			"sentenceId": "sentence-10-andrea-bad-bunny",
-			"tokenIds": [
-				"token-quiere",
-				"token-quedarse",
-				"token-en",
-				"token-pr",
-				"token-,",
-				"token-no",
-				"token-irse",
-				"token-para",
-				"token-ningún",
-				"token-estado",
-				"token-,",
-				"token-pero",
-				"token-todo",
-				"token-se",
-				"token-ha",
-				"token-complicado",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "she wants to stay in Puerto Rico, not leave for any state, but everything has become complicated.",
-					"literal": "wants to stay in PR, not leave for any state, but everything has complicated."
-				}
-			},
-			"learningInsights": {
-				"insight": "This sentence uses the reflexive verb \"quedarse\" to mean \"to stay\". Also, note the use of \"para ningún estado,\" which literally translates to \"for no state,\" but means \"to any state.\" The phrase \"todo se ha complicado\" uses the present perfect tense to describe a recent complication.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "como si ser mujer fuera un pecado.",
-			"sentenceId": "sentence-11-andrea-bad-bunny",
-			"tokenIds": [
-				"token-como",
-				"token-si",
-				"token-ser",
-				"token-mujer",
-				"token-fuera",
-				"token-un",
-				"token-pecado",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "As if being a woman was a sin.",
-					"literal": "as if being woman was a sin."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of 'como si' followed by the subjunctive ('fuera') is a common way to express hypothetical or counterfactual situations. This structure is crucial for expressing doubt or imagining scenarios that are not true. Also, it's worth noting that the verb 'ser' is used here to describe an inherent quality ('being a woman').",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "la demonia ha despertado.",
-			"sentenceId": "sentence-12-andrea-bad-bunny",
-			"tokenIds": [
-				"token-la",
-				"token-demonia",
-				"token-ha",
-				"token-despertado",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "The she-devil has awakened.",
-					"literal": "the she-devil has awakened."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "una guerrera.",
-			"sentenceId": "sentence-13-andrea-bad-bunny",
-			"tokenIds": ["token-una", "token-guerrera", "token-."],
-			"translations": {
-				"english": {
-					"contextual": "A warrior.",
-					"literal": "a warrior."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "juana de arco, temperamental, niurka marcos.",
-			"sentenceId": "sentence-14-andrea-bad-bunny",
-			"tokenIds": [
-				"token-juana",
-				"token-de",
-				"token-arco",
-				"token-,",
-				"token-temperamental",
-				"token-,",
-				"token-niurka",
-				"token-marcos",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Joan of Arc, temperamental, Niurka Marcos.",
-					"literal": "Joan of Arc, temperamental, Niurka Marcos."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "a la buena, beso y abrazo.",
-			"sentenceId": "sentence-15-andrea-bad-bunny",
-			"tokenIds": [
-				"token-a",
-				"token-la",
-				"token-buena",
-				"token-,",
-				"token-beso",
-				"token-y",
-				"token-abrazo",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "On the good side, a kiss and a hug.",
-					"literal": "to the good, kiss and hug."
-				}
-			},
-			"learningInsights": {
-				"insight": "The expression 'a la buena' implies a positive or amicable approach. Understanding such idiomatic phrases is important for grasping the nuances of everyday Spanish. It provides insight into cultural values of warmth and friendliness.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "a la mala, botellazo, sin soltar el vaso.",
-			"sentenceId": "sentence-16-andrea-bad-bunny",
-			"tokenIds": [
-				"token-a",
-				"token-la",
-				"token-mala",
-				"token-,",
-				"token-botellazo",
-				"token-,",
-				"token-sin",
-				"token-soltar",
-				"token-el",
-				"token-vaso",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Dealing with things the hard way, a hit with a bottle, without letting go of the glass.",
-					"literal": "to the bad, bottle hit, without releasing the glass."
-				}
-			},
-			"learningInsights": {
-				"insight": "The phrase 'a la mala' means 'the hard way' or 'by force'. 'Sin soltar el vaso' is interesting because it implies determination even in a chaotic situation.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "le gustaba el basket, leer tú y hacerse lazos.",
-			"sentenceId": "sentence-17-andrea-bad-bunny",
-			"tokenIds": [
-				"token-le",
-				"token-gustaba",
-				"token-el",
-				"token-basket",
-				"token-,",
-				"token-leer",
-				"token-tú",
-				"token-y",
-				"token-hacerse",
-				"token-lazos",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She liked basketball, reading you, and forming connections.",
-					"literal": "to her liked the basketball, reading you and making ties."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "pero de esa niña solo quedan pedazos.",
-			"sentenceId": "sentence-18-andrea-bad-bunny",
-			"tokenIds": [
-				"token-pero",
-				"token-de",
-				"token-esa",
-				"token-niña",
-				"token-solo",
-				"token-quedan",
-				"token-pedazos",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "But of that girl, only pieces remain.",
-					"literal": "but of that girl only remain pieces."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "se ha buscado un par de casos.",
-			"sentenceId": "sentence-19-andrea-bad-bunny",
-			"tokenIds": [
-				"token-se",
-				"token-ha",
-				"token-buscado",
-				"token-un",
-				"token-par",
-				"token-de",
-				"token-casos",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She has gotten herself into a couple of situations.",
-					"literal": "she has looked for a pair of cases."
-				}
-			},
-			"learningInsights": {
-				"insight": "The reflexive construction 'se ha buscado' indicates that she got herself into the situations. 'Un par de casos' is a common way to say 'a couple of situations'.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "por no aguantarle chistes a ningún payaso.",
-			"sentenceId": "sentence-20-andrea-bad-bunny",
-			"tokenIds": [
-				"token-por",
-				"token-no",
-				"token-aguantarle",
-				"token-chistes",
-				"token-a",
-				"token-ningún",
-				"token-payaso",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "For not putting up with jokes from any clown.",
-					"literal": "for not enduring jokes to any clown."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of 'aguantarle' (to endure it) implies tolerating something unpleasant. The construction 'a ningún payaso' emphasizes that she doesn't tolerate jokes from anyone she considers a 'clown'.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "mírala cómo camina.",
-			"sentenceId": "sentence-21-andrea-bad-bunny",
-			"tokenIds": ["token-mírala", "token-cómo", "token-camina", "token-."],
-			"translations": {
-				"english": {
-					"contextual": "Look at her, how she walks.",
-					"literal": "look at her how she walks."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "lo que le falta es la tarima.",
-			"sentenceId": "sentence-22-andrea-bad-bunny",
-			"tokenIds": [
-				"token-lo",
-				"token-que",
-				"token-le",
-				"token-falta",
-				"token-es",
-				"token-la",
-				"token-tarima",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "What she needs is the stage.",
-					"literal": "what to her is missing is the stage."
-				}
-			},
-			"learningInsights": {
-				"insight": "The structure 'lo que + verb + es' is used to emphasize what someone needs or lacks. It translates to 'what (pronoun) needs is (noun)'",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "cansada de esperar propina y de lo que su familia opina.",
-			"sentenceId": "sentence-23-andrea-bad-bunny",
-			"tokenIds": [
-				"token-cansada",
-				"token-de",
-				"token-esperar",
-				"token-propina",
-				"token-y",
-				"token-de",
-				"token-lo",
-				"token-que",
-				"token-su",
-				"token-familia",
-				"token-opina",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Tired of waiting for tips and what her family thinks.",
-					"literal": "tired of waiting tip and of what her family thinks."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "para colmo ahora, el gobierno la llama asesina.",
-			"sentenceId": "sentence-24-andrea-bad-bunny",
-			"tokenIds": [
-				"token-para",
-				"token-colmo",
-				"token-ahora",
-				"token-,",
-				"token-el",
-				"token-gobierno",
-				"token-la",
-				"token-llama",
-				"token-asesina",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "To top it off, now the government calls her a murderer.",
-					"literal": "for peak now, the government her calls murderer."
-				}
-			},
-			"learningInsights": {
-				"insight": "The phrase 'para colmo' is an idiomatic expression that means 'to top it off' or 'to make matters worse.' It's used to indicate an additional negative event.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "una diva campesina.",
-			"sentenceId": "sentence-25-andrea-bad-bunny",
-			"tokenIds": ["token-una", "token-diva", "token-campesina", "token-."],
-			"translations": {
-				"english": {
-					"contextual": "A peasant diva.",
-					"literal": "a diva peasant."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "chico, quédate en tu esquina y no pidas rosas si no aguantas espinas, no.",
-			"sentenceId": "sentence-26-andrea-bad-bunny",
-			"tokenIds": [
-				"token-chico",
-				"token-,",
-				"token-quédate",
-				"token-en",
-				"token-tu",
-				"token-esquina",
-				"token-y",
-				"token-no",
-				"token-pidas",
-				"token-rosas",
-				"token-si",
-				"token-no",
-				"token-aguantas",
-				"token-espinas",
-				"token-,",
-				"token-no",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Boy, stay in your place and don't ask for roses if you can't handle thorns, no.",
-					"literal": "Boy, stay in your corner and don't ask for roses if you don't endure thorns, no."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "no quiero que nadie me diga lo que yo tengo que hacer.",
-			"sentenceId": "sentence-27-andrea-bad-bunny",
-			"tokenIds": [
-				"token-no",
-				"token-quiero",
-				"token-que",
-				"token-nadie",
-				"token-me",
-				"token-diga",
-				"token-lo",
-				"token-que",
-				"token-yo",
-				"token-tengo",
-				"token-que",
-				"token-hacer",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I don't want anyone telling me what I have to do.",
-					"literal": "I don't want that nobody tells me what I have that do."
-				}
-			},
-			"learningInsights": {
-				"insight": "The construction 'no quiero que + subjunctive' is used to express a desire that someone else does not do something. Also, the use of 'nadie' requires the 'que' clause to be in the subjunctive mood ('diga'). This sentence demonstrates a common way to express not wanting someone to tell you what to do.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "se ponen a hablar y conmigo verán, no van a joder.",
-			"sentenceId": "sentence-28-andrea-bad-bunny",
-			"tokenIds": [
-				"token-se",
-				"token-ponen",
-				"token-a",
-				"token-hablar",
-				"token-y",
-				"token-conmigo",
-				"token-verán",
-				"token-,",
-				"token-no",
-				"token-van",
-				"token-a",
-				"token-joder",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "They start talking and they'll see with me, they're not going to mess around.",
-					"literal": "They start to talk and with me they will see, they are not going to bother."
-				}
-			},
-			"learningInsights": {
-				"insight": "The phrase 'se ponen a + infinitive' indicates the beginning of an action ('se ponen a hablar' means 'they start talking'). The verb 'joder' is a colloquial term meaning 'to bother', 'to mess around', or 'to screw around', and its usage varies depending on the context and region.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "que digan lo que sea.",
-			"sentenceId": "sentence-29-andrea-bad-bunny",
-			"tokenIds": [
-				"token-que",
-				"token-digan",
-				"token-lo",
-				"token-que",
-				"token-sea",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Let them say whatever.",
-					"literal": "That they say what it is."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "yo subo y bajo como la marea.",
-			"sentenceId": "sentence-30-andrea-bad-bunny",
-			"tokenIds": [
-				"token-yo",
-				"token-subo",
-				"token-y",
-				"token-bajo",
-				"token-como",
-				"token-la",
-				"token-marea",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I go up and down like the tide.",
-					"literal": "I go up and down like the tide."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "se tratan de montar y tambalean.",
-			"sentenceId": "sentence-31-andrea-bad-bunny",
-			"tokenIds": [
-				"token-se",
-				"token-tratan",
-				"token-de",
-				"token-montar",
-				"token-y",
-				"token-tambalean",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "they try to get on and they stagger.",
-					"literal": "they try to get on and they stagger."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of \"tratar de\" + infinitive to express \"try to\" or \"attempt to\" is a common and useful construction. Also, the verb \"tambalear\" (to stagger) adds to vocabulary related to movement and balance.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "quiero alguien que se atreva, que se atreva y me entienda a mí.",
-			"sentenceId": "sentence-32-andrea-bad-bunny",
-			"tokenIds": [
-				"token-quiero",
-				"token-alguien",
-				"token-que",
-				"token-se",
-				"token-atreva",
-				"token-,",
-				"token-que",
-				"token-se",
-				"token-atreva",
-				"token-y",
-				"token-me",
-				"token-entienda",
-				"token-a",
-				"token-mí",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I want someone who dares, who dares and understands me.",
-					"literal": "I want someone that dares, that dares and understands me to me."
-				}
-			},
-			"learningInsights": {
-				"insight": "The subjunctive mood after \"quiero alguien que...\" is a key grammatical concept. Also, the emphatic use of \"a mí\" at the end highlights the speaker's desire to be understood, which is a common pattern in Spanish.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "una loca que no quiere un loco.",
-			"sentenceId": "sentence-33-andrea-bad-bunny",
-			"tokenIds": [
-				"token-una",
-				"token-loca",
-				"token-que",
-				"token-no",
-				"token-quiere",
-				"token-un",
-				"token-loco",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "a crazy woman who doesn't want a crazy man.",
-					"literal": "a crazy woman that not wants a crazy man."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "quiere vino tinto y sushi de yoko.",
-			"sentenceId": "sentence-34-andrea-bad-bunny",
-			"tokenIds": [
-				"token-quiere",
-				"token-vino",
-				"token-tinto",
-				"token-y",
-				"token-sushi",
-				"token-de",
-				"token-yoko",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "she wants red wine and Yoko's sushi.",
-					"literal": "she wants wine red and sushi of yoko."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "días de playita, helado de coco.",
-			"sentenceId": "sentence-35-andrea-bad-bunny",
-			"tokenIds": [
-				"token-días",
-				"token-de",
-				"token-playita",
-				"token-,",
-				"token-helado",
-				"token-de",
-				"token-coco",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "days at the beach, coconut ice cream.",
-					"literal": "days of little beach, ice cream of coconut."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of \"playita\" (little beach) is a common diminutive that shows affection or informality. Understanding and using diminutives is important for natural-sounding Spanish.",
-				"difficulty": "beginner"
-			}
-		},
-		{
-			"content": "se merece tanto y recibe tan poco.",
-			"sentenceId": "sentence-36-andrea-bad-bunny",
-			"tokenIds": [
-				"token-se",
-				"token-merece",
-				"token-tanto",
-				"token-y",
-				"token-recibe",
-				"token-tan",
-				"token-poco",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She deserves so much and receives so little.",
-					"literal": "she deserves so much and receives so little."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "la mai reza por un doctor, ingeniero.",
-			"sentenceId": "sentence-37-andrea-bad-bunny",
-			"tokenIds": [
-				"token-la",
-				"token-mai",
-				"token-reza",
-				"token-por",
-				"token-un",
-				"token-doctor",
-				"token-,",
-				"token-ingeniero",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Her mom prays for her to be with a doctor or engineer.",
-					"literal": "the mom prays for a doctor, engineer."
-				}
-			},
-			"learningInsights": {
-				"insight": "This sentence uses 'mai' as a colloquial shortening of 'madre' (mother), common in some Spanish-speaking regions. It also shows how professions are presented as aspirations for someone, reflecting cultural values.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "y ella con bichotes y raperos.",
-			"sentenceId": "sentence-38-andrea-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-ella",
-				"token-con",
-				"token-bichotes",
-				"token-y",
-				"token-raperos",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And she's with drug dealers and rappers.",
-					"literal": "and she with drug dealers and rappers."
-				}
-			},
-			"learningInsights": {
-				"insight": "The word 'bichotes' is slang, likely originating in Puerto Rico, referring to drug dealers or powerful figures in the underworld.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "mi prima dice que es un cuero.",
-			"sentenceId": "sentence-39-andrea-bad-bunny",
-			"tokenIds": [
-				"token-mi",
-				"token-prima",
-				"token-dice",
-				"token-que",
-				"token-es",
-				"token-un",
-				"token-cuero",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "My cousin says that she's a slut.",
-					"literal": "my cousin says that she is a leather."
-				}
-			},
-			"learningInsights": {
-				"insight": "The phrase 'ser un cuero' is an idiomatic expression that is used to describe a woman considered promiscuous or a 'slut'. This expression showcases how words can take on very different meanings depending on the context and region.",
-				"difficulty": "advanced"
-			}
-		},
-		{
-			"content": "y lo que nadie sabe es que a su corazón le hace falta un suero.",
-			"sentenceId": "sentence-40-andrea-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-lo",
-				"token-que",
-				"token-nadie",
-				"token-sabe",
-				"token-es",
-				"token-que",
-				"token-a",
-				"token-su",
-				"token-corazón",
-				"token-le",
-				"token-hace",
-				"token-falta",
-				"token-un",
-				"token-suero",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And what nobody knows is that her heart needs some serum.",
-					"literal": "and what nobody knows is that to her heart is missing a serum."
-				}
-			},
-			"learningInsights": {
-				"insight": "The construction 'a su corazón le hace falta' demonstrates the use of the indirect object pronoun 'le' to indicate who is lacking something, which can be confusing for English speakers. It highlights a common grammatical structure in Spanish for expressing needs or deficiencies.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "chinga cabrón, se comenta.",
-			"sentenceId": "sentence-41-andrea-bad-bunny",
-			"tokenIds": [
-				"token-chinga",
-				"token-cabrón",
-				"token-,",
-				"token-se",
-				"token-comenta",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Damn it, people are talking.",
-					"literal": "fuck bastard, it is commented."
-				}
-			},
-			"learningInsights": {
-				"insight": "The phrase \"chinga cabrón\" is a strong expression. \"Se comenta\" is a common way to express that something is being talked about or rumored.",
-				"difficulty": "advanced"
-			}
-		},
-		{
-			"content": "y aunque la ven jangueando toda la semana, no se ve contenta, no.",
-			"sentenceId": "sentence-42-andrea-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-aunque",
-				"token-la",
-				"token-ven",
-				"token-jangueando",
-				"token-toda",
-				"token-la",
-				"token-semana",
-				"token-,",
-				"token-no",
-				"token-se",
-				"token-ve",
-				"token-contenta",
-				"token-,",
-				"token-no",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And even though they see her partying all week, she doesn't look happy, no.",
-					"literal": "and although they see her hanging out all the week, she not herself sees happy, no."
-				}
-			},
-			"learningInsights": {
-				"insight": "\"Jangueando\" is a colloquial term for hanging out or partying, common in some Latin American countries. The construction \"no se ve contenta\" uses the reflexive pronoun \"se\" to indicate how she appears to others.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "lo malo siempre se sabe y lo bueno nunca se cuenta.",
-			"sentenceId": "sentence-43-andrea-bad-bunny",
-			"tokenIds": [
-				"token-lo",
-				"token-malo",
-				"token-siempre",
-				"token-se",
-				"token-sabe",
-				"token-y",
-				"token-lo",
-				"token-bueno",
-				"token-nunca",
-				"token-se",
-				"token-cuenta",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "The bad is always known and the good is never told.",
-					"literal": "the bad always is known and the good never is told."
-				}
-			},
-			"learningInsights": {
-				"insight": "This sentence uses the impersonal \"se\" to express general truths: \"se sabe\" (it is known) and \"se cuenta\" (it is told). This is a common way to express what people generally know or do.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "joseando para la renta, llorando más de la cuenta.",
-			"sentenceId": "sentence-44-andrea-bad-bunny",
-			"tokenIds": [
-				"token-joseando",
-				"token-para",
-				"token-la",
-				"token-renta",
-				"token-,",
-				"token-llorando",
-				"token-más",
-				"token-de",
-				"token-la",
-				"token-cuenta",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Hustling for the rent, crying more than expected.",
-					"literal": "hustling for the rent, crying more of the account."
-				}
-			},
-			"learningInsights": {
-				"insight": "\"Joseando\" is slang for hustling or working hard, often in an informal setting. \"Más de la cuenta\" means more than expected or more than one should.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "no hay mujer sin heridas ni hombre que no mienta.",
-			"sentenceId": "sentence-45-andrea-bad-bunny",
-			"tokenIds": [
-				"token-no",
-				"token-hay",
-				"token-mujer",
-				"token-sin",
-				"token-heridas",
-				"token-ni",
-				"token-hombre",
-				"token-que",
-				"token-no",
-				"token-mienta",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "There is no woman without wounds, nor man who doesn't lie.",
-					"literal": "no there is woman without wounds nor man that not lies."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of \"que no mienta\" after \"hombre\" employs the subjunctive mood, which is triggered by the negative context (\"no hay\"). This grammatical structure is common but can be challenging for learners.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "ella no quiere una flor, solo quiere que no la marchiten.",
-			"sentenceId": "sentence-46-andrea-bad-bunny",
-			"tokenIds": [
-				"token-ella",
-				"token-no",
-				"token-quiere",
-				"token-una",
-				"token-flor",
-				"token-,",
-				"token-solo",
-				"token-quiere",
-				"token-que",
-				"token-no",
-				"token-la",
-				"token-marchiten",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She doesn't want a flower, she just wants them not to wither her.",
-					"literal": "she no wants a flower, only wants that not her wither."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "que cuando compre pan, no le piten.",
-			"sentenceId": "sentence-47-andrea-bad-bunny",
-			"tokenIds": [
-				"token-que",
-				"token-cuando",
-				"token-compre",
-				"token-pan",
-				"token-,",
-				"token-no",
-				"token-le",
-				"token-piten",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "That when she buys bread, they don't honk at her.",
-					"literal": "that when she buys bread, not at her honk."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of 'le piten' is an indirect object pronoun construction. 'Pitar' means 'to honk', and 'le' refers to 'a ella' (at her). This is a common way to express that someone is doing something *to* someone else. This is a cultural insight into street harassment.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "que no le pregunten qué hizo ayer.",
-			"sentenceId": "sentence-48-andrea-bad-bunny",
-			"tokenIds": [
-				"token-que",
-				"token-no",
-				"token-le",
-				"token-pregunten",
-				"token-qué",
-				"token-hizo",
-				"token-ayer",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "That they don't ask her what she did yesterday.",
-					"literal": "that not at her ask what did yesterday."
-				}
-			},
-			"learningInsights": {
-				"insight": "Here, 'le pregunten' uses the subjunctive mood because it's a request or desire expressed indirectly. 'Le' again refers to 'a ella'. The construction 'qué hizo ayer' is a straightforward way to ask 'what did you do yesterday,' but the subjunctive adds a layer of politeness or indirectness.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "y a un futuro lindo le inviten.",
-			"sentenceId": "sentence-49-andrea-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-a",
-				"token-un",
-				"token-futuro",
-				"token-lindo",
-				"token-le",
-				"token-inviten",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And that they invite her to a beautiful future.",
-					"literal": "and to a future beautiful at her invite."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "que le den respeto y nunca se lo quiten.",
-			"sentenceId": "sentence-50-andrea-bad-bunny",
-			"tokenIds": [
-				"token-que",
-				"token-le",
-				"token-den",
-				"token-respeto",
-				"token-y",
-				"token-nunca",
-				"token-se",
-				"token-lo",
-				"token-quiten",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "That they give her respect and never take it away.",
-					"literal": "that at her give respect and never it away take."
-				}
-			},
-			"learningInsights": {
-				"insight": "The phrase 'que le den respeto' employs the subjunctive mood, expressing a wish or request ('that they give her respect'). 'Se lo quiten' uses both 'se' (reflexive pronoun) and 'lo' (direct object pronoun), which can be tricky. 'Quitar' means to take away, and 'se lo quiten' means 'take it away from her (permanently)'.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "que le den respeto y nunca se lo.",
-			"sentenceId": "sentence-51-andrea-bad-bunny",
-			"tokenIds": [
-				"token-que",
-				"token-le",
-				"token-den",
-				"token-respeto",
-				"token-y",
-				"token-nunca",
-				"token-se",
-				"token-lo",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "They should give her respect and never...",
-					"literal": "that they give her respect and never it to her."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "que que le den respeto y nunca se lo quiten.",
-			"sentenceId": "sentence-52-andrea-bad-bunny",
-			"tokenIds": [
-				"token-que",
-				"token-que",
-				"token-le",
-				"token-den",
-				"token-respeto",
-				"token-y",
-				"token-nunca",
-				"token-se",
-				"token-lo",
-				"token-quiten",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "They should give her respect and never take it away.",
-					"literal": "that that they give her respect and never it take away."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of 'se lo quiten' is an example of a pronominal verb construction, where 'se' indicates that the action of taking away ('quiten') is reflexive and affects the person being referred to. Also, note the double 'que' at the beginning, common in colloquial speech for emphasis.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "no, nunca se lo quiten.",
-			"sentenceId": "sentence-53-andrea-bad-bunny",
-			"tokenIds": [
-				"token-no",
-				"token-,",
-				"token-nunca",
-				"token-se",
-				"token-lo",
-				"token-quiten",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "No, never take it away.",
-					"literal": "no, never it take away."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "porque ella es jefa, patrona.",
-			"sentenceId": "sentence-54-andrea-bad-bunny",
-			"tokenIds": [
-				"token-porque",
-				"token-ella",
-				"token-es",
-				"token-jefa",
-				"token-,",
-				"token-patrona",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Because she is a boss, a leader.",
-					"literal": "because she is boss, leader."
-				}
-			},
-			"learningInsights": {
-				"insight": "'Patrona' extends beyond 'boss'; it also implies leadership and a position of authority, reflecting a cultural understanding of respect and power.",
-				"difficulty": "beginner"
-			}
-		},
-		{
-			"content": "y aunque casi, casi por dentro se desmorona.",
-			"sentenceId": "sentence-55-andrea-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-aunque",
-				"token-casi",
-				"token-,",
-				"token-casi",
-				"token-por",
-				"token-dentro",
-				"token-se",
-				"token-desmorona",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And even though inside she almost, almost crumbles.",
-					"literal": "and although almost, almost inside she crumbles."
-				}
-			},
-			"learningInsights": {
-				"insight": "The reflexive verb 'desmoronarse' (to crumble) combined with 'por dentro' (inside) shows how emotions are expressed using reflexive constructions in Spanish, indicating an internal process. The repetition of 'casi' emphasizes the near-breaking point.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "se acicala y se ve cabrona.",
-			"sentenceId": "sentence-56-andrea-bad-bunny",
-			"tokenIds": [
-				"token-se",
-				"token-acicala",
-				"token-y",
-				"token-se",
-				"token-ve",
-				"token-cabrona",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "She gets ready and looks badass.",
-					"literal": "She grooms herself and she looks badass."
-				}
-			},
-			"learningInsights": {
-				"insight": "The reflexive pronoun 'se' is used with 'acicala' (to groom oneself) and 've' (looks). 'Cabrona' is a strong, informal word that can mean 'badass' or 'bitch', its meaning depending heavily on context and tone.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "la vida va como verstappen en fórmula uno.",
-			"sentenceId": "sentence-57-andrea-bad-bunny",
-			"tokenIds": [
-				"token-la",
-				"token-vida",
-				"token-va",
-				"token-como",
-				"token-verstappen",
-				"token-en",
-				"token-fórmula",
-				"token-uno",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Life goes like Verstappen in Formula One.",
-					"literal": "The life goes like Verstappen in Formula One."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "y buddy baker en daytona.",
-			"sentenceId": "sentence-58-andrea-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-buddy",
-				"token-baker",
-				"token-en",
-				"token-daytona",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And Buddy Baker in Daytona.",
-					"literal": "And Buddy Baker in Daytona."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "andrea, sé tú y que se mamen un bicho las persona.",
-			"sentenceId": "sentence-59-andrea-bad-bunny",
-			"tokenIds": [
-				"token-andrea",
-				"token-,",
-				"token-sé",
-				"token-tú",
-				"token-y",
-				"token-que",
-				"token-se",
-				"token-mamen",
-				"token-un",
-				"token-bicho",
-				"token-las",
-				"token-persona",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "Andrea, be yourself and tell people to suck a dick.",
-					"literal": "Andrea, be you and may people suck a dick."
-				}
-			},
-			"learningInsights": {
-				"insight": "'Sé tú' is the informal imperative of 'ser' (to be). 'Que se mamen un bicho' is a vulgar idiom, meaning 'they can suck a dick,' expressing strong dismissal or contempt. Note the use of 'las persona' instead of 'la gente'.",
-				"difficulty": "advanced"
-			}
-		},
-		{
-			"content": "hablan mierda y yo lo encuentro funny, funny.",
-			"sentenceId": "sentence-60-andrea-bad-bunny",
-			"tokenIds": [
-				"token-hablan",
-				"token-mierda",
-				"token-y",
-				"token-yo",
-				"token-lo",
-				"token-encuentro",
-				"token-funny",
-				"token-,",
-				"token-funny",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "They talk shit and I find it funny, funny.",
-					"literal": "They speak shit and I find it funny, funny."
-				}
-			},
-			"learningInsights": {}
-		},
-		{
-			"content": "sigo mis sueños y buscando ese money, que no hay money, que no hay money.",
-			"sentenceId": "sentence-61-andrea-bad-bunny",
-			"tokenIds": [
-				"token-sigo",
-				"token-mis",
-				"token-sueños",
-				"token-y",
-				"token-buscando",
-				"token-ese",
-				"token-money",
-				"token-,",
-				"token-que",
-				"token-no",
-				"token-hay",
-				"token-money",
-				"token-,",
-				"token-que",
-				"token-no",
-				"token-hay",
-				"token-money",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "I'm following my dreams and looking for that money, there is no money, there is no money.",
-					"literal": "I follow my dreams and looking for that money, that there is no money, that there is no money."
-				}
-			},
-			"learningInsights": {
-				"insight": "The repetition of 'que no hay money' emphasizes the lack of money, a common theme in songs. 'Sigo mis sueños' uses 'sigo' (from 'seguir') meaning 'I follow', illustrating the use of 'seguir' with gerunds to express continuing actions.",
-				"difficulty": "intermediate"
-			}
-		},
-		{
-			"content": "y yo sigo buscando ese honey, ese honey para bailar.",
-			"sentenceId": "sentence-62-andrea-bad-bunny",
-			"tokenIds": [
-				"token-y",
-				"token-yo",
-				"token-sigo",
-				"token-buscando",
-				"token-ese",
-				"token-honey",
-				"token-,",
-				"token-ese",
-				"token-honey",
-				"token-para",
-				"token-bailar",
-				"token-."
-			],
-			"translations": {
-				"english": {
-					"contextual": "And I keep looking for that honey, that honey to dance with.",
-					"literal": "And I keep looking for that honey, that honey for dancing."
-				}
-			},
-			"learningInsights": {
-				"insight": "The use of 'honey' is an English loanword adapted into Spanish. The structure 'sigo buscando' demonstrates the use of 'seguir' to indicate a continuous action. The phrase 'para bailar' shows purpose.",
-				"difficulty": "intermediate"
-			}
-		}
-	]
+  "andrea-bad-bunny": [
+    {
+      "content": "quiero a alguien que se atreva.",
+      "sentenceId": "sentence-1-andrea-bad-bunny",
+      "tokenIds": [
+        "token-quiero",
+        "token-a",
+        "token-alguien",
+        "token-que",
+        "token-se",
+        "token-atreva",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I want someone who dares.",
+          "literal": "I want to someone that dares himself."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'se atreva' employs the subjunctive mood, which is triggered by the 'que' after 'alguien'. This construction is common when expressing desires or needs related to an indefinite person.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "cuatro de la mañana y andrea saliendo de la perla.",
+      "sentenceId": "sentence-2-andrea-bad-bunny",
+      "tokenIds": [
+        "token-cuatro",
+        "token-de",
+        "token-la",
+        "token-mañana",
+        "token-y",
+        "token-andrea",
+        "token-saliendo",
+        "token-de",
+        "token-la",
+        "token-perla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Four in the morning and Andrea leaving La Perla.",
+          "literal": "Four of the morning and Andrea leaving from the pearl."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "muchos la critican sin conocerla.",
+      "sentenceId": "sentence-3-andrea-bad-bunny",
+      "tokenIds": [
+        "token-muchos",
+        "token-la",
+        "token-critican",
+        "token-sin",
+        "token-conocerla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Many criticize her without knowing her.",
+          "literal": "Many her criticize without knowing her."
+        }
+      },
+      "learningInsights": {
+        "insight": "The placement of 'la' before 'critican' demonstrates the use of object pronouns in Spanish. Also, using the infinitive 'conocerla' after 'sin' is a standard construction to express 'without' + gerund.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "calle como un civic, inteligente como un tesla.",
+      "sentenceId": "sentence-4-andrea-bad-bunny",
+      "tokenIds": [
+        "token-calle",
+        "token-como",
+        "token-un",
+        "token-civic",
+        "token-,",
+        "token-inteligente",
+        "token-como",
+        "token-un",
+        "token-tesla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Street smart like a Civic, intelligent like a Tesla.",
+          "literal": "Street like a Civic, intelligent like a Tesla."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "soñando con alguien que pueda comprenderla.",
+      "sentenceId": "sentence-5-andrea-bad-bunny",
+      "tokenIds": [
+        "token-soñando",
+        "token-con",
+        "token-alguien",
+        "token-que",
+        "token-pueda",
+        "token-comprenderla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Dreaming of someone who can understand her.",
+          "literal": "Dreaming with someone that can understand her."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'pueda' is the subjunctive mood after 'que' when referring to an indefinite 'alguien'. This shows a common grammatical pattern when expressing desires or uncertainty about someone's ability.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "y no quiera cambiarla, solo quererla.",
+      "sentenceId": "sentence-6-andrea-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-no",
+        "token-quiera",
+        "token-cambiarla",
+        "token-,",
+        "token-solo",
+        "token-quererla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "and don't try to change her, just love her.",
+          "literal": "and no want change her, only love her."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "solo quererla.",
+      "sentenceId": "sentence-7-andrea-bad-bunny",
+      "tokenIds": [
+        "token-solo",
+        "token-quererla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "just love her.",
+          "literal": "only love her."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "de la iupi para la inter, de la inter para sagrado.",
+      "sentenceId": "sentence-8-andrea-bad-bunny",
+      "tokenIds": [
+        "token-de",
+        "token-la",
+        "token-iupi",
+        "token-para",
+        "token-la",
+        "token-inter",
+        "token-,",
+        "token-de",
+        "token-la",
+        "token-inter",
+        "token-para",
+        "token-sagrado",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "from the UPI to the Inter, from the Inter to Sagrado.",
+          "literal": "from the UPI to the Inter, from the Inter to Sagrado."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "equivocándose de amores en lo que llega el indicado.",
+      "sentenceId": "sentence-9-andrea-bad-bunny",
+      "tokenIds": [
+        "token-equivocándose",
+        "token-de",
+        "token-amores",
+        "token-en",
+        "token-lo",
+        "token-que",
+        "token-llega",
+        "token-el",
+        "token-indicado",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "making mistakes in love while waiting for the right one.",
+          "literal": "making mistakes of loves in what arrives the indicated."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase \"equivocándose de amores\" is a common way to express making mistakes in love. Also, note the use of \"en lo que\" to mean \"while\" or \"during the time that\" something else happens. The word \"indicado\" is used as a noun here, referring to the right person.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "quiere quedarse en pr, no irse para ningún estado, pero todo se ha complicado.",
+      "sentenceId": "sentence-10-andrea-bad-bunny",
+      "tokenIds": [
+        "token-quiere",
+        "token-quedarse",
+        "token-en",
+        "token-pr",
+        "token-,",
+        "token-no",
+        "token-irse",
+        "token-para",
+        "token-ningún",
+        "token-estado",
+        "token-,",
+        "token-pero",
+        "token-todo",
+        "token-se",
+        "token-ha",
+        "token-complicado",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "she wants to stay in Puerto Rico, not leave for any state, but everything has become complicated.",
+          "literal": "wants to stay in PR, not leave for any state, but everything has complicated."
+        }
+      },
+      "learningInsights": {
+        "insight": "This sentence uses the reflexive verb \"quedarse\" to mean \"to stay\". Also, note the use of \"para ningún estado,\" which literally translates to \"for no state,\" but means \"to any state.\" The phrase \"todo se ha complicado\" uses the present perfect tense to describe a recent complication.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "como si ser mujer fuera un pecado.",
+      "sentenceId": "sentence-11-andrea-bad-bunny",
+      "tokenIds": [
+        "token-como",
+        "token-si",
+        "token-ser",
+        "token-mujer",
+        "token-fuera",
+        "token-un",
+        "token-pecado",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "As if being a woman was a sin.",
+          "literal": "as if being woman was a sin."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'como si' followed by the subjunctive ('fuera') is a common way to express hypothetical or counterfactual situations. This structure is crucial for expressing doubt or imagining scenarios that are not true. Also, it's worth noting that the verb 'ser' is used here to describe an inherent quality ('being a woman').",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "la demonia ha despertado.",
+      "sentenceId": "sentence-12-andrea-bad-bunny",
+      "tokenIds": [
+        "token-la",
+        "token-demonia",
+        "token-ha",
+        "token-despertado",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "The she-devil has awakened.",
+          "literal": "the she-devil has awakened."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "una guerrera.",
+      "sentenceId": "sentence-13-andrea-bad-bunny",
+      "tokenIds": [
+        "token-una",
+        "token-guerrera",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A warrior.",
+          "literal": "a warrior."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "juana de arco, temperamental, niurka marcos.",
+      "sentenceId": "sentence-14-andrea-bad-bunny",
+      "tokenIds": [
+        "token-juana",
+        "token-de",
+        "token-arco",
+        "token-,",
+        "token-temperamental",
+        "token-,",
+        "token-niurka",
+        "token-marcos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Joan of Arc, temperamental, Niurka Marcos.",
+          "literal": "Joan of Arc, temperamental, Niurka Marcos."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "a la buena, beso y abrazo.",
+      "sentenceId": "sentence-15-andrea-bad-bunny",
+      "tokenIds": [
+        "token-a",
+        "token-la",
+        "token-buena",
+        "token-,",
+        "token-beso",
+        "token-y",
+        "token-abrazo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "On the good side, a kiss and a hug.",
+          "literal": "to the good, kiss and hug."
+        }
+      },
+      "learningInsights": {
+        "insight": "The expression 'a la buena' implies a positive or amicable approach. Understanding such idiomatic phrases is important for grasping the nuances of everyday Spanish. It provides insight into cultural values of warmth and friendliness.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "a la mala, botellazo, sin soltar el vaso.",
+      "sentenceId": "sentence-16-andrea-bad-bunny",
+      "tokenIds": [
+        "token-a",
+        "token-la",
+        "token-mala",
+        "token-,",
+        "token-botellazo",
+        "token-,",
+        "token-sin",
+        "token-soltar",
+        "token-el",
+        "token-vaso",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Dealing with things the hard way, a hit with a bottle, without letting go of the glass.",
+          "literal": "to the bad, bottle hit, without releasing the glass."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'a la mala' means 'the hard way' or 'by force'. 'Sin soltar el vaso' is interesting because it implies determination even in a chaotic situation.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "le gustaba el basket, leer tú y hacerse lazos.",
+      "sentenceId": "sentence-17-andrea-bad-bunny",
+      "tokenIds": [
+        "token-le",
+        "token-gustaba",
+        "token-el",
+        "token-basket",
+        "token-,",
+        "token-leer",
+        "token-tú",
+        "token-y",
+        "token-hacerse",
+        "token-lazos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She liked basketball, reading you, and forming connections.",
+          "literal": "to her liked the basketball, reading you and making ties."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "pero de esa niña solo quedan pedazos.",
+      "sentenceId": "sentence-18-andrea-bad-bunny",
+      "tokenIds": [
+        "token-pero",
+        "token-de",
+        "token-esa",
+        "token-niña",
+        "token-solo",
+        "token-quedan",
+        "token-pedazos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "But of that girl, only pieces remain.",
+          "literal": "but of that girl only remain pieces."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "se ha buscado un par de casos.",
+      "sentenceId": "sentence-19-andrea-bad-bunny",
+      "tokenIds": [
+        "token-se",
+        "token-ha",
+        "token-buscado",
+        "token-un",
+        "token-par",
+        "token-de",
+        "token-casos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She has gotten herself into a couple of situations.",
+          "literal": "she has looked for a pair of cases."
+        }
+      },
+      "learningInsights": {
+        "insight": "The reflexive construction 'se ha buscado' indicates that she got herself into the situations. 'Un par de casos' is a common way to say 'a couple of situations'.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "por no aguantarle chistes a ningún payaso.",
+      "sentenceId": "sentence-20-andrea-bad-bunny",
+      "tokenIds": [
+        "token-por",
+        "token-no",
+        "token-aguantarle",
+        "token-chistes",
+        "token-a",
+        "token-ningún",
+        "token-payaso",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "For not putting up with jokes from any clown.",
+          "literal": "for not enduring jokes to any clown."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'aguantarle' (to endure it) implies tolerating something unpleasant. The construction 'a ningún payaso' emphasizes that she doesn't tolerate jokes from anyone she considers a 'clown'.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "mírala cómo camina.",
+      "sentenceId": "sentence-21-andrea-bad-bunny",
+      "tokenIds": [
+        "token-mírala",
+        "token-cómo",
+        "token-camina",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Look at her, how she walks.",
+          "literal": "look at her how she walks."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "lo que le falta es la tarima.",
+      "sentenceId": "sentence-22-andrea-bad-bunny",
+      "tokenIds": [
+        "token-lo",
+        "token-que",
+        "token-le",
+        "token-falta",
+        "token-es",
+        "token-la",
+        "token-tarima",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "What she needs is the stage.",
+          "literal": "what to her is missing is the stage."
+        }
+      },
+      "learningInsights": {
+        "insight": "The structure 'lo que + verb + es' is used to emphasize what someone needs or lacks. It translates to 'what (pronoun) needs is (noun)'",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "cansada de esperar propina y de lo que su familia opina.",
+      "sentenceId": "sentence-23-andrea-bad-bunny",
+      "tokenIds": [
+        "token-cansada",
+        "token-de",
+        "token-esperar",
+        "token-propina",
+        "token-y",
+        "token-de",
+        "token-lo",
+        "token-que",
+        "token-su",
+        "token-familia",
+        "token-opina",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Tired of waiting for tips and what her family thinks.",
+          "literal": "tired of waiting tip and of what her family thinks."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "para colmo ahora, el gobierno la llama asesina.",
+      "sentenceId": "sentence-24-andrea-bad-bunny",
+      "tokenIds": [
+        "token-para",
+        "token-colmo",
+        "token-ahora",
+        "token-,",
+        "token-el",
+        "token-gobierno",
+        "token-la",
+        "token-llama",
+        "token-asesina",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "To top it off, now the government calls her a murderer.",
+          "literal": "for peak now, the government her calls murderer."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'para colmo' is an idiomatic expression that means 'to top it off' or 'to make matters worse.' It's used to indicate an additional negative event.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "una diva campesina.",
+      "sentenceId": "sentence-25-andrea-bad-bunny",
+      "tokenIds": [
+        "token-una",
+        "token-diva",
+        "token-campesina",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A peasant diva.",
+          "literal": "a diva peasant."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "chico, quédate en tu esquina y no pidas rosas si no aguantas espinas, no.",
+      "sentenceId": "sentence-26-andrea-bad-bunny",
+      "tokenIds": [
+        "token-chico",
+        "token-,",
+        "token-quédate",
+        "token-en",
+        "token-tu",
+        "token-esquina",
+        "token-y",
+        "token-no",
+        "token-pidas",
+        "token-rosas",
+        "token-si",
+        "token-no",
+        "token-aguantas",
+        "token-espinas",
+        "token-,",
+        "token-no",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Boy, stay in your place and don't ask for roses if you can't handle thorns, no.",
+          "literal": "Boy, stay in your corner and don't ask for roses if you don't endure thorns, no."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "no quiero que nadie me diga lo que yo tengo que hacer.",
+      "sentenceId": "sentence-27-andrea-bad-bunny",
+      "tokenIds": [
+        "token-no",
+        "token-quiero",
+        "token-que",
+        "token-nadie",
+        "token-me",
+        "token-diga",
+        "token-lo",
+        "token-que",
+        "token-yo",
+        "token-tengo",
+        "token-que",
+        "token-hacer",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I don't want anyone telling me what I have to do.",
+          "literal": "I don't want that nobody tells me what I have that do."
+        }
+      },
+      "learningInsights": {
+        "insight": "The construction 'no quiero que + subjunctive' is used to express a desire that someone else does not do something. Also, the use of 'nadie' requires the 'que' clause to be in the subjunctive mood ('diga'). This sentence demonstrates a common way to express not wanting someone to tell you what to do.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "se ponen a hablar y conmigo verán, no van a joder.",
+      "sentenceId": "sentence-28-andrea-bad-bunny",
+      "tokenIds": [
+        "token-se",
+        "token-ponen",
+        "token-a",
+        "token-hablar",
+        "token-y",
+        "token-conmigo",
+        "token-verán",
+        "token-,",
+        "token-no",
+        "token-van",
+        "token-a",
+        "token-joder",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "They start talking and they'll see with me, they're not going to mess around.",
+          "literal": "They start to talk and with me they will see, they are not going to bother."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'se ponen a + infinitive' indicates the beginning of an action ('se ponen a hablar' means 'they start talking'). The verb 'joder' is a colloquial term meaning 'to bother', 'to mess around', or 'to screw around', and its usage varies depending on the context and region.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "que digan lo que sea.",
+      "sentenceId": "sentence-29-andrea-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-digan",
+        "token-lo",
+        "token-que",
+        "token-sea",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Let them say whatever.",
+          "literal": "That they say what it is."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "yo subo y bajo como la marea.",
+      "sentenceId": "sentence-30-andrea-bad-bunny",
+      "tokenIds": [
+        "token-yo",
+        "token-subo",
+        "token-y",
+        "token-bajo",
+        "token-como",
+        "token-la",
+        "token-marea",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I go up and down like the tide.",
+          "literal": "I go up and down like the tide."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "se tratan de montar y tambalean.",
+      "sentenceId": "sentence-31-andrea-bad-bunny",
+      "tokenIds": [
+        "token-se",
+        "token-tratan",
+        "token-de",
+        "token-montar",
+        "token-y",
+        "token-tambalean",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "they try to get on and they stagger.",
+          "literal": "they try to get on and they stagger."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of \"tratar de\" + infinitive to express \"try to\" or \"attempt to\" is a common and useful construction. Also, the verb \"tambalear\" (to stagger) adds to vocabulary related to movement and balance.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "quiero alguien que se atreva, que se atreva y me entienda a mí.",
+      "sentenceId": "sentence-32-andrea-bad-bunny",
+      "tokenIds": [
+        "token-quiero",
+        "token-alguien",
+        "token-que",
+        "token-se",
+        "token-atreva",
+        "token-,",
+        "token-que",
+        "token-se",
+        "token-atreva",
+        "token-y",
+        "token-me",
+        "token-entienda",
+        "token-a",
+        "token-mí",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I want someone who dares, who dares and understands me.",
+          "literal": "I want someone that dares, that dares and understands me to me."
+        }
+      },
+      "learningInsights": {
+        "insight": "The subjunctive mood after \"quiero alguien que...\" is a key grammatical concept. Also, the emphatic use of \"a mí\" at the end highlights the speaker's desire to be understood, which is a common pattern in Spanish.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "una loca que no quiere un loco.",
+      "sentenceId": "sentence-33-andrea-bad-bunny",
+      "tokenIds": [
+        "token-una",
+        "token-loca",
+        "token-que",
+        "token-no",
+        "token-quiere",
+        "token-un",
+        "token-loco",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "a crazy woman who doesn't want a crazy man.",
+          "literal": "a crazy woman that not wants a crazy man."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "quiere vino tinto y sushi de yoko.",
+      "sentenceId": "sentence-34-andrea-bad-bunny",
+      "tokenIds": [
+        "token-quiere",
+        "token-vino",
+        "token-tinto",
+        "token-y",
+        "token-sushi",
+        "token-de",
+        "token-yoko",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "she wants red wine and Yoko's sushi.",
+          "literal": "she wants wine red and sushi of yoko."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "días de playita, helado de coco.",
+      "sentenceId": "sentence-35-andrea-bad-bunny",
+      "tokenIds": [
+        "token-días",
+        "token-de",
+        "token-playita",
+        "token-,",
+        "token-helado",
+        "token-de",
+        "token-coco",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "days at the beach, coconut ice cream.",
+          "literal": "days of little beach, ice cream of coconut."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of \"playita\" (little beach) is a common diminutive that shows affection or informality. Understanding and using diminutives is important for natural-sounding Spanish.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "se merece tanto y recibe tan poco.",
+      "sentenceId": "sentence-36-andrea-bad-bunny",
+      "tokenIds": [
+        "token-se",
+        "token-merece",
+        "token-tanto",
+        "token-y",
+        "token-recibe",
+        "token-tan",
+        "token-poco",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She deserves so much and receives so little.",
+          "literal": "she deserves so much and receives so little."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "la mai reza por un doctor, ingeniero.",
+      "sentenceId": "sentence-37-andrea-bad-bunny",
+      "tokenIds": [
+        "token-la",
+        "token-mai",
+        "token-reza",
+        "token-por",
+        "token-un",
+        "token-doctor",
+        "token-,",
+        "token-ingeniero",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Her mom prays for her to be with a doctor or engineer.",
+          "literal": "the mom prays for a doctor, engineer."
+        }
+      },
+      "learningInsights": {
+        "insight": "This sentence uses 'mai' as a colloquial shortening of 'madre' (mother), common in some Spanish-speaking regions. It also shows how professions are presented as aspirations for someone, reflecting cultural values.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "y ella con bichotes y raperos.",
+      "sentenceId": "sentence-38-andrea-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-ella",
+        "token-con",
+        "token-bichotes",
+        "token-y",
+        "token-raperos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And she's with drug dealers and rappers.",
+          "literal": "and she with drug dealers and rappers."
+        }
+      },
+      "learningInsights": {
+        "insight": "The word 'bichotes' is slang, likely originating in Puerto Rico, referring to drug dealers or powerful figures in the underworld.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "mi prima dice que es un cuero.",
+      "sentenceId": "sentence-39-andrea-bad-bunny",
+      "tokenIds": [
+        "token-mi",
+        "token-prima",
+        "token-dice",
+        "token-que",
+        "token-es",
+        "token-un",
+        "token-cuero",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "My cousin says that she's a slut.",
+          "literal": "my cousin says that she is a leather."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'ser un cuero' is an idiomatic expression that is used to describe a woman considered promiscuous or a 'slut'. This expression showcases how words can take on very different meanings depending on the context and region.",
+        "difficulty": "advanced"
+      }
+    },
+    {
+      "content": "y lo que nadie sabe es que a su corazón le hace falta un suero.",
+      "sentenceId": "sentence-40-andrea-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-lo",
+        "token-que",
+        "token-nadie",
+        "token-sabe",
+        "token-es",
+        "token-que",
+        "token-a",
+        "token-su",
+        "token-corazón",
+        "token-le",
+        "token-hace",
+        "token-falta",
+        "token-un",
+        "token-suero",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And what nobody knows is that her heart needs some serum.",
+          "literal": "and what nobody knows is that to her heart is missing a serum."
+        }
+      },
+      "learningInsights": {
+        "insight": "The construction 'a su corazón le hace falta' demonstrates the use of the indirect object pronoun 'le' to indicate who is lacking something, which can be confusing for English speakers. It highlights a common grammatical structure in Spanish for expressing needs or deficiencies.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "chinga cabrón, se comenta.",
+      "sentenceId": "sentence-41-andrea-bad-bunny",
+      "tokenIds": [
+        "token-chinga",
+        "token-cabrón",
+        "token-,",
+        "token-se",
+        "token-comenta",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Damn it, people are talking.",
+          "literal": "fuck bastard, it is commented."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase \"chinga cabrón\" is a strong expression. \"Se comenta\" is a common way to express that something is being talked about or rumored.",
+        "difficulty": "advanced"
+      }
+    },
+    {
+      "content": "y aunque la ven jangueando toda la semana, no se ve contenta, no.",
+      "sentenceId": "sentence-42-andrea-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-aunque",
+        "token-la",
+        "token-ven",
+        "token-jangueando",
+        "token-toda",
+        "token-la",
+        "token-semana",
+        "token-,",
+        "token-no",
+        "token-se",
+        "token-ve",
+        "token-contenta",
+        "token-,",
+        "token-no",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And even though they see her partying all week, she doesn't look happy, no.",
+          "literal": "and although they see her hanging out all the week, she not herself sees happy, no."
+        }
+      },
+      "learningInsights": {
+        "insight": "\"Jangueando\" is a colloquial term for hanging out or partying, common in some Latin American countries. The construction \"no se ve contenta\" uses the reflexive pronoun \"se\" to indicate how she appears to others.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "lo malo siempre se sabe y lo bueno nunca se cuenta.",
+      "sentenceId": "sentence-43-andrea-bad-bunny",
+      "tokenIds": [
+        "token-lo",
+        "token-malo",
+        "token-siempre",
+        "token-se",
+        "token-sabe",
+        "token-y",
+        "token-lo",
+        "token-bueno",
+        "token-nunca",
+        "token-se",
+        "token-cuenta",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "The bad is always known and the good is never told.",
+          "literal": "the bad always is known and the good never is told."
+        }
+      },
+      "learningInsights": {
+        "insight": "This sentence uses the impersonal \"se\" to express general truths: \"se sabe\" (it is known) and \"se cuenta\" (it is told). This is a common way to express what people generally know or do.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "joseando para la renta, llorando más de la cuenta.",
+      "sentenceId": "sentence-44-andrea-bad-bunny",
+      "tokenIds": [
+        "token-joseando",
+        "token-para",
+        "token-la",
+        "token-renta",
+        "token-,",
+        "token-llorando",
+        "token-más",
+        "token-de",
+        "token-la",
+        "token-cuenta",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hustling for the rent, crying more than expected.",
+          "literal": "hustling for the rent, crying more of the account."
+        }
+      },
+      "learningInsights": {
+        "insight": "\"Joseando\" is slang for hustling or working hard, often in an informal setting. \"Más de la cuenta\" means more than expected or more than one should.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "no hay mujer sin heridas ni hombre que no mienta.",
+      "sentenceId": "sentence-45-andrea-bad-bunny",
+      "tokenIds": [
+        "token-no",
+        "token-hay",
+        "token-mujer",
+        "token-sin",
+        "token-heridas",
+        "token-ni",
+        "token-hombre",
+        "token-que",
+        "token-no",
+        "token-mienta",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "There is no woman without wounds, nor man who doesn't lie.",
+          "literal": "no there is woman without wounds nor man that not lies."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of \"que no mienta\" after \"hombre\" employs the subjunctive mood, which is triggered by the negative context (\"no hay\"). This grammatical structure is common but can be challenging for learners.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ella no quiere una flor, solo quiere que no la marchiten.",
+      "sentenceId": "sentence-46-andrea-bad-bunny",
+      "tokenIds": [
+        "token-ella",
+        "token-no",
+        "token-quiere",
+        "token-una",
+        "token-flor",
+        "token-,",
+        "token-solo",
+        "token-quiere",
+        "token-que",
+        "token-no",
+        "token-la",
+        "token-marchiten",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She doesn't want a flower, she just wants them not to wither her.",
+          "literal": "she no wants a flower, only wants that not her wither."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "que cuando compre pan, no le piten.",
+      "sentenceId": "sentence-47-andrea-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-cuando",
+        "token-compre",
+        "token-pan",
+        "token-,",
+        "token-no",
+        "token-le",
+        "token-piten",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "That when she buys bread, they don't honk at her.",
+          "literal": "that when she buys bread, not at her honk."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'le piten' is an indirect object pronoun construction. 'Pitar' means 'to honk', and 'le' refers to 'a ella' (at her). This is a common way to express that someone is doing something *to* someone else. This is a cultural insight into street harassment.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "que no le pregunten qué hizo ayer.",
+      "sentenceId": "sentence-48-andrea-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-no",
+        "token-le",
+        "token-pregunten",
+        "token-qué",
+        "token-hizo",
+        "token-ayer",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "That they don't ask her what she did yesterday.",
+          "literal": "that not at her ask what did yesterday."
+        }
+      },
+      "learningInsights": {
+        "insight": "Here, 'le pregunten' uses the subjunctive mood because it's a request or desire expressed indirectly. 'Le' again refers to 'a ella'. The construction 'qué hizo ayer' is a straightforward way to ask 'what did you do yesterday,' but the subjunctive adds a layer of politeness or indirectness.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "y a un futuro lindo le inviten.",
+      "sentenceId": "sentence-49-andrea-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-a",
+        "token-un",
+        "token-futuro",
+        "token-lindo",
+        "token-le",
+        "token-inviten",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And that they invite her to a beautiful future.",
+          "literal": "and to a future beautiful at her invite."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "que le den respeto y nunca se lo quiten.",
+      "sentenceId": "sentence-50-andrea-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-le",
+        "token-den",
+        "token-respeto",
+        "token-y",
+        "token-nunca",
+        "token-se",
+        "token-lo",
+        "token-quiten",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "That they give her respect and never take it away.",
+          "literal": "that at her give respect and never it away take."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'que le den respeto' employs the subjunctive mood, expressing a wish or request ('that they give her respect'). 'Se lo quiten' uses both 'se' (reflexive pronoun) and 'lo' (direct object pronoun), which can be tricky. 'Quitar' means to take away, and 'se lo quiten' means 'take it away from her (permanently)'.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "que le den respeto y nunca se lo.",
+      "sentenceId": "sentence-51-andrea-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-le",
+        "token-den",
+        "token-respeto",
+        "token-y",
+        "token-nunca",
+        "token-se",
+        "token-lo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "They should give her respect and never...",
+          "literal": "that they give her respect and never it to her."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "que que le den respeto y nunca se lo quiten.",
+      "sentenceId": "sentence-52-andrea-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-que",
+        "token-le",
+        "token-den",
+        "token-respeto",
+        "token-y",
+        "token-nunca",
+        "token-se",
+        "token-lo",
+        "token-quiten",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "They should give her respect and never take it away.",
+          "literal": "that that they give her respect and never it take away."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'se lo quiten' is an example of a pronominal verb construction, where 'se' indicates that the action of taking away ('quiten') is reflexive and affects the person being referred to. Also, note the double 'que' at the beginning, common in colloquial speech for emphasis.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "no, nunca se lo quiten.",
+      "sentenceId": "sentence-53-andrea-bad-bunny",
+      "tokenIds": [
+        "token-no",
+        "token-,",
+        "token-nunca",
+        "token-se",
+        "token-lo",
+        "token-quiten",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "No, never take it away.",
+          "literal": "no, never it take away."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "porque ella es jefa, patrona.",
+      "sentenceId": "sentence-54-andrea-bad-bunny",
+      "tokenIds": [
+        "token-porque",
+        "token-ella",
+        "token-es",
+        "token-jefa",
+        "token-,",
+        "token-patrona",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Because she is a boss, a leader.",
+          "literal": "because she is boss, leader."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Patrona' extends beyond 'boss'; it also implies leadership and a position of authority, reflecting a cultural understanding of respect and power.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "y aunque casi, casi por dentro se desmorona.",
+      "sentenceId": "sentence-55-andrea-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-aunque",
+        "token-casi",
+        "token-,",
+        "token-casi",
+        "token-por",
+        "token-dentro",
+        "token-se",
+        "token-desmorona",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And even though inside she almost, almost crumbles.",
+          "literal": "and although almost, almost inside she crumbles."
+        }
+      },
+      "learningInsights": {
+        "insight": "The reflexive verb 'desmoronarse' (to crumble) combined with 'por dentro' (inside) shows how emotions are expressed using reflexive constructions in Spanish, indicating an internal process. The repetition of 'casi' emphasizes the near-breaking point.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "se acicala y se ve cabrona.",
+      "sentenceId": "sentence-56-andrea-bad-bunny",
+      "tokenIds": [
+        "token-se",
+        "token-acicala",
+        "token-y",
+        "token-se",
+        "token-ve",
+        "token-cabrona",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "She gets ready and looks badass.",
+          "literal": "She grooms herself and she looks badass."
+        }
+      },
+      "learningInsights": {
+        "insight": "The reflexive pronoun 'se' is used with 'acicala' (to groom oneself) and 've' (looks). 'Cabrona' is a strong, informal word that can mean 'badass' or 'bitch', its meaning depending heavily on context and tone.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "la vida va como verstappen en fórmula uno.",
+      "sentenceId": "sentence-57-andrea-bad-bunny",
+      "tokenIds": [
+        "token-la",
+        "token-vida",
+        "token-va",
+        "token-como",
+        "token-verstappen",
+        "token-en",
+        "token-fórmula",
+        "token-uno",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Life goes like Verstappen in Formula One.",
+          "literal": "The life goes like Verstappen in Formula One."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "y buddy baker en daytona.",
+      "sentenceId": "sentence-58-andrea-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-buddy",
+        "token-baker",
+        "token-en",
+        "token-daytona",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And Buddy Baker in Daytona.",
+          "literal": "And Buddy Baker in Daytona."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "andrea, sé tú y que se mamen un bicho las persona.",
+      "sentenceId": "sentence-59-andrea-bad-bunny",
+      "tokenIds": [
+        "token-andrea",
+        "token-,",
+        "token-sé",
+        "token-tú",
+        "token-y",
+        "token-que",
+        "token-se",
+        "token-mamen",
+        "token-un",
+        "token-bicho",
+        "token-las",
+        "token-persona",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Andrea, be yourself and tell people to suck a dick.",
+          "literal": "Andrea, be you and may people suck a dick."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Sé tú' is the informal imperative of 'ser' (to be). 'Que se mamen un bicho' is a vulgar idiom, meaning 'they can suck a dick,' expressing strong dismissal or contempt. Note the use of 'las persona' instead of 'la gente'.",
+        "difficulty": "advanced"
+      }
+    },
+    {
+      "content": "hablan mierda y yo lo encuentro funny, funny.",
+      "sentenceId": "sentence-60-andrea-bad-bunny",
+      "tokenIds": [
+        "token-hablan",
+        "token-mierda",
+        "token-y",
+        "token-yo",
+        "token-lo",
+        "token-encuentro",
+        "token-funny",
+        "token-,",
+        "token-funny",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "They talk shit and I find it funny, funny.",
+          "literal": "They speak shit and I find it funny, funny."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "sigo mis sueños y buscando ese money, que no hay money, que no hay money.",
+      "sentenceId": "sentence-61-andrea-bad-bunny",
+      "tokenIds": [
+        "token-sigo",
+        "token-mis",
+        "token-sueños",
+        "token-y",
+        "token-buscando",
+        "token-ese",
+        "token-money",
+        "token-,",
+        "token-que",
+        "token-no",
+        "token-hay",
+        "token-money",
+        "token-,",
+        "token-que",
+        "token-no",
+        "token-hay",
+        "token-money",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm following my dreams and looking for that money, there is no money, there is no money.",
+          "literal": "I follow my dreams and looking for that money, that there is no money, that there is no money."
+        }
+      },
+      "learningInsights": {
+        "insight": "The repetition of 'que no hay money' emphasizes the lack of money, a common theme in songs. 'Sigo mis sueños' uses 'sigo' (from 'seguir') meaning 'I follow', illustrating the use of 'seguir' with gerunds to express continuing actions.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "y yo sigo buscando ese honey, ese honey para bailar.",
+      "sentenceId": "sentence-62-andrea-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-yo",
+        "token-sigo",
+        "token-buscando",
+        "token-ese",
+        "token-honey",
+        "token-,",
+        "token-ese",
+        "token-honey",
+        "token-para",
+        "token-bailar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And I keep looking for that honey, that honey to dance with.",
+          "literal": "And I keep looking for that honey, that honey for dancing."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'honey' is an English loanword adapted into Spanish. The structure 'sigo buscando' demonstrates the use of 'seguir' to indicate a continuous action. The phrase 'para bailar' shows purpose.",
+        "difficulty": "intermediate"
+      }
+    }
+  ],
+  "dtmf-bad-bunny": [
+    {
+      "content": "otro sunset bonito que veo en san juan.",
+      "sentenceId": "sentence-1-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-otro",
+        "token-sunset",
+        "token-bonito",
+        "token-que",
+        "token-veo",
+        "token-en",
+        "token-san",
+        "token-juan",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Another beautiful sunset I see in San Juan.",
+          "literal": "Another beautiful sunset that I see in San Juan."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "disfrutando de todas esas cosas que extrañan los que se van.",
+      "sentenceId": "sentence-2-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-disfrutando",
+        "token-de",
+        "token-todas",
+        "token-esas",
+        "token-cosas",
+        "token-que",
+        "token-extrañan",
+        "token-los",
+        "token-que",
+        "token-se",
+        "token-van",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Enjoying all those things that those who leave miss.",
+          "literal": "Enjoying of all those things that miss those that leave."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'los que se van' is a common way to refer to 'those who leave' or 'emigrants'. The verb 'extrañar' is used to express missing something or someone.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "disfrutando de noches de esas que ya no se dan.",
+      "sentenceId": "sentence-3-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-disfrutando",
+        "token-de",
+        "token-noches",
+        "token-de",
+        "token-esas",
+        "token-que",
+        "token-ya",
+        "token-no",
+        "token-se",
+        "token-dan",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Enjoying nights like those that don't happen anymore.",
+          "literal": "Enjoying of nights of those that no longer happen."
+        }
+      },
+      "learningInsights": {
+        "insight": "The expression 'que ya no se dan' means 'that don't happen anymore'. The use of 'se' here is an impersonal construction.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "que ya no se dan.",
+      "sentenceId": "sentence-4-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-ya",
+        "token-no",
+        "token-se",
+        "token-dan",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "That don't happen anymore.",
+          "literal": "That no longer happen."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "pero queriendo volver a la última vez.",
+      "sentenceId": "sentence-5-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-pero",
+        "token-queriendo",
+        "token-volver",
+        "token-a",
+        "token-la",
+        "token-última",
+        "token-vez",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "But wanting to go back to the last time.",
+          "literal": "But wanting to return to the last time."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "y a los ojos te miré.",
+      "sentenceId": "sentence-6-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-a",
+        "token-los",
+        "token-ojos",
+        "token-te",
+        "token-miré",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And I looked you in the eyes.",
+          "literal": "and to the eyes you I looked."
+        }
+      },
+      "learningInsights": {
+        "insight": "The construction 'a los ojos te miré' places emphasis on 'the eyes'. This use of 'a' before 'los ojos' is not a direct translation but highlights where the action is directed, which is a common feature in Spanish.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "y contarte las cosas que no te conté.",
+      "sentenceId": "sentence-7-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-contarte",
+        "token-las",
+        "token-cosas",
+        "token-que",
+        "token-no",
+        "token-te",
+        "token-conté",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And tell you the things I didn't tell you.",
+          "literal": "and tell you the things that not you I told."
+        }
+      },
+      "learningInsights": {
+        "insight": "Using 'contarte' combines 'contar' (to tell) and 'te' (you). The phrase 'que no te conté' uses the preterite tense to refer to things not told in the past, which is valuable for expressing past omissions.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "te pareces a mi crush, jaja.",
+      "sentenceId": "sentence-8-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-te",
+        "token-pareces",
+        "token-a",
+        "token-mi",
+        "token-crush",
+        "token-,",
+        "token-jaja",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You look like my crush, haha.",
+          "literal": "you resemble to my crush, haha."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Parecerse a' means 'to look like' or 'to resemble'. The reflexive pronoun 'te' is used because the action reflects back on the subject.  Understanding reflexive verbs is essential for Spanish fluency.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "y tirarte las fotos que no te tiré.",
+      "sentenceId": "sentence-9-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-tirarte",
+        "token-las",
+        "token-fotos",
+        "token-que",
+        "token-no",
+        "token-te",
+        "token-tiré",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And take the photos that I didn't take of you.",
+          "literal": "and take you the photos that not you I took."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "muchacho, jurado te ves bien linda, déjame tirarte una foto.",
+      "sentenceId": "sentence-10-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-muchacho",
+        "token-,",
+        "token-jurado",
+        "token-te",
+        "token-ves",
+        "token-bien",
+        "token-linda",
+        "token-,",
+        "token-déjame",
+        "token-tirarte",
+        "token-una",
+        "token-foto",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Boy, I swear you look very pretty, let me take a picture of you.",
+          "literal": "boy, I swear you look very pretty, let me take you a picture."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'jurado' (sworn, I swear) adds emphasis to the statement.  'Tirarte una foto' is a colloquial way to say 'take a picture of you', demonstrating regional variations in language.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ey, tengo el pecho pelado, me dio una matada.",
+      "sentenceId": "sentence-11-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-tengo",
+        "token-el",
+        "token-pecho",
+        "token-pelado",
+        "token-,",
+        "token-me",
+        "token-dio",
+        "token-una",
+        "token-matada",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, my chest is bare, I felt a sharp pain.",
+          "literal": "Hey, I have the chest bare, it gave me a stab."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'me dio una matada' is an idiomatic expression. While 'matada' literally means 'killed', in this context, it refers to a sudden, sharp pain. Understanding this requires knowing the colloquial use of 'matada' to describe a strong sensation.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "el corazón dándome patadas.",
+      "sentenceId": "sentence-12-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-el",
+        "token-corazón",
+        "token-dándome",
+        "token-patadas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "My heart is pounding.",
+          "literal": "the heart giving me kicks."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'dándome patadas' is an idiomatic expression to describe a pounding heart. The use of the gerund 'dando' with the reflexive pronoun 'me' adds nuance. It is not a literal description but rather a vivid, figurative way to express strong emotion or excitement.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "dime, baby, ¿dónde tú estás?",
+      "sentenceId": "sentence-13-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-dime",
+        "token-,",
+        "token-baby",
+        "token-,",
+        "token-¿",
+        "token-dónde",
+        "token-tú",
+        "token-estás",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Tell me, baby, where are you?",
+          "literal": "tell me, baby, where you are?"
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "para llegarle con roro, julito, cristal.",
+      "sentenceId": "sentence-14-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-para",
+        "token-llegarle",
+        "token-con",
+        "token-roro",
+        "token-,",
+        "token-julito",
+        "token-,",
+        "token-cristal",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "To get there with money, Julito, and Cristal champagne.",
+          "literal": "to get there with money, julito, crystal."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Llegarle con roro' is a slang expression. 'Roro' refers to money, indicating the intention to impress or win someone over with wealth. This colloquial usage is specific to certain Spanish-speaking regions and contexts.",
+        "difficulty": "advanced"
+      }
+    },
+    {
+      "content": "roy, edgar, seba, óscar, dalnelly, big j, tocando batá.",
+      "sentenceId": "sentence-15-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-roy",
+        "token-,",
+        "token-edgar",
+        "token-,",
+        "token-seba",
+        "token-,",
+        "token-óscar",
+        "token-,",
+        "token-dalnelly",
+        "token-,",
+        "token-big",
+        "token-j",
+        "token-,",
+        "token-tocando",
+        "token-batá",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Roy, Edgar, Seba, Oscar, Dalnelly, Big J, playing batá drums.",
+          "literal": "roy, edgar, seba, oscar, dalnelly, big j, playing batá."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "hoy la calle la dejamos desbaratá.",
+      "sentenceId": "sentence-16-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-hoy",
+        "token-la",
+        "token-calle",
+        "token-la",
+        "token-dejamos",
+        "token-desbaratá",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Today, we completely wrecked the street.",
+          "literal": "today the street we left it wrecked."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "y sería cabrón que tú me toques el güiro.",
+      "sentenceId": "sentence-17-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-sería",
+        "token-cabrón",
+        "token-que",
+        "token-tú",
+        "token-me",
+        "token-toques",
+        "token-el",
+        "token-güiro",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And it would be awesome if you play the güiro for me.",
+          "literal": "and it would be badass that you me touch the güiro."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of \"sería cabrón que\" is an idiomatic way to express that something would be awesome or great. Also, note the subjunctive \"toques\" after \"que\" expressing a hypothetical situation.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "yo veo tu nombre y me salen suspiro.",
+      "sentenceId": "sentence-18-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-yo",
+        "token-veo",
+        "token-tu",
+        "token-nombre",
+        "token-y",
+        "token-me",
+        "token-salen",
+        "token-suspiro",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I see your name and I sigh.",
+          "literal": "I see your name and to me come out sighs."
+        }
+      },
+      "learningInsights": {
+        "insight": "The construction \"me salen suspiros\" is a less direct, more poetic way of saying \"I sigh.\" It uses \"salir\" (to come out) to express the involuntary nature of the action. The reflexive pronoun 'me' indicates who is experiencing the emotion.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "no sé si son petardos o si son tiros.",
+      "sentenceId": "sentence-19-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-no",
+        "token-sé",
+        "token-si",
+        "token-son",
+        "token-petardos",
+        "token-o",
+        "token-si",
+        "token-son",
+        "token-tiros",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I don't know if it's firecrackers or gunshots.",
+          "literal": "I don't know if they are firecrackers or if they are shots."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "mi blanquita, perico, mi kilo.",
+      "sentenceId": "sentence-20-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-mi",
+        "token-blanquita",
+        "token-,",
+        "token-perico",
+        "token-,",
+        "token-mi",
+        "token-kilo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "My white girl, coke, my kilo.",
+          "literal": "my white, parrot, my kilo."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "yo estoy en pr, tranquilo, pero.",
+      "sentenceId": "sentence-21-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-yo",
+        "token-estoy",
+        "token-en",
+        "token-pr",
+        "token-,",
+        "token-tranquilo",
+        "token-,",
+        "token-pero",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm in Puerto Rico, chilling, but...",
+          "literal": "I am in PR, calm, but."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "debí tirar más fotos de cuando te tuve.",
+      "sentenceId": "sentence-22-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-debí",
+        "token-tirar",
+        "token-más",
+        "token-fotos",
+        "token-de",
+        "token-cuando",
+        "token-te",
+        "token-tuve",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I should've taken more pictures of when I had you.",
+          "literal": "I should throw more photos of when I had you."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'debí + infinitive' expresses regret or something that should have been done in the past. The phrase 'cuando te tuve' literally translates to 'when I had you,' but in this context, it implies 'when we were together' or 'when you were mine,' offering a nuanced way to express past relationships.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "debí darte más besos y abrazos las veces que pude.",
+      "sentenceId": "sentence-23-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-debí",
+        "token-darte",
+        "token-más",
+        "token-besos",
+        "token-y",
+        "token-abrazos",
+        "token-las",
+        "token-veces",
+        "token-que",
+        "token-pude",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I should've given you more kisses and hugs every time I could.",
+          "literal": "I should give you more kisses and hugs the times that I could."
+        }
+      },
+      "learningInsights": {
+        "insight": "Similar to the previous sentence, 'debí + infinitive' expresses regret. The structure 'las veces que pude' (the times that I could) is a common way to express 'every time I could' or 'whenever I had the chance,' which is useful for learners.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ey, ojalá que los míos nunca se muden.",
+      "sentenceId": "sentence-24-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-ojalá",
+        "token-que",
+        "token-los",
+        "token-míos",
+        "token-nunca",
+        "token-se",
+        "token-muden",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, I hope my people never move away.",
+          "literal": "Hey, hopefully that mine never themselves move."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Ojalá que' expresses a strong wish or hope, and it's always followed by the subjunctive mood ('muden' in this case). 'Los míos' is a shortened way of saying 'my people/family/friends', and it is common in colloquial Spanish.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "y si hoy me emborracho, pues que me ayuden.",
+      "sentenceId": "sentence-25-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-si",
+        "token-hoy",
+        "token-me",
+        "token-emborracho",
+        "token-,",
+        "token-pues",
+        "token-que",
+        "token-me",
+        "token-ayuden",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And if I get drunk today, then they should help me.",
+          "literal": "And if today I get drunk, well that me help."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'pues' adds emphasis or serves as a filler word in speech, showing a casual tone. The construction 'que me ayuden' is an indirect command or wish ('let them help me'). This sentence demonstrates a common way to express a desire for something to happen to oneself.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ojalá que los míos nunca se muden.",
+      "sentenceId": "sentence-26-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-ojalá",
+        "token-que",
+        "token-los",
+        "token-míos",
+        "token-nunca",
+        "token-se",
+        "token-muden",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I hope my people never move away.",
+          "literal": "hopefully that those mine never themselves move."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'ojalá' expresses a wish or hope, followed by 'que' and the subjunctive mood ('se muden'). 'Los míos' is a common way to refer to 'my people' or 'my family', showcasing a possessive pronoun used as a noun.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ey, hoy voy a estar con abuelo todo el día, jugando dominó.",
+      "sentenceId": "sentence-27-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-hoy",
+        "token-voy",
+        "token-a",
+        "token-estar",
+        "token-con",
+        "token-abuelo",
+        "token-todo",
+        "token-el",
+        "token-día",
+        "token-,",
+        "token-jugando",
+        "token-dominó",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, today I'm going to be with grandpa all day, playing dominoes.",
+          "literal": "hey, today I go to be with grandpa all the day, playing domino."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "si me pregunta si aún pienso en ti, yo le digo que no.",
+      "sentenceId": "sentence-28-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-si",
+        "token-me",
+        "token-pregunta",
+        "token-si",
+        "token-aún",
+        "token-pienso",
+        "token-en",
+        "token-ti",
+        "token-,",
+        "token-yo",
+        "token-le",
+        "token-digo",
+        "token-que",
+        "token-no",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "If he asks me if I still think about you, I tell him no.",
+          "literal": "if me he asks if still I think in you, I to him say that no."
+        }
+      },
+      "learningInsights": {
+        "insight": "This sentence demonstrates the use of indirect questions ('si me pregunta si...') and the use of 'le digo' to mean 'I tell him/her'. The placement of 'aún' (still) and the use of 'en ti' (think about you) are also noteworthy.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "que mi estadía cerquita de ti ya se terminó.",
+      "sentenceId": "sentence-29-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-que",
+        "token-mi",
+        "token-estadía",
+        "token-cerquita",
+        "token-de",
+        "token-ti",
+        "token-ya",
+        "token-se",
+        "token-terminó",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "That my stay close to you has already ended.",
+          "literal": "that my stay close of you already itself finished."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Cerquita de' is a colloquial way to say 'very close to'. The reflexive verb 'terminarse' (se terminó) is used to express that something has ended, highlighting a common use of reflexive verbs for emphasis or to indicate a completed action.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ya se terminó.",
+      "sentenceId": "sentence-30-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-ya",
+        "token-se",
+        "token-terminó",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It's over.",
+          "literal": "already itself finished."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "ey, que prendan la máquina, voy para santurce.",
+      "sentenceId": "sentence-31-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-que",
+        "token-prendan",
+        "token-la",
+        "token-máquina",
+        "token-,",
+        "token-voy",
+        "token-para",
+        "token-santurce",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, turn on the machine, I'm going to Santurce.",
+          "literal": "Hey, that turn on the machine, I go to Santurce."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "aquí todavía se da caña.",
+      "sentenceId": "sentence-32-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-aquí",
+        "token-todavía",
+        "token-se",
+        "token-da",
+        "token-caña",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Things still get wild here.",
+          "literal": "Here still it gives cane."
+        }
+      },
+      "learningInsights": {
+        "insight": "The expression \"dar caña\" is an idiomatic way to say that things get wild or intense. It's not a literal giving of sugarcane, but rather implies a lively or energetic atmosphere.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "chequéate las babies, diablo, mami, qué dulce.",
+      "sentenceId": "sentence-33-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-chequéate",
+        "token-las",
+        "token-babies",
+        "token-,",
+        "token-diablo",
+        "token-,",
+        "token-mami",
+        "token-,",
+        "token-qué",
+        "token-dulce",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Check out the girls, damn, mommy, how sweet.",
+          "literal": "Check out the babies, devil, mommy, what sweet."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "hoy yo quiero beber, beber, beber.",
+      "sentenceId": "sentence-34-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-hoy",
+        "token-yo",
+        "token-quiero",
+        "token-beber",
+        "token-,",
+        "token-beber",
+        "token-,",
+        "token-beber",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Today I want to drink, drink, drink.",
+          "literal": "Today I want to drink, drink, drink."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "y hablar mierda hasta que me expulsen.",
+      "sentenceId": "sentence-35-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-hablar",
+        "token-mierda",
+        "token-hasta",
+        "token-que",
+        "token-me",
+        "token-expulsen",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And talk shit until they kick me out.",
+          "literal": "And talk shit until that they me expel."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of the subjunctive \"expulsen\" after \"hasta que\" indicates uncertainty or anticipation about being kicked out. This construction is a common point of confusion for learners.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "estoy bien loco, estoy bien loco, estoy bien loco, estoy bien loco.",
+      "sentenceId": "sentence-36-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-estoy",
+        "token-bien",
+        "token-loco",
+        "token-,",
+        "token-estoy",
+        "token-bien",
+        "token-loco",
+        "token-,",
+        "token-estoy",
+        "token-bien",
+        "token-loco",
+        "token-,",
+        "token-estoy",
+        "token-bien",
+        "token-loco",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm really crazy, I'm really crazy, I'm really crazy, I'm really crazy.",
+          "literal": "I am very crazy, I am very crazy, I am very crazy, I am very crazy."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "cabrón, guía tú, que, hasta caminando, yo estoy que choco.",
+      "sentenceId": "sentence-37-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-cabrón",
+        "token-,",
+        "token-guía",
+        "token-tú",
+        "token-,",
+        "token-que",
+        "token-,",
+        "token-hasta",
+        "token-caminando",
+        "token-,",
+        "token-yo",
+        "token-estoy",
+        "token-que",
+        "token-choco",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Damn, you guide, because even walking, I'm crashing.",
+          "literal": "Bastard, guide you, that, even walking, I am that I crash."
+        }
+      },
+      "learningInsights": {
+        "insight": "The expression \"estar que + verb\" indicates being on the verge of doing something. Here, \"estoy que choco\" means \"I'm about to crash,\" implying a state of being very disoriented or unstable.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "vamos a disfrutar, que nunca se sabe si nos queda poco.",
+      "sentenceId": "sentence-38-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-vamos",
+        "token-a",
+        "token-disfrutar",
+        "token-,",
+        "token-que",
+        "token-nunca",
+        "token-se",
+        "token-sabe",
+        "token-si",
+        "token-nos",
+        "token-queda",
+        "token-poco",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Let's enjoy, because you never know if we have little left.",
+          "literal": "Let's to enjoy, that never it knows if to us remains little."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "debí tirar más...",
+      "sentenceId": "sentence-39-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-debí",
+        "token-tirar",
+        "token-más",
+        "token-..."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I should have thrown more...",
+          "literal": "I should throw more..."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "gente, los quiero con cojones, los amo.",
+      "sentenceId": "sentence-40-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-gente",
+        "token-,",
+        "token-los",
+        "token-quiero",
+        "token-con",
+        "token-cojones",
+        "token-,",
+        "token-los",
+        "token-amo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "People, I love you with balls, I love you.",
+          "literal": "People, I want you with balls, I love you."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase \"con cojones\" is an idiomatic expression meaning \"with balls\" and is used to express doing something bravely or with determination. In this context, it conveys strong affection or appreciation.",
+        "difficulty": "advanced"
+      }
+    },
+    {
+      "content": "gracias por estar aquí, de verdad.",
+      "sentenceId": "sentence-41-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-gracias",
+        "token-por",
+        "token-estar",
+        "token-aquí",
+        "token-,",
+        "token-de",
+        "token-verdad",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Thank you for being here, really.",
+          "literal": "thanks for being here, of truth."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "para mí, es bien importante que estén aquí.",
+      "sentenceId": "sentence-42-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-para",
+        "token-mí",
+        "token-,",
+        "token-es",
+        "token-bien",
+        "token-importante",
+        "token-que",
+        "token-estén",
+        "token-aquí",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "For me, it's very important that you are here.",
+          "literal": "for me, it is very important that you are here."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'bien' as an intensifier before 'importante' is common in some Spanish dialects. Also, note the subjunctive mood ('estén') after 'que' due to the expression of importance.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "cada uno de ustedes significa mucho para mí.",
+      "sentenceId": "sentence-43-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-cada",
+        "token-uno",
+        "token-de",
+        "token-ustedes",
+        "token-significa",
+        "token-mucho",
+        "token-para",
+        "token-mí",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Each one of you means a lot to me.",
+          "literal": "each one of you means much to me."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'cada uno de ustedes' is a useful way to address a group of people formally. Pay attention to the verb conjugation matching 'cada uno'.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "así que, vamos para la foto, vengan para acá.",
+      "sentenceId": "sentence-44-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-así",
+        "token-que",
+        "token-,",
+        "token-vamos",
+        "token-para",
+        "token-la",
+        "token-foto",
+        "token-,",
+        "token-vengan",
+        "token-para",
+        "token-acá",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "So, let's go for the photo, come over here.",
+          "literal": "so that, let's go for the photo, come for here."
+        }
+      },
+      "learningInsights": {
+        "insight": "Note the use of 'para' in 'vamos para la foto' indicating direction/purpose and 'vengan para acá' to indicate movement towards the speaker. Also, 'así que' translates to 'so'.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "métase todo el mundo, todo el corillo, vamos.",
+      "sentenceId": "sentence-45-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-métase",
+        "token-todo",
+        "token-el",
+        "token-mundo",
+        "token-,",
+        "token-todo",
+        "token-el",
+        "token-corillo",
+        "token-,",
+        "token-vamos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Everyone get in, all the crew, let's go.",
+          "literal": "get in all the world, all the crew, let's go."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Métase' is an informal imperative form of 'meterse' (to get in), and 'corillo' is a colloquial term (primarily in Puerto Rico) for a group of friends or crew. This sentence shows informal language use.",
+        "difficulty": "advanced"
+      }
+    },
+    {
+      "content": "zumba.",
+      "sentenceId": "sentence-46-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-zumba",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Zumba.",
+          "literal": "Zumba."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "ya bernie tiene el nene y jan, la nena.",
+      "sentenceId": "sentence-47-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-ya",
+        "token-bernie",
+        "token-tiene",
+        "token-el",
+        "token-nene",
+        "token-y",
+        "token-jan",
+        "token-,",
+        "token-la",
+        "token-nena",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Bernie already has the boy and Jan, the girl.",
+          "literal": "already Bernie has the boy and Jan, the girl."
+        }
+      },
+      "learningInsights": {
+        "insight": "Using 'ya' to indicate that something has already happened. Also, note the use of 'el nene' and 'la nena' as colloquial terms for 'the boy' and 'the girl', respectively.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "ya no estamos para la movie y las cadenas.",
+      "sentenceId": "sentence-48-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-ya",
+        "token-no",
+        "token-estamos",
+        "token-para",
+        "token-la",
+        "token-movie",
+        "token-y",
+        "token-las",
+        "token-cadenas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "We are no longer into movies and chains.",
+          "literal": "already no we are for the movie and the chains."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'estar para' indicates being in the mood for something or interested in something. Here, it means 'we are no longer into' something.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "estamos para las cosas que valgan la pena.",
+      "sentenceId": "sentence-49-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-estamos",
+        "token-para",
+        "token-las",
+        "token-cosas",
+        "token-que",
+        "token-valgan",
+        "token-la",
+        "token-pena",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "We are into things that are worthwhile.",
+          "literal": "we are for the things that are worth the while."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'valgan la pena' translates to 'are worthwhile'. Note the subjunctive mood used after 'que' because it expresses a subjective value or worth.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ey, para el perreo, la salsa, la bomba y la plena.",
+      "sentenceId": "sentence-50-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-para",
+        "token-el",
+        "token-perreo",
+        "token-,",
+        "token-la",
+        "token-salsa",
+        "token-,",
+        "token-la",
+        "token-bomba",
+        "token-y",
+        "token-la",
+        "token-plena",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, for the perreo, the salsa, the bomba, and the plena.",
+          "literal": "hey, for the perreo, the salsa, the bomba and the plena."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "chequéate la mía cómo es que suena.",
+      "sentenceId": "sentence-51-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-chequéate",
+        "token-la",
+        "token-mía",
+        "token-cómo",
+        "token-es",
+        "token-que",
+        "token-suena",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Check out mine, see how it sounds.",
+          "literal": "check out mine how is that it sounds."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'chequéate la mía' is an informal way to say 'check mine out'. The construction 'cómo es que' is used for emphasis and can be tricky for learners to grasp, as it's not a direct translation of 'how'.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "y que tú me envíes más nudes.",
+      "sentenceId": "sentence-52-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-que",
+        "token-tú",
+        "token-me",
+        "token-envíes",
+        "token-más",
+        "token-nudes",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And that you send me more nudes.",
+          "literal": "and that you me send more nudes."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of the subjunctive mood 'envíes' after 'que' indicates a request or suggestion. This construction is common but requires understanding of subjunctive usage, which can be challenging for learners.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "y si hoy me emborracho, que vero me ayude.",
+      "sentenceId": "sentence-53-dtmf-bad-bunny",
+      "tokenIds": [
+        "token-y",
+        "token-si",
+        "token-hoy",
+        "token-me",
+        "token-emborracho",
+        "token-,",
+        "token-que",
+        "token-vero",
+        "token-me",
+        "token-ayude",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And if I get drunk today, let Vero help me.",
+          "literal": "and if today me I get drunk, that Vero me help."
+        }
+      },
+      "learningInsights": {
+        "insight": "The structure 'que vero me ayude' after the conditional clause implies a wish or a command, using 'que' to introduce a clause with the subjunctive mood ('ayude'). This sentence shows how to express a request or a hope in an indirect way.",
+        "difficulty": "intermediate"
+      }
+    }
+  ],
+  "no-se-habla-de-bruno-lin-manuel-miranda": [
+    {
+      "content": "no se habla de bruno, no, no, no.",
+      "sentenceId": "sentence-1-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-no",
+        "token-se",
+        "token-habla",
+        "token-de",
+        "token-bruno",
+        "token-,",
+        "token-no",
+        "token-,",
+        "token-no",
+        "token-,",
+        "token-no",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "We don't talk about Bruno, no, no, no.",
+          "literal": "no one speaks of Bruno, no, no, no."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'no se habla de' is a common way to say 'we don't talk about' or 'it's not spoken about.' The 'se' here indicates an impersonal construction.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "no se habla de bruno, mas...",
+      "sentenceId": "sentence-2-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-no",
+        "token-se",
+        "token-habla",
+        "token-de",
+        "token-bruno",
+        "token-,",
+        "token-mas",
+        "token-..."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "We don't talk about Bruno, but...",
+          "literal": "no one speaks of Bruno, but..."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "justo en mi boda fue.",
+      "sentenceId": "sentence-3-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-justo",
+        "token-en",
+        "token-mi",
+        "token-boda",
+        "token-fue",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It was right at my wedding.",
+          "literal": "right at my wedding it was."
+        }
+      },
+      "learningInsights": {
+        "insight": "The placement of 'fue' at the end of the sentence emphasizes that the event occurred right at the wedding. This word order is common in Spanish for emphasis.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "en nuestra boda fue.",
+      "sentenceId": "sentence-4-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-en",
+        "token-nuestra",
+        "token-boda",
+        "token-fue",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It was at our wedding.",
+          "literal": "in our wedding it was."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "todo estaba listo con un clima precioso esa vez.",
+      "sentenceId": "sentence-5-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-todo",
+        "token-estaba",
+        "token-listo",
+        "token-con",
+        "token-un",
+        "token-clima",
+        "token-precioso",
+        "token-esa",
+        "token-vez",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Everything was ready with a beautiful weather that time.",
+          "literal": "everything was ready with a climate precious that time."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "ninguna nube esa vez.",
+      "sentenceId": "sentence-6-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-ninguna",
+        "token-nube",
+        "token-esa",
+        "token-vez",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "There wasn't a cloud in the sky that day.",
+          "literal": "no cloud that time."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "bruno con voz misteriosa habló.",
+      "sentenceId": "sentence-7-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-bruno",
+        "token-con",
+        "token-voz",
+        "token-misteriosa",
+        "token-habló",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Bruno spoke with a mysterious voice.",
+          "literal": "Bruno with voice mysterious spoke."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "trueno.",
+      "sentenceId": "sentence-8-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-trueno",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Thunder.",
+          "literal": "Thunder."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "¿tú cuentas la historia o lo hago yo?",
+      "sentenceId": "sentence-9-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-¿",
+        "token-tú",
+        "token-cuentas",
+        "token-la",
+        "token-historia",
+        "token-o",
+        "token-lo",
+        "token-hago",
+        "token-yo",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Are you going to tell the story, or should I?",
+          "literal": "you tell the story or it do I?"
+        }
+      },
+      "learningInsights": {
+        "insight": "This sentence demonstrates the use of 'lo' as a substitute for the action 'contar la historia'. It's a common way to avoid repetition in Spanish. Notice how 'hago yo' is used for emphasis, clarifying who is doing the action.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "lo siento, mi vida, hazlo tú.",
+      "sentenceId": "sentence-10-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-lo",
+        "token-siento",
+        "token-,",
+        "token-mi",
+        "token-vida",
+        "token-,",
+        "token-hazlo",
+        "token-tú",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm sorry, my love, you do it.",
+          "literal": "it I regret, my life, do it you."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'lo siento, mi vida' is a common expression of apology and endearment. 'Hazlo tú' is an example of using a direct command and also a pronoun at the end to emphasize who should do the action.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "veo que pronto lloverá.",
+      "sentenceId": "sentence-11-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-veo",
+        "token-que",
+        "token-pronto",
+        "token-lloverá",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I see that it will rain soon.",
+          "literal": "I see that soon it will rain."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'veo que' followed by the future tense 'lloverá' is a common way to express a prediction based on observation. This structure is useful for expressing expectations about future events.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "¿qué insinuaba?",
+      "sentenceId": "sentence-12-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-¿",
+        "token-qué",
+        "token-insinuaba",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "What was he implying?",
+          "literal": "what was he insinuating?"
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "sabrás que lo tomé muy mal.",
+      "sentenceId": "sentence-13-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-sabrás",
+        "token-que",
+        "token-lo",
+        "token-tomé",
+        "token-muy",
+        "token-mal",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You know I took it very badly.",
+          "literal": "you will know that I took it very badly."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'sabrás' (future tense) implies a certainty or expectation that the listener is already aware of the information. The expression 'tomé muy mal' is a common way to express that one reacted negatively to something.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "abuela, ten la sombrilla.",
+      "sentenceId": "sentence-14-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-abuela",
+        "token-,",
+        "token-ten",
+        "token-la",
+        "token-sombrilla",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Grandma, take the umbrella.",
+          "literal": "grandma, have the umbrella."
+        }
+      },
+      "learningInsights": {
+        "insight": "Using 'ten' (imperative of 'tener') to offer or give something directly is a common usage, especially in informal contexts.  It's a more direct way of saying 'take' or 'here, have'.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "boda en un huracán.",
+      "sentenceId": "sentence-15-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-boda",
+        "token-en",
+        "token-un",
+        "token-huracán",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Wedding in a hurricane.",
+          "literal": "wedding in a hurricane."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "fue un día feliz pero es verdad.",
+      "sentenceId": "sentence-16-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-fue",
+        "token-un",
+        "token-día",
+        "token-feliz",
+        "token-pero",
+        "token-es",
+        "token-verdad",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "It was a happy day, but it's true.",
+          "literal": "it was a happy day but it's truth."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "no se habla de bruno.",
+      "sentenceId": "sentence-17-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-no",
+        "token-se",
+        "token-habla",
+        "token-de",
+        "token-bruno",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "We don't talk about Bruno.",
+          "literal": "no one speaks of bruno."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase \"no se habla de...\" is a common idiom used to indicate that a topic is taboo or should not be discussed. The use of \"se\" here is impersonal, indicating a general avoidance rather than a specific person's action.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "miedo al ver a bruno balbuceando y tropezando.",
+      "sentenceId": "sentence-18-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-miedo",
+        "token-al",
+        "token-ver",
+        "token-a",
+        "token-bruno",
+        "token-balbuceando",
+        "token-y",
+        "token-tropezando",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Fear at seeing Bruno stammering and stumbling.",
+          "literal": "fear at seeing to bruno stammering and stumbling."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "siempre lo recuerdo murmurando y farfullando.",
+      "sentenceId": "sentence-19-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-siempre",
+        "token-lo",
+        "token-recuerdo",
+        "token-murmurando",
+        "token-y",
+        "token-farfullando",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I always remember him muttering and mumbling.",
+          "literal": "always him I remember muttering and mumbling."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of \"lo\" as a direct object pronoun preceding the verb \"recuerdo\" is a common word order in Spanish. Also, \"murmurando y farfullando\" are both gerunds, describing simultaneous actions. Understanding the nuances between similar words like \"murmurar\" and \"farfullar\" enhances vocabulary.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "su sonido es como la arena al resbalar.",
+      "sentenceId": "sentence-20-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-su",
+        "token-sonido",
+        "token-es",
+        "token-como",
+        "token-la",
+        "token-arena",
+        "token-al",
+        "token-resbalar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "His sound is like sand slipping.",
+          "literal": "his sound is like the sand when slipping."
+        }
+      },
+      "learningInsights": {
+        "insight": "The construction \"al + infinitive\" (al resbalar) is used to express \"upon\" or \"when\" something happens. This is a concise way to indicate a time relationship between actions, and is a useful grammatical structure to learn.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "raro el don de ir visualizando.",
+      "sentenceId": "sentence-21-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-raro",
+        "token-el",
+        "token-don",
+        "token-de",
+        "token-ir",
+        "token-visualizando",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "His gift of seeing visions was strange.",
+          "literal": "strange the gift of going visualizing."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "deja a la abuela, como a todos, temblando.",
+      "sentenceId": "sentence-22-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-deja",
+        "token-a",
+        "token-la",
+        "token-abuela",
+        "token-,",
+        "token-como",
+        "token-a",
+        "token-todos",
+        "token-,",
+        "token-temblando",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "He leaves Grandma, like everyone else, trembling.",
+          "literal": "leaves to the grandma, like to everyone, trembling."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'dejar a alguien temblando' is an idiomatic expression meaning to leave someone trembling, often with fear or shock. It's a good example of how Spanish uses reflexive verbs to express emotional impact.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "enfrentando profecías sin interpretar.",
+      "sentenceId": "sentence-23-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-enfrentando",
+        "token-profecías",
+        "token-sin",
+        "token-interpretar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Facing prophecies without interpreting.",
+          "literal": "facing prophecies without interpreting."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "¿quieres tú intentar?",
+      "sentenceId": "sentence-24-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-¿",
+        "token-quieres",
+        "token-tú",
+        "token-intentar",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Do you want to try?",
+          "literal": "do you want you to try?"
+        }
+      },
+      "learningInsights": {
+        "insight": "This sentence demonstrates the optional use of subject pronouns in Spanish. While 'quieres intentar?' is also correct, including 'tú' emphasizes the person being addressed, which can add a nuance of directness or emphasis.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "terror en su faz, ratas por detrás.",
+      "sentenceId": "sentence-25-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-terror",
+        "token-en",
+        "token-su",
+        "token-faz",
+        "token-,",
+        "token-ratas",
+        "token-por",
+        "token-detrás",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Terror on his face, rats behind.",
+          "literal": "terror in his face, rats from behind."
+        }
+      },
+      "learningInsights": {
+        "insight": "The word 'faz' (face) is a more literary or formal way to say 'cara'. Using 'por detrás' (from behind) to indicate rats appearing unexpectedly adds a sense of lurking danger.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "al oír tu nombre no hay marcha atrás.",
+      "sentenceId": "sentence-26-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-al",
+        "token-oír",
+        "token-tu",
+        "token-nombre",
+        "token-no",
+        "token-hay",
+        "token-marcha",
+        "token-atrás",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Upon hearing your name, there's no turning back.",
+          "literal": "upon hearing your name there is no going back."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'no hay marcha atrás' is an idiomatic expression meaning 'there's no turning back.' It illustrates how Spanish uses 'marcha' (march, gear) to convey the idea of reversing or undoing something.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "grita mientras tiembles al despertar.",
+      "sentenceId": "sentence-27-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-grita",
+        "token-mientras",
+        "token-tiembles",
+        "token-al",
+        "token-despertar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Scream as you tremble upon waking up.",
+          "literal": "scream while you tremble upon waking up."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "él dijo mi pez se moriría, y ve.",
+      "sentenceId": "sentence-28-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-él",
+        "token-dijo",
+        "token-mi",
+        "token-pez",
+        "token-se",
+        "token-moriría",
+        "token-,",
+        "token-y",
+        "token-ve",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "He said my fish would die, and it did.",
+          "literal": "he said my fish would die, and see."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "no, no.",
+      "sentenceId": "sentence-29-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-no",
+        "token-,",
+        "token-no",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "No, no.",
+          "literal": "no, no."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "él dijo, 'serás panzón' y justo así fue.",
+      "sentenceId": "sentence-30-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-él",
+        "token-dijo",
+        "token-,",
+        "token-'",
+        "token-serás",
+        "token-panzón",
+        "token-'",
+        "token-y",
+        "token-justo",
+        "token-así",
+        "token-fue",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "He said, 'you'll be pot-bellied,' and just like that, it happened.",
+          "literal": "he said, 'you will be pot-bellied' and just like that it was."
+        }
+      },
+      "learningInsights": {
+        "insight": "This sentence uses the informal future tense 'serás' and the word 'panzón' (pot-bellied). The phrase 'justo así fue' emphasizes the immediate and exact fulfillment of the prediction, providing a cultural nuance in expressing cause and effect.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "él dijo que me quedaría sin pelo y mírame bien.",
+      "sentenceId": "sentence-31-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-él",
+        "token-dijo",
+        "token-que",
+        "token-me",
+        "token-quedaría",
+        "token-sin",
+        "token-pelo",
+        "token-y",
+        "token-mírame",
+        "token-bien",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "He said I would end up with no hair, but look at me now.",
+          "literal": "He said that I would remain without hair and look at me well."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'quedaría sin pelo' uses the conditional tense to express a hypothetical situation in the past. 'Mírame bien' is a colloquial way to say 'look at me closely' or 'look at me well', emphasizing the speaker's current state as evidence against the prophecy.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "las profecías se cumplen cada vez.",
+      "sentenceId": "sentence-32-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-las",
+        "token-profecías",
+        "token-se",
+        "token-cumplen",
+        "token-cada",
+        "token-vez",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "The prophecies come true every time.",
+          "literal": "The prophecies are fulfilled each time."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "él vio en mí un destino gentil.",
+      "sentenceId": "sentence-33-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-él",
+        "token-vio",
+        "token-en",
+        "token-mí",
+        "token-un",
+        "token-destino",
+        "token-gentil",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "He saw a gentle destiny in me.",
+          "literal": "He saw in me a gentle destiny."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "una vida de ensueños vendrá.",
+      "sentenceId": "sentence-34-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-una",
+        "token-vida",
+        "token-de",
+        "token-ensueños",
+        "token-vendrá",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A life of dreams will come.",
+          "literal": "A life of dreams will come."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "y que así el poder de mi don como uvas, va a madurar.",
+      "sentenceId": "sentence-35-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-y",
+        "token-que",
+        "token-así",
+        "token-el",
+        "token-poder",
+        "token-de",
+        "token-mi",
+        "token-don",
+        "token-como",
+        "token-uvas",
+        "token-",
+        ",",
+        "token-va",
+        "token-a",
+        "token-madurar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And so, the power of my gift, like grapes, will mature.",
+          "literal": "And that like this the power of my gift like grapes, is going to mature."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'va a madurar' uses the 'ir a + infinitive' construction to express a future action or expectation. The comparison 'como uvas' (like grapes) is a cultural reference that implies a gradual and natural process of maturation or development.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "oye, mariano va a llegar.",
+      "sentenceId": "sentence-36-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-oye",
+        "token-,",
+        "token-mariano",
+        "token-va",
+        "token-a",
+        "token-llegar",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Listen, Mariano is about to arrive.",
+          "literal": "Listen, Mariano is going to arrive."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'oye' as a colloquial way to get someone's attention is common in spoken Spanish. It's similar to 'listen' or 'hey' in English.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "él vio en mí un amor imposible.",
+      "sentenceId": "sentence-37-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-él",
+        "token-vio",
+        "token-en",
+        "token-mí",
+        "token-un",
+        "token-amor",
+        "token-imposible",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "He saw in me an impossible love.",
+          "literal": "He saw in me an impossible love."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "pactado al fin en lazos con otra.",
+      "sentenceId": "sentence-38-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-pactado",
+        "token-al",
+        "token-fin",
+        "token-en",
+        "token-lazos",
+        "token-con",
+        "token-otra",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Betrothed at last in bonds with another.",
+          "literal": "Agreed at the end in bonds with another."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'pactado en lazos con otra' suggests an arrangement or agreement, highlighting cultural aspects of arranged relationships or commitments. The use of 'lazos' (bonds) adds a layer of depth to the understanding of commitment.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "casi lo puedo oír.",
+      "sentenceId": "sentence-39-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-casi",
+        "token-lo",
+        "token-puedo",
+        "token-oír",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I can almost hear him.",
+          "literal": "Almost I can hear him."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "hey tú.",
+      "sentenceId": "sentence-40-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-hey",
+        "token-tú",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey you.",
+          "literal": "Hey you."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "de ti ni un sonido saldrá.",
+      "sentenceId": "sentence-41-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-de",
+        "token-ti",
+        "token-ni",
+        "token-un",
+        "token-sonido",
+        "token-saldrá",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Not even a sound about you will come out.",
+          "literal": "from you not a sound will come out."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'ni' with 'un' emphasizes that absolutely no sound will come out, reinforcing the prohibition. 'Saldrá' is the future tense of 'salir', useful for expressing future actions or outcomes.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "yo lo puedo oír.",
+      "sentenceId": "sentence-42-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-yo",
+        "token-lo",
+        "token-puedo",
+        "token-oír",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I can hear him.",
+          "literal": "I him can hear."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "oh, bruno sí, sobre bruno.",
+      "sentenceId": "sentence-43-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-oh",
+        "token-,",
+        "token-bruno",
+        "token-sí",
+        "token-,",
+        "token-sobre",
+        "token-bruno",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Oh, Bruno, yes, about Bruno.",
+          "literal": "oh, Bruno yes, about Bruno."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "ya digan lo que sepan de bruno.",
+      "sentenceId": "sentence-44-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-ya",
+        "token-digan",
+        "token-lo",
+        "token-que",
+        "token-sepan",
+        "token-de",
+        "token-bruno",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Now tell me what you know about Bruno.",
+          "literal": "now say what you know of Bruno."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Ya digan' uses the imperative mood, a direct command. 'Lo que sepan' employs the subjunctive mood, indicating uncertainty or something unknown, which is common when referring to knowledge or beliefs.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "denme la pura verdad de bruno.",
+      "sentenceId": "sentence-45-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-denme",
+        "token-la",
+        "token-pura",
+        "token-verdad",
+        "token-de",
+        "token-bruno",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Give me the unadulterated truth about Bruno.",
+          "literal": "give me the pure truth of Bruno."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Denme' is a combination of 'de' (from dar, to give) and 'me' (to me), demonstrating how indirect object pronouns can be attached to imperative verbs. 'Pura verdad' is an emphatic way of asking for the absolute truth.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "isabela, tu amor llegó.",
+      "sentenceId": "sentence-46-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-isabela",
+        "token-,",
+        "token-tu",
+        "token-amor",
+        "token-llegó",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Isabela, your love has arrived.",
+          "literal": "Isabela, your love arrived."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "a la mesa.",
+      "sentenceId": "sentence-47-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-a",
+        "token-la",
+        "token-mesa",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "To the table.",
+          "literal": "To the table."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "no hablemos de bruno.",
+      "sentenceId": "sentence-48-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-no",
+        "token-hablemos",
+        "token-de",
+        "token-bruno",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Let's not talk about Bruno.",
+          "literal": "Not let's talk of Bruno."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "¿por qué hablé sobre bruno?.",
+      "sentenceId": "sentence-49-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-¿",
+        "token-por",
+        "token-qué",
+        "token-hablé",
+        "token-sobre",
+        "token-bruno",
+        "token-?",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Why did I talk about Bruno?",
+          "literal": "Why spoke I about Bruno?."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "no hay que hablar sobre bruno.",
+      "sentenceId": "sentence-50-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-no",
+        "token-hay",
+        "token-que",
+        "token-hablar",
+        "token-sobre",
+        "token-bruno",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "We shouldn't talk about Bruno.",
+          "literal": "Not there is that talk about Bruno."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'no hay que + infinitive' is a common way to express 'there is no need to' or 'one shouldn't'. This structure is useful for giving advice or expressing necessity in a general way.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "no debo nunca hablar de bruno.",
+      "sentenceId": "sentence-51-no-se-habla-de-bruno-lin-manuel-miranda",
+      "tokenIds": [
+        "token-no",
+        "token-debo",
+        "token-nunca",
+        "token-hablar",
+        "token-de",
+        "token-bruno",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I should never talk about Bruno.",
+          "literal": "I must never speak of Bruno."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'no debo nunca hablar de' highlights the use of 'deber' (should/must) with 'nunca' (never) to express a strong prohibition. Also, note the use of 'de' before 'Bruno' when using 'hablar' in this context.",
+        "difficulty": "intermediate"
+      }
+    }
+  ]
 }
