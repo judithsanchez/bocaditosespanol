@@ -52,12 +52,13 @@ export class SentenceLearningInsightsEnricherStep
 
 		const enrichedSentences = await this.batchProcessor.process({
 			items: simplifiedSentences,
-			processingFn: async sentences => {
-				return this.enricher.enrich({
+			processingFn: async (sentences: ISentence[]): Promise<ISentence[]> => {
+				const result = await this.enricher.enrich({
 					input: sentences,
 					schema,
 					instruction,
 				});
+				return result as ISentence[];
 			},
 			batchSize: 5,
 			options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],

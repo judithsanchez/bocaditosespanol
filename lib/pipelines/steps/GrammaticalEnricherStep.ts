@@ -161,14 +161,14 @@ export class GrammaticalEnricherStep
 
 			const enriched = await this.batchProcessor.process({
 				items: simplifiedTokens,
-				processingFn: async batchTokens => {
+				processingFn: async (batchTokens: IWord[]): Promise<IWord[]> => {
 					const schema = getSchema();
 					const instruction = getInstruction();
 					return this.enricher.enrich({
 						input: batchTokens,
 						schema,
 						instruction,
-					});
+					}) as Promise<IWord[]>;
 				},
 				batchSize: 10,
 				options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],

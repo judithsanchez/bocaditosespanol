@@ -42,7 +42,7 @@ export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 			items: context.tokens.enriched.filter(
 				(token): token is IWord => token.tokenType === TokenType.Word,
 			),
-			processingFn: async tokens => {
+			processingFn: async (tokens: IWord[]): Promise<IWord[]> => {
 				const schema = TokenAIEnrichmentFactory.createSlangSchema();
 				const instruction =
 					TokenAIEnrichmentInstructionFactory.createSlangInstruction();
@@ -50,7 +50,7 @@ export class SlangDetectionStep implements PipelineStep<SongProcessingContext> {
 					input: tokens,
 					schema,
 					instruction,
-				});
+				}) as Promise<IWord[]>;
 			},
 			batchSize: 10,
 			options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],

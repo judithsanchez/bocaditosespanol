@@ -42,7 +42,7 @@ export class SensesEnrichmentStep
 
 		const enrichedTokens = await batchProcessor.process({
 			items: context.tokens.words,
-			processingFn: async tokens => {
+			processingFn: async (tokens: IWord[]): Promise<IWord[]> => {
 				const schema = TokenAIEnrichmentFactory.createSenseSchema();
 				const instruction =
 					TokenAIEnrichmentInstructionFactory.createSensesInstruction();
@@ -51,7 +51,7 @@ export class SensesEnrichmentStep
 					input: tokens,
 					schema,
 					instruction,
-				});
+				}) as Promise<IWord[]>;
 			},
 			batchSize: 10,
 			options: batchConfig,

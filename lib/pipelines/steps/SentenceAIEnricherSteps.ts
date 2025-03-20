@@ -41,12 +41,12 @@ export class SentenceAIEnricherSteps
 
 		const enrichedSentences = await this.batchProcessor.process({
 			items: context.sentences.deduplicated,
-			processingFn: async sentences => {
+			processingFn: async (sentences: ISentence[]): Promise<ISentence[]> => {
 				return this.enricher.enrich({
 					input: sentences,
 					schema,
 					instruction,
-				});
+				}) as Promise<ISentence[]>;
 			},
 			batchSize: 5,
 			options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],

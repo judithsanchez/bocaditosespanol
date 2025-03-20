@@ -45,7 +45,7 @@ export class CognateAnalysisStep
 
 		const enrichedTokens = await this.batchProcessor.process({
 			items: wordTokens,
-			processingFn: async tokens => {
+			processingFn: async (tokens: IWord[]): Promise<IWord[]> => {
 				const schema = TokenAIEnrichmentFactory.createCognateSchema();
 				const instruction =
 					TokenAIEnrichmentInstructionFactory.createCognateInstruction();
@@ -54,7 +54,7 @@ export class CognateAnalysisStep
 					input: tokens,
 					schema,
 					instruction,
-				});
+				}) as Promise<IWord[]>;
 			},
 			batchSize: 10,
 			options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],
