@@ -1,4 +1,4 @@
-import {BatchOptions} from 'config/AIConfig';
+import {BatchOptions} from '../config/AIConfig';
 import {AIProvider} from '../types/types';
 import {Logger} from '../utils/Logger';
 
@@ -23,11 +23,11 @@ export class OllamaProvider implements AIProvider {
 	}
 
 	async enrichContent(
-		input: any,
-		schema: any,
+		input: unknown,
+		schema: unknown,
 		instruction: string,
 		generationParams?: OllamaGenerationParams,
-	): Promise<any> {
+	): Promise<unknown> {
 		this.logger.start('enrichContent');
 
 		const controller = new AbortController();

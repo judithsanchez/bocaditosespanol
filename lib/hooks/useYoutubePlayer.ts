@@ -1,9 +1,17 @@
 import {useRef, useState, useEffect} from 'react';
 
+interface YouTubePlayer {
+	pauseVideo: () => void;
+	playVideo: () => void;
+	getCurrentTime: () => number;
+	seekTo: (seconds: number, allowSeekAhead: boolean) => void;
+	destroy: () => void;
+}
+
 declare global {
 	interface Window {
 		YT: {
-			Player: any;
+			Player: unknown;
 			PlayerState: {
 				PLAYING: number;
 			};
@@ -13,7 +21,7 @@ declare global {
 }
 
 export const useYoutubePlayer = (youtubeUrl: string) => {
-	const playerRef = useRef<any | null>(null);
+	const playerRef = useRef<YouTubePlayer | null>(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const getVideoIdFromUrl = (url: string) => {
@@ -51,7 +59,7 @@ export const useYoutubePlayer = (youtubeUrl: string) => {
 				rel: 0,
 			},
 			events: {
-				onReady: (event: {target: any}) => {
+				onReady: (event: {target: YouTubePlayer}) => {
 					playerRef.current = event.target;
 				},
 				onStateChange: (event: {data: number}) => {
@@ -64,6 +72,7 @@ export const useYoutubePlayer = (youtubeUrl: string) => {
 	const controls = {
 		togglePlayPause: () => {
 			if (playerRef.current) {
+				// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 				isPlaying
 					? playerRef.current.pauseVideo()
 					: playerRef.current.playVideo();
@@ -88,12 +97,12 @@ export const useYoutubePlayer = (youtubeUrl: string) => {
 			initializePlayer();
 		}
 
-		// Cleanup the player on unmount
 		return () => {
 			if (playerRef.current) {
 				playerRef.current.destroy();
 			}
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [youtubeUrl]);
 
 	return {playerRef, isPlaying, controls};

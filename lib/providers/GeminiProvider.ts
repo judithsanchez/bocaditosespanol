@@ -1,8 +1,8 @@
-import {GoogleGenerativeAI} from '@google/generative-ai';
+import {GoogleGenerativeAI, Schema} from '@google/generative-ai';
 import {AIProvider} from '../types/types';
 import {Logger} from '../utils/Logger';
 import {HarmBlockThreshold, HarmCategory} from '@google/generative-ai';
-import {BatchOptions} from '../../src/config/AIConfig';
+import {BatchOptions} from '../config/AIConfig';
 
 export const geminiSafetySettings = [
 	{
@@ -42,15 +42,15 @@ export class GeminiProvider implements AIProvider {
 		});
 	}
 	async enrichContent(
-		input: any,
-		schema: any,
+		input: unknown,
+		schema: unknown,
 		instruction: string,
 		generationParams?: {
 			temperature?: number;
 			topK?: number;
 			topP?: number;
 		},
-	): Promise<any> {
+	): Promise<unknown> {
 		this.logger.start('enrichContent');
 
 		try {
@@ -67,7 +67,7 @@ export class GeminiProvider implements AIProvider {
 					topK: generationParams?.topK ?? this.topK,
 					topP: generationParams?.topP ?? this.topP,
 					responseMimeType: 'application/json',
-					responseSchema: schema,
+					responseSchema: schema as Schema,
 				},
 				systemInstruction: instruction,
 				safetySettings: geminiSafetySettings,
