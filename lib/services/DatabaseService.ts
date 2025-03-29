@@ -20,11 +20,11 @@ interface TokenStorage {
 
 export class DatabaseService {
 	private getDataPath() {
-		if (process.env.NODE_ENV === 'production') {
-			return '/data';
-		}
-		// Use the absolute path to your data directory
-		return '/home/judithsanchez/dev/bocaditosespanol/data';
+		return '/home/judithsanchez/dev/bocaditosespanol/docs/data';
+	}
+
+	private getGitHubPagesUrl(filename: string) {
+		return `https://judithsanchez.github.io/bocaditosespanol/data/${filename}`;
 	}
 
 	private tokens: TokenStorage = {
@@ -145,9 +145,22 @@ export class DatabaseService {
 
 	async readFile(filename: string) {
 		try {
-			const filePath = join(this.getDataPath(), filename);
-			const content = await readFile(filePath, 'utf-8');
-			return JSON.parse(content);
+			try {
+				const response = await fetch(this.getGitHubPagesUrl(filename));
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+				return await response.json();
+			} catch (fetchError) {
+				console.log(
+					'Error fetching from GitHub Pages, falling back to local file:',
+					fetchError,
+				);
+
+				const filePath = join(this.getDataPath(), filename);
+				const content = await readFile(filePath, 'utf-8');
+				return JSON.parse(content);
+			}
 		} catch (error) {
 			console.log('Error reading file:', error);
 			return null;
