@@ -156,10 +156,6 @@ export class DatabaseService {
 					'Error fetching from GitHub Pages, falling back to local file:',
 					fetchError,
 				);
-
-				const filePath = join(this.getDataPath(), filename);
-				const content = await readFile(filePath, 'utf-8');
-				return JSON.parse(content);
 			}
 		} catch (error) {
 			console.log('Error reading file:', error);
