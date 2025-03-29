@@ -1,4 +1,4 @@
-import {readFile, writeFile, mkdir} from 'fs/promises';
+import {writeFile, mkdir} from 'fs/promises';
 import {existsSync} from 'fs';
 import {join} from 'path';
 
@@ -11,6 +11,7 @@ import {
 	Token,
 } from '@/lib/types/common';
 import {ISong} from '../types/entries';
+import {ReadDatabaseService} from './ReadDatabaseService';
 
 interface TokenStorage {
 	words: Record<string, IWord>;
@@ -18,13 +19,9 @@ interface TokenStorage {
 	emojis: Record<string, IEmoji>;
 }
 
-export class DatabaseService {
+export class WriteDatabaseService {
 	private getDataPath() {
 		return '/home/judithsanchez/dev/bocaditosespanol/docs/data';
-	}
-
-	private getGitHubPagesUrl(filename: string) {
-		return `https://judithsanchez.github.io/bocaditosespanol/data/${filename}`;
 	}
 
 	private tokens: TokenStorage = {
@@ -33,8 +30,11 @@ export class DatabaseService {
 		emojis: {},
 	};
 
+	private readService: ReadDatabaseService;
+
 	constructor() {
-		console.log('Database path:', this.getDataPath());
+		console.log('Database write path:', this.getDataPath());
+		this.readService = new ReadDatabaseService();
 		this.initializeDataStructures();
 	}
 
@@ -48,7 +48,7 @@ export class DatabaseService {
 		entry: ISong,
 		contentType: 'song' | 'transcript' | 'podcast',
 	): Promise<void> {
-		const entries = (await this.readFile('text-entries.json')) || {};
+		const entries = await this.readService.getTextEntries();
 
 		if (!entries[contentType]) {
 			entries[contentType] = [];
@@ -63,7 +63,7 @@ export class DatabaseService {
 		sentences: ISentence[],
 		songMetadata: {title: string; interpreter: string},
 	): Promise<void> {
-		const existingSentences = (await this.readFile('sentences.json')) || {};
+		const existingSentences = await this.readService.getSentences();
 
 		const songKey = `${songMetadata.title
 			.toLowerCase()
@@ -80,7 +80,7 @@ export class DatabaseService {
 		existingTokens: Token[];
 		newTokens: Token[];
 	}> {
-		const existingDbTokens = await this.getTokens();
+		const existingDbTokens = await this.readService.getTokens();
 		const existingTokenIds = new Set(existingDbTokens.map(t => t.tokenId));
 
 		return {
@@ -94,17 +94,13 @@ export class DatabaseService {
 	async saveTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Promise<void> {
-		let currentTokens = await this.readFile('tokens.json');
+		const currentTokens = await this.readService.readFile('tokens.json');
 
-		if (!currentTokens) {
-			currentTokens = {
-				words: {},
-				punctuationSigns: {},
-				emojis: {},
-			};
-		}
-
-		this.tokens = currentTokens;
+		this.tokens = currentTokens || {
+			words: {},
+			punctuationSigns: {},
+			emojis: {},
+		};
 
 		for (const token of tokens) {
 			await this.addToken(token);
@@ -120,46 +116,6 @@ export class DatabaseService {
 			this.tokens.punctuationSigns[token.tokenId] = token as IPunctuationSign;
 		} else {
 			this.tokens.emojis[token.tokenId] = token as IEmoji;
-		}
-	}
-
-	async getTokens(): Promise<Array<IWord | IPunctuationSign | IEmoji>> {
-		const tokens = (await this.readFile('tokens.json')) as TokenStorage;
-		if (!tokens) return [];
-
-		const allTokens: Array<IWord | IPunctuationSign | IEmoji> = [
-			...(Object.values(tokens.words) as IWord[]),
-			...(Object.values(tokens.punctuationSigns) as IPunctuationSign[]),
-			...(Object.values(tokens.emojis) as IEmoji[]),
-		];
-
-		return allTokens.sort((a, b) => {
-			if (a.tokenType === TokenType.Word && b.tokenType === TokenType.Word) {
-				return (
-					((b as IWord).lastUpdated || 0) - ((a as IWord).lastUpdated || 0)
-				);
-			}
-			return 0;
-		});
-	}
-
-	async readFile(filename: string) {
-		try {
-			try {
-				const response = await fetch(this.getGitHubPagesUrl(filename));
-				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
-				}
-				return await response.json();
-			} catch (fetchError) {
-				console.log(
-					'Error fetching from GitHub Pages, falling back to local file:',
-					fetchError,
-				);
-			}
-		} catch (error) {
-			console.log('Error reading file:', error);
-			return null;
 		}
 	}
 

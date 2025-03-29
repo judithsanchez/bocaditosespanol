@@ -9,7 +9,7 @@ import {
 	AddSongRequest,
 	Token,
 } from '@/lib/types/common';
-import {DatabaseService} from '../services/DatabaseService';
+import {WriteDatabaseService} from '../services/WriteDatabaseService';
 import {
 	InputValidatorStep,
 	SentenceFormatterStep,
@@ -42,11 +42,11 @@ export interface SongProcessingContext {
 	song: ISong;
 }
 export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
-	private readonly db: DatabaseService;
+	private readonly db: WriteDatabaseService;
 	protected readonly logger: Logger;
 
 	constructor() {
-		const db = new DatabaseService();
+		const db = new WriteDatabaseService();
 
 		super(
 			{
@@ -67,7 +67,7 @@ export class SongProcessingPipeline extends Pipeline<SongProcessingContext> {
 				new GrammaticalEnricherStep(),
 			],
 		);
-		this.db = new DatabaseService();
+		this.db = new WriteDatabaseService();
 		this.logger = new Logger('SongProcessingPipeline');
 	}
 	static createContext(input: AddSongRequest): SongProcessingContext {

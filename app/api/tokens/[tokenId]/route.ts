@@ -1,5 +1,5 @@
+import {ReadDatabaseService} from '@/lib/services/ReadDatabaseService';
 import {NextResponse} from 'next/server';
-import {DatabaseService} from '@/lib/services/DatabaseService';
 import {z} from 'zod';
 
 // GET: Get a specific token by ID
@@ -11,7 +11,7 @@ export async function GET(
 		// Await the params object before accessing tokenId
 		const resolvedParams = await params;
 		const tokenId = resolvedParams.tokenId;
-		const dbService = new DatabaseService();
+		const dbService = new ReadDatabaseService();
 
 		// Get all tokens and find the one with matching ID
 		const allTokens = await dbService.getTokens();

@@ -1,5 +1,5 @@
+import {ReadDatabaseService} from '@/lib/services/ReadDatabaseService';
 import {NextResponse} from 'next/server';
-import {DatabaseService} from '@/lib/services/DatabaseService';
 import {z} from 'zod';
 
 export async function GET(
@@ -8,7 +8,7 @@ export async function GET(
 ) {
 	try {
 		const {songId} = context.params;
-		const dbService = new DatabaseService();
+		const dbService = new ReadDatabaseService();
 
 		const textEntries = await dbService.readFile('text-entries.json');
 		const songEntry = textEntries.song.find(

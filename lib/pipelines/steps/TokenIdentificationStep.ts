@@ -12,16 +12,16 @@ import {
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../SongProcessingPipeline';
 import {Logger} from '../../utils/index';
-import {DatabaseService} from '../../services/DatabaseService';
+import {WriteDatabaseService} from '../../services/WriteDatabaseService';
 import {TokenFactory} from '../../factories/TokenFactory';
 
 export class TokenIdentificationStep
 	implements PipelineStep<SongProcessingContext>
 {
 	private readonly logger = new Logger('TokenIdentificationStep');
-	private readonly db: DatabaseService;
+	private readonly db: WriteDatabaseService;
 
-	constructor(db: DatabaseService) {
+	constructor(db: WriteDatabaseService) {
 		this.db = db;
 	}
 

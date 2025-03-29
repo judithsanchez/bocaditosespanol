@@ -1,13 +1,13 @@
 import {NextResponse} from 'next/server';
-import {DatabaseService} from '@/lib/services/DatabaseService';
 import {SongProcessingPipeline} from '@/lib/pipelines/SongProcessingPipeline';
 import {z} from 'zod';
 import {songRequestSchema} from '@/lib/types/common';
+import {ReadDatabaseService} from '@/lib/services/ReadDatabaseService';
 
 // GET: List all songs
 export async function GET() {
 	try {
-		const dbService = new DatabaseService();
+		const dbService = new ReadDatabaseService();
 		const textEntries = await dbService.readFile('text-entries.json');
 		const songs = textEntries.song || [];
 
@@ -35,12 +35,10 @@ export async function GET() {
 	}
 }
 
-// POST: Create a new song
 export async function POST(request: Request) {
 	try {
 		const body = await request.json();
 
-		// Validate request body
 		const validatedBody = songRequestSchema.parse(body);
 
 		const pipeline = new SongProcessingPipeline();
