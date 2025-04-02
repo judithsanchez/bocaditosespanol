@@ -1,0 +1,118 @@
+%%{
+  init: {
+    'theme': 'dark',
+    'themeVariables': {
+      'primaryColor': '#1f2937',
+      'primaryTextColor': '#e6edf3',
+      'primaryBorderColor': '#58a6ff',
+      'lineColor': '#8b949e',
+      'secondaryColor': '#252525',
+      'tertiaryColor': '#1a1a1a'
+    }
+  }
+}%%
+erDiagram
+    SONG ||--o{ SENTENCE : contains
+    SENTENCE ||--o{ TOKEN : references
+    TOKEN ||--|{ WORD : is
+    TOKEN ||--|{ EMOJI : is
+    TOKEN ||--|{ PUNCTUATION : is
+    WORD ||--o{ SENSE : has
+
+    %% Entity styling
+    SONG {
+        string songId
+        object metadata
+        string[] lyrics
+        number createdAt
+        number updatedAt
+    }
+    
+    METADATA {
+        string interpreter
+        string[] feat
+        string title
+        string youtube
+        string[] genre
+        string language
+        string releaseDate
+    }
+    
+    SENTENCE {
+        string sentenceId
+        string content
+        string[] tokenIds
+        object translations
+        object learningInsights
+    }
+    
+    TRANSLATIONS {
+        object english
+    }
+    
+    ENGLISH_TRANSLATION {
+        string|Promise literal
+        string|Promise contextual
+    }
+    
+    LEARNING_INSIGHTS {
+        Difficulty difficulty
+        string insight
+    }
+    
+    TOKEN {
+        string tokenId
+        string content
+        TokenType tokenType
+    }
+    
+    WORD {
+        string tokenId
+        string content
+        TokenType tokenType
+        string normalizedToken
+        boolean isSlang
+        boolean isCognate
+        boolean isFalseCognate
+        number lastUpdated
+    }
+    
+    EMOJI {
+        string tokenId
+        string content
+        TokenType tokenType
+    }
+    
+    PUNCTUATION {
+        string tokenId
+        string content
+        TokenType tokenType
+    }
+    
+    SENSE {
+        string senseId
+        string tokenId
+        string content
+        boolean hasSpecialChar
+        object translations
+        string partOfSpeech
+        object grammaticalInfo
+        number lastUpdated
+    }
+    
+    SENSE_TRANSLATIONS {
+        string[] english
+    }
+
+    %% Relationships
+    SONG ||--|| METADATA : has
+    SENTENCE ||--|| TRANSLATIONS : has
+    TRANSLATIONS ||--|| ENGLISH_TRANSLATION : contains
+    SENTENCE ||--o{ LEARNING_INSIGHTS : has
+    SENSE ||--|| SENSE_TRANSLATIONS : has
+
+    %% Styles
+    classDef default fill:#2d2d2d,stroke:#8b949e,stroke-width:2px,color:#e6edf3
+    classDef entity fill:#1f2937,stroke:#58a6ff,stroke-width:2px,color:#58a6ff
+
+    class SONG,SENTENCE,TOKEN,WORD,EMOJI,PUNCTUATION,SENSE,METADATA,TRANSLATIONS,ENGLISH_TRANSLATION,LEARNING_INSIGHTS,SENSE_TRANSLATIONS entity

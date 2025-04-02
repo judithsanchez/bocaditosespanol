@@ -1,7 +1,7 @@
 import {PipelineStep} from '../Pipeline';
 import {Logger} from '../../utils/index';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
-import {SongProcessingContext} from '../SongProcessingPipeline';
+import {SongProcessingContext} from '../ContentProcessingPipeline';
 import {ContentSchemaFactory} from '../../factories/ContentSchemaFactory';
 import {ContentInstructionFactory} from '../../factories/ContentInstructionsFactory';
 import {ContentType, ISentence} from '@/lib/types/common';

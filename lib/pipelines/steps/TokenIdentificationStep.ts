@@ -10,7 +10,7 @@ import {
 	IEmoji,
 } from '@/lib/types/common';
 import {PipelineStep} from '../Pipeline';
-import {SongProcessingContext} from '../SongProcessingPipeline';
+import {SongProcessingContext} from '../ContentProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {WriteDatabaseService} from '../../services/WriteDatabaseService';
 import {TokenFactory} from '../../factories/TokenFactory';

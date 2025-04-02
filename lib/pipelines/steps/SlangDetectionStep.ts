@@ -1,5 +1,5 @@
 import {PipelineStep} from '../Pipeline';
-import {SongProcessingContext} from '../SongProcessingPipeline';
+import {SongProcessingContext} from '../ContentProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {BatchProcessor} from '../../utils/BatchProcessor';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';

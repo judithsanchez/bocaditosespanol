@@ -1,5 +1,5 @@
 import {PipelineStep} from '../Pipeline';
-import {SongProcessingContext} from '../SongProcessingPipeline';
+import {SongProcessingContext} from '../ContentProcessingPipeline';
 import {
 	TokenType,
 	IWord,

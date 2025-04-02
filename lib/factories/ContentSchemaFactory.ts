@@ -1,6 +1,6 @@
 import {SchemaType} from '@google/generative-ai';
 import {ContentType, ISentence} from '@/lib/types/common';
-import {ISong} from '@/lib/types/entries';
+import {ISong} from '@/lib/types/contentType';
 
 export interface ContentSchema {
 	type: SchemaType;

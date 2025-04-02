@@ -10,7 +10,7 @@ import {
 	TokenType,
 	Token,
 } from '@/lib/types/common';
-import {ISong} from '../types/entries';
+import {ISong} from '../types/contentType';
 import {ReadDatabaseService} from './ReadDatabaseService';
 
 interface TokenStorage {

@@ -1,0 +1,85 @@
+graph TD
+    %% Top Level: Songs
+    Song["Song {
+        songId: string
+        metadata: object
+        lyrics: array
+        createdAt: number
+        updatedAt: number
+    }"]
+    
+    %% Metadata Level
+    Metadata["Metadata {
+        interpreter: string
+        feat: string[]
+        title: string
+        youtube: string
+        genre: string[]
+        language: string
+        releaseDate: string
+    }"]
+    
+    %% Sentences Level
+    Sentence["Sentence {
+        sentenceId: string
+        content: string
+        tokenIds: string[]
+        translations: object
+        learningInsights: object
+    }"]
+    
+    %% Translations Level
+    Translation["Translation {
+        english: {
+            contextual: string
+            literal: string
+        }
+    }"]
+    
+    %% Learning Insights Level
+    LearningInsight["LearningInsight {
+        insight: string
+        difficulty: 'beginner' | 'intermediate' | 'advanced'
+    }"]
+    
+    %% Token Level
+    Token["Token {
+        tokenId: string
+        content: string
+        type: string
+        lemma: string
+        pos: string
+        senses: object[]
+    }"]
+    
+    %% Senses Level
+    Sense["Sense {
+        definition: string
+        examples: string[]
+        synonyms: string[]
+        antonyms: string[]
+        register: string
+        usage: string
+    }"]
+
+    %% Relationships
+    Song --> Metadata
+    Song --> |"contains many"| Sentence
+    Sentence --> |"contains"| Translation
+    Sentence --> |"contains"| LearningInsight
+    Sentence --> |"references many"| Token
+    Token --> |"contains many"| Sense
+    
+    %% Style Definitions
+    classDef default fill:#2d2d2d,stroke:#8b949e,stroke-width:2px,color:#e6edf3
+    classDef important fill:#1f2937,stroke:#58a6ff,stroke-width:2px,color:#58a6ff
+    classDef entity fill:#1a1a1a,stroke:#8b949e,stroke-width:2px,color:#e6edf3
+    classDef metadata fill:#252525,stroke:#7ee787,stroke-width:2px,color:#7ee787
+    
+    %% Apply Styles
+    class Song,Token important
+    class Metadata metadata
+    class Sentence,Translation,LearningInsight,Sense entity
+    
+    %% Graph Styling
+    style default fill:#1a1a1a,stroke:#30363d

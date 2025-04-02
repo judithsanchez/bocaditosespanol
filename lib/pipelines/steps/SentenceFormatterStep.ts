@@ -1,6 +1,6 @@
 import {PipelineStep} from '../Pipeline';
 import {Logger} from '../../utils/index';
-import {SongProcessingContext} from '@/lib/pipelines/SongProcessingPipeline';
+import {SongProcessingContext} from '@/lib/pipelines/ContentProcessingPipeline';
 import {errors} from '@/lib/types/constants';
 import {formattedSentencesSchema, ISentence} from '@/lib/types/common';
 import {z} from 'zod';

@@ -1,21 +1,5 @@
 import {z} from 'zod';
 
-export const songRequestSchema = z.object({
-	interpreter: z.string().min(1),
-	feat: z.array(z.string()).optional(),
-	title: z.string().min(1),
-	youtube: z.string().url(),
-	genre: z.array(z.string()),
-	language: z.object({
-		main: z.string(),
-		variant: z.array(z.string()),
-	}),
-	releaseDate: z.string(),
-	lyrics: z.string().min(1),
-});
-
-export type AddSongRequest = z.infer<typeof songRequestSchema>;
-
 export enum ContentType {
 	SONG = 'song',
 	TRANSCRIPT = 'transcript',
