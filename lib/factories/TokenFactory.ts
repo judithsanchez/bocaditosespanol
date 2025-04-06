@@ -1,15 +1,15 @@
+import emojiRegex from 'emoji-regex';
 import {
 	EmojiToken,
+	emojiTokenSchema,
 	PunctuationToken,
+	punctuationTokenSchema,
+	Token,
 	TokenType,
 	WordToken,
-	Token,
-	ISense,
-	emojiTokenSchema,
-	punctuationTokenSchema,
 	wordTokenSchema,
-} from '@/lib/types/grammar';
-import emojiRegex from 'emoji-regex';
+} from '../types/token';
+import {ISense} from '../types/sense';
 
 export class TokenFactory {
 	private static readonly emojiPattern = emojiRegex();
@@ -69,13 +69,11 @@ export class TokenFactory {
 
 	private static createInitialSense(tokenId: string): ISense {
 		return {
-			content: '',
 			senseId: '',
 			tokenId: `token-${tokenId}`,
+			content: '',
 			hasSpecialChar: false,
 			translations: {english: []},
-			partOfSpeech: '',
-			grammaticalInfo: {},
 			lastUpdated: Date.now(),
 		};
 	}

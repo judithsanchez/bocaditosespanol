@@ -1,22 +1,22 @@
-import {
-	Token,
-	TokenType,
-	WordToken,
-	PunctuationToken,
-	EmojiToken,
-	ISentence,
-	IWord,
-	IPunctuationSign,
-	IEmoji,
-} from '@/lib/types/grammar';
 import {PipelineStep} from '../Pipeline';
-import {SongProcessingContext} from '../ContentProcessingPipeline';
+import {ContentProcessingContext} from '../ContentProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {WriteDatabaseService} from '../../services/WriteDatabaseService';
 import {TokenFactory} from '../../factories/TokenFactory';
+import {ISentence} from '@/lib/types/sentence';
+import {
+	EmojiToken,
+	IEmoji,
+	IPunctuationSign,
+	IWord,
+	PunctuationToken,
+	Token,
+	TokenType,
+	WordToken,
+} from '@/lib/types/token';
 
 export class TokenIdentificationStep
-	implements PipelineStep<SongProcessingContext>
+	implements PipelineStep<ContentProcessingContext>
 {
 	private readonly logger = new Logger('TokenIdentificationStep');
 	private readonly db: WriteDatabaseService;
@@ -26,8 +26,8 @@ export class TokenIdentificationStep
 	}
 
 	async process(
-		context: SongProcessingContext,
-	): Promise<SongProcessingContext> {
+		context: ContentProcessingContext,
+	): Promise<ContentProcessingContext> {
 		this.logger.start('process');
 
 		const processedSentences = this.processSentences(
@@ -66,7 +66,7 @@ export class TokenIdentificationStep
 		return tokens.map(token => TokenFactory.createToken(token));
 	}
 	private categorizeTokens(
-		context: SongProcessingContext,
+		context: ContentProcessingContext,
 		tokens: Token[],
 	): void {
 		context.tokens.words = tokens.filter(

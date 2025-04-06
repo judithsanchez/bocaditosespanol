@@ -216,16 +216,15 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext
 		);
 
 		await this.writeDB.saveTokens([
-			...processedContext.tokens.enriched,
-			...processedContext.tokens.punctuationSigns,
-			...processedContext.tokens.emojis,
+			...(processedContext.tokens.enriched as IWord[]),
+			...(processedContext.tokens.punctuationSigns as IPunctuationSign[]),
+			...(processedContext.tokens.emojis as IEmoji[]),
 		]);
 
 		this.logger.info('Database operations completed');
 		this.logger.end('processText');
 		return processedContext;
 	}
-
 	private logContextState(stepName: string, context: ContentProcessingContext) {
 		this.logger.info(`${stepName} - Context State`, {
 			sentences: {

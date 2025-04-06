@@ -11,8 +11,8 @@ export interface ISense {
 	content: string;
 	hasSpecialChar: boolean;
 	translations: {english: string[]};
-	partOfSpeech: PartOfSpeech;
-	grammaticalInfo: GrammaticalInfo;
+	partOfSpeech?: PartOfSpeech;
+	grammaticalInfo?: GrammaticalInfo;
 	lastUpdated: number;
 }
 export const senseSchema = z.object({

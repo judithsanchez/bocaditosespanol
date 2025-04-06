@@ -27,7 +27,27 @@ export const wordTokenSchema = baseTokenSchema.extend({
 	isCognate: z.boolean(),
 	isFalseCognate: z.boolean(),
 	lastUpdated: z.number(),
-	senses: z.array(senseSchema),
+	senses: z.array(
+		senseSchema.extend({
+			// Make these fields optional with defaults
+			partOfSpeech: z
+				.enum([
+					'noun',
+					'verb',
+					'adjective',
+					'adverb',
+					'pronoun',
+					'determiner',
+					'article',
+					'preposition',
+					'conjunction',
+					'interjection',
+					'numeral',
+				])
+				.optional(),
+			grammaticalInfo: z.object({}).optional(), // Make it optional or use a more specific optional schema
+		}),
+	),
 });
 
 export const tokenSchema = z.discriminatedUnion('tokenType', [
