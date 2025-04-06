@@ -131,12 +131,11 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext
 						s => s.sentenceId,
 					),
 					language: input.language,
+					contributors: input.contributors,
 					createdAt: Date.now(),
 					updatedAt: Date.now(),
 					genre: input.genre,
 					source: input.source,
-					interpreter: songInput.contributors.main,
-					feat: songInput.contributors.collaborators || [],
 				};
 				processedContext.content = songContent;
 				processedContext.contentType = ContentType.SONG;
@@ -159,11 +158,11 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext
 						s => s.sentenceId,
 					),
 					language: input.language,
+					contributors: input.contributors,
 					createdAt: Date.now(),
 					updatedAt: Date.now(),
 					genre: input.genre,
 					source: input.source,
-					author: bookInput.contributors.main,
 					pages: bookInput.pages,
 					isbn: bookInput.isbn,
 				};
@@ -188,12 +187,11 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext
 						s => s.sentenceId,
 					),
 					language: input.language,
+					contributors: input.contributors,
 					createdAt: Date.now(),
 					updatedAt: Date.now(),
 					genre: input.genre,
 					source: input.source,
-					creator: videoInput.contributors.main,
-					contributors: videoInput.contributors.collaborators || [],
 				};
 				processedContext.content = videoContent;
 				processedContext.contentType = ContentType.VIDEO_TRANSCRIPT;

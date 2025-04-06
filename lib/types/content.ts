@@ -18,20 +18,22 @@ export interface IContent {
 		main: string;
 		variant?: string[];
 	};
+	contributors: {
+		main: string;
+		collaborators?: string[];
+	};
 	createdAt: number;
 	updatedAt: number;
 	genre: string[];
 	source: string;
 }
+
 export interface ISong extends IContent {
 	contentType: ContentType.SONG;
-	interpreter: string;
-	feat?: string[];
 }
 
 export interface IBookExcerpt extends IContent {
 	contentType: ContentType.BOOK_EXCERPT;
-	author: string;
 	pages?: {
 		start: number;
 		end: number;
@@ -41,8 +43,6 @@ export interface IBookExcerpt extends IContent {
 
 export interface IVideoTranscript extends IContent {
 	contentType: ContentType.VIDEO_TRANSCRIPT;
-	creator: string;
-	contributors?: string[];
 }
 
 interface BaseContentRequest {
