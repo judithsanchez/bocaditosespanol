@@ -3,20 +3,32 @@ import {existsSync} from 'fs';
 import {join} from 'path';
 
 import {
-	ISentence,
+	TokenType,
+	Token,
 	IWord,
 	IPunctuationSign,
 	IEmoji,
-	TokenType,
-	Token,
-} from '@/lib/types/common';
-import {ISong} from '../types/contentType';
+} from '@/lib/types/token';
+import {ISentence} from '@/lib/types/sentence';
+import {
+	ContentType,
+	IContent,
+	ISong,
+	IBookExcerpt,
+	IVideoTranscript,
+} from '@/lib/types/content';
 import {ReadDatabaseService} from './ReadDatabaseService';
 
 interface TokenStorage {
 	words: Record<string, IWord>;
 	punctuationSigns: Record<string, IPunctuationSign>;
 	emojis: Record<string, IEmoji>;
+}
+
+interface TextEntriesStorage {
+	[ContentType.SONG]?: ISong[];
+	[ContentType.BOOK_EXCERPT]?: IBookExcerpt[];
+	[ContentType.VIDEO_TRANSCRIPT]?: IVideoTranscript[];
 }
 
 export class WriteDatabaseService {
@@ -45,33 +57,45 @@ export class WriteDatabaseService {
 	}
 
 	async saveTextEntry(
-		entry: ISong,
-		contentType: 'song' | 'transcript' | 'podcast',
+		entry: IContent,
+		contentType: ContentType,
 	): Promise<void> {
-		const entries = await this.readService.getTextEntries();
+		const entries =
+			(await this.readService.getTextEntries()) as TextEntriesStorage;
 
 		if (!entries[contentType]) {
 			entries[contentType] = [];
 		}
 
-		entries[contentType].push(entry);
+		if (contentType === ContentType.SONG) {
+			entries[ContentType.SONG]?.push(entry as ISong);
+		} else if (contentType === ContentType.BOOK_EXCERPT) {
+			entries[ContentType.BOOK_EXCERPT]?.push(entry as IBookExcerpt);
+		} else if (contentType === ContentType.VIDEO_TRANSCRIPT) {
+			entries[ContentType.VIDEO_TRANSCRIPT]?.push(entry as IVideoTranscript);
+		}
 
 		await this.writeFile('text-entries.json', entries);
 	}
 
 	async saveSentences(
 		sentences: ISentence[],
-		songMetadata: {title: string; interpreter: string},
+		contentMetadata: {title: string; [key: string]: string},
 	): Promise<void> {
 		const existingSentences = await this.readService.getSentences();
 
-		const songKey = `${songMetadata.title
+		const metadataKey = Object.keys(contentMetadata).find(
+			key => key !== 'title',
+		);
+		const secondaryValue = metadataKey ? contentMetadata[metadataKey] : '';
+
+		const contentKey = `${contentMetadata.title
 			.toLowerCase()
-			.replace(/\s+/g, '-')}-${songMetadata.interpreter
+			.replace(/\s+/g, '-')}-${secondaryValue
 			.toLowerCase()
 			.replace(/\s+/g, '-')}`;
 
-		existingSentences[songKey] = sentences;
+		existingSentences[contentKey] = sentences;
 
 		await this.writeFile('sentences.json', existingSentences);
 	}
@@ -114,7 +138,7 @@ export class WriteDatabaseService {
 			this.tokens.words[token.tokenId] = token as IWord;
 		} else if (token.tokenType === TokenType.PunctuationSign) {
 			this.tokens.punctuationSigns[token.tokenId] = token as IPunctuationSign;
-		} else {
+		} else if (token.tokenType === TokenType.Emoji) {
 			this.tokens.emojis[token.tokenId] = token as IEmoji;
 		}
 	}

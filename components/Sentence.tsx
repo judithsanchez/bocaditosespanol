@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {ISentence, LearningMode, Token, WordToken} from '@/lib/types/common';
+import {ISentence, LearningMode, Token, WordToken} from '@/lib/types/grammar';
 import {
 	SentenceCard,
 	TokensContainer,

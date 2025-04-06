@@ -1,15 +1,7 @@
 import {Pipeline} from './Pipeline';
-import {
-	ContentType,
-	IEmoji,
-	IPunctuationSign,
-	ISentence,
-	IWord,
-	Token,
-} from '@/lib/types/common';
+
 import {WriteDatabaseService} from '../services/WriteDatabaseService';
 import {
-	InputValidatorStep,
 	SentenceFormatterStep,
 	SentenceAIEnricherSteps,
 	TokenIdentificationStep,
@@ -28,10 +20,16 @@ import {
 	ContentRequest,
 	contentRequestSchema,
 	AddContentRequest,
-} from '@/lib/types/contentType';
+	ContentType,
+	SongRequest,
+	BookExcerptRequest,
+	VideoTranscriptRequest,
+} from '@/lib/types/content';
+import {ISentence} from '../types/sentence';
+import {IEmoji, IPunctuationSign, IWord, Token} from '../types/token';
 
-export interface ContentProcessingPipeline {
-	rawInput: AddContentRequest;
+export interface ContentProcessingContext {
+	input: AddContentRequest;
 	sentences: {
 		formatted: ISentence[];
 		deduplicated: ISentence[];
@@ -44,25 +42,43 @@ export interface ContentProcessingPipeline {
 		deduplicated: Token[];
 		enriched: Token[];
 	};
-	content: IContent;
+	content?: IContent;
+	contentType?: ContentType;
 }
 
-export class ContentProcessingPipeline extends Pipeline<ContentProcessingPipeline> {
-	private readonly db: WriteDatabaseService;
+export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext> {
+	private readonly writeDB: WriteDatabaseService;
 	protected readonly logger: Logger;
 
-	constructor() {
-		const db = new WriteDatabaseService();
+	constructor(input: AddContentRequest) {
+		const writeDB = new WriteDatabaseService();
+
+		const context: ContentProcessingContext = {
+			input: input,
+			sentences: {
+				formatted: [],
+				deduplicated: [],
+				enriched: [],
+			},
+			tokens: {
+				words: [],
+				punctuationSigns: [],
+				emojis: [],
+				deduplicated: [],
+				enriched: [],
+			},
+			contentType: input.contentType,
+		};
 
 		super(
 			{
 				name: 'ContentProcessing',
 				stopOnError: true,
 			},
+			context,
 			[
-				new InputValidatorStep(),
 				new SentenceFormatterStep(),
-				new TokenIdentificationStep(db),
+				new TokenIdentificationStep(writeDB),
 				new SentenceAIEnricherSteps(),
 				new SentenceLearningInsightsEnricherStep(),
 				new SensesEnrichmentStep(),
@@ -71,33 +87,14 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingPipelin
 				new GrammaticalEnricherStep(),
 			],
 		);
-		this.db = new WriteDatabaseService();
+		this.writeDB = writeDB;
 		this.logger = new Logger('ContentProcessingPipeline');
 	}
 
-	static createContext(input: AddContentRequest): ContentProcessingPipeline {
-		return {
-			rawInput: input,
-			sentences: {
-				formatted: [],
-				deduplicated: [],
-				enriched: [],
-			},
-			tokens: {
-				words: [],
-				deduplicated: [],
-				enriched: [],
-				punctuationSigns: [],
-				emojis: [],
-			},
-			content: {} as IContent,
-		};
-	}
-
-	async processText(
-		input: AddContentRequest,
-	): Promise<ContentProcessingPipeline> {
+	async processText(): Promise<ContentProcessingContext> {
 		this.logger.start('processText');
+		const context = this.initialInput;
+		const input = context.input;
 
 		const validationResult = contentRequestSchema.safeParse(input);
 		if (!validationResult.success) {
@@ -106,44 +103,25 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingPipelin
 			);
 		}
 
-		// Inline context creation instead of using static method
-		const context: ContentProcessingPipeline = {
-			rawInput: validationResult.data,
-			sentences: {
-				formatted: [],
-				deduplicated: [],
-				enriched: [],
-			},
-			tokens: {
-				words: [],
-				deduplicated: [],
-				enriched: [],
-				punctuationSigns: [],
-				emojis: [],
-			},
-			content: {} as IContent,
-		};
-
 		this.logger.info('Context created', {
 			contentType: input.contentType,
 			title: input.title,
 		});
 
-		const processedContext = await this.process(context);
+		const processedContext = await this.process();
 		this.logContextState('After pipeline processing', processedContext);
 
-		// Generate content ID based on content type and relevant fields
 		let contentId = '';
 		const titleSlug = input.title.toLowerCase().replace(/\s+/g, '-');
 
 		switch (input.contentType) {
-			case ContentType.SONG:
-				const songInput = input as ContentRequest & {interpreter: string};
-				const interpreterSlug = songInput.interpreter
+			case ContentType.SONG: {
+				const songInput = input as SongRequest;
+				const interpreterSlug = songInput.contributors.main
 					.toLowerCase()
 					.replace(/\s+/g, '-');
 				contentId = `song-${titleSlug}-${interpreterSlug}`;
-				processedContext.content = {
+				const songContent: ISong = {
 					contentType: ContentType.SONG,
 					contentId,
 					title: input.title,
@@ -157,16 +135,21 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingPipelin
 					updatedAt: Date.now(),
 					genre: input.genre,
 					source: input.source,
-					interpreter: songInput.interpreter,
-					feat: songInput.feat || [],
-				} as ISong;
+					interpreter: songInput.contributors.main,
+					feat: songInput.contributors.collaborators || [],
+				};
+				processedContext.content = songContent;
+				processedContext.contentType = ContentType.SONG;
 				break;
+			}
 
-			case ContentType.BOOK_EXCERPT:
-				const bookInput = input as ContentRequest & {author: string};
-				const authorSlug = bookInput.author.toLowerCase().replace(/\s+/g, '-');
+			case ContentType.BOOK_EXCERPT: {
+				const bookInput = input as BookExcerptRequest;
+				const authorSlug = bookInput.contributors.main
+					.toLowerCase()
+					.replace(/\s+/g, '-');
 				contentId = `book-${titleSlug}-${authorSlug}`;
-				processedContext.content = {
+				const bookContent: IBookExcerpt = {
 					contentType: ContentType.BOOK_EXCERPT,
 					contentId,
 					title: input.title,
@@ -180,19 +163,22 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingPipelin
 					updatedAt: Date.now(),
 					genre: input.genre,
 					source: input.source,
-					author: bookInput.author,
+					author: bookInput.contributors.main,
 					pages: bookInput.pages,
 					isbn: bookInput.isbn,
-				} as IBookExcerpt;
+				};
+				processedContext.content = bookContent;
+				processedContext.contentType = ContentType.BOOK_EXCERPT;
 				break;
+			}
 
-			case ContentType.VIDEO_TRANSCRIPT:
-				const videoInput = input as ContentRequest & {creator: string};
-				const creatorSlug = videoInput.creator
+			case ContentType.VIDEO_TRANSCRIPT: {
+				const videoInput = input as VideoTranscriptRequest;
+				const creatorSlug = videoInput.contributors.main
 					.toLowerCase()
 					.replace(/\s+/g, '-');
 				contentId = `video-${titleSlug}-${creatorSlug}`;
-				processedContext.content = {
+				const videoContent: IVideoTranscript = {
 					contentType: ContentType.VIDEO_TRANSCRIPT,
 					contentId,
 					title: input.title,
@@ -206,19 +192,32 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingPipelin
 					updatedAt: Date.now(),
 					genre: input.genre,
 					source: input.source,
-					creator: videoInput.creator,
-					contributors: videoInput.contributors || [],
-				} as IVideoTranscript;
+					creator: videoInput.contributors.main,
+					contributors: videoInput.contributors.collaborators || [],
+				};
+				processedContext.content = videoContent;
+				processedContext.contentType = ContentType.VIDEO_TRANSCRIPT;
 				break;
+			}
 		}
 
 		this.logger.info('Saving to database');
-		await this.db.saveSentences(processedContext.sentences.enriched, {
+
+		if (!processedContext.content) {
+			throw new Error('Content was not properly created during processing');
+		}
+
+		await this.writeDB.saveSentences(processedContext.sentences.enriched, {
 			title: input.title,
-			contentType: input.contentType,
+			contentType: processedContext.content.contentType,
 		});
-		await this.db.saveTextEntry(processedContext.content, input.contentType);
-		await this.db.saveTokens([
+
+		await this.writeDB.saveTextEntry(
+			processedContext.content,
+			processedContext.contentType,
+		);
+
+		await this.writeDB.saveTokens([
 			...processedContext.tokens.enriched,
 			...processedContext.tokens.punctuationSigns,
 			...processedContext.tokens.emojis,
@@ -229,10 +228,7 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingPipelin
 		return processedContext;
 	}
 
-	private logContextState(
-		stepName: string,
-		context: ContentProcessingPipeline,
-	) {
+	private logContextState(stepName: string, context: ContentProcessingContext) {
 		this.logger.info(`${stepName} - Context State`, {
 			sentences: {
 				formatted: {

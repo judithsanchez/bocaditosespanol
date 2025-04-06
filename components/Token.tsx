@@ -6,7 +6,7 @@ import {
 	StyledPunctuationLeft,
 	StyledPunctuationRight,
 } from '@/components/ui/StyledComponents';
-import {TokenType} from '@/lib/types/common';
+import {TokenType} from '@/lib/types/grammar';
 
 const TokenSchema = z.object({
 	content: z.string(),

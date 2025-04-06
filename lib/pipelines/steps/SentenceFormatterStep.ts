@@ -1,12 +1,14 @@
 import {PipelineStep} from '../Pipeline';
 import {Logger} from '../../utils/index';
-import {SongProcessingContext} from '@/lib/pipelines/ContentProcessingPipeline';
+import {ContentProcessingContext} from '@/lib/pipelines/ContentProcessingPipeline';
 import {errors} from '@/lib/types/constants';
-import {formattedSentencesSchema, ISentence} from '@/lib/types/common';
 import {z} from 'zod';
+import {ISentence, sentenceSchema} from '@/lib/types/sentence';
+
+const formattedSentencesSchema = z.array(sentenceSchema);
 
 export class SentenceFormatterStep
-	implements PipelineStep<SongProcessingContext>
+	implements PipelineStep<ContentProcessingContext>
 {
 	private readonly logger = new Logger('SentenceFormatterStep');
 	private static readonly SENTENCE_END_PATTERN = /(?:[.!?]|\.{3})(?:\s+|$)/g;
@@ -14,19 +16,19 @@ export class SentenceFormatterStep
 	private static readonly NEWLINE_PATTERN = /[\n\r]+/g;
 
 	async process(
-		context: SongProcessingContext,
-	): Promise<SongProcessingContext> {
+		context: ContentProcessingContext,
+	): Promise<ContentProcessingContext> {
 		this.logger.start('process');
 
-		const validatedLyrics = this.validateInput(context.rawInput.lyrics);
+		const validatedLyrics = this.validateInput(context.input.content);
 		const splittedSentences = this.splitParagraph(validatedLyrics);
 
 		this.logSplitResults(splittedSentences);
 
 		context.sentences.formatted = this.formatSentences({
 			sentences: splittedSentences,
-			author: context.rawInput.interpreter,
-			title: context.rawInput.title,
+			contributor: context.input.contributors.main,
+			title: context.input.title,
 		});
 
 		this.validateFormattedSentences(context.sentences.formatted);
@@ -39,10 +41,11 @@ export class SentenceFormatterStep
 		this.logger.end('process');
 		return context;
 	}
-
-	private validateInput(lyrics: string): string {
-		const lyricsSchema = z.string().min(1);
-		return lyricsSchema.parse(lyrics);
+	private validateInput(content: string): string {
+		if (typeof content !== 'string') {
+			throw new TypeError(errors.mustBeString);
+		}
+		return content;
 	}
 
 	private validateFormattedSentences(sentences: ISentence[]): void {
@@ -102,11 +105,11 @@ export class SentenceFormatterStep
 
 	private formatSentences({
 		sentences,
-		author,
+		contributor,
 		title,
 	}: {
 		sentences: string[];
-		author: string;
+		contributor: string;
 		title: string;
 	}): ISentence[] {
 		const sentenceMap = new Map<string, number>();
@@ -120,7 +123,7 @@ export class SentenceFormatterStep
 				sentence,
 				sentenceMap.get(sentence)!,
 				title,
-				author,
+				contributor,
 			);
 		});
 	}
@@ -129,10 +132,10 @@ export class SentenceFormatterStep
 		content: string,
 		number: number,
 		title: string,
-		author: string,
+		contributor: string,
 	): ISentence {
 		return {
-			sentenceId: this.generateSentenceId(number, title, author),
+			sentenceId: this.generateSentenceId(number, title, contributor),
 			content,
 			translations: {
 				english: {
@@ -147,10 +150,10 @@ export class SentenceFormatterStep
 	private generateSentenceId(
 		sentenceNumber: number,
 		title: string,
-		author: string,
+		contributor: string,
 	): string {
 		return `sentence-${sentenceNumber}-${this.slugify(title)}-${this.slugify(
-			author,
+			contributor,
 		)}`;
 	}
 

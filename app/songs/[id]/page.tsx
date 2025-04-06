@@ -13,7 +13,7 @@ import {
 	ModeSelector,
 	ModeButton,
 } from '@/components/ui/StyledComponents';
-import {LearningMode, ISentence} from '@/lib/types/common';
+import {LearningMode, ISentence} from '@/lib/types/grammar';
 
 export default function SelectedSong() {
 	const {id} = useParams();

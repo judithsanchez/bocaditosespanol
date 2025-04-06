@@ -5,7 +5,7 @@ import {
 	IEmoji,
 	TokenType,
 	Token,
-} from '@/lib/types/common';
+} from '@/lib/types/grammar';
 
 interface TokenStorage {
 	words: Record<string, IWord>;

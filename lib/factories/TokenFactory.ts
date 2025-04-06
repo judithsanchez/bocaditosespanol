@@ -8,7 +8,7 @@ import {
 	emojiTokenSchema,
 	punctuationTokenSchema,
 	wordTokenSchema,
-} from '@/lib/types/common';
+} from '@/lib/types/grammar';
 import emojiRegex from 'emoji-regex';
 
 export class TokenFactory {

@@ -1,5 +1,5 @@
 import {z} from 'zod';
-import {ISentence} from './common';
+import {ISentence} from './sentence';
 
 export enum ContentType {
 	SONG = 'song',
@@ -44,6 +44,7 @@ export interface IVideoTranscript extends IContent {
 	creator: string;
 	contributors?: string[];
 }
+
 interface BaseContentRequest {
 	contentType: ContentType;
 	title: string;
@@ -54,17 +55,18 @@ interface BaseContentRequest {
 	};
 	content: string;
 	source: string;
+	contributors: {
+		main: string;
+		collaborators?: string[];
+	};
 }
 
 export interface SongRequest extends BaseContentRequest {
 	contentType: ContentType.SONG;
-	interpreter: string;
-	feat?: string[];
 }
 
 export interface BookExcerptRequest extends BaseContentRequest {
 	contentType: ContentType.BOOK_EXCERPT;
-	author: string;
 	pages?: {
 		start: number;
 		end: number;
@@ -74,8 +76,6 @@ export interface BookExcerptRequest extends BaseContentRequest {
 
 export interface VideoTranscriptRequest extends BaseContentRequest {
 	contentType: ContentType.VIDEO_TRANSCRIPT;
-	creator: string;
-	contributors?: string[];
 }
 
 export type ContentRequest =
@@ -93,17 +93,18 @@ const baseContentSchema = z.object({
 	}),
 	content: z.string().min(1),
 	source: z.string().min(1),
+	contributors: z.object({
+		main: z.string().min(1),
+		collaborators: z.array(z.string()).optional(),
+	}),
 });
 
 const songSchema = baseContentSchema.extend({
 	contentType: z.literal(ContentType.SONG),
-	interpreter: z.string().min(1),
-	feat: z.array(z.string()).optional(),
 });
 
 const bookExcerptSchema = baseContentSchema.extend({
 	contentType: z.literal(ContentType.BOOK_EXCERPT),
-	author: z.string().min(1),
 	pages: z
 		.object({
 			start: z.number(),
@@ -115,8 +116,6 @@ const bookExcerptSchema = baseContentSchema.extend({
 
 const videoTranscriptSchema = baseContentSchema.extend({
 	contentType: z.literal(ContentType.VIDEO_TRANSCRIPT),
-	creator: z.string().min(1),
-	contributors: z.array(z.string()).optional(),
 });
 
 export const contentRequestSchema = z.discriminatedUnion('contentType', [

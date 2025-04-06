@@ -1,5 +1,5 @@
 import {BatchOptions} from '../config/AIConfig';
-import {AIProvider} from '../types/types';
+import {AIProvider} from '../types/aiProvider';
 import {Logger} from '../utils/Logger';
 
 interface OllamaGenerationParams {

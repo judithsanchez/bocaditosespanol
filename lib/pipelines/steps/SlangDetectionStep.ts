@@ -5,7 +5,7 @@ import {BatchProcessor} from '../../utils/BatchProcessor';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
-import {IWord, TokenType} from '@/lib/types/common';
+import {IWord, TokenType} from '@/lib/types/grammar';
 import {AIProviderFactory} from '../../factories/index';
 import {
 	ACTIVE_PROVIDER,

@@ -8,7 +8,7 @@ import {
 	IWord,
 	IPunctuationSign,
 	IEmoji,
-} from '@/lib/types/common';
+} from '@/lib/types/grammar';
 import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../ContentProcessingPipeline';
 import {Logger} from '../../utils/index';

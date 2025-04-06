@@ -1,3 +1,3 @@
-export * from './types/common';
+export * from './types/grammar';
 export * from './types/partsOfSpeech';
-export * from './types/contentType';
+export * from './types/content';

@@ -1,7 +1,7 @@
 import {ReadDatabaseService} from '@/lib/services/ReadDatabaseService';
 import {NextResponse} from 'next/server';
 import {z} from 'zod';
-import {ContentType} from '@/lib/types/contentType';
+import {ContentType} from '@/lib/types/content';
 import {Logger} from '@/lib/utils/Logger';
 
 export async function GET(

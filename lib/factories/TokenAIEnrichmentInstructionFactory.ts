@@ -1,4 +1,4 @@
-import {PartOfSpeech} from '@/lib/types/common';
+import {PartOfSpeech} from '@/lib/types/grammar';
 
 export class TokenAIEnrichmentInstructionFactory {
 	static createSensesInstruction(): string {

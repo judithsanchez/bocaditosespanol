@@ -2,7 +2,7 @@ import {PipelineStep} from '../Pipeline';
 import {SongProcessingContext} from '../ContentProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {BatchProcessor} from '../../utils/BatchProcessor';
-import {IWord} from '@/lib/types/common';
+import {IWord} from '@/lib/types/grammar';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';

@@ -1,5 +1,5 @@
 import {SchemaType} from '@google/generative-ai';
-import {ContentType} from '@/lib/types/common';
+import {ContentType} from '@/lib/types/grammar';
 // TODO: move the translations to the sentences factories
 
 export class SentencesSchemaFactory {

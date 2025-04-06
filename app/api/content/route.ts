@@ -1,7 +1,7 @@
 import {NextResponse} from 'next/server';
 import {ContentProcessingPipeline} from '@/lib/pipelines/ContentProcessingPipeline';
 import {z} from 'zod';
-import {ContentType, contentRequestSchema} from '@/lib/types/contentType';
+import {ContentType, contentRequestSchema} from '@/lib/types/content';
 import {ReadDatabaseService} from '@/lib/services/ReadDatabaseService';
 import {Logger} from '@/lib/utils/Logger';
 
@@ -94,14 +94,12 @@ export async function POST(request: Request) {
 			contentType: validatedContent.contentType,
 		});
 
-		const pipeline = new ContentProcessingPipeline();
+		const pipeline = new ContentProcessingPipeline(validatedContent);
 		logger.info('Pipeline created', {
 			contentType: validatedContent.contentType,
 		});
-
-		const result = await pipeline.processText(validatedContent);
+		const result = await pipeline.processText();
 		logger.info('Content processed successfully', {
-			contentId: result.content.contentId,
 			contentType: validatedContent.contentType,
 		});
 

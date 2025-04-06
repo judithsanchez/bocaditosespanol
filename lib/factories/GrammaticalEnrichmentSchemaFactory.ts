@@ -25,7 +25,7 @@ import {
 	GrammaticalGender,
 	GrammaticalNumber,
 	GrammaticalPerson,
-} from '@/lib/types/common';
+} from '@/lib/types/grammar';
 
 type SchemaProperties = {
 	[K in keyof (IAdjective & INoun)]?: boolean;

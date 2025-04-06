@@ -1,5 +1,5 @@
 import {Logger} from './Logger';
-import {AIProvider} from '@/lib/types/types';
+import {AIProvider} from '@/lib/types/aiProvider';
 
 interface EnricherConfig {
 	input: unknown;

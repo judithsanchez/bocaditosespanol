@@ -1,5 +1,5 @@
 import {GoogleGenerativeAI, Schema} from '@google/generative-ai';
-import {AIProvider} from '../types/types';
+import {AIProvider} from '../types/aiProvider';
 import {Logger} from '../utils/Logger';
 import {HarmBlockThreshold, HarmCategory} from '@google/generative-ai';
 import {BatchOptions} from '../config/AIConfig';

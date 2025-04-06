@@ -1,4 +1,4 @@
-import {ContentType} from '@/lib/types/common';
+import {ContentType} from '@/lib/types/grammar';
 
 export class ContentInstructionFactory {
 	static createInstruction(contentType: ContentType): string {

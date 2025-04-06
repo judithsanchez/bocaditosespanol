@@ -12,12 +12,15 @@ export interface PipelineOptions {
 export class Pipeline<T> {
 	private steps: PipelineStep<T>[] = [];
 	protected readonly logger: Logger;
+	protected initialInput: T;
 
 	constructor(
 		private readonly options: PipelineOptions,
+		initialInput: T,
 		initialSteps?: PipelineStep<T>[],
 	) {
 		this.logger = new Logger(`Pipeline:${options.name}`);
+		this.initialInput = initialInput;
 		if (initialSteps) {
 			this.steps = initialSteps;
 		}
@@ -28,9 +31,9 @@ export class Pipeline<T> {
 		return this;
 	}
 
-	async process(input: T): Promise<T> {
+	async process(input?: T): Promise<T> {
 		this.logger.start('process');
-		let currentData = input;
+		let currentData = input || this.initialInput;
 
 		for (const [index, step] of this.steps.entries()) {
 			try {

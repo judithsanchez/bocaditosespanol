@@ -1,6 +1,11 @@
 import {SchemaType} from '@google/generative-ai';
-import {ContentType, ISentence} from '@/lib/types/common';
-import {ISong} from '@/lib/types/contentType';
+import {
+	ISong,
+	IBookExcerpt,
+	IVideoTranscript,
+	ContentType,
+} from '@/lib/types/content';
+import {ISentence} from '../types/sentence';
 
 export interface ContentSchema {
 	type: SchemaType;
@@ -12,8 +17,10 @@ export interface ContentSchema {
 }
 
 export interface ContentEnrichmentMetadata {
-	interpreter?: string;
-	author?: string;
+	contributor: {
+		main: string;
+		collaborators?: string[];
+	};
 	language: {
 		main: string;
 		variant: string[];
@@ -27,7 +34,7 @@ export interface EnrichmentResult {
 
 export interface IContentProcessor {
 	enrichContent(
-		content: ISong | unknown,
+		content: ISong | IBookExcerpt | IVideoTranscript | unknown,
 		metadata: ContentEnrichmentMetadata,
 	): Promise<EnrichmentResult>;
 	getSchema(): ContentSchema;
@@ -37,8 +44,12 @@ export interface IContentProcessor {
 export class ContentSchemaFactory {
 	static createSchema(contentType: ContentType): ContentSchema {
 		switch (contentType) {
-			case 'song':
+			case ContentType.SONG:
 				return this.createSongSchema();
+			case ContentType.BOOK_EXCERPT:
+				return this.createBookExcerptSchema();
+			case ContentType.VIDEO_TRANSCRIPT:
+				return this.createVideoTranscriptSchema();
 			default:
 				throw new Error(`Unsupported content type: ${contentType}`);
 		}
@@ -74,5 +85,15 @@ export class ContentSchemaFactory {
 				required: ['sentenceId', 'content', 'translations', 'tokenIds'],
 			},
 		};
+	}
+
+	private static createBookExcerptSchema(): ContentSchema {
+		// Book excerpts use the same sentence structure as songs
+		return this.createSongSchema();
+	}
+
+	private static createVideoTranscriptSchema(): ContentSchema {
+		// Video transcripts use the same sentence structure as songs
+		return this.createSongSchema();
 	}
 }

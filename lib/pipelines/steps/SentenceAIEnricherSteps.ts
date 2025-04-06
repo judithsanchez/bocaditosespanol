@@ -4,7 +4,7 @@ import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {SongProcessingContext} from '../ContentProcessingPipeline';
 import {ContentSchemaFactory} from '../../factories/ContentSchemaFactory';
 import {ContentInstructionFactory} from '../../factories/ContentInstructionsFactory';
-import {ContentType, ISentence} from '@/lib/types/common';
+import {ContentType, ISentence} from '@/lib/types/grammar';
 import {BatchProcessor} from '../../utils/BatchProcessor';
 import {AIProviderFactory} from '../../factories/index';
 import {

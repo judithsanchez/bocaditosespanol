@@ -7,7 +7,7 @@ import {
 	ACTIVE_PROVIDER,
 	PROVIDER_BATCH_CONFIGS,
 } from '@/lib/config/AIConfig';
-import {AIProvider} from '@/lib/types/types';
+import {AIProvider} from '@/lib/types/aiProvider';
 
 export class AIProviderFactory {
 	private static instance: AIProviderFactory;

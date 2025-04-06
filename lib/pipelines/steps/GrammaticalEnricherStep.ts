@@ -7,7 +7,7 @@ import {
 	IPunctuationSign,
 	IEmoji,
 	ISense,
-} from '@/lib/types/common';
+} from '@/lib/types/grammar';
 import {Logger} from '../../utils/index';
 import {GenericAIEnricher} from '../../utils';
 import {
