@@ -1,7 +1,6 @@
 import {z} from 'zod';
 import {Logger} from './Logger';
 import {errors} from '@/lib/types/constants';
-// Import the interface from AIConfig - this is the one WITH batchSize
 import {BatchOptions as ExternalBatchOptions} from '@/lib/config/AIConfig';
 
 const batchProgressSchema = z.object({
@@ -14,7 +13,6 @@ const batchProgressSchema = z.object({
 	estimatedTimeRemaining: z.number().optional(),
 });
 
-// This schema defines the structure for the NESTED options in the process method
 const internalBatchOptionsSchema = z.object({
 	retryAttempts: z.number().positive(),
 	delayBetweenBatches: z.number().positive(),
@@ -23,32 +21,27 @@ const internalBatchOptionsSchema = z.object({
 	maxConcurrentBatches: z.number().positive().optional(),
 });
 
-// This schema defines the structure for the argument to the process method
 const batchConfigSchema = z.object({
 	items: z.array(z.any()),
 	processingFn: z
 		.function()
 		.args(z.array(z.any()))
 		.returns(z.promise(z.array(z.any()))),
-	batchSize: z.number().positive(), // Top-level batchSize
-	options: internalBatchOptionsSchema, // Uses the schema WITHOUT batchSize
+	batchSize: z.number().positive(),
+	options: internalBatchOptionsSchema,
 	onProgress: z.function().args(z.any()).returns(z.void()).optional(),
 });
 
 type BatchProgress = z.infer<typeof batchProgressSchema>;
-// Define the internal options type based on the schema (WITHOUT batchSize)
-// EXPORT this type for use in steps
 export type InternalBatchOptions = z.infer<typeof internalBatchOptionsSchema>;
 
-// Define the type for the argument to the process method
-// EXPORT this type for use in steps
 export type BatchConfig<T> = Omit<
 	z.infer<typeof batchConfigSchema>,
-	'items' | 'processingFn' | 'options' // Omit options derived from schema
+	'items' | 'processingFn' | 'options'
 > & {
 	items: T[];
 	processingFn: (items: T[]) => Promise<T[]>;
-	options: InternalBatchOptions; // Explicitly use the internal type
+	options: InternalBatchOptions;
 };
 
 class RateLimiter {
@@ -56,8 +49,6 @@ class RateLimiter {
 	private maxRequests: number;
 	private timeWindowMs: number;
 
-	// Constructor uses the external options which might include things not used here directly
-	// but RateLimiter only needs maxRequestsPerMinute
 	constructor(config: ExternalBatchOptions, timeWindowMs: number = 60000) {
 		this.maxRequests = config.maxRequestsPerMinute;
 		this.timeWindowMs = timeWindowMs;
@@ -97,17 +88,12 @@ export class BatchProcessor<T> {
 	private logger: Logger;
 	private rateLimiter: RateLimiter;
 
-	// Constructor expects the external type (WITH batchSize, etc.)
 	constructor(batchConfig: ExternalBatchOptions) {
-		// Pass true to Logger constructor if BatchProcessor is considered a class context
 		this.logger = new Logger('BatchProcessor', true);
-		// RateLimiter only needs maxRequestsPerMinute from the external config
 		this.rateLimiter = new RateLimiter(batchConfig);
 	}
 
-	// Process method expects the BatchConfig<T> type (top-level batchSize, nested options WITHOUT batchSize)
 	async process(config: BatchConfig<T>): Promise<T[]> {
-		// Validate the input config against the schema expecting the internal options structure
 		const validatedConfig = batchConfigSchema.parse(config);
 		this.logger.start('process');
 
@@ -137,7 +123,6 @@ export class BatchProcessor<T> {
 
 			await this.rateLimiter.waitIfNeeded();
 
-			// Pass validatedConfig (which now correctly matches BatchConfig<T> structure)
 			const batchResults = await this.processBatch(
 				batch,
 				progress,
@@ -145,12 +130,11 @@ export class BatchProcessor<T> {
 			);
 			results.push(...batchResults);
 
-			progress.processedItems += batchResults.length; // Use actual results length
+			progress.processedItems += batchResults.length;
 			validatedConfig.onProgress?.(progress);
 
 			if (i + validatedConfig.batchSize < validatedConfig.items.length) {
 				await new Promise(resolve =>
-					// Use delay from the validated nested options
 					setTimeout(resolve, validatedConfig.options.delayBetweenBatches),
 				);
 			}
@@ -160,15 +144,11 @@ export class BatchProcessor<T> {
 		return results;
 	}
 
-	// processBatch expects BatchConfig<T> which has the nested options structure
 	private async processBatch(
 		batch: T[],
 		progress: BatchProgress,
 		config: BatchConfig<T>,
 	): Promise<T[]> {
-		// No need to parse progress again, it's managed internally
-		// batchProgressSchema.parse(progress);
-
 		let attempts = 0;
 		const maxAttempts = config.options.retryAttempts;
 
@@ -196,13 +176,12 @@ export class BatchProcessor<T> {
 					resultsCount: results.length,
 				});
 
-				return results; // Return successful results
+				return results;
 			} catch (error: any) {
 				attempts++;
-				// FIX: Pass error object as second argument
 				this.logger.error(
 					`Batch ${progress.currentBatch} processing failed (Attempt ${attempts}/${maxAttempts})`,
-					error, // Pass the caught error here
+					error,
 				);
 
 				if (attempts >= maxAttempts) {
@@ -213,31 +192,25 @@ export class BatchProcessor<T> {
 						attempts,
 						error instanceof Error ? error : new Error(String(error)),
 					);
-					// FIX: Pass error object as second argument
 					this.logger.error(
 						`Batch ${progress.currentBatch} failed after ${maxAttempts} attempts.`,
-						finalError, // Pass the final error being thrown
+						finalError,
 					);
-					// Re-throw a specific error indicating retry limit exceeded
 					throw finalError;
 				}
 
-				// Use delay from nested options for backoff
 				const backoffDelay =
-					config.options.delayBetweenBatches * Math.pow(2, attempts - 1); // Standard exponential backoff
-				// FIX: Replace warn with info
+					config.options.delayBetweenBatches * Math.pow(2, attempts - 1);
 				this.logger.info(
 					`Retrying batch ${progress.currentBatch} after ${backoffDelay}ms delay.`,
-					{attempt: attempts, maxAttempts: maxAttempts, delay: backoffDelay}, // Optional data
+					{attempt: attempts, maxAttempts: maxAttempts, delay: backoffDelay},
 				);
 				await new Promise(resolve => setTimeout(resolve, backoffDelay));
 			}
 		}
 
-		// Should not be reached if maxAttempts > 0, but satisfies TypeScript if maxAttempts could be 0
 		const finalMessage = `Batch ${progress.currentBatch} processing loop finished unexpectedly without success or exceeding retries.`;
-		// FIX: Pass an error object as second argument
 		this.logger.error(finalMessage, new Error(finalMessage));
-		return []; // Return empty array or throw if this state is invalid
+		return [];
 	}
 }

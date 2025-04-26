@@ -10,7 +10,7 @@ export interface ISense {
 	tokenId: string;
 	hasSpecialChar: boolean;
 	translations: {english: string[]};
-	partOfSpeech?: PartOfSpeech;
+	partOfSpeech: PartOfSpeech;
 	grammaticalInfo?: GrammaticalInfo;
 	lastUpdated: number;
 }
@@ -22,6 +22,6 @@ export const senseSchema = z.object({
 		english: z.array(z.string()),
 	}),
 	partOfSpeech: z.nativeEnum(PartOfSpeech),
-	grammaticalInfo: grammaticalInfoSchema,
+	grammaticalInfo: grammaticalInfoSchema.optional(),
 	lastUpdated: z.number(),
 });

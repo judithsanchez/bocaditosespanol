@@ -1,13 +1,8 @@
 import {PipelineStep} from '../Pipeline';
-import {SongProcessingContext} from '../ContentProcessingPipeline';
-import {
-	TokenType,
-	IWord,
-	PartOfSpeech,
-	IPunctuationSign,
-	IEmoji,
-	ISense,
-} from '@/lib/types/grammar';
+import {ContentProcessingContext} from '../ContentProcessingPipeline';
+import {PartOfSpeech} from '@/lib/types/partsOfSpeech';
+import {ISense} from '@/lib/types/sense';
+import {TokenType, IWord, IPunctuationSign, IEmoji} from '@/lib/types/token';
 import {Logger} from '../../utils/index';
 import {GenericAIEnricher} from '../../utils';
 import {
@@ -23,7 +18,7 @@ import {
 } from '../../config/AIConfig';
 
 export class GrammaticalEnricherStep
-	implements PipelineStep<SongProcessingContext>
+	implements PipelineStep<ContentProcessingContext>
 {
 	private readonly logger = new Logger('GrammaticalEnricherStep');
 	private readonly enricher: GenericAIEnricher;
@@ -39,8 +34,8 @@ export class GrammaticalEnricherStep
 	}
 
 	async process(
-		context: SongProcessingContext,
-	): Promise<SongProcessingContext> {
+		context: ContentProcessingContext,
+	): Promise<ContentProcessingContext> {
 		this.logger.start('process');
 
 		this.logger.info('Starting grammatical enrichment', {
@@ -309,7 +304,9 @@ export class GrammaticalEnricherStep
 		return tokens.filter((token): token is IWord => {
 			if (token.tokenType !== TokenType.Word) return false;
 			if (!token.senses) return false;
-			return token.senses.some(sense => sense.partOfSpeech === partOfSpeech);
+			return token.senses.some(
+				(sense: ISense) => sense.partOfSpeech === partOfSpeech,
+			);
 		});
 	}
 }

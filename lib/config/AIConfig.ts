@@ -14,14 +14,9 @@ export interface ProviderConfig {
 	baseUrl?: string;
 }
 
-// TODO: figure out how to make it work with ollama
 export const ACTIVE_PROVIDER: ProviderConfig = {
 	type: AIProviderType.GEMINI,
 	modelName: 'gemini-2.0-flash',
-	// Uncomment for Ollama
-	// type: AIProviderType.OLLAMA,
-	// modelName: 'deepseek-r1',
-	// baseUrl: 'http://localhost:11434',
 };
 
 export enum AIStepType {
@@ -60,7 +55,7 @@ export const StepConfigs: Record<AIStepType, AIModelConfig> = {
 	},
 	[AIStepType.LEARNING_INSIGHTS_ENRICHER]: {
 		temperature: 0.8,
-		topK: 50, // TODO: confirm this
+		topK: 50,
 		topP: 0.85,
 	},
 };
@@ -71,6 +66,7 @@ export interface BatchOptions {
 	maxRequestsPerMinute: number;
 	timeoutMs: number;
 	maxConcurrentBatches: number;
+	batchSize: number;
 }
 
 export const PROVIDER_BATCH_CONFIGS: Record<AIProviderType, BatchOptions> = {
@@ -80,5 +76,6 @@ export const PROVIDER_BATCH_CONFIGS: Record<AIProviderType, BatchOptions> = {
 		maxRequestsPerMinute: 6,
 		timeoutMs: 30000,
 		maxConcurrentBatches: 1,
+		batchSize: 5,
 	},
 };

@@ -1,5 +1,4 @@
 import {Pipeline} from './Pipeline';
-
 import {WriteDatabaseService} from '../services/WriteDatabaseService';
 import {
 	SentenceFormatterStep,
@@ -125,7 +124,7 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext
 					contentId,
 					title: input.title,
 					content: input.content,
-					processedContent: processedContext.sentences.enriched,
+					processedSentences: processedContext.sentences.enriched,
 					sentencesIds: processedContext.sentences.formatted.map(
 						s => s.sentenceId,
 					),
@@ -152,7 +151,7 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext
 					contentId,
 					title: input.title,
 					content: input.content,
-					processedContent: processedContext.sentences.enriched,
+					processedSentences: processedContext.sentences.enriched,
 					sentencesIds: processedContext.sentences.formatted.map(
 						s => s.sentenceId,
 					),
@@ -181,7 +180,7 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext
 					contentId,
 					title: input.title,
 					content: input.content,
-					processedContent: processedContext.sentences.enriched,
+					processedSentences: processedContext.sentences.enriched,
 					sentencesIds: processedContext.sentences.formatted.map(
 						s => s.sentenceId,
 					),
@@ -214,11 +213,7 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext
 			processedContext.contentType,
 		);
 
-		await this.writeDB.saveTokens([
-			...(processedContext.tokens.enriched as IWord[]),
-			...(processedContext.tokens.punctuationSigns as IPunctuationSign[]),
-			...(processedContext.tokens.emojis as IEmoji[]),
-		]);
+		await this.writeDB.saveTokens(processedContext.tokens.enriched);
 
 		this.logger.info('Database operations completed');
 		this.logger.end('processText');
