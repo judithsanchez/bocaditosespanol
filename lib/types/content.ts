@@ -12,7 +12,7 @@ export interface IContent {
 	contentId: string;
 	title: string;
 	content: string;
-	processedContent?: ISentence[];
+	processedSentences?: ISentence[];
 	sentencesIds: string[];
 	language: {
 		main: string;

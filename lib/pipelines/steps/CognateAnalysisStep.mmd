@@ -1,0 +1,41 @@
+sequenceDiagram
+    participant Caller
+    participant CAS
+    participant Ctx
+    participant Logger
+    participant BP
+    participant TFactory
+    participant TIFactory
+    participant Enricher
+
+    Caller->>CAS: "process context"
+    CAS->>Logger: "start process"
+    Logger->>CAS: ""
+    CAS->>Ctx: "Read contentType"
+    CAS->>Ctx: "Read tokens enriched"
+    CAS->>CAS: "Filter IWord tokens"
+    CAS->>Logger: "info Starting cognate analysis"
+    Logger->>CAS: ""
+    CAS->>BP: "process batch config"
+    BP->>CAS: "processingFn batchItems"
+    CAS->>TFactory: "createCognateSchema"
+    TFactory->>CAS: "schema"
+    CAS->>TIFactory: "createCognateInstruction"
+    TIFactory->>CAS: "instruction"
+    CAS->>Enricher: "enrich data"
+    Enricher->>CAS: "aiResult"
+    CAS->>CAS: "Map aiResult"
+    CAS->>CAS: "Merge aiResultMap"
+    CAS->>BP: "return updatedBatchItems"
+    BP->>CAS: "onProgress progress"
+    CAS->>Logger: "info Cognate analysis progress"
+    Logger->>CAS: ""
+    BP->>CAS: "enrichedTokens"
+    CAS->>CAS: "Map enrichedTokens"
+    CAS->>CAS: "Merge results"
+    CAS->>Ctx: "Update tokens enriched"
+    CAS->>Logger: "info Cognate analysis completed"
+    Logger->>CAS: ""
+    CAS->>Logger: "end process"
+    Logger->>CAS: ""
+    CAS->>Caller: "return updated context"

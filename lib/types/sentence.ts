@@ -12,7 +12,7 @@ export interface ISentence {
 	};
 	tokenIds: string[];
 	learningInsights?: ILearningInsight;
-	tokens?: Token[];
+	processedTokens?: Token[];
 }
 
 export interface ILearningInsight {

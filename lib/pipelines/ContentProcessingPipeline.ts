@@ -17,7 +17,6 @@ import {
 	IBookExcerpt,
 	IVideoTranscript,
 	IContent,
-	ContentRequest,
 	contentRequestSchema,
 	AddContentRequest,
 	ContentType,

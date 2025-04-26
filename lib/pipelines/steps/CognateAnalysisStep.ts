@@ -1,8 +1,8 @@
 import {PipelineStep} from '../Pipeline';
-import {SongProcessingContext} from '../ContentProcessingPipeline';
+import {ContentProcessingContext} from '../ContentProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {BatchProcessor} from '../../utils/BatchProcessor';
-import {IWord, TokenType} from '@/lib/types/grammar';
+import {IWord, TokenType} from '@/lib/types/token';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
@@ -14,7 +14,7 @@ import {
 } from '../../config/AIConfig';
 
 export class CognateAnalysisStep
-	implements PipelineStep<SongProcessingContext>
+	implements PipelineStep<ContentProcessingContext>
 {
 	private readonly logger = new Logger('CognateAnalysisStep');
 	private readonly enricher: GenericAIEnricher;
@@ -29,32 +29,85 @@ export class CognateAnalysisStep
 		this.batchProcessor = new BatchProcessor(batchConfig);
 	}
 	async process(
-		context: SongProcessingContext,
-	): Promise<SongProcessingContext> {
+		context: ContentProcessingContext,
+	): Promise<ContentProcessingContext> {
 		this.logger.start('process');
+
+		if (!context.contentType) {
+			throw new Error(
+				'ContentType is missing in the processing context. CognateAnalysisStep cannot proceed.',
+			);
+		}
 
 		const wordTokens = context.tokens.enriched.filter(
 			(token): token is IWord => token.tokenType === TokenType.Word,
 		);
 
+		if (wordTokens.length === 0) {
+			this.logger.info('No word tokens found to analyze for cognates.');
+			this.logger.end('process');
+			return context;
+		}
+
 		this.logger.info('Starting cognate analysis', {
+			contentType: context.contentType,
 			tokensToAnalyze: wordTokens.length,
 			firstToken: wordTokens[0]?.content,
 			lastToken: wordTokens[wordTokens.length - 1]?.content,
 		});
 
+		type CognateAIResponse = Pick<
+			IWord,
+			'tokenId' | 'isCognate' | 'isFalseCognate'
+		>;
+
 		const enrichedTokens = await this.batchProcessor.process({
 			items: wordTokens,
-			processingFn: async (tokens: IWord[]): Promise<IWord[]> => {
+			processingFn: async (batchItems: IWord[]): Promise<IWord[]> => {
 				const schema = TokenAIEnrichmentFactory.createCognateSchema();
 				const instruction =
 					TokenAIEnrichmentInstructionFactory.createCognateInstruction();
 
-				return this.enricher.enrich({
-					input: tokens,
+				const aiResult = await this.enricher.enrich({
+					input: batchItems.map(t => ({
+						tokenId: t.tokenId,
+						content: t.content,
+					})),
 					schema,
 					instruction,
-				}) as Promise<IWord[]>;
+				});
+
+				if (!Array.isArray(aiResult)) {
+					this.logger.error('AI enrichment did not return an array.', {
+						aiResult,
+					});
+					return batchItems;
+				}
+
+				const aiResultMap = new Map<string, CognateAIResponse>(
+					(aiResult as any[]).map(item => [
+						item.tokenId,
+						{
+							tokenId: item.tokenId,
+							isCognate: item.isCognate ?? false,
+							isFalseCognate: item.isFalseCognate ?? false,
+						},
+					]),
+				);
+
+				const updatedBatchItems = batchItems.map(originalToken => {
+					const enrichedData = aiResultMap.get(originalToken.tokenId);
+					if (enrichedData) {
+						return {
+							...originalToken,
+							isCognate: enrichedData.isCognate,
+							isFalseCognate: enrichedData.isFalseCognate,
+						};
+					}
+					return originalToken;
+				});
+
+				return updatedBatchItems;
 			},
 			batchSize: 10,
 			options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],
@@ -68,16 +121,23 @@ export class CognateAnalysisStep
 			},
 		});
 
-		context.tokens.enriched = context.tokens.enriched.map(originalToken => {
-			const enrichedToken = enrichedTokens.find(
-				t => t.tokenId === originalToken.tokenId,
-			);
+		const enrichedTokenMap = new Map<string, IWord>(
+			enrichedTokens.map(t => [t.tokenId, t]),
+		);
 
-			if (enrichedToken) {
+		context.tokens.enriched = context.tokens.enriched.map(originalToken => {
+			const enrichedData = enrichedTokenMap.get(originalToken.tokenId);
+
+			if (
+				enrichedData &&
+				originalToken.tokenType === TokenType.Word &&
+				(originalToken.isCognate !== enrichedData.isCognate ||
+					originalToken.isFalseCognate !== enrichedData.isFalseCognate)
+			) {
 				return {
 					...originalToken,
-					isCognate: enrichedToken.isCognate,
-					isFalseCognate: enrichedToken.isFalseCognate,
+					isCognate: enrichedData.isCognate,
+					isFalseCognate: enrichedData.isFalseCognate,
 					lastUpdated: Date.now(),
 				};
 			}
@@ -87,10 +147,12 @@ export class CognateAnalysisStep
 		this.logger.info('Cognate analysis completed', {
 			analyzedTokens: context.tokens.enriched.length,
 			cognatesFound: context.tokens.enriched.filter(
-				(t): t is IWord => 'isCognate' in t && t.isCognate === true,
+				(t): t is IWord =>
+					t.tokenType === TokenType.Word && t.isCognate === true,
 			).length,
 			falseCognatesFound: context.tokens.enriched.filter(
-				(t): t is IWord => 'isFalseCognate' in t && t.isFalseCognate === true,
+				(t): t is IWord =>
+					t.tokenType === TokenType.Word && t.isFalseCognate === true,
 			).length,
 		});
 

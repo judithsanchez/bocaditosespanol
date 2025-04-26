@@ -1,5 +1,4 @@
 import {GeminiProvider} from '@/lib/providers/GeminiProvider';
-import {OllamaProvider} from '@/lib/providers/OllamaProvider';
 import {
 	AIStepType,
 	StepConfigs,
@@ -34,16 +33,6 @@ export class AIProviderFactory {
 					config.temperature,
 					config.topK,
 					config.topP,
-					batchConfig,
-				);
-
-			case AIProviderType.OLLAMA:
-				if (!ACTIVE_PROVIDER.baseUrl) {
-					throw new Error('Base URL is required for Ollama provider');
-				}
-				return new OllamaProvider(
-					ACTIVE_PROVIDER.baseUrl,
-					ACTIVE_PROVIDER.modelName,
 					batchConfig,
 				);
 

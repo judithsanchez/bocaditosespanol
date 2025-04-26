@@ -190,71 +190,73 @@ export const verbMoodSchema = z.nativeEnum(VerbMood);
 export const verbRegularitySchema = z.nativeEnum(VerbRegularity);
 export const verbVoiceSchema = z.nativeEnum(VerbVoice);
 export const verbClassSchema = z.nativeEnum(VerbClass);
-
 export const nounSchema = z.object({
 	type: z.literal(PartOfSpeech.Noun),
-	gender: emptyOr(grammaticalGenderSchema),
-	number: emptyOr(grammaticalNumberSchema),
-	isProperNoun: z.boolean(),
+	gender: emptyOr(grammaticalGenderSchema).optional(),
+	number: emptyOr(grammaticalNumberSchema).optional(),
+	isProperNoun: z.boolean().optional(),
 	diminutive: z.boolean().optional(),
 });
 
 export const adjectiveSchema = z.object({
 	type: z.literal(PartOfSpeech.Adjective),
-	gender: emptyOr(grammaticalGenderSchema),
-	number: emptyOr(grammaticalNumberSchema),
+	gender: emptyOr(grammaticalGenderSchema).optional(),
+	number: emptyOr(grammaticalNumberSchema).optional(),
 	isPastParticiple: z.boolean().optional(),
 });
 
 export const adverbSchema = z.object({
 	type: z.literal(PartOfSpeech.Adverb),
-	adverbType: emptyOr(adverbTypeSchema),
+	adverbType: emptyOr(adverbTypeSchema).optional(),
 	usesMente: booleanOrEmpty.optional(),
 });
 
 export const articleSchema = z.object({
 	type: z.literal(PartOfSpeech.Article),
-	articleType: emptyOr(articleTypeSchema),
-	gender: emptyOr(grammaticalGenderSchema),
-	number: emptyOr(grammaticalNumberSchema),
+	articleType: emptyOr(articleTypeSchema).optional(),
+	gender: emptyOr(grammaticalGenderSchema).optional(),
+	number: emptyOr(grammaticalNumberSchema).optional(),
 });
 
 export const conjunctionSchema = z.object({
 	type: z.literal(PartOfSpeech.Conjunction),
-	conjunctionType: emptyOr(conjunctionTypeSchema),
-	conjunctionFunction: emptyOr(conjunctionFunctionSchema),
+	conjunctionType: emptyOr(conjunctionTypeSchema).optional(),
+	conjunctionFunction: emptyOr(conjunctionFunctionSchema).optional(),
 });
 
 export const determinerSchema = z.object({
 	type: z.literal(PartOfSpeech.Determiner),
-	determinerType: emptyOr(determinerTypeSchema),
-	gender: emptyOr(grammaticalGenderSchema),
-	number: emptyOr(grammaticalNumberSchema),
+	determinerType: emptyOr(determinerTypeSchema).optional(),
+	gender: emptyOr(grammaticalGenderSchema).optional(),
+	number: emptyOr(grammaticalNumberSchema).optional(),
 });
 
 export const interjectionSchema = z.object({
 	type: z.literal(PartOfSpeech.Interjection),
-	interjectionEmotion: emptyOr(interjectionEmotionSchema),
+	interjectionEmotion: emptyOr(interjectionEmotionSchema).optional(),
 	interjectionType: emptyOr(interjectionTypeSchema).optional(),
 });
 
 export const numeralSchema = z.object({
 	type: z.literal(PartOfSpeech.Numeral),
-	numeralType: emptyOr(numeralTypeSchema),
+	numeralType: emptyOr(numeralTypeSchema).optional(),
 	gender: emptyOr(grammaticalGenderSchema).optional(),
 	number: emptyOr(grammaticalNumberSchema).optional(),
 });
 
 export const prepositionSchema = z.object({
 	type: z.literal(PartOfSpeech.Preposition),
-	prepositionType: emptyOr(prepositionTypeSchema),
+	prepositionType: emptyOr(prepositionTypeSchema).optional(),
 	contractsWith: emptyOr(contractsWithSchema).optional(),
 });
 
 export const pronounSchema = z.object({
 	type: z.literal(PartOfSpeech.Pronoun),
-	pronounType: emptyOr(pronounTypeSchema),
-	person: emptyOr(grammaticalPersonSchema).optional(),
+	pronounType: emptyOr(pronounTypeSchema).optional(),
+	person: z
+		.array(grammaticalPersonSchema)
+		.or(emptyOr(grammaticalPersonSchema))
+		.optional(),
 	gender: emptyOr(grammaticalGenderSchema).optional(),
 	number: emptyOr(grammaticalNumberSchema).optional(),
 	case: emptyOr(pronounCaseSchema).optional(),
@@ -264,18 +266,18 @@ export const pronounSchema = z.object({
 
 export const verbSchema = z.object({
 	type: z.literal(PartOfSpeech.Verb),
-	tense: z.array(verbTenseSchema).or(z.array(z.never())),
-	mood: emptyOr(verbMoodSchema),
-	person: z.array(grammaticalPersonSchema).or(z.array(z.never())),
-	number: emptyOr(grammaticalNumberSchema), // Fixed: Changed from literal to enum
-	isRegular: z.boolean(),
-	infinitive: emptyOr(z.string()),
-	voice: emptyOr(verbVoiceSchema),
-	verbClass: emptyOr(verbClassSchema),
-	gerund: z.boolean(),
-	pastParticiple: z.boolean(),
-	verbRegularity: emptyOr(verbRegularitySchema),
-	isReflexive: z.boolean(),
+	tense: z.array(verbTenseSchema).or(z.array(z.never())).optional(),
+	mood: emptyOr(verbMoodSchema).optional(),
+	person: z.array(grammaticalPersonSchema).or(z.array(z.never())).optional(),
+	number: emptyOr(grammaticalNumberSchema).optional(),
+	isRegular: z.boolean().optional(),
+	infinitive: emptyOr(z.string()).optional(),
+	voice: emptyOr(verbVoiceSchema).optional(),
+	verbClass: emptyOr(verbClassSchema).optional(),
+	gerund: z.boolean().optional(),
+	pastParticiple: z.boolean().optional(),
+	verbRegularity: emptyOr(verbRegularitySchema).optional(),
+	isReflexive: z.boolean().optional(),
 });
 
 export const grammaticalInfoSchema = z.discriminatedUnion('type', [

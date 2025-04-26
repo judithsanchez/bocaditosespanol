@@ -1,0 +1,67 @@
+sequenceDiagram
+    participant Client
+    participant WDS as WriteDatabaseService
+    participant RDS as ReadDatabaseService
+    participant FS as FileSystem
+
+    %% Constructor & Initialization
+    Client->>+WDS: new WriteDatabaseService()
+    WDS->>+RDS: new ReadDatabaseService()
+    RDS-->>-WDS: ReadDatabaseService instance
+    WDS->>WDS: initializeDataStructures()
+    WDS->>FS: existsSync(dataPath)
+    FS-->>WDS: boolean (exists)
+    alt Data path does not exist
+        WDS->>FS: mkdir(dataPath, {recursive: true})
+        FS-->>WDS: success
+    end
+    WDS-->>-Client: WriteDatabaseService instance
+
+    %% saveTextEntry
+    Client->>+WDS: saveTextEntry(entry, contentType)
+    WDS->>+RDS: getTextEntries()
+    RDS->>+FS: readFile('text-entries.json')
+    FS-->>-RDS: file content (JSON string or null)
+    RDS-->>-WDS: entries (parsed JSON or default)
+    Note over WDS: Update entries object based on contentType
+    WDS->>WDS: writeFile('text-entries.json', updatedEntries)
+    WDS->>+FS: writeFile(path, JSON.stringify(updatedEntries))
+    FS-->>-WDS: success
+    WDS-->>-Client: void
+
+    %% saveSentences
+    Client->>+WDS: saveSentences(sentences, metadata)
+    WDS->>+RDS: getSentences()
+    RDS->>+FS: readFile('sentences.json')
+    FS-->>-RDS: file content (JSON string or null)
+    RDS-->>-WDS: existingSentences (parsed JSON or default)
+    Note over WDS: Generate contentKey and update existingSentences
+    WDS->>WDS: writeFile('sentences.json', updatedSentences)
+    WDS->>+FS: writeFile(path, JSON.stringify(updatedSentences))
+    FS-->>-WDS: success
+    WDS-->>-Client: void
+
+    %% filterExistingTokens
+    Client->>+WDS: filterExistingTokens(tokens)
+    WDS->>+RDS: getTokens()
+    RDS->>+FS: readFile('tokens.json')
+    FS-->>-RDS: file content (JSON string or null)
+    RDS-->>-WDS: existingDbTokens (parsed JSON or default)
+    Note over WDS: Filter input tokens against existingDbTokens
+    WDS-->>-Client: { existingTokens, newTokens }
+
+    %% saveTokens
+    Client->>+WDS: saveTokens(tokens)
+    WDS->>+RDS: readFile('tokens.json')
+    RDS->>+FS: readFile('tokens.json')
+    FS-->>-RDS: file content (JSON string or null)
+    RDS-->>-WDS: currentTokens (parsed JSON or default)
+    Note over WDS: Assign currentTokens to this.tokens
+    loop for each token in tokens
+        WDS->>WDS: addToken(token)
+        Note right of WDS: Update this.tokens based on tokenType
+    end
+    WDS->>WDS: writeFile('tokens.json', this.tokens)
+    WDS->>+FS: writeFile(path, JSON.stringify(this.tokens))
+    FS-->>-WDS: success
+    WDS-->>-Client: void

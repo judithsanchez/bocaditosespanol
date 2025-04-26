@@ -1,0 +1,34 @@
+%%{ init: { 'theme': 'dark', 'themeVariables': { 'background': '#1e1e1e', 'primaryColor': '#2d2d30', 'primaryBorderColor': '#3c3c3c', 'primaryTextColor': '#d4d4d4', 'lineColor': '#569cd6', 'secondaryColor': '#ce9178', 'tertiaryColor': '#4ec9b0' } } }%%
+sequenceDiagram
+    participant Pipeline
+    participant SES as SensesEnrichmentStep
+    participant CPC as ContentProcessingContext
+    participant TEF as TokenAIEnrichmentFactory
+    participant TEIF as TokenAIEnrichmentInstructionFactory
+    participant BP as BatchProcessor
+    participant GE as GenericAIEnricher
+    participant AIP as AIProvider
+
+    Pipeline->>+SES: process(context)
+    SES->>CPC: Check context.contentType
+    alt contentType is missing
+        SES-->>Pipeline: Throw Error
+    else contentType is present
+        SES->>CPC: Get context.tokens.words
+        SES->>+BP: process({ items: context.tokens.words, processingFn, ... })
+        loop For each batch of words
+            BP->>+SES: processingFn(batch)
+            SES->>+TEF: createSenseSchema()
+            TEF-->>-SES: schema
+            SES->>+TEIF: createSensesInstruction()
+            TEIF-->>-SES: instruction
+            SES->>+GE: enrich({ input: batch, schema, instruction })
+            GE->>+AIP: Call AI Provider (e.g., enrichSenses)
+            AIP-->>-GE: enrichedBatchWithSenses
+            GE-->>-SES: enrichedBatchWithSenses
+            SES-->>-BP: enrichedBatchWithSenses
+        end
+        BP-->>-SES: allEnrichedTokensWithSenses
+        SES->>CPC: Update context.tokens.enriched (map and merge senses, generate senseId)
+        SES-->>-Pipeline: updatedContext
+    end

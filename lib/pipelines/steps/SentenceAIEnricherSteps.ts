@@ -1,10 +1,9 @@
 import {PipelineStep} from '../Pipeline';
 import {Logger} from '../../utils/index';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
-import {SongProcessingContext} from '../ContentProcessingPipeline';
+import {ContentProcessingContext} from '../ContentProcessingPipeline';
 import {ContentSchemaFactory} from '../../factories/ContentSchemaFactory';
 import {ContentInstructionFactory} from '../../factories/ContentInstructionsFactory';
-import {ContentType, ISentence} from '@/lib/types/grammar';
 import {BatchProcessor} from '../../utils/BatchProcessor';
 import {AIProviderFactory} from '../../factories/index';
 import {
@@ -12,9 +11,10 @@ import {
 	AIStepType,
 	PROVIDER_BATCH_CONFIGS,
 } from '../../config/AIConfig';
+import {ISentence} from '@/lib/types/sentence';
 
 export class SentenceAIEnricherSteps
-	implements PipelineStep<SongProcessingContext>
+	implements PipelineStep<ContentProcessingContext>
 {
 	private readonly logger = new Logger('SentenceAIEnricherSteps');
 	private readonly enricher: GenericAIEnricher;
@@ -30,13 +30,19 @@ export class SentenceAIEnricherSteps
 	}
 
 	async process(
-		context: SongProcessingContext,
-	): Promise<SongProcessingContext> {
+		context: ContentProcessingContext,
+	): Promise<ContentProcessingContext> {
 		this.logger.start('process');
 
-		const schema = ContentSchemaFactory.createSchema(ContentType.SONG);
+		if (!context.contentType) {
+			throw new Error(
+				'ContentType is missing in the processing context. SentenceAIEnricherSteps cannot proceed.',
+			);
+		}
+
+		const schema = ContentSchemaFactory.createSchema(context.contentType);
 		const instruction = ContentInstructionFactory.createInstruction(
-			ContentType.SONG,
+			context.contentType,
 		);
 
 		const enrichedSentences = await this.batchProcessor.process({

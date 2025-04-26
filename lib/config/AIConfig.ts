@@ -1,6 +1,5 @@
 export enum AIProviderType {
 	GEMINI = 'GEMINI',
-	OLLAMA = 'OLLAMA',
 }
 
 export interface AIModelConfig {
@@ -80,13 +79,6 @@ export const PROVIDER_BATCH_CONFIGS: Record<AIProviderType, BatchOptions> = {
 		delayBetweenBatches: 1000,
 		maxRequestsPerMinute: 6,
 		timeoutMs: 30000,
-		maxConcurrentBatches: 1,
-	},
-	[AIProviderType.OLLAMA]: {
-		retryAttempts: 3,
-		delayBetweenBatches: 1000,
-		maxRequestsPerMinute: 10,
-		timeoutMs: 120000,
 		maxConcurrentBatches: 1,
 	},
 };

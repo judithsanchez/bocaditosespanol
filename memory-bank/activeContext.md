@@ -1,103 +1,41 @@
-# System Patterns
+# Active Context
 
-## Data Structure
+## Goal
 
-```mermaid
-graph TD
-    A[Song] --> B[Metadata]
-    A --> C[Lyrics Array]
-    A --> D[TokenIds Array]
+Refactor the content processing pipeline steps (`lib/pipelines/steps/`) to use a generic `ContentProcessingContext` instead of the specific `SongProcessingContext`. This involves updating the step implementations and their corresponding tests.
 
-    B --> B1[interpreter]
-    B --> B2[title]
-    B --> B3[genre]
-    B --> B4[language]
-    B --> B5[releaseDate]
-    B --> B6[youtube]
+## Recent Changes & Focus
 
-    C --> E[Sentences]
-    E --> F[sentenceId]
-    E --> G[content]
-    E --> H[translations]
-    E --> I[learningInsights]
-    E --> J[tokenIds]
+- Refactored `lib/pipelines/steps/SensesEnrichmentStep.ts` to use `ContentProcessingContext`.
+- Created `lib/pipelines/steps/SensesEnrichmentStep.mmd` sequence diagram.
+- Created and fixed `lib/pipelines/steps/__tests__/SensesEnrichmentStep.test.ts`.
+- **Refactored `lib/pipelines/steps/CognateAnalysisStep.ts` to use `ContentProcessingContext` and corrected `BatchProcessor` usage.**
 
-    H --> K[english]
-    K --> L[contextual]
-    K --> M[literal]
+## Current Step
 
-    I --> N[insight]
-    I --> O[difficulty]
-```
+- Update `memory-bank/activeContext.md` (This step).
+- Create `lib/pipelines/steps/CognateAnalysisStep.mmd`.
+- Create `lib/pipelines/steps/__tests__/CognateAnalysisStep.test.ts`.
 
-## Data Organization
+## Next Steps
 
-The application uses three main JSON files for data storage:
+- Refactor `lib/pipelines/steps/SlangDetectionStep.ts`.
+- Refactor `lib/pipelines/steps/GrammaticalEnricherStep.ts`.
+- Refactor `lib/pipelines/steps/SentenceAIEnricherSteps.ts` (includes `SentenceFormatterStep` and `SentenceLearningInsightsEnricherStep`).
+- Update `lib/pipelines/ContentProcessingPipeline.ts` to use the generic context and potentially adjust the pipeline execution flow if needed.
+- Review all changes and ensure tests pass.
 
-1. `text-entries.json`:
+## Key Files
 
-   - Contains song metadata
-   - Maps song IDs to lyrics (sentence IDs)
-   - Stores creation/update timestamps
+- `lib/pipelines/ContentProcessingPipeline.ts`
+- `lib/pipelines/steps/*`
+- `lib/pipelines/steps/__tests__/*`
+- `lib/types/content.ts` (Potentially, if context needs adjustment)
+- `memory-bank/activeContext.md`
 
-2. `sentences.json`:
+## Potential Challenges
 
-   - Stores individual sentences with:
-     - Unique sentence IDs
-     - Original content
-     - Token mappings
-     - Translations (contextual and literal)
-     - Learning insights
-     - Grammatical difficulty levels
-
-3. `tokens.json`:
-   - Contains individual word/token data
-   - Referenced by sentences through tokenIds
-
-## Data Relationships
-
-```mermaid
-erDiagram
-    SONG ||--o{ SENTENCE : contains
-    SENTENCE ||--o{ TOKEN : references
-    SONG {
-        string songId
-        object metadata
-        array lyrics
-    }
-    SENTENCE {
-        string sentenceId
-        string content
-        array tokenIds
-        object translations
-        object learningInsights
-    }
-    TOKEN {
-        string tokenId
-        string content
-    }
-```
-
-## Key Features
-
-1. **Modular Content Structure**:
-
-   - Each sentence is independently stored and reusable
-   - Tokens are atomized for granular language analysis
-
-2. **Rich Metadata**:
-
-   - Song information includes genre, language, release date
-   - Learning insights provide pedagogical context
-   - Translations offer both literal and contextual understanding
-
-3. **Hierarchical Organization**:
-
-   - Songs contain sentences
-   - Sentences contain tokens
-   - Each level maintains its own metadata and relationships
-
-4. **Language Learning Focus**:
-   - Difficulty ratings for grammatical concepts
-   - Detailed linguistic insights
-   - Multiple translation layers
+- Ensuring type safety with the generic context across all steps.
+- Handling potential differences in how steps access or modify context data based on `contentType`.
+- Updating numerous test files correctly.
+- Ensuring the `BatchProcessor` and `GenericAIEnricher` work seamlessly with the refactored steps and context.

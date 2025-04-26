@@ -8,7 +8,6 @@ import {z} from 'zod';
 export interface ISense {
 	senseId: string;
 	tokenId: string;
-	content: string;
 	hasSpecialChar: boolean;
 	translations: {english: string[]};
 	partOfSpeech?: PartOfSpeech;
@@ -18,7 +17,6 @@ export interface ISense {
 export const senseSchema = z.object({
 	senseId: z.string(),
 	tokenId: z.string(),
-	content: z.string(),
 	hasSpecialChar: z.boolean(),
 	translations: z.object({
 		english: z.array(z.string()),

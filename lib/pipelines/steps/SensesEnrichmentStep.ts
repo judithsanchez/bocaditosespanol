@@ -1,8 +1,10 @@
 import {PipelineStep} from '../Pipeline';
-import {SongProcessingContext} from '../ContentProcessingPipeline';
+// Use generic context type
+import {ContentProcessingContext} from '../ContentProcessingPipeline';
 import {Logger} from '../../utils/index';
 import {BatchProcessor} from '../../utils/BatchProcessor';
-import {IWord} from '@/lib/types/grammar';
+// Adjust type imports if necessary (IWord seems to come from a different path now)
+import {IWord} from '@/lib/types/token';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
 import {TokenAIEnrichmentFactory} from '../../factories/TokenAIEnrichmentFactory';
 import {TokenAIEnrichmentInstructionFactory} from '../../factories/TokenAIEnrichmentInstructionFactory';
@@ -14,7 +16,7 @@ import {
 } from '../../config/AIConfig';
 
 export class SensesEnrichmentStep
-	implements PipelineStep<SongProcessingContext>
+	implements PipelineStep<ContentProcessingContext>
 {
 	private readonly logger = new Logger('SensesEnrichmentStep');
 	private readonly enricher: GenericAIEnricher;
@@ -27,9 +29,15 @@ export class SensesEnrichmentStep
 	}
 
 	async process(
-		context: SongProcessingContext,
-	): Promise<SongProcessingContext> {
+		context: ContentProcessingContext,
+	): Promise<ContentProcessingContext> {
 		this.logger.start('process');
+
+		if (!context.contentType) {
+			throw new Error(
+				'ContentType is missing in the processing context. SensesEnrichmentStep cannot proceed.',
+			);
+		}
 
 		this.logger.info('Starting senses enrichment', {
 			tokensToProcess: context.tokens.words.length,
@@ -43,6 +51,7 @@ export class SensesEnrichmentStep
 		const enrichedTokens = await batchProcessor.process({
 			items: context.tokens.words,
 			processingFn: async (tokens: IWord[]): Promise<IWord[]> => {
+				// TODO: Check if schema/instruction factories should depend on context.contentType
 				const schema = TokenAIEnrichmentFactory.createSenseSchema();
 				const instruction =
 					TokenAIEnrichmentInstructionFactory.createSensesInstruction();
