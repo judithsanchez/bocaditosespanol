@@ -171,49 +171,36 @@ export class WriteDatabaseService {
 	private async addToken(token: IWord | IPunctuationSign | IEmoji) {
 		const tokenId = token.tokenId;
 		const currentTime = Date.now();
-		let existingToken: Token | undefined;
-		let updated = false;
 
+		// Check if token already exists in any category
+		const existsInWords = tokenId in this.tokens.words;
+		const existsInPunctuation = tokenId in this.tokens.punctuationSigns;
+		const existsInEmojis = tokenId in this.tokens.emojis;
+
+		// If token exists anywhere, don't add or update it
+		if (existsInWords || existsInPunctuation || existsInEmojis) {
+			return;
+		}
+
+		// Add new token with current timestamp
 		if (token.tokenType === TokenType.Word) {
-			existingToken = this.tokens.words[tokenId];
-			if (!this.areTokensEqual(existingToken, token)) {
-				this.tokens.words[tokenId] = {
-					...(token as IWord),
-					lastUpdated: currentTime,
-				};
-				updated = true;
-			}
+			this.tokens.words[tokenId] = {
+				...(token as IWord),
+				lastUpdated: currentTime,
+			};
 		} else if (token.tokenType === TokenType.PunctuationSign) {
-			existingToken = this.tokens.punctuationSigns[tokenId];
-			if (!this.areTokensEqual(existingToken, token)) {
-				this.tokens.punctuationSigns[tokenId] = {
-					...(token as IPunctuationSign),
-					lastUpdated: currentTime,
-				};
-				updated = true;
-			}
+			this.tokens.punctuationSigns[tokenId] = {
+				...(token as IPunctuationSign),
+				lastUpdated: currentTime,
+			};
 		} else if (token.tokenType === TokenType.Emoji) {
-			existingToken = this.tokens.emojis[tokenId];
-			if (!this.areTokensEqual(existingToken, token)) {
-				this.tokens.emojis[tokenId] = {
-					...(token as IEmoji),
-					lastUpdated: currentTime,
-				};
-				updated = true;
-			}
+			this.tokens.emojis[tokenId] = {
+				...(token as IEmoji),
+				lastUpdated: currentTime,
+			};
 		}
 
-		if (updated) {
-			console.log(`Added/Updated token: ${tokenId} (${token.tokenType})`);
-		} else if (existingToken) {
-			// console.log(`Token already exists and is unchanged: ${tokenId} (${token.tokenType})`);
-		} else {
-			console.warn(
-				`Attempted to add token with unknown type or failed comparison: ${JSON.stringify(
-					token,
-				)}`,
-			);
-		}
+		console.log(`Added new token: ${tokenId} (${token.tokenType})`);
 	}
 
 	private async writeFile(filename: string, data: unknown) {

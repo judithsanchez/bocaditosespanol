@@ -213,7 +213,13 @@ export class ContentProcessingPipeline extends Pipeline<ContentProcessingContext
 			processedContext.contentType,
 		);
 
-		await this.writeDB.saveTokens(processedContext.tokens.enriched);
+		// Only save tokens that weren't in the database before
+		const {newTokens} = await this.writeDB.filterExistingTokens(
+			processedContext.tokens.enriched,
+		);
+		if (newTokens.length > 0) {
+			await this.writeDB.saveTokens(newTokens);
+		}
 
 		this.logger.info('Database operations completed');
 		this.logger.end('processText');
