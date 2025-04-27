@@ -1,6 +1,7 @@
 import {writeFile, mkdir} from 'fs/promises';
 import {existsSync} from 'fs';
 import {join} from 'path';
+import {DatabaseConfig} from '../config/DatabaseConfig';
 
 import {
 	TokenType,
@@ -18,23 +19,10 @@ import {
 	IVideoTranscript,
 } from '@/lib/types/content';
 import {ReadDatabaseService} from './ReadDatabaseService';
-
-interface TokenStorage {
-	words: Record<string, IWord>;
-	punctuationSigns: Record<string, IPunctuationSign>;
-	emojis: Record<string, IEmoji>;
-}
-
-interface TextEntriesStorage {
-	[ContentType.SONG]?: ISong[];
-	[ContentType.BOOK_EXCERPT]?: IBookExcerpt[];
-	[ContentType.VIDEO_TRANSCRIPT]?: IVideoTranscript[];
-}
+import {TokenStorage, TextEntriesStorage} from '../types/database';
 
 export class WriteDatabaseService {
-	private getDataPath() {
-		return '/home/judithsanchez/dev/bocaditosespanol/docs/data';
-	}
+	private readonly dataPath = DatabaseConfig.paths.data;
 
 	private tokens: TokenStorage = {
 		words: {},
@@ -45,14 +33,28 @@ export class WriteDatabaseService {
 	private readService: ReadDatabaseService;
 
 	constructor() {
-		console.log('Database write path:', this.getDataPath());
+		console.log('Database write path:', this.dataPath);
 		this.readService = new ReadDatabaseService();
 		this.initializeDataStructures();
 	}
 
 	private async initializeDataStructures() {
-		if (!existsSync(this.getDataPath())) {
-			await mkdir(this.getDataPath(), {recursive: true});
+		if (!existsSync(this.dataPath)) {
+			try {
+				console.log(`Creating data directory: ${this.dataPath}`);
+				await mkdir(this.dataPath, {recursive: true});
+				console.log(`Successfully created data directory: ${this.dataPath}`);
+			} catch (error) {
+				console.error(
+					`Failed to create data directory: ${this.dataPath}`,
+					error,
+				);
+				throw new Error(
+					`Initialization failed: Could not create data directory at ${this.dataPath}`,
+				);
+			}
+		} else {
+			console.log(`Data directory already exists: ${this.dataPath}`);
 		}
 	}
 
@@ -75,7 +77,7 @@ export class WriteDatabaseService {
 			entries[ContentType.VIDEO_TRANSCRIPT]?.push(entry as IVideoTranscript);
 		}
 
-		await this.writeFile('text-entries.json', entries);
+		await this.writeFile(DatabaseConfig.files.textEntries, entries);
 	}
 
 	async saveSentences(
@@ -97,7 +99,7 @@ export class WriteDatabaseService {
 
 		existingSentences[contentKey] = sentences;
 
-		await this.writeFile('sentences.json', existingSentences);
+		await this.writeFile(DatabaseConfig.files.sentences, existingSentences);
 	}
 
 	async filterExistingTokens(tokens: Token[]): Promise<{
@@ -118,35 +120,94 @@ export class WriteDatabaseService {
 	async saveTokens(
 		tokens: Array<IWord | IPunctuationSign | IEmoji>,
 	): Promise<void> {
-		const currentTokens = await this.readService.readFile('tokens.json');
+		console.log(`Attempting to save ${tokens.length} tokens.`);
+		const startTime = Date.now();
+		const currentTokensData = await this.readService.readFile(
+			DatabaseConfig.files.tokens,
+		);
 
-		this.tokens = currentTokens || {
-			words: {},
-			punctuationSigns: {},
-			emojis: {},
-		};
+		if (
+			currentTokensData &&
+			typeof currentTokensData === 'object' &&
+			'words' in currentTokensData &&
+			'punctuationSigns' in currentTokensData &&
+			'emojis' in currentTokensData
+		) {
+			this.tokens = currentTokensData as TokenStorage;
+		} else {
+			console.warn(
+				`Invalid or missing token data from ${DatabaseConfig.files.tokens}. Initializing with empty storage.`,
+			);
+			this.tokens = {
+				words: {},
+				punctuationSigns: {},
+				emojis: {},
+			};
+		}
 
 		for (const token of tokens) {
 			await this.addToken(token);
 		}
 
-		await this.writeFile('tokens.json', this.tokens);
+		await this.writeFile(DatabaseConfig.files.tokens, this.tokens);
+		const endTime = Date.now();
+		console.log(
+			`Successfully saved tokens. Operation took ${endTime - startTime}ms.`,
+		);
 	}
 
 	private async addToken(token: IWord | IPunctuationSign | IEmoji) {
+		const tokenId = token.tokenId;
+		let tokenTypeKey: keyof TokenStorage | null = null;
+
 		if (token.tokenType === TokenType.Word) {
-			this.tokens.words[token.tokenId] = token as IWord;
+			tokenTypeKey = 'words';
+			this.tokens.words[tokenId] = token as IWord;
 		} else if (token.tokenType === TokenType.PunctuationSign) {
-			this.tokens.punctuationSigns[token.tokenId] = token as IPunctuationSign;
+			tokenTypeKey = 'punctuationSigns';
+			this.tokens.punctuationSigns[tokenId] = token as IPunctuationSign;
 		} else if (token.tokenType === TokenType.Emoji) {
-			this.tokens.emojis[token.tokenId] = token as IEmoji;
+			tokenTypeKey = 'emojis';
+			this.tokens.emojis[tokenId] = token as IEmoji;
+		}
+
+		if (tokenTypeKey) {
+			console.log(`Added/Updated token: ${tokenId} (${token.tokenType})`);
+		} else {
+			console.warn(
+				`Attempted to add token with unknown type: ${JSON.stringify(token)}`,
+			);
 		}
 	}
 
 	private async writeFile(filename: string, data: unknown) {
-		await writeFile(
-			join(this.getDataPath(), filename),
-			JSON.stringify(data, null, 2),
-		);
+		const filePath = join(this.dataPath, filename);
+		const dataString = JSON.stringify(data, null, 2);
+		const dataSize = Buffer.byteLength(dataString, 'utf8');
+		const startTime = Date.now();
+
+		console.log(`Writing to ${filePath}`, {
+			sizeBytes: dataSize,
+			timestamp: new Date().toISOString(),
+		});
+
+		try {
+			await writeFile(filePath, dataString);
+			const endTime = Date.now();
+			console.log(
+				`Successfully wrote ${dataSize} bytes to ${filePath}. Operation took ${
+					endTime - startTime
+				}ms.`,
+			);
+		} catch (error) {
+			const endTime = Date.now();
+			console.error(
+				`Failed to write to ${filePath}. Operation took ${
+					endTime - startTime
+				}ms.`,
+				error,
+			);
+			throw error;
+		}
 	}
 }
