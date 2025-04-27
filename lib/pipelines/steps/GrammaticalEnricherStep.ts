@@ -179,7 +179,8 @@ export class GrammaticalEnricherStep
 
 			const processedTokens = tokens.map(originalToken => ({
 				...originalToken,
-				lastUpdated: Date.now(),
+				// Don't update lastUpdated for existing tokens
+				lastUpdated: originalToken.lastUpdated || Date.now(),
 				senses: originalToken.senses?.map(sense => {
 					const enrichedSense = enriched.find(
 						e =>
@@ -190,7 +191,8 @@ export class GrammaticalEnricherStep
 					return enrichedSense?.senses?.[0]
 						? {
 								...sense,
-								lastUpdated: Date.now(),
+								// Don't update lastUpdated for existing senses
+								lastUpdated: sense.lastUpdated || Date.now(),
 								grammaticalInfo: enrichedSense.senses[0].grammaticalInfo,
 						  }
 						: sense;

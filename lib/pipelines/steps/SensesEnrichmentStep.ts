@@ -85,9 +85,11 @@ export class SensesEnrichmentStep
 					senses: enrichedToken.senses.map(sense => ({
 						...sense,
 						senseId: `sense-${sense.partOfSpeech}-${originalToken.content}`,
-						lastUpdated: Date.now(),
+						// Don't update lastUpdated for existing tokens
+						lastUpdated: originalToken.lastUpdated || Date.now(),
 					})),
-					lastUpdated: Date.now(),
+					// Don't update lastUpdated for existing tokens
+					lastUpdated: originalToken.lastUpdated || Date.now(),
 				} as IWord;
 			}
 			return originalToken;

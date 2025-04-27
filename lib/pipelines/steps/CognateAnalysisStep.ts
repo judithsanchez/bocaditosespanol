@@ -138,7 +138,8 @@ export class CognateAnalysisStep
 					...originalToken,
 					isCognate: enrichedData.isCognate,
 					isFalseCognate: enrichedData.isFalseCognate,
-					lastUpdated: Date.now(),
+					// Don't update lastUpdated for existing tokens
+					lastUpdated: originalToken.lastUpdated || Date.now(),
 				};
 			}
 			return originalToken;

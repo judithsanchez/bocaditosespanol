@@ -106,7 +106,8 @@ export class SlangDetectionStep
 							return {
 								...originalToken,
 								isSlang: enrichedData.isSlang,
-								lastUpdated: Date.now(),
+								// Don't update lastUpdated for existing tokens
+								lastUpdated: originalToken.lastUpdated || Date.now(),
 							};
 						}
 						return originalToken;
