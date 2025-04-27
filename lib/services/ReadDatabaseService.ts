@@ -1,11 +1,5 @@
-import {
-	ISentence,
-	IWord,
-	IPunctuationSign,
-	IEmoji,
-	TokenType,
-	Token,
-} from '@/lib/types/grammar';
+import {ISentence} from '../types/sentence';
+import {IEmoji, IPunctuationSign, IWord, TokenType} from '../types/token';
 
 interface TokenStorage {
 	words: Record<string, IWord>;

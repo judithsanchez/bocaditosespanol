@@ -2,14 +2,15 @@ import emojiRegex from 'emoji-regex';
 import {
 	EmojiToken,
 	emojiTokenSchema,
+	InitialWordToken, // Import the initial word token type
+	initialWordTokenSchema, // Import the initial word token schema
 	PunctuationToken,
 	punctuationTokenSchema,
-	Token,
+	Token, // This might need adjustment depending on how Token is used elsewhere
 	TokenType,
-	WordToken,
-	wordTokenSchema,
+	WordToken, // Keep this for the final state if needed elsewhere
 } from '../types/token';
-import {ISense} from '../types/sense';
+import {IInitialSense, ISense} from '../types/sense'; // Import IInitialSense
 
 export class TokenFactory {
 	private static readonly emojiPattern = emojiRegex();
@@ -23,13 +24,17 @@ export class TokenFactory {
 		return trimmedContent.split(regex).filter(token => token.trim() !== '');
 	}
 
-	static createToken(content: string): Token {
+	// Adjust return type to include InitialWordToken
+	static createToken(
+		content: string,
+	): EmojiToken | PunctuationToken | InitialWordToken {
 		if (this.emojiPattern.test(content)) {
 			return this.createEmojiToken(content);
 		}
 		if (this.punctuationPattern.test(content)) {
 			return this.createPunctuationToken(content);
 		}
+		// Return InitialWordToken here
 		return this.createWordToken(content);
 	}
 
@@ -51,27 +56,32 @@ export class TokenFactory {
 		return punctuationTokenSchema.parse(token);
 	}
 
-	static createWordToken(content: string): WordToken {
+	// Update return type and use initial schema
+	static createWordToken(content: string): InitialWordToken {
 		const normalizedContent = content.toLowerCase();
-		const token = {
-			tokenId: `token-${normalizedContent}`,
-			content,
-			normalizedToken: normalizedContent,
-			tokenType: TokenType.Word as const,
-			isSlang: false,
-			isCognate: false,
-			isFalseCognate: false,
-			senses: [this.createInitialSense(normalizedContent)],
-			lastUpdated: Date.now(),
-		};
-		return wordTokenSchema.parse(token);
+		const token: Omit<InitialWordToken, 'senses'> & {senses: IInitialSense[]} =
+			{
+				// Ensure type compatibility
+				tokenId: `token-${normalizedContent}`,
+				content,
+				normalizedToken: normalizedContent,
+				tokenType: TokenType.Word as const,
+				isSlang: false,
+				isCognate: false,
+				isFalseCognate: false,
+				senses: [this.createInitialSense(normalizedContent)], // createInitialSense now returns IInitialSense
+				lastUpdated: Date.now(),
+			};
+		// Use the initial schema for parsing
+		return initialWordTokenSchema.parse(token);
 	}
 
-	private static createInitialSense(tokenId: string): ISense {
+	// Update return type to IInitialSense
+	private static createInitialSense(tokenId: string): IInitialSense {
 		return {
-			senseId: '',
-			tokenId: `token-${tokenId}`,
-			content: '',
+			senseId: `sense-${tokenId}-${Date.now()}`, // Generate a unique senseId
+			tokenId: `token-${tokenId}`, // Use the passed tokenId
+			content: '', // Content can be optional or empty initially
 			hasSpecialChar: false,
 			translations: {english: []},
 			lastUpdated: Date.now(),
