@@ -14,10 +14,12 @@ const baseTokenSchema = z.object({
 
 export const emojiTokenSchema = baseTokenSchema.extend({
 	tokenType: z.literal(TokenType.Emoji),
+	lastUpdated: z.number().optional(), // Added optional lastUpdated
 });
 
 export const punctuationTokenSchema = baseTokenSchema.extend({
 	tokenType: z.literal(TokenType.PunctuationSign),
+	lastUpdated: z.number().optional(), // Added optional lastUpdated
 });
 
 // Schema for the initial word token state
@@ -53,12 +55,14 @@ export interface IPunctuationSign {
 	tokenType: TokenType.PunctuationSign;
 	tokenId: string;
 	content: string;
+	lastUpdated?: number; // Added optional lastUpdated
 }
 
 export interface IEmoji {
 	tokenType: TokenType.Emoji;
 	tokenId: string;
 	content: string;
+	lastUpdated?: number; // Added optional lastUpdated
 }
 
 export interface IWord {

@@ -156,26 +156,62 @@ export class WriteDatabaseService {
 		);
 	}
 
+	private areTokensEqual(token1: Token | undefined, token2: Token): boolean {
+		if (!token1) {
+			return false; // If existing token doesn't exist, they are not equal
+		}
+		// Deep comparison excluding lastUpdated
+		const token1Compare = {...token1};
+		const token2Compare = {...token2};
+		delete (token1Compare as Partial<Token>).lastUpdated;
+		delete (token2Compare as Partial<Token>).lastUpdated;
+		return JSON.stringify(token1Compare) === JSON.stringify(token2Compare);
+	}
+
 	private async addToken(token: IWord | IPunctuationSign | IEmoji) {
 		const tokenId = token.tokenId;
-		let tokenTypeKey: keyof TokenStorage | null = null;
+		const currentTime = Date.now();
+		let existingToken: Token | undefined;
+		let updated = false;
 
 		if (token.tokenType === TokenType.Word) {
-			tokenTypeKey = 'words';
-			this.tokens.words[tokenId] = token as IWord;
+			existingToken = this.tokens.words[tokenId];
+			if (!this.areTokensEqual(existingToken, token)) {
+				this.tokens.words[tokenId] = {
+					...(token as IWord),
+					lastUpdated: currentTime,
+				};
+				updated = true;
+			}
 		} else if (token.tokenType === TokenType.PunctuationSign) {
-			tokenTypeKey = 'punctuationSigns';
-			this.tokens.punctuationSigns[tokenId] = token as IPunctuationSign;
+			existingToken = this.tokens.punctuationSigns[tokenId];
+			if (!this.areTokensEqual(existingToken, token)) {
+				this.tokens.punctuationSigns[tokenId] = {
+					...(token as IPunctuationSign),
+					lastUpdated: currentTime,
+				};
+				updated = true;
+			}
 		} else if (token.tokenType === TokenType.Emoji) {
-			tokenTypeKey = 'emojis';
-			this.tokens.emojis[tokenId] = token as IEmoji;
+			existingToken = this.tokens.emojis[tokenId];
+			if (!this.areTokensEqual(existingToken, token)) {
+				this.tokens.emojis[tokenId] = {
+					...(token as IEmoji),
+					lastUpdated: currentTime,
+				};
+				updated = true;
+			}
 		}
 
-		if (tokenTypeKey) {
+		if (updated) {
 			console.log(`Added/Updated token: ${tokenId} (${token.tokenType})`);
+		} else if (existingToken) {
+			// console.log(`Token already exists and is unchanged: ${tokenId} (${token.tokenType})`);
 		} else {
 			console.warn(
-				`Attempted to add token with unknown type: ${JSON.stringify(token)}`,
+				`Attempted to add token with unknown type or failed comparison: ${JSON.stringify(
+					token,
+				)}`,
 			);
 		}
 	}
