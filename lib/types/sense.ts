@@ -10,7 +10,7 @@ export const initialSenseSchema = z.object({
 	senseId: z.string(),
 	tokenId: z.string(),
 	content: z.string().optional(), // Making content optional initially if needed
-	hasSpecialChar: z.boolean(),
+	hasSpecialChar: z.boolean().default(false), // Default to false if not present
 	translations: z.object({
 		english: z.array(z.string()),
 	}),

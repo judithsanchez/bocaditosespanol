@@ -125,3 +125,62 @@ export const contentRequestSchema = z.discriminatedUnion('contentType', [
 ]);
 
 export type AddContentRequest = z.infer<typeof contentRequestSchema>;
+
+// --- Schemas for GET /api/content/[contentId] response ---
+
+// Import sentenceSchema and tokenSchema if not already (assuming they are in scope)
+// For clarity, let's ensure they are explicitly available or re-import if needed.
+// Assuming sentenceSchema and tokenSchema are correctly defined in their respective files
+// and tokenSchema is the final, fully processed token schema.
+import {sentenceSchema} from './sentence'; // sentenceSchema should ideally include tokens array
+import {tokenSchema} from './token';
+
+// Define a schema for a sentence that *must* have its tokens populated for this response.
+// If sentenceSchema already defines tokens as z.array(tokenSchema).optional(),
+// we'll extend it to make tokens mandatory here.
+const populatedSentenceSchemaInContent = sentenceSchema.extend({
+	// The 'tokens' field in sentenceSchema is 'processedTokens?: Token[]' in ISentence
+	// and 'tokens: z.array(tokenSchema).optional()' in sentenceSchema.
+	// We need to ensure it's present and populated.
+	// The field name in sentenceSchema is 'tokens', let's ensure it's an array of tokenSchema.
+	tokens: z.array(tokenSchema),
+});
+
+export const contentByIdResponseSchema = z.object({
+	contentType: z.nativeEnum(ContentType),
+	contentId: z.string(),
+	title: z.string(),
+	// The raw 'content' string (original full text) is part of IContent, let's include it.
+	content: z.string(),
+	language: z.object({
+		main: z.string(),
+		variant: z.array(z.string()).optional(), // Matches IContent
+	}),
+	contributors: z.object({
+		main: z.string(),
+		collaborators: z.array(z.string()).optional(),
+	}),
+	createdAt: z.number(),
+	updatedAt: z.number(),
+	genre: z.array(z.string()),
+	source: z.string(),
+	// processedSentences from IContent is optional, but for this response, it's the main data.
+	// It should contain fully populated sentences.
+	processedSentences: z.array(populatedSentenceSchemaInContent),
+	sentencesIds: z.array(z.string()), // Also part of IContent
+
+	// Specific fields for different content types, handled as optional or part of a general metadata object.
+	// For songs, metadata is a distinct object.
+	// For book_excerpts, fields like 'pages', 'isbn' are top-level in IBookExcerpt.
+
+	// Option 1: Generic metadata field + type-specific optional fields
+	metadata: z.record(z.string(), z.any()).optional(), // For song's metadata block
+	pages: z.object({start: z.number(), end: z.number()}).optional(), // For book_excerpt
+	isbn: z.string().optional(), // For book_excerpt
+
+	// Note: If we want to strictly follow discriminated unions for response too,
+	// it would be more complex but also more type-safe.
+	// For now, a combined object with optional fields is simpler for the response.
+});
+
+export type ContentByIdResponse = z.infer<typeof contentByIdResponseSchema>;

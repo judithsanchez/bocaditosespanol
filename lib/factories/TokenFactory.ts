@@ -15,6 +15,7 @@ import {IInitialSense, ISense} from '../types/sense'; // Import IInitialSense
 export class TokenFactory {
 	private static readonly emojiPattern = emojiRegex();
 	private static readonly punctuationPattern = /^[.?!¡¿,:;'"\\s-]+$/;
+	private static readonly specialCharPattern = /[áéíóúñüÁÉÍÓÚÑÜ]/;
 
 	static splitIntoTokens(content: string): string[] {
 		const trimmedContent = content.trim().replace(/\s+/g, ' ');
@@ -78,11 +79,14 @@ export class TokenFactory {
 
 	// Update return type to IInitialSense
 	private static createInitialSense(tokenId: string): IInitialSense {
+		const originalContent = tokenId.replace(/^token-/, ''); // Remove 'token-' prefix to get original content
+		const hasSpecialChar = this.specialCharPattern.test(originalContent);
+
 		return {
 			senseId: `sense-${tokenId}-${Date.now()}`, // Generate a unique senseId
 			tokenId: `token-${tokenId}`, // Use the passed tokenId
 			content: '', // Content can be optional or empty initially
-			hasSpecialChar: false,
+			hasSpecialChar,
 			translations: {english: []},
 			lastUpdated: Date.now(),
 		};
