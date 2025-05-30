@@ -3937,12 +3937,12 @@
       ],
       "translations": {
         "english": {
-          "contextual": "Second sentence to verify.",
+          "contextual": "Second sentence for verification.",
           "literal": "second sentence for verify."
         }
       },
       "learningInsights": {
-        "insight": "This sentence uses 'para' to indicate purpose, which is a common use but important to recognize. It's a good example of how 'para' connects actions and goals.",
+        "insight": "The use of 'para' indicates purpose or intention. Here, it means 'for the purpose of verifying'.",
         "difficulty": "beginner"
       }
     },
@@ -3961,6 +3961,1004 @@
         "english": {
           "contextual": "And a final third sentence.",
           "literal": "and a third sentence final."
+        }
+      },
+      "learningInsights": {}
+    }
+  ],
+  "nuevayol-song": [
+    {
+      "content": "¡nueva yol!",
+      "sentenceId": "sentence-1-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¡",
+        "token-nueva",
+        "token-yol",
+        "token-!"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "New York!",
+          "literal": "New Yol!"
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "si te quieres divertir.",
+      "sentenceId": "sentence-2-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-si",
+        "token-te",
+        "token-quieres",
+        "token-divertir",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "If you want to have fun.",
+          "literal": "if you want to have fun."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "con encanto y con primor.",
+      "sentenceId": "sentence-3-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-con",
+        "token-encanto",
+        "token-y",
+        "token-con",
+        "token-primor",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With charm and with care.",
+          "literal": "with charm and with daintiness."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "solo tienes que vivir.",
+      "sentenceId": "sentence-4-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-solo",
+        "token-tienes",
+        "token-que",
+        "token-vivir",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You only have to live.",
+          "literal": "only you have that to live."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "¿para dónde?.",
+      "sentenceId": "sentence-5-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-para",
+        "token-dónde",
+        "token-?",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Where to?",
+          "literal": "to where?."
+        }
+      },
+      "learningInsights": {
+        "insight": "This is a colloquial way of saying 'Where to?'. It's a shortened version of '¿Para dónde vamos?' and is commonly used in informal conversation.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "un verano en nueva york.",
+      "sentenceId": "sentence-6-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-verano",
+        "token-en",
+        "token-nueva",
+        "token-york",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A summer in New York.",
+          "literal": "a summer in new york."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "¡nueva york!.",
+      "sentenceId": "sentence-7-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¡",
+        "token-nueva",
+        "token-york",
+        "token-!",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "New York!.",
+          "literal": "new york!."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "¿pero qué es esto?.",
+      "sentenceId": "sentence-8-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-pero",
+        "token-qué",
+        "token-es",
+        "token-esto",
+        "token-?",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "But what is this?.",
+          "literal": "but what is this?."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase '¿Pero qué es esto?' is a common expression used to express surprise or disbelief. It is useful for everyday conversations.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "¿y este frío?",
+      "sentenceId": "sentence-9-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-y",
+        "token-este",
+        "token-frío",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "And this cold?",
+          "literal": "and this cold?."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "un ratito nada más.",
+      "sentenceId": "sentence-10-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-ratito",
+        "token-nada",
+        "token-más",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Just a little while longer.",
+          "literal": "a little bit nothing more."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'un ratito nada más' demonstrates the use of 'nada más' to emphasize 'just' or 'only'. While 'ratito' means 'a little while', the addition of 'nada más' reinforces the brevity of the time.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ey, ey, ey, 4 de julio, 4th de july.",
+      "sentenceId": "sentence-11-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-ey",
+        "token-,",
+        "token-ey",
+        "token-,",
+        "token-4",
+        "token-de",
+        "token-julio",
+        "token-,",
+        "token-4th",
+        "token-de",
+        "token-july",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, hey, hey, July 4th, 4th of July.",
+          "literal": "Hey, hey, hey, 4 of July, 4th of July."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "ando con mi primo borracho, rulay los míos en el bronx saben la que hay.",
+      "sentenceId": "sentence-12-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-ando",
+        "token-con",
+        "token-mi",
+        "token-primo",
+        "token-borracho",
+        "token-,",
+        "token-rulay",
+        "token-los",
+        "token-míos",
+        "token-en",
+        "token-el",
+        "token-bronx",
+        "token-saben",
+        "token-la",
+        "token-que",
+        "token-hay",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm with my drunk cousin, my crew in the Bronx knows what's up.",
+          "literal": "I'm with my cousin drunk, rulay mine in the Bronx know what there is."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "con la nota en high, por washington heights .willie colón, me dicen еl malo, ey.",
+      "sentenceId": "sentence-13-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-con",
+        "token-la",
+        "token-nota",
+        "token-en",
+        "token-high",
+        "token-,",
+        "token-por",
+        "token-washington",
+        "token-heights",
+        "token-.",
+        "token-willie",
+        "token-colón",
+        "token-,",
+        "token-me",
+        "token-dicen",
+        "token-еl",
+        "token-malo",
+        "token-,",
+        "token-ey",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With the high, through Washington Heights. Willie Colon, they call me the bad guy, hey.",
+          "literal": "With the note in high, through Washington Heights. Willie Colon, they call me the bad one, hey."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "porque pasan los años y sigo dando palos.",
+      "sentenceId": "sentence-14-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-porque",
+        "token-pasan",
+        "token-los",
+        "token-años",
+        "token-y",
+        "token-sigo",
+        "token-dando",
+        "token-palos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Because the years pass and I'm still hitting home runs.",
+          "literal": "Because pass the years and I keep giving hits."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "vendiеndo discos como cuadros frida kahlo.",
+      "sentenceId": "sentence-15-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-vendiеndo",
+        "token-discos",
+        "token-como",
+        "token-cuadros",
+        "token-frida",
+        "token-kahlo",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Selling records like Frida Kahlo paintings.",
+          "literal": "Selling records like paintings Frida Kahlo."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "el perico es blanco, sí, sí, el tusi rosita, eh, eh.",
+      "sentenceId": "sentence-16-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-el",
+        "token-perico",
+        "token-es",
+        "token-blanco",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-el",
+        "token-tusi",
+        "token-rosita",
+        "token-,",
+        "token-eh",
+        "token-,",
+        "token-eh",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "The cocaine is white, yes, yes, the 'tusi' (pink cocaine) is pink, eh, eh.",
+          "literal": "the cocaine is white, yes, yes, the tusi pink, eh, eh."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "no te confundas, no, no, mejor evita, ey.",
+      "sentenceId": "sentence-17-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-no",
+        "token-te",
+        "token-confundas",
+        "token-,",
+        "token-no",
+        "token-,",
+        "token-no",
+        "token-,",
+        "token-mejor",
+        "token-evita",
+        "token-,",
+        "token-ey",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Don't get confused, no, no, better avoid it, hey.",
+          "literal": "no you confuse, no, no, better avoid, ey."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "un shot de cañita en casa de toñita y pr se siente cerquita.",
+      "sentenceId": "sentence-18-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-shot",
+        "token-de",
+        "token-cañita",
+        "token-en",
+        "token-casa",
+        "token-de",
+        "token-toñita",
+        "token-y",
+        "token-pr",
+        "token-se",
+        "token-siente",
+        "token-cerquita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A shot of 'cañita' (moonshine) at Toñita's house and Puerto Rico feels close.",
+          "literal": "a shot of cañita in house of Toñita and PR feels close."
+        }
+      },
+      "learningInsights": {
+        "insight": "This sentence uses 'cañita,' a colloquial term for moonshine, and 'casa de Toñita' as a cultural reference, showing how personal connections and local drinks evoke a sense of home ('PR se siente cerquita'). It highlights the use of diminutives like 'cerquita' to express closeness or endearment.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "sí, sí, sí, como el campeonato, nadie me lo quita.",
+      "sentenceId": "sentence-19-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-sí",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-sí",
+        "token-,",
+        "token-como",
+        "token-el",
+        "token-campeonato",
+        "token-,",
+        "token-nadie",
+        "token-me",
+        "token-lo",
+        "token-quita",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Yes, yes, yes, like the championship, no one takes it from me.",
+          "literal": "yes, yes, yes, like the championship, nobody me it takes."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'nadie me lo quita' demonstrates the use of the double pronoun ('me lo') which is common in Spanish but can be confusing for learners. It emphasizes possession or certainty, similar to saying 'no one can take it from me,' with a strong sense of confidence.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "the best, el mejor.",
+      "sentenceId": "sentence-20-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-the",
+        "token-best",
+        "token-,",
+        "token-el",
+        "token-mejor",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "The best, the best.",
+          "literal": "the best, the best."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "number one, the best, el mejor, ¿okey?",
+      "sentenceId": "sentence-21-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-number",
+        "token-one",
+        "token-,",
+        "token-the",
+        "token-best",
+        "token-,",
+        "token-el",
+        "token-mejor",
+        "token-,",
+        "token-¿",
+        "token-okey",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Number one, the best, the best, okay?",
+          "literal": "number one, the best, the best, okay?"
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "¡puerto rico!",
+      "sentenceId": "sentence-22-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¡",
+        "token-puerto",
+        "token-rico",
+        "token-!"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Puerto Rico!",
+          "literal": "Puerto Rico!"
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "¿cómo bad bunny va a ser rey del pop?",
+      "sentenceId": "sentence-23-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-¿",
+        "token-cómo",
+        "token-bad",
+        "token-bunny",
+        "token-va",
+        "token-a",
+        "token-ser",
+        "token-rey",
+        "token-del",
+        "token-pop",
+        "token-?"
+      ],
+      "translations": {
+        "english": {
+          "contextual": "How is Bad Bunny going to be the king of pop?",
+          "literal": "how Bad Bunny goes to be king of the pop?"
+        }
+      },
+      "learningInsights": {
+        "insight": "This sentence uses the structure \"ir a + infinitive\" to express the future tense. It's a common and useful way to talk about what someone is going to do, and it's important to understand its usage in forming future plans or predictions.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ey, con reggaeton y dembow.",
+      "sentenceId": "sentence-24-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-ey",
+        "token-,",
+        "token-con",
+        "token-reggaeton",
+        "token-y",
+        "token-dembow",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Hey, with reggaeton and dembow.",
+          "literal": "hey, with reggaeton and dembow."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "sí, con reggaeton y dembow.",
+      "sentenceId": "sentence-25-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-sí",
+        "token-,",
+        "token-con",
+        "token-reggaeton",
+        "token-y",
+        "token-dembow",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Yes, with reggaeton and dembow.",
+          "literal": "yes, with reggaeton and dembow."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "me siento como el lápiz en capea el dough.",
+      "sentenceId": "sentence-26-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-me",
+        "token-siento",
+        "token-como",
+        "token-el",
+        "token-lápiz",
+        "token-en",
+        "token-capea",
+        "token-el",
+        "token-dough",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I feel like the pencil in 'capea el dough'.",
+          "literal": "I feel like the pencil in 'capea el dough'."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "cuando yo nací, fue que nació el flow.",
+      "sentenceId": "sentence-27-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-cuando",
+        "token-yo",
+        "token-nací",
+        "token-,",
+        "token-fue",
+        "token-que",
+        "token-nació",
+        "token-el",
+        "token-flow",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "When I was born, that's when the flow was born.",
+          "literal": "when I was born, it was that was born the flow."
+        }
+      },
+      "learningInsights": {
+        "insight": "The structure 'fue que + verbo' is used for emphasis. It highlights the specific moment when something happened, adding a layer of intensity to the statement.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "de lado a lado, ping pong.",
+      "sentenceId": "sentence-28-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-de",
+        "token-lado",
+        "token-a",
+        "token-lado",
+        "token-,",
+        "token-ping",
+        "token-pong",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "From side to side, ping pong.",
+          "literal": "from side to side, ping pong."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "un flow pesado, big pun.",
+      "sentenceId": "sentence-29-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-flow",
+        "token-pesado",
+        "token-,",
+        "token-big",
+        "token-pun",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A heavy flow, Big Pun.",
+          "literal": "a flow heavy, big pun."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "con silenciador, les robamos las gatas.",
+      "sentenceId": "sentence-30-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-con",
+        "token-silenciador",
+        "token-,",
+        "token-les",
+        "token-robamos",
+        "token-las",
+        "token-gatas",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With a silencer, we steal their girls.",
+          "literal": "with silencer, we steal the girls."
+        }
+      },
+      "learningInsights": {
+        "insight": "Here, 'gatas' is used idiomatically to refer to 'girls' or 'women'. The use of 'les robamos' implies stealing something that belongs to them, adding a possessive and somewhat provocative tone. This is a slang usage common in some Spanish-speaking regions.",
+        "difficulty": "advanced"
+      }
+    },
+    {
+      "content": "james bond, ey.",
+      "sentenceId": "sentence-31-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-james",
+        "token-bond",
+        "token-,",
+        "token-ey",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "James Bond, hey.",
+          "literal": "James Bond, hey."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "yo estoy en la mía, no tengo adversario, no.",
+      "sentenceId": "sentence-32-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-yo",
+        "token-estoy",
+        "token-en",
+        "token-la",
+        "token-mía",
+        "token-,",
+        "token-no",
+        "token-tengo",
+        "token-adversario",
+        "token-,",
+        "token-no",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I'm in my own world, I have no opponent, no.",
+          "literal": "I am in mine, I don't have adversary, no."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'estar en la mía' means 'to be in my own world' or 'to be doing my own thing'. It's an idiomatic expression that is useful for expressing independence or self-focus. Also, note the use of 'no' at the end of the sentence for emphasis, a common practice in Spanish.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "con los yankees y los met, juan soto.",
+      "sentenceId": "sentence-33-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-con",
+        "token-los",
+        "token-yankees",
+        "token-y",
+        "token-los",
+        "token-met",
+        "token-,",
+        "token-juan",
+        "token-soto",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "With the Yankees and the Mets, Juan Soto.",
+          "literal": "With the Yankees and the Mets, Juan Soto."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "a correr, que otra vez la sacamos del estadio.",
+      "sentenceId": "sentence-34-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-a",
+        "token-correr",
+        "token-,",
+        "token-que",
+        "token-otra",
+        "token-vez",
+        "token-la",
+        "token-sacamos",
+        "token-del",
+        "token-estadio",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Let's run, because we hit it out of the stadium again.",
+          "literal": "To run, because another time we took it out of the stadium."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'sacar la del estadio' is an idiom that means 'to hit it out of the park', originating from baseball. In this context, it means to do something exceptionally well or to succeed greatly. 'A correr' is an encouragement, similar to 'let's go!'",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "ya mismo nos vamos.",
+      "sentenceId": "sentence-35-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-ya",
+        "token-mismo",
+        "token-nos",
+        "token-vamos",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "We're leaving right now.",
+          "literal": "Right now we go."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Ya mismo' is a phrase that means 'right now' or 'very soon'. It's more emphatic than just 'ya' and is commonly used in certain regions of Latin America and Spain to indicate immediacy.",
+        "difficulty": "beginner"
+      }
+    },
+    {
+      "content": "un verano en nueva.",
+      "sentenceId": "sentence-36-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-verano",
+        "token-en",
+        "token-nueva",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A summer in New York.",
+          "literal": "a summer in new."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "un ratito más, un ratito.",
+      "sentenceId": "sentence-37-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-un",
+        "token-ratito",
+        "token-más",
+        "token-,",
+        "token-un",
+        "token-ratito",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "A little while longer, a little while.",
+          "literal": "a little bit more, a little bit."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "shh, cuidado, que nadie nos escuche.",
+      "sentenceId": "sentence-38-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-shh",
+        "token-,",
+        "token-cuidado",
+        "token-,",
+        "token-que",
+        "token-nadie",
+        "token-nos",
+        "token-escuche",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Shh, be careful, don't let anyone hear us.",
+          "literal": "shh, careful, that no one us hears."
+        }
+      },
+      "learningInsights": {
+        "insight": "The use of 'que nadie nos escuche' employs the subjunctive mood, which is crucial for expressing doubt, uncertainty, or commands in subordinate clauses. 'Cuidado' (be careful) is often followed by 'que' + subjunctive to express a warning or precaution.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "shh, cuidado.",
+      "sentenceId": "sentence-39-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-shh",
+        "token-,",
+        "token-cuidado",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "Shh, be careful.",
+          "literal": "shh, careful."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "tú tienes piquete, mami, yo también.",
+      "sentenceId": "sentence-40-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-tú",
+        "token-tienes",
+        "token-piquete",
+        "token-,",
+        "token-mami",
+        "token-,",
+        "token-yo",
+        "token-también",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You've got style, mami, me too.",
+          "literal": "you have swagger, mami, I too."
+        }
+      },
+      "learningInsights": {
+        "insight": "'Tener piquete' is a colloquial expression meaning to have style, swagger, or a distinctive attitude. It's a modern idiom frequently used in Latin American Spanish, especially in urban contexts.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "tú estás buena, yo estoy bueno también.",
+      "sentenceId": "sentence-41-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-tú",
+        "token-estás",
+        "token-buena",
+        "token-,",
+        "token-yo",
+        "token-estoy",
+        "token-bueno",
+        "token-también",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You look good, and I look good too.",
+          "literal": "you are good, I am good too."
+        }
+      },
+      "learningInsights": {}
+    },
+    {
+      "content": "huelo rico y ando con los de cien.",
+      "sentenceId": "sentence-42-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-huelo",
+        "token-rico",
+        "token-y",
+        "token-ando",
+        "token-con",
+        "token-los",
+        "token-de",
+        "token-cien",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "I smell good and I'm with the hundreds.",
+          "literal": "I smell good and I walk with those of hundred."
+        }
+      },
+      "learningInsights": {
+        "insight": "The phrase 'ando con los de cien' is an idiomatic expression. 'Los de cien' refers to hundred-dollar bills, implying the speaker is associating with people who have money or are important. This showcases how a numerical phrase can have a deeper cultural meaning related to wealth or status.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "si tú lo quieres, lo tienes que mover.",
+      "sentenceId": "sentence-43-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-si",
+        "token-tú",
+        "token-lo",
+        "token-quieres",
+        "token-,",
+        "token-lo",
+        "token-tienes",
+        "token-que",
+        "token-mover",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "If you want it, you have to move it.",
+          "literal": "if you it want, it you have to move."
+        }
+      },
+      "learningInsights": {
+        "insight": "The repetition of 'lo' can be confusing for learners. 'Lo quieres' refers to 'it' (something desired), and 'lo tienes que mover' means 'you have to move it'. The structure highlights the use of object pronouns and the idiomatic expression 'tener que' (have to), which is essential for expressing obligation.",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "content": "lo tienes que mover.",
+      "sentenceId": "sentence-44-nuevayol-bad-bunny",
+      "tokenIds": [
+        "token-lo",
+        "token-tienes",
+        "token-que",
+        "token-mover",
+        "token-."
+      ],
+      "translations": {
+        "english": {
+          "contextual": "You have to move it.",
+          "literal": "it you have that move."
         }
       },
       "learningInsights": {}

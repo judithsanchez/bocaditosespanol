@@ -55,18 +55,37 @@ export class ReadDatabaseService {
 	}
 
 	async readFile(filename: string): Promise<unknown | null> {
-		const githubUrl = this.getGitHubPagesUrl(filename);
 		const startTime = Date.now();
-		console.log(`Attempting to read file: ${filename} from ${githubUrl}`);
 
 		try {
+			// Always read local files if NEXT_PUBLIC_READ_LOCAL_FILES is true
+			if (process.env.NEXT_PUBLIC_READ_LOCAL_FILES === 'true') {
+				const fs = require('fs');
+				const path = require('path');
+				const localPath = path.join(this.dataPath, filename);
+				console.log(`Reading local file: ${localPath}`);
+				const data = JSON.parse(fs.readFileSync(localPath, 'utf8'));
+				const endTime = Date.now();
+				console.log(
+					`Successfully read local file. Operation took ${
+						endTime - startTime
+					}ms.`,
+				);
+				return data;
+			}
+
+			// In production, fetch from GitHub Pages
+			const githubUrl = this.getGitHubPagesUrl(filename);
+			console.log(`Attempting to read file: ${filename} from ${githubUrl}`);
 			const response = await fetch(githubUrl);
+
 			if (!response.ok) {
 				console.warn(
 					`HTTP error fetching ${githubUrl}: Status ${response.status}. Falling back is not implemented yet.`,
 				);
 				throw new Error(`HTTP error! status: ${response.status}`);
 			}
+
 			const data = await response.json();
 			const endTime = Date.now();
 			const dataSize = Buffer.byteLength(JSON.stringify(data), 'utf8');
@@ -79,7 +98,7 @@ export class ReadDatabaseService {
 		} catch (error) {
 			const endTime = Date.now();
 			console.error(
-				`Failed to fetch or parse ${githubUrl}. Operation took ${
+				`Failed to read/fetch file. Operation took ${
 					endTime - startTime
 				}ms. Error:`,
 				error instanceof Error ? error.message : error,

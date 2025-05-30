@@ -19,7 +19,16 @@ export async function GET(request: Request) {
 		});
 
 		const dbService = new ReadDatabaseService();
-		const textEntries = await dbService.readFile('text-entries.json');
+		const rawDataFromFile = await dbService.readFile('text-entries.json');
+
+		// DEBUG: Log raw data structure
+		console.log(
+			'RAW DATA FROM ReadDatabaseService:',
+			JSON.stringify(rawDataFromFile, null, 2),
+		);
+
+		// Use more permissive type during debugging
+		const textEntries = rawDataFromFile as Record<string, Array<any>>;
 
 		if (
 			contentType &&
@@ -27,7 +36,7 @@ export async function GET(request: Request) {
 		) {
 			const filteredEntries = textEntries[contentType] || [];
 
-			const simplifiedEntries = filteredEntries.map((entry: any) => ({
+			const simplifiedEntries = filteredEntries.map(entry => ({
 				id: entry.contentId,
 				metadata: entry.metadata,
 			}));
@@ -45,10 +54,10 @@ export async function GET(request: Request) {
 
 		Object.keys(textEntries).forEach(type => {
 			if (Array.isArray(textEntries[type])) {
-				const entriesOfType = textEntries[type].map((entry: any) => ({
-					id: entry.contentId,
+				const entriesOfType = textEntries[type].map(entry => ({
+					...entry,
 					type,
-					metadata: entry.metadata,
+					metadata: entry.metadata || {},
 				}));
 				allEntries.push(...entriesOfType);
 			}
