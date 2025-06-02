@@ -1,0 +1,33 @@
+%%{ init: { 'theme': 'dark', 'themeVariables': { 'background': '#1e1e1e', 'primaryColor': '#2d2d30', 'primaryBorderColor': '#3c3c3c', 'primaryTextColor': '#d4d4d4', 'lineColor': '#569cd6', 'secondaryColor': '#ce9178', 'tertiaryColor': '#4ec9b0' } } }%%
+sequenceDiagram
+    participant Pipeline
+    participant SAES as SentenceAIEnricherSteps
+    participant CPC as ContentProcessingContext
+    participant CSF as ContentSchemaFactory
+    participant CIF as ContentInstructionFactory
+    participant BP as BatchProcessor
+    participant GE as GenericAIEnricher
+    participant AIP as AIProvider
+
+    Pipeline->>+SAES: process(context)
+    SAES->>CPC: Check context.contentType
+    alt contentType is missing
+        SAES-->>Pipeline: Throw Error
+    else contentType is present
+        SAES->>+CSF: createSchema(context.contentType)
+        CSF-->>-SAES: schema
+        SAES->>+CIF: createInstruction(context.contentType)
+        CIF-->>-SAES: instruction
+        SAES->>+BP: process({ items: context.sentences.deduplicated, processingFn, ... })
+        loop For each batch of sentences
+            BP->>+SAES: processingFn(batch)
+            SAES->>+GE: enrich({ input: batch, schema, instruction })
+            GE->>+AIP: Call AI Provider (e.g., enrichSentences)
+            AIP-->>-GE: enrichedBatch
+            GE-->>-SAES: enrichedBatch
+            SAES-->>-BP: enrichedBatch
+        end
+        BP-->>-SAES: allEnrichedSentences
+        SAES->>CPC: Update context.sentences.enriched
+        SAES-->>-Pipeline: updatedContext
+    end

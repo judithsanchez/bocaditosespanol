@@ -38,7 +38,7 @@ export default function SongSelector() {
 
 	const fetchSongDetails = async (song: ISong) => {
 		try {
-			const songResponse = await fetch(`/api/songs/${song.songId}`);
+			const songResponse = await fetch(`/api/content/${song.contentId}`);
 			if (!songResponse.ok) {
 				throw new Error('Failed to fetch song details');
 			}
@@ -46,10 +46,10 @@ export default function SongSelector() {
 			const songData = await songResponse.json();
 
 			// Store the song data in localStorage before navigation
-			localStorage.setItem(`song_${song.songId}`, JSON.stringify(songData));
+			localStorage.setItem(`song_${song.contentId}`, JSON.stringify(songData));
 
 			// Navigate to the song detail page
-			router.push(`/songs/${song.songId}`);
+			router.push(`/songs/${song.contentId}`);
 		} catch (error) {
 			console.error('Error fetching song details:', error);
 		}
@@ -62,8 +62,8 @@ export default function SongSelector() {
 	const filteredSongs = songs.filter(song => {
 		const searchTermLower = searchTerm.toLowerCase();
 		return (
-			song.metadata.title.toLowerCase().includes(searchTermLower) ||
-			song.metadata.interpreter.toLowerCase().includes(searchTermLower)
+			song.metadata?.title?.toLowerCase().includes(searchTermLower) ||
+			song.metadata?.interpreter?.toLowerCase().includes(searchTermLower)
 		);
 	});
 
@@ -81,10 +81,10 @@ export default function SongSelector() {
 				) : filteredSongs.length > 0 ? (
 					filteredSongs.map(song => (
 						<SongButton
-							key={song.songId}
+							key={song.contentId}
 							onClick={() => handleSongSelect(song)}
 						>
-							{song.metadata.title} - {song.metadata.interpreter}
+							{song.metadata?.title} - {song.metadata?.interpreter}
 						</SongButton>
 					))
 				) : (

@@ -521,3 +521,56 @@ export const TokenTranslationsWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 `;
+
+export const LoadingContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 200px;
+`;
+
+export const MessageText = styled.p`
+	color: ${props => props.theme.colors.onSurface};
+	font-size: 1.2rem;
+	margin-top: 1rem;
+`;
+
+export const ErrorContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	min-height: 300px;
+	text-align: center;
+	color: ${props => props.theme.colors.onSurface};
+
+	h2 {
+		margin-bottom: 1rem;
+	}
+`;
+
+export const BackButton = styled.button`
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	border: none;
+	background: ${props => props.theme.colors.primary};
+	color: ${props => props.theme.colors.onPrimary};
+	cursor: pointer;
+	font-size: 1rem;
+	transition: all 0.2s ease;
+
+	&:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+`;
+
+export const SongHeader = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2rem;
+`;

@@ -1,8 +1,8 @@
 import {PipelineStep} from '../Pipeline';
 import {Logger} from '../../utils/index';
 import {GenericAIEnricher} from '../../utils/GenericAIEnricher';
-import {SongProcessingContext} from '../SongProcessingPipeline';
-import {ContentType, ILearningInsight, ISentence} from '@/lib/types/common';
+import {ContentProcessingContext} from '../ContentProcessingPipeline';
+import {ISentence, ILearningInsight} from '@/lib/types/sentence';
 import {BatchProcessor} from '../../utils/BatchProcessor';
 import {AIProviderFactory} from '../../factories/index';
 import {
@@ -14,27 +14,31 @@ import {SentencesSchemaFactory} from '../../factories/SentencesSchemaFactory';
 import {SentencesInstructionsFactory} from '../../factories/SentencesInstructionsFactory';
 
 export class SentenceLearningInsightsEnricherStep
-	implements PipelineStep<SongProcessingContext>
+	implements PipelineStep<ContentProcessingContext>
 {
 	private readonly logger = new Logger('SentenceLearningInsightsEnricherStep');
 	private readonly enricher: GenericAIEnricher;
 	private readonly batchProcessor: BatchProcessor<ISentence>;
+	private readonly batchConfig = PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type];
 
 	constructor() {
 		const provider = AIProviderFactory.getInstance().getProvider(
 			AIStepType.LEARNING_INSIGHTS_ENRICHER,
 		);
-
-		// TODO: refactor so enricher and batch config depend on the active provider making it the single source of truth
 		this.enricher = new GenericAIEnricher(provider);
-		const batchConfig = PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type];
-		this.batchProcessor = new BatchProcessor(batchConfig);
+		this.batchProcessor = new BatchProcessor(this.batchConfig);
 	}
 
 	async process(
-		context: SongProcessingContext,
-	): Promise<SongProcessingContext> {
+		context: ContentProcessingContext,
+	): Promise<ContentProcessingContext> {
 		this.logger.start('process');
+
+		if (!context.contentType) {
+			throw new Error(
+				'ContentType is missing in the processing context. SentenceLearningInsightsEnricherStep cannot proceed.',
+			);
+		}
 
 		const simplifiedSentences: ISentence[] = context.sentences.enriched.map(
 			sentence => ({
@@ -45,9 +49,9 @@ export class SentenceLearningInsightsEnricherStep
 			}),
 		);
 
-		const schema = SentencesSchemaFactory.createSchema(ContentType.SONG);
+		const schema = SentencesSchemaFactory.createSchema(context.contentType);
 		const instruction = SentencesInstructionsFactory.createInstruction(
-			ContentType.SONG,
+			context.contentType,
 		);
 
 		const enrichedSentences = await this.batchProcessor.process({
@@ -60,8 +64,8 @@ export class SentenceLearningInsightsEnricherStep
 				});
 				return result as ISentence[];
 			},
-			batchSize: 5,
-			options: PROVIDER_BATCH_CONFIGS[ACTIVE_PROVIDER.type],
+			batchSize: this.batchConfig.batchSize,
+			options: this.batchConfig,
 			onProgress: progress => {
 				this.logger.info('Learning insights enrichment progress', {
 					processed: progress.processedItems,

@@ -1,7 +1,7 @@
 import {z} from 'zod';
 import {Logger} from './Logger';
 import {errors} from '@/lib/types/constants';
-import {BatchOptions} from '@/lib/config/AIConfig';
+import {BatchOptions as ExternalBatchOptions} from '@/lib/config/AIConfig';
 
 const batchProgressSchema = z.object({
 	totalItems: z.number(),
@@ -13,7 +13,7 @@ const batchProgressSchema = z.object({
 	estimatedTimeRemaining: z.number().optional(),
 });
 
-const batchOptionsSchema = z.object({
+const internalBatchOptionsSchema = z.object({
 	retryAttempts: z.number().positive(),
 	delayBetweenBatches: z.number().positive(),
 	maxRequestsPerMinute: z.number().positive(),
@@ -28,27 +28,31 @@ const batchConfigSchema = z.object({
 		.args(z.array(z.any()))
 		.returns(z.promise(z.array(z.any()))),
 	batchSize: z.number().positive(),
-	options: batchOptionsSchema,
+	options: internalBatchOptionsSchema,
 	onProgress: z.function().args(z.any()).returns(z.void()).optional(),
 });
 
 type BatchProgress = z.infer<typeof batchProgressSchema>;
-// type BatchOptions = z.infer<typeof batchOptionsSchema>;
-type BatchConfig<T> = Omit<
+export type InternalBatchOptions = z.infer<typeof internalBatchOptionsSchema>;
+
+export type BatchConfig<T> = Omit<
 	z.infer<typeof batchConfigSchema>,
-	'items' | 'processingFn'
+	'items' | 'processingFn' | 'options'
 > & {
 	items: T[];
 	processingFn: (items: T[]) => Promise<T[]>;
+	options: InternalBatchOptions;
 };
 
 class RateLimiter {
 	private requestTimes: number[] = [];
+	private maxRequests: number;
+	private timeWindowMs: number;
 
-	constructor(
-		private maxRequests: number,
-		private timeWindowMs: number = 60000,
-	) {}
+	constructor(config: ExternalBatchOptions, timeWindowMs: number = 60000) {
+		this.maxRequests = config.maxRequestsPerMinute;
+		this.timeWindowMs = timeWindowMs;
+	}
 
 	async waitIfNeeded(): Promise<void> {
 		const now = Date.now();
@@ -59,7 +63,9 @@ class RateLimiter {
 		if (this.requestTimes.length >= this.maxRequests) {
 			const oldestRequest = this.requestTimes[0];
 			const waitTime = this.timeWindowMs - (now - oldestRequest);
-			await new Promise(resolve => setTimeout(resolve, waitTime));
+			if (waitTime > 0) {
+				await new Promise(resolve => setTimeout(resolve, waitTime));
+			}
 		}
 
 		this.requestTimes.push(now);
@@ -82,10 +88,11 @@ export class BatchProcessor<T> {
 	private logger: Logger;
 	private rateLimiter: RateLimiter;
 
-	constructor(batchConfig: BatchOptions) {
-		this.logger = new Logger('BatchProcessor');
-		this.rateLimiter = new RateLimiter(batchConfig.maxRequestsPerMinute);
+	constructor(batchConfig: ExternalBatchOptions) {
+		this.logger = new Logger('BatchProcessor', true);
+		this.rateLimiter = new RateLimiter(batchConfig);
 	}
+
 	async process(config: BatchConfig<T>): Promise<T[]> {
 		const validatedConfig = batchConfigSchema.parse(config);
 		this.logger.start('process');
@@ -136,64 +143,74 @@ export class BatchProcessor<T> {
 		this.logger.end('process');
 		return results;
 	}
+
 	private async processBatch(
 		batch: T[],
 		progress: BatchProgress,
 		config: BatchConfig<T>,
 	): Promise<T[]> {
-		batchProgressSchema.parse(progress);
-
 		let attempts = 0;
+		const maxAttempts = config.options.retryAttempts;
 
-		while (attempts < config.options.retryAttempts) {
+		while (attempts < maxAttempts) {
 			try {
-				const timeoutPromise = config.options.timeoutMs
-					? new Promise((_, reject) =>
+				const timeoutMs = config.options.timeoutMs;
+				const timeoutPromise = timeoutMs
+					? new Promise<never>((_, reject) =>
 							setTimeout(
-								() => reject(new Error('Batch timeout')),
-								config.options.timeoutMs,
+								() => reject(new Error(`Batch timeout after ${timeoutMs}ms`)),
+								timeoutMs,
 							),
 					  )
 					: null;
 
 				const batchPromise = config.processingFn(batch);
+
 				const results = (await (timeoutPromise
 					? Promise.race([batchPromise, timeoutPromise])
 					: batchPromise)) as T[];
 
 				this.logger.info('Batch processed successfully', {
 					batchNumber: progress.currentBatch,
+					itemsInBatch: batch.length,
 					resultsCount: results.length,
 				});
 
 				return results;
-			} catch (error) {
+			} catch (error: any) {
 				attempts++;
 				this.logger.error(
-					`Batch ${progress.currentBatch} processing failed`,
-					new BatchProcessingError(
-						'Batch processing failed',
-						progress.currentBatch,
-						attempts,
-						error instanceof Error ? error : undefined,
-					),
+					`Batch ${progress.currentBatch} processing failed (Attempt ${attempts}/${maxAttempts})`,
+					error,
 				);
 
-				if (attempts === config.options.retryAttempts) {
+				if (attempts >= maxAttempts) {
 					progress.failedBatches++;
-					throw new BatchProcessingError(
-						errors.batchProcessing.retryLimitExceeded,
+					const finalError = new BatchProcessingError(
+						`${errors.batchProcessing.retryLimitExceeded} for batch ${progress.currentBatch}`,
 						progress.currentBatch,
 						attempts,
+						error instanceof Error ? error : new Error(String(error)),
 					);
+					this.logger.error(
+						`Batch ${progress.currentBatch} failed after ${maxAttempts} attempts.`,
+						finalError,
+					);
+					throw finalError;
 				}
 
 				const backoffDelay =
-					config.options.delayBetweenBatches * Math.pow(2, attempts);
+					config.options.delayBetweenBatches * Math.pow(2, attempts - 1);
+				this.logger.info(
+					`Retrying batch ${progress.currentBatch} after ${backoffDelay}ms delay.`,
+					{attempt: attempts, maxAttempts: maxAttempts, delay: backoffDelay},
+				);
 				await new Promise(resolve => setTimeout(resolve, backoffDelay));
 			}
 		}
 
+		const finalMessage = `Batch ${progress.currentBatch} processing loop finished unexpectedly without success or exceeding retries.`;
+		this.logger.error(finalMessage, new Error(finalMessage));
 		return [];
 	}
 }

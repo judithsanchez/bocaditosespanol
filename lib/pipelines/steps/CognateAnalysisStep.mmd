@@ -1,0 +1,37 @@
+sequenceDiagram
+    participant Caller
+    participant CAS
+    participant Ctx as ContentProcessingContext
+    participant Logger
+    participant BP as BatchProcessor
+    participant SchemaFactory
+    participant InstructionFactory
+    participant Enricher as GenericAIEnricher
+
+    Caller->>CAS: process(context)
+    CAS->>Logger: "start process"
+    Logger->>CAS: ""
+    CAS->>Logger: start('process')
+    CAS->>Ctx: Read context.tokens.enriched
+    Ctx-->>CAS: enrichedTokens
+    CAS->>CAS: Filter IWord tokens from enrichedTokens
+    CAS->>Logger: info('Starting cognate analysis', {count})
+    CAS->>BP: process({items: wordTokens, processingFn, onProgress})
+    loop Batch Processing
+        BP->>CAS: processingFn(batchItems)
+        CAS->>SchemaFactory: createCognateSchema()
+        SchemaFactory-->>CAS: schema
+        CAS->>InstructionFactory: createCognateInstruction()
+        InstructionFactory-->>CAS: instruction
+        CAS->>Enricher: enrich({input: batchItems, schema, instruction})
+        Enricher-->>CAS: enrichedBatch (IWord[])
+        CAS-->>BP: enrichedBatch
+        BP->>CAS: onProgress(progress)
+        CAS->>Logger: info('Cognate analysis progress', {progress})
+    end
+    BP-->>CAS: allEnrichedWords (IWord[])
+    CAS->>CAS: Merge allEnrichedWords with original non-word tokens
+    CAS->>Ctx: Update context.tokens.enriched
+    CAS->>Logger: info('Cognate analysis completed', {count})
+    CAS->>Logger: end('process')
+    CAS-->>Caller: updated context

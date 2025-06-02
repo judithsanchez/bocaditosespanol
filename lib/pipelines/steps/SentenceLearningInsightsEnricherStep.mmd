@@ -1,0 +1,35 @@
+%%{ init: { 'theme': 'dark', 'themeVariables': { 'background': '#1e1e1e', 'primaryColor': '#2d2d30', 'primaryBorderColor': '#3c3c3c', 'primaryTextColor': '#d4d4d4', 'lineColor': '#569cd6', 'secondaryColor': '#ce9178', 'tertiaryColor': '#4ec9b0' } } }%%
+sequenceDiagram
+    participant Pipeline
+    participant SLIES as SentenceLearningInsightsEnricherStep
+    participant CPC as ContentProcessingContext
+    participant SSF as SentencesSchemaFactory
+    participant SIF as SentencesInstructionsFactory
+    participant BP as BatchProcessor
+    participant GE as GenericAIEnricher
+    participant AIP as AIProvider
+
+    Pipeline->>+SLIES: process(context)
+    SLIES->>CPC: Check context.contentType
+    alt contentType is missing
+        SLIES-->>Pipeline: Throw Error
+    else contentType is present
+        SLIES->>CPC: Get context.sentences.enriched
+        SLIES->>SLIES: Create simplifiedSentences (map)
+        SLIES->>+SSF: createSchema(context.contentType)
+        SSF-->>-SLIES: schema
+        SLIES->>+SIF: createInstruction(context.contentType)
+        SIF-->>-SLIES: instruction
+        SLIES->>+BP: process({ items: simplifiedSentences, processingFn, ... })
+        loop For each batch of simplified sentences
+            BP->>+SLIES: processingFn(batch)
+            SLIES->>+GE: enrich({ input: batch, schema, instruction })
+            GE->>+AIP: Call AI Provider (e.g., enrichLearningInsights)
+            AIP-->>-GE: enrichedBatchWithInsights
+            GE-->>-SLIES: enrichedBatchWithInsights
+            SLIES-->>-BP: enrichedBatchWithInsights
+        end
+        BP-->>-SLIES: allEnrichedSentencesWithInsights
+        SLIES->>CPC: Update context.sentences.enriched (map and merge insights)
+        SLIES-->>-Pipeline: updatedContext
+    end

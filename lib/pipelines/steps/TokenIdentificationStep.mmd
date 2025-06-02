@@ -1,0 +1,34 @@
+sequenceDiagram
+
+    participant Pipeline as ContentProcessingPipeline
+    participant TIS as TokenIdentificationStep
+    participant TokenFactory as TokenFactory
+    participant DB as WriteDatabaseService
+
+    Pipeline->>TIS: process(context)
+    
+    TIS->>TIS: processSentences(context.sentences.formatted)
+    
+    loop For each sentence
+        TIS->>TIS: tokenizeSentence(sentence.content)
+        TIS->>TokenFactory: splitIntoTokens(content)
+        TokenFactory-->>TIS: rawTokens
+        
+        loop For each token
+            TIS->>TokenFactory: createToken(token)
+            TokenFactory-->>TIS: formattedToken with proper type (Word/Emoji/PunctuationSign)
+        end
+    end
+    
+    TIS->>TIS: updateDedupedSentences(context.sentences.deduplicated, processedSentences)
+    
+    TIS->>TIS: collectTokensFromSentences(processedSentences)
+    TIS->>TIS: deduplicateTokens(allTokens)
+    
+    TIS->>DB: filterExistingTokens(context.tokens.deduplicated)
+    DB-->>TIS: {newTokens}
+    
+    TIS->>TIS: categorizeTokens(context, newTokens)
+    Note over TIS: Separates tokens into words, punctuation, and emojis
+    
+    TIS-->>Pipeline: updated context with tokenized sentences and categorized tokens

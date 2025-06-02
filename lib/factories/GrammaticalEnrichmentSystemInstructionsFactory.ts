@@ -21,7 +21,7 @@ import {
 	GrammaticalGender,
 	GrammaticalNumber,
 	GrammaticalPerson,
-} from '@/lib/types/common';
+} from '@/lib/types/grammar';
 
 const posInstructions: Record<
 	string,

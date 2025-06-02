@@ -1,0 +1,49 @@
+%%{
+  init: {
+    'theme': 'dark',
+    'themeVariables': {
+      'primaryColor': '#1f2937',
+      'primaryTextColor': '#e6edf3',
+      'primaryBorderColor': '#58a6ff',
+      'lineColor': '#8b949e',
+      'secondaryColor': '#252525',
+      'tertiaryColor': '#1a1a1a'
+    }
+  }
+}%%
+graph TD
+    %% Nodes
+    A[Song] --> B[Metadata]
+    A --> C[Lyrics Array]
+    A --> D[TokenIds Array]
+
+    B --> B1[interpreter]
+    B --> B2[title]
+    B --> B3[genre]
+    B --> B4[language]
+    B --> B5[releaseDate]
+    B --> B6[youtube]
+
+    C --> E[Sentences]
+    E --> F[sentenceId]
+    E --> G[content]
+    E --> H[translations]
+    E --> I[learningInsights]
+    E --> J[tokenIds]
+
+    H --> K[english]
+    K --> L[contextual]
+    K --> M[literal]
+
+    I --> N[insight]
+    I --> O[difficulty]
+
+    %% Styles
+    classDef default fill:#2d2d2d,stroke:#8b949e,stroke-width:2px,color:#e6edf3
+    classDef primary fill:#1f2937,stroke:#58a6ff,stroke-width:2px,color:#58a6ff
+    classDef secondary fill:#252525,stroke:#7ee787,stroke-width:2px,color:#7ee787
+
+    class A primary
+    class B,C,D secondary
+
+    style default fill:#1a1a1a,stroke:#30363d

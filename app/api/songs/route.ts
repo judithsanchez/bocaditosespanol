@@ -1,62 +1,48 @@
 import {NextResponse} from 'next/server';
-import {SongProcessingPipeline} from '@/lib/pipelines/SongProcessingPipeline';
-import {z} from 'zod';
-import {songRequestSchema} from '@/lib/types/common';
 import {ReadDatabaseService} from '@/lib/services/ReadDatabaseService';
+import {ContentType} from '@/lib/types/content';
+import {Logger} from '@/lib/utils/Logger';
 
-// GET: List all songs
+const logger = new Logger('SongsRoute');
+
 export async function GET() {
+	logger.start('GET');
+
 	try {
 		const dbService = new ReadDatabaseService();
-		const textEntries = await dbService.readFile('text-entries.json');
-		const songs = textEntries.song || [];
+		const rawDataFromFile = await dbService.readFile('text-entries.json');
 
-		const simplifiedSongs = songs.map(
-			(song: {songId: unknown; metadata: unknown}) => ({
-				songId: song.songId,
-				metadata: song.metadata,
-			}),
-		);
+		if (!rawDataFromFile) {
+			logger.error(
+				'Failed to read text-entries.json',
+				new Error('File read failed'),
+			);
+			return NextResponse.json({error: 'Database read error'}, {status: 500});
+		}
+
+		// Cast to Record<ContentType, any[]> to access song entries
+		const textEntries = rawDataFromFile as Record<string, any[]>;
+		const songEntries = textEntries[ContentType.SONG] || [];
+
+		// Return minimal song information needed for the list
+		const simplifiedSongs = songEntries.map(song => ({
+			contentId: song.contentId,
+			metadata: {
+				title: song.metadata?.title || song.title,
+				interpreter: song.metadata?.interpreter || song.contributors?.main,
+			},
+			language: song.language,
+			genre: song.genre,
+		}));
+
+		logger.info(`Returning ${simplifiedSongs.length} songs`);
+		logger.end('GET');
 
 		return NextResponse.json(simplifiedSongs);
 	} catch (error) {
-		if (error instanceof z.ZodError) {
-			return NextResponse.json(
-				{error: 'Invalid data structure'},
-				{status: 500},
-			);
-		} else if (error instanceof Error) {
-			return NextResponse.json({error: error.message}, {status: 400});
-		}
-		return NextResponse.json(
-			{error: 'An unknown error occurred'},
-			{status: 500},
-		);
-	}
-}
+		logger.error('Error processing GET request', error);
+		logger.end('GET');
 
-export async function POST(request: Request) {
-	try {
-		const body = await request.json();
-
-		const validatedBody = songRequestSchema.parse(body);
-
-		const pipeline = new SongProcessingPipeline();
-		const result = await pipeline.processText(validatedBody);
-
-		return NextResponse.json(result, {status: 201});
-	} catch (error) {
-		if (error instanceof z.ZodError) {
-			return NextResponse.json(
-				{error: 'Invalid request format'},
-				{status: 400},
-			);
-		} else if (error instanceof Error) {
-			return NextResponse.json({error: error.message}, {status: 400});
-		}
-		return NextResponse.json(
-			{error: 'An unknown error occurred'},
-			{status: 400},
-		);
+		return NextResponse.json({error: 'Failed to fetch songs'}, {status: 500});
 	}
 }

@@ -1,5 +1,5 @@
 import {StyledTokensTranslations} from '@/components/ui/StyledComponents';
-import {WordToken} from '@/lib/types/common';
+import {WordToken} from '@/lib/types/token';
 
 export interface TokensTranslationsProps {
 	selectedToken: WordToken | null;

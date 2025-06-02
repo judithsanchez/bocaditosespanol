@@ -1,4 +1,3 @@
-export * from './InputValidatorStep';
 export * from './SentenceFormatterStep';
 export * from './SentenceAIEnricherSteps';
 export * from './GrammaticalEnricherStep';

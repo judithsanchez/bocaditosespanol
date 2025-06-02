@@ -1,0 +1,34 @@
+sequenceDiagram
+
+    participant Pipeline as ContentProcessingPipeline
+    participant SFS as SentenceFormatterStep
+    participant Validator as Validator
+    participant TextProcessor as TextProcessor
+    participant SentenceCreator as SentenceCreator
+
+    Pipeline->>SFS: process(context)
+    
+    SFS->>Validator: validateInput(context.input.content)
+    Validator-->>SFS: validatedLyrics
+    
+    SFS->>TextProcessor: splitParagraph(validatedLyrics)
+    TextProcessor->>TextProcessor: normalizeText(text)
+    TextProcessor->>TextProcessor: extractSentences(normalizedText)
+    TextProcessor-->>SFS: splittedSentences
+    
+    SFS->>SentenceCreator: formatSentences(splittedSentences, contributor, title)
+    SentenceCreator->>SentenceCreator: Create Map for sentence numbering
+    
+    loop For each sentence
+        SentenceCreator->>SentenceCreator: createSentence(content, number, title, contributor)
+        SentenceCreator->>SentenceCreator: generateSentenceId(number, title, contributor)
+        SentenceCreator->>SentenceCreator: slugify(text)
+    end
+    
+    SentenceCreator-->>SFS: formattedSentences
+    
+    SFS->>Validator: validateFormattedSentences(formattedSentences)
+    Validator-->>SFS: validation result
+    
+    SFS->>SFS: deduplicateSentences(formattedSentences)
+    SFS-->>Pipeline: updated context with formatted and deduplicated sentences

@@ -1,0 +1,47 @@
+%%{init: {'theme': 'dark', 'themeVariables': { 'background': '#1e1e1e', 'primaryColor': '#2d2d30', 'primaryBorderColor': '#3c3c3c', 'primaryTextColor': '#d4d4d4', 'lineColor': '#569cd6', 'secondaryColor': '#ce9178', 'tertiaryColor': '#4ec9b0'}}}%%
+sequenceDiagram
+    participant Client
+    participant ReadSvc as ReadDatabaseService
+    participant Config as DatabaseConfig
+    # Removed Fetch participant
+
+    Client->>+ReadSvc: new ReadDatabaseService()
+    ReadSvc->>Config: Read paths.data
+    ReadSvc->>Config: Read paths.githubPages
+    ReadSvc-->>-Client: instance
+
+    Client->>+ReadSvc: getTokens()
+    ReadSvc->>Config: Read files.tokens
+    ReadSvc->>ReadSvc: readFile(tokensFilename)
+    Note right of ReadSvc: readFile internally fetches from GitHub Pages URL & parses JSON
+    alt readFile Successful
+        ReadSvc-->>ReadSvc: Returns jsonData (TokenStorage) # Internal response, keep active
+        ReadSvc->>ReadSvc: Process jsonData (extract, sort tokens) # Internal call, keep active
+        ReadSvc-->>Client: Promise<Array<Token>> (sorted tokens) # Return to Client, keep ReadSvc active
+    else readFile Failed
+        ReadSvc-->>ReadSvc: Returns null # Internal response, keep active
+        ReadSvc->>ReadSvc: Log warning/error # Internal call, keep active
+        ReadSvc-->>Client: Promise<Array<Token>> (empty array) # Return to Client, keep ReadSvc active
+    end
+
+    Client->>+ReadSvc: getSentences() # Activate ReadSvc
+    ReadSvc->>Config: Read files.sentences
+    ReadSvc->>ReadSvc: readFile(sentencesFilename)
+    Note right of ReadSvc: readFile internally fetches & parses JSON
+    alt readFile Successful
+        ReadSvc-->>ReadSvc: Returns jsonData (Sentences) # Internal response
+    else readFile Failed
+        ReadSvc-->>ReadSvc: Returns null # Internal response
+    end
+    ReadSvc-->>Client: Promise<Record<string, ISentence[]>> # Return to Client, keep ReadSvc active
+
+    Client->>+ReadSvc: getTextEntries() # Reactivate ReadSvc
+    ReadSvc->>Config: Read files.textEntries
+    ReadSvc->>ReadSvc: readFile(textEntriesFilename)
+    Note right of ReadSvc: readFile internally fetches & parses JSON
+    alt readFile Successful
+        ReadSvc-->>ReadSvc: Returns jsonData (TextEntries) # Internal response
+    else readFile Failed
+        ReadSvc-->>ReadSvc: Returns null # Internal response
+    end
+    ReadSvc-->>Client: Promise<TextEntriesStorage> # Return to Client, keep ReadSvc active
