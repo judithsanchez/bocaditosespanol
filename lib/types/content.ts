@@ -30,6 +30,11 @@ export interface IContent {
 
 export interface ISong extends IContent {
 	contentType: ContentType.SONG;
+	metadata?: {
+		title: string;
+		interpreter: string;
+		youtube?: string;
+	};
 }
 
 export interface IBookExcerpt extends IContent {
@@ -139,11 +144,9 @@ import {tokenSchema} from './token';
 // If sentenceSchema already defines tokens as z.array(tokenSchema).optional(),
 // we'll extend it to make tokens mandatory here.
 const populatedSentenceSchemaInContent = sentenceSchema.extend({
-	// The 'tokens' field in sentenceSchema is 'processedTokens?: Token[]' in ISentence
-	// and 'tokens: z.array(tokenSchema).optional()' in sentenceSchema.
-	// We need to ensure it's present and populated.
-	// The field name in sentenceSchema is 'tokens', let's ensure it's an array of tokenSchema.
-	tokens: z.array(tokenSchema),
+	// In ISentence, we use processedTokens for populated tokens
+	// This ensures consistency between the interface and schema
+	processedTokens: z.array(tokenSchema),
 });
 
 export const contentByIdResponseSchema = z.object({

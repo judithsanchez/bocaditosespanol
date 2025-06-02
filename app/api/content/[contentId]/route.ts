@@ -187,7 +187,7 @@ export async function GET(
 
 				return {
 					...sentenceData, // spread all properties from ISentence
-					tokens: populatedTokens, // ensure this field is named 'tokens' for the schema
+					processedTokens: populatedTokens, // ensure this field matches ISentence interface
 				};
 			})
 			.filter(Boolean) as ISentence[]; // Filter out nulls if any sentence not found

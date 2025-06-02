@@ -6,27 +6,16 @@ import {
 	StyledPunctuationLeft,
 	StyledPunctuationRight,
 } from '@/components/ui/StyledComponents';
-import {TokenType} from '@/lib/types/grammar';
-
-const TokenSchema = z.object({
-	content: z.string(),
-	tokenType: z.nativeEnum(TokenType),
-	tokenId: z.string(),
-	isCognate: z.boolean().optional(),
-	isFalseCognate: z.boolean().optional(),
-	isSlang: z.boolean().optional(),
-});
-
-export type ValidatedToken = z.infer<typeof TokenSchema>;
+import {TokenType, Token} from '@/lib/types/token';
 
 export interface TokenComponentProps {
-	token: ValidatedToken;
+	token: Token;
 	isSelected?: boolean;
 	onClick?: (event: React.MouseEvent) => void;
 }
 
 export interface TokensTranslationsProps {
-	selectedToken: ValidatedToken | null;
+	selectedToken: Token | null;
 }
 
 export const TokenComponent = ({
@@ -80,20 +69,17 @@ export const TokenComponent = ({
 		}
 	};
 
-	const parsedToken = TokenSchema.safeParse(token);
-	if (!parsedToken.success) {
-		console.error('Invalid token data:', parsedToken.error);
-		return null;
-	}
-
 	const TokenElement = getTokenStyle();
+
+	// Only word tokens have these properties
+	const isWordToken = token.tokenType === TokenType.Word;
 
 	return (
 		<TokenElement
 			isSelected={isSelected}
-			isCognate={token.isCognate}
-			isFalseCognate={token.isFalseCognate}
-			isSlang={token.isSlang}
+			isCognate={isWordToken ? token.isCognate : false}
+			isFalseCognate={isWordToken ? token.isFalseCognate : false}
+			isSlang={isWordToken ? token.isSlang : false}
 			isPunctuation={token.tokenType === TokenType.PunctuationSign}
 			onClick={handleClick}
 		>

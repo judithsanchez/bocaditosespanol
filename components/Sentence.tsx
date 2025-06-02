@@ -1,5 +1,8 @@
 import {useState} from 'react';
-import {ISentence, LearningMode, Token, WordToken} from '@/lib/types/grammar';
+import {LearningMode} from '@/lib/types/learningMode';
+import {ISentence} from '@/lib/types/sentence';
+import {Token} from '@/lib/types/token';
+import type {WordToken} from '@/lib/types/token';
 import {
 	SentenceCard,
 	TokensContainer,
@@ -54,7 +57,9 @@ export default function Sentence({sentence, mode}: SentenceProps) {
 	};
 
 	// Filter out the final period if it exists
-	const displayTokens = sentence.tokens ? [...sentence.tokens] : [];
+	const displayTokens = sentence.processedTokens
+		? [...sentence.processedTokens]
+		: [];
 	if (
 		displayTokens.length > 0 &&
 		displayTokens[displayTokens.length - 1].content === '.' &&

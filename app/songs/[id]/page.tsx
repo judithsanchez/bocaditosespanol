@@ -13,13 +13,15 @@ import {
 	ModeSelector,
 	ModeButton,
 } from '@/components/ui/StyledComponents';
-import {LearningMode, ISentence} from '@/lib/types/grammar';
+import {LearningMode} from '@/lib/types/learningMode';
+import {ISentence} from '@/lib/types/sentence';
+import {ContentType, ContentByIdResponse} from '@/lib/types/content';
 
 export default function SelectedSong() {
 	const {id} = useParams();
 	const songId = Array.isArray(id) ? id[0] : id;
 
-	const [song, setSong] = useState(null);
+	const [song, setSong] = useState<ContentByIdResponse | null>(null);
 	const [sentences, setSentences] = useState<Array<ISentence> | null>(null);
 	const [youtubeUrl, setYoutubeUrl] = useState<string>('');
 	const {isPlaying, controls} = useYoutubePlayer(youtubeUrl);
@@ -37,18 +39,30 @@ export default function SelectedSong() {
 				const songData = JSON.parse(cachedSongData);
 				setSong(songData);
 
-				if (songData.metadata?.youtube) {
-					setYoutubeUrl(songData.metadata.youtube);
+				let ytUrl = '';
+				if (
+					songData.metadata &&
+					typeof songData.metadata.youtube === 'string'
+				) {
+					ytUrl = songData.metadata.youtube;
+				} else if (
+					songData.source &&
+					songData.contentType === ContentType.SONG
+				) {
+					ytUrl = songData.source;
+				}
+				if (ytUrl) {
+					setYoutubeUrl(ytUrl);
 				}
 
-				if (songData.sentences) {
-					setSentences(songData.sentences);
+				if (songData.processedSentences) {
+					setSentences(songData.processedSentences);
 				}
 
 				setIsLoading(false);
 			} else {
 				// Fallback to fetching from API if not in localStorage
-				fetch(`/api/songs/${songId}`)
+				fetch(`/api/content/${songId}`)
 					.then(res => {
 						if (!res.ok) throw new Error('Failed to fetch song');
 						return res.json();
@@ -56,12 +70,24 @@ export default function SelectedSong() {
 					.then(songData => {
 						setSong(songData);
 
-						if (songData.metadata?.youtube) {
-							setYoutubeUrl(songData.metadata.youtube);
+						let ytUrl = '';
+						if (
+							songData.metadata &&
+							typeof songData.metadata.youtube === 'string'
+						) {
+							ytUrl = songData.metadata.youtube;
+						} else if (
+							songData.source &&
+							songData.contentType === ContentType.SONG
+						) {
+							ytUrl = songData.source;
+						}
+						if (ytUrl) {
+							setYoutubeUrl(ytUrl);
 						}
 
-						if (songData.sentences) {
-							setSentences(songData.sentences);
+						if (songData.processedSentences) {
+							setSentences(songData.processedSentences);
 						}
 
 						setIsLoading(false);

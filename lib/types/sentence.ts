@@ -43,7 +43,7 @@ export const sentenceSchema = z.object({
 	}),
 	tokenIds: z.array(z.string()),
 	learningInsights: learningInsightSchema.optional(),
-	tokens: z.array(tokenSchema).optional(),
+	processedTokens: z.array(tokenSchema).optional(),
 });
 
 export type SentenceType = z.infer<typeof sentenceSchema>;
