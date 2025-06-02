@@ -6,13 +6,14 @@ import {TokenFactory} from '../../factories/TokenFactory';
 import {ISentence} from '@/lib/types/sentence';
 import {
 	EmojiToken,
-	IEmoji,
-	IPunctuationSign,
-	IWord,
+	// IEmoji, // Removed
+	// IPunctuationSign, // Removed
+	// IWord, // Removed
 	PunctuationToken,
-	Token,
+	Token, // This is now EmojiToken | PunctuationToken | InitialWordToken | WordToken
 	TokenType,
 	WordToken,
+	// InitialWordToken might also need to be imported if used explicitly, but Token union covers it.
 } from '@/lib/types/token';
 
 export class TokenIdentificationStep
@@ -71,16 +72,16 @@ export class TokenIdentificationStep
 	): void {
 		context.tokens.words = tokens.filter(
 			(token): token is WordToken => token.tokenType === TokenType.Word,
-		) as IWord[];
+		); // No need to cast to IWord[], WordToken is the correct new type
 
 		context.tokens.punctuationSigns = tokens.filter(
 			(token): token is PunctuationToken =>
 				token.tokenType === TokenType.PunctuationSign,
-		) as IPunctuationSign[];
+		); // No need to cast to IPunctuationSign[], PunctuationToken is correct
 
 		context.tokens.emojis = tokens.filter(
 			(token): token is EmojiToken => token.tokenType === TokenType.Emoji,
-		) as IEmoji[];
+		); // No need to cast to IEmoji[], EmojiToken is correct
 	}
 	private deduplicateTokens(tokens: Token[]): Token[] {
 		const uniqueTokens = new Map<string, Token>();

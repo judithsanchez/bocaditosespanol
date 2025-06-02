@@ -1,7 +1,14 @@
 import {ISentence} from '../types/sentence';
-import {IEmoji, IPunctuationSign, IWord, TokenType} from '../types/token';
+// import {IEmoji, IPunctuationSign, IWord, TokenType} from '../types/token'; // Old imports
+import {
+	Token, // New union type
+	WordToken, // New specific type
+	PunctuationToken, // New specific type
+	EmojiToken, // New specific type
+	TokenType,
+} from '../types/token';
 import {DatabaseConfig} from '../config/DatabaseConfig';
-import {TokenStorage, TextEntriesStorage} from '../types/database';
+import {TokenStorage, TextEntriesStorage} from '../types/database'; // These now use new types
 
 export class ReadDatabaseService {
 	private readonly dataPath = DatabaseConfig.paths.data;
@@ -16,9 +23,11 @@ export class ReadDatabaseService {
 		return `${this.githubPagesUrlBase}/${filename}`;
 	}
 
-	async getTokens(): Promise<Array<IWord | IPunctuationSign | IEmoji>> {
+	async getTokens(): Promise<Token[]> {
+		// Changed return type
 		console.log(`Fetching tokens from ${DatabaseConfig.files.tokens}`);
 		const startTime = Date.now();
+		// TokenStorage now uses WordToken, PunctuationToken, EmojiToken
 		const tokens = (await this.readFile(
 			DatabaseConfig.files.tokens,
 		)) as TokenStorage | null;
@@ -30,18 +39,28 @@ export class ReadDatabaseService {
 			return [];
 		}
 
-		const allTokens: Array<IWord | IPunctuationSign | IEmoji> = [
-			...(Object.values(tokens.words) as IWord[]),
-			...(Object.values(tokens.punctuationSigns) as IPunctuationSign[]),
-			...(Object.values(tokens.emojis) as IEmoji[]),
+		// allTokens should be Token[]
+		const allTokens: Token[] = [
+			...(Object.values(tokens.words) as WordToken[]), // Cast to WordToken[]
+			...(Object.values(tokens.punctuationSigns) as PunctuationToken[]), // Cast to PunctuationToken[]
+			...(Object.values(tokens.emojis) as EmojiToken[]), // Cast to EmojiToken[]
 		];
 
 		const sortedTokens = allTokens.sort((a, b) => {
+			// Check if both are WordToken to access lastUpdated safely,
+			// or ensure lastUpdated is on BaseToken if sorting all tokens by it.
+			// Current BaseToken has lastUpdated as optional. WordToken has it (from initialWordTokenSchema).
+			// PunctuationToken and EmojiToken also have it as optional from their schemas.
+			// For robust sorting, ensure lastUpdated is consistently present or handle undefined.
+			// Assuming lastUpdated is primarily relevant for WordTokens for this sort.
 			if (a.tokenType === TokenType.Word && b.tokenType === TokenType.Word) {
+				// Both a and b are WordToken here due to the check
 				return (
-					((b as IWord).lastUpdated || 0) - ((a as IWord).lastUpdated || 0)
+					(b.lastUpdated || 0) - (a.lastUpdated || 0) // No need for 'as WordToken' cast here
 				);
 			}
+			// Add sorting for other types or a default if needed
+			// For now, only sorting words, others maintain relative order from concatenation.
 			return 0;
 		});
 

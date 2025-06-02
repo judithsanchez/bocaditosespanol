@@ -4,6 +4,7 @@ import {ContentProcessingContext} from '@/lib/pipelines/ContentProcessingPipelin
 import {errors} from '@/lib/types/constants';
 import {z} from 'zod';
 import {ISentence, sentenceSchema} from '@/lib/types/sentence';
+import {ProcessingStage} from '@/lib/types/processing'; // Import ProcessingStage
 
 const formattedSentencesSchema = z.array(sentenceSchema);
 
@@ -134,6 +135,7 @@ export class SentenceFormatterStep
 		title: string,
 		contributor: string,
 	): ISentence {
+		const now = Date.now();
 		return {
 			sentenceId: this.generateSentenceId(number, title, contributor),
 			content,
@@ -144,6 +146,14 @@ export class SentenceFormatterStep
 				},
 			},
 			tokenIds: [],
+			// Add new fields
+			processingState: {
+				stage: ProcessingStage.RAW, // Initial stage
+				startedAt: now,
+				completedAt: now, // Can be updated later if RAW involves more steps
+				// error: undefined, // Optional, so can be omitted
+			},
+			analysisResults: undefined, // Optional, initialized as undefined
 		};
 	}
 

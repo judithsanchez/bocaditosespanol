@@ -1,5 +1,6 @@
 import {z} from 'zod';
 import {IInitialSense, ISense, initialSenseSchema, senseSchema} from './sense';
+import {ProcessingState, processingStateSchema} from './processing'; // Import ProcessingState and processingStateSchema
 
 export enum TokenType {
 	Word = 'word',
@@ -10,6 +11,11 @@ export enum TokenType {
 const baseTokenSchema = z.object({
 	tokenId: z.string(),
 	content: z.string(),
+	// Add processingState to the base schema for all tokens
+	// It needs a default value or to be explicitly set during token creation.
+	// For now, let's add it. If it causes issues with existing data/logic,
+	// we might need to make it optional or provide a default.
+	processingState: processingStateSchema,
 });
 
 export const emojiTokenSchema = baseTokenSchema.extend({
@@ -31,6 +37,8 @@ export const initialWordTokenSchema = baseTokenSchema.extend({
 	isFalseCognate: z.boolean(),
 	lastUpdated: z.number(),
 	senses: z.array(initialSenseSchema), // Use initial schema for creation
+	// Add processingState to schemas if it's to be validated by Zod
+	// For now, focusing on interfaces. Zod schemas can be updated later if needed.
 });
 
 // Schema for the fully processed word token
@@ -45,39 +53,60 @@ export const tokenSchema = z.discriminatedUnion('tokenType', [
 	wordTokenSchema, // Use the final word token schema here
 ]);
 
-export type EmojiToken = z.infer<typeof emojiTokenSchema>;
-export type PunctuationToken = z.infer<typeof punctuationTokenSchema>;
-export type InitialWordToken = z.infer<typeof initialWordTokenSchema>; // Type for initial state
-export type WordToken = z.infer<typeof wordTokenSchema>; // Type for final state
-export type Token = EmojiToken | PunctuationToken | WordToken; // Final token types
+// --- REFACTOR TOKEN INTERFACES TO INCLUDE ProcessingState ---
 
-export interface IPunctuationSign {
-	tokenType: TokenType.PunctuationSign;
+export interface BaseToken {
+	// New BaseToken interface
 	tokenId: string;
 	content: string;
-	lastUpdated?: number; // Added optional lastUpdated
+	tokenType: TokenType;
+	processingState: ProcessingState; // Added ProcessingState
+	lastUpdated?: number; // Optional, as some schemas have it, some don't
 }
 
-export interface IEmoji {
+export interface EmojiToken extends BaseToken {
+	// Extends new BaseToken
 	tokenType: TokenType.Emoji;
-	tokenId: string;
-	content: string;
-	lastUpdated?: number; // Added optional lastUpdated
 }
 
-export interface IWord {
-	tokenId: string;
+export interface PunctuationToken extends BaseToken {
+	// Extends new BaseToken
+	tokenType: TokenType.PunctuationSign;
+}
+
+export interface InitialWordToken extends BaseToken {
+	// Extends new BaseToken
 	tokenType: TokenType.Word;
-	content: string;
 	normalizedToken: string;
 	isSlang: boolean;
 	isCognate: boolean;
 	isFalseCognate: boolean;
-	lastUpdated: number;
-	senses: ISense[]; // Interface represents the final state
+	senses: IInitialSense[];
+	// lastUpdated is in BaseToken
 }
 
-// Interface for the initial word state might be useful too
-export interface IInitialWord extends Omit<IWord, 'senses'> {
-	senses: IInitialSense[];
+export interface WordToken extends BaseToken {
+	// Extends new BaseToken
+	tokenType: TokenType.Word;
+	normalizedToken: string;
+	isSlang: boolean;
+	isCognate: boolean;
+	isFalseCognate: boolean;
+	senses: ISense[];
+	// lastUpdated is in BaseToken
+	// Potentially add specific analysis results here if not part of senses
 }
+
+// Combined Token type using new interfaces
+// Including InitialWordToken to represent words before full sense enrichment
+export type Token =
+	| EmojiToken
+	| PunctuationToken
+	| InitialWordToken
+	| WordToken;
+
+// Old Zod-inferred types and old direct interfaces removed.
+// The new interfaces (BaseToken, EmojiToken, PunctuationToken, InitialWordToken, WordToken)
+// and the combined 'Token' type are now the source of truth for token structures.
+// Zod schemas (baseTokenSchema, emojiTokenSchema, etc.) are used for validation
+// and their inferred types would match these new interfaces.

@@ -3,13 +3,22 @@ import {NextResponse} from 'next/server';
 import {z} from 'zod';
 import {
 	ContentType,
-	IContent,
-	ISong,
-	IBookExcerpt,
-	contentByIdResponseSchema,
+	// IContent, // Commented out as it's no longer exported directly
+	// ISong, // Commented out
+	// IBookExcerpt, // Commented out
+	RawContent, // Import new base type
+	SongContent, // Import new combined type
+	BookExcerptContent, // Import new combined type
+	VideoTranscriptContent, // Import new combined type (if used for casting)
+	AnyProcessedContent, // General type for processed content
+	newContentByIdResponseSchema,
+	SongMetadata,
+	BookMetadata,
+	VideoMetadata,
 } from '@/lib/types/content';
 import {ISentence} from '@/lib/types/sentence';
 import {Token} from '@/lib/types/token';
+import {ProcessingStage} from '@/lib/types/processing'; // Import ProcessingStage
 import {Logger} from '@/lib/utils/Logger';
 
 export async function GET(
@@ -38,12 +47,17 @@ export async function GET(
 			);
 		}
 		// Type assertion for the raw data structure
+		// The raw data from text-entries.json might not yet conform to ProcessedContent.
+		// It's closer to RawContent + specific metadata fields not yet nested.
+		// Using 'any' here temporarily for flexibility, then casting to specific old structures
+		// for data extraction before conforming to the new response schema.
 		const allTextEntries = textEntriesData as Record<
 			ContentType,
-			Array<IContent | ISong | IBookExcerpt>
+			Array<any> // Using 'any' as the old IContent/ISong/IBookExcerpt are gone
+			// and the JSON structure might be a mix before transformation.
 		>;
 
-		let contentEntry: IContent | ISong | IBookExcerpt | undefined;
+		let contentEntry: any | undefined; // Using 'any' for the found entry
 		let foundContentType: ContentType | undefined;
 
 		// Find the content entry by contentId across all types
@@ -174,20 +188,36 @@ export async function GET(
 				// Populate tokens for this sentence
 				const populatedTokens: Token[] = sentenceData.tokenIds
 					.map(tokenId => {
-						const token = tokenMap.get(tokenId);
-						if (!token) {
+						const tokenData = tokenMap.get(tokenId);
+						if (!tokenData) {
 							logger.error(
 								`Token not found for ID: ${tokenId} in sentence ${sentenceId}`,
 								new Error('Token not found'),
 							);
+							return null; // Return null to be filtered out later
 						}
-						return token;
+						// Add default processingState to the token
+						return {
+							...tokenData,
+							processingState: {
+								stage: ProcessingStage.FINALIZED, // Assuming tokens from DB are finalized
+								startedAt: tokenData.lastUpdated || Date.now(), // Use lastUpdated if available, else now
+								completedAt: tokenData.lastUpdated || Date.now(), // Use lastUpdated if available, else now
+							},
+						};
 					})
-					.filter(Boolean) as Token[]; // Filter out undefined if any token not found
+					.filter(Boolean) as Token[]; // Filter out nulls if any token not found
 
 				return {
 					...sentenceData, // spread all properties from ISentence
 					processedTokens: populatedTokens, // ensure this field matches ISentence interface
+					// Add default processingState and analysisResults for the sentence
+					processingState: {
+						stage: ProcessingStage.FINALIZED, // Assuming sentences are finalized for this response
+						startedAt: Date.now(), // Or derive from sentence data if available
+						completedAt: Date.now(),
+					},
+					analysisResults: undefined, // Placeholder, as it's optional and not yet implemented
 				};
 			})
 			.filter(Boolean) as ISentence[]; // Filter out nulls if any sentence not found
@@ -221,23 +251,64 @@ export async function GET(
 			sentencesIds: contentEntry.sentencesIds,
 		};
 
-		let finalResponseData: any = {...baseResponseData};
+		// let finalResponseData: any = {...baseResponseData}; // Old way
+
+		// Construct metadata according to newContentByIdResponseSchema
+		let specificMetadata:
+			| SongMetadata
+			| BookMetadata
+			| VideoMetadata
+			| undefined;
 
 		if (foundContentType === ContentType.SONG) {
-			const rawSongEntry = contentEntry as any; // Cast to any to check for legacy metadata
-			if (rawSongEntry.metadata) {
-				finalResponseData.metadata = rawSongEntry.metadata;
+			const songEntry = contentEntry as any; // Changed from ISong to any, as ISong is no longer exported
+			// Assuming songEntry.metadata matches the old structure { title, interpreter, youtube }
+			// We need to construct SongMetadata: { type: ContentType.SONG, interpreter: string, youtube?: string }
+			if (songEntry.metadata) {
+				specificMetadata = {
+					type: ContentType.SONG,
+					interpreter: songEntry.metadata.interpreter,
+					youtube: songEntry.metadata.youtube,
+				};
+			} else {
+				// Handle cases where metadata might be missing, though schema expects interpreter
+				// This might indicate an issue with source data or a need for default values
+				logger.info(
+					// Changed from logger.warn
+					`Song metadata missing for contentId: ${contentId}. Creating default.`,
+				);
+				specificMetadata = {
+					// Default or error handling
+					type: ContentType.SONG,
+					interpreter:
+						(songEntry as any).contributors?.main || 'Unknown Artist', // Fallback
+				};
 			}
 		} else if (foundContentType === ContentType.BOOK_EXCERPT) {
-			const bookEntry = contentEntry as IBookExcerpt;
-			if (bookEntry.pages) finalResponseData.pages = bookEntry.pages;
-			if (bookEntry.isbn) finalResponseData.isbn = bookEntry.isbn;
+			const bookEntry = contentEntry as any; // Using 'any' as IBookExcerpt is gone
+			// Construct BookMetadata: { type: ContentType.BOOK_EXCERPT, isbn?: string, pages?: { start: number, end: number } }
+			specificMetadata = {
+				type: ContentType.BOOK_EXCERPT,
+				isbn: bookEntry.isbn,
+				pages: bookEntry.pages,
+			};
+		} else if (foundContentType === ContentType.VIDEO_TRANSCRIPT) {
+			// const videoEntry = contentEntry as IVideoTranscript; // Assuming IVideoTranscript exists
+			// Construct VideoMetadata: { type: ContentType.VIDEO_TRANSCRIPT, duration?: number }
+			specificMetadata = {
+				type: ContentType.VIDEO_TRANSCRIPT,
+				// duration: videoEntry.duration, // Example, if duration was a field
+			};
 		}
-		// Add other type-specific fields if necessary
+
+		const finalResponseData = {
+			...baseResponseData,
+			metadata: specificMetadata, // Add the structured metadata
+		};
 
 		// 5. Validate the response
 		const validatedResponse =
-			contentByIdResponseSchema.parse(finalResponseData);
+			newContentByIdResponseSchema.parse(finalResponseData);
 
 		logger.end('GET');
 		return NextResponse.json(validatedResponse);

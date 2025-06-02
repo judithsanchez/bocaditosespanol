@@ -1,9 +1,16 @@
 import {z} from 'zod';
 import {Token, tokenSchema} from './token';
+import {
+	ProcessingState,
+	processingStateSchema,
+	ContentAnalysis,
+	contentAnalysisSchema,
+} from './processing';
 
 export interface ISentence {
 	sentenceId: string;
-	content: string;
+	content: string; // This was 'originalSentence' in my plan, but 'content' is in the file. Keeping 'content'.
+	// contentId: string; // This was in my plan, but not in the file. Omitting for now.
 	translations: {
 		english: {
 			literal: string;
@@ -13,6 +20,8 @@ export interface ISentence {
 	tokenIds: string[];
 	learningInsights?: ILearningInsight;
 	processedTokens?: Token[];
+	processingState: ProcessingState; // Added
+	analysisResults?: ContentAnalysis; // Added
 }
 
 export interface ILearningInsight {
@@ -44,6 +53,8 @@ export const sentenceSchema = z.object({
 	tokenIds: z.array(z.string()),
 	learningInsights: learningInsightSchema.optional(),
 	processedTokens: z.array(tokenSchema).optional(),
+	processingState: processingStateSchema, // Added
+	analysisResults: contentAnalysisSchema.optional(), // Added
 });
 
 export type SentenceType = z.infer<typeof sentenceSchema>;

@@ -5,21 +5,29 @@ import {DatabaseConfig} from '../config/DatabaseConfig';
 
 import {
 	TokenType,
-	Token,
-	IWord,
-	IPunctuationSign,
-	IEmoji,
+	Token, // Union: EmojiToken | PunctuationToken | InitialWordToken | WordToken
+	WordToken,
+	PunctuationToken,
+	EmojiToken,
+	// IWord, // Old
+	// IPunctuationSign, // Old
+	// IEmoji, // Old
 } from '@/lib/types/token';
 import {ISentence} from '@/lib/types/sentence';
 import {
 	ContentType,
-	IContent,
-	ISong,
-	IBookExcerpt,
-	IVideoTranscript,
+	ProcessedContent, // New base type
+	SongContent, // New specific type
+	BookExcerptContent, // New specific type
+	VideoTranscriptContent, // New specific type
+	ContentMetadata, // For the metadata property
+	// IContent, // Old
+	// ISong, // Old
+	// IBookExcerpt, // Old
+	// IVideoTranscript, // Old
 } from '@/lib/types/content';
 import {ReadDatabaseService} from './ReadDatabaseService';
-import {TokenStorage, TextEntriesStorage} from '../types/database';
+import {TokenStorage, TextEntriesStorage} from '../types/database'; // These now use new types
 
 export class WriteDatabaseService {
 	private readonly dataPath = DatabaseConfig.paths.data;
@@ -59,22 +67,47 @@ export class WriteDatabaseService {
 	}
 
 	async saveTextEntry(
-		entry: IContent,
-		contentType: ContentType,
+		// entry: IContent, // Old
+		entry: ProcessedContent & {metadata: ContentMetadata}, // Use new combined type
+		contentType: ContentType, // contentType is also on entry, but passed for clarity/safety
 	): Promise<void> {
 		const entries =
-			(await this.readService.getTextEntries()) as TextEntriesStorage;
+			(await this.readService.getTextEntries()) as TextEntriesStorage; // TextEntriesStorage now uses new types
 
 		if (!entries[contentType]) {
 			entries[contentType] = [];
 		}
 
-		if (contentType === ContentType.SONG) {
-			entries[ContentType.SONG]?.push(entry as ISong);
-		} else if (contentType === ContentType.BOOK_EXCERPT) {
-			entries[ContentType.BOOK_EXCERPT]?.push(entry as IBookExcerpt);
-		} else if (contentType === ContentType.VIDEO_TRANSCRIPT) {
-			entries[ContentType.VIDEO_TRANSCRIPT]?.push(entry as IVideoTranscript);
+		// The entry object should already be of the correct specific type (SongContent, etc.)
+		// due to how it's constructed in ContentProcessingPipeline.
+		// The TextEntriesStorage is also typed with these specific types.
+		if (
+			contentType === ContentType.SONG &&
+			entry.contentType === ContentType.SONG
+		) {
+			entries[ContentType.SONG]?.push(entry as SongContent);
+		} else if (
+			contentType === ContentType.BOOK_EXCERPT &&
+			entry.contentType === ContentType.BOOK_EXCERPT
+		) {
+			entries[ContentType.BOOK_EXCERPT]?.push(entry as BookExcerptContent);
+		} else if (
+			contentType === ContentType.VIDEO_TRANSCRIPT &&
+			entry.contentType === ContentType.VIDEO_TRANSCRIPT
+		) {
+			entries[ContentType.VIDEO_TRANSCRIPT]?.push(
+				entry as VideoTranscriptContent,
+			);
+		} else {
+			// This case should ideally not be reached if called correctly from pipeline
+			console.error(
+				'Mismatched contentType in saveTextEntry or unhandled content type',
+				{
+					passedContentType: contentType,
+					entryContentType: entry.contentType,
+				},
+			);
+			// Potentially throw an error or handle as a generic entry if TextEntriesStorage supported it
 		}
 
 		await this.writeFile(DatabaseConfig.files.textEntries, entries);
@@ -118,7 +151,8 @@ export class WriteDatabaseService {
 	}
 
 	async saveTokens(
-		tokens: Array<IWord | IPunctuationSign | IEmoji>,
+		// tokens: Array<IWord | IPunctuationSign | IEmoji>, // Old
+		tokens: Token[], // Use new Token union type
 	): Promise<void> {
 		console.log(`Attempting to save ${tokens.length} tokens.`);
 		const startTime = Date.now();
@@ -168,36 +202,36 @@ export class WriteDatabaseService {
 		return JSON.stringify(token1Compare) === JSON.stringify(token2Compare);
 	}
 
-	private async addToken(token: IWord | IPunctuationSign | IEmoji) {
+	private async addToken(token: Token) {
+		// Changed parameter to Token
 		const tokenId = token.tokenId;
-		const currentTime = Date.now();
+		const currentTime = Date.now(); // This might be redundant if token.lastUpdated is already set
 
 		// Check if token already exists in any category
+		// this.tokens (TokenStorage) now uses WordToken, PunctuationToken, EmojiToken
 		const existsInWords = tokenId in this.tokens.words;
 		const existsInPunctuation = tokenId in this.tokens.punctuationSigns;
 		const existsInEmojis = tokenId in this.tokens.emojis;
 
 		// If token exists anywhere, don't add or update it
+		// This logic might need review: what if a token is updated (e.g. senses)?
+		// For now, keeping existing behavior: only add if truly new.
 		if (existsInWords || existsInPunctuation || existsInEmojis) {
 			return;
 		}
 
-		// Add new token with current timestamp
+		// Add new token. The token object should already have lastUpdated and processingState.
+		// The spread operator will include all fields from the token.
 		if (token.tokenType === TokenType.Word) {
-			this.tokens.words[tokenId] = {
-				...(token as IWord),
-				lastUpdated: currentTime,
-			};
+			// Ensure it's a WordToken (fully processed) if that's what TokenStorage expects.
+			// The pipeline finalizes tokens, so they should be WordToken if they have senses.
+			// If it could be InitialWordToken, TokenStorage.words would need to accept InitialWordToken | WordToken.
+			// Assuming pipeline provides WordToken for words to be saved.
+			this.tokens.words[tokenId] = token as WordToken; // Cast to WordToken
 		} else if (token.tokenType === TokenType.PunctuationSign) {
-			this.tokens.punctuationSigns[tokenId] = {
-				...(token as IPunctuationSign),
-				lastUpdated: currentTime,
-			};
+			this.tokens.punctuationSigns[tokenId] = token as PunctuationToken; // Cast to PunctuationToken
 		} else if (token.tokenType === TokenType.Emoji) {
-			this.tokens.emojis[tokenId] = {
-				...(token as IEmoji),
-				lastUpdated: currentTime,
-			};
+			this.tokens.emojis[tokenId] = token as EmojiToken; // Cast to EmojiToken
 		}
 
 		console.log(`Added new token: ${tokenId} (${token.tokenType})`);

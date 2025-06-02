@@ -11,6 +11,7 @@ import {
 	WordToken, // Keep this for the final state if needed elsewhere
 } from '../types/token';
 import {IInitialSense, ISense} from '../types/sense'; // Import IInitialSense
+import {ProcessingStage} from '../types/processing'; // Import ProcessingStage
 
 export class TokenFactory {
 	private static readonly emojiPattern = emojiRegex();
@@ -40,39 +41,60 @@ export class TokenFactory {
 	}
 
 	static createEmojiToken(content: string): EmojiToken {
+		const now = Date.now();
 		const token = {
 			tokenId: `token-${content}`,
 			content,
 			tokenType: TokenType.Emoji as const,
+			processingState: {
+				stage: ProcessingStage.TOKENIZED,
+				startedAt: now,
+				completedAt: now,
+			},
+			// lastUpdated is optional in emojiTokenSchema, can be omitted or set
+			lastUpdated: now,
 		};
 		return emojiTokenSchema.parse(token);
 	}
 
 	static createPunctuationToken(content: string): PunctuationToken {
+		const now = Date.now();
 		const token = {
 			tokenId: `token-${content}`,
 			content,
 			tokenType: TokenType.PunctuationSign as const,
+			processingState: {
+				stage: ProcessingStage.TOKENIZED,
+				startedAt: now,
+				completedAt: now,
+			},
+			// lastUpdated is optional in punctuationTokenSchema, can be omitted or set
+			lastUpdated: now,
 		};
 		return punctuationTokenSchema.parse(token);
 	}
 
 	// Update return type and use initial schema
 	static createWordToken(content: string): InitialWordToken {
+		const now = Date.now();
 		const normalizedContent = content.toLowerCase();
-		const token: Omit<InitialWordToken, 'senses'> & {senses: IInitialSense[]} =
-			{
-				// Ensure type compatibility
-				tokenId: `token-${normalizedContent}`,
-				content,
-				normalizedToken: normalizedContent,
-				tokenType: TokenType.Word as const,
-				isSlang: false,
-				isCognate: false,
-				isFalseCognate: false,
-				senses: [this.createInitialSense(normalizedContent)], // createInitialSense now returns IInitialSense
-				lastUpdated: Date.now(),
-			};
+		// The type here needs to match what initialWordTokenSchema expects, including processingState
+		const token = {
+			tokenId: `token-${normalizedContent}`,
+			content,
+			normalizedToken: normalizedContent,
+			tokenType: TokenType.Word as const,
+			isSlang: false,
+			isCognate: false,
+			isFalseCognate: false,
+			senses: [this.createInitialSense(normalizedContent)],
+			lastUpdated: now,
+			processingState: {
+				stage: ProcessingStage.TOKENIZED,
+				startedAt: now,
+				completedAt: now,
+			},
+		};
 		// Use the initial schema for parsing
 		return initialWordTokenSchema.parse(token);
 	}
